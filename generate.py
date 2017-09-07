@@ -78,6 +78,6 @@ fi
 '''
             script += param_str % (opt, opt, opt)
 
-        script += 'ansible localhost -m %s --args "${params}" --one-line' % plugin
+        script += 'ansible localhost -m %s --args "${params}" --one-line | cut -f2- -d">"' % plugin
 
         f.write(script)
