@@ -43,6 +43,7 @@ for plugin in all_plugins:
     desc = doc['short_description']
     options = doc['options']
     params = {}
+    # TODO handle free_form
     for opt in options:
         details = options[opt]
         if options.has_key('choices'):
@@ -52,8 +53,31 @@ for plugin in all_plugins:
 
         if not details.get('required', False):
             param_type = "Optional[%s]" % param_type
-        params[opt] = {"description": "\n".join(details['description']), "type": param_type}
+        params[opt] = {"description": " ".join(details['description']), "type": param_type}
     #params = options
     print(plugin)
     with open("tasks/%s.json" % plugin, 'w') as f:
         f.write(json.dumps({"description": desc, "parameters": params}, indent=2))
+
+    with open("tasks/%s.sh" % plugin, 'w') as f:
+        script = '''#!/usr/bin/env bash
+
+if ! which ansible &> /dev/null; then
+  echo '{"_error": {"msg": "Ansible must be installed and on PATH to run ansible modules", "kind": "ansible/not-installed", "details": {}}}'
+  exit 1
+fi
+
+params=''
+'''
+
+        for opt in options:
+            param_str = '''if [ ! -z "${PT_%s+x}" ];
+  then params="${params} %s=\\"${PT_%s}\\""
+fi
+
+'''
+            script += param_str % (opt, opt, opt)
+
+        script += 'ansible localhost -m %s --args "${params}" --one-line' % plugin
+
+        f.write(script)
