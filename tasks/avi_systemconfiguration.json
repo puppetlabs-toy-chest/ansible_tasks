@@ -1,0 +1,101 @@
+{
+  "description": "Module for setup of SystemConfiguration Avi RESTful Object", 
+  "parameters": {
+    "docker_mode": {
+      "type": "Optional[String]", 
+      "description": "Boolean flag to set docker_mode. Default value when not specified in API or module is interpreted by Avi Controller as False."
+    }, 
+    "proxy_configuration": {
+      "type": "Optional[String]", 
+      "description": "Proxyconfiguration settings for systemconfiguration."
+    }, 
+    "ssh_hmacs": {
+      "type": "Optional[String]", 
+      "description": "Allowed hmac list for ssh to the management interface on the controller and service engines. If this is not specified, all the default hmacs are allowed. Ssh -q mac provides the list of default hmacs supported."
+    }, 
+    "portal_configuration": {
+      "type": "Optional[String]", 
+      "description": "Portalconfiguration settings for systemconfiguration."
+    }, 
+    "uuid": {
+      "type": "Optional[String]", 
+      "description": "Unique object identifier of the object."
+    }, 
+    "dns_virtualservice_refs": {
+      "type": "Optional[String]", 
+      "description": "Dns virtualservices hosting fqdn records for applications across avi vantage. If no virtualservices are provided, avi vantage will provide dns services for configured applications. Switching back to avi vantage from dns virtualservices is not allowed. It is a reference to an object of type virtualservice."
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "The state that should be applied on the entity."
+    }, 
+    "ntp_configuration": {
+      "type": "Optional[String]", 
+      "description": "Ntpconfiguration settings for systemconfiguration."
+    }, 
+    "ssh_ciphers": {
+      "type": "Optional[String]", 
+      "description": "Allowed ciphers list for ssh to the management interface on the controller and service engines. If this is not specified, all the default ciphers are allowed. Ssh -q cipher provides the list of default ciphers supported."
+    }, 
+    "api_version": {
+      "type": "Optional[String]", 
+      "description": "Avi API version of to use for Avi API and objects."
+    }, 
+    "username": {
+      "type": "Optional[String]", 
+      "description": "Username used for accessing Avi controller. The default value is the environment variable C(AVI_USERNAME)."
+    }, 
+    "global_tenant_config": {
+      "type": "Optional[String]", 
+      "description": "Tenantconfiguration settings for systemconfiguration."
+    }, 
+    "dns_configuration": {
+      "type": "Optional[String]", 
+      "description": "Dnsconfiguration settings for systemconfiguration."
+    }, 
+    "linux_configuration": {
+      "type": "Optional[String]", 
+      "description": "Linuxconfiguration settings for systemconfiguration."
+    }, 
+    "password": {
+      "type": "Optional[String]", 
+      "description": "Password of Avi user in Avi controller. The default value is the environment variable C(AVI_PASSWORD)."
+    }, 
+    "tenant": {
+      "type": "Optional[String]", 
+      "description": "Name of tenant used for all Avi API calls and context of object."
+    }, 
+    "email_configuration": {
+      "type": "Optional[String]", 
+      "description": "Emailconfiguration settings for systemconfiguration."
+    }, 
+    "url": {
+      "type": "Optional[String]", 
+      "description": "Avi controller URL of the object."
+    }, 
+    "tech_support_uploader_configuration": {
+      "type": "Optional[String]", 
+      "description": "Techsupportuploaderconfiguration settings for systemconfiguration."
+    }, 
+    "controller": {
+      "type": "Optional[String]", 
+      "description": "IP address or hostname of the controller. The default value is the environment variable C(AVI_CONTROLLER)."
+    }, 
+    "snmp_configuration": {
+      "type": "Optional[String]", 
+      "description": "Snmpconfiguration settings for systemconfiguration."
+    }, 
+    "admin_auth_configuration": {
+      "type": "Optional[String]", 
+      "description": "Adminauthconfiguration settings for systemconfiguration."
+    }, 
+    "mgmt_ip_access_control": {
+      "type": "Optional[String]", 
+      "description": "Configure ip access control for controller to restrict open access."
+    }, 
+    "tenant_uuid": {
+      "type": "Optional[String]", 
+      "description": "UUID of tenant used for all Avi API calls and context of object."
+    }
+  }
+}

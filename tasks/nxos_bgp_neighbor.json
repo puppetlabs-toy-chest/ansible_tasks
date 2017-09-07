@@ -1,0 +1,137 @@
+{
+  "description": "Manages BGP neighbors configurations.", 
+  "parameters": {
+    "username": {
+      "type": "Optional[String]", 
+      "description": "Configures the username to use to authenticate the connection to the remote device.  This value is used to authenticate either the CLI login or the nxapi authentication depending on which transport is used. If the value is not specified in the task, the value of environment variable C(ANSIBLE_NET_USERNAME) will be used instead."
+    }, 
+    "pwd_type": {
+      "type": "Optional[String]", 
+      "description": "Specify the encryption type the password will use. Valid values are '3des' or 'cisco_type_7' encryption."
+    }, 
+    "dynamic_capability": {
+      "type": "Optional[String]", 
+      "description": "Configure whether or not to enable dynamic capability."
+    }, 
+    "shutdown": {
+      "type": "Optional[String]", 
+      "description": "Configure to administratively shutdown this neighbor."
+    }, 
+    "low_memory_exempt": {
+      "type": "Optional[String]", 
+      "description": "Specify whether or not to shut down this neighbor under memory pressure."
+    }, 
+    "use_ssl": {
+      "type": "Optional[String]", 
+      "description": "Configures the I(transport) to use SSL if set to true only when the C(transport=nxapi), otherwise this value is ignored."
+    }, 
+    "remove_private_as": {
+      "type": "Optional[String]", 
+      "description": "Specify the config to remove private AS number from outbound updates. Valid values are 'enable' to enable this config, 'disable' to disable this config, 'all' to remove all private AS number, or 'replace-as', to replace the private AS number."
+    }, 
+    "port": {
+      "type": "Optional[String]", 
+      "description": "Specifies the port to use when building the connection to the remote device.  This value applies to either I(cli) or I(nxapi).  The port value will default to the appropriate transport common port if none is provided in the task.  (cli=22, http=80, https=443)."
+    }, 
+    "transport": {
+      "type": "String", 
+      "description": "Configures the transport connection to use when connecting to the remote device.  The transport argument supports connectivity to the device over cli (ssh) or nxapi."
+    }, 
+    "connected_check": {
+      "type": "Optional[String]", 
+      "description": "Configure whether or not to check for directly connected peer."
+    }, 
+    "timeout": {
+      "type": "Optional[String]", 
+      "description": "Specifies the timeout in seconds for communicating with the network device for either connecting or sending commands.  If the timeout is exceeded before the operation is completed, the module will error. NX-API can be slow to return on long-running commands (sh mac, sh bgp, etc)."
+    }, 
+    "remote_as": {
+      "type": "Optional[String]", 
+      "description": "Specify Autonomous System Number of the neighbor. Valid values are String or Integer in ASPLAIN or ASDOT notation, or 'default', which means not to configure it."
+    }, 
+    "ebgp_multihop": {
+      "type": "Optional[String]", 
+      "description": "Specify multihop TTL for a remote peer. Valid values are integers between 2 and 255, or keyword 'default' to disable this property."
+    }, 
+    "maximum_peers": {
+      "type": "Optional[String]", 
+      "description": "Specify Maximum number of peers for this neighbor prefix Valid values are between 1 and 1000, or 'default', which does not impose the limit."
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "Determines whether the config should be present or not on the device."
+    }, 
+    "timers_holdtime": {
+      "type": "Optional[String]", 
+      "description": "Specify holdtime timer value. Valid values are integers between 0 and 3600 in terms of seconds, or 'default', which is 180."
+    }, 
+    "provider": {
+      "type": "Optional[String]", 
+      "description": "Convenience method that allows all I(nxos) arguments to be passed as a dict object.  All constraints (required, choices, etc) must be met either by individual arguments or values in this dict."
+    }, 
+    "update_source": {
+      "type": "Optional[String]", 
+      "description": "Specify source interface of BGP session and updates."
+    }, 
+    "description": {
+      "type": "Optional[String]", 
+      "description": "Description of the neighbor."
+    }, 
+    "local_as": {
+      "type": "Optional[String]", 
+      "description": "Specify the local-as number for the eBGP neighbor. Valid values are String or Integer in ASPLAIN or ASDOT notation, or 'default', which means not to configure it."
+    }, 
+    "timers_keepalive": {
+      "type": "Optional[String]", 
+      "description": "Specify keepalive timer value. Valid values are integers between 0 and 3600 in terms of seconds, or 'default', which is 60."
+    }, 
+    "host": {
+      "type": "String", 
+      "description": "Specifies the DNS host name or address for connecting to the remote device over the specified transport.  The value of host is used as the destination address for the transport."
+    }, 
+    "vrf": {
+      "type": "Optional[String]", 
+      "description": "Name of the VRF. The name 'default' is a valid VRF representing the global bgp."
+    }, 
+    "log_neighbor_changes": {
+      "type": "Optional[String]", 
+      "description": "Specify whether or not to enable log messages for neighbor up/down event."
+    }, 
+    "password": {
+      "type": "Optional[String]", 
+      "description": "Specifies the password to use to authenticate the connection to the remote device.  This is a common argument used for either I(cli) or I(nxapi) transports. If the value is not specified in the task, the value of environment variable C(ANSIBLE_NET_PASSWORD) will be used instead."
+    }, 
+    "asn": {
+      "type": "String", 
+      "description": "BGP autonomous system number. Valid values are string, Integer in ASPLAIN or ASDOT notation."
+    }, 
+    "suppress_4_byte_as": {
+      "type": "Optional[String]", 
+      "description": "Configure to suppress 4-byte AS Capability."
+    }, 
+    "ssh_keyfile": {
+      "type": "Optional[String]", 
+      "description": "Specifies the SSH key to use to authenticate the connection to the remote device.  This argument is only used for the I(cli) transport. If the value is not specified in the task, the value of environment variable C(ANSIBLE_NET_SSH_KEYFILE) will be used instead."
+    }, 
+    "pwd": {
+      "type": "Optional[String]", 
+      "description": "Specify the password for neighbor. Valid value is string."
+    }, 
+    "transport_passive_only": {
+      "type": "Optional[String]", 
+      "description": "Specify whether or not to only allow passive connection setup. Valid values are 'true', 'false', and 'default', which defaults to 'false'. This property can only be configured when the neighbor is in 'ip' address format without prefix length. This property and the transport_passive_mode property are mutually exclusive."
+    }, 
+    "capability_negotiation": {
+      "type": "Optional[String]", 
+      "description": "Configure whether or not to negotiate capability with this neighbor."
+    }, 
+    "neighbor": {
+      "type": "String", 
+      "description": "Neighbor Identifier. Valid values are string. Neighbors may use IPv4 or IPv6 notation, with or without prefix length."
+    }, 
+    "validate_certs": {
+      "type": "Optional[String]", 
+      "description": "If C(no), SSL certificates will not be validated. This should only be used on personally controlled sites using self-signed certificates.  If the transport argument is not nxapi, this value is ignored."
+    }
+  }
+}

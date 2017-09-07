@@ -1,0 +1,69 @@
+{
+  "description": "Manage S3 buckets in AWS, Ceph, Walrus and FakeS3", 
+  "parameters": {
+    "profile": {
+      "type": "Optional[String]", 
+      "description": "Uses a boto profile. Only works with boto >= 2.24.0."
+    }, 
+    "aws_secret_key": {
+      "type": "Optional[String]", 
+      "description": "AWS secret key. If not set then the value of the AWS_SECRET_ACCESS_KEY, AWS_SECRET_KEY, or EC2_SECRET_KEY environment variable is used."
+    }, 
+    "aws_access_key": {
+      "type": "Optional[String]", 
+      "description": "AWS access key. If not set then the value of the AWS_ACCESS_KEY_ID, AWS_ACCESS_KEY or EC2_ACCESS_KEY environment variable is used."
+    }, 
+    "force": {
+      "type": "Optional[String]", 
+      "description": "When trying to delete a bucket, delete all keys in the bucket first (an s3 bucket must be empty for a successful deletion)"
+    }, 
+    "name": {
+      "type": "String", 
+      "description": "Name of the s3 bucket"
+    }, 
+    "security_token": {
+      "type": "Optional[String]", 
+      "description": "AWS STS security token. If not set then the value of the AWS_SECURITY_TOKEN or EC2_SECURITY_TOKEN environment variable is used."
+    }, 
+    "tags": {
+      "type": "Optional[String]", 
+      "description": "tags dict to apply to bucket"
+    }, 
+    "region": {
+      "type": "Optional[String]", 
+      "description": "The AWS region to use. If not specified then the value of the AWS_REGION or EC2_REGION environment variable, if any, is used. See U(http://docs.aws.amazon.com/general/latest/gr/rande.html#ec2_region)"
+    }, 
+    "ceph": {
+      "type": "Optional[String]", 
+      "description": "Enable API compatibility with Ceph. It takes into account the S3 API subset working with Ceph in order to provide the same module behaviour where possible."
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "Create or remove the s3 bucket"
+    }, 
+    "ec2_url": {
+      "type": "Optional[String]", 
+      "description": "Url to use to connect to EC2 or your Eucalyptus cloud (by default the module will use EC2 endpoints). Ignored for modules where region is required. Must be specified for all other modules if region is not used. If not set then the value of the EC2_URL environment variable, if any, is used."
+    }, 
+    "policy": {
+      "type": "Optional[String]", 
+      "description": "The JSON policy as a string."
+    }, 
+    "requester_pays": {
+      "type": "Optional[String]", 
+      "description": "With Requester Pays buckets, the requester instead of the bucket owner pays the cost of the request and the data download from the bucket."
+    }, 
+    "validate_certs": {
+      "type": "Optional[String]", 
+      "description": "When set to \"no\", SSL certificates will not be validated for boto versions >= 2.6.0."
+    }, 
+    "s3_url": {
+      "type": "Optional[String]", 
+      "description": "S3 URL endpoint for usage with Ceph, Eucalypus, fakes3, etc. Otherwise assumes AWS"
+    }, 
+    "versioning": {
+      "type": "Optional[String]", 
+      "description": "Whether versioning is enabled or disabled (note that once versioning is enabled, it can only be suspended)"
+    }
+  }
+}

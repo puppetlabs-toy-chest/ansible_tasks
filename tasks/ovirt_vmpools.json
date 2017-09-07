@@ -1,0 +1,65 @@
+{
+  "description": "Module to manage VM pools in oVirt/RHV", 
+  "parameters": {
+    "name": {
+      "type": "String", 
+      "description": "Name of the VM pool to manage."
+    }, 
+    "wait": {
+      "type": "Optional[String]", 
+      "description": "I(True) if the module should wait for the entity to get into desired state."
+    }, 
+    "poll_interval": {
+      "type": "Optional[String]", 
+      "description": "Number of the seconds the module waits until another poll request on entity status is sent."
+    }, 
+    "fetch_nested": {
+      "type": "Optional[String]", 
+      "description": "If I(True) the module will fetch additional data from the API. It will fetch IDs of the VMs disks, snapshots, etc. User can configure to fetch other attributes of the nested entities by specifying C(nested_attributes)."
+    }, 
+    "nested_attributes": {
+      "type": "Optional[String]", 
+      "description": "Specifies list of the attributes which should be fetched from the API. This parameter apply only when C(fetch_nested) is I(true)."
+    }, 
+    "vm_per_user": {
+      "type": "Optional[String]", 
+      "description": "Maximum number of VMs a single user can attach to from this pool. Default value is set by engine."
+    }, 
+    "cluster": {
+      "type": "Optional[String]", 
+      "description": "Name of the cluster, where VM pool should be created."
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "Should the VM pool be present/absent. Note that when C(state) is I(absent) all VMs in VM pool are stopped and removed."
+    }, 
+    "prestarted": {
+      "type": "Optional[String]", 
+      "description": "Number of pre-started VMs defines the number of VMs in run state, that are waiting to be attached to Users. Default value is set by engine."
+    }, 
+    "auth": {
+      "type": "String", 
+      "description": "Dictionary with values needed to create HTTP/HTTPS connection to oVirt: C(username)[I(required)] - The name of the user, something like I(admin@internal). Default value is set by I(OVIRT_USERNAME) environment variable. C(password)[I(required)] - The password of the user. Default value is set by I(OVIRT_PASSWORD) environment variable. C(url)[I(required)] - A string containing the base URL of the server, usually something like `I(https://server.example.com/ovirt-engine/api)`. Default value is set by I(OVIRT_URL) environment variable. C(token) - Token to be used instead of login with username/password. Default value is set by I(OVIRT_TOKEN) environment variable. C(insecure) - A boolean flag that indicates if the server TLS certificate and host name should be checked. C(ca_file) - A PEM file containing the trusted CA certificates. The certificate presented by the server will be verified using these CA certificates. If `C(ca_file)` parameter is not set, system wide CA certificate store is used. Default value is set by I(OVIRT_CAFILE) environment variable. C(kerberos) - A boolean flag indicating if Kerberos authentication should be used instead of the default basic authentication."
+    }, 
+    "timeout": {
+      "type": "Optional[String]", 
+      "description": "The amount of time in seconds the module should wait for the instance to get into desired state."
+    }, 
+    "template": {
+      "type": "Optional[String]", 
+      "description": "Name of the template, which will be used to create VM pool."
+    }, 
+    "vm_count": {
+      "type": "Optional[String]", 
+      "description": "Number of VMs in the pool. Default value is set by engine."
+    }, 
+    "type": {
+      "type": "Optional[String]", 
+      "description": "Type of the VM pool. Either manual or automatic. C(manual) - The administrator is responsible for explicitly returning the virtual machine to the pool. The virtual machine reverts to the original base image after the administrator returns it to the pool. C(Automatic) - When the virtual machine is shut down, it automatically reverts to its base image and is returned to the virtual machine pool. Default value is set by engine."
+    }, 
+    "description": {
+      "type": "Optional[String]", 
+      "description": "Description of the VM pool."
+    }
+  }
+}

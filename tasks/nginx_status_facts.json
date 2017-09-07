@@ -1,0 +1,13 @@
+{
+  "description": "Retrieve nginx status facts.", 
+  "parameters": {
+    "url": {
+      "type": "String", 
+      "description": "URL of the nginx status."
+    }, 
+    "timeout": {
+      "type": "Optional[String]", 
+      "description": "HTTP connection timeout in seconds."
+    }
+  }
+}

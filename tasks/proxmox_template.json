@@ -1,0 +1,53 @@
+{
+  "description": "management of OS templates in Proxmox VE cluster", 
+  "parameters": {
+    "node": {
+      "type": "String", 
+      "description": "Proxmox VE node, when you will operate with template"
+    }, 
+    "src": {
+      "type": "Optional[String]", 
+      "description": "path to uploaded file required only for C(state=present)"
+    }, 
+    "force": {
+      "type": "Optional[Boolean]", 
+      "description": "can be used only with C(state=present), exists template will be overwritten"
+    }, 
+    "api_host": {
+      "type": "String", 
+      "description": "the host of the Proxmox VE cluster"
+    }, 
+    "api_user": {
+      "type": "String", 
+      "description": "the user to authenticate with"
+    }, 
+    "storage": {
+      "type": "Optional[String]", 
+      "description": "target storage"
+    }, 
+    "api_password": {
+      "type": "Optional[String]", 
+      "description": "the password to authenticate with you can use PROXMOX_PASSWORD environment variable"
+    }, 
+    "timeout": {
+      "type": "Optional[String]", 
+      "description": "timeout for operations"
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "Indicate desired state of the template"
+    }, 
+    "content_type": {
+      "type": "Optional[String]", 
+      "description": "content type required only for C(state=present)"
+    }, 
+    "validate_certs": {
+      "type": "Optional[Boolean]", 
+      "description": "enable / disable https certificate verification"
+    }, 
+    "template": {
+      "type": "Optional[String]", 
+      "description": "the template name required only for states C(absent), C(info)"
+    }
+  }
+}

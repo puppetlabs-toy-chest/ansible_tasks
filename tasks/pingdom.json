@@ -1,0 +1,25 @@
+{
+  "description": "Pause/unpause Pingdom alerts", 
+  "parameters": {
+    "checkid": {
+      "type": "String", 
+      "description": "Pingdom ID of the check."
+    }, 
+    "passwd": {
+      "type": "String", 
+      "description": "Pingdom user password."
+    }, 
+    "state": {
+      "type": "String", 
+      "description": "Define whether or not the check should be running or paused."
+    }, 
+    "uid": {
+      "type": "String", 
+      "description": "Pingdom user ID."
+    }, 
+    "key": {
+      "type": "String", 
+      "description": "Pingdom API key."
+    }
+  }
+}

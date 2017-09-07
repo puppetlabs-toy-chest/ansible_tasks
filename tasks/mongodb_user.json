@@ -1,0 +1,61 @@
+{
+  "description": "Adds or removes a user from a MongoDB database.", 
+  "parameters": {
+    "login_port": {
+      "type": "Optional[String]", 
+      "description": "The port to connect to"
+    }, 
+    "update_password": {
+      "type": "Optional[String]", 
+      "description": "C(always) will update passwords if they differ.  C(on_create) will only set the password for newly created users."
+    }, 
+    "name": {
+      "type": "String", 
+      "description": "The name of the user to add or remove"
+    }, 
+    "roles": {
+      "type": "Optional[String]", 
+      "description": "The database user roles valid values could either be one or more of the following strings: 'read', 'readWrite', 'dbAdmin', 'userAdmin', 'clusterAdmin', 'readAnyDatabase', 'readWriteAnyDatabase', 'userAdminAnyDatabase', 'dbAdminAnyDatabase'\n Or the following dictionary '{ db: DATABASE_NAME, role: ROLE_NAME }'. This param requires pymongo 2.5+. If it is a string, mongodb 2.4+ is also required. If it is a dictionary, mongo 2.6+  is required."
+    }, 
+    "database": {
+      "type": "String", 
+      "description": "The name of the database to add/remove the user from"
+    }, 
+    "login_user": {
+      "type": "Optional[String]", 
+      "description": "The username used to authenticate with"
+    }, 
+    "login_host": {
+      "type": "Optional[String]", 
+      "description": "The host running the database"
+    }, 
+    "login_password": {
+      "type": "Optional[String]", 
+      "description": "The password used to authenticate with"
+    }, 
+    "ssl_cert_reqs": {
+      "type": "Optional[String]", 
+      "description": "Specifies whether a certificate is required from the other side of the connection, and whether it will be validated if provided."
+    }, 
+    "ssl": {
+      "type": "Optional[String]", 
+      "description": "Whether to use an SSL connection when connecting to the database"
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "The database user state"
+    }, 
+    "login_database": {
+      "type": "Optional[String]", 
+      "description": "The database where login credentials are stored"
+    }, 
+    "password": {
+      "type": "Optional[String]", 
+      "description": "The password to use for the user"
+    }, 
+    "replica_set": {
+      "type": "Optional[String]", 
+      "description": "Replica set to connect to (automatically connects to primary for writes)"
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "description": "Dpkg package selection selections", 
+  "parameters": {
+    "selection": {
+      "type": "String", 
+      "description": "The selection state to set the package to."
+    }, 
+    "name": {
+      "type": "String", 
+      "description": "Name of the package"
+    }
+  }
+}

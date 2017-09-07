@@ -1,0 +1,81 @@
+{
+  "description": "Manage OpenSwitch configuration using CLI", 
+  "parameters": {
+    "username": {
+      "type": "Optional[String]", 
+      "description": "Configures the username to use to authenticate the connection to the remote device.  This value is used to authenticate either the CLI login or the eAPI authentication depending on which transport is used. Note this argument does not affect the SSH transport. If the value is not specified in the task, the value of environment variable C(ANSIBLE_NET_USERNAME) will be used instead."
+    }, 
+    "src": {
+      "type": "Optional[String]", 
+      "description": "The I(src) argument provides a path to the configuration file to load into the remote system.  The path can either be a full system path to the configuration file if the value starts with / or relative to the root of the implemented role or playbook. This argument is mutually exclusive with the I(lines) and I(parents) arguments."
+    }, 
+    "password": {
+      "type": "Optional[String]", 
+      "description": "Specifies the password to use to authenticate the connection to the remote device.  This is a common argument used for either I(cli) or I(rest) transports.  Note this argument does not affect the SSH transport. If the value is not specified in the task, the value of environment variable C(ANSIBLE_NET_PASSWORD) will be used instead."
+    }, 
+    "ssh_keyfile": {
+      "type": "Optional[String]", 
+      "description": "Specifies the SSH key to use to authenticate the connection to the remote device.  This argument is only used for the I(cli) transports. If the value is not specified in the task, the value of environment variable C(ANSIBLE_NET_SSH_KEYFILE) will be used instead."
+    }, 
+    "force": {
+      "type": "Optional[String]", 
+      "description": "The force argument instructs the module to not consider the current devices running-config.  When set to true, this will cause the module to push the contents of I(src) into the device without first checking if already configured. Note this argument should be considered deprecated.  To achieve the equivalent, set the C(match=none) which is idempotent.  This argument will be removed in a future release."
+    }, 
+    "after": {
+      "type": "Optional[String]", 
+      "description": "The ordered set of commands to append to the end of the command stack if a change needs to be made.  Just like with I(before) this allows the playbook designer to append a set of commands to be executed after the command set."
+    }, 
+    "lines": {
+      "type": "Optional[String]", 
+      "description": "The ordered set of commands that should be configured in the section.  The commands must be the exact same commands as found in the device running-config.  Be sure to note the configuration command syntax as some commands are automatically modified by the device config parser."
+    }, 
+    "replace": {
+      "type": "Optional[String]", 
+      "description": "Instructs the module on the way to perform the configuration on the device.  If the replace argument is set to I(line) then the modified lines are pushed to the device in configuration mode.  If the replace argument is set to I(block) then the entire command block is pushed to the device in configuration mode if any line is not correct."
+    }, 
+    "host": {
+      "type": "String", 
+      "description": "Specifies the DNS host name or address for connecting to the remote device over the specified transport.  The value of host is used as the destination address for the transport.  Note this argument does not affect the SSH argument."
+    }, 
+    "parents": {
+      "type": "Optional[String]", 
+      "description": "The ordered set of parents that uniquely identify the section the commands should be checked against.  If the parents argument is omitted, the commands are checked against the set of top level or global commands."
+    }, 
+    "transport": {
+      "type": "String", 
+      "description": "Configures the transport connection to use when connecting to the remote device.  The transport argument supports connectivity to the device over ssh, cli or REST."
+    }, 
+    "timeout": {
+      "type": "Optional[String]", 
+      "description": "Specifies the timeout in seconds for communicating with the network device for either connecting or sending commands.  If the timeout is exceeded before the operation is completed, the module will error."
+    }, 
+    "provider": {
+      "type": "Optional[String]", 
+      "description": "Convenience method that allows all I(openswitch) arguments to be passed as a dict object.  All constraints (required, choices, etc) must be met either by individual arguments or values in this dict."
+    }, 
+    "use_ssl": {
+      "type": "Optional[String]", 
+      "description": "Configures the I(transport) to use SSL if set to true only when the I(transport) argument is configured as rest.  If the transport argument is not I(rest), this value is ignored."
+    }, 
+    "save": {
+      "type": "Optional[String]", 
+      "description": "The C(save) argument instructs the module to save the running- config to the startup-config at the conclusion of the module running.  If check mode is specified, this argument is ignored."
+    }, 
+    "config": {
+      "type": "Optional[String]", 
+      "description": "The module, by default, will connect to the remote device and retrieve the current running-config to use as a base for comparing against the contents of source.  There are times when it is not desirable to have the task get the current running-config for every task in a playbook.  The I(config) argument allows the implementer to pass in the configuration to use as the base config for comparison."
+    }, 
+    "port": {
+      "type": "Optional[String]", 
+      "description": "Specifies the port to use when building the connection to the remote device.  This value applies to either I(cli) or I(rest).  The port value will default to the appropriate transport common port if none is provided in the task.  (cli=22, http=80, https=443).  Note this argument does not affect the SSH transport."
+    }, 
+    "match": {
+      "type": "Optional[String]", 
+      "description": "Instructs the module on the way to perform the matching of the set of commands against the current device config.  If match is set to I(line), commands are matched line by line.  If match is set to I(strict), command lines are matched with respect to position.  If match is set to I(exact), command lines must be an equal match.  Finally, if match is set to I(none), the module will not attempt to compare the source configuration with the running configuration on the remote device."
+    }, 
+    "before": {
+      "type": "Optional[String]", 
+      "description": "The ordered set of commands to push on to the command stack if a change needs to be made.  This allows the playbook designer the opportunity to perform configuration commands prior to pushing any changes without affecting how the set of commands are matched against the system."
+    }
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "description": "Send a message to Hipchat.", 
+  "parameters": {
+    "from": {
+      "type": "Optional[String]", 
+      "description": "Name the message will appear to be sent from. Max length is 15 characters - above this it will be truncated."
+    }, 
+    "room": {
+      "type": "String", 
+      "description": "ID or name of the room."
+    }, 
+    "color": {
+      "type": "Optional[String]", 
+      "description": "Background color for the message."
+    }, 
+    "msg_format": {
+      "type": "Optional[String]", 
+      "description": "Message format."
+    }, 
+    "token": {
+      "type": "String", 
+      "description": "API token."
+    }, 
+    "api": {
+      "type": "Optional[String]", 
+      "description": "API url if using a self-hosted hipchat server. For Hipchat API version 2 use the default URI with C(/v2) instead of C(/v1)."
+    }, 
+    "notify": {
+      "type": "Optional[String]", 
+      "description": "If true, a notification will be triggered for users in the room."
+    }, 
+    "msg": {
+      "type": "String", 
+      "description": "The message body."
+    }, 
+    "validate_certs": {
+      "type": "Optional[String]", 
+      "description": "If C(no), SSL certificates will not be validated. This should only be used on personally controlled sites using self-signed certificates."
+    }
+  }
+}

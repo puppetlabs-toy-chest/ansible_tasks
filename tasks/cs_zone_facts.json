@@ -1,0 +1,33 @@
+{
+  "description": "Gathering facts of zones from Apache CloudStack based clouds.", 
+  "parameters": {
+    "api_url": {
+      "type": "Optional[String]", 
+      "description": "URL of the CloudStack API e.g. https://cloud.example.com/client/api."
+    }, 
+    "api_http_method": {
+      "type": "Optional[String]", 
+      "description": "HTTP method used."
+    }, 
+    "api_secret": {
+      "type": "Optional[String]", 
+      "description": "Secret key of the CloudStack API."
+    }, 
+    "api_timeout": {
+      "type": "Optional[String]", 
+      "description": "HTTP timeout."
+    }, 
+    "api_region": {
+      "type": "Optional[String]", 
+      "description": "Name of the ini section in the C(cloustack.ini) file."
+    }, 
+    "api_key": {
+      "type": "Optional[String]", 
+      "description": "API key of the CloudStack API."
+    }, 
+    "name": {
+      "type": "String", 
+      "description": "Name of the zone."
+    }
+  }
+}

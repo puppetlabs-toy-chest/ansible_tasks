@@ -1,0 +1,173 @@
+{
+  "description": "Module to manage clusters in oVirt/RHV", 
+  "parameters": {
+    "comment": {
+      "type": "Optional[String]", 
+      "description": "Comment of the cluster."
+    }, 
+    "ha_reservation": {
+      "type": "Optional[String]", 
+      "description": "If I(True) enable the oVirt/RHV to monitor cluster capacity for highly available virtual machines."
+    }, 
+    "fence_skip_if_connectivity_broken": {
+      "type": "Optional[String]", 
+      "description": "If I(True) fencing will be temporarily disabled if the percentage of hosts in the cluster that are experiencing connectivity issues is greater than or equal to the defined threshold. The threshold can be specified by C(fence_connectivity_threshold)."
+    }, 
+    "virt": {
+      "type": "Optional[String]", 
+      "description": "If I(True), hosts in this cluster will be used to run virtual machines."
+    }, 
+    "threads_as_cores": {
+      "type": "Optional[String]", 
+      "description": "If I(True) the exposed host threads would be treated as cores which can be utilized by virtual machines."
+    }, 
+    "gluster": {
+      "type": "Optional[String]", 
+      "description": "If I(True), hosts in this cluster will be used as Gluster Storage server nodes, and not for running virtual machines. By default the cluster is created for virtual machine hosts."
+    }, 
+    "vm_reason": {
+      "type": "Optional[String]", 
+      "description": "If I(True) enable an optional reason field when a virtual machine is shut down from the Manager, allowing the administrator to provide an explanation for the maintenance."
+    }, 
+    "fetch_nested": {
+      "type": "Optional[String]", 
+      "description": "If I(True) the module will fetch additional data from the API. It will fetch IDs of the VMs disks, snapshots, etc. User can configure to fetch other attributes of the nested entities by specifying C(nested_attributes)."
+    }, 
+    "migration_bandwidth_limit": {
+      "type": "Optional[String]", 
+      "description": "Set the I(custom) migration bandwidth limit. This parameter is used only when C(migration_bandwidth) is I(custom)."
+    }, 
+    "switch_type": {
+      "type": "Optional[String]", 
+      "description": "Type of switch to be used by all networks in given cluster. Either I(legacy) which is using linux brigde or I(ovs) using Open vSwitch."
+    }, 
+    "data_center": {
+      "type": "Optional[String]", 
+      "description": "Datacenter name where cluster reside."
+    }, 
+    "ksm_numa": {
+      "type": "Optional[String]", 
+      "description": "If I(True) enables KSM C(ksm) for best berformance inside NUMA nodes."
+    }, 
+    "description": {
+      "type": "Optional[String]", 
+      "description": "Description of the cluster."
+    }, 
+    "cpu_arch": {
+      "type": "Optional[String]", 
+      "description": "CPU architecture of cluster."
+    }, 
+    "rng_sources": {
+      "type": "Optional[String]", 
+      "description": "List that specify the random number generator devices that all hosts in the cluster will use. Supported generators are: I(hwrng) and I(random)."
+    }, 
+    "network": {
+      "type": "Optional[String]", 
+      "description": "Management network of cluster to access cluster hosts."
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "Should the cluster be present or absent"
+    }, 
+    "ksm": {
+      "type": "Optional[String]", 
+      "description": "I I(True) MoM enables to run Kernel Same-page Merging I(KSM) when necessary and when it can yield a memory saving benefit that outweighs its CPU cost."
+    }, 
+    "migration_compressed": {
+      "type": "Optional[String]", 
+      "description": "If I(True) compression is used during live migration of the virtual machine. Used only when C(migration_policy) is set to I(legacy). Following options are supported: C(true) - Override the global setting to I(true). C(false) - Override the global setting to I(false). C(inherit) - Use value which is set globally."
+    }, 
+    "ballooning": {
+      "type": "Optional[String]", 
+      "description": "If I(True) enable memory balloon optimization. Memory balloon is used to re-distribute / reclaim the host memory based on VM needs in a dynamic way."
+    }, 
+    "migration_auto_converge": {
+      "type": "Optional[String]", 
+      "description": "If I(True) auto-convergence is used during live migration of virtual machines. Used only when C(migration_policy) is set to I(legacy). Following options are supported: C(true) - Override the global setting to I(true). C(false) - Override the global setting to I(false). C(inherit) - Use value which is set globally."
+    }, 
+    "fence_enabled": {
+      "type": "Optional[String]", 
+      "description": "If I(True) enables fencing on the cluster. Fencing is enabled by default."
+    }, 
+    "migration_policy": {
+      "type": "Optional[String]", 
+      "description": "A migration policy defines the conditions for live migrating virtual machines in the event of host failure. Following policies are supported: C(legacy) - Legacy behavior of 3.6 version. C(minimal_downtime) - Virtual machines should not experience any significant downtime. C(suspend_workload) - Virtual machines may experience a more significant downtime. C(post_copy) - Virtual machines should not experience any significant downtime. If the VM migration is not converging for a long time, the migration will be switched to post-copy. Added in version I(2.4)."
+    }, 
+    "nested_attributes": {
+      "type": "Optional[String]", 
+      "description": "Specifies list of the attributes which should be fetched from the API. This parameter apply only when C(fetch_nested) is I(true)."
+    }, 
+    "resilience_policy": {
+      "type": "Optional[String]", 
+      "description": "The resilience policy defines how the virtual machines are prioritized in the migration. Following values are supported: C(do_not_migrate) -  Prevents virtual machines from being migrated.  C(migrate) - Migrates all virtual machines in order of their defined priority. C(migrate_highly_available) - Migrates only highly available virtual machines to prevent overloading other hosts."
+    }, 
+    "fence_connectivity_threshold": {
+      "type": "Optional[String]", 
+      "description": "The threshold used by C(fence_skip_if_connectivity_broken)."
+    }, 
+    "spice_proxy": {
+      "type": "Optional[String]", 
+      "description": "The proxy by which the SPICE client will connect to virtual machines. The address must be in the following format: I(protocol://[host]:[port])"
+    }, 
+    "auth": {
+      "type": "String", 
+      "description": "Dictionary with values needed to create HTTP/HTTPS connection to oVirt: C(username)[I(required)] - The name of the user, something like I(admin@internal). Default value is set by I(OVIRT_USERNAME) environment variable. C(password)[I(required)] - The password of the user. Default value is set by I(OVIRT_PASSWORD) environment variable. C(url)[I(required)] - A string containing the base URL of the server, usually something like `I(https://server.example.com/ovirt-engine/api)`. Default value is set by I(OVIRT_URL) environment variable. C(token) - Token to be used instead of login with username/password. Default value is set by I(OVIRT_TOKEN) environment variable. C(insecure) - A boolean flag that indicates if the server TLS certificate and host name should be checked. C(ca_file) - A PEM file containing the trusted CA certificates. The certificate presented by the server will be verified using these CA certificates. If `C(ca_file)` parameter is not set, system wide CA certificate store is used. Default value is set by I(OVIRT_CAFILE) environment variable. C(kerberos) - A boolean flag indicating if Kerberos authentication should be used instead of the default basic authentication."
+    }, 
+    "memory_policy": {
+      "type": "Optional[String]", 
+      "description": "I(disabled) - Disables memory page sharing. I(server) - Sets the memory page sharing threshold to 150% of the system memory on each host. I(desktop) - Sets the memory page sharing threshold to 200% of the system memory on each host."
+    }, 
+    "migration_bandwidth": {
+      "type": "Optional[String]", 
+      "description": "The bandwidth settings define the maximum bandwidth of both outgoing and incoming migrations per host. Following bandwidth options are supported: C(auto) - Bandwidth is copied from the I(rate limit) [Mbps] setting in the data center host network QoS. C(hypervisor_default) - Bandwidth is controlled by local VDSM setting on sending host. C(custom) - Defined by user (in Mbps)."
+    }, 
+    "fence_skip_if_sd_active": {
+      "type": "Optional[String]", 
+      "description": "If I(True) any hosts in the cluster that are Non Responsive and still connected to storage will not be fenced."
+    }, 
+    "scheduling_policy": {
+      "type": "Optional[String]", 
+      "description": "Name of the scheduling policy to be used for cluster."
+    }, 
+    "wait": {
+      "type": "Optional[String]", 
+      "description": "I(True) if the module should wait for the entity to get into desired state."
+    }, 
+    "compatibility_version": {
+      "type": "Optional[String]", 
+      "description": "The compatibility version of the cluster. All hosts in this cluster must support at least this compatibility version."
+    }, 
+    "serial_policy_value": {
+      "type": "Optional[String]", 
+      "description": "Allows you to specify a custom serial number. This parameter is used only when C(serial_policy) is I(custom)."
+    }, 
+    "name": {
+      "type": "String", 
+      "description": "Name of the cluster to manage."
+    }, 
+    "host_reason": {
+      "type": "Optional[String]", 
+      "description": "If I(True) enable an optional reason field when a host is placed into maintenance mode from the Manager, allowing the administrator to provide an explanation for the maintenance."
+    }, 
+    "poll_interval": {
+      "type": "Optional[String]", 
+      "description": "Number of the seconds the module waits until another poll request on entity status is sent."
+    }, 
+    "cpu_type": {
+      "type": "Optional[String]", 
+      "description": "CPU codename. For example I(Intel SandyBridge Family)."
+    }, 
+    "timeout": {
+      "type": "Optional[String]", 
+      "description": "The amount of time in seconds the module should wait for the instance to get into desired state."
+    }, 
+    "serial_policy": {
+      "type": "Optional[String]", 
+      "description": "Specify a serial number policy for the virtual machines in the cluster. Following options are supported: C(vm) - Sets the virtual machine's UUID as its serial number. C(host) - Sets the host's UUID as the virtual machine's serial number. C(custom) - Allows you to specify a custom serial number in C(serial_policy_value)."
+    }, 
+    "trusted_service": {
+      "type": "Optional[String]", 
+      "description": "If (True) enable integration with an OpenAttestation server."
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "description": "Add or remove a website on a Webfaction host", 
+  "parameters": {
+    "name": {
+      "type": "String", 
+      "description": "The name of the website"
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "Whether the website should exist"
+    }, 
+    "subdomains": {
+      "type": "Optional[String]", 
+      "description": "A list of subdomains associated with this site."
+    }, 
+    "host": {
+      "type": "String", 
+      "description": "The webfaction host on which the site should be created."
+    }, 
+    "https": {
+      "type": "Optional[String]", 
+      "description": "Whether or not to use HTTPS"
+    }, 
+    "login_password": {
+      "type": "String", 
+      "description": "The webfaction password to use"
+    }, 
+    "login_name": {
+      "type": "String", 
+      "description": "The webfaction account to use"
+    }, 
+    "site_apps": {
+      "type": "Optional[String]", 
+      "description": "A mapping of URLs to apps"
+    }
+  }
+}

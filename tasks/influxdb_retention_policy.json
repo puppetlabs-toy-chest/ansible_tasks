@@ -1,0 +1,41 @@
+{
+  "description": "Manage InfluxDB retention policies", 
+  "parameters": {
+    "username": {
+      "type": "Optional[String]", 
+      "description": "Username that will be used to authenticate against InfluxDB server"
+    }, 
+    "default": {
+      "type": "String", 
+      "description": "Sets the retention policy as default retention policy"
+    }, 
+    "database_name": {
+      "type": "String", 
+      "description": "Name of the database where retention policy will be created"
+    }, 
+    "hostname": {
+      "type": "String", 
+      "description": "The hostname or IP address on which InfluxDB server is listening"
+    }, 
+    "policy_name": {
+      "type": "String", 
+      "description": "Name of the retention policy"
+    }, 
+    "replication": {
+      "type": "String", 
+      "description": "Determines how many independent copies of each point are stored in the cluster"
+    }, 
+    "duration": {
+      "type": "String", 
+      "description": "Determines how long InfluxDB should keep the data"
+    }, 
+    "password": {
+      "type": "Optional[String]", 
+      "description": "Password that will be used to authenticate against InfluxDB server"
+    }, 
+    "port": {
+      "type": "Optional[String]", 
+      "description": "The port on which InfluxDB server is listening"
+    }
+  }
+}

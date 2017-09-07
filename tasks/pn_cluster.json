@@ -1,0 +1,37 @@
+{
+  "description": "CLI command to create/delete a cluster.", 
+  "parameters": {
+    "pn_name": {
+      "type": "String", 
+      "description": "Specify the name of the cluster."
+    }, 
+    "pn_clipassword": {
+      "type": "Optional[String]", 
+      "description": "Provide login password if user is not root."
+    }, 
+    "pn_cliusername": {
+      "type": "Optional[String]", 
+      "description": "Provide login username if user is not root."
+    }, 
+    "pn_validate": {
+      "type": "Optional[String]", 
+      "description": "Validate the inter-switch links and state of switches in the cluster."
+    }, 
+    "state": {
+      "type": "String", 
+      "description": "Specify action to perform. Use 'present' to create cluster and 'absent' to delete cluster."
+    }, 
+    "pn_cliswitch": {
+      "type": "Optional[String]", 
+      "description": "Target switch to run the cli on."
+    }, 
+    "pn_cluster_node1": {
+      "type": "Optional[String]", 
+      "description": "Specify the name of the first switch in the cluster. Required for 'cluster-create'."
+    }, 
+    "pn_cluster_node2": {
+      "type": "Optional[String]", 
+      "description": "Specify the name of the second switch in the cluster. Required for 'cluster-create'."
+    }
+  }
+}

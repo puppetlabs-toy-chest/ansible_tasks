@@ -1,0 +1,85 @@
+{
+  "description": "Module for setup of Gslb Avi RESTful Object", 
+  "parameters": {
+    "username": {
+      "type": "Optional[String]", 
+      "description": "Username used for accessing Avi controller. The default value is the environment variable C(AVI_USERNAME)."
+    }, 
+    "api_version": {
+      "type": "Optional[String]", 
+      "description": "Avi API version of to use for Avi API and objects."
+    }, 
+    "description": {
+      "type": "Optional[String]", 
+      "description": "User defined description for the object."
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "The state that should be applied on the entity."
+    }, 
+    "url": {
+      "type": "Optional[String]", 
+      "description": "Avi controller URL of the object."
+    }, 
+    "view_id": {
+      "type": "Optional[String]", 
+      "description": "The view-id is used in maintenance mode to differentiate partitioned groups while they havethe same gslb namespace. Each partitioned groupwill be able to operate independently by using theview-id. Default value when not specified in API or module is interpreted by Avi Controller as 0."
+    }, 
+    "tenant_ref": {
+      "type": "Optional[String]", 
+      "description": "It is a reference to an object of type tenant."
+    }, 
+    "uuid": {
+      "type": "Optional[String]", 
+      "description": "Uuid of the gslb object."
+    }, 
+    "sites": {
+      "type": "Optional[String]", 
+      "description": "Select avi site member belonging to this gslb."
+    }, 
+    "controller": {
+      "type": "Optional[String]", 
+      "description": "IP address or hostname of the controller. The default value is the environment variable C(AVI_CONTROLLER)."
+    }, 
+    "send_interval": {
+      "type": "Optional[String]", 
+      "description": "Frequency with which group members communicate. Allowed values are 1-3600. Default value when not specified in API or module is interpreted by Avi Controller as 15."
+    }, 
+    "clear_on_max_retries": {
+      "type": "Optional[String]", 
+      "description": "Max retries after which the remote site is treatedas a fresh start. In fresh start all the configsare downloaded. Allowed values are 1-1024. Default value when not specified in API or module is interpreted by Avi Controller as 20."
+    }, 
+    "dns_configs": {
+      "type": "Optional[String]", 
+      "description": "Sub domain configuration for the gslb. Gslb service's fqdn must be a match one of these subdomains."
+    }, 
+    "leader_cluster_uuid": {
+      "type": "Optional[String]", 
+      "description": "Mark this site as leader of gslb configuration. This site is the one among the avi sites."
+    }, 
+    "tenant_uuid": {
+      "type": "Optional[String]", 
+      "description": "UUID of tenant used for all Avi API calls and context of object."
+    }, 
+    "password": {
+      "type": "Optional[String]", 
+      "description": "Password of Avi user in Avi controller. The default value is the environment variable C(AVI_PASSWORD)."
+    }, 
+    "client_ip_addr_group": {
+      "type": "Optional[String]", 
+      "description": "Group to specify if the client ip addresses are public or private. Field introduced in 17.1.2."
+    }, 
+    "third_party_sites": {
+      "type": "Optional[String]", 
+      "description": "Third party site member belonging to this gslb. Field introduced in 17.1.1."
+    }, 
+    "tenant": {
+      "type": "Optional[String]", 
+      "description": "Name of tenant used for all Avi API calls and context of object."
+    }, 
+    "name": {
+      "type": "String", 
+      "description": "Name for the gslb object."
+    }
+  }
+}

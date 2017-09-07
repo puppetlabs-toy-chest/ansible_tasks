@@ -1,0 +1,49 @@
+{
+  "description": "Interface with dnsimple.com (a DNS hosting service).", 
+  "parameters": {
+    "solo": {
+      "type": "Optional[String]", 
+      "description": "Whether the record should be the only one for that record type and record name. Only use with state=present on a record"
+    }, 
+    "domain": {
+      "type": "Optional[String]", 
+      "description": "Domain to work with. Can be the domain name (e.g. \"mydomain.com\") or the numeric ID of the domain in DNSimple. If omitted, a list of domains will be returned. If domain is present but the domain doesn't exist, it will be created."
+    }, 
+    "account_email": {
+      "type": "Optional[String]", 
+      "description": "Account email. If omitted, the env variables DNSIMPLE_EMAIL and DNSIMPLE_API_TOKEN will be looked for. If those aren't found, a C(.dnsimple) file will be looked for, see: U(https://github.com/mikemaccana/dnsimple-python#getting-started)\n"
+    }, 
+    "record_ids": {
+      "type": "Optional[String]", 
+      "description": "List of records to ensure they either exist or don't exist"
+    }, 
+    "value": {
+      "type": "Optional[String]", 
+      "description": "Record value Must be specified when trying to ensure a record exists"
+    }, 
+    "priority": {
+      "type": "Optional[String]", 
+      "description": "Record priority"
+    }, 
+    "record": {
+      "type": "Optional[String]", 
+      "description": "Record to add, if blank a record for the domain will be created, supports the wildcard (*)"
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "whether the record should exist or not"
+    }, 
+    "ttl": {
+      "type": "Optional[String]", 
+      "description": "The TTL to give the new record"
+    }, 
+    "type": {
+      "type": "Optional[String]", 
+      "description": "The type of DNS record to create"
+    }, 
+    "account_api_token": {
+      "type": "Optional[String]", 
+      "description": "Account API token. See I(account_email) for info."
+    }
+  }
+}

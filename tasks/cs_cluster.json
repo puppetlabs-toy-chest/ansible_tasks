@@ -1,0 +1,105 @@
+{
+  "description": "Manages host clusters on Apache CloudStack based clouds.", 
+  "parameters": {
+    "guest_vswitch_type": {
+      "type": "Optional[String]", 
+      "description": "Type of virtual switch used for guest traffic in the cluster. Allowed values are, vmwaresvs (for VMware standard vSwitch) and vmwaredvs (for VMware distributed vSwitch)"
+    }, 
+    "ovm3_cluster": {
+      "type": "Optional[String]", 
+      "description": "Ovm3 native OCFS2 clustering enabled for cluster."
+    }, 
+    "ovm3_pool": {
+      "type": "Optional[String]", 
+      "description": "Ovm3 native pooling enabled for cluster."
+    }, 
+    "api_http_method": {
+      "type": "Optional[String]", 
+      "description": "HTTP method used."
+    }, 
+    "pod": {
+      "type": "Optional[String]", 
+      "description": "Name of the pod in which the cluster belongs to."
+    }, 
+    "public_vswitch_type": {
+      "type": "Optional[String]", 
+      "description": "Type of virtual switch used for public traffic in the cluster. Allowed values are, vmwaresvs (for VMware standard vSwitch) and vmwaredvs (for VMware distributed vSwitch)"
+    }, 
+    "api_url": {
+      "type": "Optional[String]", 
+      "description": "URL of the CloudStack API e.g. https://cloud.example.com/client/api."
+    }, 
+    "zone": {
+      "type": "Optional[String]", 
+      "description": "Name of the zone in which the cluster belongs to. If not set, default zone is used."
+    }, 
+    "public_vswitch_name": {
+      "type": "Optional[String]", 
+      "description": "Name of virtual switch used for public traffic in the cluster. This would override zone wide traffic label setting."
+    }, 
+    "ovm3_vip": {
+      "type": "Optional[String]", 
+      "description": "Ovm3 vip to use for pool (and cluster)."
+    }, 
+    "vms_ip_address": {
+      "type": "Optional[String]", 
+      "description": "IP address of the VSM associated with this cluster."
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "State of the cluster."
+    }, 
+    "api_key": {
+      "type": "Optional[String]", 
+      "description": "API key of the CloudStack API."
+    }, 
+    "username": {
+      "type": "Optional[String]", 
+      "description": "Username for the cluster."
+    }, 
+    "guest_vswitch_name": {
+      "type": "Optional[String]", 
+      "description": "Name of virtual switch used for guest traffic in the cluster. This would override zone wide traffic label setting."
+    }, 
+    "api_secret": {
+      "type": "Optional[String]", 
+      "description": "Secret key of the CloudStack API."
+    }, 
+    "api_timeout": {
+      "type": "Optional[String]", 
+      "description": "HTTP timeout."
+    }, 
+    "password": {
+      "type": "Optional[String]", 
+      "description": "Password for the cluster."
+    }, 
+    "vms_username": {
+      "type": "Optional[String]", 
+      "description": "Username for the VSM associated with this cluster."
+    }, 
+    "name": {
+      "type": "String", 
+      "description": "name of the cluster."
+    }, 
+    "url": {
+      "type": "Optional[String]", 
+      "description": "URL for the cluster"
+    }, 
+    "hypervisor": {
+      "type": "Optional[String]", 
+      "description": "Name the hypervisor to be used. Required if C(state=present)."
+    }, 
+    "api_region": {
+      "type": "Optional[String]", 
+      "description": "Name of the ini section in the C(cloustack.ini) file."
+    }, 
+    "cluster_type": {
+      "type": "Optional[String]", 
+      "description": "Type of the cluster. Required if C(state=present)"
+    }, 
+    "vms_password": {
+      "type": "Optional[String]", 
+      "description": "Password for the VSM associated with this cluster."
+    }
+  }
+}

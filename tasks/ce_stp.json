@@ -1,0 +1,61 @@
+{
+  "description": "Manages STP configuration on HUAWEI CloudEngine switches.", 
+  "parameters": {
+    "tc_protection_interval": {
+      "type": "Optional[String]", 
+      "description": "Set the time the MSTP device takes to handle the maximum number of TC BPDUs and immediately refresh forwarding entries. The value is an integer ranging from 1 to 600, in seconds."
+    }, 
+    "loop_protection": {
+      "type": "Optional[String]", 
+      "description": "Enable loop protection on the current port."
+    }, 
+    "tc_protection_threshold": {
+      "type": "Optional[String]", 
+      "description": "Set the maximum number of TC BPDUs that the MSTP can handle. The value is an integer ranging from 1 to 255. The default value is 1 on the switch."
+    }, 
+    "stp_converge": {
+      "type": "Optional[String]", 
+      "description": "STP convergence mode. Fast means set STP aging mode to Fast. Normal means set STP aging mode to Normal."
+    }, 
+    "stp_mode": {
+      "type": "Optional[String]", 
+      "description": "Set an operation mode for the current MSTP process. The mode can be STP, RSTP, or MSTP."
+    }, 
+    "bpdu_protection": {
+      "type": "Optional[String]", 
+      "description": "Configure BPDU protection on an edge port. This function prevents network flapping caused by attack packets."
+    }, 
+    "root_protection": {
+      "type": "Optional[String]", 
+      "description": "Enable root protection on the current port."
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "Specify desired state of the resource."
+    }, 
+    "bpdu_filter": {
+      "type": "Optional[String]", 
+      "description": "Specify a port as a BPDU filter port."
+    }, 
+    "stp_enable": {
+      "type": "Optional[String]", 
+      "description": "Enable or disable STP on a switch."
+    }, 
+    "interface": {
+      "type": "Optional[String]", 
+      "description": "Interface name. If the value is C(all), will apply configuration to all interfaces. if the value is a special name, only support input the full name."
+    }, 
+    "tc_protection": {
+      "type": "Optional[String]", 
+      "description": "Configure the TC BPDU protection function for an MSTP process."
+    }, 
+    "edged_port": {
+      "type": "Optional[String]", 
+      "description": "Set the current port as an edge port."
+    }, 
+    "cost": {
+      "type": "Optional[String]", 
+      "description": "Set the path cost of the current port. The default instance is 0."
+    }
+  }
+}

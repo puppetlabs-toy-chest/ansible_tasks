@@ -1,0 +1,69 @@
+{
+  "description": "Add/Delete security groups from an OpenStack cloud.", 
+  "parameters": {
+    "auth_type": {
+      "type": "Optional[String]", 
+      "description": "Name of the auth plugin to use. If the cloud uses something other than password authentication, the name of the plugin should be indicated here and the contents of the I(auth) parameter should be updated accordingly."
+    }, 
+    "region_name": {
+      "type": "Optional[String]", 
+      "description": "Name of the region."
+    }, 
+    "availability_zone": {
+      "type": "Optional[String]", 
+      "description": "Ignored. Present for backwards compatibility"
+    }, 
+    "api_timeout": {
+      "type": "Optional[String]", 
+      "description": "How long should the socket layer wait before timing out for API calls. If this is omitted, nothing will be passed to the requests library."
+    }, 
+    "cert": {
+      "type": "Optional[String]", 
+      "description": "A path to a client certificate to use as part of the SSL transaction."
+    }, 
+    "auth": {
+      "type": "Optional[String]", 
+      "description": "Dictionary containing auth information as needed by the cloud's auth plugin strategy. For the default I(password) plugin, this would contain I(auth_url), I(username), I(password), I(project_name) and any information about domains if the cloud supports them. For other plugins, this param will need to contain whatever parameters that auth plugin requires. This parameter is not needed if a named cloud is provided or OpenStack OS_* environment variables are present."
+    }, 
+    "name": {
+      "type": "String", 
+      "description": "Name that has to be given to the security group. This module requires that security group names be unique."
+    }, 
+    "key": {
+      "type": "Optional[String]", 
+      "description": "A path to a client key to use as part of the SSL transaction."
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "Should the resource be present or absent."
+    }, 
+    "endpoint_type": {
+      "type": "Optional[String]", 
+      "description": "Endpoint URL type to fetch from the service catalog."
+    }, 
+    "timeout": {
+      "type": "Optional[String]", 
+      "description": "How long should ansible wait for the requested resource."
+    }, 
+    "cacert": {
+      "type": "Optional[String]", 
+      "description": "A path to a CA Cert bundle that can be used as part of verifying SSL API requests."
+    }, 
+    "wait": {
+      "type": "Optional[String]", 
+      "description": "Should ansible wait until the requested resource is complete."
+    }, 
+    "validate_certs": {
+      "type": "Optional[String]", 
+      "description": "Whether or not SSL API requests should be verified. Before 2.3 this defaulted to True."
+    }, 
+    "cloud": {
+      "type": "Optional[String]", 
+      "description": "Named cloud to operate against. Provides default values for I(auth) and I(auth_type). This parameter is not needed if I(auth) is provided or if OpenStack OS_* environment variables are present."
+    }, 
+    "description": {
+      "type": "Optional[String]", 
+      "description": "Long description of the purpose of the security group"
+    }
+  }
+}

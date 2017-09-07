@@ -1,0 +1,25 @@
+{
+  "description": "Add or remove domains and subdomains on Webfaction", 
+  "parameters": {
+    "state": {
+      "type": "Optional[String]", 
+      "description": "Whether the domain should exist"
+    }, 
+    "login_password": {
+      "type": "String", 
+      "description": "The webfaction password to use"
+    }, 
+    "login_name": {
+      "type": "String", 
+      "description": "The webfaction account to use"
+    }, 
+    "name": {
+      "type": "String", 
+      "description": "The name of the domain"
+    }, 
+    "subdomains": {
+      "type": "Optional[String]", 
+      "description": "Any subdomains to create."
+    }
+  }
+}

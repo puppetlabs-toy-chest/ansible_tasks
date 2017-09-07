@@ -1,0 +1,57 @@
+{
+  "description": "Send a message to a flowdock", 
+  "parameters": {
+    "from_name": {
+      "type": "Optional[String]", 
+      "description": "(inbox only) Name of the message sender"
+    }, 
+    "from_address": {
+      "type": "Optional[String]", 
+      "description": "(inbox only - required) Email address of the message sender"
+    }, 
+    "tags": {
+      "type": "Optional[String]", 
+      "description": "tags of the message, separated by commas"
+    }, 
+    "validate_certs": {
+      "type": "Optional[String]", 
+      "description": "If C(no), SSL certificates will not be validated. This should only be used on personally controlled sites using self-signed certificates."
+    }, 
+    "external_user_name": {
+      "type": "Optional[String]", 
+      "description": "(chat only - required) Name of the \"user\" sending the message"
+    }, 
+    "project": {
+      "type": "Optional[String]", 
+      "description": "(inbox only) Human readable identifier for more detailed message categorization"
+    }, 
+    "source": {
+      "type": "Optional[String]", 
+      "description": "(inbox only - required) Human readable identifier of the application that uses the Flowdock API"
+    }, 
+    "token": {
+      "type": "String", 
+      "description": "API token."
+    }, 
+    "link": {
+      "type": "Optional[String]", 
+      "description": "(inbox only) Link associated with the message. This will be used to link the message subject in Team Inbox."
+    }, 
+    "msg": {
+      "type": "String", 
+      "description": "Content of the message"
+    }, 
+    "reply_to": {
+      "type": "Optional[String]", 
+      "description": "(inbox only) Email address for replies"
+    }, 
+    "type": {
+      "type": "String", 
+      "description": "Whether to post to 'inbox' or 'chat'"
+    }, 
+    "subject": {
+      "type": "Optional[String]", 
+      "description": "(inbox only - required) Subject line of the message"
+    }
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "description": "Create or delete a Rackspace Cloud Monitoring notification plan.", 
+  "parameters": {
+    "username": {
+      "type": "Optional[String]", 
+      "description": "Rackspace username, overrides I(credentials)."
+    }, 
+    "warning_state": {
+      "type": "Optional[String]", 
+      "description": "Notification list to use when the alarm state is WARNING. Must be an array of valid rax_mon_notification ids."
+    }, 
+    "identity_type": {
+      "type": "Optional[String]", 
+      "description": "Authentication mechanism to use, such as rackspace or keystone."
+    }, 
+    "tenant_id": {
+      "type": "Optional[String]", 
+      "description": "The tenant ID used for authentication."
+    }, 
+    "region": {
+      "type": "Optional[String]", 
+      "description": "Region to create an instance in."
+    }, 
+    "critical_state": {
+      "type": "Optional[String]", 
+      "description": "Notification list to use when the alarm state is CRITICAL. Must be an array of valid rax_mon_notification ids."
+    }, 
+    "verify_ssl": {
+      "type": "Optional[String]", 
+      "description": "Whether or not to require SSL validation of API endpoints."
+    }, 
+    "label": {
+      "type": "String", 
+      "description": "Defines a friendly name for this notification plan. String between 1 and 255 characters long."
+    }, 
+    "ok_state": {
+      "type": "Optional[String]", 
+      "description": "Notification list to use when the alarm state is OK. Must be an array of valid rax_mon_notification ids."
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "Ensure that the notification plan with this C(label) exists or does not exist."
+    }, 
+    "env": {
+      "type": "Optional[String]", 
+      "description": "Environment as configured in I(~/.pyrax.cfg), see U(https://github.com/rackspace/pyrax/blob/master/docs/getting_started.md#pyrax-configuration)."
+    }, 
+    "tenant_name": {
+      "type": "Optional[String]", 
+      "description": "The tenant name used for authentication."
+    }, 
+    "credentials": {
+      "type": "Optional[String]", 
+      "description": "File to find the Rackspace credentials in. Ignored if I(api_key) and I(username) are provided."
+    }, 
+    "api_key": {
+      "type": "Optional[String]", 
+      "description": "Rackspace API key, overrides I(credentials)."
+    }, 
+    "auth_endpoint": {
+      "type": "Optional[String]", 
+      "description": "The URI of the authentication service."
+    }
+  }
+}

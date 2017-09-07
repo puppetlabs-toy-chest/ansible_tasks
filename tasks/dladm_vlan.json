@@ -1,0 +1,25 @@
+{
+  "description": "Manage VLAN interfaces on Solaris/illumos systems.", 
+  "parameters": {
+    "temporary": {
+      "type": "Optional[String]", 
+      "description": "Specifies that the VLAN interface is temporary. Temporary VLANs do not persist across reboots."
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "Create or delete Solaris/illumos VNIC."
+    }, 
+    "link": {
+      "type": "String", 
+      "description": "VLAN underlying link name."
+    }, 
+    "name": {
+      "type": "String", 
+      "description": "VLAN interface name."
+    }, 
+    "vlan_id": {
+      "type": "Optional[String]", 
+      "description": "VLAN ID value for VLAN interface."
+    }
+  }
+}

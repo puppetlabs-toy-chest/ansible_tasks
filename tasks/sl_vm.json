@@ -1,0 +1,93 @@
+{
+  "description": "create or cancel a virtual instance in SoftLayer", 
+  "parameters": {
+    "domain": {
+      "type": "Optional[String]", 
+      "description": "Domain name to be provided to a virtual instance"
+    }, 
+    "cpus": {
+      "type": "String", 
+      "description": "Count of cpus to be assigned to new virtual instance"
+    }, 
+    "dedicated": {
+      "type": "Optional[String]", 
+      "description": "Flag to determine if the instance should be deployed in dedicated space"
+    }, 
+    "private_vlan": {
+      "type": "Optional[String]", 
+      "description": "VLAN by its Id to be assigned to the private NIC"
+    }, 
+    "hourly": {
+      "type": "Optional[String]", 
+      "description": "Flag to determine if the instance should be hourly billed"
+    }, 
+    "ssh_keys": {
+      "type": "Optional[String]", 
+      "description": "List of ssh keys by their Id to be assigned to a virtual instance"
+    }, 
+    "hostname": {
+      "type": "Optional[String]", 
+      "description": "Hostname to be provided to a virtual instance"
+    }, 
+    "os_code": {
+      "type": "Optional[String]", 
+      "description": "OS Code to be used for new virtual instance"
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "Create, or cancel a virtual instance. Specify \"present\" for create, \"absent\" to cancel."
+    }, 
+    "post_uri": {
+      "type": "Optional[String]", 
+      "description": "URL of a post provisioning script to be loaded and executed on virtual instance"
+    }, 
+    "memory": {
+      "type": "String", 
+      "description": "Amount of memory to be assigned to new virtual instance"
+    }, 
+    "tags": {
+      "type": "Optional[String]", 
+      "description": "Tag or list of tags to be provided to a virtual instance"
+    }, 
+    "image_id": {
+      "type": "Optional[String]", 
+      "description": "Image Template to be used for new virtual instance"
+    }, 
+    "wait_timeout": {
+      "type": "Optional[String]", 
+      "description": "time in seconds before wait returns"
+    }, 
+    "private": {
+      "type": "Optional[String]", 
+      "description": "Flag to determine if the instance should be private only"
+    }, 
+    "public_vlan": {
+      "type": "Optional[String]", 
+      "description": "VLAN by its Id to be assigned to the public NIC"
+    }, 
+    "wait": {
+      "type": "Optional[String]", 
+      "description": "Flag used to wait for active status before returning"
+    }, 
+    "datacenter": {
+      "type": "Optional[String]", 
+      "description": "Datacenter for the virtual instance to be deployed"
+    }, 
+    "disks": {
+      "type": "String", 
+      "description": "List of disk sizes to be assigned to new virtual instance"
+    }, 
+    "instance_id": {
+      "type": "Optional[String]", 
+      "description": "Instance Id of the virtual instance to perform action option"
+    }, 
+    "local_disk": {
+      "type": "Optional[String]", 
+      "description": "Flag to determine if local disk should be used for the new instance"
+    }, 
+    "nic_speed": {
+      "type": "Optional[String]", 
+      "description": "NIC Speed to be assigned to new virtual instance"
+    }
+  }
+}

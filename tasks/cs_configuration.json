@@ -1,0 +1,57 @@
+{
+  "description": "Manages configuration on Apache CloudStack based clouds.", 
+  "parameters": {
+    "domain": {
+      "type": "Optional[String]", 
+      "description": "Domain the account is related to. Only considered if C(account) is used."
+    }, 
+    "api_key": {
+      "type": "Optional[String]", 
+      "description": "API key of the CloudStack API."
+    }, 
+    "api_url": {
+      "type": "Optional[String]", 
+      "description": "URL of the CloudStack API e.g. https://cloud.example.com/client/api."
+    }, 
+    "api_http_method": {
+      "type": "Optional[String]", 
+      "description": "HTTP method used."
+    }, 
+    "api_secret": {
+      "type": "Optional[String]", 
+      "description": "Secret key of the CloudStack API."
+    }, 
+    "api_timeout": {
+      "type": "Optional[String]", 
+      "description": "HTTP timeout."
+    }, 
+    "storage": {
+      "type": "Optional[String]", 
+      "description": "Ensure the value for corresponding storage pool."
+    }, 
+    "api_region": {
+      "type": "Optional[String]", 
+      "description": "Name of the ini section in the C(cloustack.ini) file."
+    }, 
+    "value": {
+      "type": "String", 
+      "description": "Value of the configuration."
+    }, 
+    "cluster": {
+      "type": "Optional[String]", 
+      "description": "Ensure the value for corresponding cluster."
+    }, 
+    "account": {
+      "type": "Optional[String]", 
+      "description": "Ensure the value for corresponding account."
+    }, 
+    "zone": {
+      "type": "Optional[String]", 
+      "description": "Ensure the value for corresponding zone."
+    }, 
+    "name": {
+      "type": "String", 
+      "description": "Name of the configuration."
+    }
+  }
+}

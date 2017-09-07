@@ -1,0 +1,125 @@
+{
+  "description": "create, delete, or modify an Amazon Redshift instance", 
+  "parameters": {
+    "cluster_parameter_group_name": {
+      "type": "Optional[String]", 
+      "description": "name of the cluster parameter group"
+    }, 
+    "username": {
+      "type": "Optional[String]", 
+      "description": "Master database username. Used only when command=create."
+    }, 
+    "availability_zone": {
+      "type": "Optional[String]", 
+      "description": "availability zone in which to launch cluster"
+    }, 
+    "encrypted": {
+      "type": "Optional[String]", 
+      "description": "if the cluster is encrypted or not"
+    }, 
+    "node_type": {
+      "type": "Optional[String]", 
+      "description": "The node type of the cluster. Must be specified when command=create."
+    }, 
+    "publicly_accessible": {
+      "type": "Optional[String]", 
+      "description": "if the cluster is accessible publicly or not"
+    }, 
+    "ec2_url": {
+      "type": "Optional[String]", 
+      "description": "Url to use to connect to EC2 or your Eucalyptus cloud (by default the module will use EC2 endpoints). Ignored for modules where region is required. Must be specified for all other modules if region is not used. If not set then the value of the EC2_URL environment variable, if any, is used."
+    }, 
+    "port": {
+      "type": "Optional[String]", 
+      "description": "which port the cluster is listining"
+    }, 
+    "aws_secret_key": {
+      "type": "Optional[String]", 
+      "description": "AWS secret key. If not set then the value of the AWS_SECRET_ACCESS_KEY, AWS_SECRET_KEY, or EC2_SECRET_KEY environment variable is used."
+    }, 
+    "allow_version_upgrade": {
+      "type": "Optional[String]", 
+      "description": "flag to determinate if upgrade of version is possible"
+    }, 
+    "cluster_type": {
+      "type": "Optional[String]", 
+      "description": "The type of cluster."
+    }, 
+    "validate_certs": {
+      "type": "Optional[String]", 
+      "description": "When set to \"no\", SSL certificates will not be validated for boto versions >= 2.6.0."
+    }, 
+    "vpc_security_group_ids": {
+      "type": "Optional[String]", 
+      "description": "VPC security group"
+    }, 
+    "profile": {
+      "type": "Optional[String]", 
+      "description": "Uses a boto profile. Only works with boto >= 2.24.0."
+    }, 
+    "new_cluster_identifier": {
+      "type": "Optional[String]", 
+      "description": "Only used when command=modify."
+    }, 
+    "number_of_nodes": {
+      "type": "Optional[String]", 
+      "description": "Number of nodes. Only used when cluster_type=multi-node."
+    }, 
+    "db_name": {
+      "type": "Optional[String]", 
+      "description": "Name of the database."
+    }, 
+    "password": {
+      "type": "Optional[String]", 
+      "description": "Master database password. Used only when command=create."
+    }, 
+    "cluster_subnet_group_name": {
+      "type": "Optional[String]", 
+      "description": "which subnet to place the cluster"
+    }, 
+    "wait": {
+      "type": "Optional[String]", 
+      "description": "When command=create, modify or restore then wait for the database to enter the 'available' state. When command=delete wait for the database to be terminated."
+    }, 
+    "aws_access_key": {
+      "type": "Optional[String]", 
+      "description": "AWS access key. If not set then the value of the AWS_ACCESS_KEY_ID, AWS_ACCESS_KEY or EC2_ACCESS_KEY environment variable is used."
+    }, 
+    "security_token": {
+      "type": "Optional[String]", 
+      "description": "AWS STS security token. If not set then the value of the AWS_SECURITY_TOKEN or EC2_SECURITY_TOKEN environment variable is used."
+    }, 
+    "cluster_security_groups": {
+      "type": "Optional[String]", 
+      "description": "in which security group the cluster belongs"
+    }, 
+    "elastic_ip": {
+      "type": "Optional[String]", 
+      "description": "if the cluster has an elastic IP or not"
+    }, 
+    "wait_timeout": {
+      "type": "Optional[String]", 
+      "description": "how long before wait gives up, in seconds"
+    }, 
+    "command": {
+      "type": "String", 
+      "description": "Specifies the action to take."
+    }, 
+    "automated_snapshot_retention_period": {
+      "type": "Optional[String]", 
+      "description": "period when the snapshot take place"
+    }, 
+    "identifier": {
+      "type": "String", 
+      "description": "Redshift cluster identifier."
+    }, 
+    "cluster_version": {
+      "type": "Optional[String]", 
+      "description": "which version the cluster should have"
+    }, 
+    "preferred_maintenance_window": {
+      "type": "Optional[String]", 
+      "description": "maintenance window"
+    }
+  }
+}

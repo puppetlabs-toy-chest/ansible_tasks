@@ -1,0 +1,105 @@
+{
+  "description": "CLI command to add/remove/modify vrouter-bgp.", 
+  "parameters": {
+    "pn_vrouter_name": {
+      "type": "String", 
+      "description": "Specify a name for the vRouter service."
+    }, 
+    "pn_soft_reconfig": {
+      "type": "Optional[String]", 
+      "description": "Specify if you want a soft reconfiguration of inbound traffic."
+    }, 
+    "pn_ebgp": {
+      "type": "Optional[String]", 
+      "description": "Specify a value for external BGP to accept or attempt BGP connections to external peers, not directly connected, on the network. This is a value between 1 and 255."
+    }, 
+    "pn_route_reflector": {
+      "type": "Optional[String]", 
+      "description": "Specify if a route reflector client is used."
+    }, 
+    "pn_keepalive": {
+      "type": "Optional[String]", 
+      "description": "Specify BGP neighbor keepalive interval in seconds."
+    }, 
+    "pn_multiprotocol": {
+      "type": "Optional[String]", 
+      "description": "Specify a multi-protocol for BGP."
+    }, 
+    "pn_prefix_listout": {
+      "type": "Optional[String]", 
+      "description": "Specify the prefix list to filter traffic outbound."
+    }, 
+    "state": {
+      "type": "String", 
+      "description": "State the action to perform. Use 'present' to add bgp, 'absent' to remove bgp and 'update' to modify bgp."
+    }, 
+    "pn_cliswitch": {
+      "type": "Optional[String]", 
+      "description": "Target switch(es) to run the cli on."
+    }, 
+    "pn_max_prefix": {
+      "type": "Optional[String]", 
+      "description": "Specify the maximum number of prefixes."
+    }, 
+    "pn_route_mapout": {
+      "type": "Optional[String]", 
+      "description": "Specify outbound route map for neighbor."
+    }, 
+    "pn_bfd": {
+      "type": "Optional[String]", 
+      "description": "Specify if you want BFD protocol support for fault detection."
+    }, 
+    "pn_override_capability": {
+      "type": "Optional[String]", 
+      "description": "Specify if you want to override capability."
+    }, 
+    "pn_route_mapin": {
+      "type": "Optional[String]", 
+      "description": "Specify inbound route map for neighbor."
+    }, 
+    "pn_prefix_listin": {
+      "type": "Optional[String]", 
+      "description": "Specify the prefix list to filter traffic inbound."
+    }, 
+    "pn_password": {
+      "type": "Optional[String]", 
+      "description": "Specify a password, if desired."
+    }, 
+    "pn_neighbor": {
+      "type": "Optional[String]", 
+      "description": "Specify a neighbor IP address to use for BGP. Required for vrouter-bgp-add."
+    }, 
+    "pn_default_originate": {
+      "type": "Optional[String]", 
+      "description": "Specify if you want announce default routes to the neighbor or not."
+    }, 
+    "pn_cliusername": {
+      "type": "Optional[String]", 
+      "description": "Provide login username if user is not root."
+    }, 
+    "pn_weight": {
+      "type": "Optional[String]", 
+      "description": "Specify a default weight value between 0 and 65535 for the neighbor routes."
+    }, 
+    "pn_clipassword": {
+      "type": "Optional[String]", 
+      "description": "Provide login password if user is not root."
+    }, 
+    "pn_remote_as": {
+      "type": "Optional[String]", 
+      "description": "Specify the remote Autonomous System(AS) number. This value is between 1 and 4294967295. Required for vrouter-bgp-add."
+    }, 
+    "pn_max_prefix_warn": {
+      "type": "Optional[String]", 
+      "description": "Specify if you want a warning message when the maximum number of prefixes is exceeded."
+    }, 
+    "pn_holdtime": {
+      "type": "Optional[String]", 
+      "description": "Specify BGP neighbor holdtime in seconds."
+    }, 
+    "pn_next_hop_self": {
+      "type": "Optional[String]", 
+      "description": "Specify if the next-hop is the same router or not."
+    }
+  }
+}

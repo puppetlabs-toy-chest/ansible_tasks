@@ -1,0 +1,29 @@
+{
+  "description": "Manages a Serverless Framework project", 
+  "parameters": {
+    "functions": {
+      "type": "Optional[String]", 
+      "description": "A list of specific functions to deploy. If this is not provided, all functions in the service will be deployed."
+    }, 
+    "deploy": {
+      "type": "Optional[String]", 
+      "description": "Whether or not to deploy artifacts after building them. When this option is `false` all the functions will be built, but no stack update will be run to send them out. This is mostly useful for generating artifacts to be stored/deployed elsewhere."
+    }, 
+    "region": {
+      "type": "Optional[String]", 
+      "description": "AWS region to deploy the service to"
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "Goal state of given stage/project"
+    }, 
+    "service_path": {
+      "type": "String", 
+      "description": "The path to the root of the Serverless Service to be operated on."
+    }, 
+    "stage": {
+      "type": "Optional[String]", 
+      "description": "The name of the serverless framework project stage to deploy to. This uses the serverless framework default \"dev\"."
+    }
+  }
+}

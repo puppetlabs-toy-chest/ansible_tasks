@@ -1,0 +1,21 @@
+{
+  "description": "change admin password of PAN-OS device using SSH with SSH key", 
+  "parameters": {
+    "username": {
+      "type": "Optional[String]", 
+      "description": "username for initial authentication"
+    }, 
+    "newpassword": {
+      "type": "String", 
+      "description": "password to configure for admin on the PAN-OS device"
+    }, 
+    "key_filename": {
+      "type": "String", 
+      "description": "filename of the SSH Key to use for authentication"
+    }, 
+    "ip_address": {
+      "type": "String", 
+      "description": "IP address (or hostname) of PAN-OS device"
+    }
+  }
+}

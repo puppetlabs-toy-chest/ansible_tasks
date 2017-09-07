@@ -1,0 +1,57 @@
+{
+  "description": "Send Amazon Simple Notification Service (SNS) messages", 
+  "parameters": {
+    "aws_secret_key": {
+      "type": "Optional[String]", 
+      "description": "AWS secret key. If not set then the value of the AWS_SECRET_KEY environment variable is used."
+    }, 
+    "aws_access_key": {
+      "type": "Optional[String]", 
+      "description": "AWS access key. If not set then the value of the AWS_ACCESS_KEY environment variable is used."
+    }, 
+    "http": {
+      "type": "Optional[String]", 
+      "description": "Message to send to HTTP-only subscription"
+    }, 
+    "sqs": {
+      "type": "Optional[String]", 
+      "description": "Message to send to SQS-only subscription"
+    }, 
+    "region": {
+      "type": "Optional[String]", 
+      "description": "The AWS region to use. If not specified then the value of the EC2_REGION environment variable, if any, is used."
+    }, 
+    "sms": {
+      "type": "Optional[String]", 
+      "description": "Message to send to SMS-only subscription"
+    }, 
+    "topic": {
+      "type": "String", 
+      "description": "The topic you want to publish to."
+    }, 
+    "https": {
+      "type": "Optional[String]", 
+      "description": "Message to send to HTTPS-only subscription"
+    }, 
+    "msg": {
+      "type": "String", 
+      "description": "Default message to send."
+    }, 
+    "message_attributes": {
+      "type": "Optional[String]", 
+      "description": "Dictionary of message attributes. These are optional structured data entries to be sent along to the endpoint. This is in AWS's distinct Name/Type/Value format; see example below."
+    }, 
+    "email": {
+      "type": "Optional[String]", 
+      "description": "Message to send to email-only subscription"
+    }, 
+    "message_structure": {
+      "type": "String", 
+      "description": "The payload format to use for the message. This must be 'json' to support non-default messages (`http`, `https`, `email`, `sms`, `sqs`). It must be 'string' to support message_attributes."
+    }, 
+    "subject": {
+      "type": "Optional[String]", 
+      "description": "Subject line for email delivery."
+    }
+  }
+}

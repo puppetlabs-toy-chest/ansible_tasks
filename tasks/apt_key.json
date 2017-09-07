@@ -1,0 +1,37 @@
+{
+  "description": "Add or remove an apt key", 
+  "parameters": {
+    "keyserver": {
+      "type": "Optional[String]", 
+      "description": "keyserver to retrieve key from."
+    }, 
+    "url": {
+      "type": "Optional[String]", 
+      "description": "url to retrieve key from."
+    }, 
+    "validate_certs": {
+      "type": "Optional[String]", 
+      "description": "If C(no), SSL certificates for the target url will not be validated. This should only be used on personally controlled sites using self-signed certificates."
+    }, 
+    "keyring": {
+      "type": "Optional[String]", 
+      "description": "path to specific keyring file in /etc/apt/trusted.gpg.d"
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "used to specify if key is being added or revoked"
+    }, 
+    "file": {
+      "type": "Optional[String]", 
+      "description": "path to a keyfile on the remote server to add to the keyring"
+    }, 
+    "data": {
+      "type": "Optional[String]", 
+      "description": "keyfile contents to add to the keyring"
+    }, 
+    "id": {
+      "type": "Optional[String]", 
+      "description": "identifier of key. Including this allows check mode to correctly report the changed state. If specifying a subkey's id be aware that apt-key does not understand how to remove keys via a subkey id.  Specify the primary key's id instead."
+    }
+  }
+}

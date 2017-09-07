@@ -1,0 +1,29 @@
+{
+  "description": "Edit GNOME Configurations", 
+  "parameters": {
+    "direct": {
+      "type": "Optional[String]", 
+      "description": "Access the config database directly, bypassing server.  If direct is specified then the config_source must be specified as well. See man gconftool-2(1)"
+    }, 
+    "value": {
+      "type": "Optional[String]", 
+      "description": "Preference keys typically have simple values such as strings, integers, or lists of strings and integers. This is ignored if the state is \"get\". See man gconftool-2(1)"
+    }, 
+    "config_source": {
+      "type": "Optional[String]", 
+      "description": "Specify a configuration source to use rather than the default path. See man gconftool-2(1)"
+    }, 
+    "state": {
+      "type": "String", 
+      "description": "The action to take upon the key/value."
+    }, 
+    "value_type": {
+      "type": "Optional[String]", 
+      "description": "The type of value being set. This is ignored if the state is \"get\"."
+    }, 
+    "key": {
+      "type": "String", 
+      "description": "A GConf preference key is an element in the GConf repository that corresponds to an application preference. See man gconftool-2(1)"
+    }
+  }
+}

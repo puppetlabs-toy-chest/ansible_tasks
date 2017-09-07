@@ -1,0 +1,41 @@
+{
+  "description": "Create SSL certificates with Let's Encrypt", 
+  "parameters": {
+    "acme_directory": {
+      "type": "Optional[String]", 
+      "description": "The ACME directory to use. This is the entry point URL to access CA server API. For safety reasons the default is set to the Let's Encrypt staging server. This will create technically correct, but untrusted certificates."
+    }, 
+    "account_email": {
+      "type": "Optional[String]", 
+      "description": "The email address associated with this account. It will be used for certificate expiration warnings."
+    }, 
+    "dest": {
+      "type": "String", 
+      "description": "T h e   d e s t i n a t i o n   f i l e   f o r   t h e   c e r t i f i c a t e ."
+    }, 
+    "remaining_days": {
+      "type": "Optional[String]", 
+      "description": "The number of days the certificate must have left being valid. If C(cert_days < remaining_days), then it will be renewed. If the certificate is not renewed, module return values will not include C(challenge_data)."
+    }, 
+    "challenge": {
+      "type": "Optional[String]", 
+      "description": "T h e   c h a l l e n g e   t o   b e   p e r f o r m e d ."
+    }, 
+    "agreement": {
+      "type": "Optional[String]", 
+      "description": "URI to a terms of service document you agree to when using the ACME service at C(acme_directory)."
+    }, 
+    "account_key": {
+      "type": "String", 
+      "description": "File containing the the Let's Encrypt account RSA key. Can be created with C(openssl rsa ...)."
+    }, 
+    "data": {
+      "type": "Optional[String]", 
+      "description": "The data to validate ongoing challenges. The value that must be used here will be provided by a previous use of this module."
+    }, 
+    "csr": {
+      "type": "String", 
+      "description": "File containing the CSR for the new certificate. Can be created with C(openssl csr ...). The CSR may contain multiple Subject Alternate Names, but each one will lead to an individual challenge that must be fulfilled for the CSR to be signed."
+    }
+  }
+}

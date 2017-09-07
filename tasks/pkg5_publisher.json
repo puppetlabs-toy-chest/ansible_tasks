@@ -1,0 +1,29 @@
+{
+  "description": "Manages Solaris 11 Image Packaging System publishers", 
+  "parameters": {
+    "origin": {
+      "type": "Optional[String]", 
+      "description": "A path or URL to the repository. Multiple values may be provided."
+    }, 
+    "name": {
+      "type": "String", 
+      "description": "The publisher's name."
+    }, 
+    "enabled": {
+      "type": "Optional[String]", 
+      "description": "Is the repository enabled or disabled?"
+    }, 
+    "sticky": {
+      "type": "Optional[String]", 
+      "description": "Packages installed from a sticky repository can only receive updates from that repository."
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "Whether to ensure that a publisher is present or absent."
+    }, 
+    "mirror": {
+      "type": "Optional[String]", 
+      "description": "A path or URL to the repository mirror. Multiple values may be provided."
+    }
+  }
+}

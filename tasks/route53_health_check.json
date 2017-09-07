@@ -1,0 +1,69 @@
+{
+  "description": "add or delete health-checks in Amazons Route53 DNS service", 
+  "parameters": {
+    "profile": {
+      "type": "Optional[String]", 
+      "description": "Uses a boto profile. Only works with boto >= 2.24.0."
+    }, 
+    "aws_secret_key": {
+      "type": "Optional[String]", 
+      "description": "AWS secret key. If not set then the value of the AWS_SECRET_ACCESS_KEY, AWS_SECRET_KEY, or EC2_SECRET_KEY environment variable is used."
+    }, 
+    "aws_access_key": {
+      "type": "Optional[String]", 
+      "description": "AWS access key. If not set then the value of the AWS_ACCESS_KEY_ID, AWS_ACCESS_KEY or EC2_ACCESS_KEY environment variable is used."
+    }, 
+    "type": {
+      "type": "String", 
+      "description": "The type of health check that you want to create, which indicates how Amazon Route 53 determines whether an endpoint is healthy."
+    }, 
+    "request_interval": {
+      "type": "String", 
+      "description": "The number of seconds between the time that Amazon Route 53 gets a response from your endpoint and the time that it sends the next health-check request."
+    }, 
+    "security_token": {
+      "type": "Optional[String]", 
+      "description": "AWS STS security token. If not set then the value of the AWS_SECURITY_TOKEN or EC2_SECURITY_TOKEN environment variable is used."
+    }, 
+    "validate_certs": {
+      "type": "Optional[String]", 
+      "description": "When set to \"no\", SSL certificates will not be validated for boto versions >= 2.6.0."
+    }, 
+    "region": {
+      "type": "Optional[String]", 
+      "description": "The AWS region to use. If not specified then the value of the AWS_REGION or EC2_REGION environment variable, if any, is used. See U(http://docs.aws.amazon.com/general/latest/gr/rande.html#ec2_region)"
+    }, 
+    "failure_threshold": {
+      "type": "String", 
+      "description": "The number of consecutive health checks that an endpoint must pass or fail for Amazon Route 53 to change the current status of the endpoint from unhealthy to healthy or vice versa."
+    }, 
+    "fqdn": {
+      "type": "Optional[String]", 
+      "description": "Domain name of the endpoint to check. Either this or `ip_address` has to be provided. When both are given the `fqdn` is used in the `Host:` header of the HTTP request."
+    }, 
+    "string_match": {
+      "type": "Optional[String]", 
+      "description": "If the check type is HTTP_STR_MATCH or HTTP_STR_MATCH, the string that you want Amazon Route 53 to search for in the response body from the specified resource. If the string appears in the first 5120 bytes of the response body, Amazon Route 53 considers the resource healthy."
+    }, 
+    "state": {
+      "type": "String", 
+      "description": "Specifies the action to take."
+    }, 
+    "resource_path": {
+      "type": "Optional[String]", 
+      "description": "The path that you want Amazon Route 53 to request when performing health checks. The path can be any value for which your endpoint will return an HTTP status code of 2xx or 3xx when the endpoint is healthy, for example the file /docs/route53-health-check.html. Required for all checks except TCP. The path must begin with a / Maximum 255 characters."
+    }, 
+    "ec2_url": {
+      "type": "Optional[String]", 
+      "description": "Url to use to connect to EC2 or your Eucalyptus cloud (by default the module will use EC2 endpoints). Ignored for modules where region is required. Must be specified for all other modules if region is not used. If not set then the value of the EC2_URL environment variable, if any, is used."
+    }, 
+    "ip_address": {
+      "type": "Optional[String]", 
+      "description": "IP address of the end-point to check. Either this or `fqdn` has to be provided."
+    }, 
+    "port": {
+      "type": "Optional[String]", 
+      "description": "The port on the endpoint on which you want Amazon Route 53 to perform health checks. Required for TCP checks."
+    }
+  }
+}

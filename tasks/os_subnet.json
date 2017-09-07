@@ -1,0 +1,121 @@
+{
+  "description": "Add/Remove subnet to an OpenStack network", 
+  "parameters": {
+    "auth_type": {
+      "type": "Optional[String]", 
+      "description": "Name of the auth plugin to use. If the cloud uses something other than password authentication, the name of the plugin should be indicated here and the contents of the I(auth) parameter should be updated accordingly."
+    }, 
+    "no_gateway_ip": {
+      "type": "Optional[String]", 
+      "description": "The gateway IP would not be assigned for this subnet"
+    }, 
+    "availability_zone": {
+      "type": "Optional[String]", 
+      "description": "Ignored. Present for backwards compatibility"
+    }, 
+    "ipv6_ra_mode": {
+      "type": "Optional[String]", 
+      "description": "IPv6 router advertisement mode"
+    }, 
+    "host_routes": {
+      "type": "Optional[String]", 
+      "description": "A list of host route dictionaries for the subnet."
+    }, 
+    "ipv6_address_mode": {
+      "type": "Optional[String]", 
+      "description": "IPv6 address mode"
+    }, 
+    "network_name": {
+      "type": "Optional[String]", 
+      "description": "Name of the network to which the subnet should be attached Required when I(state) is 'present'"
+    }, 
+    "cloud": {
+      "type": "Optional[String]", 
+      "description": "Named cloud to operate against. Provides default values for I(auth) and I(auth_type). This parameter is not needed if I(auth) is provided or if OpenStack OS_* environment variables are present."
+    }, 
+    "region_name": {
+      "type": "Optional[String]", 
+      "description": "Name of the region."
+    }, 
+    "dns_nameservers": {
+      "type": "Optional[String]", 
+      "description": "List of DNS nameservers for this subnet."
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "Indicate desired state of the resource"
+    }, 
+    "allocation_pool_start": {
+      "type": "Optional[String]", 
+      "description": "From the subnet pool the starting address from which the IP should be allocated."
+    }, 
+    "gateway_ip": {
+      "type": "Optional[String]", 
+      "description": "The ip that would be assigned to the gateway for this subnet"
+    }, 
+    "allocation_pool_end": {
+      "type": "Optional[String]", 
+      "description": "From the subnet pool the last IP that should be assigned to the virtual machines."
+    }, 
+    "use_default_subnetpool": {
+      "type": "Optional[String]", 
+      "description": "Use the default subnetpool for I(ip_version) to obtain a CIDR."
+    }, 
+    "api_timeout": {
+      "type": "Optional[String]", 
+      "description": "How long should the socket layer wait before timing out for API calls. If this is omitted, nothing will be passed to the requests library."
+    }, 
+    "auth": {
+      "type": "Optional[String]", 
+      "description": "Dictionary containing auth information as needed by the cloud's auth plugin strategy. For the default I(password) plugin, this would contain I(auth_url), I(username), I(password), I(project_name) and any information about domains if the cloud supports them. For other plugins, this param will need to contain whatever parameters that auth plugin requires. This parameter is not needed if a named cloud is provided or OpenStack OS_* environment variables are present."
+    }, 
+    "endpoint_type": {
+      "type": "Optional[String]", 
+      "description": "Endpoint URL type to fetch from the service catalog."
+    }, 
+    "key": {
+      "type": "Optional[String]", 
+      "description": "A path to a client key to use as part of the SSL transaction."
+    }, 
+    "cacert": {
+      "type": "Optional[String]", 
+      "description": "A path to a CA Cert bundle that can be used as part of verifying SSL API requests."
+    }, 
+    "cidr": {
+      "type": "Optional[String]", 
+      "description": "The CIDR representation of the subnet that should be assigned to the subnet. Required when I(state) is 'present' and a subnetpool is not specified."
+    }, 
+    "wait": {
+      "type": "Optional[String]", 
+      "description": "Should ansible wait until the requested resource is complete."
+    }, 
+    "name": {
+      "type": "String", 
+      "description": "The name of the subnet that should be created. Although Neutron allows for non-unique subnet names, this module enforces subnet name uniqueness."
+    }, 
+    "enable_dhcp": {
+      "type": "Optional[String]", 
+      "description": "Whether DHCP should be enabled for this subnet."
+    }, 
+    "project": {
+      "type": "Optional[String]", 
+      "description": "Project name or ID containing the subnet (name admin-only)"
+    }, 
+    "cert": {
+      "type": "Optional[String]", 
+      "description": "A path to a client certificate to use as part of the SSL transaction."
+    }, 
+    "timeout": {
+      "type": "Optional[String]", 
+      "description": "How long should ansible wait for the requested resource."
+    }, 
+    "ip_version": {
+      "type": "Optional[String]", 
+      "description": "The IP version of the subnet 4 or 6"
+    }, 
+    "validate_certs": {
+      "type": "Optional[String]", 
+      "description": "Whether or not SSL API requests should be verified. Before 2.3 this defaulted to True."
+    }
+  }
+}

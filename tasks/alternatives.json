@@ -1,0 +1,21 @@
+{
+  "description": "Manages alternative programs for common commands", 
+  "parameters": {
+    "priority": {
+      "type": "Optional[String]", 
+      "description": "The priority of the alternative"
+    }, 
+    "path": {
+      "type": "String", 
+      "description": "The path to the real executable that the link should point to."
+    }, 
+    "link": {
+      "type": "Optional[String]", 
+      "description": "The path to the symbolic link that should point to the real executable. This option is required on RHEL-based distributions"
+    }, 
+    "name": {
+      "type": "String", 
+      "description": "The generic name of the link."
+    }
+  }
+}

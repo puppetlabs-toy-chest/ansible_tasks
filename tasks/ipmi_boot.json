@@ -1,0 +1,37 @@
+{
+  "description": "Management of order of boot devices", 
+  "parameters": {
+    "bootdev": {
+      "type": "String", 
+      "description": "Set boot device to use on next reboot"
+    }, 
+    "name": {
+      "type": "String", 
+      "description": "Hostname or ip address of the BMC."
+    }, 
+    "uefiboot": {
+      "type": "Optional[Boolean]", 
+      "description": "If set, request UEFI boot explicitly. Strictly speaking, the spec suggests that if not set, the system should BIOS boot and offers no \"don't care\" option. In practice, this flag not being set does not preclude UEFI boot on any system I've encountered."
+    }, 
+    "persistent": {
+      "type": "Optional[Boolean]", 
+      "description": "If set, ask that system firmware uses this device beyond next boot. Be aware many systems do not honor this."
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "Whether to ensure that boot devices is desired."
+    }, 
+    "user": {
+      "type": "String", 
+      "description": "Username to use to connect to the BMC."
+    }, 
+    "password": {
+      "type": "String", 
+      "description": "Password to connect to the BMC."
+    }, 
+    "port": {
+      "type": "Optional[String]", 
+      "description": "Remote RMCP port."
+    }
+  }
+}

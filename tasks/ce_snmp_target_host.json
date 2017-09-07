@@ -1,0 +1,57 @@
+{
+  "description": "Manages SNMP target host configuration on HUAWEI CloudEngine switches.", 
+  "parameters": {
+    "security_name_v3": {
+      "type": "Optional[String]", 
+      "description": "Security Name V3."
+    }, 
+    "interface_name": {
+      "type": "Optional[String]", 
+      "description": "Name of the interface to send the trap message."
+    }, 
+    "security_model": {
+      "type": "Optional[String]", 
+      "description": "Security Model."
+    }, 
+    "vpn_name": {
+      "type": "Optional[String]", 
+      "description": "VPN instance Name."
+    }, 
+    "security_level": {
+      "type": "Optional[String]", 
+      "description": "Security level indicating whether to use authentication and encryption."
+    }, 
+    "security_name": {
+      "type": "Optional[String]", 
+      "description": "Security Name."
+    }, 
+    "is_public_net": {
+      "type": "Optional[String]", 
+      "description": "To enable or disable Public Net-manager for target Host."
+    }, 
+    "connect_port": {
+      "type": "Optional[String]", 
+      "description": "Udp port used by SNMP agent to connect the Network management."
+    }, 
+    "version": {
+      "type": "Optional[String]", 
+      "description": "Version(s) Supported by SNMP Engine."
+    }, 
+    "host_name": {
+      "type": "Optional[String]", 
+      "description": "Unique name to identify target host entry."
+    }, 
+    "address": {
+      "type": "Optional[String]", 
+      "description": "Network Address."
+    }, 
+    "recv_port": {
+      "type": "Optional[String]", 
+      "description": "UDP Port number used by network management to receive alarm messages."
+    }, 
+    "notify_type": {
+      "type": "Optional[String]", 
+      "description": "To configure notify type as trap or inform."
+    }
+  }
+}

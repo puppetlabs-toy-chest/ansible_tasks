@@ -1,0 +1,53 @@
+{
+  "description": "Manages Windows services", 
+  "parameters": {
+    "username": {
+      "type": "Optional[String]", 
+      "description": "The username to set the service to start as. This and the C(password) argument must be supplied together."
+    }, 
+    "display_name": {
+      "type": "Optional[String]", 
+      "description": "The display name to set for the service."
+    }, 
+    "description": {
+      "type": "Optional[String]", 
+      "description": "The description to set for the service."
+    }, 
+    "force_dependent_services": {
+      "type": "Optional[String]", 
+      "description": "If True, stopping or restarting a service with dependent services will force the dependent services to stop or restart also. If False, stopping or restarting a service with dependent services may fail."
+    }, 
+    "dependency_action": {
+      "type": "Optional[String]", 
+      "description": "Used in conjunction with C(dependency) to either add the dependencies to the existing service dependencies. Remove the dependencies to the existing dependencies. Set the dependencies to only the values in the list replacing the existing dependencies."
+    }, 
+    "name": {
+      "type": "String", 
+      "description": "Name of the service"
+    }, 
+    "start_mode": {
+      "type": "Optional[String]", 
+      "description": "Set the startup type for the service. C(delayed) added in Ansible 2.3"
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "C(started)/C(stopped)/C(absent) are idempotent actions that will not run commands unless necessary. C(restarted) will always bounce the service. C(absent) added in Ansible 2.3"
+    }, 
+    "dependencies": {
+      "type": "Optional[String]", 
+      "description": "A list of service dependencies to set for this particular service. This should be a list of service names and not the display name of the service. This works by C(dependency_action) to either add/remove or set the services in this list."
+    }, 
+    "path": {
+      "type": "Optional[String]", 
+      "description": "The path to the executable to set for the service."
+    }, 
+    "password": {
+      "type": "Optional[String]", 
+      "description": "The password to set the service to start as. This and the C(username) argument must be supplied together. If specifying LocalSystem, NetworkService or LocalService this field must be an empty string and not null."
+    }, 
+    "desktop_interact": {
+      "type": "Optional[String]", 
+      "description": "Whether to allow the service user to interact with the desktop. This should only be set to true when using the LocalSystem username."
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "description": "Manage the state of policies in RabbitMQ.", 
+  "parameters": {
+    "node": {
+      "type": "Optional[String]", 
+      "description": "Erlang node name of the rabbit we wish to configure."
+    }, 
+    "name": {
+      "type": "String", 
+      "description": "The name of the policy to manage."
+    }, 
+    "tags": {
+      "type": "String", 
+      "description": "A dict or string describing the policy."
+    }, 
+    "pattern": {
+      "type": "String", 
+      "description": "A regex of queues to apply the policy to."
+    }, 
+    "priority": {
+      "type": "Optional[String]", 
+      "description": "The priority of the policy."
+    }, 
+    "vhost": {
+      "type": "Optional[String]", 
+      "description": "The name of the vhost to apply to."
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "The state of the policy."
+    }, 
+    "apply_to": {
+      "type": "Optional[String]", 
+      "description": "What the policy applies to. Requires RabbitMQ 3.2.0 or later."
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "description": "Send notifications via U(https://pushover.net)", 
+  "parameters": {
+    "msg": {
+      "type": "String", 
+      "description": "What message you wish to send."
+    }, 
+    "user_key": {
+      "type": "String", 
+      "description": "Pushover issued authentication key for your user."
+    }, 
+    "app_token": {
+      "type": "String", 
+      "description": "Pushover issued token identifying your pushover app."
+    }, 
+    "pri": {
+      "type": "Optional[String]", 
+      "description": "Message priority (see U(https://pushover.net) for details.)"
+    }
+  }
+}

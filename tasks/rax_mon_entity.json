@@ -1,0 +1,65 @@
+{
+  "description": "Create or delete a Rackspace Cloud Monitoring entity", 
+  "parameters": {
+    "username": {
+      "type": "Optional[String]", 
+      "description": "Rackspace username, overrides I(credentials)."
+    }, 
+    "identity_type": {
+      "type": "Optional[String]", 
+      "description": "Authentication mechanism to use, such as rackspace or keystone."
+    }, 
+    "tenant_id": {
+      "type": "Optional[String]", 
+      "description": "The tenant ID used for authentication."
+    }, 
+    "region": {
+      "type": "Optional[String]", 
+      "description": "Region to create an instance in."
+    }, 
+    "auth_endpoint": {
+      "type": "Optional[String]", 
+      "description": "The URI of the authentication service."
+    }, 
+    "verify_ssl": {
+      "type": "Optional[String]", 
+      "description": "Whether or not to require SSL validation of API endpoints."
+    }, 
+    "label": {
+      "type": "String", 
+      "description": "Defines a name for this entity. Must be a non-empty string between 1 and 255 characters long."
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "Ensure that an entity with this C(name) exists or does not exist."
+    }, 
+    "agent_id": {
+      "type": "Optional[String]", 
+      "description": "Rackspace monitoring agent on the target device to which this entity is bound. Necessary to collect C(agent.) rax_mon_checks against this entity."
+    }, 
+    "env": {
+      "type": "Optional[String]", 
+      "description": "Environment as configured in I(~/.pyrax.cfg), see U(https://github.com/rackspace/pyrax/blob/master/docs/getting_started.md#pyrax-configuration)."
+    }, 
+    "tenant_name": {
+      "type": "Optional[String]", 
+      "description": "The tenant name used for authentication."
+    }, 
+    "credentials": {
+      "type": "Optional[String]", 
+      "description": "File to find the Rackspace credentials in. Ignored if I(api_key) and I(username) are provided."
+    }, 
+    "api_key": {
+      "type": "Optional[String]", 
+      "description": "Rackspace API key, overrides I(credentials)."
+    }, 
+    "named_ip_addresses": {
+      "type": "Optional[String]", 
+      "description": "Hash of IP addresses that may be referenced by name by rax_mon_checks added to this entity. Must be a dictionary of with keys that are names between 1 and 64 characters long, and values that are valid IPv4 or IPv6 addresses."
+    }, 
+    "metadata": {
+      "type": "Optional[String]", 
+      "description": "Hash of arbitrary C(name), C(value) pairs that are passed to associated rax_mon_alarms. Names and values must all be between 1 and 255 characters long."
+    }
+  }
+}

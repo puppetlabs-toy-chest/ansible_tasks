@@ -1,0 +1,17 @@
+{
+  "description": "Collect facts from remote devices running Juniper Junos", 
+  "parameters": {
+    "config_format": {
+      "type": "Optional[String]", 
+      "description": "The I(config_format) argument specifies the format of the configuration when serializing output from the device. This argument is applicable only when C(config) value is present in I(gather_subset). The I(config_format) should be supported by the junos version running on device."
+    }, 
+    "gather_subset": {
+      "type": "Optional[String]", 
+      "description": "When supplied, this argument will restrict the facts collected to a given subset.  Possible values for this argument include all, hardware, config, and interfaces.  Can specify a list of values to include a larger subset.  Values can also be used with an initial C(M(!)) to specify that a specific subset should not be collected. To maintain backward compatbility old style facts can be retrieved using all value, this reqires junos-eznc to be installed as a prerequisite."
+    }, 
+    "provider": {
+      "type": "Optional[String]", 
+      "description": "A dict object containing connection details."
+    }
+  }
+}

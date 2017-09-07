@@ -1,0 +1,37 @@
+{
+  "description": "Create, Delete and Modify Pools on Infinibox", 
+  "parameters": {
+    "ssd_cache": {
+      "type": "Optional[String]", 
+      "description": "Enable/Disable SSD Cache on Pool"
+    }, 
+    "name": {
+      "type": "String", 
+      "description": "Pool Name"
+    }, 
+    "system": {
+      "type": "String", 
+      "description": "Infinibox Hostname or IPv4 Address."
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "Creates/Modifies Pool when present or removes when absent"
+    }, 
+    "user": {
+      "type": "Optional[String]", 
+      "description": "Infinibox User username with sufficient priveledges ( see notes )."
+    }, 
+    "password": {
+      "type": "Optional[String]", 
+      "description": "Infinibox User password."
+    }, 
+    "vsize": {
+      "type": "Optional[String]", 
+      "description": "Pool Virtual Capacity in MB, GB or TB units. If pool vsize is not set on pool creation, Virtual Capacity will be equal to Physical Capacity. See examples."
+    }, 
+    "size": {
+      "type": "Optional[String]", 
+      "description": "Pool Physical Capacity in MB, GB or TB units. If pool size is not set on pool creation, size will be equal to 1TB. See examples."
+    }
+  }
+}

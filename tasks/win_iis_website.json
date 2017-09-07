@@ -1,0 +1,45 @@
+{
+  "description": "Configures a IIS Web site.", 
+  "parameters": {
+    "hostname": {
+      "type": "Optional[String]", 
+      "description": "The host header to bind to / use for the new site."
+    }, 
+    "name": {
+      "type": "String", 
+      "description": "Names of web site"
+    }, 
+    "parameters": {
+      "type": "Optional[String]", 
+      "description": "Custom site Parameters from string where properties are separated by a pipe and property name/values by colon Ex. \"foo:1|bar:2\""
+    }, 
+    "ip": {
+      "type": "Optional[String]", 
+      "description": "The IP address to bind to / use for the new site."
+    }, 
+    "physical_path": {
+      "type": "Optional[String]", 
+      "description": "The physical path on the remote host to use for the new site. The specified folder must already exist."
+    }, 
+    "application_pool": {
+      "type": "Optional[String]", 
+      "description": "The application pool in which the new site executes."
+    }, 
+    "site_id": {
+      "type": "Optional[String]", 
+      "description": "Explicitly set the IIS numeric ID for a site. Note that this value cannot be changed after the website has been created."
+    }, 
+    "ssl": {
+      "type": "Optional[String]", 
+      "description": "Enables HTTPS binding on the site.."
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "State of the web site"
+    }, 
+    "port": {
+      "type": "Optional[String]", 
+      "description": "The port to bind to / use for the new site."
+    }
+  }
+}

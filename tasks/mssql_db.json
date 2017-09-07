@@ -1,0 +1,37 @@
+{
+  "description": "Add or remove MSSQL databases from a remote host.", 
+  "parameters": {
+    "autocommit": {
+      "type": "Optional[String]", 
+      "description": "Automatically commit the change only if the import succeed. Sometimes it is necessary to use autocommit=true, since some content can't be changed within a transaction."
+    }, 
+    "login_port": {
+      "type": "Optional[String]", 
+      "description": "Port of the MSSQL server. Requires login_host be defined as other then localhost if login_port is used"
+    }, 
+    "name": {
+      "type": "String", 
+      "description": "name of the database to add or remove"
+    }, 
+    "login_user": {
+      "type": "Optional[String]", 
+      "description": "The username used to authenticate with"
+    }, 
+    "login_host": {
+      "type": "Optional[String]", 
+      "description": "Host running the database"
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "The database state"
+    }, 
+    "login_password": {
+      "type": "Optional[String]", 
+      "description": "The password used to authenticate with"
+    }, 
+    "target": {
+      "type": "Optional[String]", 
+      "description": "Location, on the remote host, of the dump file to read from or write to. Uncompressed SQL files (C(.sql)) files are supported."
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "description": "Package manager for OpenWrt", 
+  "parameters": {
+    "update_cache": {
+      "type": "Optional[String]", 
+      "description": "update the package db first"
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "state of the package"
+    }, 
+    "force": {
+      "type": "Optional[String]", 
+      "description": "opkg --force parameter used"
+    }, 
+    "name": {
+      "type": "String", 
+      "description": "name of package to install/remove"
+    }
+  }
+}

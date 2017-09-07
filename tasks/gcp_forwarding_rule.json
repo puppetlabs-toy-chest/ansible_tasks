@@ -1,0 +1,33 @@
+{
+  "description": "Create, Update or Destroy a Forwarding_Rule.", 
+  "parameters": {
+    "protocol": {
+      "type": "Optional[String]", 
+      "description": "For global forwarding rules, TCP, UDP, ESP, AH, SCTP or ICMP. Default is TCP."
+    }, 
+    "target": {
+      "type": "Optional[String]", 
+      "description": "Target resource for forwarding rule. For global proxy, this is a Global TargetProxy resource. Required for external load balancing (including Global load balancing)"
+    }, 
+    "region": {
+      "type": "Optional[String]", 
+      "description": "The region for this forwarding rule. Currently, only 'global' is supported."
+    }, 
+    "forwarding_rule_name": {
+      "type": "String", 
+      "description": "Name of the Forwarding_Rule."
+    }, 
+    "port_range": {
+      "type": "Optional[String]", 
+      "description": "For global forwarding rules, must be set to 80 or 8080 for TargetHttpProxy, and 443 for TargetHttpsProxy or TargetSslProxy."
+    }, 
+    "state": {
+      "type": "String", 
+      "description": "The state of the Forwarding Rule. 'present' or 'absent'"
+    }, 
+    "address": {
+      "type": "Optional[String]", 
+      "description": "IPv4 or named IP address. Must be of the same scope (regional, global). Reserved addresses can (and probably should) be used for global forwarding rules. You may reserve IPs from the console or via the gce_eip module."
+    }
+  }
+}

@@ -1,0 +1,217 @@
+{
+  "description": "Manage samba shares on a univention corporate server", 
+  "parameters": {
+    "samba_name": {
+      "type": "Optional[String]", 
+      "description": "Windows name. Required if C(state=present)."
+    }, 
+    "samba_hide_files": {
+      "type": "Optional[String]", 
+      "description": "Hide files."
+    }, 
+    "samba_directory_mode": {
+      "type": "Optional[String]", 
+      "description": "Directory mode."
+    }, 
+    "samba_dos_filemode": {
+      "type": "Optional[String]", 
+      "description": "Users with write access may modify permissions."
+    }, 
+    "path": {
+      "type": "Optional[String]", 
+      "description": "Directory on the providing server, e.g. C(/home). Required if C(state=present)."
+    }, 
+    "owner": {
+      "type": "Optional[String]", 
+      "description": "Directory owner of the share's root directory."
+    }, 
+    "samba_fake_oplocks": {
+      "type": "Optional[String]", 
+      "description": "Fake oplocks."
+    }, 
+    "samba_strict_locking": {
+      "type": "Optional[String]", 
+      "description": "Strict locking."
+    }, 
+    "nfs_custom_settings": {
+      "type": "Optional[String]", 
+      "description": "Option name in exports file."
+    }, 
+    "samba_force_directory_security_mode": {
+      "type": "Optional[String]", 
+      "description": "Force directory security mode."
+    }, 
+    "samba_writeable": {
+      "type": "Optional[String]", 
+      "description": "Samba write access."
+    }, 
+    "samba_block_size": {
+      "type": "Optional[String]", 
+      "description": "Blocking size."
+    }, 
+    "samba_nt_acl_support": {
+      "type": "Optional[String]", 
+      "description": "NT ACL support."
+    }, 
+    "samba_write_list": {
+      "type": "Optional[String]", 
+      "description": "Restrict write access to these users/groups."
+    }, 
+    "samba_preexec": {
+      "type": "Optional[String]", 
+      "description": "Preexec script."
+    }, 
+    "samba_browseable": {
+      "type": "Optional[String]", 
+      "description": "Show in Windows network environment."
+    }, 
+    "samba_inherit_acls": {
+      "type": "Optional[String]", 
+      "description": "Inherit ACLs."
+    }, 
+    "samba_msdfs_root": {
+      "type": "Optional[String]", 
+      "description": "MSDFS root."
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "Whether the share is present or not."
+    }, 
+    "samba_valid_users": {
+      "type": "Optional[String]", 
+      "description": "Valid users or groups."
+    }, 
+    "samba_force_create_mode": {
+      "type": "Optional[String]", 
+      "description": "Force file mode."
+    }, 
+    "root_squash": {
+      "type": "Optional[String]", 
+      "description": "Modify user ID for root user (root squashing)."
+    }, 
+    "samba_directory_security_mode": {
+      "type": "Optional[String]", 
+      "description": "Directory security mode."
+    }, 
+    "samba_force_group": {
+      "type": "Optional[String]", 
+      "description": "Force group."
+    }, 
+    "samba_vfs_objects": {
+      "type": "Optional[String]", 
+      "description": "VFS objects."
+    }, 
+    "samba_force_directory_mode": {
+      "type": "Optional[String]", 
+      "description": "Force directory mode."
+    }, 
+    "writeable": {
+      "type": "Optional[String]", 
+      "description": "NFS write access."
+    }, 
+    "samba_locking": {
+      "type": "Optional[String]", 
+      "description": "Locking."
+    }, 
+    "samba_security_mode": {
+      "type": "Optional[String]", 
+      "description": "Security mode."
+    }, 
+    "samba_inherit_owner": {
+      "type": "Optional[String]", 
+      "description": "Create files/directories with the owner of the parent directory."
+    }, 
+    "samba_csc_policy": {
+      "type": "Optional[String]", 
+      "description": "Client-side caching policy."
+    }, 
+    "sync": {
+      "type": "Optional[String]", 
+      "description": "NFS synchronisation."
+    }, 
+    "nfs_hosts": {
+      "type": "Optional[String]", 
+      "description": "Only allow access for this host, IP address or network."
+    }, 
+    "group": {
+      "type": "Optional[String]", 
+      "description": "Directory owner group of the share's root directory."
+    }, 
+    "samba_public": {
+      "type": "Optional[String]", 
+      "description": "Allow anonymous read-only access with a guest user."
+    }, 
+    "samba_force_user": {
+      "type": "Optional[String]", 
+      "description": "Force user."
+    }, 
+    "samba_level_2_oplocks": {
+      "type": "Optional[String]", 
+      "description": "Level 2 oplocks."
+    }, 
+    "samba_invalid_users": {
+      "type": "Optional[String]", 
+      "description": "Invalid users or groups."
+    }, 
+    "samba_create_mode": {
+      "type": "Optional[String]", 
+      "description": "File mode."
+    }, 
+    "samba_force_security_mode": {
+      "type": "Optional[String]", 
+      "description": "Force security mode."
+    }, 
+    "name": {
+      "type": "String", 
+      "description": "Name"
+    }, 
+    "samba_custom_settings": {
+      "type": "Optional[String]", 
+      "description": "Option name in smb.conf and its value."
+    }, 
+    "samba_hide_unreadable": {
+      "type": "Optional[String]", 
+      "description": "Hide unreadable files/directories."
+    }, 
+    "samba_blocking_locks": {
+      "type": "Optional[String]", 
+      "description": "Blocking locks."
+    }, 
+    "samba_postexec": {
+      "type": "Optional[String]", 
+      "description": "Postexec script."
+    }, 
+    "host": {
+      "type": "Optional[String]", 
+      "description": "Host FQDN (server which provides the share), e.g. C({{ ansible_fqdn }}). Required if C(state=present)."
+    }, 
+    "samba_oplocks": {
+      "type": "Optional[String]", 
+      "description": "Oplocks."
+    }, 
+    "samba_hosts_allow": {
+      "type": "Optional[String]", 
+      "description": "Allowed host/network."
+    }, 
+    "samba_inherit_permissions": {
+      "type": "Optional[String]", 
+      "description": "Create files/directories with permissions of the parent directory."
+    }, 
+    "subtree_checking": {
+      "type": "Optional[String]", 
+      "description": "Subtree checking."
+    }, 
+    "directorymode": {
+      "type": "Optional[String]", 
+      "description": "Permissions for the share's root directory."
+    }, 
+    "ou": {
+      "type": "String", 
+      "description": "Organisational unit, inside the LDAP Base DN."
+    }, 
+    "samba_hosts_deny": {
+      "type": "Optional[String]", 
+      "description": "Denied host/network."
+    }
+  }
+}

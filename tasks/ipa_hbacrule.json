@@ -1,0 +1,89 @@
+{
+  "description": "Manage FreeIPA HBAC rule", 
+  "parameters": {
+    "ipa_port": {
+      "type": "Optional[String]", 
+      "description": "P o r t   o f   I P A   s e r v e r"
+    }, 
+    "sourcehostcategory": {
+      "type": "Optional[String]", 
+      "description": "S o u r c e   h o s t   c a t e g o r y"
+    }, 
+    "cn": {
+      "type": "String", 
+      "description": "Canonical name. Can not be changed as it is the unique identifier."
+    }, 
+    "service": {
+      "type": "Optional[String]", 
+      "description": "List of service names to assign. If an empty list is passed all services will be removed from the rule. If option is omitted services will not be checked or changed."
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "S t a t e   t o   e n s u r e"
+    }, 
+    "sourcehost": {
+      "type": "Optional[String]", 
+      "description": "List of source host names to assign. If an empty list if passed all assigned source hosts will be removed from the rule. If option is omitted source hosts will not be checked or changed."
+    }, 
+    "user": {
+      "type": "Optional[String]", 
+      "description": "List of user names to assign. If an empty list if passed all assigned users will be removed from the rule. If option is omitted users will not be checked or changed."
+    }, 
+    "ipa_pass": {
+      "type": "String", 
+      "description": "P a s s w o r d   o f   a d m i n i s t r a t i v e   u s e r"
+    }, 
+    "ipa_prot": {
+      "type": "Optional[String]", 
+      "description": "P r o t o c o l   u s e d   b y   I P A   s e r v e r"
+    }, 
+    "servicecategory": {
+      "type": "Optional[String]", 
+      "description": "S e r v i c e   c a t e g o r y"
+    }, 
+    "hostgroup": {
+      "type": "Optional[String]", 
+      "description": "List of hostgroup names to assign. If an empty list is passed all hostgroups will be removed. from the rule If option is omitted hostgroups will not be checked or changed."
+    }, 
+    "usercategory": {
+      "type": "Optional[String]", 
+      "description": "U s e r   c a t e g o r y"
+    }, 
+    "hostcategory": {
+      "type": "Optional[String]", 
+      "description": "H o s t   c a t e g o r y"
+    }, 
+    "ipa_host": {
+      "type": "Optional[String]", 
+      "description": "I P   o r   h o s t n a m e   o f   I P A   s e r v e r"
+    }, 
+    "ipa_user": {
+      "type": "Optional[String]", 
+      "description": "A d m i n i s t r a t i v e   a c c o u n t   u s e d   o n   I P A   s e r v e r"
+    }, 
+    "usergroup": {
+      "type": "Optional[String]", 
+      "description": "List of user group names to assign. If an empty list if passed all assigned user groups will be removed from the rule. If option is omitted user groups will not be checked or changed."
+    }, 
+    "host": {
+      "type": "Optional[String]", 
+      "description": "List of host names to assign. If an empty list is passed all hosts will be removed from the rule. If option is omitted hosts will not be checked or changed."
+    }, 
+    "servicegroup": {
+      "type": "Optional[String]", 
+      "description": "List of service group names to assign. If an empty list is passed all assigned service groups will be removed from the rule. If option is omitted service groups will not be checked or changed."
+    }, 
+    "validate_certs": {
+      "type": "Optional[String]", 
+      "description": "This only applies if C(ipa_prot) is I(https). If set to C(no), the SSL certificates will not be validated. This should only set to C(no) used on personally controlled sites using self-signed certificates."
+    }, 
+    "sourcehostgroup": {
+      "type": "Optional[String]", 
+      "description": "List of source host group names to assign. If an empty list if passed all assigned source host groups will be removed from the rule. If option is omitted source host groups will not be checked or changed."
+    }, 
+    "description": {
+      "type": "Optional[String]", 
+      "description": "D e s c r i p t i o n"
+    }
+  }
+}

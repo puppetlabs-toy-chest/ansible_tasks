@@ -1,0 +1,81 @@
+{
+  "description": "Create maintenance windows for your status.io dashboard", 
+  "parameters": {
+    "maintenance_notify_72_hr": {
+      "type": "Optional[String]", 
+      "description": "Notify subscribers 72 hours before maintenance start time"
+    }, 
+    "maintenance_notify_1_hr": {
+      "type": "Optional[String]", 
+      "description": "Notify subscribers 1 hour before maintenance start time"
+    }, 
+    "title": {
+      "type": "Optional[String]", 
+      "description": "A descriptive title for the maintenance window"
+    }, 
+    "maintenance_notify_now": {
+      "type": "Optional[String]", 
+      "description": "Notify subscribers now"
+    }, 
+    "start_time": {
+      "type": "Optional[String]", 
+      "description": "Time maintenance is expected to start (Hour:Minutes) (UTC) End Time is worked out from start_time + minutes"
+    }, 
+    "api_id": {
+      "type": "String", 
+      "description": "Your unique API ID from status.io"
+    }, 
+    "automation": {
+      "type": "Optional[String]", 
+      "description": "Automatically start and end the maintenance window"
+    }, 
+    "maintenance_notify_24_hr": {
+      "type": "Optional[String]", 
+      "description": "Notify subscribers 24 hours before maintenance start time"
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "Desired state of the package."
+    }, 
+    "all_infrastructure_affected": {
+      "type": "Optional[String]", 
+      "description": "If it affects all components and containers"
+    }, 
+    "url": {
+      "type": "Optional[String]", 
+      "description": "Status.io API URL. A private apiary can be used instead."
+    }, 
+    "components": {
+      "type": "Optional[String]", 
+      "description": "The given name of your component (server name)"
+    }, 
+    "statuspage": {
+      "type": "String", 
+      "description": "Your unique StatusPage ID from status.io"
+    }, 
+    "maintenance_id": {
+      "type": "Optional[String]", 
+      "description": "The maintenance id number when deleting a maintenance window"
+    }, 
+    "api_key": {
+      "type": "String", 
+      "description": "Your unique API Key from status.io"
+    }, 
+    "minutes": {
+      "type": "Optional[String]", 
+      "description": "The length of time in UTC that the maintenance will run             (starting from playbook runtime)"
+    }, 
+    "start_date": {
+      "type": "Optional[String]", 
+      "description": "Date maintenance is expected to start (Month/Day/Year) (UTC) End Date is worked out from start_date + minutes"
+    }, 
+    "containers": {
+      "type": "Optional[String]", 
+      "description": "The given name of your container (data center)"
+    }, 
+    "desc": {
+      "type": "Optional[String]", 
+      "description": "Message describing the maintenance window"
+    }
+  }
+}

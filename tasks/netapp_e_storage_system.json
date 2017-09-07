@@ -1,0 +1,49 @@
+{
+  "description": "Add/remove arrays from the Web Services Proxy", 
+  "parameters": {
+    "meta_tags": {
+      "type": "Optional[String]", 
+      "description": "Optional meta tags to associate to this storage system"
+    }, 
+    "ssid": {
+      "type": "String", 
+      "description": "The ID of the array to manage. This value must be unique for each array."
+    }, 
+    "validate_certs": {
+      "type": "Optional[String]", 
+      "description": "Should https certificates be validated?"
+    }, 
+    "array_wwn": {
+      "type": "Optional[String]", 
+      "description": "The WWN of the array to manage. Only necessary if in-band managing multiple arrays on the same agent host.  Mutually exclusive of controller_addresses parameter."
+    }, 
+    "api_password": {
+      "type": "String", 
+      "description": "The password to authenticate with the SANtricity WebServices Proxy or embedded REST API."
+    }, 
+    "state": {
+      "type": "String", 
+      "description": "Whether the specified array should be configured on the Web Services Proxy or not."
+    }, 
+    "api_username": {
+      "type": "String", 
+      "description": "The username to authenticate with the SANtricity WebServices Proxy or embedded REST API."
+    }, 
+    "controller_addresses": {
+      "type": "String", 
+      "description": "The list addresses for the out-of-band management adapter or the agent host. Mutually exclusive of array_wwn parameter."
+    }, 
+    "enable_trace": {
+      "type": "Optional[String]", 
+      "description": "Enable trace logging for SYMbol calls to the storage system."
+    }, 
+    "array_password": {
+      "type": "Optional[String]", 
+      "description": "The management password of the array to manage, if set."
+    }, 
+    "api_url": {
+      "type": "String", 
+      "description": "The url to the SANtricity WebServices Proxy or embedded REST API."
+    }
+  }
+}

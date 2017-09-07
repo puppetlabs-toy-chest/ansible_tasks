@@ -1,0 +1,13 @@
+{
+  "description": "Makes an OSX computer to speak.", 
+  "parameters": {
+    "msg": {
+      "type": "String", 
+      "description": "W h a t   t o   s a y"
+    }, 
+    "voice": {
+      "type": "Optional[String]", 
+      "description": "W h a t   v o i c e   t o   u s e"
+    }
+  }
+}

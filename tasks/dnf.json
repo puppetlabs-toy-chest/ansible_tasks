@@ -1,0 +1,41 @@
+{
+  "description": "Manages packages with the I(dnf) package manager", 
+  "parameters": {
+    "autoremove": {
+      "type": "Optional[String]", 
+      "description": "If C(yes), removes all \"leaf\" packages from the system that were originally installed as dependencies of user-installed packages but which are no longer required by any such package. Should be used alone or when state is I(absent)"
+    }, 
+    "name": {
+      "type": "String", 
+      "description": "Package name, or package specifier with version, like C(name-1.0). When using state=latest, this can be '*' which means run: dnf -y update. You can also pass a url or a local path to a rpm file.\n"
+    }, 
+    "list": {
+      "type": "Optional[String]", 
+      "description": "Various (non-idempotent) commands for usage with C(/usr/bin/ansible) and I(not) playbooks. See examples."
+    }, 
+    "disable_gpg_check": {
+      "type": "Optional[String]", 
+      "description": "Whether to disable the GPG checking of signatures of packages being installed. Has an effect only if state is I(present) or I(latest)."
+    }, 
+    "conf_file": {
+      "type": "Optional[String]", 
+      "description": "The remote dnf configuration file to use for the transaction."
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "Whether to install (C(present), C(latest)), or remove (C(absent)) a package."
+    }, 
+    "disablerepo": {
+      "type": "Optional[String]", 
+      "description": "I(Repoid) of repositories to disable for the install/update operation. These repos will not persist beyond the transaction. When specifying multiple repos, separate them with a \",\"."
+    }, 
+    "enablerepo": {
+      "type": "Optional[String]", 
+      "description": "I(Repoid) of repositories to enable for the install/update operation. These repos will not persist beyond the transaction. When specifying multiple repos, separate them with a \",\"."
+    }, 
+    "installroot": {
+      "type": "Optional[String]", 
+      "description": "Specifies an alternative installroot, relative to which all packages will be installed."
+    }
+  }
+}

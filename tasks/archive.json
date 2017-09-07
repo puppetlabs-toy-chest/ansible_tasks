@@ -1,0 +1,57 @@
+{
+  "description": "Creates a compressed archive of one or more files or trees.", 
+  "parameters": {
+    "group": {
+      "type": "Optional[String]", 
+      "description": "Name of the group that should own the file/directory, as would be fed to I(chown)."
+    }, 
+    "format": {
+      "type": "Optional[String]", 
+      "description": "The type of compression to use."
+    }, 
+    "unsafe_writes": {
+      "type": "Optional[String]", 
+      "description": "Normally this module uses atomic operations to prevent data corruption or inconsistent reads from the target files, sometimes systems are configured or just broken in ways that prevent this. One example are docker mounted files, they cannot be updated atomically and can only be done in an unsafe manner. This boolean option allows ansible to fall back to unsafe methods of updating files for those cases in which you do not have any other choice. Be aware that this is subject to race conditions and can lead to data corruption."
+    }, 
+    "selevel": {
+      "type": "Optional[String]", 
+      "description": "Level part of the SELinux file context. This is the MLS/MCS attribute, sometimes known as the C(range). C(_default) feature works as for I(seuser)."
+    }, 
+    "seuser": {
+      "type": "Optional[String]", 
+      "description": "User part of SELinux file context. Will default to system policy, if applicable. If set to C(_default), it will use the C(user) portion of the policy if available."
+    }, 
+    "setype": {
+      "type": "Optional[String]", 
+      "description": "Type part of SELinux file context, C(_default) feature works as for I(seuser)."
+    }, 
+    "remove": {
+      "type": "Optional[String]", 
+      "description": "Remove any added source files and trees after adding to archive."
+    }, 
+    "dest": {
+      "type": "Optional[String]", 
+      "description": "The file name of the destination archive. This is required when C(path) refers to multiple files by either specifying a glob, a directory or multiple paths in a list."
+    }, 
+    "serole": {
+      "type": "Optional[String]", 
+      "description": "Role part of SELinux file context, C(_default) feature works as for I(seuser)."
+    }, 
+    "mode": {
+      "type": "Optional[String]", 
+      "description": "Mode the file or directory should be. For those used to I(/usr/bin/chmod) remember that modes are actually octal numbers (like 0644). Leaving off the leading zero will likely have unexpected results. As of version 1.8, the mode may be specified as a symbolic mode (for example, C(u+rwx) or C(u=rw,g=r,o=r))."
+    }, 
+    "attributes": {
+      "type": "Optional[String]", 
+      "description": "Attributes the file or directory should have. To get supported flags look at the man page for I(chattr) on the target system. This string should contain the attributes in the same order as the one displayed by I(lsattr)."
+    }, 
+    "owner": {
+      "type": "Optional[String]", 
+      "description": "Name of the user that should own the file/directory, as would be fed to I(chown)."
+    }, 
+    "path": {
+      "type": "String", 
+      "description": "Remote absolute path, glob, or list of paths or globs for the file or files to compress or archive."
+    }
+  }
+}

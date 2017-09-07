@@ -1,0 +1,33 @@
+{
+  "description": "CLI command to add/remove ospf protocol to a vRouter.", 
+  "parameters": {
+    "pn_ospf_area": {
+      "type": "Optional[String]", 
+      "description": "Stub area number for the configuration. Required for vrouter-ospf-add."
+    }, 
+    "pn_clipassword": {
+      "type": "Optional[String]", 
+      "description": "Provide login password if user is not root."
+    }, 
+    "pn_vrouter_name": {
+      "type": "String", 
+      "description": "Specify the name of the vRouter."
+    }, 
+    "pn_network_ip": {
+      "type": "String", 
+      "description": "Specify the network IP (IPv4 or IPv6) address."
+    }, 
+    "pn_cliusername": {
+      "type": "Optional[String]", 
+      "description": "Provide login username if user is not root."
+    }, 
+    "state": {
+      "type": "String", 
+      "description": "Assert the state of the ospf. Use 'present' to add ospf and 'absent' to remove ospf."
+    }, 
+    "pn_cliswitch": {
+      "type": "Optional[String]", 
+      "description": "Target switch to run the CLI on."
+    }
+  }
+}

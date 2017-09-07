@@ -1,0 +1,73 @@
+{
+  "description": "Manage firewall with UFW", 
+  "parameters": {
+    "comment": {
+      "type": "Optional[String]", 
+      "description": "Add a comment to the rule. Requires UFW version >=0.35."
+    }, 
+    "insert": {
+      "type": "Optional[String]", 
+      "description": "Insert the corresponding rule as rule number NUM"
+    }, 
+    "direction": {
+      "type": "Optional[String]", 
+      "description": "Select direction for a rule or default policy command."
+    }, 
+    "from_port": {
+      "type": "Optional[String]", 
+      "description": "Source port."
+    }, 
+    "to_ip": {
+      "type": "Optional[String]", 
+      "description": "Destination IP address."
+    }, 
+    "name": {
+      "type": "Optional[String]", 
+      "description": "Use profile located in C(/etc/ufw/applications.d)"
+    }, 
+    "proto": {
+      "type": "Optional[String]", 
+      "description": "TCP/IP protocol."
+    }, 
+    "to_port": {
+      "type": "Optional[String]", 
+      "description": "Destination port."
+    }, 
+    "route": {
+      "type": "Optional[String]", 
+      "description": "Apply the rule to routed/forwarded packets."
+    }, 
+    "from_ip": {
+      "type": "Optional[String]", 
+      "description": "Source IP address."
+    }, 
+    "rule": {
+      "type": "Optional[String]", 
+      "description": "Add firewall rule"
+    }, 
+    "policy": {
+      "type": "Optional[String]", 
+      "description": "Change the default policy for incoming or outgoing traffic."
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "C(enabled) reloads firewall and enables firewall on boot. C(disabled) unloads firewall and disables firewall on boot. C(reloaded) reloads firewall. C(reset) disables and resets firewall to installation defaults."
+    }, 
+    "interface": {
+      "type": "Optional[String]", 
+      "description": "Specify interface for rule."
+    }, 
+    "logging": {
+      "type": "Optional[String]", 
+      "description": "Toggles logging. Logged packets use the LOG_KERN syslog facility."
+    }, 
+    "delete": {
+      "type": "Optional[String]", 
+      "description": "Delete rule."
+    }, 
+    "log": {
+      "type": "Optional[String]", 
+      "description": "Log new connections matched to this rule"
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "description": "Schedule the execution of a command or script file via the at command.", 
+  "parameters": {
+    "count": {
+      "type": "String", 
+      "description": "The count of units in the future to execute the command or script file."
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "The state dictates if the command or script file should be evaluated as present(added) or absent(deleted)."
+    }, 
+    "command": {
+      "type": "Optional[String]", 
+      "description": "A command to be executed in the future."
+    }, 
+    "units": {
+      "type": "String", 
+      "description": "The type of units in the future to execute the command or script file."
+    }, 
+    "unique": {
+      "type": "Optional[String]", 
+      "description": "If a matching job is present a new job will not be added."
+    }, 
+    "script_file": {
+      "type": "Optional[String]", 
+      "description": "An existing script file to be executed in the future."
+    }
+  }
+}

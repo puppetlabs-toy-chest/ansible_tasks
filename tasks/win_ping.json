@@ -1,0 +1,9 @@
+{
+  "description": "A windows version of the classic ping module", 
+  "parameters": {
+    "data": {
+      "type": "Optional[String]", 
+      "description": "Alternate data to return instead of 'pong'"
+    }
+  }
+}

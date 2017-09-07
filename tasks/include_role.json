@@ -1,0 +1,29 @@
+{
+  "description": "Load and execute a role", 
+  "parameters": {
+    "name": {
+      "type": "String", 
+      "description": "The name of the role to be executed."
+    }, 
+    "private": {
+      "type": "Optional[String]", 
+      "description": "If True the variables from defaults/ and vars/ in a role will not be made available to the rest of the play."
+    }, 
+    "allow_duplicates": {
+      "type": "Optional[String]", 
+      "description": "Overrides the role's metadata setting to allow using a role more than once with the same parameters."
+    }, 
+    "tasks_from": {
+      "type": "Optional[String]", 
+      "description": "File to load from a Role's tasks/ directory."
+    }, 
+    "vars_from": {
+      "type": "Optional[String]", 
+      "description": "File to load from a Role's vars/ directory."
+    }, 
+    "defaults_from": {
+      "type": "Optional[String]", 
+      "description": "File to load from a Role's defaults/ directory."
+    }
+  }
+}

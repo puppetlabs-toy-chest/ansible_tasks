@@ -1,0 +1,9 @@
+{
+  "description": "Get DLL or EXE file build version", 
+  "parameters": {
+    "path": {
+      "type": "String", 
+      "description": "File to get version(provide absolute path)"
+    }
+  }
+}

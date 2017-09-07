@@ -1,0 +1,41 @@
+{
+  "description": "Perform common tasks in Nagios related to downtime and notifications.", 
+  "parameters": {
+    "comment": {
+      "type": "Optional[String]", 
+      "description": "Comment for C(downtime) action."
+    }, 
+    "servicegroup": {
+      "type": "Optional[String]", 
+      "description": "The Servicegroup we want to set downtimes/alerts for. B(Required) option when using the C(servicegroup_service_downtime) amd C(servicegroup_host_downtime)."
+    }, 
+    "author": {
+      "type": "Optional[String]", 
+      "description": "Author to leave downtime comments as. Only usable with the C(downtime) action."
+    }, 
+    "services": {
+      "type": "String", 
+      "description": "What to manage downtime/alerts for. Separate multiple services with commas. C(service) is an alias for C(services). B(Required) option when using the C(downtime), C(enable_alerts), and C(disable_alerts) actions."
+    }, 
+    "host": {
+      "type": "Optional[String]", 
+      "description": "Host to operate on in Nagios."
+    }, 
+    "command": {
+      "type": "String", 
+      "description": "The raw command to send to nagios, which should not include the submitted time header or the line-feed B(Required) option when using the C(command) action."
+    }, 
+    "action": {
+      "type": "String", 
+      "description": "Action to take. servicegroup options were added in 2.0. delete_downtime options were added in 2.2."
+    }, 
+    "minutes": {
+      "type": "Optional[String]", 
+      "description": "Minutes to schedule downtime for. Only usable with the C(downtime) action."
+    }, 
+    "cmdfile": {
+      "type": "Optional[String]", 
+      "description": "Path to the nagios I(command file) (FIFO pipe). Only required if auto-detection fails."
+    }
+  }
+}

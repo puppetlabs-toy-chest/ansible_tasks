@@ -1,0 +1,97 @@
+{
+  "description": "RHEV/oVirt automation", 
+  "parameters": {
+    "vmmem": {
+      "type": "Optional[String]", 
+      "description": "The amount of memory you want your VM to use (in GB)."
+    }, 
+    "cd_drive": {
+      "type": "Optional[String]", 
+      "description": "The CD you wish to have mounted on the VM when I(state = 'CD')."
+    }, 
+    "image": {
+      "type": "Optional[String]", 
+      "description": "The template to use for the VM."
+    }, 
+    "cpu_share": {
+      "type": "Optional[String]", 
+      "description": "This parameter is used to configure the cpu share."
+    }, 
+    "insecure_api": {
+      "type": "Optional[String]", 
+      "description": "A boolean switch to make a secure or insecure connection to the server."
+    }, 
+    "cluster": {
+      "type": "Optional[String]", 
+      "description": "The rhev/ovirt cluster in which you want you VM to start."
+    }, 
+    "port": {
+      "type": "Optional[String]", 
+      "description": "The port on which the API is reacheable."
+    }, 
+    "vm_ha": {
+      "type": "Optional[String]", 
+      "description": "To make your VM High Available."
+    }, 
+    "ifaces": {
+      "type": "Optional[String]", 
+      "description": "This option uses complex arguments and is a list of interfaces with the options name and vlan."
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "This serves to create/remove/update or powermanage your VM."
+    }, 
+    "type": {
+      "type": "Optional[String]", 
+      "description": "To define if the VM is a server or desktop."
+    }, 
+    "vmhost": {
+      "type": "Optional[String]", 
+      "description": "The host you wish your VM to run on."
+    }, 
+    "boot_order": {
+      "type": "Optional[String]", 
+      "description": "This option uses complex arguments and is a list of items that specify the bootorder."
+    }, 
+    "user": {
+      "type": "Optional[String]", 
+      "description": "The user to authenticate with."
+    }, 
+    "datacenter": {
+      "type": "Optional[String]", 
+      "description": "The rhev/ovirt datacenter in which you want you VM to start."
+    }, 
+    "name": {
+      "type": "Optional[String]", 
+      "description": "The name of the VM."
+    }, 
+    "disks": {
+      "type": "Optional[String]", 
+      "description": "This option uses complex arguments and is a list of disks with the options name, size and domain."
+    }, 
+    "server": {
+      "type": "Optional[String]", 
+      "description": "The name/ip of your RHEV-m/oVirt instance."
+    }, 
+    "osver": {
+      "type": "Optional[String]", 
+      "description": "The operationsystem option in RHEV/oVirt."
+    }, 
+    "vmcpu": {
+      "type": "Optional[String]", 
+      "description": "The number of CPUs you want in your VM."
+    }, 
+    "timeout": {
+      "type": "Optional[String]", 
+      "description": "The timeout you wish to define for power actions. When I(state = 'up') When I(state = 'down') When I(state = 'restarted')"
+    }, 
+    "del_prot": {
+      "type": "Optional[String]", 
+      "description": "This option sets the delete protection checkbox."
+    }, 
+    "mempol": {
+      "type": "Optional[String]", 
+      "description": "The minimum amount of memory you wish to reserve for this system."
+    }
+  }
+}

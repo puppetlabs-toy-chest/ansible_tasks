@@ -1,0 +1,21 @@
+{
+  "description": "Manage the container images on the atomic host platform", 
+  "parameters": {
+    "started": {
+      "type": "Optional[String]", 
+      "description": "Start or Stop the container"
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "The state of the container image. The state C(latest) will ensure container image is upgraded to the latest version and forcefully restart container, if running."
+    }, 
+    "name": {
+      "type": "String", 
+      "description": "Name of the container image"
+    }, 
+    "backend": {
+      "type": "Optional[String]", 
+      "description": "Define the backend where the image is pulled."
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "description": "Manage IP tunnel interfaces on Solaris/illumos systems.", 
+  "parameters": {
+    "temporary": {
+      "type": "Optional[String]", 
+      "description": "Specifies that the IP tunnel interface is temporary. Temporary IP tunnel interfaces do not persist across reboots."
+    }, 
+    "name": {
+      "type": "String", 
+      "description": "IP tunnel interface name."
+    }, 
+    "remote_address": {
+      "type": "Optional[String]", 
+      "description": "Literal IP address or hostname corresponding to the tunnel destination."
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "Create or delete Solaris/illumos VNIC."
+    }, 
+    "local_address": {
+      "type": "Optional[String]", 
+      "description": "Literat IP address or hostname corresponding to the tunnel source."
+    }, 
+    "type": {
+      "type": "Optional[String]", 
+      "description": "Specifies the type of tunnel to be created."
+    }
+  }
+}

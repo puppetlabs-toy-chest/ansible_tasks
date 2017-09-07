@@ -1,0 +1,73 @@
+{
+  "description": "Manage Azure virtual networks.", 
+  "parameters": {
+    "profile": {
+      "type": "Optional[String]", 
+      "description": "Security profile found in ~/.azure/credentials file."
+    }, 
+    "dns_servers": {
+      "type": "Optional[String]", 
+      "description": "Custom list of DNS servers. Maximum length of two. The first server in the list will be treated as the Primary server. This is an explicit list. Existing DNS servers will be replaced with the specified list. Use the purge_dns_servers option to remove all custom DNS servers and revert to default Azure servers."
+    }, 
+    "name": {
+      "type": "String", 
+      "description": "name of the virtual network."
+    }, 
+    "resource_group": {
+      "type": "String", 
+      "description": "name of resource group."
+    }, 
+    "tags": {
+      "type": "Optional[String]", 
+      "description": "Dictionary of string:string pairs to assign as metadata to the object. Metadata tags on the object will be updated with any provided values. To remove tags set append_tags option to false.\n"
+    }, 
+    "append_tags": {
+      "type": "Optional[String]", 
+      "description": "Use to control if tags field is canonical or just appends to existing tags. When canonical, any tags not found in the tags parameter will be removed from the object's metadata."
+    }, 
+    "ad_user": {
+      "type": "Optional[String]", 
+      "description": "Active Directory username. Use when authenticating with an Active Directory user rather than service principal."
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "Assert the state of the virtual network. Use 'present' to create or update and 'absent' to delete."
+    }, 
+    "secret": {
+      "type": "Optional[String]", 
+      "description": "Azure client secret. Use when authenticating with a Service Principal."
+    }, 
+    "address_prefixes_cidr": {
+      "type": "Optional[String]", 
+      "description": "List of IPv4 address ranges where each is formatted using CIDR notation. Required when creating a new virtual network or using purge_address_prefixes."
+    }, 
+    "client_id": {
+      "type": "Optional[String]", 
+      "description": "Azure client ID. Use when authenticating with a Service Principal."
+    }, 
+    "purge_address_prefixes": {
+      "type": "Optional[String]", 
+      "description": "Use with state present to remove any existing address_prefixes."
+    }, 
+    "purge_dns_servers": {
+      "type": "Optional[String]", 
+      "description": "Use with state present to remove existing DNS servers, reverting to default Azure servers. Mutually exclusive with dns_servers."
+    }, 
+    "subscription_id": {
+      "type": "Optional[String]", 
+      "description": "Your Azure subscription Id."
+    }, 
+    "password": {
+      "type": "Optional[String]", 
+      "description": "Active Directory user password. Use when authenticating with an Active Directory user rather than service principal."
+    }, 
+    "tenant": {
+      "type": "Optional[String]", 
+      "description": "Azure tenant ID. Use when authenticating with a Service Principal."
+    }, 
+    "location": {
+      "type": "Optional[String]", 
+      "description": "Valid azure location. Defaults to location of the resource group."
+    }
+  }
+}

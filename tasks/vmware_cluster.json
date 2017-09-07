@@ -1,0 +1,41 @@
+{
+  "description": "Create VMware vSphere Cluster", 
+  "parameters": {
+    "username": {
+      "type": "String", 
+      "description": "The username of the vSphere vCenter."
+    }, 
+    "enable_ha": {
+      "type": "Optional[String]", 
+      "description": "If set to True will enable HA when the cluster is created."
+    }, 
+    "enable_vsan": {
+      "type": "Optional[String]", 
+      "description": "If set to True will enable vSAN when the cluster is created."
+    }, 
+    "datacenter_name": {
+      "type": "String", 
+      "description": "The name of the datacenter the cluster will be created in."
+    }, 
+    "hostname": {
+      "type": "String", 
+      "description": "The hostname or IP address of the vSphere vCenter."
+    }, 
+    "cluster_name": {
+      "type": "String", 
+      "description": "The name of the cluster that will be created"
+    }, 
+    "enable_drs": {
+      "type": "Optional[String]", 
+      "description": "If set to True will enable DRS when the cluster is created."
+    }, 
+    "password": {
+      "type": "String", 
+      "description": "The password of the vSphere vCenter."
+    }, 
+    "validate_certs": {
+      "type": "Optional[String]", 
+      "description": "Allows connection when SSL certificates are not valid. Set to false when certificates are not trusted."
+    }
+  }
+}

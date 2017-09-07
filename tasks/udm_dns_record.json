@@ -1,0 +1,25 @@
+{
+  "description": "Manage dns entries on a univention corporate server", 
+  "parameters": {
+    "data": {
+      "type": "Optional[String]", 
+      "description": "Additional data for this record, e.g. ['a': '192.0.2.1']. Required if C(state=present)."
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "Whether the dns record is present or not."
+    }, 
+    "type": {
+      "type": "String", 
+      "description": "Define the record type. C(host_record) is a A or AAAA record, C(alias) is a CNAME, C(ptr_record) is a PTR record, C(srv_record) is a SRV record and C(txt_record) is a TXT record."
+    }, 
+    "name": {
+      "type": "String", 
+      "description": "Name of the record, this is also the DNS record. E.g. www for www.example.com."
+    }, 
+    "zone": {
+      "type": "String", 
+      "description": "Corresponding DNS zone for this record, e.g. example.com."
+    }
+  }
+}

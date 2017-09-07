@@ -1,0 +1,69 @@
+{
+  "description": "Manage FreeIPA sudo rule", 
+  "parameters": {
+    "ipa_port": {
+      "type": "Optional[String]", 
+      "description": "P o r t   o f   I P A   s e r v e r"
+    }, 
+    "cn": {
+      "type": "String", 
+      "description": "Canonical name. Can not be changed as it is the unique identifier."
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "S t a t e   t o   e n s u r e"
+    }, 
+    "cmd": {
+      "type": "Optional[String]", 
+      "description": "List of commands assigned to the rule. If an empty list is passed all commands will be removed from the rule. If option is omitted commands will not be checked or changed."
+    }, 
+    "ipa_prot": {
+      "type": "Optional[String]", 
+      "description": "P r o t o c o l   u s e d   b y   I P A   s e r v e r"
+    }, 
+    "host": {
+      "type": "Optional[String]", 
+      "description": "List of hosts assigned to the rule. If an empty list is passed all hosts will be removed from the rule. If option is omitted hosts will not be checked or changed. Option C(hostcategory) must be omitted to assign hosts."
+    }, 
+    "hostgroup": {
+      "type": "Optional[String]", 
+      "description": "List of host groups assigned to the rule. If an empty list is passed all host groups will be removed from the rule. If option is omitted host groups will not be checked or changed. Option C(hostcategory) must be omitted to assign host groups."
+    }, 
+    "usercategory": {
+      "type": "Optional[String]", 
+      "description": "User category the rule applies to."
+    }, 
+    "hostcategory": {
+      "type": "Optional[String]", 
+      "description": "Host category the rule applies to. If 'all' is passed one must omit C(host) and C(hostgroup). Option C(host) and C(hostgroup) must be omitted to assign 'all'."
+    }, 
+    "user": {
+      "type": "Optional[String]", 
+      "description": "List of users assigned to the rule. If an empty list is passed all users will be removed from the rule. If option is omitted users will not be checked or changed."
+    }, 
+    "ipa_user": {
+      "type": "Optional[String]", 
+      "description": "A d m i n i s t r a t i v e   a c c o u n t   u s e d   o n   I P A   s e r v e r"
+    }, 
+    "usergroup": {
+      "type": "Optional[String]", 
+      "description": "List of user groups assigned to the rule. If an empty list is passed all user groups will be removed from the rule. If option is omitted user groups will not be checked or changed."
+    }, 
+    "ipa_pass": {
+      "type": "String", 
+      "description": "P a s s w o r d   o f   a d m i n i s t r a t i v e   u s e r"
+    }, 
+    "cmdcategory": {
+      "type": "Optional[String]", 
+      "description": "Command category the rule applies to."
+    }, 
+    "validate_certs": {
+      "type": "Optional[String]", 
+      "description": "This only applies if C(ipa_prot) is I(https). If set to C(no), the SSL certificates will not be validated. This should only set to C(no) used on personally controlled sites using self-signed certificates."
+    }, 
+    "ipa_host": {
+      "type": "Optional[String]", 
+      "description": "I P   o r   h o s t n a m e   o f   I P A   s e r v e r"
+    }
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "description": "Runs puppet", 
+  "parameters": {
+    "logdest": {
+      "type": "Optional[String]", 
+      "description": "Where the puppet logs should go, if puppet apply is being used"
+    }, 
+    "execute": {
+      "type": "Optional[String]", 
+      "description": "Execute a specific piece of Puppet code. It has no effect with a puppetmaster."
+    }, 
+    "certname": {
+      "type": "Optional[String]", 
+      "description": "The name to use when handling certificates."
+    }, 
+    "tags": {
+      "type": "Optional[String]", 
+      "description": "A comma-separated list of puppet tags to be used."
+    }, 
+    "puppetmaster": {
+      "type": "Optional[String]", 
+      "description": "The hostname of the puppetmaster to contact."
+    }, 
+    "facter_basename": {
+      "type": "Optional[String]", 
+      "description": "Basename of the facter output file"
+    }, 
+    "manifest": {
+      "type": "Optional[String]", 
+      "description": "Path to the manifest file to run puppet apply on."
+    }, 
+    "environment": {
+      "type": "Optional[String]", 
+      "description": "Puppet environment to be used."
+    }, 
+    "timeout": {
+      "type": "Optional[String]", 
+      "description": "How long to wait for I(puppet) to finish."
+    }, 
+    "facts": {
+      "type": "Optional[String]", 
+      "description": "A dict of values to pass in as persistent external facter facts"
+    }, 
+    "modulepath": {
+      "type": "Optional[String]", 
+      "description": "Path to an alternate location for puppet modules"
+    }
+  }
+}

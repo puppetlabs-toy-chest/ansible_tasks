@@ -1,0 +1,21 @@
+{
+  "description": "Create, Delete and Restore server snapshots in CenturyLink Cloud.", 
+  "parameters": {
+    "server_ids": {
+      "type": "String", 
+      "description": "The list of CLC server Ids."
+    }, 
+    "expiration_days": {
+      "type": "Optional[String]", 
+      "description": "The number of days to keep the server snapshot before it expires."
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "The state to insure that the provided resources are in."
+    }, 
+    "wait": {
+      "type": "Optional[String]", 
+      "description": "Whether to wait for the provisioning tasks to finish before returning."
+    }
+  }
+}

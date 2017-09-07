@@ -1,0 +1,77 @@
+{
+  "description": "Manages VPCs on Apache CloudStack based clouds.", 
+  "parameters": {
+    "display_text": {
+      "type": "Optional[String]", 
+      "description": "Display text of the VPC. If not set, C(name) will be used for creating."
+    }, 
+    "domain": {
+      "type": "Optional[String]", 
+      "description": "Domain the VPC is related to."
+    }, 
+    "vpc_offering": {
+      "type": "Optional[String]", 
+      "description": "Name of the VPC offering. If not set, default VPC offering is used."
+    }, 
+    "poll_async": {
+      "type": "Optional[String]", 
+      "description": "Poll async jobs until job has finished."
+    }, 
+    "name": {
+      "type": "String", 
+      "description": "Name of the VPC."
+    }, 
+    "api_http_method": {
+      "type": "Optional[String]", 
+      "description": "HTTP method used."
+    }, 
+    "tags": {
+      "type": "Optional[String]", 
+      "description": "List of tags. Tags are a list of dictionaries having keys C(key) and C(value). For deleting all tags, set an empty list e.g. C(tags: [])."
+    }, 
+    "api_secret": {
+      "type": "Optional[String]", 
+      "description": "Secret key of the CloudStack API."
+    }, 
+    "api_timeout": {
+      "type": "Optional[String]", 
+      "description": "HTTP timeout."
+    }, 
+    "account": {
+      "type": "Optional[String]", 
+      "description": "Account the VPC is related to."
+    }, 
+    "api_region": {
+      "type": "Optional[String]", 
+      "description": "Name of the ini section in the C(cloustack.ini) file."
+    }, 
+    "project": {
+      "type": "Optional[String]", 
+      "description": "Name of the project the VPC is related to."
+    }, 
+    "api_key": {
+      "type": "Optional[String]", 
+      "description": "API key of the CloudStack API."
+    }, 
+    "zone": {
+      "type": "Optional[String]", 
+      "description": "Name of the zone. If not set, default zone is used."
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "State of the VPC."
+    }, 
+    "cidr": {
+      "type": "Optional[String]", 
+      "description": "CIDR of the VPC, e.g. 10.1.0.0/16 All VPC guest networks' CIDRs must be within this CIDR. Required on C(state=present)."
+    }, 
+    "network_domain": {
+      "type": "Optional[String]", 
+      "description": "Network domain for the VPC. All networks inside the VPC will belong to this domain."
+    }, 
+    "api_url": {
+      "type": "Optional[String]", 
+      "description": "URL of the CloudStack API e.g. https://cloud.example.com/client/api."
+    }
+  }
+}

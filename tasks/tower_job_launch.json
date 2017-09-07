@@ -1,0 +1,61 @@
+{
+  "description": "Launch an Ansible Job.", 
+  "parameters": {
+    "credential": {
+      "type": "Optional[String]", 
+      "description": "Credential to use for job, only used if prompt for credential is set."
+    }, 
+    "use_job_endpoint": {
+      "type": "Optional[String]", 
+      "description": "Disable launching jobs from job template."
+    }, 
+    "job_template": {
+      "type": "String", 
+      "description": "Name of the job_template to use."
+    }, 
+    "tags": {
+      "type": "Optional[String]", 
+      "description": "Specific tags to use for from playbook."
+    }, 
+    "extra_vars": {
+      "type": "Optional[String]", 
+      "description": "Extra_vars to use for the job_template. Prepend '@' if a file."
+    }, 
+    "tower_host": {
+      "type": "Optional[String]", 
+      "description": "URL to your Tower instance."
+    }, 
+    "job_type": {
+      "type": "Optional[String]", 
+      "description": "Job_type to use for the job, only used if prompt for job_type is set."
+    }, 
+    "tower_username": {
+      "type": "Optional[String]", 
+      "description": "Username for your Tower instance."
+    }, 
+    "tower_verify_ssl": {
+      "type": "Optional[String]", 
+      "description": "Dis/allow insecure connections to Tower. If C(no), SSL certificates will not be validated. This should only be used on personally controlled sites using self-signed certificates."
+    }, 
+    "limit": {
+      "type": "Optional[String]", 
+      "description": "Limit to use for the job_template."
+    }, 
+    "inventory": {
+      "type": "Optional[String]", 
+      "description": "Inventory to use for the job, only used if prompt for inventory is set."
+    }, 
+    "tower_password": {
+      "type": "Optional[String]", 
+      "description": "Password for your Tower instance."
+    }, 
+    "tower_config_file": {
+      "type": "Optional[String]", 
+      "description": "Path to the Tower config file. See notes."
+    }, 
+    "job_explanation": {
+      "type": "Optional[String]", 
+      "description": "Job explanation field."
+    }
+  }
+}

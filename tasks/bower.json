@@ -1,0 +1,33 @@
+{
+  "description": "Manage bower packages with bower", 
+  "parameters": {
+    "name": {
+      "type": "Optional[String]", 
+      "description": "The name of a bower package to install"
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "The state of the bower package"
+    }, 
+    "production": {
+      "type": "Optional[String]", 
+      "description": "Install with --production flag"
+    }, 
+    "version": {
+      "type": "Optional[String]", 
+      "description": "The version to be installed"
+    }, 
+    "relative_execpath": {
+      "type": "Optional[String]", 
+      "description": "Relative path to bower executable from install path"
+    }, 
+    "path": {
+      "type": "String", 
+      "description": "The base path where to install the bower packages"
+    }, 
+    "offline": {
+      "type": "Optional[String]", 
+      "description": "Install packages from local cache, if the packages were installed before"
+    }
+  }
+}

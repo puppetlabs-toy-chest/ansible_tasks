@@ -1,0 +1,25 @@
+{
+  "description": "Add and Delete public ips on servers in CenturyLink Cloud.", 
+  "parameters": {
+    "server_ids": {
+      "type": "String", 
+      "description": "A list of servers to create public ips on."
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "Determine whether to create or delete public IPs. If present module will not create a second public ip if one already exists."
+    }, 
+    "protocol": {
+      "type": "Optional[String]", 
+      "description": "The protocol that the public IP will listen for."
+    }, 
+    "ports": {
+      "type": "Optional[String]", 
+      "description": "A list of ports to expose. This is required when state is 'present'"
+    }, 
+    "wait": {
+      "type": "Optional[String]", 
+      "description": "Whether to wait for the tasks to finish before returning."
+    }
+  }
+}

@@ -1,0 +1,181 @@
+{
+  "description": "Manages BGP address-family's neighbors configuration.", 
+  "parameters": {
+    "default_originate": {
+      "type": "Optional[String]", 
+      "description": "Activate the default-originate feature."
+    }, 
+    "suppress_inactive": {
+      "type": "Optional[String]", 
+      "description": "suppress-inactive feature."
+    }, 
+    "additional_paths_send": {
+      "type": "Optional[String]", 
+      "description": "Valid values are enable for basic command enablement; disable for disabling the command at the neighbor af level (it adds the disable keyword to the basic command); and inherit to remove the command at this level (the command value is inherited from a higher BGP layer)."
+    }, 
+    "soo": {
+      "type": "Optional[String]", 
+      "description": "Site-of-origin. Valid values are a string defining a VPN extcommunity or 'default'."
+    }, 
+    "additional_paths_receive": {
+      "type": "Optional[String]", 
+      "description": "Valid values are enable for basic command enablement; disable for disabling the command at the neighbor af level (it adds the disable keyword to the basic command); and inherit to remove the command at this level (the command value is inherited from a higher BGP layer)."
+    }, 
+    "route_reflector_client": {
+      "type": "Optional[String]", 
+      "description": "Router reflector client."
+    }, 
+    "use_ssl": {
+      "type": "Optional[String]", 
+      "description": "Configures the I(transport) to use SSL if set to true only when the C(transport=nxapi), otherwise this value is ignored."
+    }, 
+    "prefix_list_out": {
+      "type": "Optional[String]", 
+      "description": "Valid values are a string defining a prefix-list name, or 'default'."
+    }, 
+    "as_override": {
+      "type": "Optional[String]", 
+      "description": "Activate the as-override feature."
+    }, 
+    "port": {
+      "type": "Optional[String]", 
+      "description": "Specifies the port to use when building the connection to the remote device.  This value applies to either I(cli) or I(nxapi).  The port value will default to the appropriate transport common port if none is provided in the task.  (cli=22, http=80, https=443)."
+    }, 
+    "transport": {
+      "type": "String", 
+      "description": "Configures the transport connection to use when connecting to the remote device.  The transport argument supports connectivity to the device over cli (ssh) or nxapi."
+    }, 
+    "filter_list_out": {
+      "type": "Optional[String]", 
+      "description": "Valid values are a string defining a filter-list name, or 'default'."
+    }, 
+    "afi": {
+      "type": "String", 
+      "description": "Address Family Identifier."
+    }, 
+    "allowas_in": {
+      "type": "Optional[String]", 
+      "description": "Activate allowas-in property"
+    }, 
+    "max_prefix_warning": {
+      "type": "Optional[String]", 
+      "description": "Optional warning-only keyword. Requires max_prefix_limit."
+    }, 
+    "max_prefix_threshold": {
+      "type": "Optional[String]", 
+      "description": "Optional threshold percentage at which to generate a warning. Valid values are an integer value. Requires max_prefix_limit."
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "Determines whether the config should be present or not on the device."
+    }, 
+    "provider": {
+      "type": "Optional[String]", 
+      "description": "Convenience method that allows all I(nxos) arguments to be passed as a dict object.  All constraints (required, choices, etc) must be met either by individual arguments or values in this dict."
+    }, 
+    "advertise_map_non_exist": {
+      "type": "Optional[String]", 
+      "description": "Conditional route advertisement. This property requires two route maps, an advertise-map and an exist-map. Valid values are an array specifying both the advertise-map name and the non-exist-map name, or simply 'default' e.g. ['my_advertise_map', 'my_non_exist_map']. This command is mutually exclusive with the advertise_map_exist property."
+    }, 
+    "unsuppress_map": {
+      "type": "Optional[String]", 
+      "description": "unsuppress-map. Valid values are a string defining a route-map name or 'default'."
+    }, 
+    "username": {
+      "type": "Optional[String]", 
+      "description": "Configures the username to use to authenticate the connection to the remote device.  This value is used to authenticate either the CLI login or the nxapi authentication depending on which transport is used. If the value is not specified in the task, the value of environment variable C(ANSIBLE_NET_USERNAME) will be used instead."
+    }, 
+    "default_originate_route_map": {
+      "type": "Optional[String]", 
+      "description": "Optional route-map for the default_originate property. Can be used independently or in conjunction with C(default_originate). Valid values are a string defining a route-map name, or 'default'."
+    }, 
+    "timeout": {
+      "type": "Optional[String]", 
+      "description": "Specifies the timeout in seconds for communicating with the network device for either connecting or sending commands.  If the timeout is exceeded before the operation is completed, the module will error. NX-API can be slow to return on long-running commands (sh mac, sh bgp, etc)."
+    }, 
+    "safi": {
+      "type": "String", 
+      "description": "Sub Address Family Identifier."
+    }, 
+    "filter_list_in": {
+      "type": "Optional[String]", 
+      "description": "Valid values are a string defining a filter-list name, or 'default'."
+    }, 
+    "weight": {
+      "type": "Optional[String]", 
+      "description": "Weight value. Valid values are an integer value or 'default'."
+    }, 
+    "host": {
+      "type": "String", 
+      "description": "Specifies the DNS host name or address for connecting to the remote device over the specified transport.  The value of host is used as the destination address for the transport."
+    }, 
+    "ssh_keyfile": {
+      "type": "Optional[String]", 
+      "description": "Specifies the SSH key to use to authenticate the connection to the remote device.  This argument is only used for the I(cli) transport. If the value is not specified in the task, the value of environment variable C(ANSIBLE_NET_SSH_KEYFILE) will be used instead."
+    }, 
+    "vrf": {
+      "type": "Optional[String]", 
+      "description": "Name of the VRF. The name 'default' is a valid VRF representing the global bgp."
+    }, 
+    "next_hop_self": {
+      "type": "Optional[String]", 
+      "description": "Activate the next-hop-self feature."
+    }, 
+    "max_prefix_limit": {
+      "type": "Optional[String]", 
+      "description": "maximum-prefix limit value. Valid values are an integer value or 'default'."
+    }, 
+    "password": {
+      "type": "Optional[String]", 
+      "description": "Specifies the password to use to authenticate the connection to the remote device.  This is a common argument used for either I(cli) or I(nxapi) transports. If the value is not specified in the task, the value of environment variable C(ANSIBLE_NET_PASSWORD) will be used instead."
+    }, 
+    "asn": {
+      "type": "String", 
+      "description": "BGP autonomous system number. Valid values are String, Integer in ASPLAIN or ASDOT notation."
+    }, 
+    "route_map_in": {
+      "type": "Optional[String]", 
+      "description": "Valid values are a string defining a route-map name, or 'default'."
+    }, 
+    "soft_reconfiguration_in": {
+      "type": "Optional[String]", 
+      "description": "Valid values are 'enable' for basic command enablement; 'always' to add the always keyword to the basic command; and 'inherit' to remove the command at this level (the command value is inherited from a higher BGP layer)."
+    }, 
+    "max_prefix_interval": {
+      "type": "Optional[String]", 
+      "description": "Optional restart interval. Valid values are an integer. Requires max_prefix_limit."
+    }, 
+    "route_map_out": {
+      "type": "Optional[String]", 
+      "description": "Valid values are a string defining a route-map name, or 'default'."
+    }, 
+    "send_community": {
+      "type": "Optional[String]", 
+      "description": "send-community attribute."
+    }, 
+    "prefix_list_in": {
+      "type": "Optional[String]", 
+      "description": "Valid values are a string defining a prefix-list name, or 'default'."
+    }, 
+    "neighbor": {
+      "type": "String", 
+      "description": "Neighbor Identifier. Valid values are string. Neighbors may use IPv4 or IPv6 notation, with or without prefix length."
+    }, 
+    "next_hop_third_party": {
+      "type": "Optional[String]", 
+      "description": "Activate the next-hop-third-party feature."
+    }, 
+    "advertise_map_exist": {
+      "type": "Optional[String]", 
+      "description": "Conditional route advertisement. This property requires two route maps, an advertise-map and an exist-map. Valid values are an array specifying both the advertise-map name and the exist-map name, or simply 'default' e.g. ['my_advertise_map', 'my_exist_map']. This command is mutually exclusive with the advertise_map_non_exist property."
+    }, 
+    "validate_certs": {
+      "type": "Optional[String]", 
+      "description": "If C(no), SSL certificates will not be validated. This should only be used on personally controlled sites using self-signed certificates.  If the transport argument is not nxapi, this value is ignored."
+    }, 
+    "allowas_in_max": {
+      "type": "Optional[String]", 
+      "description": "Optional max-occurrences value for allowas_in. Valid values are an integer value or 'default'. Can be used independently or in conjunction with allowas_in."
+    }
+  }
+}

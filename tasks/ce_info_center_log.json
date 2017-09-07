@@ -1,0 +1,37 @@
+{
+  "description": "Manages information center log configuration on HUAWEI CloudEngine switches.", 
+  "parameters": {
+    "log_level": {
+      "type": "Optional[String]", 
+      "description": "Specifies a log severity."
+    }, 
+    "log_enable": {
+      "type": "Optional[String]", 
+      "description": "Indicates whether log filtering is enabled."
+    }, 
+    "log_buff_size": {
+      "type": "Optional[String]", 
+      "description": "Specifies the maximum number of logs in the log buffer. The value is an integer that ranges from 0 to 10240. If logbuffer-size is 0, logs are not displayed."
+    }, 
+    "channel_id": {
+      "type": "Optional[String]", 
+      "description": "Specifies a channel ID. The value is an integer ranging from 0 to 9."
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "Determines whether the config should be present or not on the device."
+    }, 
+    "log_buff_enable": {
+      "type": "Optional[String]", 
+      "description": "Enables the Switch to send logs to the log buffer."
+    }, 
+    "log_time_stamp": {
+      "type": "Optional[String]", 
+      "description": "Sets the timestamp format of logs."
+    }, 
+    "module_name": {
+      "type": "Optional[String]", 
+      "description": "Specifies the name of a module. The value is a module name in registration logs."
+    }
+  }
+}

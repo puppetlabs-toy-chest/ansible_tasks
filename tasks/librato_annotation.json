@@ -1,0 +1,41 @@
+{
+  "description": "create an annotation in librato", 
+  "parameters": {
+    "user": {
+      "type": "String", 
+      "description": "Librato account username"
+    }, 
+    "name": {
+      "type": "Optional[String]", 
+      "description": "The annotation stream name If the annotation stream does not exist, it will be created automatically"
+    }, 
+    "links": {
+      "type": "String", 
+      "description": "See examples"
+    }, 
+    "title": {
+      "type": "String", 
+      "description": "The title of an annotation is a string and may contain spaces The title should be a short, high-level summary of the annotation e.g. v45 Deployment"
+    }, 
+    "start_time": {
+      "type": "Optional[String]", 
+      "description": "The unix timestamp indicating the the time at which the event referenced by this annotation started"
+    }, 
+    "source": {
+      "type": "Optional[String]", 
+      "description": "A string which describes the originating source of an annotation when that annotation is tracked across multiple members of a population"
+    }, 
+    "end_time": {
+      "type": "Optional[String]", 
+      "description": "The unix timestamp indicating the the time at which the event referenced by this annotation ended For events that have a duration, this is a useful way to annotate the duration of the event"
+    }, 
+    "api_key": {
+      "type": "String", 
+      "description": "Librato account api key"
+    }, 
+    "description": {
+      "type": "Optional[String]", 
+      "description": "The description contains extra meta-data about a particular annotation The description should contain specifics on the individual annotation e.g. Deployed 9b562b2 shipped new feature foo!"
+    }
+  }
+}

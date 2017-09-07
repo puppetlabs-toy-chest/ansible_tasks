@@ -1,0 +1,45 @@
+{
+  "description": "Manage A10 Networks AX/SoftAX/Thunder/vThunder devices", 
+  "parameters": {
+    "username": {
+      "type": "String", 
+      "description": "An account with administrator privileges."
+    }, 
+    "write_config": {
+      "type": "Optional[String]", 
+      "description": "If C(yes), any changes will cause a write of the running configuration to non-volatile memory. This will save I(all) configuration changes, including those that may have been made manually or through other modules, so care should be taken when specifying C(yes)."
+    }, 
+    "server_name": {
+      "type": "String", 
+      "description": "The SLB (Server Load Balancer) server name."
+    }, 
+    "server_ports": {
+      "type": "Optional[String]", 
+      "description": "A list of ports to create for the server. Each list item should be a dictionary which specifies the C(port:) and C(protocol:)."
+    }, 
+    "server_status": {
+      "type": "Optional[String]", 
+      "description": "The SLB (Server Load Balancer) virtual server status."
+    }, 
+    "host": {
+      "type": "String", 
+      "description": "Hostname or IP of the A10 Networks device."
+    }, 
+    "server_ip": {
+      "type": "String", 
+      "description": "The SLB (Server Load Balancer) server IPv4 address."
+    }, 
+    "operation": {
+      "type": "Optional[String]", 
+      "description": "Create, Update or Remove SLB server. For create and update operation, we use the IP address and server name specified in the POST message. For delete operation, we use the server name in the request URI."
+    }, 
+    "password": {
+      "type": "String", 
+      "description": "Password for the C(username) account."
+    }, 
+    "validate_certs": {
+      "type": "Optional[String]", 
+      "description": "If C(no), SSL certificates will not be validated. This should only be used on personally controlled devices using self-signed certificates."
+    }
+  }
+}

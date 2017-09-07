@@ -1,0 +1,25 @@
+{
+  "description": "load configuration on PAN-OS device", 
+  "parameters": {
+    "username": {
+      "type": "Optional[String]", 
+      "description": "username for authentication"
+    }, 
+    "commit": {
+      "type": "Optional[String]", 
+      "description": "commit if changed"
+    }, 
+    "password": {
+      "type": "String", 
+      "description": "password for authentication"
+    }, 
+    "ip_address": {
+      "type": "String", 
+      "description": "IP address (or hostname) of PAN-OS device"
+    }, 
+    "file": {
+      "type": "Optional[String]", 
+      "description": "configuration file to load"
+    }
+  }
+}

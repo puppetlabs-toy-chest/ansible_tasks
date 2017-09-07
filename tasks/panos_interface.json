@@ -1,0 +1,33 @@
+{
+  "description": "configure data-port network interface for DHCP", 
+  "parameters": {
+    "username": {
+      "type": "Optional[String]", 
+      "description": "Username credentials to use for auth."
+    }, 
+    "if_name": {
+      "type": "String", 
+      "description": "Name of the interface to configure."
+    }, 
+    "create_default_route": {
+      "type": "Optional[String]", 
+      "description": "Whether or not to add default route with router learned via DHCP."
+    }, 
+    "zone_name": {
+      "type": "String", 
+      "description": "N a m e   o f   t h e   z o n e   f o r   t h e   i n t e r f a c e .   I f   t h e   z o n e   d o e s   n o t   e x i s t   i t   i s   c r e a t e d   b u t   i f   t h e   z o n e   e x i s t s   a n d   i t   i s   n o t   o f   t h e   l a y e r 3   t y p e   t h e   o p e r a t i o n   w i l l   f a i l . \n"
+    }, 
+    "commit": {
+      "type": "Optional[String]", 
+      "description": "Commit if changed"
+    }, 
+    "password": {
+      "type": "String", 
+      "description": "Password credentials to use for auth."
+    }, 
+    "ip_address": {
+      "type": "String", 
+      "description": "IP address (or hostname) of PAN-OS device being configured."
+    }
+  }
+}

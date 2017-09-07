@@ -1,0 +1,109 @@
+{
+  "description": "Manages virtual machines in vCenter", 
+  "parameters": {
+    "resource_pool": {
+      "type": "Optional[String]", 
+      "description": "Affect machine to the given resource pool. Resource pool should be child of the selected host parent."
+    }, 
+    "force": {
+      "type": "Optional[Boolean]", 
+      "description": "Ignore warnings and complete the actions."
+    }, 
+    "hardware": {
+      "type": "Optional[String]", 
+      "description": "Manage some VM hardware attributes. Valid attributes are:  - C(memory_mb) (integer): Amount of memory in MB.  - C(num_cpus) (integer): Number of CPUs.  - C(scsi) (string): Valid values are C(buslogic), C(lsilogic), C(lsilogicsas) and C(paravirtual) (default)."
+    }, 
+    "cluster": {
+      "type": "Optional[String]", 
+      "description": "The cluster name where the VM will run."
+    }, 
+    "customization": {
+      "type": "Optional[String]", 
+      "description": "Parameters for OS customization when cloning from template. Common parameters (Linux/Windows):  - C(dns_servers) (list): List of DNS servers to configure.  - C(dns_suffix) (list): List of domain suffixes, aka DNS search path (default: C(domain) parameter).  - C(domain) (string): DNS domain name to use.  - C(hostname) (string): Computer hostname (default: shorted C(name) parameter). Parameters related to Windows customization:  - C(autologon) (bool): Auto logon after VM customization (default: False).  - C(autologoncount) (int): Number of autologon after reboot (default: 1).  - C(domainadmin) (string): User used to join in AD domain (mandatory with C(joindomain)).  - C(domainadminpassword) (string): Password used to join in AD domain (mandatory with C(joindomain)).  - C(fullname) (string): Server owner name (default: Administrator).  - C(joindomain) (string): AD domain to join (Not compatible with C(joinworkgroup)).  - C(joinworkgroup) (string): Workgroup to join (Not compatible with C(joindomain), default: WORKGROUP).  - C(orgname) (string): Organisation name (default: ACME).  - C(password) (string): Local administrator password.  - C(productid) (string): Product ID.  - C(runonce) (list): List of commands to run at first user logon.  - C(timezone) (int): Timezone (See U(https://msdn.microsoft.com/en-us/library/ms912391.aspx))."
+    }, 
+    "disk": {
+      "type": "Optional[String]", 
+      "description": "A list of disks to add. Valid attributes are:  - C(size_[tb,gb,mb,kb]) (integer): Disk storage size in specified unit.  - C(type) (string): Valid value is C(thin) (default: None).  - C(datastore) (string): Datastore to use for the disk. If C(autoselect_datastore) is enabled, filter datastore selection.  - C(autoselect_datastore) (bool): select the less used datastore."
+    }, 
+    "networks": {
+      "type": "Optional[String]", 
+      "description": "A list of networks (in the order of the NICs). One of the below parameters is required per entry:  - C(name) (string): Name of the portgroup for this interface.  - C(vlan) (integer): VLAN number for this interface. Optional parameters per entry (used for virtual hardware):  - C(device_type) (string): Virtual network device (one of C(e1000), C(e1000e), C(pcnet32), C(vmxnet2), C(vmxnet3) (default), C(sriov)).  - C(mac) (string): Customize mac address. Optional parameters per entry (used for OS customization):  - C(type) (string): Type of IP assignment (either C(dhcp) or C(static)).  - C(ip) (string): Static IP address (implies C(type: static)).  - C(netmask) (string): Static netmask required for C(ip).  - C(gateway) (string): Static gateway.  - C(dns_servers) (string): DNS servers for this network interface (Windows).  - C(domain) (string): Domain name for this network interface (Windows)."
+    }, 
+    "wait_for_ip_address": {
+      "type": "Optional[Boolean]", 
+      "description": "Wait until vCenter detects an IP address for the VM. This requires vmware-tools (vmtoolsd) to properly work after creation."
+    }, 
+    "uuid": {
+      "type": "Optional[String]", 
+      "description": "UUID of the instance to manage if known, this is VMware's unique identifier. This is required if name is not supplied."
+    }, 
+    "customvalues": {
+      "type": "Optional[String]", 
+      "description": "Define a list of customvalues to set on VM. A customvalue object takes 2 fields C(key) and C(value)."
+    }, 
+    "hostname": {
+      "type": "String", 
+      "description": "The hostname or IP address of the vSphere vCenter."
+    }, 
+    "state": {
+      "type": "String", 
+      "description": "What state should the virtual machine be in? If C(state) is set to C(present) and VM exists, ensure the VM configuration conforms to task arguments."
+    }, 
+    "template": {
+      "type": "Optional[String]", 
+      "description": "Template used to create VM. If this value is not set, VM is created without using a template. If the VM exists already this setting will be ignored."
+    }, 
+    "linked_clone": {
+      "type": "Optional[Boolean]", 
+      "description": "Whether to create a Linked Clone from the snapshot specified."
+    }, 
+    "folder": {
+      "type": "Optional[String]", 
+      "description": "Destination folder, absolute path to find an existing guest or create the new guest."
+    }, 
+    "username": {
+      "type": "String", 
+      "description": "The username of the vSphere vCenter."
+    }, 
+    "snapshot_src": {
+      "type": "Optional[String]", 
+      "description": "Name of an existing snapshot to use to create a clone of a VM."
+    }, 
+    "guest_id": {
+      "type": "Optional[String]", 
+      "description": "Set the guest ID (Debian, RHEL, Windows...). This field is required when creating a VM. Valid values are referenced here: https://www.vmware.com/support/developer/converter-sdk/conv55_apireference/vim.vm.GuestOsDescriptor.GuestOsIdentifier.html\n"
+    }, 
+    "name_match": {
+      "type": "Optional[String]", 
+      "description": "If multiple VMs matching the name, use the first or last found."
+    }, 
+    "password": {
+      "type": "String", 
+      "description": "The password of the vSphere vCenter."
+    }, 
+    "annotation": {
+      "type": "Optional[String]", 
+      "description": "A note or annotation to include in the VM."
+    }, 
+    "datacenter": {
+      "type": "Optional[String]", 
+      "description": "Destination datacenter for the deploy operation."
+    }, 
+    "name": {
+      "type": "String", 
+      "description": "Name of the VM to work with. VM names in vCenter are not necessarily unique, which may be problematic, see C(name_match)."
+    }, 
+    "is_template": {
+      "type": "Optional[Boolean]", 
+      "description": "Flag the instance as a template."
+    }, 
+    "esxi_hostname": {
+      "type": "Optional[String]", 
+      "description": "The ESXi hostname where the VM will run."
+    }, 
+    "validate_certs": {
+      "type": "Optional[String]", 
+      "description": "Allows connection when SSL certificates are not valid. Set to false when certificates are not trusted."
+    }
+  }
+}

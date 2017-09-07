@@ -1,0 +1,49 @@
+{
+  "description": "Manages static route configuration on HUAWEI CloudEngine switches.", 
+  "parameters": {
+    "description": {
+      "type": "Optional[String]", 
+      "description": "Name of the route. Used with the name parameter on the CLI."
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "Specify desired state of the resource."
+    }, 
+    "pref": {
+      "type": "Optional[String]", 
+      "description": "Preference or administrative difference of route (range 1-255)."
+    }, 
+    "mask": {
+      "type": "String", 
+      "description": "Destination ip mask of static route."
+    }, 
+    "destvrf": {
+      "type": "Optional[String]", 
+      "description": "VPN instance of next hop ip address."
+    }, 
+    "nhp_interface": {
+      "type": "Optional[String]", 
+      "description": "Next hop interface full name of static route."
+    }, 
+    "prefix": {
+      "type": "String", 
+      "description": "Destination ip address of static route."
+    }, 
+    "next_hop": {
+      "type": "Optional[String]", 
+      "description": "Next hop address of static route."
+    }, 
+    "vrf": {
+      "type": "Optional[String]", 
+      "description": "VPN instance of destination ip address."
+    }, 
+    "tag": {
+      "type": "Optional[String]", 
+      "description": "Route tag value (numeric)."
+    }, 
+    "aftype": {
+      "type": "String", 
+      "description": "Destination ip address family type of static route."
+    }
+  }
+}

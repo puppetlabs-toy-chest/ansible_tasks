@@ -1,0 +1,101 @@
+{
+  "description": "A wrapper around rsync to make common tasks in your playbooks quick and easy.", 
+  "parameters": {
+    "partial": {
+      "type": "Optional[String]", 
+      "description": "Tells rsync to keep the partial file which should make a subsequent transfer of the rest of the file much faster."
+    }, 
+    "links": {
+      "type": "Optional[String]", 
+      "description": "Copy symlinks as symlinks."
+    }, 
+    "copy_links": {
+      "type": "Optional[String]", 
+      "description": "Copy symlinks as the item that they point to (the referent) is copied, rather than the symlink."
+    }, 
+    "perms": {
+      "type": "Optional[String]", 
+      "description": "Preserve permissions."
+    }, 
+    "owner": {
+      "type": "Optional[String]", 
+      "description": "Preserve owner (super user only)"
+    }, 
+    "archive": {
+      "type": "Optional[String]", 
+      "description": "Mirrors the rsync archive flag, enables recursive, links, perms, times, owner, group flags and -D."
+    }, 
+    "dest_port": {
+      "type": "Optional[String]", 
+      "description": "Port number for ssh on the destination host. Prior to ansible 2.0, the ansible_ssh_port inventory var took precedence over this value."
+    }, 
+    "group": {
+      "type": "Optional[String]", 
+      "description": "Preserve group"
+    }, 
+    "existing_only": {
+      "type": "Optional[String]", 
+      "description": "Skip creating new files on receiver."
+    }, 
+    "rsync_path": {
+      "type": "Optional[String]", 
+      "description": "Specify the rsync command to run on the remote host. See C(--rsync-path) on the rsync man page."
+    }, 
+    "verify_host": {
+      "type": "Optional[String]", 
+      "description": "Verify destination host key."
+    }, 
+    "use_ssh_args": {
+      "type": "Optional[String]", 
+      "description": "Use the ssh_args specified in ansible.cfg"
+    }, 
+    "dirs": {
+      "type": "Optional[String]", 
+      "description": "Transfer directories without recursing"
+    }, 
+    "dest": {
+      "type": "String", 
+      "description": "Path on the destination host that will be synchronized from the source; The path can be absolute or relative."
+    }, 
+    "compress": {
+      "type": "Optional[String]", 
+      "description": "Compress file data during the transfer. In most cases, leave this enabled unless it causes problems."
+    }, 
+    "rsync_timeout": {
+      "type": "Optional[String]", 
+      "description": "Specify a --timeout for the rsync command in seconds."
+    }, 
+    "rsync_opts": {
+      "type": "Optional[String]", 
+      "description": "Specify additional rsync options by passing in an array."
+    }, 
+    "set_remote_user": {
+      "type": "Optional[String]", 
+      "description": "put user@ for the remote paths. If you have a custom ssh config to define the remote user for a host that does not match the inventory user, you should set this parameter to \"no\"."
+    }, 
+    "recursive": {
+      "type": "Optional[String]", 
+      "description": "Recurse into directories."
+    }, 
+    "src": {
+      "type": "String", 
+      "description": "Path on the source host that will be synchronized to the destination; The path can be absolute or relative."
+    }, 
+    "checksum": {
+      "type": "Optional[String]", 
+      "description": "Skip based on checksum, rather than mod-time & size; Note that that \"archive\" option is still enabled by default - the \"checksum\" option will not disable it."
+    }, 
+    "times": {
+      "type": "Optional[String]", 
+      "description": "Preserve modification times"
+    }, 
+    "mode": {
+      "type": "Optional[String]", 
+      "description": "Specify the direction of the synchronization. In push mode the localhost or delegate is the source; In pull mode the remote host in context is the source."
+    }, 
+    "delete": {
+      "type": "Optional[String]", 
+      "description": "Delete files in C(dest) that don't exist (after transfer, not before) in the C(src) path. This option requires C(recursive=yes)."
+    }
+  }
+}

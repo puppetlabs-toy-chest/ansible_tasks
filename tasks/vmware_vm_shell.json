@@ -1,0 +1,61 @@
+{
+  "description": "Execute a process in VM", 
+  "parameters": {
+    "username": {
+      "type": "String", 
+      "description": "The username of the vSphere vCenter."
+    }, 
+    "datacenter": {
+      "type": "Optional[String]", 
+      "description": "The datacenter hosting the VM Will help speed up search"
+    }, 
+    "vm_password": {
+      "type": "Optional[String]", 
+      "description": "The password used to login to the VM."
+    }, 
+    "vm_shell": {
+      "type": "String", 
+      "description": "The absolute path to the program to start. On Linux this is executed via bash."
+    }, 
+    "vm_shell_cwd": {
+      "type": "Optional[String]", 
+      "description": "The current working directory of the application from which it will be run"
+    }, 
+    "vm_shell_args": {
+      "type": "Optional[String]", 
+      "description": "The argument to the program."
+    }, 
+    "hostname": {
+      "type": "String", 
+      "description": "The hostname or IP address of the vSphere vCenter."
+    }, 
+    "vm_username": {
+      "type": "Optional[String]", 
+      "description": "The user to connect to the VM."
+    }, 
+    "vm_shell_env": {
+      "type": "Optional[String]", 
+      "description": "Comma separated list of envirnoment variable, specified in the guest OS notation"
+    }, 
+    "cluster": {
+      "type": "Optional[String]", 
+      "description": "The cluster hosting the VM Will help speed up search"
+    }, 
+    "vm_id_type": {
+      "type": "Optional[String]", 
+      "description": "The identification tag for the VM"
+    }, 
+    "validate_certs": {
+      "type": "Optional[String]", 
+      "description": "Allows connection when SSL certificates are not valid. Set to false when certificates are not trusted."
+    }, 
+    "password": {
+      "type": "String", 
+      "description": "The password of the vSphere vCenter."
+    }, 
+    "vm_id": {
+      "type": "String", 
+      "description": "The identification for the VM"
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "description": "Manages information center trap configuration on HUAWEI CloudEngine switches.", 
+  "parameters": {
+    "trap_time_stamp": {
+      "type": "Optional[String]", 
+      "description": "Timestamp format of alarm information."
+    }, 
+    "trap_buff_size": {
+      "type": "Optional[String]", 
+      "description": "Size of a trap buffer. The value is an integer ranging from 0 to 1024. The default value is 256."
+    }, 
+    "channel_id": {
+      "type": "Optional[String]", 
+      "description": "Number of a channel. The value is an integer ranging from 0 to 9. The default value is 0."
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "Specify desired state of the resource."
+    }, 
+    "trap_level": {
+      "type": "Optional[String]", 
+      "description": "Trap level permitted to output."
+    }, 
+    "trap_buff_enable": {
+      "type": "Optional[String]", 
+      "description": "Whether a trap buffer is enabled to output information."
+    }, 
+    "module_name": {
+      "type": "Optional[String]", 
+      "description": "Module name of the rule. The value is a string of 1 to 31 case-insensitive characters. The default value is default. Please use lower-case letter, such as [aaa, acl, arp, bfd]."
+    }, 
+    "trap_enable": {
+      "type": "Optional[String]", 
+      "description": "Whether a device is enabled to output alarms."
+    }
+  }
+}

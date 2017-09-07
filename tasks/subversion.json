@@ -1,0 +1,49 @@
+{
+  "description": "Deploys a subversion repository.", 
+  "parameters": {
+    "username": {
+      "type": "Optional[String]", 
+      "description": "--username parameter passed to svn."
+    }, 
+    "executable": {
+      "type": "Optional[String]", 
+      "description": "Path to svn executable to use. If not supplied, the normal mechanism for resolving binary paths will be used."
+    }, 
+    "force": {
+      "type": "Optional[String]", 
+      "description": "If C(yes), modified files will be discarded. If C(no), module will fail if it encounters modified files. Prior to 1.9 the default was `yes`."
+    }, 
+    "dest": {
+      "type": "String", 
+      "description": "Absolute path where the repository should be deployed."
+    }, 
+    "update": {
+      "type": "Optional[String]", 
+      "description": "If no, do not retrieve new revisions from the origin repository"
+    }, 
+    "repo": {
+      "type": "String", 
+      "description": "The subversion URL to the repository."
+    }, 
+    "switch": {
+      "type": "Optional[String]", 
+      "description": "If C(no), do not call svn switch before update."
+    }, 
+    "export": {
+      "type": "Optional[String]", 
+      "description": "If C(yes), do export instead of checkout/update."
+    }, 
+    "password": {
+      "type": "Optional[String]", 
+      "description": "--password parameter passed to svn."
+    }, 
+    "checkout": {
+      "type": "Optional[String]", 
+      "description": "If no, do not check out the repository if it does not exist locally"
+    }, 
+    "revision": {
+      "type": "Optional[String]", 
+      "description": "Specific revision to checkout."
+    }
+  }
+}

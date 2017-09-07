@@ -1,0 +1,37 @@
+{
+  "description": "Manage packages on SUSE and openSUSE", 
+  "parameters": {
+    "force": {
+      "type": "Optional[String]", 
+      "description": "Adds C(--force) option to I(zypper). Allows to downgrade packages and change vendor or architecture."
+    }, 
+    "name": {
+      "type": "String", 
+      "description": "Package name C(name) or package specifier. Can include a version like C(name=1.0), C(name>3.4) or C(name<=2.7). If a version is given, C(oldpackage) is implied and zypper is allowed to update the package within the version range given. You can also pass a url or a local path to a rpm file. When using state=latest, this can be '*', which updates all installed packages."
+    }, 
+    "disable_gpg_check": {
+      "type": "Optional[String]", 
+      "description": "Whether to disable to GPG signature checking of the package signature being installed. Has an effect only if state is I(present) or I(latest)."
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "C(present) will make sure the package is installed. C(latest)  will make sure the latest version of the package is installed. C(absent)  will make sure the specified package is not installed."
+    }, 
+    "oldpackage": {
+      "type": "Optional[String]", 
+      "description": "Adds C(--oldpackage) option to I(zypper). Allows to downgrade packages with less side-effects than force. This is implied as soon as a version is specified as part of the package name."
+    }, 
+    "update_cache": {
+      "type": "Optional[String]", 
+      "description": "Run the equivalent of C(zypper refresh) before the operation. Disabled in check mode."
+    }, 
+    "disable_recommends": {
+      "type": "Optional[String]", 
+      "description": "Corresponds to the C(--no-recommends) option for I(zypper). Default behavior (C(yes)) modifies zypper's default behavior; C(no) does install recommended packages."
+    }, 
+    "type": {
+      "type": "Optional[String]", 
+      "description": "The type of package to be operated on."
+    }
+  }
+}

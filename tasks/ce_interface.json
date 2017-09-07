@@ -1,0 +1,33 @@
+{
+  "description": "Manages physical attributes of interfaces on HUAWEI CloudEngine switches.", 
+  "parameters": {
+    "description": {
+      "type": "Optional[String]", 
+      "description": "Specifies an interface description. The value is a string of 1 to 242 case-sensitive characters, spaces supported but question marks (?) not supported."
+    }, 
+    "interface_type": {
+      "type": "Optional[String]", 
+      "description": "Interface type to be configured from the device."
+    }, 
+    "state": {
+      "type": "String", 
+      "description": "Specify desired state of the resource."
+    }, 
+    "admin_state": {
+      "type": "Optional[String]", 
+      "description": "Specifies the interface management status. The value is an enumerated type. up, An interface is in the administrative Up state. down, An interface is in the administrative Down state."
+    }, 
+    "mode": {
+      "type": "Optional[String]", 
+      "description": "Manage Layer 2 or Layer 3 state of the interface."
+    }, 
+    "interface": {
+      "type": "Optional[String]", 
+      "description": "Full name of interface, i.e. 40GE1/0/10, Tunnel1."
+    }, 
+    "l2sub": {
+      "type": "Optional[String]", 
+      "description": "Specifies whether the interface is a Layer 2 sub-interface."
+    }
+  }
+}

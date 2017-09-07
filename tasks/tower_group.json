@@ -1,0 +1,85 @@
+{
+  "description": "create, update, or destroy Ansible Tower group.", 
+  "parameters": {
+    "state": {
+      "type": "Optional[String]", 
+      "description": "Desired state of the resource."
+    }, 
+    "credential": {
+      "type": "Optional[String]", 
+      "description": "Credential to use for the group."
+    }, 
+    "source_vars": {
+      "type": "Optional[String]", 
+      "description": "Override variables from source with variables from this field."
+    }, 
+    "tower_host": {
+      "type": "Optional[String]", 
+      "description": "URL to your Tower instance."
+    }, 
+    "description": {
+      "type": "Optional[String]", 
+      "description": "The description to use for the group."
+    }, 
+    "overwrite_vars": {
+      "type": "Optional[String]", 
+      "description": "Override vars in child groups and hosts with those from external source."
+    }, 
+    "source_regions": {
+      "type": "Optional[String]", 
+      "description": "Regions for cloud provider."
+    }, 
+    "inventory": {
+      "type": "String", 
+      "description": "Inventory the group should be made a member of."
+    }, 
+    "variables": {
+      "type": "Optional[String]", 
+      "description": "Variables to use for the group, use '@' for a file."
+    }, 
+    "instance_filters": {
+      "type": "Optional[String]", 
+      "description": "Comma-separated list of filter expressions for matching hosts."
+    }, 
+    "group_by": {
+      "type": "Optional[String]", 
+      "description": "Limit groups automatically created from inventory source."
+    }, 
+    "tower_config_file": {
+      "type": "Optional[String]", 
+      "description": "Path to the Tower config file. See notes."
+    }, 
+    "source_script": {
+      "type": "Optional[String]", 
+      "description": "Inventory script to be used when group type is \"custom\"."
+    }, 
+    "update_on_launch": {
+      "type": "Optional[String]", 
+      "description": "Refresh inventory data from its source each time a job is run."
+    }, 
+    "source": {
+      "type": "Optional[String]", 
+      "description": "The source to use for this group."
+    }, 
+    "tower_password": {
+      "type": "Optional[String]", 
+      "description": "Password for your Tower instance."
+    }, 
+    "tower_username": {
+      "type": "Optional[String]", 
+      "description": "Username for your Tower instance."
+    }, 
+    "tower_verify_ssl": {
+      "type": "Optional[String]", 
+      "description": "Dis/allow insecure connections to Tower. If C(no), SSL certificates will not be validated. This should only be used on personally controlled sites using self-signed certificates."
+    }, 
+    "overwrite": {
+      "type": "Optional[String]", 
+      "description": "Delete child roups and hosts not found in source."
+    }, 
+    "name": {
+      "type": "String", 
+      "description": "The name to use for the group."
+    }
+  }
+}

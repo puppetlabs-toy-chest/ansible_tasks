@@ -1,0 +1,237 @@
+{
+  "description": "Add or remove YUM repositories", 
+  "parameters": {
+    "seuser": {
+      "type": "Optional[String]", 
+      "description": "User part of SELinux file context. Will default to system policy, if applicable. If set to C(_default), it will use the C(user) portion of the policy if available."
+    }, 
+    "ip_resolve": {
+      "type": "Optional[String]", 
+      "description": "Determines how yum resolves host names. C(4) or C(IPv4) - resolve to IPv4 addresses only. C(6) or C(IPv6) - resolve to IPv6 addresses only."
+    }, 
+    "enabled": {
+      "type": "Optional[String]", 
+      "description": "This tells yum whether or not use this repository."
+    }, 
+    "proxy_password": {
+      "type": "Optional[String]", 
+      "description": "Username to use for proxy."
+    }, 
+    "mode": {
+      "type": "Optional[String]", 
+      "description": "Mode the file or directory should be. For those used to I(/usr/bin/chmod) remember that modes are actually octal numbers (like 0644). Leaving off the leading zero will likely have unexpected results. As of version 1.8, the mode may be specified as a symbolic mode (for example, C(u+rwx) or C(u=rw,g=r,o=r))."
+    }, 
+    "mirrorlist_expire": {
+      "type": "Optional[String]", 
+      "description": "Time (in seconds) after which the mirrorlist locally cached will expire. Default value is 6 hours."
+    }, 
+    "bandwidth": {
+      "type": "Optional[String]", 
+      "description": "Maximum available network bandwidth in bytes/second. Used with the I(throttle) option. If I(throttle) is a percentage and bandwidth is C(0) then bandwidth throttling will be disabled. If I(throttle) is expressed as a data rate (bytes/sec) then this option is ignored. Default is C(0) (no bandwidth throttling)."
+    }, 
+    "cost": {
+      "type": "Optional[String]", 
+      "description": "Relative cost of accessing this repository. Useful for weighing one repo's packages as greater/less than any other."
+    }, 
+    "file": {
+      "type": "Optional[String]", 
+      "description": "File to use to save the repo in. Defaults to the value of I(name)."
+    }, 
+    "owner": {
+      "type": "Optional[String]", 
+      "description": "Name of the user that should own the file/directory, as would be fed to I(chown)."
+    }, 
+    "exclude": {
+      "type": "Optional[String]", 
+      "description": "List of packages to exclude from updates or installs. This should be a space separated list. Shell globs using wildcards (eg. C(*) and C(?)) are allowed. The list can also be a regular YAML array."
+    }, 
+    "attributes": {
+      "type": "Optional[String]", 
+      "description": "Attributes the file or directory should have. To get supported flags look at the man page for I(chattr) on the target system. This string should contain the attributes in the same order as the one displayed by I(lsattr)."
+    }, 
+    "keepalive": {
+      "type": "Optional[String]", 
+      "description": "This tells yum whether or not HTTP/1.1 keepalive should be used with this repository. This can improve transfer speeds by using one connection when downloading multiple files from a repository."
+    }, 
+    "repo_gpgcheck": {
+      "type": "Optional[String]", 
+      "description": "This tells yum whether or not it should perform a GPG signature check on the repodata from this repository."
+    }, 
+    "group": {
+      "type": "Optional[String]", 
+      "description": "Name of the group that should own the file/directory, as would be fed to I(chown)."
+    }, 
+    "failovermethod": {
+      "type": "Optional[String]", 
+      "description": "C(roundrobin) randomly selects a URL out of the list of URLs to start with and proceeds through each of them as it encounters a failure contacting the host. C(priority) starts from the first I(baseurl) listed and reads through them sequentially."
+    }, 
+    "unsafe_writes": {
+      "type": "Optional[String]", 
+      "description": "Normally this module uses atomic operations to prevent data corruption or inconsistent reads from the target files, sometimes systems are configured or just broken in ways that prevent this. One example are docker mounted files, they cannot be updated atomically and can only be done in an unsafe manner. This boolean option allows ansible to fall back to unsafe methods of updating files for those cases in which you do not have any other choice. Be aware that this is subject to race conditions and can lead to data corruption."
+    }, 
+    "deltarpm_metadata_percentage": {
+      "type": "Optional[String]", 
+      "description": "When the relative size of deltarpm metadata vs pkgs is larger than this, deltarpm metadata is not downloaded from the repo. Note that you can give values over C(100), so C(200) means that the metadata is required to be half the size of the packages. Use C(0) to turn off this check, and always download metadata."
+    }, 
+    "gpgkey": {
+      "type": "Optional[String]", 
+      "description": "A URL pointing to the ASCII-armored GPG key file for the repository."
+    }, 
+    "serole": {
+      "type": "Optional[String]", 
+      "description": "Role part of SELinux file context, C(_default) feature works as for I(seuser)."
+    }, 
+    "http_caching": {
+      "type": "Optional[String]", 
+      "description": "Determines how upstream HTTP caches are instructed to handle any HTTP downloads that Yum does. C(all) means that all HTTP downloads should be cached. C(packages) means that only RPM package downloads should be cached (but not repository metadata downloads). C(none) means that no HTTP downloads should be cached."
+    }, 
+    "retries": {
+      "type": "Optional[String]", 
+      "description": "Set the number of times any attempt to retrieve a file should retry before returning an error. Setting this to C(0) makes yum try forever."
+    }, 
+    "priority": {
+      "type": "Optional[String]", 
+      "description": "Enforce ordered protection of repositories. The value is an integer from 1 to 99. This option only works if the YUM Priorities plugin is installed."
+    }, 
+    "setype": {
+      "type": "Optional[String]", 
+      "description": "Type part of SELinux file context, C(_default) feature works as for I(seuser)."
+    }, 
+    "mirrorlist": {
+      "type": "Optional[String]", 
+      "description": "Specifies a URL to a file containing a list of baseurls. This or the I(baseurl) parameter is required if I(state) is set to C(present)."
+    }, 
+    "params": {
+      "type": "Optional[String]", 
+      "description": "Option used to allow the user to overwrite any of the other options. To remove an option, set the value of the option to C(null)."
+    }, 
+    "gpgcheck": {
+      "type": "Optional[String]", 
+      "description": "Tells yum whether or not it should perform a GPG signature check on packages."
+    }, 
+    "include": {
+      "type": "Optional[String]", 
+      "description": "Include external configuration file. Both, local path and URL is supported. Configuration file will be inserted at the position of the I(include=) line. Included files may contain further include lines. Yum will abort with an error if an inclusion loop is detected."
+    }, 
+    "sslcacert": {
+      "type": "Optional[String]", 
+      "description": "Path to the directory containing the databases of the certificate authorities yum should use to verify SSL certificates."
+    }, 
+    "username": {
+      "type": "Optional[String]", 
+      "description": "Username to use for basic authentication to a repo or really any url."
+    }, 
+    "metadata_expire": {
+      "type": "Optional[String]", 
+      "description": "Time (in seconds) after which the metadata will expire. Default value is 6 hours."
+    }, 
+    "description": {
+      "type": "Optional[String]", 
+      "description": "A human readable string describing the repository. This parameter is only required if I(state) is set to C(present)."
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "State of the repo file."
+    }, 
+    "selevel": {
+      "type": "Optional[String]", 
+      "description": "Level part of the SELinux file context. This is the MLS/MCS attribute, sometimes known as the C(range). C(_default) feature works as for I(seuser)."
+    }, 
+    "sslclientcert": {
+      "type": "Optional[String]", 
+      "description": "Path to the SSL client certificate yum should use to connect to repos/remote sites."
+    }, 
+    "baseurl": {
+      "type": "Optional[String]", 
+      "description": "URL to the directory where the yum repository's 'repodata' directory lives. This or the I(mirrorlist) parameter is required if I(state) is set to C(present)."
+    }, 
+    "gpgcakey": {
+      "type": "Optional[String]", 
+      "description": "A URL pointing to the ASCII-armored CA key file for the repository."
+    }, 
+    "s3_enabled": {
+      "type": "Optional[String]", 
+      "description": "Enables support for S3 repositories. This option only works if the YUM S3 plugin is installed."
+    }, 
+    "includepkgs": {
+      "type": "Optional[String]", 
+      "description": "List of packages you want to only use from a repository. This should be a space separated list. Shell globs using wildcards (eg. C(*) and C(?)) are allowed. Substitution variables (e.g. C($releasever)) are honored here. The list can also be a regular YAML array."
+    }, 
+    "enablegroups": {
+      "type": "Optional[String]", 
+      "description": "Determines whether yum will allow the use of package groups for this repository."
+    }, 
+    "sslverify": {
+      "type": "Optional[String]", 
+      "description": "Defines whether yum should verify SSL certificates/hosts at all."
+    }, 
+    "password": {
+      "type": "Optional[String]", 
+      "description": "Password to use with the username for basic authentication."
+    }, 
+    "ui_repoid_vars": {
+      "type": "Optional[String]", 
+      "description": "When a repository id is displayed, append these yum variables to the string if they are used in the I(baseurl)/etc. Variables are appended in the order listed (and found)."
+    }, 
+    "protect": {
+      "type": "Optional[String]", 
+      "description": "Protect packages from updates from other repositories."
+    }, 
+    "ssl_check_cert_permissions": {
+      "type": "Optional[String]", 
+      "description": "Whether yum should check the permissions on the paths for the certificates on the repository (both remote and local). If we can't read any of the files then yum will force I(skip_if_unavailable) to be C(yes). This is most useful for non-root processes which use yum on repos that have client cert files which are readable only by root."
+    }, 
+    "throttle": {
+      "type": "Optional[String]", 
+      "description": "Enable bandwidth throttling for downloads. This option can be expressed as a absolute data rate in bytes/sec. An SI prefix (k, M or G) may be appended to the bandwidth value."
+    }, 
+    "name": {
+      "type": "String", 
+      "description": "Unique repository ID. This parameter is only required if I(state) is set to C(present) or C(absent)."
+    }, 
+    "deltarpm_percentage": {
+      "type": "Optional[String]", 
+      "description": "When the relative size of delta vs pkg is larger than this, delta is not used. Use C(0) to turn off delta rpm processing. Local repositories (with file:// I(baseurl)) have delta rpms turned off by default."
+    }, 
+    "sslclientkey": {
+      "type": "Optional[String]", 
+      "description": "Path to the SSL client key yum should use to connect to repos/remote sites."
+    }, 
+    "metalink": {
+      "type": "Optional[String]", 
+      "description": "Specifies a URL to a metalink file for the repomd.xml, a list of mirrors for the entire repository are generated by converting the mirrors for the repomd.xml file to a I(baseurl)."
+    }, 
+    "reposdir": {
+      "type": "Optional[String]", 
+      "description": "Directory where the C(.repo) files will be stored."
+    }, 
+    "skip_if_unavailable": {
+      "type": "Optional[String]", 
+      "description": "If set to C(yes) yum will continue running if this repository cannot be contacted for any reason. This should be set carefully as all repos are consulted for any given command."
+    }, 
+    "keepcache": {
+      "type": "Optional[String]", 
+      "description": "Either C(1) or C(0). Determines whether or not yum keeps the cache of headers and packages after successful installation."
+    }, 
+    "proxy_username": {
+      "type": "Optional[String]", 
+      "description": "Password for this proxy."
+    }, 
+    "timeout": {
+      "type": "Optional[String]", 
+      "description": "Number of seconds to wait for a connection before timing out."
+    }, 
+    "async": {
+      "type": "Optional[String]", 
+      "description": "If set to C(yes) Yum will download packages and metadata from this repo in parallel, if possible."
+    }, 
+    "metadata_expire_filter": {
+      "type": "Optional[String]", 
+      "description": "Filter the I(metadata_expire) time, allowing a trade of speed for accuracy if a command doesn't require it. Each yum command can specify that it requires a certain level of timeliness quality from the remote repos. from \"I'm about to install/upgrade, so this better be current\" to \"Anything that's available is good enough\". C(never) - Nothing is filtered, always obey I(metadata_expire). C(read-only:past) - Commands that only care about past information are filtered from metadata expiring. Eg. I(yum history) info (if history needs to lookup anything about a previous transaction, then by definition the remote package was available in the past). C(read-only:present) - Commands that are balanced between past and future. Eg. I(yum list yum). C(read-only:future) - Commands that are likely to result in running other commands which will require the latest metadata. Eg. I(yum check-update). Note that this option does not override \"yum clean expire-cache\"."
+    }, 
+    "proxy": {
+      "type": "Optional[String]", 
+      "description": "URL to the proxy server that yum should use. Set to C(_none_) to disable the global proxy setting."
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "description": "Manage the state of a virtual host in RabbitMQ", 
+  "parameters": {
+    "node": {
+      "type": "Optional[String]", 
+      "description": "erlang node name of the rabbit we wish to configure"
+    }, 
+    "tracing": {
+      "type": "Optional[String]", 
+      "description": "Enable/disable tracing for a vhost"
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "The state of vhost"
+    }, 
+    "name": {
+      "type": "String", 
+      "description": "The name of the vhost to manage"
+    }
+  }
+}

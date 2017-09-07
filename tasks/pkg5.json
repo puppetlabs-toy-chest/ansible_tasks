@@ -1,0 +1,17 @@
+{
+  "description": "Manages packages with the Solaris 11 Image Packaging System", 
+  "parameters": {
+    "accept_licenses": {
+      "type": "Optional[String]", 
+      "description": "Accept any licences."
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "Whether to install (I(present), I(latest)), or remove (I(absent)) a package."
+    }, 
+    "name": {
+      "type": "String", 
+      "description": "An FRMI of the package(s) to be installed/removed/updated. Multiple packages may be specified, separated by C(,)."
+    }
+  }
+}

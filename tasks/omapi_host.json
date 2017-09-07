@@ -1,0 +1,45 @@
+{
+  "description": "Setup OMAPI hosts.", 
+  "parameters": {
+    "macaddr": {
+      "type": "String", 
+      "description": "Sets the lease host MAC address."
+    }, 
+    "statements": {
+      "type": "Optional[String]", 
+      "description": "Attach a list of OMAPI DHCP statements with host lease (without ending semicolon)."
+    }, 
+    "name": {
+      "type": "Optional[String]", 
+      "description": "Sets the host lease hostname (mandatory if state=present)."
+    }, 
+    "key_name": {
+      "type": "String", 
+      "description": "Sets the TSIG key name for authenticating against OMAPI server."
+    }, 
+    "state": {
+      "type": "String", 
+      "description": "Create or remove OMAPI host."
+    }, 
+    "host": {
+      "type": "Optional[String]", 
+      "description": "Sets OMAPI server host to interact with."
+    }, 
+    "ddns": {
+      "type": "Optional[String]", 
+      "description": "Enable dynamic DNS updates for this host."
+    }, 
+    "key": {
+      "type": "String", 
+      "description": "Sets the TSIG key content for authenticating against OMAPI server."
+    }, 
+    "ip": {
+      "type": "Optional[String]", 
+      "description": "Sets the lease host IP address."
+    }, 
+    "port": {
+      "type": "Optional[String]", 
+      "description": "Sets the OMAPI server port to interact with."
+    }
+  }
+}

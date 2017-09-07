@@ -1,0 +1,17 @@
+{
+  "description": "restart a device", 
+  "parameters": {
+    "username": {
+      "type": "Optional[String]", 
+      "description": "username for authentication"
+    }, 
+    "password": {
+      "type": "String", 
+      "description": "password for authentication"
+    }, 
+    "ip_address": {
+      "type": "String", 
+      "description": "IP address (or hostname) of PAN-OS device"
+    }
+  }
+}

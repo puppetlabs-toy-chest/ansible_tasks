@@ -1,0 +1,49 @@
+{
+  "description": "Create or Destroy a Backend Service.", 
+  "parameters": {
+    "protocol": {
+      "type": "Optional[String]", 
+      "description": "The protocol this Backend Service uses to communicate with backends. Possible values are HTTP, HTTPS, TCP, and SSL. The default is HTTP."
+    }, 
+    "service_account_email": {
+      "type": "Optional[String]", 
+      "description": "Service account email"
+    }, 
+    "backends": {
+      "type": "String", 
+      "description": "List of backends that make up the backend service. A backend is made up of an instance group and optionally several other parameters.  See U(https://cloud.google.com/compute/docs/reference/latest/backendServices) for details."
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "Desired state of the resource"
+    }, 
+    "enable_cdn": {
+      "type": "Optional[String]", 
+      "description": "If true, enable Cloud CDN for this Backend Service."
+    }, 
+    "port_name": {
+      "type": "Optional[String]", 
+      "description": "Name of the port on the managed instance group (MIG) that backend services can forward data to. Required for external load balancing."
+    }, 
+    "timeout": {
+      "type": "Optional[String]", 
+      "description": "How many seconds to wait for the backend before considering it a failed request. Default is 30 seconds. Valid range is 1-86400."
+    }, 
+    "credentials_file": {
+      "type": "Optional[String]", 
+      "description": "Path to the JSON file associated with the service account email."
+    }, 
+    "healthchecks": {
+      "type": "String", 
+      "description": "List of healthchecks. Only one healthcheck is supported."
+    }, 
+    "backend_service_name": {
+      "type": "String", 
+      "description": "Name of the Backend Service."
+    }, 
+    "project_id": {
+      "type": "Optional[String]", 
+      "description": "GCE project ID."
+    }
+  }
+}

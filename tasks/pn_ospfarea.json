@@ -1,0 +1,45 @@
+{
+  "description": "CLI command to add/remove ospf area to/from a vrouter.", 
+  "parameters": {
+    "pn_vrouter_name": {
+      "type": "String", 
+      "description": "Specify the name of the vRouter."
+    }, 
+    "pn_clipassword": {
+      "type": "String", 
+      "description": "Login password."
+    }, 
+    "pn_ospf_area": {
+      "type": "String", 
+      "description": "Specify the OSPF area number."
+    }, 
+    "pn_cliusername": {
+      "type": "String", 
+      "description": "Login username."
+    }, 
+    "pn_prefix_listin": {
+      "type": "Optional[String]", 
+      "description": "OSPF prefix list for filtering incoming packets."
+    }, 
+    "state": {
+      "type": "String", 
+      "description": "State the action to perform. Use 'present' to add ospf-area, 'absent' to remove ospf-area and 'update' to modify ospf-area."
+    }, 
+    "pn_prefix_listout": {
+      "type": "Optional[String]", 
+      "description": "OSPF prefix list for filtering outgoing packets."
+    }, 
+    "pn_stub_type": {
+      "type": "Optional[String]", 
+      "description": "Specify the OSPF stub type."
+    }, 
+    "pn_cliswitch": {
+      "type": "Optional[String]", 
+      "description": "Target switch(es) to run the CLI on."
+    }, 
+    "pn_quiet": {
+      "type": "Optional[String]", 
+      "description": "Enable/disable system information."
+    }
+  }
+}

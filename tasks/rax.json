@@ -1,0 +1,145 @@
+{
+  "description": "create / delete an instance in Rackspace Public Cloud", 
+  "parameters": {
+    "boot_volume_terminate": {
+      "type": "Optional[String]", 
+      "description": "Whether the I(boot_volume) or newly created volume from I(image) will be terminated when the server is terminated"
+    }, 
+    "tenant_name": {
+      "type": "Optional[String]", 
+      "description": "The tenant name used for authentication."
+    }, 
+    "image": {
+      "type": "Optional[String]", 
+      "description": "image to use for the instance. Can be an C(id), C(human_id) or C(name). With I(boot_from_volume), a Cloud Block Storage volume will be created with this image"
+    }, 
+    "user_data": {
+      "type": "Optional[String]", 
+      "description": "Data to be uploaded to the servers config drive. This option implies I(config_drive). Can be a file path or a string"
+    }, 
+    "verify_ssl": {
+      "type": "Optional[String]", 
+      "description": "Whether or not to require SSL validation of API endpoints."
+    }, 
+    "meta": {
+      "type": "Optional[String]", 
+      "description": "A hash of metadata to associate with the instance"
+    }, 
+    "flavor": {
+      "type": "Optional[String]", 
+      "description": "flavor to use for the instance"
+    }, 
+    "networks": {
+      "type": "Optional[String]", 
+      "description": "The network to attach to the instances. If specified, you must include ALL networks including the public and private interfaces. Can be C(id) or C(label)."
+    }, 
+    "auth_endpoint": {
+      "type": "Optional[String]", 
+      "description": "The URI of the authentication service."
+    }, 
+    "boot_from_volume": {
+      "type": "Optional[String]", 
+      "description": "Whether or not to boot the instance from a Cloud Block Storage volume. If C(yes) and I(image) is specified a new volume will be created at boot time. I(boot_volume_size) is required with I(image) to create a new volume at boot time."
+    }, 
+    "group": {
+      "type": "Optional[String]", 
+      "description": "host group to assign to server, is also used for idempotent operations to ensure a specific number of instances"
+    }, 
+    "exact_count": {
+      "type": "Optional[String]", 
+      "description": "Explicitly ensure an exact count of instances, used with state=active/present. If specified as C(yes) and I(count) is less than the servers matched, servers will be deleted to match the count. If the number of matched servers is fewer than specified in I(count) additional servers will be added."
+    }, 
+    "disk_config": {
+      "type": "Optional[String]", 
+      "description": "Disk partitioning strategy"
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "Indicate desired state of the resource"
+    }, 
+    "env": {
+      "type": "Optional[String]", 
+      "description": "Environment as configured in I(~/.pyrax.cfg), see U(https://github.com/rackspace/pyrax/blob/master/docs/getting_started.md#pyrax-configuration)."
+    }, 
+    "key_name": {
+      "type": "Optional[String]", 
+      "description": "key pair to use on the instance"
+    }, 
+    "api_key": {
+      "type": "Optional[String]", 
+      "description": "Rackspace API key, overrides I(credentials)."
+    }, 
+    "config_drive": {
+      "type": "Optional[String]", 
+      "description": "Attach read-only configuration drive to server as label config-2"
+    }, 
+    "files": {
+      "type": "Optional[String]", 
+      "description": "Files to insert into the instance. remotefilename:localcontent"
+    }, 
+    "auto_increment": {
+      "type": "Optional[String]", 
+      "description": "Whether or not to increment a single number with the name of the created servers. Only applicable when used with the I(group) attribute or meta key."
+    }, 
+    "count_offset": {
+      "type": "Optional[String]", 
+      "description": "number count to start at"
+    }, 
+    "boot_volume": {
+      "type": "Optional[String]", 
+      "description": "Cloud Block Storage ID or Name to use as the boot volume of the instance"
+    }, 
+    "wait_timeout": {
+      "type": "Optional[String]", 
+      "description": "how long before wait gives up, in seconds"
+    }, 
+    "instance_ids": {
+      "type": "Optional[String]", 
+      "description": "list of instance ids, currently only used when state='absent' to remove instances"
+    }, 
+    "credentials": {
+      "type": "Optional[String]", 
+      "description": "File to find the Rackspace credentials in. Ignored if I(api_key) and I(username) are provided."
+    }, 
+    "wait": {
+      "type": "Optional[String]", 
+      "description": "wait for the instance to be in state 'running' before returning"
+    }, 
+    "count": {
+      "type": "Optional[String]", 
+      "description": "number of instances to launch"
+    }, 
+    "boot_volume_size": {
+      "type": "Optional[String]", 
+      "description": "Size of the volume to create in Gigabytes. This is only required with I(image) and I(boot_from_volume)."
+    }, 
+    "name": {
+      "type": "Optional[String]", 
+      "description": "Name to give the instance"
+    }, 
+    "identity_type": {
+      "type": "Optional[String]", 
+      "description": "Authentication mechanism to use, such as rackspace or keystone."
+    }, 
+    "tenant_id": {
+      "type": "Optional[String]", 
+      "description": "The tenant ID used for authentication."
+    }, 
+    "region": {
+      "type": "Optional[String]", 
+      "description": "Region to create an instance in."
+    }, 
+    "username": {
+      "type": "Optional[String]", 
+      "description": "Rackspace username, overrides I(credentials)."
+    }, 
+    "extra_client_args": {
+      "type": "Optional[String]", 
+      "description": "A hash of key/value pairs to be used when creating the cloudservers client. This is considered an advanced option, use it wisely and with caution."
+    }, 
+    "extra_create_args": {
+      "type": "Optional[String]", 
+      "description": "A hash of key/value pairs to be used when creating a new server. This is considered an advanced option, use it wisely and with caution."
+    }
+  }
+}

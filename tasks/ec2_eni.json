@@ -1,0 +1,89 @@
+{
+  "description": "Create and optionally attach an Elastic Network Interface (ENI) to an instance", 
+  "parameters": {
+    "profile": {
+      "type": "Optional[String]", 
+      "description": "Uses a boto profile. Only works with boto >= 2.24.0."
+    }, 
+    "aws_secret_key": {
+      "type": "Optional[String]", 
+      "description": "AWS secret key. If not set then the value of the AWS_SECRET_ACCESS_KEY, AWS_SECRET_KEY, or EC2_SECRET_KEY environment variable is used."
+    }, 
+    "aws_access_key": {
+      "type": "Optional[String]", 
+      "description": "AWS access key. If not set then the value of the AWS_ACCESS_KEY_ID, AWS_ACCESS_KEY or EC2_ACCESS_KEY environment variable is used."
+    }, 
+    "description": {
+      "type": "Optional[String]", 
+      "description": "Optional description of the ENI."
+    }, 
+    "security_token": {
+      "type": "Optional[String]", 
+      "description": "AWS STS security token. If not set then the value of the AWS_SECURITY_TOKEN or EC2_SECURITY_TOKEN environment variable is used."
+    }, 
+    "secondary_private_ip_addresses": {
+      "type": "Optional[String]", 
+      "description": "A list of IP addresses to assign as secondary IP addresses to the network interface. This option is mutually exclusive of secondary_private_ip_address_count"
+    }, 
+    "subnet_id": {
+      "type": "Optional[String]", 
+      "description": "ID of subnet in which to create the ENI."
+    }, 
+    "eni_id": {
+      "type": "Optional[String]", 
+      "description": "The ID of the ENI (to modify); if null and state is present, a new eni will be created."
+    }, 
+    "region": {
+      "type": "Optional[String]", 
+      "description": "The AWS region to use. If not specified then the value of the AWS_REGION or EC2_REGION environment variable, if any, is used. See U(http://docs.aws.amazon.com/general/latest/gr/rande.html#ec2_region)"
+    }, 
+    "device_index": {
+      "type": "Optional[String]", 
+      "description": "The index of the device for the network interface attachment on the instance."
+    }, 
+    "attached": {
+      "type": "Optional[String]", 
+      "description": "Specifies if network interface should be attached or detached from instance. If ommited, attachment status won't change"
+    }, 
+    "force_detach": {
+      "type": "Optional[String]", 
+      "description": "Force detachment of the interface. This applies either when explicitly detaching the interface by setting instance_id to None or when deleting an interface with state=absent."
+    }, 
+    "instance_id": {
+      "type": "Optional[String]", 
+      "description": "Instance ID that you wish to attach ENI to. Since version 2.2, use the 'attached' parameter to attach or detach an ENI. Prior to 2.2, to detach an ENI from an instance, use 'None'."
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "Create or delete ENI"
+    }, 
+    "source_dest_check": {
+      "type": "Optional[String]", 
+      "description": "By default, interfaces perform source/destination checks. NAT instances however need this check to be disabled. You can only specify this flag when the interface is being modified, not on creation."
+    }, 
+    "ec2_url": {
+      "type": "Optional[String]", 
+      "description": "Url to use to connect to EC2 or your Eucalyptus cloud (by default the module will use EC2 endpoints). Ignored for modules where region is required. Must be specified for all other modules if region is not used. If not set then the value of the EC2_URL environment variable, if any, is used."
+    }, 
+    "private_ip_address": {
+      "type": "Optional[String]", 
+      "description": "Private IP address."
+    }, 
+    "secondary_private_ip_address_count": {
+      "type": "Optional[String]", 
+      "description": "The number of secondary IP addresses to assign to the network interface. This option is mutually exclusive of secondary_private_ip_addresses"
+    }, 
+    "validate_certs": {
+      "type": "Optional[String]", 
+      "description": "When set to \"no\", SSL certificates will not be validated for boto versions >= 2.6.0."
+    }, 
+    "delete_on_termination": {
+      "type": "Optional[String]", 
+      "description": "Delete the interface when the instance it is attached to is terminated. You can only specify this flag when the interface is being modified, not on creation."
+    }, 
+    "security_groups": {
+      "type": "Optional[String]", 
+      "description": "List of security groups associated with the interface. Only used when state=present. Since version 2.2, you can specify security groups by ID or by name or a combination of both. Prior to 2.2, you can specify only by ID."
+    }
+  }
+}

@@ -1,0 +1,69 @@
+{
+  "description": "Zabbix host creates/updates/deletes", 
+  "parameters": {
+    "status": {
+      "type": "Optional[String]", 
+      "description": "Monitoring status of the host."
+    }, 
+    "http_login_password": {
+      "type": "Optional[String]", 
+      "description": "Basic Auth password"
+    }, 
+    "inventory_mode": {
+      "type": "Optional[String]", 
+      "description": "Configure the inventory mode."
+    }, 
+    "timeout": {
+      "type": "Optional[String]", 
+      "description": "The timeout of API request (seconds)."
+    }, 
+    "login_user": {
+      "type": "String", 
+      "description": "Zabbix user name, used to authenticate against the server."
+    }, 
+    "interfaces": {
+      "type": "Optional[String]", 
+      "description": "List of interfaces to be created for the host (see example below). Available values are: dns, ip, main, port, type and useip. Please review the interface documentation for more information on the supported properties https://www.zabbix.com/documentation/2.0/manual/appendix/api/hostinterface/definitions#host_interface"
+    }, 
+    "http_login_user": {
+      "type": "Optional[String]", 
+      "description": "Basic Auth login"
+    }, 
+    "server_url": {
+      "type": "String", 
+      "description": "Url of Zabbix server, with protocol (http or https)."
+    }, 
+    "visible_name": {
+      "type": "Optional[String]", 
+      "description": "Visible name of the host in Zabbix."
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "State of the host. On C(present), it will create if host does not exist or update the host if the associated data is different. On C(absent) will remove a host if it exists."
+    }, 
+    "proxy": {
+      "type": "Optional[String]", 
+      "description": "The name of the Zabbix Proxy to be used"
+    }, 
+    "host_groups": {
+      "type": "Optional[String]", 
+      "description": "List of host groups the host is part of."
+    }, 
+    "login_password": {
+      "type": "String", 
+      "description": "Zabbix user password."
+    }, 
+    "force": {
+      "type": "Optional[String]", 
+      "description": "Overwrite the host configuration, even if already present"
+    }, 
+    "link_templates": {
+      "type": "Optional[String]", 
+      "description": "List of templates linked to the host."
+    }, 
+    "host_name": {
+      "type": "String", 
+      "description": "Name of the host in Zabbix. host_name is the unique identifier used and cannot be updated using this module."
+    }
+  }
+}

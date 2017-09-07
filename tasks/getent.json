@@ -1,0 +1,21 @@
+{
+  "description": "a wrapper to the unix getent utility", 
+  "parameters": {
+    "fail_key": {
+      "type": "Optional[String]", 
+      "description": "If a supplied key is missing this will make the task fail if True"
+    }, 
+    "split": {
+      "type": "Optional[String]", 
+      "description": "character used to split the database values into lists/arrays such as ':' or '\t', otherwise  it will try to pick one depending on the database"
+    }, 
+    "key": {
+      "type": "Optional[String]", 
+      "description": "key from which to return values from the specified database, otherwise the full contents are returned."
+    }, 
+    "database": {
+      "type": "String", 
+      "description": "the name of a getent database supported by the target system (passwd, group, hosts, etc)."
+    }
+  }
+}

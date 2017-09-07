@@ -1,0 +1,65 @@
+{
+  "description": "utilize GCE persistent disk resources", 
+  "parameters": {
+    "size_gb": {
+      "type": "Optional[String]", 
+      "description": "whole integer size of disk (in GB) to create, default is 10 GB"
+    }, 
+    "disk_type": {
+      "type": "Optional[String]", 
+      "description": "type of disk provisioned"
+    }, 
+    "name": {
+      "type": "String", 
+      "description": "name of the disk"
+    }, 
+    "zone": {
+      "type": "Optional[String]", 
+      "description": "zone in which to create the disk"
+    }, 
+    "service_account_email": {
+      "type": "Optional[String]", 
+      "description": "service account email"
+    }, 
+    "image": {
+      "type": "Optional[String]", 
+      "description": "the source image to use for the disk"
+    }, 
+    "pem_file": {
+      "type": "Optional[String]", 
+      "description": "path to the pem file associated with the service account email This option is deprecated. Use 'credentials_file'."
+    }, 
+    "instance_name": {
+      "type": "Optional[String]", 
+      "description": "instance name if you wish to attach or detach the disk"
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "desired state of the persistent disk"
+    }, 
+    "snapshot": {
+      "type": "Optional[String]", 
+      "description": "the source snapshot to use for the disk"
+    }, 
+    "detach_only": {
+      "type": "Optional[String]", 
+      "description": "do not destroy the disk, merely detach it from an instance"
+    }, 
+    "credentials_file": {
+      "type": "Optional[String]", 
+      "description": "path to the JSON file associated with the service account email"
+    }, 
+    "project_id": {
+      "type": "Optional[String]", 
+      "description": "your GCE project ID"
+    }, 
+    "delete_on_termination": {
+      "type": "Optional[String]", 
+      "description": "If yes, deletes the volume when instance is terminated"
+    }, 
+    "mode": {
+      "type": "Optional[String]", 
+      "description": "GCE mount mode of disk, READ_ONLY (default) or READ_WRITE"
+    }
+  }
+}

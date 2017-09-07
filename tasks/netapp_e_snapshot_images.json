@@ -1,0 +1,29 @@
+{
+  "description": "Create and delete snapshot images", 
+  "parameters": {
+    "api_url": {
+      "type": "String", 
+      "description": "The url to the SANtricity WebServices Proxy or embedded REST API."
+    }, 
+    "api_password": {
+      "type": "String", 
+      "description": "The password to authenticate with the SANtricity WebServices Proxy or embedded REST API."
+    }, 
+    "state": {
+      "type": "String", 
+      "description": "Whether a new snapshot image should be created or oldest be deleted."
+    }, 
+    "snapshot_group": {
+      "type": "String", 
+      "description": "The name of the snapshot group in which you want to create a snapshot image."
+    }, 
+    "api_username": {
+      "type": "String", 
+      "description": "The username to authenticate with the SANtricity WebServices Proxy or embedded REST API."
+    }, 
+    "validate_certs": {
+      "type": "Optional[String]", 
+      "description": "Should https certificates be validated?"
+    }
+  }
+}

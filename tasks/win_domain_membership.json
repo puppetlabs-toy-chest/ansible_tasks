@@ -1,0 +1,29 @@
+{
+  "description": "Manage domain/workgroup membership for a Windows host", 
+  "parameters": {
+    "workgroup_name": {
+      "type": "Optional[String]", 
+      "description": "when C(state) is C(workgroup), the name of the workgroup that the Windows host should be in"
+    }, 
+    "domain_admin_user": {
+      "type": "String", 
+      "description": "username of a domain admin for the target domain (required to join or leave the domain)"
+    }, 
+    "dns_domain_name": {
+      "type": "Optional[String]", 
+      "description": "when C(state) is C(domain), the DNS name of the domain to which the targeted Windows host should be joined"
+    }, 
+    "hostname": {
+      "type": "Optional[String]", 
+      "description": "the desired hostname for the Windows host"
+    }, 
+    "domain_admin_password": {
+      "type": "Optional[String]", 
+      "description": "password for the specified C(domain_admin_user)"
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "whether the target host should be a member of a domain or workgroup"
+    }
+  }
+}

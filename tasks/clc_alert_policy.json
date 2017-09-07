@@ -1,0 +1,37 @@
+{
+  "description": "Create or Delete Alert Policies at CenturyLink Cloud.", 
+  "parameters": {
+    "name": {
+      "type": "Optional[String]", 
+      "description": "The name of the alert policy. This is mutually exclusive with id"
+    }, 
+    "metric": {
+      "type": "Optional[String]", 
+      "description": "The metric on which to measure the condition that will trigger the alert. This is required for state 'present'"
+    }, 
+    "id": {
+      "type": "Optional[String]", 
+      "description": "The alert policy id. This is mutually exclusive with name"
+    }, 
+    "alias": {
+      "type": "String", 
+      "description": "The alias of your CLC Account"
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "Whether to create or delete the policy."
+    }, 
+    "threshold": {
+      "type": "Optional[String]", 
+      "description": "The threshold that will trigger the alert when the metric equals or exceeds it. This is required for state 'present' This number represents a percentage and must be a value between 5.0 - 95.0 that is a multiple of 5.0"
+    }, 
+    "alert_recipients": {
+      "type": "Optional[String]", 
+      "description": "A list of recipient email ids to notify the alert. This is required for state 'present'"
+    }, 
+    "duration": {
+      "type": "Optional[String]", 
+      "description": "The length of time in minutes that the condition must exceed the threshold. This is required for state 'present'"
+    }
+  }
+}

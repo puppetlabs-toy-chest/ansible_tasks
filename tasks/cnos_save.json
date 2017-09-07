@@ -1,0 +1,29 @@
+{
+  "description": "Save the running configuration as the startup configuration on devices running Lenovo CNOS", 
+  "parameters": {
+    "username": {
+      "type": "String", 
+      "description": "Configures the username used to authenticate the connection to the remote device. The value of the username parameter is used to authenticate the SSH session. While generally the value should come from the inventory file, you can also specify it as a variable. This parameter is optional. If it is not specified, no default value will be used."
+    }, 
+    "outputfile": {
+      "type": "String", 
+      "description": "This specifies the file path where the output of each command execution is saved. Each command that is specified in the merged template file and each response from the device are saved here. Usually the location is the results folder, but you can choose another location based on your write permission."
+    }, 
+    "host": {
+      "type": "String", 
+      "description": "This is the variable used to search the hosts file at /etc/ansible/hosts and identify the IP address of the device on which the template is going to be applied. Usually the Ansible keyword {{ inventory_hostname }} is specified in the playbook as an abstraction of the group of network elements that need to be configured."
+    }, 
+    "deviceType": {
+      "type": "String", 
+      "description": "This specifies the type of device where the method is executed."
+    }, 
+    "password": {
+      "type": "String", 
+      "description": "Configures the password used to authenticate the connection to the remote device. The value of the password parameter is used to authenticate the SSH session. While generally the value should come from the inventory file, you can also specify it as a variable. This parameter is optional. If it is not specified, no default value will be used."
+    }, 
+    "enablePassword": {
+      "type": "Optional[String]", 
+      "description": "Configures the password used to enter Global Configuration command mode on the switch. If the switch does not request this password, the parameter is ignored.While generally the value should come from the inventory file, you can also specify it as a variable. This parameter is optional. If it is not specified, no default value will be used."
+    }
+  }
+}

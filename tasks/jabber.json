@@ -1,0 +1,33 @@
+{
+  "description": "Send a message to jabber user or chat room", 
+  "parameters": {
+    "encoding": {
+      "type": "Optional[String]", 
+      "description": "message encoding"
+    }, 
+    "to": {
+      "type": "String", 
+      "description": "user ID or name of the room, when using room use a slash to indicate your nick."
+    }, 
+    "host": {
+      "type": "Optional[String]", 
+      "description": "host to connect, overrides user info"
+    }, 
+    "user": {
+      "type": "String", 
+      "description": "User as which to connect"
+    }, 
+    "msg": {
+      "type": "String", 
+      "description": "The message body."
+    }, 
+    "password": {
+      "type": "String", 
+      "description": "password for user to connect"
+    }, 
+    "port": {
+      "type": "Optional[String]", 
+      "description": "port to connect to, overrides default"
+    }
+  }
+}

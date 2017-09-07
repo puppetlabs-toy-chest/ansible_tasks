@@ -1,0 +1,77 @@
+{
+  "description": "Create/delete a droplet/SSH_key in DigitalOcean", 
+  "parameters": {
+    "unique_name": {
+      "type": "Optional[String]", 
+      "description": "Bool, require unique hostnames.  By default, DigitalOcean allows multiple hosts with the same name.  Setting this to \"yes\" allows only one host per name.  Useful for idempotence."
+    }, 
+    "virtio": {
+      "type": "Optional[String]", 
+      "description": "Bool, turn on virtio driver in droplet for improved network and storage I/O."
+    }, 
+    "region_id": {
+      "type": "Optional[String]", 
+      "description": "This is the slug of the region you would like your server to be created in."
+    }, 
+    "size_id": {
+      "type": "Optional[String]", 
+      "description": "This is the slug of the size you would like the droplet created with."
+    }, 
+    "ipv6": {
+      "type": "Optional[String]", 
+      "description": "Optional, Boolean, enable IPv6 for your droplet."
+    }, 
+    "backups_enabled": {
+      "type": "Optional[String]", 
+      "description": "Optional, Boolean, enables backups for your droplet."
+    }, 
+    "user_data": {
+      "type": "Optional[String]", 
+      "description": "opaque blob of data which is made available to the droplet"
+    }, 
+    "name": {
+      "type": "Optional[String]", 
+      "description": "String, this is the name of the droplet - must be formatted by hostname rules, or the name of a SSH key."
+    }, 
+    "image_id": {
+      "type": "Optional[String]", 
+      "description": "This is the slug of the image you would like the droplet created with."
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "Indicate desired state of the target."
+    }, 
+    "wait_timeout": {
+      "type": "Optional[String]", 
+      "description": "How long before wait gives up, in seconds."
+    }, 
+    "command": {
+      "type": "Optional[String]", 
+      "description": "Which target you want to operate on."
+    }, 
+    "ssh_key_ids": {
+      "type": "Optional[String]", 
+      "description": "Optional, array of SSH key (numeric) ID that you would like to be added to the server."
+    }, 
+    "api_token": {
+      "type": "Optional[String]", 
+      "description": "DigitalOcean api token."
+    }, 
+    "id": {
+      "type": "Optional[String]", 
+      "description": "Numeric, the droplet id you want to operate on."
+    }, 
+    "private_networking": {
+      "type": "Optional[String]", 
+      "description": "Bool, add an additional, private network interface to droplet for inter-droplet communication."
+    }, 
+    "ssh_pub_key": {
+      "type": "Optional[String]", 
+      "description": "The public SSH key you want to add to your account."
+    }, 
+    "wait": {
+      "type": "Optional[String]", 
+      "description": "Wait for the droplet to be in state 'running' before returning.  If wait is \"no\" an ip_address may not be returned."
+    }
+  }
+}

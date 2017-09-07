@@ -1,0 +1,73 @@
+{
+  "description": "Adds or removes a users (roles) from a PostgreSQL database.", 
+  "parameters": {
+    "ssl_rootcert": {
+      "type": "Optional[String]", 
+      "description": "Specifies the name of a file containing SSL certificate authority (CA) certificate(s). If the file exists, the server's certificate will be verified to be signed by one of these authorities."
+    }, 
+    "ssl_mode": {
+      "type": "Optional[String]", 
+      "description": "Determines whether or with what priority a secure SSL TCP/IP connection will be negotiated with the server. See https://www.postgresql.org/docs/current/static/libpq-ssl.html for more information on the modes. Default of C(prefer) matches libpq default."
+    }, 
+    "name": {
+      "type": "String", 
+      "description": "name of the user (role) to add or remove"
+    }, 
+    "no_password_changes": {
+      "type": "Optional[String]", 
+      "description": "if C(yes), don't inspect database for password changes. Effective when C(pg_authid) is not accessible (such as AWS RDS). Otherwise, make password changes as necessary."
+    }, 
+    "login_user": {
+      "type": "Optional[String]", 
+      "description": "User (role) used to authenticate with PostgreSQL"
+    }, 
+    "login_host": {
+      "type": "Optional[String]", 
+      "description": "Host running PostgreSQL."
+    }, 
+    "expires": {
+      "type": "Optional[String]", 
+      "description": "sets the user's password expiration."
+    }, 
+    "db": {
+      "type": "Optional[String]", 
+      "description": "name of database where permissions will be granted"
+    }, 
+    "role_attr_flags": {
+      "type": "Optional[String]", 
+      "description": "PostgreSQL role attributes string in the format: CREATEDB,CREATEROLE,SUPERUSER"
+    }, 
+    "login_unix_socket": {
+      "type": "Optional[String]", 
+      "description": "Path to a Unix domain socket for local connections"
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "The user (role) state"
+    }, 
+    "encrypted": {
+      "type": "Optional[String]", 
+      "description": "whether the password is stored hashed in the database. boolean. Passwords can be passed already hashed or unhashed, and postgresql ensures the stored password is hashed when encrypted is set."
+    }, 
+    "login_password": {
+      "type": "Optional[String]", 
+      "description": "Password used to authenticate with PostgreSQL"
+    }, 
+    "password": {
+      "type": "Optional[String]", 
+      "description": "set the user's password, before 1.4 this was required. When passing an encrypted password, the encrypted parameter must also be true, and it must be generated with the format C('str[\\\"md5\\\"] + md5[ password + username ]'), resulting in a total of 35 characters.  An easy way to do this is: C(echo \\\"md5`echo -n \\\"verysecretpasswordJOE\\\" | md5`\\\"). Note that if the provided password string is already in MD5-hashed format, then it is used as-is, regardless of encrypted parameter.\n"
+    }, 
+    "port": {
+      "type": "Optional[String]", 
+      "description": "Database port to connect to."
+    }, 
+    "fail_on_user": {
+      "type": "Optional[String]", 
+      "description": "if C(yes), fail when user can't be removed. Otherwise just log and continue"
+    }, 
+    "priv": {
+      "type": "Optional[String]", 
+      "description": "PostgreSQL privileges string in the format: C(table:priv1,priv2)"
+    }
+  }
+}

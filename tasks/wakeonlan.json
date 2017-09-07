@@ -1,0 +1,17 @@
+{
+  "description": "Send a magic Wake-on-LAN (WoL) broadcast packet", 
+  "parameters": {
+    "broadcast": {
+      "type": "Optional[String]", 
+      "description": "Network broadcast address to use for broadcasting magic Wake-on-LAN packet."
+    }, 
+    "mac": {
+      "type": "String", 
+      "description": "MAC address to send Wake-on-LAN broadcast packet for."
+    }, 
+    "port": {
+      "type": "Optional[String]", 
+      "description": "UDP port to use for magic Wake-on-LAN packet."
+    }
+  }
+}

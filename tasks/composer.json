@@ -1,0 +1,49 @@
+{
+  "description": "Dependency Manager for PHP", 
+  "parameters": {
+    "no_dev": {
+      "type": "Optional[String]", 
+      "description": "Disables installation of require-dev packages (see --no-dev)."
+    }, 
+    "no_scripts": {
+      "type": "Optional[String]", 
+      "description": "Skips the execution of all scripts defined in composer.json (see --no-scripts)."
+    }, 
+    "no_plugins": {
+      "type": "Optional[String]", 
+      "description": "Disables all plugins ( see --no-plugins )."
+    }, 
+    "optimize_autoloader": {
+      "type": "Optional[String]", 
+      "description": "Optimize autoloader during autoloader dump (see --optimize-autoloader). Convert PSR-0/4 autoloading to classmap to get a faster autoloader. Recommended especially for production, but can take a bit of time to run so it is currently not done by default."
+    }, 
+    "working_dir": {
+      "type": "Optional[String]", 
+      "description": "Directory of your project (see --working-dir). This is required when the command is not run globally. Will be ignored if C(global_command=true)."
+    }, 
+    "command": {
+      "type": "Optional[String]", 
+      "description": "Composer command like \"install\", \"update\" and so on."
+    }, 
+    "global_command": {
+      "type": "Optional[String]", 
+      "description": "Runs the specified command globally."
+    }, 
+    "ignore_platform_reqs": {
+      "type": "Optional[String]", 
+      "description": "Ignore php, hhvm, lib-* and ext-* requirements and force the installation even if the local machine does not fulfill these."
+    }, 
+    "prefer_source": {
+      "type": "Optional[String]", 
+      "description": "Forces installation from package sources when possible (see --prefer-source)."
+    }, 
+    "prefer_dist": {
+      "type": "Optional[String]", 
+      "description": "Forces installation from package dist even for dev versions (see --prefer-dist)."
+    }, 
+    "arguments": {
+      "type": "Optional[String]", 
+      "description": "Composer arguments like required package, version and so on."
+    }
+  }
+}

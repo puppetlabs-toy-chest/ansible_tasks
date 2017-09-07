@@ -1,0 +1,69 @@
+{
+  "description": "Manage server certificates for use on ELBs and CloudFront", 
+  "parameters": {
+    "profile": {
+      "type": "Optional[String]", 
+      "description": "Uses a boto profile. Only works with boto >= 2.24.0."
+    }, 
+    "new_name": {
+      "type": "Optional[String]", 
+      "description": "When state is present, this will update the name of the cert. The cert, key and cert_chain parameters will be ignored if this is defined."
+    }, 
+    "dup_ok": {
+      "type": "Optional[String]", 
+      "description": "By default the module will not upload a certificate that is already uploaded into AWS. If set to True, it will upload the certificate as long as the name is unique."
+    }, 
+    "new_path": {
+      "type": "Optional[String]", 
+      "description": "When state is present, this will update the path of the cert. The cert, key and cert_chain parameters will be ignored if this is defined."
+    }, 
+    "name": {
+      "type": "String", 
+      "description": "Name of certificate to add, update or remove."
+    }, 
+    "security_token": {
+      "type": "Optional[String]", 
+      "description": "AWS STS security token. If not set then the value of the AWS_SECURITY_TOKEN or EC2_SECURITY_TOKEN environment variable is used."
+    }, 
+    "cert": {
+      "type": "Optional[String]", 
+      "description": "The certificate body in PEM encoded format. Note that prior to 2.4, this parameter expected a path to a file. Since 2.4 this is now accomplished using a lookup plugin. See examples for detail."
+    }, 
+    "region": {
+      "type": "Optional[String]", 
+      "description": "The AWS region to use. If not specified then the value of the AWS_REGION or EC2_REGION environment variable, if any, is used. See U(http://docs.aws.amazon.com/general/latest/gr/rande.html#ec2_region)"
+    }, 
+    "aws_secret_key": {
+      "type": "Optional[String]", 
+      "description": "AWS secret key. If not set then the value of the AWS_SECRET_ACCESS_KEY, AWS_SECRET_KEY, or EC2_SECRET_KEY environment variable is used."
+    }, 
+    "aws_access_key": {
+      "type": "Optional[String]", 
+      "description": "AWS access key. If not set then the value of the AWS_ACCESS_KEY_ID, AWS_ACCESS_KEY or EC2_ACCESS_KEY environment variable is used."
+    }, 
+    "state": {
+      "type": "String", 
+      "description": "Whether to create(or update) or delete certificate. If new_path or new_name is defined, specifying present will attempt to make an update these."
+    }, 
+    "key": {
+      "type": "Optional[String]", 
+      "description": "The key of the certificate in PEM encoded format. Note that prior to 2.4, this parameter expected a path to a file. Since 2.4 this is now accomplished using a lookup plugin. See examples for detail."
+    }, 
+    "ec2_url": {
+      "type": "Optional[String]", 
+      "description": "Url to use to connect to EC2 or your Eucalyptus cloud (by default the module will use EC2 endpoints). Ignored for modules where region is required. Must be specified for all other modules if region is not used. If not set then the value of the EC2_URL environment variable, if any, is used."
+    }, 
+    "path": {
+      "type": "Optional[String]", 
+      "description": "When creating or updating, specify the desired path of the certificate."
+    }, 
+    "validate_certs": {
+      "type": "Optional[String]", 
+      "description": "When set to \"no\", SSL certificates will not be validated for boto versions >= 2.6.0."
+    }, 
+    "cert_chain": {
+      "type": "Optional[String]", 
+      "description": "The CA certificate chain in PEM encoded format. Note that prior to 2.4, this parameter expected a path to a file. Since 2.4 this is now accomplished using a lookup plugin. See examples for detail."
+    }
+  }
+}

@@ -1,0 +1,149 @@
+{
+  "description": "Manages access list entries for ACLs.", 
+  "parameters": {
+    "seq": {
+      "type": "Optional[String]", 
+      "description": "Sequence number of the entry (ACE)."
+    }, 
+    "time-range": {
+      "type": "Optional[String]", 
+      "description": "Name of time-range to apply."
+    }, 
+    "dest_port_op": {
+      "type": "Optional[String]", 
+      "description": "Destination port operands such as eq, neq, gt, lt, range."
+    }, 
+    "use_ssl": {
+      "type": "Optional[String]", 
+      "description": "Configures the I(transport) to use SSL if set to true only when the C(transport=nxapi), otherwise this value is ignored."
+    }, 
+    "port": {
+      "type": "Optional[String]", 
+      "description": "Specifies the port to use when building the connection to the remote device.  This value applies to either I(cli) or I(nxapi).  The port value will default to the appropriate transport common port if none is provided in the task.  (cli=22, http=80, https=443)."
+    }, 
+    "transport": {
+      "type": "String", 
+      "description": "Configures the transport connection to use when connecting to the remote device.  The transport argument supports connectivity to the device over cli (ssh) or nxapi."
+    }, 
+    "established": {
+      "type": "Optional[String]", 
+      "description": "Match established connections."
+    }, 
+    "log": {
+      "type": "Optional[String]", 
+      "description": "Log matches against this entry."
+    }, 
+    "proto": {
+      "type": "Optional[String]", 
+      "description": "Port number or protocol (as supported by the switch)."
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "Specify desired state of the resource."
+    }, 
+    "provider": {
+      "type": "Optional[String]", 
+      "description": "Convenience method that allows all I(nxos) arguments to be passed as a dict object.  All constraints (required, choices, etc) must be met either by individual arguments or values in this dict."
+    }, 
+    "fragments": {
+      "type": "Optional[String]", 
+      "description": "Check non-initial fragments."
+    }, 
+    "src_port1": {
+      "type": "Optional[String]", 
+      "description": "Port/protocol and also first (lower) port when using range operand."
+    }, 
+    "src_port2": {
+      "type": "Optional[String]", 
+      "description": "Second (end) port when using range operand."
+    }, 
+    "username": {
+      "type": "Optional[String]", 
+      "description": "Configures the username to use to authenticate the connection to the remote device.  This value is used to authenticate either the CLI login or the nxapi authentication depending on which transport is used. If the value is not specified in the task, the value of environment variable C(ANSIBLE_NET_USERNAME) will be used instead."
+    }, 
+    "src_port_op": {
+      "type": "Optional[String]", 
+      "description": "Source port operands such as eq, neq, gt, lt, range."
+    }, 
+    "psh": {
+      "type": "Optional[String]", 
+      "description": "Match on the PSH bit."
+    }, 
+    "dest": {
+      "type": "Optional[String]", 
+      "description": "Destination ip and mask using IP/MASK notation and supports the keyword 'any'."
+    }, 
+    "syn": {
+      "type": "Optional[String]", 
+      "description": "Match on the SYN bit."
+    }, 
+    "dscp": {
+      "type": "Optional[String]", 
+      "description": "Match packets with given dscp value."
+    }, 
+    "host": {
+      "type": "String", 
+      "description": "Specifies the DNS host name or address for connecting to the remote device over the specified transport.  The value of host is used as the destination address for the transport."
+    }, 
+    "ssh_keyfile": {
+      "type": "Optional[String]", 
+      "description": "Specifies the SSH key to use to authenticate the connection to the remote device.  This argument is only used for the I(cli) transport. If the value is not specified in the task, the value of environment variable C(ANSIBLE_NET_SSH_KEYFILE) will be used instead."
+    }, 
+    "rst": {
+      "type": "Optional[String]", 
+      "description": "Match on the RST bit."
+    }, 
+    "password": {
+      "type": "Optional[String]", 
+      "description": "Specifies the password to use to authenticate the connection to the remote device.  This is a common argument used for either I(cli) or I(nxapi) transports. If the value is not specified in the task, the value of environment variable C(ANSIBLE_NET_PASSWORD) will be used instead."
+    }, 
+    "src": {
+      "type": "Optional[String]", 
+      "description": "Source ip and mask using IP/MASK notation and supports keyword 'any'."
+    }, 
+    "remark": {
+      "type": "Optional[String]", 
+      "description": "If action is set to remark, this is the description."
+    }, 
+    "urg": {
+      "type": "Optional[String]", 
+      "description": "Match on the URG bit."
+    }, 
+    "name": {
+      "type": "String", 
+      "description": "Case sensitive name of the access list (ACL)."
+    }, 
+    "ack": {
+      "type": "Optional[String]", 
+      "description": "Match on the ACK bit."
+    }, 
+    "fin": {
+      "type": "Optional[String]", 
+      "description": "Match on the FIN bit."
+    }, 
+    "precedence": {
+      "type": "Optional[String]", 
+      "description": "Match packets with given precedence."
+    }, 
+    "timeout": {
+      "type": "Optional[String]", 
+      "description": "Specifies the timeout in seconds for communicating with the network device for either connecting or sending commands.  If the timeout is exceeded before the operation is completed, the module will error. NX-API can be slow to return on long-running commands (sh mac, sh bgp, etc)."
+    }, 
+    "action": {
+      "type": "Optional[String]", 
+      "description": "Action of the ACE."
+    }, 
+    "dest_port1": {
+      "type": "Optional[String]", 
+      "description": "Port/protocol and also first (lower) port when using range operand."
+    }, 
+    "dest_port2": {
+      "type": "Optional[String]", 
+      "description": "Second (end) port when using range operand."
+    }, 
+    "validate_certs": {
+      "type": "Optional[String]", 
+      "description": "If C(no), SSL certificates will not be validated. This should only be used on personally controlled sites using self-signed certificates.  If the transport argument is not nxapi, this value is ignored."
+    }
+  }
+}

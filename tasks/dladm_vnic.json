@@ -1,0 +1,29 @@
+{
+  "description": "Manage VNICs on Solaris/illumos systems.", 
+  "parameters": {
+    "temporary": {
+      "type": "Optional[String]", 
+      "description": "Specifies that the VNIC is temporary. Temporary VNICs do not persist across reboots."
+    }, 
+    "name": {
+      "type": "String", 
+      "description": "VNIC name."
+    }, 
+    "vlan": {
+      "type": "Optional[String]", 
+      "description": "Enable VLAN tagging for this VNIC. The VLAN tag will have id I(vlan)."
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "Create or delete Solaris/illumos VNIC."
+    }, 
+    "mac": {
+      "type": "Optional[String]", 
+      "description": "Sets the VNIC's MAC address. Must be valid unicast MAC address."
+    }, 
+    "link": {
+      "type": "String", 
+      "description": "VNIC underlying link name."
+    }
+  }
+}

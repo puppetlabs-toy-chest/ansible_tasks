@@ -1,0 +1,29 @@
+{
+  "description": "Configure LVM volume groups", 
+  "parameters": {
+    "vg_options": {
+      "type": "Optional[String]", 
+      "description": "Additional options to pass to C(vgcreate) when creating the volume group."
+    }, 
+    "pvs": {
+      "type": "Optional[String]", 
+      "description": "List of comma-separated devices to use as physical devices in this volume group. Required when creating or resizing volume group. The module will take care of running pvcreate if needed."
+    }, 
+    "force": {
+      "type": "Optional[String]", 
+      "description": "If yes, allows to remove volume group with logical volumes."
+    }, 
+    "vg": {
+      "type": "String", 
+      "description": "The name of the volume group."
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "Control if the volume group exists."
+    }, 
+    "pesize": {
+      "type": "Optional[String]", 
+      "description": "The size of the physical extent in megabytes. Must be a power of 2."
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "description": "Creates or removes zones in Google Cloud DNS", 
+  "parameters": {
+    "description": {
+      "type": "Optional[String]", 
+      "description": "An arbitrary text string to use for the zone description."
+    }, 
+    "zone": {
+      "type": "String", 
+      "description": "The DNS domain name of the zone. This is NOT the Google Cloud DNS zone ID (e.g., example-com). If you attempt to specify a zone ID, this module will attempt to create a TLD and will fail."
+    }, 
+    "service_account_email": {
+      "type": "Optional[String]", 
+      "description": "The e-mail address for a service account with access to Google Cloud DNS."
+    }, 
+    "pem_file": {
+      "type": "Optional[String]", 
+      "description": "The path to the PEM file associated with the service account email. This option is deprecated and may be removed in a future release. Use I(credentials_file) instead."
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "Whether the given zone should or should not be present."
+    }, 
+    "credentials_file": {
+      "type": "Optional[String]", 
+      "description": "The path to the JSON file associated with the service account email."
+    }, 
+    "project_id": {
+      "type": "Optional[String]", 
+      "description": "The Google Cloud Platform project ID to use."
+    }
+  }
+}

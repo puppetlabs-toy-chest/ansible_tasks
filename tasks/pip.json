@@ -1,0 +1,57 @@
+{
+  "description": "Manages Python library dependencies.", 
+  "parameters": {
+    "virtualenv": {
+      "type": "Optional[String]", 
+      "description": "An optional path to a I(virtualenv) directory to install into. It cannot be specified together with the 'executable' parameter (added in 2.1). If the virtualenv does not exist, it will be created before installing packages. The optional virtualenv_site_packages, virtualenv_command, and virtualenv_python options affect the creation of the virtualenv."
+    }, 
+    "extra_args": {
+      "type": "Optional[String]", 
+      "description": "Extra arguments passed to pip."
+    }, 
+    "virtualenv_command": {
+      "type": "Optional[String]", 
+      "description": "The command or a pathname to the command to create the virtual environment with. For example C(pyvenv), C(virtualenv), C(virtualenv2), C(~/bin/virtualenv), C(/usr/local/bin/virtualenv)."
+    }, 
+    "chdir": {
+      "type": "Optional[String]", 
+      "description": "cd into this directory before running the command"
+    }, 
+    "requirements": {
+      "type": "Optional[String]", 
+      "description": "The path to a pip requirements file, which should be local to the remote system. File can be specified as a relative path if using the chdir option."
+    }, 
+    "name": {
+      "type": "Optional[String]", 
+      "description": "The name of a Python library to install or the url of the remote package. As of 2.2 you can supply a list of names."
+    }, 
+    "virtualenv_python": {
+      "type": "Optional[String]", 
+      "description": "The Python executable used for creating the virtual environment. For example C(python3.5), C(python2.7). When not specified, the Python version used to run the ansible module is used. This parameter should not be used when C(virtualenv_command) is using C(pyvenv) or the C(-m venv) module."
+    }, 
+    "umask": {
+      "type": "Optional[String]", 
+      "description": "The system umask to apply before installing the pip package. This is useful, for example, when installing on systems that have a very restrictive umask by default (e.g., 0077) and you want to pip install packages which are to be used by all users. Note that this requires you to specify desired umask mode in octal, with a leading 0 (e.g., 0077)."
+    }, 
+    "editable": {
+      "type": "Optional[String]", 
+      "description": "Pass the editable flag for versioning URLs."
+    }, 
+    "executable": {
+      "type": "Optional[String]", 
+      "description": "The explicit executable or a pathname to the executable to be used to run pip for a specific version of Python installed in the system. For example C(pip-3.3), if there are both Python 2.7 and 3.3 installations in the system and you want to run pip for the Python 3.3 installation. It cannot be specified together with the 'virtualenv' parameter (added in 2.1). By default, it will take the appropriate version for the python interpreter use by ansible, e.g. pip3 on python 3, and pip2 or pip on python 2."
+    }, 
+    "virtualenv_site_packages": {
+      "type": "Optional[String]", 
+      "description": "Whether the virtual environment will inherit packages from the global site-packages directory.  Note that if this setting is changed on an already existing virtual environment it will not have any effect, the environment must be deleted and newly created."
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "The state of module The 'forcereinstall' option is only available in Ansible 2.1 and above."
+    }, 
+    "version": {
+      "type": "Optional[String]", 
+      "description": "The version number to install of the Python library specified in the I(name) parameter"
+    }
+  }
+}

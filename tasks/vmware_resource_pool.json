@@ -1,0 +1,69 @@
+{
+  "description": "Add/remove resource pools to/from vCenter", 
+  "parameters": {
+    "username": {
+      "type": "String", 
+      "description": "ESXi username."
+    }, 
+    "resource_pool": {
+      "type": "String", 
+      "description": "Resource pool name to manage."
+    }, 
+    "cpu_reservation": {
+      "type": "Optional[String]", 
+      "description": "Amount of resource that is guaranteed available to the virtual machine or resource pool."
+    }, 
+    "hostname": {
+      "type": "String", 
+      "description": "ESXi hostname to manage."
+    }, 
+    "datacenter": {
+      "type": "String", 
+      "description": "Name of the datacenter to add the host."
+    }, 
+    "mem_expandable_reservations": {
+      "type": "Optional[String]", 
+      "description": "In a resource pool with an expandable reservation, the reservation on a resource pool can grow beyond the specified value."
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "Add or remove the resource pool"
+    }, 
+    "cluster": {
+      "type": "String", 
+      "description": "Name of the cluster to add the host."
+    }, 
+    "cpu_expandable_reservations": {
+      "type": "Optional[String]", 
+      "description": "In a resource pool with an expandable reservation, the reservation on a resource pool can grow beyond the specified value."
+    }, 
+    "mem_reservation": {
+      "type": "Optional[String]", 
+      "description": "Amount of resource that is guaranteed available to the virtual machine or resource pool."
+    }, 
+    "cpu_limit": {
+      "type": "Optional[String]", 
+      "description": "The utilization of a virtual machine/resource pool will not exceed this limit, even if there are available resources."
+    }, 
+    "mem_shares": {
+      "type": "Optional[String]", 
+      "description": "Memory shares are used in case of resource contention."
+    }, 
+    "mem_limit": {
+      "type": "Optional[String]", 
+      "description": "The utilization of a virtual machine/resource pool will not exceed this limit, even if there are available resources."
+    }, 
+    "password": {
+      "type": "String", 
+      "description": "ESXi password."
+    }, 
+    "validate_certs": {
+      "type": "Optional[String]", 
+      "description": "Allows connection when SSL certificates are not valid. Set to false when certificates are not trusted."
+    }, 
+    "cpu_shares": {
+      "type": "Optional[String]", 
+      "description": "Memory shares are used in case of resource contention."
+    }
+  }
+}

@@ -1,0 +1,69 @@
+{
+  "description": "Send an email", 
+  "parameters": {
+    "body": {
+      "type": "Optional[String]", 
+      "description": "The body of the email being sent."
+    }, 
+    "username": {
+      "type": "Optional[String]", 
+      "description": "If SMTP requires username"
+    }, 
+    "from": {
+      "type": "Optional[String]", 
+      "description": "The email-address the mail is sent from. May contain address and phrase."
+    }, 
+    "secure": {
+      "type": "Optional[String]", 
+      "description": "If C(always), the connection will only send email if the connection is Encrypted. If the server doesn't accept the encrypted connection it will fail. If C(try), the connection will attempt to setup a secure SSL/TLS session, before trying to send. If C(never), the connection will not attempt to setup a secure SSL/TLS session, before sending If C(starttls), the connection will try to upgrade to a secure SSL/TLS connection, before sending. If it is unable to do so it will fail."
+    }, 
+    "headers": {
+      "type": "Optional[String]", 
+      "description": "A vertical-bar-separated list of headers which should be added to the message. Each individual header is specified as C(header=value) (see example below)."
+    }, 
+    "cc": {
+      "type": "Optional[String]", 
+      "description": "The email-address(es) the mail is being copied to. This is a comma-separated list, which may contain address and phrase portions."
+    }, 
+    "charset": {
+      "type": "Optional[String]", 
+      "description": "The character set of email being sent"
+    }, 
+    "bcc": {
+      "type": "Optional[String]", 
+      "description": "The email-address(es) the mail is being 'blind' copied to. This is a comma-separated list, which may contain address and phrase portions."
+    }, 
+    "to": {
+      "type": "Optional[String]", 
+      "description": "The email-address(es) the mail is being sent to. This is a comma-separated list, which may contain address and phrase portions."
+    }, 
+    "host": {
+      "type": "Optional[String]", 
+      "description": "The mail server"
+    }, 
+    "timeout": {
+      "type": "Optional[String]", 
+      "description": "Sets the Timeout in seconds for connection attempts"
+    }, 
+    "subtype": {
+      "type": "Optional[String]", 
+      "description": "The minor mime type, can be either text or html. The major type is always text."
+    }, 
+    "attach": {
+      "type": "Optional[String]", 
+      "description": "A space-separated list of pathnames of files to attach to the message. Attached files will have their content-type set to C(application/octet-stream)."
+    }, 
+    "password": {
+      "type": "Optional[String]", 
+      "description": "If SMTP requires password"
+    }, 
+    "port": {
+      "type": "Optional[String]", 
+      "description": "The mail server port.  This must be a valid integer between 1 and 65534"
+    }, 
+    "subject": {
+      "type": "String", 
+      "description": "The subject of the email being sent."
+    }
+  }
+}

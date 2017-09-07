@@ -1,0 +1,53 @@
+{
+  "description": "Manages security groups on Apache CloudStack based clouds.", 
+  "parameters": {
+    "account": {
+      "type": "Optional[String]", 
+      "description": "Account the security group is related to."
+    }, 
+    "api_url": {
+      "type": "Optional[String]", 
+      "description": "URL of the CloudStack API e.g. https://cloud.example.com/client/api."
+    }, 
+    "api_http_method": {
+      "type": "Optional[String]", 
+      "description": "HTTP method used."
+    }, 
+    "api_secret": {
+      "type": "Optional[String]", 
+      "description": "Secret key of the CloudStack API."
+    }, 
+    "api_timeout": {
+      "type": "Optional[String]", 
+      "description": "HTTP timeout."
+    }, 
+    "api_region": {
+      "type": "Optional[String]", 
+      "description": "Name of the ini section in the C(cloustack.ini) file."
+    }, 
+    "name": {
+      "type": "String", 
+      "description": "Name of the security group."
+    }, 
+    "project": {
+      "type": "Optional[String]", 
+      "description": "Name of the project the security group to be created in."
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "State of the security group."
+    }, 
+    "domain": {
+      "type": "Optional[String]", 
+      "description": "Domain the security group is related to."
+    }, 
+    "api_key": {
+      "type": "Optional[String]", 
+      "description": "API key of the CloudStack API."
+    }, 
+    "description": {
+      "type": "Optional[String]", 
+      "description": "Description of the security group."
+    }
+  }
+}

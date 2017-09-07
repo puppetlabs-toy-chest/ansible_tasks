@@ -1,0 +1,33 @@
+{
+  "description": "Add or remove PostgreSQL extensions from a database.", 
+  "parameters": {
+    "name": {
+      "type": "String", 
+      "description": "name of the extension to add or remove"
+    }, 
+    "login_user": {
+      "type": "Optional[String]", 
+      "description": "The username used to authenticate with"
+    }, 
+    "login_host": {
+      "type": "Optional[String]", 
+      "description": "Host running the database"
+    }, 
+    "db": {
+      "type": "String", 
+      "description": "name of the database to add or remove the extension to/from"
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "The database extension state"
+    }, 
+    "login_password": {
+      "type": "Optional[String]", 
+      "description": "The password used to authenticate with"
+    }, 
+    "port": {
+      "type": "Optional[String]", 
+      "description": "Database port to connect to."
+    }
+  }
+}

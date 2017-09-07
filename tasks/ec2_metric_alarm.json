@@ -1,0 +1,93 @@
+{
+  "description": "Create/update or delete AWS Cloudwatch 'metric alarms'", 
+  "parameters": {
+    "metric": {
+      "type": "Optional[String]", 
+      "description": "Name of the monitored metric (e.g. CPUUtilization) Metric must already exist"
+    }, 
+    "ec2_url": {
+      "type": "Optional[String]", 
+      "description": "Url to use to connect to EC2 or your Eucalyptus cloud (by default the module will use EC2 endpoints). Ignored for modules where region is required. Must be specified for all other modules if region is not used. If not set then the value of the EC2_URL environment variable, if any, is used."
+    }, 
+    "period": {
+      "type": "Optional[String]", 
+      "description": "The time (in seconds) between metric evaluations"
+    }, 
+    "statistic": {
+      "type": "Optional[String]", 
+      "description": "Operation applied to the metric Works in conjunction with period and evaluation_periods to determine the comparison value"
+    }, 
+    "threshold": {
+      "type": "Optional[String]", 
+      "description": "Sets the min/max bound for triggering the alarm"
+    }, 
+    "unit": {
+      "type": "Optional[String]", 
+      "description": "The threshold's unit of measurement"
+    }, 
+    "aws_secret_key": {
+      "type": "Optional[String]", 
+      "description": "AWS secret key. If not set then the value of the AWS_SECRET_ACCESS_KEY, AWS_SECRET_KEY, or EC2_SECRET_KEY environment variable is used."
+    }, 
+    "dimensions": {
+      "type": "Optional[String]", 
+      "description": "Describes to what the alarm is applied"
+    }, 
+    "namespace": {
+      "type": "Optional[String]", 
+      "description": "Name of the appropriate namespace ('AWS/EC2', 'System/Linux', etc.), which determines the category it will appear under in cloudwatch"
+    }, 
+    "state": {
+      "type": "String", 
+      "description": "register or deregister the alarm"
+    }, 
+    "insufficient_data_actions": {
+      "type": "Optional[String]", 
+      "description": "A list of the names of action(s) to take when the alarm is in the 'insufficient_data' status"
+    }, 
+    "profile": {
+      "type": "Optional[String]", 
+      "description": "Uses a boto profile. Only works with boto >= 2.24.0."
+    }, 
+    "ok_actions": {
+      "type": "Optional[String]", 
+      "description": "A list of the names of action(s) to take when the alarm is in the 'ok' status"
+    }, 
+    "description": {
+      "type": "Optional[String]", 
+      "description": "A longer description of the alarm"
+    }, 
+    "evaluation_periods": {
+      "type": "Optional[String]", 
+      "description": "The number of times in which the metric is evaluated before final calculation"
+    }, 
+    "aws_access_key": {
+      "type": "Optional[String]", 
+      "description": "AWS access key. If not set then the value of the AWS_ACCESS_KEY_ID, AWS_ACCESS_KEY or EC2_ACCESS_KEY environment variable is used."
+    }, 
+    "comparison": {
+      "type": "Optional[String]", 
+      "description": "Determines how the threshold value is compared"
+    }, 
+    "alarm_actions": {
+      "type": "Optional[String]", 
+      "description": "A list of the names action(s) taken when the alarm is in the 'alarm' status"
+    }, 
+    "name": {
+      "type": "String", 
+      "description": "Unique name for the alarm"
+    }, 
+    "security_token": {
+      "type": "Optional[String]", 
+      "description": "AWS STS security token. If not set then the value of the AWS_SECURITY_TOKEN or EC2_SECURITY_TOKEN environment variable is used."
+    }, 
+    "region": {
+      "type": "Optional[String]", 
+      "description": "The AWS region to use. If not specified then the value of the AWS_REGION or EC2_REGION environment variable, if any, is used. See U(http://docs.aws.amazon.com/general/latest/gr/rande.html#ec2_region)"
+    }, 
+    "validate_certs": {
+      "type": "Optional[String]", 
+      "description": "When set to \"no\", SSL certificates will not be validated for boto versions >= 2.6.0."
+    }
+  }
+}

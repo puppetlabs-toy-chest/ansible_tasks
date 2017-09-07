@@ -1,0 +1,45 @@
+{
+  "description": "Create, Delete shared loadbalancers in CenturyLink Cloud.", 
+  "parameters": {
+    "status": {
+      "type": "Optional[String]", 
+      "description": "The status of the loadbalancer"
+    }, 
+    "name": {
+      "type": "String", 
+      "description": "The name of the loadbalancer"
+    }, 
+    "port": {
+      "type": "Optional[String]", 
+      "description": "Port to configure on the public-facing side of the load balancer pool"
+    }, 
+    "alias": {
+      "type": "String", 
+      "description": "The alias of your CLC Account"
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "Whether to create or delete the load balancer pool"
+    }, 
+    "location": {
+      "type": "String", 
+      "description": "The location of the datacenter where the load balancer resides in"
+    }, 
+    "nodes": {
+      "type": "Optional[String]", 
+      "description": "A list of nodes that needs to be added to the load balancer pool"
+    }, 
+    "method": {
+      "type": "Optional[String]", 
+      "description": "- T h e   b a l a n c i n g   m e t h o d   f o r   t h e   l o a d   b a l a n c e r   p o o l"
+    }, 
+    "persistence": {
+      "type": "Optional[String]", 
+      "description": "The persistence method for the load balancer"
+    }, 
+    "description": {
+      "type": "Optional[String]", 
+      "description": "A description for the loadbalancer"
+    }
+  }
+}

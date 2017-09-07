@@ -1,0 +1,25 @@
+{
+  "description": "Manages SELinux network port type definitions", 
+  "parameters": {
+    "ports": {
+      "type": "String", 
+      "description": "Ports or port ranges, separated by a comma"
+    }, 
+    "reload": {
+      "type": "Optional[String]", 
+      "description": "Reload SELinux policy after commit."
+    }, 
+    "setype": {
+      "type": "String", 
+      "description": "SELinux type for the specified port."
+    }, 
+    "state": {
+      "type": "String", 
+      "description": "Desired boolean value."
+    }, 
+    "proto": {
+      "type": "String", 
+      "description": "Protocol for the specified port."
+    }
+  }
+}

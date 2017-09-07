@@ -1,0 +1,53 @@
+{
+  "description": "Manage the SSHD settings of a BIG-IP", 
+  "parameters": {
+    "log_level": {
+      "type": "Optional[String]", 
+      "description": "Specifies the minimum SSHD message level to include in the system log."
+    }, 
+    "server_port": {
+      "type": "Optional[String]", 
+      "description": "The BIG-IP server port. This option can be omitted if the environment variable C(F5_SERVER_PORT) is set."
+    }, 
+    "banner_text": {
+      "type": "Optional[String]", 
+      "description": "Specifies the text to include on the pre-login banner that displays when a user attempts to login to the system using SSH."
+    }, 
+    "validate_certs": {
+      "type": "Optional[String]", 
+      "description": "If C(no), SSL certificates will not be validated. This should only be used on personally controlled sites using self-signed certificates. This option can be omitted if the environment variable C(F5_VALIDATE_CERTS) is set."
+    }, 
+    "server": {
+      "type": "String", 
+      "description": "The BIG-IP host. This option can be omitted if the environment variable C(F5_SERVER) is set."
+    }, 
+    "user": {
+      "type": "String", 
+      "description": "The username to connect to the BIG-IP with. This user must have administrative privileges on the device. This option can be omitted if the environment variable C(F5_USER) is set."
+    }, 
+    "allow": {
+      "type": "Optional[String]", 
+      "description": "Specifies, if you have enabled SSH access, the IP address or address range for other systems that can use SSH to communicate with this system."
+    }, 
+    "inactivity_timeout": {
+      "type": "Optional[String]", 
+      "description": "Specifies the number of seconds before inactivity causes an SSH session to log out."
+    }, 
+    "login": {
+      "type": "Optional[String]", 
+      "description": "Specifies, when checked C(enabled), that the system accepts SSH communications."
+    }, 
+    "password": {
+      "type": "String", 
+      "description": "The password for the user account used to connect to the BIG-IP. This option can be omitted if the environment variable C(F5_PASSWORD) is set."
+    }, 
+    "banner": {
+      "type": "Optional[String]", 
+      "description": "Whether to enable the banner or not."
+    }, 
+    "port": {
+      "type": "Optional[String]", 
+      "description": "Port that you want the SSH daemon to run on."
+    }
+  }
+}

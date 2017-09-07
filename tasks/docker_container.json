@@ -1,0 +1,325 @@
+{
+  "description": "manage docker containers", 
+  "parameters": {
+    "tty": {
+      "type": "Optional[String]", 
+      "description": "Allocate a pseudo-TTY."
+    }, 
+    "dns_servers": {
+      "type": "Optional[String]", 
+      "description": "List of custom DNS servers."
+    }, 
+    "links": {
+      "type": "Optional[String]", 
+      "description": "List of name aliases for linked containers in the format C(container_name:alias)"
+    }, 
+    "oom_score_adj": {
+      "type": "Optional[String]", 
+      "description": "An integer value containing the score given to the container in order to tune OOM killer preferences."
+    }, 
+    "volumes": {
+      "type": "Optional[String]", 
+      "description": "List of volumes to mount within the container. Use docker CLI-style syntax: C(/host:/container[:mode]) You can specify a read mode for the mount with either C(ro) or C(rw). SELinux hosts can additionally use C(z) or C(Z) to use a shared or private label for the volume."
+    }, 
+    "ssl_version": {
+      "type": "Optional[String]", 
+      "description": "Provide a valid SSL version number. Default value determined by docker-py, currently 1.0."
+    }, 
+    "image": {
+      "type": "Optional[String]", 
+      "description": "Repository path and tag used to create the container. If an image is not found or pull is true, the image will be pulled from the registry. If no tag is included, 'latest' will be used."
+    }, 
+    "recreate": {
+      "type": "Optional[String]", 
+      "description": "Use with present and started states to force the re-creation of an existing container."
+    }, 
+    "command": {
+      "type": "Optional[String]", 
+      "description": "Command to execute when the container starts. A command may be either a string or a list. Prior to version 2.4, strings were split on commas."
+    }, 
+    "paused": {
+      "type": "Optional[String]", 
+      "description": "Use with the started state to pause running processes inside the container."
+    }, 
+    "docker_host": {
+      "type": "Optional[String]", 
+      "description": "The URL or Unix socket path used to connect to the Docker API. To connect to a remote host, provide the TCP connection string. For example, 'tcp://192.0.2.23:2376'. If TLS is used to encrypt the connection, the module will automatically replace 'tcp' in the connection URL with 'https'."
+    }, 
+    "cpuset_cpus": {
+      "type": "Optional[String]", 
+      "description": "CPUs in which to allow execution C(1,3) or C(1-3)."
+    }, 
+    "dns_search_domains": {
+      "type": "Optional[String]", 
+      "description": "List of custom DNS search domains."
+    }, 
+    "kernel_memory": {
+      "type": "Optional[String]", 
+      "description": "Kernel memory limit (format: <number>[<unit>]). Number is a positive integer. Unit can be one of b, k, m, or g. Minimum is 4M."
+    }, 
+    "force_kill": {
+      "type": "Optional[String]", 
+      "description": "Use the kill command when stopping a running container."
+    }, 
+    "pid_mode": {
+      "type": "Optional[String]", 
+      "description": "Set the PID namespace mode for the container. Currently only supports 'host'."
+    }, 
+    "env_file": {
+      "type": "Optional[String]", 
+      "description": "Path to a file containing environment variables I(FOO=BAR). If variable also present in C(env), then C(env) value will override. Requires docker-py >= 1.4.0."
+    }, 
+    "networks": {
+      "type": "Optional[String]", 
+      "description": "List of networks the container belongs to. Each network is a dict with keys C(name), C(ipv4_address), C(ipv6_address), C(links), C(aliases). For each network C(name) is required, all other keys are optional. If included, C(links) or C(aliases) are lists. For examples of the data structure and usage see EXAMPLES below. To remove a container from one or more networks, use the C(purge_networks) option."
+    }, 
+    "cpu_quota": {
+      "type": "Optional[String]", 
+      "description": "Limit CPU CFS (Completely Fair Scheduler) quota"
+    }, 
+    "cpu_period": {
+      "type": "Optional[String]", 
+      "description": "Limit CPU CFS (Completely Fair Scheduler) period"
+    }, 
+    "security_opts": {
+      "type": "Optional[String]", 
+      "description": "List of security options in the form of C(\"label:user:User\")"
+    }, 
+    "detach": {
+      "type": "Optional[String]", 
+      "description": "Enable detached mode to leave the container running in background. If disabled, the task will reflect the status of the container run (failed if the command failed)."
+    }, 
+    "cpuset_mems": {
+      "type": "Optional[String]", 
+      "description": "Memory nodes (MEMs) in which to allow execution C(0-3) or C(0,1)"
+    }, 
+    "hostname": {
+      "type": "Optional[String]", 
+      "description": "Container hostname."
+    }, 
+    "restart_retries": {
+      "type": "Optional[String]", 
+      "description": "Use with restart policy to control maximum number of restart attempts."
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "I(absent) - A container matching the specified name will be stopped and removed. Use force_kill to kill the container rather than stopping it. Use keep_volumes to retain volumes associated with the removed container. I(present) - Asserts the existence of a container matching the name and any provided configuration parameters. If no container matches the name, a container will be created. If a container matches the name but the provided configuration does not match, the container will be updated, if it can be. If it cannot be updated, it will be removed and re-created with the requested config. Image version will be taken into account when comparing configuration. To ignore image version use the ignore_image option. Use the recreate option to force the re-creation of the matching container. Use force_kill to kill the container rather than stopping it. Use keep_volumes to retain volumes associated with a removed container. I(started) - Asserts there is a running container matching the name and any provided configuration. If no container matches the name, a container will be created and started. If a container matching the name is found but the configuration does not match, the container will be updated, if it can be. If it cannot be updated, it will be removed and a new container will be created with the requested configuration and started. Image version will be taken into account when comparing configuration. To ignore image version use the ignore_image option. Use recreate to always re-create a matching container, even if it is running. Use restart to force a matching container to be stopped and restarted. Use force_kill to kill a container rather than stopping it. Use keep_volumes to retain volumes associated with a removed container. I(stopped) - Asserts that the container is first I(present), and then if the container is running moves it to a stopped state. Use force_kill to kill a container rather than stopping it."
+    }, 
+    "capabilities": {
+      "type": "Optional[String]", 
+      "description": "List of capabilities to add to the container."
+    }, 
+    "mac_address": {
+      "type": "Optional[String]", 
+      "description": "Container MAC address (e.g. 92:d0:c6:0a:29:33)"
+    }, 
+    "working_dir": {
+      "type": "Optional[String]", 
+      "description": "Path to the working directory."
+    }, 
+    "cleanup": {
+      "type": "Optional[String]", 
+      "description": "Use with I(detach) to remove the container after successful execution."
+    }, 
+    "entrypoint": {
+      "type": "Optional[String]", 
+      "description": "Command that overwrites the default ENTRYPOINT of the image."
+    }, 
+    "memory_swap": {
+      "type": "Optional[String]", 
+      "description": "Total memory limit (memory + swap, format:<number>[<unit>]). Number is a positive integer. Unit can be one of b, k, m, or g."
+    }, 
+    "env": {
+      "type": "Optional[String]", 
+      "description": "Dictionary of key,value pairs."
+    }, 
+    "memory": {
+      "type": "Optional[String]", 
+      "description": "Memory limit (format: <number>[<unit>]). Number is a positive integer. Unit can be one of b, k, m, or g"
+    }, 
+    "volumes_from": {
+      "type": "Optional[String]", 
+      "description": "List of container names or Ids to get volumes from."
+    }, 
+    "ipc_mode": {
+      "type": "Optional[String]", 
+      "description": "Set the IPC mode for the container. Can be one of 'container:<name|id>' to reuse another container's IPC namespace or 'host' to use the host's IPC namespace within the container."
+    }, 
+    "log_options": {
+      "type": "Optional[String]", 
+      "description": "Dictionary of options specific to the chosen log_driver. See https://docs.docker.com/engine/admin/logging/overview/ for details."
+    }, 
+    "privileged": {
+      "type": "Optional[String]", 
+      "description": "Give extended privileges to the container."
+    }, 
+    "api_version": {
+      "type": "Optional[String]", 
+      "description": "The version of the Docker API running on the Docker Host. Defaults to the latest version of the API supported by docker-py."
+    }, 
+    "key_path": {
+      "type": "Optional[String]", 
+      "description": "Path to the client's TLS key file."
+    }, 
+    "exposed_ports": {
+      "type": "Optional[String]", 
+      "description": "List of additional container ports which informs Docker that the container listens on the specified network ports at runtime. If the port is already exposed using EXPOSE in a Dockerfile, it does not need to be exposed again."
+    }, 
+    "read_only": {
+      "type": "Optional[String]", 
+      "description": "Mount the container's root file system as read-only."
+    }, 
+    "labels": {
+      "type": "Optional[String]", 
+      "description": "Dictionary of key value pairs."
+    }, 
+    "log_driver": {
+      "type": "Optional[String]", 
+      "description": "Specify the logging driver. Docker uses json-file by default."
+    }, 
+    "oom_killer": {
+      "type": "Optional[String]", 
+      "description": "Whether or not to disable OOM Killer for the container."
+    }, 
+    "shm_size": {
+      "type": "Optional[String]", 
+      "description": "Size of `/dev/shm`. The format is `<number><unit>`. `number` must be greater than `0`. Unit is optional and can be `b` (bytes), `k` (kilobytes), `m` (megabytes), or `g` (gigabytes). Omitting the unit defaults to bytes. If you omit the size entirely, the system uses `64m`."
+    }, 
+    "auto_remove": {
+      "type": "Optional[String]", 
+      "description": "enable auto-removal of the container on daemon side when the container's process exits"
+    }, 
+    "memory_swappiness": {
+      "type": "Optional[String]", 
+      "description": "Tune a container's memory swappiness behavior. Accepts an integer between 0 and 100."
+    }, 
+    "kill_signal": {
+      "type": "Optional[String]", 
+      "description": "Override default signal used to kill a running container."
+    }, 
+    "keep_volumes": {
+      "type": "Optional[String]", 
+      "description": "Retain volumes associated with a removed container."
+    }, 
+    "network_mode": {
+      "type": "Optional[String]", 
+      "description": "Connect the container to a network."
+    }, 
+    "tls_hostname": {
+      "type": "Optional[String]", 
+      "description": "When verifying the authenticity of the Docker Host server, provide the expected name of the server."
+    }, 
+    "volume_driver": {
+      "type": "Optional[String]", 
+      "description": "The container volume driver."
+    }, 
+    "user": {
+      "type": "Optional[String]", 
+      "description": "Sets the username or UID used and optionally the groupname or GID for the specified command. Can be [ user | user:group | uid | uid:gid | user:gid | uid:group ]"
+    }, 
+    "groups": {
+      "type": "Optional[String]", 
+      "description": "List of additional group names and/or IDs that the container process will run as."
+    }, 
+    "cert_path": {
+      "type": "Optional[String]", 
+      "description": "Path to the client's TLS certificate file."
+    }, 
+    "stop_timeout": {
+      "type": "Optional[String]", 
+      "description": "Number of seconds to wait for the container to stop before sending SIGKILL."
+    }, 
+    "tmpfs": {
+      "type": "Optional[String]", 
+      "description": "Mount a tmpfs directory"
+    }, 
+    "restart": {
+      "type": "Optional[String]", 
+      "description": "Use with started state to force a matching container to be stopped and restarted."
+    }, 
+    "tls": {
+      "type": "Optional[String]", 
+      "description": "Secure the connection to the API by using TLS without verifying the authenticity of the Docker host server."
+    }, 
+    "pull": {
+      "type": "Optional[String]", 
+      "description": "If true, always pull the latest version of an image. Otherwise, will only pull an image when missing."
+    }, 
+    "name": {
+      "type": "String", 
+      "description": "Assign a name to a new container or match an existing container. When identifying an existing container name may be a name or a long or short container ID."
+    }, 
+    "cacert_path": {
+      "type": "Optional[String]", 
+      "description": "Use a CA certificate when performing server verification by providing the path to a CA certificate file."
+    }, 
+    "stop_signal": {
+      "type": "Optional[String]", 
+      "description": "Override default signal used to stop the container."
+    }, 
+    "blkio_weight": {
+      "type": "Optional[String]", 
+      "description": "Block IO (relative weight), between 10 and 1000."
+    }, 
+    "trust_image_content": {
+      "type": "Optional[String]", 
+      "description": "If true, skip image verification."
+    }, 
+    "restart_policy": {
+      "type": "Optional[String]", 
+      "description": "Container restart policy. Place quotes around I(no) option."
+    }, 
+    "ignore_image": {
+      "type": "Optional[String]", 
+      "description": "When C(state) is I(present) or I(started) the module compares the configuration of an existing container to requested configuration. The evaluation includes the image version. If the image version in the registry does not match the container, the container will be recreated. Stop this behavior by setting C(ignore_image) to I(True)."
+    }, 
+    "devices": {
+      "type": "Optional[String]", 
+      "description": "List of host device bindings to add to the container. Each binding is a mapping expressed in the format: <path_on_host>:<path_in_container>:<cgroup_permissions>"
+    }, 
+    "etc_hosts": {
+      "type": "Optional[String]", 
+      "description": "Dict of host-to-IP mappings, where each host name is a key in the dictionary. Each host name will be added to the container's /etc/hosts file."
+    }, 
+    "uts": {
+      "type": "Optional[String]", 
+      "description": "Set the UTS namespace mode for the container."
+    }, 
+    "sysctls": {
+      "type": "Optional[String]", 
+      "description": "Dictionary of key,value pairs."
+    }, 
+    "tls_verify": {
+      "type": "Optional[String]", 
+      "description": "Secure the connection to the API by using TLS and verifying the authenticity of the Docker host server."
+    }, 
+    "memory_reservation": {
+      "type": "Optional[String]", 
+      "description": "Memory soft limit (format: <number>[<unit>]). Number is a positive integer. Unit can be one of b, k, m, or g"
+    }, 
+    "timeout": {
+      "type": "Optional[String]", 
+      "description": "The maximum amount of time in seconds to wait on a response from the API."
+    }, 
+    "published_ports": {
+      "type": "Optional[String]", 
+      "description": "List of ports to publish from the container to the host. Use docker CLI syntax: C(8000), C(9000:8000), or C(0.0.0.0:9000:8000), where 8000 is a container port, 9000 is a host port, and 0.0.0.0 is a host interface. Container ports must be exposed either in the Dockerfile or via the C(expose) option. A value of all will publish all exposed container ports to random host ports, ignoring any other mappings. If C(networks) parameter is provided, will inspect each network to see if there exists a bridge network with optional parameter com.docker.network.bridge.host_binding_ipv4. If such a network is found, then published ports where no host IP address is specified will be bound to the host IP pointed to by com.docker.network.bridge.host_binding_ipv4. Note that the first bridge network with a com.docker.network.bridge.host_binding_ipv4 value encountered in the list of C(networks) is the one that will be used."
+    }, 
+    "purge_networks": {
+      "type": "Optional[String]", 
+      "description": "Remove the container from ALL networks not included in C(networks) parameter. Any default networks such as I(bridge), if not found in C(networks), will be removed as well."
+    }, 
+    "cpu_shares": {
+      "type": "Optional[String]", 
+      "description": "CPU shares (relative weight)."
+    }, 
+    "ulimits": {
+      "type": "Optional[String]", 
+      "description": "List of ulimit options. A ulimit is specified as C(nofile:262144:262144)"
+    }, 
+    "interactive": {
+      "type": "Optional[String]", 
+      "description": "Keep stdin open after a container is launched, even if not attached."
+    }
+  }
+}

@@ -1,0 +1,93 @@
+{
+  "description": "Manages a VRF for an OSPF router.", 
+  "parameters": {
+    "router_id": {
+      "type": "Optional[String]", 
+      "description": "Router Identifier (ID) of the OSPF router VRF instance."
+    }, 
+    "use_ssl": {
+      "type": "Optional[String]", 
+      "description": "Configures the I(transport) to use SSL if set to true only when the C(transport=nxapi), otherwise this value is ignored."
+    }, 
+    "port": {
+      "type": "Optional[String]", 
+      "description": "Specifies the port to use when building the connection to the remote device.  This value applies to either I(cli) or I(nxapi).  The port value will default to the appropriate transport common port if none is provided in the task.  (cli=22, http=80, https=443)."
+    }, 
+    "transport": {
+      "type": "String", 
+      "description": "Configures the transport connection to use when connecting to the remote device.  The transport argument supports connectivity to the device over cli (ssh) or nxapi."
+    }, 
+    "timer_throttle_lsa_max": {
+      "type": "Optional[String]", 
+      "description": "Specify the max interval for rate-limiting Link-State Advertisement (LSA) generation. Valid values are an integer, in milliseconds, or the keyword 'default'."
+    }, 
+    "timer_throttle_spf_max": {
+      "type": "Optional[String]", 
+      "description": "Specify the maximum wait time between Shortest Path First (SPF) calculations. Valid values are an integer, in milliseconds, or the keyword 'default'."
+    }, 
+    "timer_throttle_lsa_hold": {
+      "type": "Optional[String]", 
+      "description": "Specify the hold interval for rate-limiting Link-State Advertisement (LSA) generation. Valid values are an integer, in milliseconds, or the keyword 'default'."
+    }, 
+    "auto_cost": {
+      "type": "Optional[String]", 
+      "description": "Specifies the reference bandwidth used to assign OSPF cost. Valid values are an integer, in Mbps, or the keyword 'default'."
+    }, 
+    "provider": {
+      "type": "Optional[String]", 
+      "description": "Convenience method that allows all I(nxos) arguments to be passed as a dict object.  All constraints (required, choices, etc) must be met either by individual arguments or values in this dict."
+    }, 
+    "username": {
+      "type": "Optional[String]", 
+      "description": "Configures the username to use to authenticate the connection to the remote device.  This value is used to authenticate either the CLI login or the nxapi authentication depending on which transport is used. If the value is not specified in the task, the value of environment variable C(ANSIBLE_NET_USERNAME) will be used instead."
+    }, 
+    "default_metric": {
+      "type": "Optional[String]", 
+      "description": "Specify the default Metric value. Valid values are an integer or the keyword 'default'."
+    }, 
+    "host": {
+      "type": "String", 
+      "description": "Specifies the DNS host name or address for connecting to the remote device over the specified transport.  The value of host is used as the destination address for the transport."
+    }, 
+    "vrf": {
+      "type": "Optional[String]", 
+      "description": "Name of the resource instance. Valid value is a string. The name 'default' is a valid VRF representing the global OSPF."
+    }, 
+    "timer_throttle_spf_start": {
+      "type": "Optional[String]", 
+      "description": "Specify initial Shortest Path First (SPF) schedule delay. Valid values are an integer, in milliseconds, or the keyword 'default'."
+    }, 
+    "password": {
+      "type": "Optional[String]", 
+      "description": "Specifies the password to use to authenticate the connection to the remote device.  This is a common argument used for either I(cli) or I(nxapi) transports. If the value is not specified in the task, the value of environment variable C(ANSIBLE_NET_PASSWORD) will be used instead."
+    }, 
+    "timer_throttle_spf_hold": {
+      "type": "Optional[String]", 
+      "description": "Specify minimum hold time between Shortest Path First (SPF) calculations. Valid values are an integer, in milliseconds, or the keyword 'default'."
+    }, 
+    "ssh_keyfile": {
+      "type": "Optional[String]", 
+      "description": "Specifies the SSH key to use to authenticate the connection to the remote device.  This argument is only used for the I(cli) transport. If the value is not specified in the task, the value of environment variable C(ANSIBLE_NET_SSH_KEYFILE) will be used instead."
+    }, 
+    "ospf": {
+      "type": "String", 
+      "description": "Name of the OSPF instance."
+    }, 
+    "log_adjacency": {
+      "type": "Optional[String]", 
+      "description": "Controls the level of log messages generated whenever a neighbor changes state. Valid values are 'log', 'detail', and 'default'."
+    }, 
+    "timer_throttle_lsa_start": {
+      "type": "Optional[String]", 
+      "description": "Specify the start interval for rate-limiting Link-State Advertisement (LSA) generation. Valid values are an integer, in milliseconds, or the keyword 'default'."
+    }, 
+    "timeout": {
+      "type": "Optional[String]", 
+      "description": "Specifies the timeout in seconds for communicating with the network device for either connecting or sending commands.  If the timeout is exceeded before the operation is completed, the module will error. NX-API can be slow to return on long-running commands (sh mac, sh bgp, etc)."
+    }, 
+    "validate_certs": {
+      "type": "Optional[String]", 
+      "description": "If C(no), SSL certificates will not be validated. This should only be used on personally controlled sites using self-signed certificates.  If the transport argument is not nxapi, this value is ignored."
+    }
+  }
+}

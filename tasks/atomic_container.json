@@ -1,0 +1,33 @@
+{
+  "description": "Manage the containers on the atomic host platform", 
+  "parameters": {
+    "name": {
+      "type": "String", 
+      "description": "Name of the container"
+    }, 
+    "image": {
+      "type": "String", 
+      "description": "The image to use to install the container"
+    }, 
+    "state": {
+      "type": "String", 
+      "description": "State of the container"
+    }, 
+    "values": {
+      "type": "Optional[String]", 
+      "description": "Values for the installation of the container.  This option is permitted only with mode 'user' or 'system'. The values specified here will be used at installation time as --set arguments for atomic install."
+    }, 
+    "mode": {
+      "type": "String", 
+      "description": "Define if it is an user or a system container"
+    }, 
+    "rootfs": {
+      "type": "Optional[String]", 
+      "description": "Define the rootfs of the image"
+    }, 
+    "backend": {
+      "type": "String", 
+      "description": "Define the backend to use for the container"
+    }
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "description": "Gather facts on instances of Apache CloudStack based clouds.", 
+  "parameters": {
+    "filter": {
+      "type": "Optional[String]", 
+      "description": "Filter for a specific fact."
+    }
+  }
+}

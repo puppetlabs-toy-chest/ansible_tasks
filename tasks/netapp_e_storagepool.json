@@ -1,0 +1,81 @@
+{
+  "description": "Manage disk groups and disk pools", 
+  "parameters": {
+    "criteria_size_unit": {
+      "type": "Optional[String]", 
+      "description": "The unit used to interpret size parameters"
+    }, 
+    "ssid": {
+      "type": "String", 
+      "description": "The ID of the array to manage (as configured on the web services proxy)."
+    }, 
+    "criteria_drive_require_fde": {
+      "type": "Optional[String]", 
+      "description": "Whether full disk encryption ability is required for drives to be added to the storage pool"
+    }, 
+    "criteria_min_usable_capacity": {
+      "type": "Optional[String]", 
+      "description": "The minimum size of the storage pool (in size_unit). The pool will be expanded if this value exceeds itscurrent size."
+    }, 
+    "api_url": {
+      "type": "String", 
+      "description": "The url to the SANtricity WebServices Proxy or embedded REST API."
+    }, 
+    "state": {
+      "type": "String", 
+      "description": "Whether the specified storage pool should exist or not. Note that removing a storage pool currently requires the removal of all defined volumes first."
+    }, 
+    "erase_secured_drives": {
+      "type": "Optional[String]", 
+      "description": "Whether to erase secured disks before adding to storage pool"
+    }, 
+    "secure_pool": {
+      "type": "Optional[String]", 
+      "description": "Whether to convert to a secure storage pool. Will only work if all drives in the pool are security capable."
+    }, 
+    "api_password": {
+      "type": "String", 
+      "description": "The password to authenticate with the SANtricity WebServices Proxy or embedded REST API."
+    }, 
+    "raid_level": {
+      "type": "String", 
+      "description": "Only required when the requested state is 'present'.  The RAID level of the storage pool to be created."
+    }, 
+    "criteria_drive_min_size": {
+      "type": "Optional[String]", 
+      "description": "The minimum individual drive size (in size_unit) to consider when choosing drives for the storage pool."
+    }, 
+    "remove_volumes": {
+      "type": "Optional[String]", 
+      "description": "Prior to removing a storage pool, delete all volumes in the pool."
+    }, 
+    "criteria_drive_type": {
+      "type": "Optional[String]", 
+      "description": "The type of disk (hdd or ssd) to use when searching for candidates to use."
+    }, 
+    "criteria_drive_count": {
+      "type": "Optional[String]", 
+      "description": "The number of disks to use for building the storage pool. The pool will be expanded if this number exceeds the number of disks already in place"
+    }, 
+    "api_username": {
+      "type": "String", 
+      "description": "The username to authenticate with the SANtricity WebServices Proxy or embedded REST API."
+    }, 
+    "criteria_drive_interface_type": {
+      "type": "Optional[String]", 
+      "description": "The interface type to use when selecting drives for the storage pool (no value means all interface types will be considered)"
+    }, 
+    "validate_certs": {
+      "type": "Optional[String]", 
+      "description": "Should https certificates be validated?"
+    }, 
+    "reserve_drive_count": {
+      "type": "Optional[String]", 
+      "description": "Set the number of drives reserved by the storage pool for reconstruction operations. Only valide on raid disk pools."
+    }, 
+    "name": {
+      "type": "String", 
+      "description": "The name of the storage pool to manage"
+    }
+  }
+}

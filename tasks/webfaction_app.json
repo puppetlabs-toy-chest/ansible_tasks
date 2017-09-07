@@ -1,0 +1,41 @@
+{
+  "description": "Add or remove applications on a Webfaction host", 
+  "parameters": {
+    "name": {
+      "type": "String", 
+      "description": "The name of the application"
+    }, 
+    "login_name": {
+      "type": "String", 
+      "description": "The webfaction account to use"
+    }, 
+    "machine": {
+      "type": "Optional[String]", 
+      "description": "The machine name to use (optional for accounts with only one machine)"
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "Whether the application should exist"
+    }, 
+    "autostart": {
+      "type": "Optional[String]", 
+      "description": "Whether the app should restart with an autostart.cgi script"
+    }, 
+    "login_password": {
+      "type": "String", 
+      "description": "The webfaction password to use"
+    }, 
+    "type": {
+      "type": "String", 
+      "description": "The type of application to create. See the Webfaction docs at http://docs.webfaction.com/xmlrpc-api/apps.html for a list."
+    }, 
+    "port_open": {
+      "type": "Optional[String]", 
+      "description": "IF the port should be opened"
+    }, 
+    "extra_info": {
+      "type": "Optional[String]", 
+      "description": "Any extra parameters required by the app"
+    }
+  }
+}

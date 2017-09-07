@@ -1,0 +1,25 @@
+{
+  "description": "Manages VLAN resources and attributes on Huawei CloudEngine switches.", 
+  "parameters": {
+    "state": {
+      "type": "Optional[String]", 
+      "description": "Manage the state of the resource."
+    }, 
+    "vlan_range": {
+      "type": "Optional[String]", 
+      "description": "Range of VLANs such as C(2-10) or C(2,5,10-15), etc."
+    }, 
+    "name": {
+      "type": "Optional[String]", 
+      "description": "Name of VLAN, in the range from 1 to 31."
+    }, 
+    "vlan_id": {
+      "type": "Optional[String]", 
+      "description": "Single VLAN ID, in the range from 1 to 4094."
+    }, 
+    "description": {
+      "type": "Optional[String]", 
+      "description": "Specify VLAN description, in the range from 1 to 80."
+    }
+  }
+}

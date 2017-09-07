@@ -1,0 +1,65 @@
+{
+  "description": "This module manages rabbitMQ queues", 
+  "parameters": {
+    "login_port": {
+      "type": "Optional[String]", 
+      "description": "rabbitMQ management api port"
+    }, 
+    "dead_letter_exchange": {
+      "type": "Optional[String]", 
+      "description": "Optional name of an exchange to which messages will be republished if they are rejected or expire"
+    }, 
+    "name": {
+      "type": "String", 
+      "description": "Name of the queue to create"
+    }, 
+    "login_user": {
+      "type": "Optional[String]", 
+      "description": "rabbitMQ user for connection"
+    }, 
+    "login_host": {
+      "type": "Optional[String]", 
+      "description": "rabbitMQ host for connection"
+    }, 
+    "message_ttl": {
+      "type": "Optional[String]", 
+      "description": "How long a message can live in queue before it is discarded (milliseconds)"
+    }, 
+    "vhost": {
+      "type": "Optional[String]", 
+      "description": "rabbitMQ virtual host"
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "Whether the queue should be present or absent Only present implemented atm"
+    }, 
+    "max_length": {
+      "type": "Optional[String]", 
+      "description": "How many messages can the queue contain before it starts rejecting"
+    }, 
+    "arguments": {
+      "type": "Optional[String]", 
+      "description": "extra arguments for queue. If defined this argument is a key/value dictionary"
+    }, 
+    "auto_delete": {
+      "type": "Optional[String]", 
+      "description": "if the queue should delete itself after all queues/queues unbound from it"
+    }, 
+    "login_password": {
+      "type": "Optional[String]", 
+      "description": "rabbitMQ password for connection"
+    }, 
+    "auto_expires": {
+      "type": "Optional[String]", 
+      "description": "How long a queue can be unused before it is automatically deleted (milliseconds)"
+    }, 
+    "dead_letter_routing_key": {
+      "type": "Optional[String]", 
+      "description": "Optional replacement routing key to use when a message is dead-lettered. Original routing key will be used if unset"
+    }, 
+    "durable": {
+      "type": "Optional[String]", 
+      "description": "whether queue is durable or not"
+    }
+  }
+}

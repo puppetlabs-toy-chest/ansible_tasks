@@ -1,0 +1,17 @@
+{
+  "description": "Gather facts about ZFS pools.", 
+  "parameters": {
+    "parsable": {
+      "type": "Optional[Boolean]", 
+      "description": "Specifies if property values should be displayed in machine friendly format."
+    }, 
+    "name": {
+      "type": "Optional[String]", 
+      "description": "ZFS pool name."
+    }, 
+    "properties": {
+      "type": "Optional[String]", 
+      "description": "Specifies which dataset properties should be queried in comma-separated format. For more information about dataset properties, check zpool(1M) man page."
+    }
+  }
+}

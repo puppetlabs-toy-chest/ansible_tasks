@@ -1,0 +1,25 @@
+{
+  "description": "Install/uninstall homebrew casks.", 
+  "parameters": {
+    "update_homebrew": {
+      "type": "Optional[String]", 
+      "description": "update homebrew itself first. Note that C(brew cask update) is a synonym for C(brew update)."
+    }, 
+    "path": {
+      "type": "Optional[String]", 
+      "description": "':' separated list of paths to search for 'brew' executable."
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "state of the cask"
+    }, 
+    "name": {
+      "type": "String", 
+      "description": "name of cask to install/remove"
+    }, 
+    "install_options": {
+      "type": "Optional[String]", 
+      "description": "options flags to install a package"
+    }
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "description": "Manages global configuration of EVPN on HUAWEI CloudEngine switches.", 
+  "parameters": {
+    "evpn_overlay_enable": {
+      "type": "String", 
+      "description": "Configure EVPN as the VXLAN control plane."
+    }
+  }
+}

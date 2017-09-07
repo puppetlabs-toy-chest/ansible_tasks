@@ -1,0 +1,25 @@
+{
+  "description": "Manage Katello Resources", 
+  "parameters": {
+    "username": {
+      "type": "String", 
+      "description": "Username on Foreman server"
+    }, 
+    "password": {
+      "type": "String", 
+      "description": "Password for user accessing Foreman server"
+    }, 
+    "params": {
+      "type": "String", 
+      "description": "Parameters associated to the entity resource to set or edit in dictionary format (e.g. name, description)"
+    }, 
+    "server_url": {
+      "type": "String", 
+      "description": "URL of Foreman server"
+    }, 
+    "entity": {
+      "type": "String", 
+      "description": "The Foreman resource that the action will be performed on (e.g. organization, host)"
+    }
+  }
+}

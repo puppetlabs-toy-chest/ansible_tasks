@@ -1,0 +1,57 @@
+{
+  "description": "Module for setup of GslbGeoDbProfile Avi RESTful Object", 
+  "parameters": {
+    "username": {
+      "type": "Optional[String]", 
+      "description": "Username used for accessing Avi controller. The default value is the environment variable C(AVI_USERNAME)."
+    }, 
+    "uuid": {
+      "type": "Optional[String]", 
+      "description": "Uuid of the geodb profile. Field introduced in 17.1.1."
+    }, 
+    "url": {
+      "type": "Optional[String]", 
+      "description": "Avi controller URL of the object."
+    }, 
+    "tenant_ref": {
+      "type": "Optional[String]", 
+      "description": "It is a reference to an object of type tenant. Field introduced in 17.1.1."
+    }, 
+    "controller": {
+      "type": "Optional[String]", 
+      "description": "IP address or hostname of the controller. The default value is the environment variable C(AVI_CONTROLLER)."
+    }, 
+    "name": {
+      "type": "String", 
+      "description": "A user-friendly name for the geodb profile. Field introduced in 17.1.1."
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "The state that should be applied on the entity."
+    }, 
+    "tenant": {
+      "type": "Optional[String]", 
+      "description": "Name of tenant used for all Avi API calls and context of object."
+    }, 
+    "entries": {
+      "type": "Optional[String]", 
+      "description": "List of geodb entries. An entry can either be a geodb file or an ip address group with geo properties. Field introduced in 17.1.1."
+    }, 
+    "password": {
+      "type": "Optional[String]", 
+      "description": "Password of Avi user in Avi controller. The default value is the environment variable C(AVI_PASSWORD)."
+    }, 
+    "tenant_uuid": {
+      "type": "Optional[String]", 
+      "description": "UUID of tenant used for all Avi API calls and context of object."
+    }, 
+    "api_version": {
+      "type": "Optional[String]", 
+      "description": "Avi API version of to use for Avi API and objects."
+    }, 
+    "description": {
+      "type": "Optional[String]", 
+      "description": "Field introduced in 17.1.1."
+    }
+  }
+}

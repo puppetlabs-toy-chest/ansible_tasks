@@ -1,0 +1,13 @@
+{
+  "description": "Retrieve IP geolocation facts of a host's IP address", 
+  "parameters": {
+    "http_agent": {
+      "type": "Optional[String]", 
+      "description": "Set http user agent"
+    }, 
+    "timeout": {
+      "type": "Optional[String]", 
+      "description": "HTTP connection timeout in seconds"
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "description": "Manage static IP routes on network devices", 
+  "parameters": {
+    "mask": {
+      "type": "String", 
+      "description": "Network prefix mask of the static route."
+    }, 
+    "prefix": {
+      "type": "String", 
+      "description": "Network prefix of the static route."
+    }, 
+    "collection": {
+      "type": "Optional[String]", 
+      "description": "L i s t   o f   s t a t i c   r o u t e   d e f i n i t i o n s"
+    }, 
+    "admin_distance": {
+      "type": "Optional[String]", 
+      "description": "Admin distance of the static route."
+    }, 
+    "purge": {
+      "type": "Optional[String]", 
+      "description": "Purge static routes not defined in the collections parameter."
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "State of the static route configuration."
+    }, 
+    "next_hop": {
+      "type": "String", 
+      "description": "Next hop IP of the static route."
+    }
+  }
+}

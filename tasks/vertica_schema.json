@@ -1,0 +1,45 @@
+{
+  "description": "Adds or removes Vertica database schema and roles.", 
+  "parameters": {
+    "create_roles": {
+      "type": "Optional[String]", 
+      "description": "Comma separated list of roles to create and grant usage and create access to the schema."
+    }, 
+    "name": {
+      "type": "String", 
+      "description": "Name of the schema to add or remove."
+    }, 
+    "login_user": {
+      "type": "Optional[String]", 
+      "description": "The username used to authenticate with."
+    }, 
+    "db": {
+      "type": "Optional[String]", 
+      "description": "Name of the Vertica database."
+    }, 
+    "usage_roles": {
+      "type": "Optional[String]", 
+      "description": "Comma separated list of roles to create and grant usage access to the schema."
+    }, 
+    "cluster": {
+      "type": "Optional[String]", 
+      "description": "Name of the Vertica cluster."
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "Whether to create C(present), or drop C(absent) a schema."
+    }, 
+    "login_password": {
+      "type": "Optional[String]", 
+      "description": "The password used to authenticate with."
+    }, 
+    "owner": {
+      "type": "Optional[String]", 
+      "description": "Name of the user to set as owner of the schema."
+    }, 
+    "port": {
+      "type": "Optional[String]", 
+      "description": "Vertica cluster port to connect to."
+    }
+  }
+}

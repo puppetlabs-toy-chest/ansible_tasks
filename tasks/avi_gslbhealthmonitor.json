@@ -1,0 +1,101 @@
+{
+  "description": "Module for setup of GslbHealthMonitor Avi RESTful Object", 
+  "parameters": {
+    "https_monitor": {
+      "type": "Optional[String]", 
+      "description": "Healthmonitorhttp settings for gslbhealthmonitor."
+    }, 
+    "successful_checks": {
+      "type": "Optional[String]", 
+      "description": "Number of continuous successful health checks before server is marked up. Allowed values are 1-50. Default value when not specified in API or module is interpreted by Avi Controller as 2."
+    }, 
+    "uuid": {
+      "type": "Optional[String]", 
+      "description": "Uuid of the health monitor."
+    }, 
+    "dns_monitor": {
+      "type": "Optional[String]", 
+      "description": "Healthmonitordns settings for gslbhealthmonitor."
+    }, 
+    "failed_checks": {
+      "type": "Optional[String]", 
+      "description": "Number of continuous failed health checks before the server is marked down. Allowed values are 1-50. Default value when not specified in API or module is interpreted by Avi Controller as 2."
+    }, 
+    "tcp_monitor": {
+      "type": "Optional[String]", 
+      "description": "Healthmonitortcp settings for gslbhealthmonitor."
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "The state that should be applied on the entity."
+    }, 
+    "external_monitor": {
+      "type": "Optional[String]", 
+      "description": "Healthmonitorexternal settings for gslbhealthmonitor."
+    }, 
+    "type": {
+      "type": "String", 
+      "description": "Type of the health monitor. Enum options - HEALTH_MONITOR_PING, HEALTH_MONITOR_TCP, HEALTH_MONITOR_HTTP, HEALTH_MONITOR_HTTPS, HEALTH_MONITOR_EXTERNAL, HEALTH_MONITOR_UDP, HEALTH_MONITOR_DNS, HEALTH_MONITOR_GSLB."
+    }, 
+    "api_version": {
+      "type": "Optional[String]", 
+      "description": "Avi API version of to use for Avi API and objects."
+    }, 
+    "username": {
+      "type": "Optional[String]", 
+      "description": "Username used for accessing Avi controller. The default value is the environment variable C(AVI_USERNAME)."
+    }, 
+    "receive_timeout": {
+      "type": "Optional[String]", 
+      "description": "A valid response from the server is expected within the receive timeout window. This timeout must be less than the send interval. If server status is regularly flapping up and down, consider increasing this value. Allowed values are 1-300. Default value when not specified in API or module is interpreted by Avi Controller as 4."
+    }, 
+    "description": {
+      "type": "Optional[String]", 
+      "description": "User defined description for the object."
+    }, 
+    "controller": {
+      "type": "Optional[String]", 
+      "description": "IP address or hostname of the controller. The default value is the environment variable C(AVI_CONTROLLER)."
+    }, 
+    "udp_monitor": {
+      "type": "Optional[String]", 
+      "description": "Healthmonitorudp settings for gslbhealthmonitor."
+    }, 
+    "http_monitor": {
+      "type": "Optional[String]", 
+      "description": "Healthmonitorhttp settings for gslbhealthmonitor."
+    }, 
+    "password": {
+      "type": "Optional[String]", 
+      "description": "Password of Avi user in Avi controller. The default value is the environment variable C(AVI_PASSWORD)."
+    }, 
+    "tenant": {
+      "type": "Optional[String]", 
+      "description": "Name of tenant used for all Avi API calls and context of object."
+    }, 
+    "monitor_port": {
+      "type": "Optional[String]", 
+      "description": "Use this port instead of the port defined for the server in the pool. If the monitor succeeds to this port, the load balanced traffic will still be sent to the port of the server defined within the pool. Allowed values are 1-65535. Special values are 0 - 'use server port'."
+    }, 
+    "name": {
+      "type": "String", 
+      "description": "A user friendly name for this health monitor."
+    }, 
+    "url": {
+      "type": "Optional[String]", 
+      "description": "Avi controller URL of the object."
+    }, 
+    "tenant_ref": {
+      "type": "Optional[String]", 
+      "description": "It is a reference to an object of type tenant."
+    }, 
+    "send_interval": {
+      "type": "Optional[String]", 
+      "description": "Frequency, in seconds, that monitors are sent to a server. Allowed values are 1-3600. Default value when not specified in API or module is interpreted by Avi Controller as 5."
+    }, 
+    "tenant_uuid": {
+      "type": "Optional[String]", 
+      "description": "UUID of tenant used for all Avi API calls and context of object."
+    }
+  }
+}

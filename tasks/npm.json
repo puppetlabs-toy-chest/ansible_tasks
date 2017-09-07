@@ -1,0 +1,41 @@
+{
+  "description": "Manage node.js packages with npm", 
+  "parameters": {
+    "executable": {
+      "type": "Optional[String]", 
+      "description": "The executable location for npm. This is useful if you are using a version manager, such as nvm"
+    }, 
+    "name": {
+      "type": "Optional[String]", 
+      "description": "The name of a node.js library to install"
+    }, 
+    "global": {
+      "type": "Optional[String]", 
+      "description": "Install the node.js library globally"
+    }, 
+    "ignore_scripts": {
+      "type": "Optional[String]", 
+      "description": "Use the --ignore-scripts flag when installing."
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "The state of the node.js library"
+    }, 
+    "production": {
+      "type": "Optional[String]", 
+      "description": "Install dependencies in production mode, excluding devDependencies"
+    }, 
+    "registry": {
+      "type": "Optional[String]", 
+      "description": "The registry to install modules from."
+    }, 
+    "version": {
+      "type": "Optional[String]", 
+      "description": "The version to be installed"
+    }, 
+    "path": {
+      "type": "Optional[String]", 
+      "description": "The base path where to install the node.js libraries"
+    }
+  }
+}

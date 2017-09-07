@@ -1,0 +1,33 @@
+{
+  "description": "Create, delete, retrieve, and update znodes using ZooKeeper", 
+  "parameters": {
+    "name": {
+      "type": "String", 
+      "description": "The path of the znode."
+    }, 
+    "recursive": {
+      "type": "Optional[String]", 
+      "description": "Recursively delete node and all its children."
+    }, 
+    "value": {
+      "type": "Optional[String]", 
+      "description": "The value assigned to the znode."
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "The state to enforce. Mutually exclusive with op."
+    }, 
+    "hosts": {
+      "type": "String", 
+      "description": "A list of ZooKeeper servers (format '[server]:[port]')."
+    }, 
+    "timeout": {
+      "type": "Optional[String]", 
+      "description": "The amount of time to wait for a node to appear."
+    }, 
+    "op": {
+      "type": "Optional[String]", 
+      "description": "An operation to perform. Mutually exclusive with state."
+    }
+  }
+}

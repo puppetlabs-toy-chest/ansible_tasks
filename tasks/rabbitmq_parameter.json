@@ -1,0 +1,29 @@
+{
+  "description": "Adds or removes parameters to RabbitMQ", 
+  "parameters": {
+    "node": {
+      "type": "Optional[String]", 
+      "description": "erlang node name of the rabbit we wish to configure"
+    }, 
+    "name": {
+      "type": "String", 
+      "description": "Name of the parameter being set"
+    }, 
+    "component": {
+      "type": "String", 
+      "description": "Name of the component of which the parameter is being set"
+    }, 
+    "value": {
+      "type": "Optional[String]", 
+      "description": "Value of the parameter, as a JSON term"
+    }, 
+    "vhost": {
+      "type": "Optional[String]", 
+      "description": "vhost to apply access privileges."
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "Specify if user is to be added or removed"
+    }
+  }
+}

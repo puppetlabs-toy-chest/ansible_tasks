@@ -1,0 +1,29 @@
+{
+  "description": "Manage Devices on AOS Server", 
+  "parameters": {
+    "name": {
+      "type": "Optional[String]", 
+      "description": "The device serial-number; i.e. uniquely identifies the device in the AOS system. Only one of I(name) or I(id) can be set."
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "Define in which state the device should be. Currently only I(normal) is supported but the goal is to add I(maint) and I(decomm)."
+    }, 
+    "session": {
+      "type": "String", 
+      "description": "An existing AOS session as obtained by M(aos_login) module."
+    }, 
+    "location": {
+      "type": "Optional[String]", 
+      "description": "When approving a device using the I(approve) argument, it's possible define the location of the device."
+    }, 
+    "approve": {
+      "type": "Optional[String]", 
+      "description": "The approve argument instruct the module to convert a device in quarantine mode into approved mode."
+    }, 
+    "id": {
+      "type": "Optional[String]", 
+      "description": "The AOS internal id for a device; i.e. uniquely identifies the device in the AOS system. Only one of I(name) or I(id) can be set."
+    }
+  }
+}

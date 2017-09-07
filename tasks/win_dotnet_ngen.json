@@ -1,0 +1,4 @@
+{
+  "description": "Runs ngen to recompile DLLs after .NET  updates", 
+  "parameters": {}
+}

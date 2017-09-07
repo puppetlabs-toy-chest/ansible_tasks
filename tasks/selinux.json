@@ -1,0 +1,17 @@
+{
+  "description": "Change policy and state of SELinux", 
+  "parameters": {
+    "policy": {
+      "type": "Optional[String]", 
+      "description": "name of the SELinux policy to use (example: C(targeted)) will be required if state is not C(disabled)"
+    }, 
+    "state": {
+      "type": "String", 
+      "description": "The SELinux mode"
+    }, 
+    "conf": {
+      "type": "Optional[String]", 
+      "description": "path to the SELinux configuration file, if non-standard"
+    }
+  }
+}

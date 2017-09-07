@@ -1,0 +1,41 @@
+{
+  "description": "Create or remove a Distributed vSwitch portgroup", 
+  "parameters": {
+    "username": {
+      "type": "String", 
+      "description": "The username of the vSphere vCenter."
+    }, 
+    "portgroup_name": {
+      "type": "String", 
+      "description": "The name of the portgroup that is to be created or deleted"
+    }, 
+    "portgroup_type": {
+      "type": "String", 
+      "description": "See VMware KB 1022312 regarding portgroup types"
+    }, 
+    "hostname": {
+      "type": "String", 
+      "description": "The hostname or IP address of the vSphere vCenter."
+    }, 
+    "num_ports": {
+      "type": "String", 
+      "description": "The number of ports the portgroup should contain"
+    }, 
+    "password": {
+      "type": "String", 
+      "description": "The password of the vSphere vCenter."
+    }, 
+    "validate_certs": {
+      "type": "Optional[String]", 
+      "description": "Allows connection when SSL certificates are not valid. Set to false when certificates are not trusted."
+    }, 
+    "switch_name": {
+      "type": "String", 
+      "description": "The name of the distributed vSwitch the port group should be created on."
+    }, 
+    "vlan_id": {
+      "type": "String", 
+      "description": "The VLAN ID that should be configured with the portgroup"
+    }
+  }
+}

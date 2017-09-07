@@ -1,0 +1,25 @@
+{
+  "description": "Manage Rundeck projects.", 
+  "parameters": {
+    "url": {
+      "type": "String", 
+      "description": "Sets the rundeck instance URL."
+    }, 
+    "token": {
+      "type": "String", 
+      "description": "Sets the token to authenticate against Rundeck API."
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "Create or remove Rundeck project."
+    }, 
+    "api_version": {
+      "type": "Optional[String]", 
+      "description": "Sets the API version used by module. API version must be at least 14."
+    }, 
+    "name": {
+      "type": "String", 
+      "description": "Sets the project name."
+    }
+  }
+}

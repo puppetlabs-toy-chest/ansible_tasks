@@ -1,0 +1,17 @@
+{
+  "description": "Extract files from an ISO image.", 
+  "parameters": {
+    "dest": {
+      "type": "String", 
+      "description": "The destination directory to extract files to."
+    }, 
+    "files": {
+      "type": "String", 
+      "description": "A list of files to extract from the image. Extracting directories does not work."
+    }, 
+    "image": {
+      "type": "String", 
+      "description": "The ISO image to extract files from."
+    }
+  }
+}

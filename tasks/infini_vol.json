@@ -1,0 +1,33 @@
+{
+  "description": "Create, Delete or Modify volumes on Infinibox", 
+  "parameters": {
+    "name": {
+      "type": "String", 
+      "description": "Volume Name"
+    }, 
+    "system": {
+      "type": "String", 
+      "description": "Infinibox Hostname or IPv4 Address."
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "Creates/Modifies volume when present or removes when absent"
+    }, 
+    "user": {
+      "type": "Optional[String]", 
+      "description": "Infinibox User username with sufficient priveledges ( see notes )."
+    }, 
+    "password": {
+      "type": "Optional[String]", 
+      "description": "Infinibox User password."
+    }, 
+    "pool": {
+      "type": "String", 
+      "description": "Pool that volume will reside on"
+    }, 
+    "size": {
+      "type": "Optional[String]", 
+      "description": "Volume size in MB, GB or TB units. See examples."
+    }
+  }
+}

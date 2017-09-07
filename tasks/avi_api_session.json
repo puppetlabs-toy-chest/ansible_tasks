@@ -1,0 +1,49 @@
+{
+  "description": "Avi API Module", 
+  "parameters": {
+    "username": {
+      "type": "Optional[String]", 
+      "description": "Username used for accessing Avi controller. The default value is the environment variable C(AVI_USERNAME)."
+    }, 
+    "controller": {
+      "type": "Optional[String]", 
+      "description": "IP address or hostname of the controller. The default value is the environment variable C(AVI_CONTROLLER)."
+    }, 
+    "http_method": {
+      "type": "String", 
+      "description": "Allowed HTTP methods for RESTful services and are supported by Avi Controller."
+    }, 
+    "params": {
+      "type": "Optional[String]", 
+      "description": "Query parameters passed to the HTTP API."
+    }, 
+    "tenant": {
+      "type": "Optional[String]", 
+      "description": "Name of tenant used for all Avi API calls and context of object."
+    }, 
+    "timeout": {
+      "type": "Optional[String]", 
+      "description": "Timeout (in seconds) for Avi API calls."
+    }, 
+    "path": {
+      "type": "Optional[String]", 
+      "description": "Path for Avi API resource. For example, C(path: virtualservice) will translate to C(api/virtualserivce)."
+    }, 
+    "password": {
+      "type": "Optional[String]", 
+      "description": "Password of Avi user in Avi controller. The default value is the environment variable C(AVI_PASSWORD)."
+    }, 
+    "data": {
+      "type": "Optional[String]", 
+      "description": "HTTP body in YAML or JSON format."
+    }, 
+    "tenant_uuid": {
+      "type": "Optional[String]", 
+      "description": "UUID of tenant used for all Avi API calls and context of object."
+    }, 
+    "api_version": {
+      "type": "Optional[String]", 
+      "description": "Avi API version of to use for Avi API and objects."
+    }
+  }
+}

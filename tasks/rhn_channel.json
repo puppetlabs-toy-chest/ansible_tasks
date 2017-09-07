@@ -1,0 +1,29 @@
+{
+  "description": "Adds or removes Red Hat software channels", 
+  "parameters": {
+    "sysname": {
+      "type": "String", 
+      "description": "name of the system as it is known in RHN/Satellite"
+    }, 
+    "name": {
+      "type": "String", 
+      "description": "name of the software channel"
+    }, 
+    "url": {
+      "type": "String", 
+      "description": "The full url to the RHN/Satellite api"
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "whether the channel should be present or not"
+    }, 
+    "user": {
+      "type": "String", 
+      "description": "RHN/Satellite user"
+    }, 
+    "password": {
+      "type": "String", 
+      "description": "the user's password"
+    }
+  }
+}

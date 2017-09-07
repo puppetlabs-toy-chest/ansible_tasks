@@ -1,0 +1,81 @@
+{
+  "description": "Retrieves route53 details using AWS methods", 
+  "parameters": {
+    "profile": {
+      "type": "Optional[String]", 
+      "description": "Uses a boto profile. Only works with boto >= 2.24.0."
+    }, 
+    "aws_secret_key": {
+      "type": "Optional[String]", 
+      "description": "AWS secret key. If not set then the value of the AWS_SECRET_ACCESS_KEY, AWS_SECRET_KEY, or EC2_SECRET_KEY environment variable is used."
+    }, 
+    "aws_access_key": {
+      "type": "Optional[String]", 
+      "description": "AWS access key. If not set then the value of the AWS_ACCESS_KEY_ID, AWS_ACCESS_KEY or EC2_ACCESS_KEY environment variable is used."
+    }, 
+    "start_record_name": {
+      "type": "Optional[String]", 
+      "description": "The first name in the lexicographic ordering of domain names that you want the list_command: record_sets to start listing from"
+    }, 
+    "dns_name": {
+      "type": "Optional[String]", 
+      "description": "The first name in the lexicographic ordering of domain names that you want the list_command to start listing from"
+    }, 
+    "security_token": {
+      "type": "Optional[String]", 
+      "description": "AWS STS security token. If not set then the value of the AWS_SECURITY_TOKEN or EC2_SECURITY_TOKEN environment variable is used."
+    }, 
+    "resource_id": {
+      "type": "Optional[String]", 
+      "description": "The ID/s of the specified resource/s"
+    }, 
+    "hosted_zone_method": {
+      "type": "Optional[String]", 
+      "description": "This is used in conjunction with query: hosted_zone. It allows for listing details, counts or tags of various hosted zone details."
+    }, 
+    "type": {
+      "type": "Optional[String]", 
+      "description": "The type of DNS record"
+    }, 
+    "health_check_method": {
+      "type": "Optional[String]", 
+      "description": "This is used in conjunction with query: health_check. It allows for listing details, counts or tags of various health check details."
+    }, 
+    "max_items": {
+      "type": "Optional[String]", 
+      "description": "Maximum number of items to return for various get/list requests"
+    }, 
+    "hosted_zone_id": {
+      "type": "Optional[String]", 
+      "description": "The Hosted Zone ID of the DNS zone"
+    }, 
+    "validate_certs": {
+      "type": "Optional[String]", 
+      "description": "When set to \"no\", SSL certificates will not be validated for boto versions >= 2.6.0."
+    }, 
+    "health_check_id": {
+      "type": "Optional[String]", 
+      "description": "The ID of the health check"
+    }, 
+    "ec2_url": {
+      "type": "Optional[String]", 
+      "description": "Url to use to connect to EC2 or your Eucalyptus cloud (by default the module will use EC2 endpoints). Ignored for modules where region is required. Must be specified for all other modules if region is not used. If not set then the value of the EC2_URL environment variable, if any, is used."
+    }, 
+    "query": {
+      "type": "String", 
+      "description": "specifies the query action to take"
+    }, 
+    "next_marker": {
+      "type": "Optional[String]", 
+      "description": "Some requests such as list_command: hosted_zones will return a maximum number of entries - EG 100 or the number specified by max_items. If the number of entries exceeds this maximum another request can be sent using the NextMarker entry from the first response to get the next page of results"
+    }, 
+    "delegation_set_id": {
+      "type": "Optional[String]", 
+      "description": "The DNS Zone delegation set ID"
+    }, 
+    "change_id": {
+      "type": "Optional[String]", 
+      "description": "The ID of the change batch request. The value that you specify here is the value that ChangeResourceRecordSets returned in the Id element when you submitted the request."
+    }
+  }
+}

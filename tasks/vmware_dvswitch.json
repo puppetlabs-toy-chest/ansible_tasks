@@ -1,0 +1,49 @@
+{
+  "description": "Create or remove a distributed vSwitch", 
+  "parameters": {
+    "username": {
+      "type": "String", 
+      "description": "The username of the vSphere vCenter."
+    }, 
+    "password": {
+      "type": "String", 
+      "description": "The password of the vSphere vCenter."
+    }, 
+    "datacenter_name": {
+      "type": "String", 
+      "description": "The name of the datacenter that will contain the dvSwitch"
+    }, 
+    "hostname": {
+      "type": "String", 
+      "description": "The hostname or IP address of the vSphere vCenter."
+    }, 
+    "discovery_proto": {
+      "type": "String", 
+      "description": "Link discovery protocol between Cisco and Link Layer discovery"
+    }, 
+    "mtu": {
+      "type": "String", 
+      "description": "The switch maximum transmission unit"
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "Create or remove dvSwitch"
+    }, 
+    "discovery_operation": {
+      "type": "Optional[String]", 
+      "description": "Select the discovery operation"
+    }, 
+    "validate_certs": {
+      "type": "Optional[String]", 
+      "description": "Allows connection when SSL certificates are not valid. Set to false when certificates are not trusted."
+    }, 
+    "switch_name": {
+      "type": "String", 
+      "description": "The name of the switch to create or remove"
+    }, 
+    "uplink_quantity": {
+      "type": "String", 
+      "description": "Quantity of uplink per ESXi host added to the switch"
+    }
+  }
+}

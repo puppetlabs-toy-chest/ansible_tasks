@@ -1,0 +1,73 @@
+{
+  "description": "create / delete a load balancer in Rackspace Public Cloud", 
+  "parameters": {
+    "username": {
+      "type": "Optional[String]", 
+      "description": "Rackspace username, overrides I(credentials)."
+    }, 
+    "api_key": {
+      "type": "Optional[String]", 
+      "description": "Rackspace API key, overrides I(credentials)."
+    }, 
+    "protocol": {
+      "type": "Optional[String]", 
+      "description": "Protocol for the balancer being created"
+    }, 
+    "vip_id": {
+      "type": "Optional[String]", 
+      "description": "Virtual IP ID to use when creating the load balancer for purposes of sharing an IP with another load balancer of another protocol"
+    }, 
+    "algorithm": {
+      "type": "Optional[String]", 
+      "description": "algorithm for the balancer being created"
+    }, 
+    "env": {
+      "type": "Optional[String]", 
+      "description": "Environment as configured in I(~/.pyrax.cfg), see U(https://github.com/rackspace/pyrax/blob/master/docs/getting_started.md#pyrax-configuration)."
+    }, 
+    "region": {
+      "type": "Optional[String]", 
+      "description": "Region to create an instance in."
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "Indicate desired state of the resource"
+    }, 
+    "verify_ssl": {
+      "type": "Optional[String]", 
+      "description": "Whether or not to require SSL validation of API endpoints."
+    }, 
+    "wait_timeout": {
+      "type": "Optional[String]", 
+      "description": "how long before wait gives up, in seconds"
+    }, 
+    "meta": {
+      "type": "Optional[String]", 
+      "description": "A hash of metadata to associate with the instance"
+    }, 
+    "timeout": {
+      "type": "Optional[String]", 
+      "description": "timeout for communication between the balancer and the node"
+    }, 
+    "credentials": {
+      "type": "Optional[String]", 
+      "description": "File to find the Rackspace credentials in. Ignored if I(api_key) and I(username) are provided."
+    }, 
+    "wait": {
+      "type": "Optional[String]", 
+      "description": "wait for the balancer to be in state 'running' before returning"
+    }, 
+    "type": {
+      "type": "Optional[String]", 
+      "description": "type of interface for the balancer being created"
+    }, 
+    "port": {
+      "type": "Optional[String]", 
+      "description": "Port for the balancer being created"
+    }, 
+    "name": {
+      "type": "Optional[String]", 
+      "description": "Name to give the load balancer"
+    }
+  }
+}

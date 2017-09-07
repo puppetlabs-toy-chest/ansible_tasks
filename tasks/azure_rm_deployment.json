@@ -1,0 +1,77 @@
+{
+  "description": "Create or destroy Azure Resource Manager template deployments", 
+  "parameters": {
+    "profile": {
+      "type": "Optional[String]", 
+      "description": "Security profile found in ~/.azure/credentials file."
+    }, 
+    "resource_group_name": {
+      "type": "String", 
+      "description": "The resource group name to use or create to host the deployed template"
+    }, 
+    "wait_for_deployment_completion": {
+      "type": "Optional[String]", 
+      "description": "Whether or not to block until the deployment has completed."
+    }, 
+    "deployment_name": {
+      "type": "Optional[String]", 
+      "description": "The name of the deployment to be tracked in the resource group deployment history. Re-using a deployment name will overwrite the previous value in the resource group's deployment history."
+    }, 
+    "wait_for_deployment_polling_period": {
+      "type": "Optional[String]", 
+      "description": "Time (in seconds) to wait between polls when waiting for deployment completion."
+    }, 
+    "parameters": {
+      "type": "Optional[String]", 
+      "description": "A hash of all the required template variables for the deployment template. This parameter is mutually exclusive with 'parameters_link'. Either one of them is required if \"state\" parameter is \"present\"."
+    }, 
+    "template_link": {
+      "type": "Optional[String]", 
+      "description": "Uri of file containing the template body. This parameter is mutually exclusive with 'template'. Either one of them is required if \"state\" parameter is \"present\"."
+    }, 
+    "secret": {
+      "type": "Optional[String]", 
+      "description": "Azure client secret. Use when authenticating with a Service Principal."
+    }, 
+    "template": {
+      "type": "Optional[String]", 
+      "description": "A hash containing the templates inline. This parameter is mutually exclusive with 'template_link'. Either one of them is required if \"state\" parameter is \"present\"."
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "If state is \"present\", template will be created. If state is \"present\" and if deployment exists, it will be updated. If state is \"absent\", stack will be removed."
+    }, 
+    "deployment_mode": {
+      "type": "Optional[String]", 
+      "description": "In incremental mode, resources are deployed without deleting existing resources that are not included in the template. In complete mode resources are deployed and existing resources in the resource group not included in the template are deleted."
+    }, 
+    "client_id": {
+      "type": "Optional[String]", 
+      "description": "Azure client ID. Use when authenticating with a Service Principal."
+    }, 
+    "parameters_link": {
+      "type": "Optional[String]", 
+      "description": "Uri of file containing the parameters body. This parameter is mutually exclusive with 'parameters'. Either one of them is required if \"state\" parameter is \"present\"."
+    }, 
+    "ad_user": {
+      "type": "Optional[String]", 
+      "description": "Active Directory username. Use when authenticating with an Active Directory user rather than service principal."
+    }, 
+    "subscription_id": {
+      "type": "Optional[String]", 
+      "description": "Your Azure subscription Id."
+    }, 
+    "password": {
+      "type": "Optional[String]", 
+      "description": "Active Directory user password. Use when authenticating with an Active Directory user rather than service principal."
+    }, 
+    "tenant": {
+      "type": "Optional[String]", 
+      "description": "Azure tenant ID. Use when authenticating with a Service Principal."
+    }, 
+    "location": {
+      "type": "Optional[String]", 
+      "description": "The geo-locations in which the resource group will be located."
+    }
+  }
+}

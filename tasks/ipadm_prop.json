@@ -1,0 +1,25 @@
+{
+  "description": "Manage protocol properties on Solaris/illumos systems.", 
+  "parameters": {
+    "temporary": {
+      "type": "Optional[String]", 
+      "description": "Specifies that the property value is temporary. Temporary property values do not persist across reboots."
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "Set or reset the property value."
+    }, 
+    "property": {
+      "type": "String", 
+      "description": "Specifies the name of property we want to manage."
+    }, 
+    "protocol": {
+      "type": "String", 
+      "description": "Specifies the procotol for which we want to manage properties."
+    }, 
+    "value": {
+      "type": "Optional[String]", 
+      "description": "Specifies the value we want to set for the property."
+    }
+  }
+}

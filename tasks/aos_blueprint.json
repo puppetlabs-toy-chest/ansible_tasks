@@ -1,0 +1,33 @@
+{
+  "description": "Manage AOS blueprint instance", 
+  "parameters": {
+    "name": {
+      "type": "Optional[String]", 
+      "description": "Name of the Blueprint to manage. Only one of I(name) or I(id) can be set."
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "Indicate what is the expected state of the Blueprint."
+    }, 
+    "session": {
+      "type": "String", 
+      "description": "An existing AOS session as obtained by M(aos_login) module."
+    }, 
+    "reference_arch": {
+      "type": "Optional[String]", 
+      "description": "When creating a blueprint, this value identifies a known AOS reference architecture value. I(Refer to AOS-server documentation for available values)."
+    }, 
+    "timeout": {
+      "type": "Optional[String]", 
+      "description": "When I(state=build-ready), this timeout identifies timeout in seconds to wait before declaring a failure."
+    }, 
+    "id": {
+      "type": "Optional[String]", 
+      "description": "AOS Id of the IP Pool to manage (can't be used to create a new IP Pool). Only one of I(name) or I(id) can be set."
+    }, 
+    "template": {
+      "type": "Optional[String]", 
+      "description": "When creating a blueprint, this value identifies, by name, an existing engineering design template within the AOS-server."
+    }
+  }
+}

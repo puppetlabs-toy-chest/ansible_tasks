@@ -1,0 +1,17 @@
+{
+  "description": "Run targets in a Makefile", 
+  "parameters": {
+    "chdir": {
+      "type": "String", 
+      "description": "cd into this directory before running make"
+    }, 
+    "params": {
+      "type": "Optional[String]", 
+      "description": "Any extra parameters to pass to make"
+    }, 
+    "target": {
+      "type": "Optional[String]", 
+      "description": "The target to run"
+    }
+  }
+}

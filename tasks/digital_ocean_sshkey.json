@@ -1,0 +1,29 @@
+{
+  "description": "Create/delete an SSH key in DigitalOcean", 
+  "parameters": {
+    "name": {
+      "type": "Optional[String]", 
+      "description": "String, this is the name of an SSH key to create or destroy."
+    }, 
+    "id": {
+      "type": "Optional[String]", 
+      "description": "Numeric, the SSH key id you want to operate on."
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "Indicate desired state of the target."
+    }, 
+    "client_id": {
+      "type": "Optional[String]", 
+      "description": "DigitalOcean manager id."
+    }, 
+    "api_key": {
+      "type": "Optional[String]", 
+      "description": "DigitalOcean api key."
+    }, 
+    "ssh_pub_key": {
+      "type": "Optional[String]", 
+      "description": "The public SSH key you want to add to your account."
+    }
+  }
+}

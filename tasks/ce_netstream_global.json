@@ -1,0 +1,37 @@
+{
+  "description": "Manages global parameters of NetStream on HUAWEI CloudEngine switches.", 
+  "parameters": {
+    "index_switch": {
+      "type": "Optional[String]", 
+      "description": "Specifies the netstream index-switch."
+    }, 
+    "statistics_direction": {
+      "type": "Optional[String]", 
+      "description": "Specifies the netstream statistic direction."
+    }, 
+    "statistics_record": {
+      "type": "Optional[String]", 
+      "description": "Specifies the flexible netstream statistic record, length is 1 - 32."
+    }, 
+    "sampler_interval": {
+      "type": "Optional[String]", 
+      "description": "Specifies the netstream sampler interval, length is 1 - 65535."
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "Specify desired state of the resource."
+    }, 
+    "sampler_direction": {
+      "type": "Optional[String]", 
+      "description": "Specifies the netstream sampler direction."
+    }, 
+    "interface": {
+      "type": "String", 
+      "description": "Netstream global interface."
+    }, 
+    "type": {
+      "type": "Optional[String]", 
+      "description": "Specifies the type of netstream global."
+    }
+  }
+}

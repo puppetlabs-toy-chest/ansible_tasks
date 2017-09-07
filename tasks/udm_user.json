@@ -1,0 +1,201 @@
+{
+  "description": "Manage posix users on a univention corporate server", 
+  "parameters": {
+    "update_password": {
+      "type": "Optional[String]", 
+      "description": "C(always) will update passwords if they differ. C(on_create) will only set the password for newly created users."
+    }, 
+    "samba_user_workstations": {
+      "type": "Optional[String]", 
+      "description": "Allow the authentication only on this Microsoft Windows host."
+    }, 
+    "pager_telephonenumber": {
+      "type": "Optional[String]", 
+      "description": "List of pager telephone numbers."
+    }, 
+    "subpath": {
+      "type": "Optional[String]", 
+      "description": "LDAP subpath inside the organizational unit, e.g. C(cn=teachers,cn=users) for LDAP container C(cn=teachers,cn=users,dc=example,dc=com)."
+    }, 
+    "shell": {
+      "type": "Optional[String]", 
+      "description": "Login shell"
+    }, 
+    "postcode": {
+      "type": "Optional[String]", 
+      "description": "Postal code of users business address."
+    }, 
+    "scriptpath": {
+      "type": "Optional[String]", 
+      "description": "Windows logon script."
+    }, 
+    "home_share": {
+      "type": "Optional[String]", 
+      "description": "Home NFS share. Must be a LDAP DN, e.g. C(cn=home,cn=shares,ou=school,dc=example,dc=com)."
+    }, 
+    "override_pw_history": {
+      "type": "Optional[String]", 
+      "description": "Override password history"
+    }, 
+    "city": {
+      "type": "Optional[String]", 
+      "description": "City of users business address."
+    }, 
+    "display_name": {
+      "type": "Optional[String]", 
+      "description": "Display name (not gecos)"
+    }, 
+    "homedrive": {
+      "type": "Optional[String]", 
+      "description": "Windows home drive, e.g. C(\"H:\")."
+    }, 
+    "employee_number": {
+      "type": "Optional[String]", 
+      "description": "Employee number"
+    }, 
+    "serviceprovider": {
+      "type": "Optional[String]", 
+      "description": "Enable user for the following service providers."
+    }, 
+    "organisation": {
+      "type": "Optional[String]", 
+      "description": "Organisation"
+    }, 
+    "room_number": {
+      "type": "Optional[String]", 
+      "description": "Room number of users business address."
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "Whether the user is present or not."
+    }, 
+    "home_share_path": {
+      "type": "Optional[String]", 
+      "description": "Path to home NFS share, inside the homeShare."
+    }, 
+    "userexpiry": {
+      "type": "Optional[String]", 
+      "description": "Account expiry date, e.g. C(1999-12-31)."
+    }, 
+    "unixhome": {
+      "type": "Optional[String]", 
+      "description": "Unix home directory"
+    }, 
+    "mail_home_server": {
+      "type": "Optional[String]", 
+      "description": "FQDN of mail server"
+    }, 
+    "email": {
+      "type": "Optional[String]", 
+      "description": "A list of e-mail addresses."
+    }, 
+    "sambahome": {
+      "type": "Optional[String]", 
+      "description": "Windows home path, e.g. C('\\\\$FQDN\\$USERNAME')."
+    }, 
+    "username": {
+      "type": "String", 
+      "description": "User name"
+    }, 
+    "home_telephone_number": {
+      "type": "Optional[String]", 
+      "description": "List of private telephone numbers."
+    }, 
+    "primary_group": {
+      "type": "Optional[String]", 
+      "description": "Primary group. This must be the group LDAP DN."
+    }, 
+    "description": {
+      "type": "Optional[String]", 
+      "description": "Description (not gecos)"
+    }, 
+    "firstname": {
+      "type": "Optional[String]", 
+      "description": "First name. Required if C(state=present)."
+    }, 
+    "lastname": {
+      "type": "Optional[String]", 
+      "description": "Last name. Required if C(state=present)."
+    }, 
+    "mail_alternative_address": {
+      "type": "Optional[String]", 
+      "description": "List of alternative e-mail addresses."
+    }, 
+    "phone": {
+      "type": "Optional[String]", 
+      "description": "List of telephone numbers."
+    }, 
+    "birthday": {
+      "type": "Optional[String]", 
+      "description": "Birthday"
+    }, 
+    "groups": {
+      "type": "Optional[String]", 
+      "description": "POSIX groups, the LDAP DNs of the groups will be found with the LDAP filter for each group as $GROUP: C((&(objectClass=posixGroup)(cn=$GROUP)))."
+    }, 
+    "position": {
+      "type": "Optional[String]", 
+      "description": "Define the whole position of users object inside the LDAP tree, e.g. C(cn=employee,cn=users,ou=school,dc=example,dc=com)."
+    }, 
+    "employee_type": {
+      "type": "Optional[String]", 
+      "description": "Employee type"
+    }, 
+    "password": {
+      "type": "Optional[String]", 
+      "description": "Password. Required if C(state=present)."
+    }, 
+    "pwd_change_next_login": {
+      "type": "Optional[String]", 
+      "description": "Change password on next login."
+    }, 
+    "mail_primary_address": {
+      "type": "Optional[String]", 
+      "description": "Primary e-mail address"
+    }, 
+    "country": {
+      "type": "Optional[String]", 
+      "description": "Country of users business address."
+    }, 
+    "title": {
+      "type": "Optional[String]", 
+      "description": "Title, e.g. C(Prof.)."
+    }, 
+    "override_pw_length": {
+      "type": "Optional[String]", 
+      "description": "Override password check"
+    }, 
+    "street": {
+      "type": "Optional[String]", 
+      "description": "Street of users business address."
+    }, 
+    "gecos": {
+      "type": "Optional[String]", 
+      "description": "GECOS"
+    }, 
+    "mobile_telephone_number": {
+      "type": "Optional[String]", 
+      "description": "Mobile phone number"
+    }, 
+    "profilepath": {
+      "type": "Optional[String]", 
+      "description": "Windows profile directory"
+    }, 
+    "ou": {
+      "type": "Optional[String]", 
+      "description": "Organizational Unit inside the LDAP Base DN, e.g. C(school) for LDAP OU C(ou=school,dc=example,dc=com)."
+    }, 
+    "secretary": {
+      "type": "Optional[String]", 
+      "description": "A list of superiors as LDAP DNs."
+    }, 
+    "samba_privileges": {
+      "type": "Optional[String]", 
+      "description": "Samba privilege, like allow printer administration, do domain join."
+    }, 
+    "department_number": {
+      "type": "Optional[String]", 
+      "description": "Department number of users business address."
+    }
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "description": "This module manages rabbitMQ exchanges", 
+  "parameters": {
+    "login_port": {
+      "type": "Optional[String]", 
+      "description": "rabbitMQ management api port"
+    }, 
+    "name": {
+      "type": "String", 
+      "description": "Name of the exchange to create"
+    }, 
+    "login_user": {
+      "type": "Optional[String]", 
+      "description": "rabbitMQ user for connection"
+    }, 
+    "login_host": {
+      "type": "Optional[String]", 
+      "description": "rabbitMQ host for connection"
+    }, 
+    "exchange_type": {
+      "type": "Optional[String]", 
+      "description": "type for the exchange"
+    }, 
+    "vhost": {
+      "type": "Optional[String]", 
+      "description": "rabbitMQ virtual host"
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "Whether the exchange should be present or absent Only present implemented atm"
+    }, 
+    "internal": {
+      "type": "Optional[String]", 
+      "description": "exchange is available only for other exchanges"
+    }, 
+    "arguments": {
+      "type": "Optional[String]", 
+      "description": "extra arguments for exchange. If defined this argument is a key/value dictionary"
+    }, 
+    "auto_delete": {
+      "type": "Optional[String]", 
+      "description": "if the exchange should delete itself after all queues/exchanges unbound from it"
+    }, 
+    "login_password": {
+      "type": "Optional[String]", 
+      "description": "rabbitMQ password for connection"
+    }, 
+    "durable": {
+      "type": "Optional[String]", 
+      "description": "whether exchange is durable or not"
+    }
+  }
+}

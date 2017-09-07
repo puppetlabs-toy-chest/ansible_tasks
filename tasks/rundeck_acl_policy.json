@@ -1,0 +1,33 @@
+{
+  "description": "Manage Rundeck ACL policies.", 
+  "parameters": {
+    "name": {
+      "type": "String", 
+      "description": "Sets the project name."
+    }, 
+    "url": {
+      "type": "String", 
+      "description": "Sets the rundeck instance URL."
+    }, 
+    "token": {
+      "type": "String", 
+      "description": "Sets the token to authenticate against Rundeck API."
+    }, 
+    "project": {
+      "type": "Optional[String]", 
+      "description": "Sets the project which receive the ACL policy. If unset, it's a system ACL policy."
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "Create or remove Rundeck project."
+    }, 
+    "policy": {
+      "type": "Optional[String]", 
+      "description": "Sets the ACL policy content. ACL policy content is a YAML object as described in http://rundeck.org/docs/man5/aclpolicy.html. It can be a YAML string or a pure Ansible inventory YAML object."
+    }, 
+    "api_version": {
+      "type": "Optional[String]", 
+      "description": "Sets the API version used by module. API version must be at least 14."
+    }
+  }
+}

@@ -1,0 +1,77 @@
+{
+  "description": "Retrieve facts about one or more flavors", 
+  "parameters": {
+    "auth_type": {
+      "type": "Optional[String]", 
+      "description": "Name of the auth plugin to use. If the cloud uses something other than password authentication, the name of the plugin should be indicated here and the contents of the I(auth) parameter should be updated accordingly."
+    }, 
+    "api_timeout": {
+      "type": "Optional[String]", 
+      "description": "How long should the socket layer wait before timing out for API calls. If this is omitted, nothing will be passed to the requests library."
+    }, 
+    "region_name": {
+      "type": "Optional[String]", 
+      "description": "Name of the region."
+    }, 
+    "availability_zone": {
+      "type": "Optional[String]", 
+      "description": "Ignored. Present for backwards compatibility"
+    }, 
+    "ram": {
+      "type": "Optional[String]", 
+      "description": "A string used for filtering flavors based on the amount of RAM (in MB) desired. This string accepts the following special values: 'MIN' (return flavors with the minimum amount of RAM), and 'MAX' (return flavors with the maximum amount of RAM). A specific amount of RAM may also be specified. Any flavors with this exact amount of RAM will be returned. A range of acceptable RAM may be given using a special syntax. Simply prefix the amount of RAM with one of these acceptable range values: '<', '>', '<=', '>='. These values represent less than, greater than, less than or equal to, and greater than or equal to, respectively."
+    }, 
+    "ephemeral": {
+      "type": "Optional[String]", 
+      "description": "A string used for filtering flavors based on the amount of ephemeral storage. Format is the same as the I(ram) parameter"
+    }, 
+    "vcpus": {
+      "type": "Optional[String]", 
+      "description": "A string used for filtering flavors based on the number of virtual CPUs desired. Format is the same as the I(ram) parameter."
+    }, 
+    "auth": {
+      "type": "Optional[String]", 
+      "description": "Dictionary containing auth information as needed by the cloud's auth plugin strategy. For the default I(password) plugin, this would contain I(auth_url), I(username), I(password), I(project_name) and any information about domains if the cloud supports them. For other plugins, this param will need to contain whatever parameters that auth plugin requires. This parameter is not needed if a named cloud is provided or OpenStack OS_* environment variables are present."
+    }, 
+    "key": {
+      "type": "Optional[String]", 
+      "description": "A path to a client key to use as part of the SSL transaction."
+    }, 
+    "cert": {
+      "type": "Optional[String]", 
+      "description": "A path to a client certificate to use as part of the SSL transaction."
+    }, 
+    "endpoint_type": {
+      "type": "Optional[String]", 
+      "description": "Endpoint URL type to fetch from the service catalog."
+    }, 
+    "limit": {
+      "type": "Optional[String]", 
+      "description": "Limits the number of flavors returned. All matching flavors are returned by default."
+    }, 
+    "timeout": {
+      "type": "Optional[String]", 
+      "description": "How long should ansible wait for the requested resource."
+    }, 
+    "cacert": {
+      "type": "Optional[String]", 
+      "description": "A path to a CA Cert bundle that can be used as part of verifying SSL API requests."
+    }, 
+    "wait": {
+      "type": "Optional[String]", 
+      "description": "Should ansible wait until the requested resource is complete."
+    }, 
+    "validate_certs": {
+      "type": "Optional[String]", 
+      "description": "Whether or not SSL API requests should be verified. Before 2.3 this defaulted to True."
+    }, 
+    "cloud": {
+      "type": "Optional[String]", 
+      "description": "Named cloud to operate against. Provides default values for I(auth) and I(auth_type). This parameter is not needed if I(auth) is provided or if OpenStack OS_* environment variables are present."
+    }, 
+    "name": {
+      "type": "Optional[String]", 
+      "description": "A flavor name. Cannot be used with I(ram) or I(vcpus) or I(ephemeral)."
+    }
+  }
+}

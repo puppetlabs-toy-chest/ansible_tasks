@@ -1,0 +1,65 @@
+{
+  "description": "Create or delete a virtual machine instance in AWS Lightsail", 
+  "parameters": {
+    "aws_secret_key": {
+      "type": "Optional[String]", 
+      "description": "AWS secret key. If not set then the value of the AWS_SECRET_ACCESS_KEY, AWS_SECRET_KEY, or EC2_SECRET_KEY environment variable is used."
+    }, 
+    "profile": {
+      "type": "Optional[String]", 
+      "description": "Uses a boto profile. Only works with boto >= 2.24.0."
+    }, 
+    "aws_access_key": {
+      "type": "Optional[String]", 
+      "description": "AWS access key. If not set then the value of the AWS_ACCESS_KEY_ID, AWS_ACCESS_KEY or EC2_ACCESS_KEY environment variable is used."
+    }, 
+    "name": {
+      "type": "String", 
+      "description": "Name of the instance"
+    }, 
+    "security_token": {
+      "type": "Optional[String]", 
+      "description": "AWS STS security token. If not set then the value of the AWS_SECURITY_TOKEN or EC2_SECURITY_TOKEN environment variable is used."
+    }, 
+    "blueprint_id": {
+      "type": "Optional[String]", 
+      "description": "ID of the instance blueprint image. Required when state='present'"
+    }, 
+    "user_data": {
+      "type": "Optional[String]", 
+      "description": "Launch script that can configure the instance with additional data"
+    }, 
+    "key_pair_name": {
+      "type": "Optional[String]", 
+      "description": "Name of the key pair to use with the instance"
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "Indicate desired state of the target."
+    }, 
+    "wait_timeout": {
+      "type": "Optional[String]", 
+      "description": "How long before wait gives up, in seconds."
+    }, 
+    "ec2_url": {
+      "type": "Optional[String]", 
+      "description": "Url to use to connect to EC2 or your Eucalyptus cloud (by default the module will use EC2 endpoints). Ignored for modules where region is required. Must be specified for all other modules if region is not used. If not set then the value of the EC2_URL environment variable, if any, is used."
+    }, 
+    "bundle_id": {
+      "type": "Optional[String]", 
+      "description": "Bundle of specification info for the instance. Required when state='present'"
+    }, 
+    "zone": {
+      "type": "Optional[String]", 
+      "description": "AWS availability zone in which to launch the instance. Required when state='present'"
+    }, 
+    "validate_certs": {
+      "type": "Optional[String]", 
+      "description": "When set to \"no\", SSL certificates will not be validated for boto versions >= 2.6.0."
+    }, 
+    "wait": {
+      "type": "Optional[String]", 
+      "description": "Wait for the instance to be in state 'running' before returning.  If wait is \"no\" an ip_address may not be returned"
+    }
+  }
+}

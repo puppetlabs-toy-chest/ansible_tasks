@@ -1,0 +1,17 @@
+{
+  "description": "Package manager for Slackware >= 12.2", 
+  "parameters": {
+    "state": {
+      "type": "Optional[String]", 
+      "description": "state of the package, you can use \"installed\" as an alias for C(present) and removed as one for c(absent)."
+    }, 
+    "update_cache": {
+      "type": "Optional[String]", 
+      "description": "update the package database first"
+    }, 
+    "name": {
+      "type": "String", 
+      "description": "name of package to install/remove"
+    }
+  }
+}

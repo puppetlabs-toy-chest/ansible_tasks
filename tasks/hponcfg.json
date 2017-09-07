@@ -1,0 +1,13 @@
+{
+  "description": "Configure HP iLO interface using hponcfg", 
+  "parameters": {
+    "path": {
+      "type": "String", 
+      "description": "The XML file as accepted by hponcfg"
+    }, 
+    "minfw": {
+      "type": "Optional[String]", 
+      "description": "The minimum firmware level needed"
+    }
+  }
+}

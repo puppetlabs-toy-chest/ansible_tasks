@@ -1,0 +1,41 @@
+{
+  "description": "Gets or sets the proxysql global variables.", 
+  "parameters": {
+    "login_port": {
+      "type": "Optional[String]", 
+      "description": "The port used to connect to ProxySQL admin interface."
+    }, 
+    "config_file": {
+      "type": "Optional[String]", 
+      "description": "Specify a config file from which login_user and login_password are to be read."
+    }, 
+    "login_user": {
+      "type": "Optional[String]", 
+      "description": "The username used to authenticate to ProxySQL admin interface."
+    }, 
+    "login_host": {
+      "type": "Optional[String]", 
+      "description": "The host used to connect to ProxySQL admin interface."
+    }, 
+    "save_to_disk": {
+      "type": "Optional[String]", 
+      "description": "Save mysql host config to sqlite db on disk to persist the configuration."
+    }, 
+    "value": {
+      "type": "Optional[String]", 
+      "description": "Defines a value the variable specified using I(variable) should be set to."
+    }, 
+    "load_to_runtime": {
+      "type": "Optional[String]", 
+      "description": "Dynamically load mysql host config to runtime memory."
+    }, 
+    "login_password": {
+      "type": "Optional[String]", 
+      "description": "The password used to authenticate to ProxySQL admin interface."
+    }, 
+    "variable": {
+      "type": "String", 
+      "description": "Defines which variable should be returned, or if I(value) is specified which variable should be updated."
+    }
+  }
+}

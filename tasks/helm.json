@@ -1,0 +1,37 @@
+{
+  "description": "Manages Kubernetes packages with the Helm package manager", 
+  "parameters": {
+    "disable_hooks": {
+      "type": "Optional[String]", 
+      "description": "Whether to disable hooks during the uninstall process"
+    }, 
+    "name": {
+      "type": "Optional[String]", 
+      "description": "Release name to manage"
+    }, 
+    "namespace": {
+      "type": "Optional[String]", 
+      "description": "Kubernetes namespace where the chart should be installed"
+    }, 
+    "chart": {
+      "type": "Optional[String]", 
+      "description": "A   m a p   d e s c r i b i n g   t h e   c h a r t   t o   i n s t a l l .   F o r   e x a m p l e : \n c h a r t : \n     n a m e :   m e m c a c h e d \n     v e r s i o n :   0 . 4 . 0 \n     s o u r c e : \n         t y p e :   r e p o \n         l o c a t i o n :   h t t p s : / / k u b e r n e t e s - c h a r t s . s t o r a g e . g o o g l e a p i s . c o m \n"
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "Whether to install C(present), remove C(absent), or purge C(purged) a package."
+    }, 
+    "values": {
+      "type": "Optional[String]", 
+      "description": "A map of value options for the chart."
+    }, 
+    "host": {
+      "type": "Optional[String]", 
+      "description": "Tiller's server host"
+    }, 
+    "port": {
+      "type": "Optional[String]", 
+      "description": "Tiller's server port"
+    }
+  }
+}

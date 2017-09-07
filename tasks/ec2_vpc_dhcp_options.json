@@ -1,0 +1,73 @@
+{
+  "description": "Manages DHCP Options, and can ensure the DHCP options for the given VPC match what's requested", 
+  "parameters": {
+    "profile": {
+      "type": "Optional[String]", 
+      "description": "Uses a boto profile. Only works with boto >= 2.24.0."
+    }, 
+    "aws_secret_key": {
+      "type": "Optional[String]", 
+      "description": "AWS secret key. If not set then the value of the AWS_SECRET_ACCESS_KEY, AWS_SECRET_KEY, or EC2_SECRET_KEY environment variable is used."
+    }, 
+    "aws_access_key": {
+      "type": "Optional[String]", 
+      "description": "AWS access key. If not set then the value of the AWS_ACCESS_KEY_ID, AWS_ACCESS_KEY or EC2_ACCESS_KEY environment variable is used."
+    }, 
+    "dns_servers": {
+      "type": "Optional[String]", 
+      "description": "A list of hosts to set the DNS servers for the VPC to. (Should be a list of IP addresses rather than host names.)"
+    }, 
+    "security_token": {
+      "type": "Optional[String]", 
+      "description": "AWS STS security token. If not set then the value of the AWS_SECURITY_TOKEN or EC2_SECURITY_TOKEN environment variable is used."
+    }, 
+    "tags": {
+      "type": "Optional[String]", 
+      "description": "Tags to be applied to a VPC options set if a new one is created, or if the resource_id is provided. (options must match)"
+    }, 
+    "ntp_servers": {
+      "type": "Optional[String]", 
+      "description": "List of hosts to advertise as NTP servers for the VPC."
+    }, 
+    "domain_name": {
+      "type": "Optional[String]", 
+      "description": "The domain name to set in the DHCP option sets"
+    }, 
+    "delete_old": {
+      "type": "Optional[String]", 
+      "description": "Whether to delete the old VPC DHCP option set when associating a new one. This is primarily useful for debugging/development purposes when you want to quickly roll back to the old option set. Note that this setting will be ignored, and the old DHCP option set will be preserved, if it is in use by any other VPC. (Otherwise, AWS will return an error.)"
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "create/assign or remove the DHCP options. If state is set to absent, then a DHCP options set matched either by id, or tags and options will be removed if possible."
+    }, 
+    "netbios_node_type": {
+      "type": "Optional[String]", 
+      "description": "NetBIOS node type to advertise in the DHCP options. The AWS recommendation is to use 2 (when using netbios name services) http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_DHCP_Options.html"
+    }, 
+    "ec2_url": {
+      "type": "Optional[String]", 
+      "description": "Url to use to connect to EC2 or your Eucalyptus cloud (by default the module will use EC2 endpoints). Ignored for modules where region is required. Must be specified for all other modules if region is not used. If not set then the value of the EC2_URL environment variable, if any, is used."
+    }, 
+    "vpc_id": {
+      "type": "Optional[String]", 
+      "description": "VPC ID to associate with the requested DHCP option set. If no vpc id is provided, and no matching option set is found then a new DHCP option set is created."
+    }, 
+    "inherit_existing": {
+      "type": "Optional[String]", 
+      "description": "For any DHCP options not specified in these parameters, whether to inherit them from the options set already applied to vpc_id, or to reset them to be empty."
+    }, 
+    "validate_certs": {
+      "type": "Optional[String]", 
+      "description": "When set to \"no\", SSL certificates will not be validated for boto versions >= 2.6.0."
+    }, 
+    "dhcp_options_id": {
+      "type": "Optional[String]", 
+      "description": "The resource_id of an existing DHCP options set. If this is specified, then it will override other settings, except tags (which will be updated to match)"
+    }, 
+    "netbios_name_servers": {
+      "type": "Optional[String]", 
+      "description": "List of hosts to advertise as NetBIOS servers."
+    }
+  }
+}

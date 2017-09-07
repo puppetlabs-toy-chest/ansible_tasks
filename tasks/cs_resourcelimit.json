@@ -1,0 +1,49 @@
+{
+  "description": "Manages resource limits on Apache CloudStack based clouds.", 
+  "parameters": {
+    "domain": {
+      "type": "Optional[String]", 
+      "description": "Domain the resource is related to."
+    }, 
+    "api_url": {
+      "type": "Optional[String]", 
+      "description": "URL of the CloudStack API e.g. https://cloud.example.com/client/api."
+    }, 
+    "api_http_method": {
+      "type": "Optional[String]", 
+      "description": "HTTP method used."
+    }, 
+    "api_secret": {
+      "type": "Optional[String]", 
+      "description": "Secret key of the CloudStack API."
+    }, 
+    "api_timeout": {
+      "type": "Optional[String]", 
+      "description": "HTTP timeout."
+    }, 
+    "api_region": {
+      "type": "Optional[String]", 
+      "description": "Name of the ini section in the C(cloustack.ini) file."
+    }, 
+    "project": {
+      "type": "Optional[String]", 
+      "description": "Name of the project the resource is related to."
+    }, 
+    "limit": {
+      "type": "Optional[String]", 
+      "description": "Maximum number of the resource. Default is unlimited C(-1)."
+    }, 
+    "account": {
+      "type": "Optional[String]", 
+      "description": "Account the resource is related to."
+    }, 
+    "api_key": {
+      "type": "Optional[String]", 
+      "description": "API key of the CloudStack API."
+    }, 
+    "resource_type": {
+      "type": "String", 
+      "description": "Type of the resource."
+    }
+  }
+}

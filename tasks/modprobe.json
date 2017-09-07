@@ -1,0 +1,17 @@
+{
+  "description": "Add or remove kernel modules", 
+  "parameters": {
+    "state": {
+      "type": "Optional[String]", 
+      "description": "Whether the module should be present or absent."
+    }, 
+    "params": {
+      "type": "Optional[String]", 
+      "description": "Modules parameters."
+    }, 
+    "name": {
+      "type": "String", 
+      "description": "Name of kernel module to manage."
+    }
+  }
+}

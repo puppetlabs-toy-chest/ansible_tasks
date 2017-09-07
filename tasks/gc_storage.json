@@ -1,0 +1,49 @@
+{
+  "description": "This module manages objects/buckets in Google Cloud Storage.", 
+  "parameters": {
+    "src": {
+      "type": "Optional[String]", 
+      "description": "The source file path when performing a PUT operation."
+    }, 
+    "force": {
+      "type": "Optional[String]", 
+      "description": "Forces an overwrite either locally on the filesystem or remotely with the object/key. Used with PUT and GET operations."
+    }, 
+    "permission": {
+      "type": "Optional[String]", 
+      "description": "This option let's the user set the canned permissions on the object/bucket that are created. The permissions that can be set are 'private', 'public-read', 'authenticated-read'."
+    }, 
+    "dest": {
+      "type": "Optional[String]", 
+      "description": "The destination file path when downloading an object/key with a GET operation."
+    }, 
+    "gs_access_key": {
+      "type": "String", 
+      "description": "GS access key. If not set then the value of the GS_ACCESS_KEY_ID environment variable is used."
+    }, 
+    "object": {
+      "type": "Optional[String]", 
+      "description": "Keyname of the object inside the bucket. Can be also be used to create \"virtual directories\" (see examples)."
+    }, 
+    "bucket": {
+      "type": "String", 
+      "description": "Bucket name."
+    }, 
+    "headers": {
+      "type": "Optional[String]", 
+      "description": "Headers to attach to object."
+    }, 
+    "gs_secret_key": {
+      "type": "String", 
+      "description": "GS secret key. If not set then the value of the GS_SECRET_ACCESS_KEY environment variable is used."
+    }, 
+    "mode": {
+      "type": "String", 
+      "description": "Switches the module behaviour between upload, download, get_url (return download url) , get_str (download object as string), create (bucket) and delete (bucket)."
+    }, 
+    "expiration": {
+      "type": "Optional[String]", 
+      "description": "Time limit (in seconds) for the URL generated and returned by GCA when performing a mode=put or mode=get_url operation. This url is only available when public-read is the acl for the object."
+    }
+  }
+}

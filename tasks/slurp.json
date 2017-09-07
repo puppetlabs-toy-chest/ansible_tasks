@@ -1,0 +1,9 @@
+{
+  "description": "Slurps a file from remote nodes", 
+  "parameters": {
+    "src": {
+      "type": "String", 
+      "description": "The file on the remote system to fetch. This I(must) be a file, not a directory."
+    }
+  }
+}

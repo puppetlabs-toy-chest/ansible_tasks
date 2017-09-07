@@ -1,0 +1,69 @@
+{
+  "description": "Manages users on Apache CloudStack based clouds.", 
+  "parameters": {
+    "username": {
+      "type": "String", 
+      "description": "Username of the user."
+    }, 
+    "domain": {
+      "type": "Optional[String]", 
+      "description": "Domain the user is related to."
+    }, 
+    "last_name": {
+      "type": "Optional[String]", 
+      "description": "Last name of the user. Required on C(state=present)."
+    }, 
+    "poll_async": {
+      "type": "Optional[String]", 
+      "description": "Poll async jobs until job has finished."
+    }, 
+    "api_url": {
+      "type": "Optional[String]", 
+      "description": "URL of the CloudStack API e.g. https://cloud.example.com/client/api."
+    }, 
+    "api_http_method": {
+      "type": "Optional[String]", 
+      "description": "HTTP method used."
+    }, 
+    "api_secret": {
+      "type": "Optional[String]", 
+      "description": "Secret key of the CloudStack API."
+    }, 
+    "api_timeout": {
+      "type": "Optional[String]", 
+      "description": "HTTP timeout."
+    }, 
+    "first_name": {
+      "type": "Optional[String]", 
+      "description": "First name of the user. Required on C(state=present)."
+    }, 
+    "api_region": {
+      "type": "Optional[String]", 
+      "description": "Name of the ini section in the C(cloustack.ini) file."
+    }, 
+    "api_key": {
+      "type": "Optional[String]", 
+      "description": "API key of the CloudStack API."
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "State of the user. C(unlocked) is an alias for C(enabled)."
+    }, 
+    "account": {
+      "type": "Optional[String]", 
+      "description": "Account the user will be created under. Required on C(state=present)."
+    }, 
+    "timezone": {
+      "type": "Optional[String]", 
+      "description": "Timezone of the user."
+    }, 
+    "password": {
+      "type": "Optional[String]", 
+      "description": "Password of the user to be created. Required on C(state=present). Only considered on creation and will not be updated if user exists."
+    }, 
+    "email": {
+      "type": "Optional[String]", 
+      "description": "Email of the user. Required on C(state=present)."
+    }
+  }
+}

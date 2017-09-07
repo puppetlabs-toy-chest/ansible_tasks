@@ -1,0 +1,45 @@
+{
+  "description": "Configure LVM logical volumes", 
+  "parameters": {
+    "pvs": {
+      "type": "Optional[String]", 
+      "description": "Comma separated list of physical volumes e.g. /dev/sda,/dev/sdb"
+    }, 
+    "force": {
+      "type": "Optional[String]", 
+      "description": "Shrink or remove operations of volumes requires this switch. Ensures that that filesystems get never corrupted/destroyed by mistake."
+    }, 
+    "vg": {
+      "type": "String", 
+      "description": "The volume group this logical volume is part of."
+    }, 
+    "lv": {
+      "type": "String", 
+      "description": "The name of the logical volume."
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "Control if the logical volume exists. If C(present) and the volume does not already exist then the C(size) option is required."
+    }, 
+    "snapshot": {
+      "type": "Optional[String]", 
+      "description": "The name of the snapshot volume"
+    }, 
+    "active": {
+      "type": "Optional[String]", 
+      "description": "Whether the volume is activate and visible to the host."
+    }, 
+    "shrink": {
+      "type": "Optional[String]", 
+      "description": "shrink if current size is higher than size requested"
+    }, 
+    "opts": {
+      "type": "Optional[String]", 
+      "description": "Free-form options to be passed to the lvcreate command"
+    }, 
+    "size": {
+      "type": "Optional[String]", 
+      "description": "The size of the logical volume, according to lvcreate(8) --size, by default in megabytes or optionally with one of [bBsSkKmMgGtTpPeE] units; or according to lvcreate(8) --extents as a percentage of [VG|PVS|FREE]; Float values must begin with a digit. Resizing using percentage values was not supported prior to 2.1."
+    }
+  }
+}

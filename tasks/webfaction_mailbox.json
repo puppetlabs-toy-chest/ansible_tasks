@@ -1,0 +1,25 @@
+{
+  "description": "Add or remove mailboxes on Webfaction", 
+  "parameters": {
+    "mailbox_password": {
+      "type": "String", 
+      "description": "The password for the mailbox"
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "Whether the mailbox should exist"
+    }, 
+    "login_name": {
+      "type": "String", 
+      "description": "The webfaction account to use"
+    }, 
+    "mailbox_name": {
+      "type": "String", 
+      "description": "The name of the mailbox"
+    }, 
+    "login_password": {
+      "type": "String", 
+      "description": "The webfaction password to use"
+    }
+  }
+}

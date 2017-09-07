@@ -1,0 +1,37 @@
+{
+  "description": "Manages Citrix NetScaler entities", 
+  "parameters": {
+    "name": {
+      "type": "String", 
+      "description": "name of the entity"
+    }, 
+    "validate_certs": {
+      "type": "Optional[String]", 
+      "description": "If C(no), SSL certificates for the target url will not be validated. This should only be used on personally controlled sites using self-signed certificates."
+    }, 
+    "nsc_protocol": {
+      "type": "Optional[String]", 
+      "description": "protocol used to access netscaler"
+    }, 
+    "nsc_host": {
+      "type": "String", 
+      "description": "hostname or ip of your netscaler"
+    }, 
+    "user": {
+      "type": "String", 
+      "description": "username"
+    }, 
+    "action": {
+      "type": "Optional[String]", 
+      "description": "the action you want to perform on the entity"
+    }, 
+    "password": {
+      "type": "String", 
+      "description": "password"
+    }, 
+    "type": {
+      "type": "Optional[String]", 
+      "description": "type of the entity"
+    }
+  }
+}

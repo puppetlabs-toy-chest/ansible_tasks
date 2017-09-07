@@ -1,0 +1,33 @@
+{
+  "description": "Manages SELinux file context mapping definitions", 
+  "parameters": {
+    "target": {
+      "type": "String", 
+      "description": "Target path (expression)."
+    }, 
+    "selevel": {
+      "type": "Optional[String]", 
+      "description": "SELinux range for the specified target."
+    }, 
+    "seuser": {
+      "type": "Optional[String]", 
+      "description": "SELinux user for the specified target."
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "Desired boolean value."
+    }, 
+    "reload": {
+      "type": "Optional[String]", 
+      "description": "Reload SELinux policy after commit."
+    }, 
+    "setype": {
+      "type": "String", 
+      "description": "SELinux type for the specified target."
+    }, 
+    "ftype": {
+      "type": "Optional[String]", 
+      "description": "File type."
+    }
+  }
+}

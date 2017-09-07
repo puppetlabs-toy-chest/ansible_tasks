@@ -1,0 +1,253 @@
+{
+  "description": "Module for setup of Pool Avi RESTful Object", 
+  "parameters": {
+    "lb_algorithm": {
+      "type": "Optional[String]", 
+      "description": "The load balancing algorithm will pick a server within the pool's list of available servers. Enum options - LB_ALGORITHM_LEAST_CONNECTIONS, LB_ALGORITHM_ROUND_ROBIN, LB_ALGORITHM_FASTEST_RESPONSE, LB_ALGORITHM_CONSISTENT_HASH, LB_ALGORITHM_LEAST_LOAD, LB_ALGORITHM_FEWEST_SERVERS, LB_ALGORITHM_RANDOM, LB_ALGORITHM_FEWEST_TASKS, LB_ALGORITHM_NEAREST_SERVER. Default value when not specified in API or module is interpreted by Avi Controller as LB_ALGORITHM_LEAST_CONNECTIONS."
+    }, 
+    "use_service_port": {
+      "type": "Optional[String]", 
+      "description": "Do not translate the client's destination port when sending the connection to the server. The pool or servers specified service port will still be used for health monitoring. Default value when not specified in API or module is interpreted by Avi Controller as False."
+    }, 
+    "rewrite_host_header_to_server_name": {
+      "type": "Optional[String]", 
+      "description": "Rewrite incoming host header to server name of the server to which the request is proxied. Enabling this feature rewrites host header for requests to all servers in the pool. Default value when not specified in API or module is interpreted by Avi Controller as False."
+    }, 
+    "host_check_enabled": {
+      "type": "Optional[String]", 
+      "description": "Enable common name check for server certificate. If enabled and no explicit domain name is specified, avi will use the incoming host header to do the match. Default value when not specified in API or module is interpreted by Avi Controller as False."
+    }, 
+    "enabled": {
+      "type": "Optional[String]", 
+      "description": "Enable or disable the pool. Disabling will terminate all open connections and pause health monitors. Default value when not specified in API or module is interpreted by Avi Controller as True."
+    }, 
+    "rewrite_host_header_to_sni": {
+      "type": "Optional[String]", 
+      "description": "If sni server name is specified, rewrite incoming host header to the sni server name. Default value when not specified in API or module is interpreted by Avi Controller as False."
+    }, 
+    "capacity_estimation": {
+      "type": "Optional[String]", 
+      "description": "Inline estimation of capacity of servers. Default value when not specified in API or module is interpreted by Avi Controller as False."
+    }, 
+    "max_conn_rate_per_server": {
+      "type": "Optional[String]", 
+      "description": "Rate limit connections to each server."
+    }, 
+    "servers": {
+      "type": "Optional[String]", 
+      "description": "The pool directs load balanced traffic to this list of destination servers. The servers can be configured by ip address, name, network or via ip address group."
+    }, 
+    "fewest_tasks_feedback_delay": {
+      "type": "Optional[String]", 
+      "description": "Periodicity of feedback for fewest tasks server selection algorithm. Allowed values are 1-300. Default value when not specified in API or module is interpreted by Avi Controller as 10."
+    }, 
+    "server_auto_scale": {
+      "type": "Optional[String]", 
+      "description": "Server autoscale. Not used anymore. Default value when not specified in API or module is interpreted by Avi Controller as False."
+    }, 
+    "ipaddrgroup_ref": {
+      "type": "Optional[String]", 
+      "description": "Use list of servers from ip address group. It is a reference to an object of type ipaddrgroup."
+    }, 
+    "ab_pool": {
+      "type": "Optional[String]", 
+      "description": "A/b pool configuration."
+    }, 
+    "capacity_estimation_ttfb_thresh": {
+      "type": "Optional[String]", 
+      "description": "The maximum time-to-first-byte of a server. Allowed values are 1-5000. Special values are 0 - 'automatic'. Default value when not specified in API or module is interpreted by Avi Controller as 0."
+    }, 
+    "fail_action": {
+      "type": "Optional[String]", 
+      "description": "Enable an action - close connection, http redirect, local http response, or backup pool - when a pool failure happens. By default, a connection will be closed, in case the pool experiences a failure."
+    }, 
+    "apic_epg_name": {
+      "type": "Optional[String]", 
+      "description": "Synchronize cisco apic epg members with pool servers."
+    }, 
+    "networks": {
+      "type": "Optional[String]", 
+      "description": "(internal-use) networks designated as containing servers for this pool. The servers may be further narrowed down by a filter. This field is used internally by avi, not editable by the user."
+    }, 
+    "lb_algorithm_hash": {
+      "type": "Optional[String]", 
+      "description": "Criteria used as a key for determining the hash between the client and  server. Enum options - LB_ALGORITHM_CONSISTENT_HASH_SOURCE_IP_ADDRESS, LB_ALGORITHM_CONSISTENT_HASH_SOURCE_IP_ADDRESS_AND_PORT, LB_ALGORITHM_CONSISTENT_HASH_URI, LB_ALGORITHM_CONSISTENT_HASH_CUSTOM_HEADER. Default value when not specified in API or module is interpreted by Avi Controller as LB_ALGORITHM_CONSISTENT_HASH_SOURCE_IP_ADDRESS."
+    }, 
+    "ssl_profile_ref": {
+      "type": "Optional[String]", 
+      "description": "When enabled, avi re-encrypts traffic to the backend servers. The specific ssl profile defines which ciphers and ssl versions will be supported. It is a reference to an object of type sslprofile."
+    }, 
+    "sni_enabled": {
+      "type": "Optional[String]", 
+      "description": "Enable tls sni for server connections. If disabled, avi will not send the sni extension as part of the handshake. Default value when not specified in API or module is interpreted by Avi Controller as True."
+    }, 
+    "server_name": {
+      "type": "Optional[String]", 
+      "description": "Fully qualified dns hostname which will be used in the tls sni extension in server connections if sni is enabled. If no value is specified, avi will use the incoming host header instead."
+    }, 
+    "health_monitor_refs": {
+      "type": "Optional[String]", 
+      "description": "Verify server health by applying one or more health monitors. Active monitors generate synthetic traffic from each service engine and mark a server up or down based on the response. The passive monitor listens only to client to server communication. It raises or lowers the ratio of traffic destined to a server based on successful responses. It is a reference to an object of type healthmonitor."
+    }, 
+    "cloud_ref": {
+      "type": "Optional[String]", 
+      "description": "It is a reference to an object of type cloud."
+    }, 
+    "autoscale_policy_ref": {
+      "type": "Optional[String]", 
+      "description": "Reference to server autoscale policy. It is a reference to an object of type serverautoscalepolicy."
+    }, 
+    "domain_name": {
+      "type": "Optional[String]", 
+      "description": "Comma separated list of domain names which will be used to verify the common names or subject alternative names presented by server certificates. It is performed only when common name check host_check_enabled is enabled."
+    }, 
+    "created_by": {
+      "type": "Optional[String]", 
+      "description": "Creator name."
+    }, 
+    "placement_networks": {
+      "type": "Optional[String]", 
+      "description": "Manually select the networks and subnets used to provide reachability to the pool's servers. Specify the subnet using the following syntax  10-1-1-0/24. Use static routes in vrf configuration when pool servers are not directly connected butroutable from the service engine."
+    }, 
+    "graceful_disable_timeout": {
+      "type": "Optional[String]", 
+      "description": "Used to gracefully disable a server. Virtual service waits for the specified time before terminating the existing connections  to the servers that are disabled. Allowed values are 1-60. Special values are 0 - 'immediate', -1 - 'infinite'. Default value when not specified in API or module is interpreted by Avi Controller as 1."
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "The state that should be applied on the entity."
+    }, 
+    "nsx_securitygroup": {
+      "type": "Optional[String]", 
+      "description": "A list of nsx service groups where the servers for the pool are created. Field introduced in 17.1.1."
+    }, 
+    "a_pool": {
+      "type": "Optional[String]", 
+      "description": "Name of container cloud application that constitutes a pool in a a-b pool configuration, if different from vs app."
+    }, 
+    "pki_profile_ref": {
+      "type": "Optional[String]", 
+      "description": "Avi will validate the ssl certificate present by a server against the selected pki profile. It is a reference to an object of type pkiprofile."
+    }, 
+    "api_version": {
+      "type": "Optional[String]", 
+      "description": "Avi API version of to use for Avi API and objects."
+    }, 
+    "east_west": {
+      "type": "Optional[String]", 
+      "description": "Inherited config from virtualservice."
+    }, 
+    "username": {
+      "type": "Optional[String]", 
+      "description": "Username used for accessing Avi controller. The default value is the environment variable C(AVI_USERNAME)."
+    }, 
+    "application_persistence_profile_ref": {
+      "type": "Optional[String]", 
+      "description": "Persistence will ensure the same user sticks to the same server for a desired duration of time. It is a reference to an object of type applicationpersistenceprofile."
+    }, 
+    "inline_health_monitor": {
+      "type": "Optional[String]", 
+      "description": "The passive monitor will monitor client to server connections and requests and adjust traffic load to servers based on successful responses. This may alter the expected behavior of the lb method, such as round robin. Default value when not specified in API or module is interpreted by Avi Controller as True."
+    }, 
+    "default_server_port": {
+      "type": "Optional[String]", 
+      "description": "Traffic sent to servers will use this destination server port unless overridden by the server's specific port attribute. The ssl checkbox enables avi to server encryption. Allowed values are 1-65535. Default value when not specified in API or module is interpreted by Avi Controller as 80."
+    }, 
+    "description": {
+      "type": "Optional[String]", 
+      "description": "A description of the pool."
+    }, 
+    "request_queue_depth": {
+      "type": "Optional[String]", 
+      "description": "Minimum number of requests to be queued when pool is full. Default value when not specified in API or module is interpreted by Avi Controller as 128."
+    }, 
+    "server_reselect": {
+      "type": "Optional[String]", 
+      "description": "Server reselect configuration for http requests."
+    }, 
+    "ab_priority": {
+      "type": "Optional[String]", 
+      "description": "Priority of this pool in a a-b pool pair. Internally used."
+    }, 
+    "controller": {
+      "type": "Optional[String]", 
+      "description": "IP address or hostname of the controller. The default value is the environment variable C(AVI_CONTROLLER)."
+    }, 
+    "ssl_key_and_certificate_ref": {
+      "type": "Optional[String]", 
+      "description": "Service engines will present a client ssl certificate to the server. It is a reference to an object of type sslkeyandcertificate."
+    }, 
+    "password": {
+      "type": "Optional[String]", 
+      "description": "Password of Avi user in Avi controller. The default value is the environment variable C(AVI_PASSWORD)."
+    }, 
+    "server_count": {
+      "type": "Optional[String]", 
+      "description": "Number of server_count. Default value when not specified in API or module is interpreted by Avi Controller as 0."
+    }, 
+    "tenant": {
+      "type": "Optional[String]", 
+      "description": "Name of tenant used for all Avi API calls and context of object."
+    }, 
+    "uuid": {
+      "type": "Optional[String]", 
+      "description": "Uuid of the pool."
+    }, 
+    "request_queue_enabled": {
+      "type": "Optional[String]", 
+      "description": "Enable request queue when pool is full. Default value when not specified in API or module is interpreted by Avi Controller as False."
+    }, 
+    "name": {
+      "type": "String", 
+      "description": "The name of the pool."
+    }, 
+    "max_concurrent_connections_per_server": {
+      "type": "Optional[String]", 
+      "description": "The maximum number of concurrent connections allowed to each server within the pool. Note  applied value will be no less than the number of service engines that the pool is placed on. If set to 0, no limit is applied. Default value when not specified in API or module is interpreted by Avi Controller as 0."
+    }, 
+    "url": {
+      "type": "Optional[String]", 
+      "description": "Avi controller URL of the object."
+    }, 
+    "autoscale_launch_config_ref": {
+      "type": "Optional[String]", 
+      "description": "If configured then avi will trigger orchestration of pool server creation and deletion. It is only supported for container clouds like mesos, opensift, kubernates, docker etc. It is a reference to an object of type autoscalelaunchconfig."
+    }, 
+    "tenant_ref": {
+      "type": "Optional[String]", 
+      "description": "It is a reference to an object of type tenant."
+    }, 
+    "autoscale_networks": {
+      "type": "Optional[String]", 
+      "description": "Network ids for the launch configuration."
+    }, 
+    "lb_algorithm_consistent_hash_hdr": {
+      "type": "Optional[String]", 
+      "description": "Http header name to be used for the hash key."
+    }, 
+    "connection_ramp_duration": {
+      "type": "Optional[String]", 
+      "description": "Duration for which new connections will be gradually ramped up to a server recently brought online. Useful for lb algorithms that are least connection based. Allowed values are 1-300. Special values are 0 - 'immediate'. Default value when not specified in API or module is interpreted by Avi Controller as 10."
+    }, 
+    "cloud_config_cksum": {
+      "type": "Optional[String]", 
+      "description": "Checksum of cloud configuration for pool. Internally set by cloud connector."
+    }, 
+    "external_autoscale_groups": {
+      "type": "Optional[String]", 
+      "description": "Names of external auto-scale groups for pool servers. Currently available only for aws. Field introduced in 17.1.2."
+    }, 
+    "vrf_ref": {
+      "type": "Optional[String]", 
+      "description": "Virtual routing context that the pool is bound to. This is used to provide the isolation of the set of networks the pool is attached to. The pool inherits the virtual routing conext of the virtual service, and this field is used only internally, and is set by pb-transform. It is a reference to an object of type vrfcontext."
+    }, 
+    "tenant_uuid": {
+      "type": "Optional[String]", 
+      "description": "UUID of tenant used for all Avi API calls and context of object."
+    }, 
+    "prst_hdr_name": {
+      "type": "Optional[String]", 
+      "description": "Header name for custom header persistence."
+    }
+  }
+}

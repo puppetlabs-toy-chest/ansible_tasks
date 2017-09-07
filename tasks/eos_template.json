@@ -1,0 +1,41 @@
+{
+  "description": "Manage Arista EOS device configurations", 
+  "parameters": {
+    "authorize": {
+      "type": "Optional[String]", 
+      "description": "Instructs the module to enter privileged mode on the remote device before sending any commands.  If not specified, the device will attempt to execute all commands in non-privileged mode. If the value is not specified in the task, the value of environment variable C(ANSIBLE_NET_AUTHORIZE) will be used instead."
+    }, 
+    "src": {
+      "type": "String", 
+      "description": "The path to the config source.  The source can be either a file with config or a template that will be merged during runtime.  By default the task will search for the source file in role or playbook root folder in templates directory."
+    }, 
+    "force": {
+      "type": "Optional[String]", 
+      "description": "The force argument instructs the module to not consider the current devices running-config.  When set to true, this will cause the module to push the contents of I(src) into the device without first checking if already configured."
+    }, 
+    "config": {
+      "type": "Optional[String]", 
+      "description": "The module, by default, will connect to the remote device and retrieve the current running-config to use as a base for comparing against the contents of source.  There are times when it is not desirable to have the task get the current running-config for every task in a playbook.  The I(config) argument allows the implementer to pass in the configuration to use as the base config for comparison."
+    }, 
+    "auth_pass": {
+      "type": "Optional[String]", 
+      "description": "Specifies the password to use if required to enter privileged mode on the remote device.  If I(authorize) is false, then this argument does nothing. If the value is not specified in the task, the value of environment variable C(ANSIBLE_NET_AUTH_PASS) will be used instead."
+    }, 
+    "replace": {
+      "type": "Optional[String]", 
+      "description": "This argument will cause the provided configuration to be replaced on the destination node.   The use of the replace argument will always cause the task to set changed to true and will implies C(force=true).  This argument is only valid with C(transport=eos_local)."
+    }, 
+    "include_defaults": {
+      "type": "Optional[String]", 
+      "description": "By default when the M(eos_template) connects to the remote device to retrieve the configuration it will issue the C(show running-config) command.  If this option is set to True then the issued command will be C(show running-config all)."
+    }, 
+    "provider": {
+      "type": "Optional[String]", 
+      "description": "A dict object containing connection details."
+    }, 
+    "backup": {
+      "type": "Optional[String]", 
+      "description": "When this argument is configured true, the module will backup the running-config from the node prior to making any changes. The backup file will be written to backup_{{ hostname }} in the root of the playbook directory."
+    }
+  }
+}

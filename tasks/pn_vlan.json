@@ -1,0 +1,45 @@
+{
+  "description": "CLI command to create/delete a VLAN.", 
+  "parameters": {
+    "pn_scope": {
+      "type": "Optional[String]", 
+      "description": "Specify a scope for the VLAN. Required for vlan-create."
+    }, 
+    "pn_clipassword": {
+      "type": "Optional[String]", 
+      "description": "Provide login password if user is not root."
+    }, 
+    "pn_cliusername": {
+      "type": "Optional[String]", 
+      "description": "Provide login username if user is not root."
+    }, 
+    "pn_vlanid": {
+      "type": "String", 
+      "description": "Specify a VLAN identifier for the VLAN. This is a value between 2 and 4092."
+    }, 
+    "state": {
+      "type": "String", 
+      "description": "State the action to perform. Use 'present' to create vlan and 'absent' to delete vlan."
+    }, 
+    "pn_ports": {
+      "type": "Optional[String]", 
+      "description": "Specifies the switch network data port number, list of ports, or range of ports. Port numbers must ne in the range of 1 to 64."
+    }, 
+    "pn_untagged_ports": {
+      "type": "Optional[String]", 
+      "description": "Specifies the ports that should have untagged packets mapped to the VLAN. Untagged packets are packets that do not contain IEEE 802.1Q VLAN tags."
+    }, 
+    "pn_cliswitch": {
+      "type": "Optional[String]", 
+      "description": "Target switch(es) to run the cli on."
+    }, 
+    "pn_stats": {
+      "type": "Optional[String]", 
+      "description": "Specify if you want to collect statistics for a VLAN. Statistic collection is enabled by default."
+    }, 
+    "pn_description": {
+      "type": "Optional[String]", 
+      "description": "Specify a description for the VLAN."
+    }
+  }
+}

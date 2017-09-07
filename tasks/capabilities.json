@@ -1,0 +1,17 @@
+{
+  "description": "Manage Linux capabilities", 
+  "parameters": {
+    "capability": {
+      "type": "String", 
+      "description": "Desired capability to set (with operator and flags, if state is C(present)) or remove (if state is C(absent))"
+    }, 
+    "path": {
+      "type": "String", 
+      "description": "Specifies the path to the file to be managed."
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "Whether the entry should be present or absent in the file's capabilities."
+    }
+  }
+}

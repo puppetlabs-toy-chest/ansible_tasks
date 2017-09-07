@@ -1,0 +1,53 @@
+{
+  "description": "Manages routers on Apache CloudStack based clouds.", 
+  "parameters": {
+    "account": {
+      "type": "Optional[String]", 
+      "description": "Account the router is related to."
+    }, 
+    "api_url": {
+      "type": "Optional[String]", 
+      "description": "URL of the CloudStack API e.g. https://cloud.example.com/client/api."
+    }, 
+    "api_http_method": {
+      "type": "Optional[String]", 
+      "description": "HTTP method used."
+    }, 
+    "api_secret": {
+      "type": "Optional[String]", 
+      "description": "Secret key of the CloudStack API."
+    }, 
+    "api_timeout": {
+      "type": "Optional[String]", 
+      "description": "HTTP timeout."
+    }, 
+    "api_region": {
+      "type": "Optional[String]", 
+      "description": "Name of the ini section in the C(cloustack.ini) file."
+    }, 
+    "project": {
+      "type": "Optional[String]", 
+      "description": "Name of the project the router is related to."
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "State of the router."
+    }, 
+    "domain": {
+      "type": "Optional[String]", 
+      "description": "Domain the router is related to."
+    }, 
+    "service_offering": {
+      "type": "Optional[String]", 
+      "description": "Name or id of the service offering of the router."
+    }, 
+    "api_key": {
+      "type": "Optional[String]", 
+      "description": "API key of the CloudStack API."
+    }, 
+    "name": {
+      "type": "String", 
+      "description": "Name of the router."
+    }
+  }
+}

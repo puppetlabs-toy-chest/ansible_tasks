@@ -1,0 +1,73 @@
+{
+  "description": "Module for setup of PKIProfile Avi RESTful Object", 
+  "parameters": {
+    "username": {
+      "type": "Optional[String]", 
+      "description": "Username used for accessing Avi controller. The default value is the environment variable C(AVI_USERNAME)."
+    }, 
+    "crls": {
+      "type": "Optional[String]", 
+      "description": "Certificate revocation lists."
+    }, 
+    "uuid": {
+      "type": "Optional[String]", 
+      "description": "Unique object identifier of the object."
+    }, 
+    "url": {
+      "type": "Optional[String]", 
+      "description": "Avi controller URL of the object."
+    }, 
+    "ignore_peer_chain": {
+      "type": "Optional[String]", 
+      "description": "When enabled, avi will not trust intermediate and root certs presented by a client. Instead, only the chain certs configured in the certificate authority section will be used to verify trust of the client's cert. Default value when not specified in API or module is interpreted by Avi Controller as False."
+    }, 
+    "tenant_ref": {
+      "type": "Optional[String]", 
+      "description": "It is a reference to an object of type tenant."
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "The state that should be applied on the entity."
+    }, 
+    "created_by": {
+      "type": "Optional[String]", 
+      "description": "Creator name."
+    }, 
+    "ca_certs": {
+      "type": "Optional[String]", 
+      "description": "List of certificate authorities (root and intermediate) trusted that is used for certificate validation."
+    }, 
+    "controller": {
+      "type": "Optional[String]", 
+      "description": "IP address or hostname of the controller. The default value is the environment variable C(AVI_CONTROLLER)."
+    }, 
+    "api_version": {
+      "type": "Optional[String]", 
+      "description": "Avi API version of to use for Avi API and objects."
+    }, 
+    "validate_only_leaf_crl": {
+      "type": "Optional[String]", 
+      "description": "When enabled, avi will only validate the revocation status of the leaf certificate using crl. To enable validation for the entire chain, disable this option and provide all the relevant crls. Default value when not specified in API or module is interpreted by Avi Controller as True."
+    }, 
+    "crl_check": {
+      "type": "Optional[String]", 
+      "description": "When enabled, avi will verify via crl checks that certificates in the trust chain have not been revoked. Default value when not specified in API or module is interpreted by Avi Controller as True."
+    }, 
+    "password": {
+      "type": "Optional[String]", 
+      "description": "Password of Avi user in Avi controller. The default value is the environment variable C(AVI_PASSWORD)."
+    }, 
+    "tenant_uuid": {
+      "type": "Optional[String]", 
+      "description": "UUID of tenant used for all Avi API calls and context of object."
+    }, 
+    "tenant": {
+      "type": "Optional[String]", 
+      "description": "Name of tenant used for all Avi API calls and context of object."
+    }, 
+    "name": {
+      "type": "String", 
+      "description": "Name of the pki profile."
+    }
+  }
+}

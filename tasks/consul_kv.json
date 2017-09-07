@@ -1,0 +1,53 @@
+{
+  "description": "Manipulate entries in the key/value store of a consul cluster.", 
+  "parameters": {
+    "cas": {
+      "type": "Optional[String]", 
+      "description": "used when acquiring a lock with a session. If the cas is 0, then Consul will only put the key if it does not already exist. If the cas value is non-zero, then the key is only set if the index matches the ModifyIndex of that key."
+    }, 
+    "recurse": {
+      "type": "Optional[String]", 
+      "description": "if the key represents a prefix, each entry with the prefix can be retrieved by setting this to true."
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "the action to take with the supplied key and value. If the state is 'present', the key contents will be set to the value supplied, 'changed' will be set to true only if the value was different to the current contents. The state 'absent' will remove the key/value pair, again 'changed' will be set to true only if the key actually existed prior to the removal. An attempt can be made to obtain or free the lock associated with a key/value pair with the states 'acquire' or 'release' respectively. a valid session must be supplied to make the attempt changed will be true if the attempt is successful, false otherwise."
+    }, 
+    "value": {
+      "type": "String", 
+      "description": "the value should be associated with the given key, required if state is present"
+    }, 
+    "token": {
+      "type": "Optional[String]", 
+      "description": "the token key indentifying an ACL rule set that controls access to the key value pair"
+    }, 
+    "session": {
+      "type": "Optional[String]", 
+      "description": "the session that should be used to acquire or release a lock associated with a key/value pair"
+    }, 
+    "flags": {
+      "type": "Optional[String]", 
+      "description": "opaque integer value that can be passed when setting a value."
+    }, 
+    "key": {
+      "type": "String", 
+      "description": "the key at which the value should be stored."
+    }, 
+    "host": {
+      "type": "Optional[String]", 
+      "description": "host of the consul agent defaults to localhost"
+    }, 
+    "scheme": {
+      "type": "Optional[String]", 
+      "description": "the protocol scheme on which the consul agent is running"
+    }, 
+    "validate_certs": {
+      "type": "Optional[String]", 
+      "description": "whether to verify the tls certificate of the consul agent"
+    }, 
+    "port": {
+      "type": "Optional[String]", 
+      "description": "the port on which the consul agent is running"
+    }
+  }
+}

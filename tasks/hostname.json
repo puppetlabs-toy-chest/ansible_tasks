@@ -1,0 +1,9 @@
+{
+  "description": "Manage hostname", 
+  "parameters": {
+    "name": {
+      "type": "String", 
+      "description": "Name of the host"
+    }
+  }
+}

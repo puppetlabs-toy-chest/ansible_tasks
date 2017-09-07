@@ -1,0 +1,25 @@
+{
+  "description": "Manage boundary meters", 
+  "parameters": {
+    "state": {
+      "type": "Optional[String]", 
+      "description": "Whether to create or remove the client from boundary"
+    }, 
+    "apikey": {
+      "type": "String", 
+      "description": "Organizations boundary API KEY"
+    }, 
+    "validate_certs": {
+      "type": "Optional[String]", 
+      "description": "If C(no), SSL certificates will not be validated. This should only be used on personally controlled sites using self-signed certificates."
+    }, 
+    "apiid": {
+      "type": "String", 
+      "description": "Organizations boundary API ID"
+    }, 
+    "name": {
+      "type": "String", 
+      "description": "meter name"
+    }
+  }
+}

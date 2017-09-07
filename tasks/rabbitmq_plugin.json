@@ -1,0 +1,21 @@
+{
+  "description": "Adds or removes plugins to RabbitMQ", 
+  "parameters": {
+    "state": {
+      "type": "Optional[String]", 
+      "description": "Specify if plugins are to be enabled or disabled"
+    }, 
+    "names": {
+      "type": "String", 
+      "description": "Comma-separated list of plugin names"
+    }, 
+    "prefix": {
+      "type": "Optional[String]", 
+      "description": "Specify a custom install prefix to a Rabbit"
+    }, 
+    "new_only": {
+      "type": "Optional[String]", 
+      "description": "Only enable missing plugins Does not disable plugins that are not in the names list"
+    }
+  }
+}

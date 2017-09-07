@@ -1,0 +1,29 @@
+{
+  "description": "Manages Layer 2 switchport interfaces on HUAWEI CloudEngine switches.", 
+  "parameters": {
+    "native_vlan": {
+      "type": "Optional[String]", 
+      "description": "If C(mode=trunk), used as the trunk native VLAN ID, in the range from 1 to 4094."
+    }, 
+    "access_vlan": {
+      "type": "Optional[String]", 
+      "description": "If C(mode=access), used as the access VLAN ID, in the range from 1 to 4094."
+    }, 
+    "trunk_vlans": {
+      "type": "Optional[String]", 
+      "description": "If C(mode=trunk), used as the VLAN range to ADD or REMOVE from the trunk, such as 2-10 or 2,5,10-15, etc."
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "Manage the state of the resource."
+    }, 
+    "mode": {
+      "type": "Optional[String]", 
+      "description": "The link type of an interface."
+    }, 
+    "interface": {
+      "type": "String", 
+      "description": "Full name of the interface, i.e. 40GE1/0/22."
+    }
+  }
+}

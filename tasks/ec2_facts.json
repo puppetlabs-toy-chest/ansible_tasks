@@ -1,0 +1,9 @@
+{
+  "description": "Gathers facts about remote hosts within ec2 (aws)", 
+  "parameters": {
+    "validate_certs": {
+      "type": "Optional[String]", 
+      "description": "If C(no), SSL certificates will not be validated. This should only be used on personally controlled sites using self-signed certificates."
+    }
+  }
+}

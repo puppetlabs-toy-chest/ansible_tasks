@@ -1,0 +1,65 @@
+{
+  "description": "run, start or stop a task in ecs", 
+  "parameters": {
+    "aws_secret_key": {
+      "type": "Optional[String]", 
+      "description": "AWS secret key. If not set then the value of the AWS_SECRET_ACCESS_KEY, AWS_SECRET_KEY, or EC2_SECRET_KEY environment variable is used."
+    }, 
+    "profile": {
+      "type": "Optional[String]", 
+      "description": "Uses a boto profile. Only works with boto >= 2.24.0."
+    }, 
+    "aws_access_key": {
+      "type": "Optional[String]", 
+      "description": "AWS access key. If not set then the value of the AWS_ACCESS_KEY_ID, AWS_ACCESS_KEY or EC2_ACCESS_KEY environment variable is used."
+    }, 
+    "task": {
+      "type": "Optional[String]", 
+      "description": "The task to stop"
+    }, 
+    "security_token": {
+      "type": "Optional[String]", 
+      "description": "AWS STS security token. If not set then the value of the AWS_SECURITY_TOKEN or EC2_SECURITY_TOKEN environment variable is used."
+    }, 
+    "region": {
+      "type": "Optional[String]", 
+      "description": "The AWS region to use. If not specified then the value of the AWS_REGION or EC2_REGION environment variable, if any, is used. See U(http://docs.aws.amazon.com/general/latest/gr/rande.html#ec2_region)"
+    }, 
+    "count": {
+      "type": "Optional[String]", 
+      "description": "How many new instances to start"
+    }, 
+    "started_by": {
+      "type": "Optional[String]", 
+      "description": "A value showing who or what started the task (for informational purposes)"
+    }, 
+    "cluster": {
+      "type": "Optional[String]", 
+      "description": "The name of the cluster to run the task on"
+    }, 
+    "task_definition": {
+      "type": "Optional[String]", 
+      "description": "The task definition to start or run"
+    }, 
+    "container_instances": {
+      "type": "Optional[String]", 
+      "description": "The list of container instances on which to deploy the task"
+    }, 
+    "ec2_url": {
+      "type": "Optional[String]", 
+      "description": "Url to use to connect to EC2 or your Eucalyptus cloud (by default the module will use EC2 endpoints). Ignored for modules where region is required. Must be specified for all other modules if region is not used. If not set then the value of the EC2_URL environment variable, if any, is used."
+    }, 
+    "operation": {
+      "type": "String", 
+      "description": "Which task operation to execute"
+    }, 
+    "validate_certs": {
+      "type": "Optional[String]", 
+      "description": "When set to \"no\", SSL certificates will not be validated for boto versions >= 2.6.0."
+    }, 
+    "overrides": {
+      "type": "Optional[String]", 
+      "description": "A dictionary of values to pass to the new instances"
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "description": "Create, Delete or Modify NFS Exports on Infinibox", 
+  "parameters": {
+    "inner_path": {
+      "type": "Optional[String]", 
+      "description": "Internal path of the export."
+    }, 
+    "client_list": {
+      "type": "Optional[String]", 
+      "description": "List of dictionaries with client entries. See examples. Check infini_export_client module to modify individual NFS client entries for export."
+    }, 
+    "name": {
+      "type": "String", 
+      "description": "Export name. Should always start with C(/). (ex. name=/data)"
+    }, 
+    "system": {
+      "type": "String", 
+      "description": "Infinibox Hostname or IPv4 Address."
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "Creates/Modifies export when present and removes when absent."
+    }, 
+    "user": {
+      "type": "Optional[String]", 
+      "description": "Infinibox User username with sufficient priveledges ( see notes )."
+    }, 
+    "filesystem": {
+      "type": "String", 
+      "description": "Name of exported file system."
+    }, 
+    "password": {
+      "type": "Optional[String]", 
+      "description": "Infinibox User password."
+    }
+  }
+}

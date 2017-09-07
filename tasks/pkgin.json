@@ -1,0 +1,33 @@
+{
+  "description": "Package manager for SmartOS, NetBSD, et al.", 
+  "parameters": {
+    "upgrade": {
+      "type": "Optional[String]", 
+      "description": "Upgrade main packages to their newer versions"
+    }, 
+    "force": {
+      "type": "Optional[String]", 
+      "description": "Force package reinstall"
+    }, 
+    "name": {
+      "type": "Optional[String]", 
+      "description": "Name of package to install/remove; multiple names may be given, separated by commas"
+    }, 
+    "full_upgrade": {
+      "type": "Optional[String]", 
+      "description": "Upgrade all packages to their newer versions"
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "Intended state of the package"
+    }, 
+    "update_cache": {
+      "type": "Optional[String]", 
+      "description": "Update repository database. Can be run with other steps or on it's own."
+    }, 
+    "clean": {
+      "type": "Optional[String]", 
+      "description": "Clean packages cache"
+    }
+  }
+}

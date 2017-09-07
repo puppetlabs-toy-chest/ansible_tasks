@@ -1,0 +1,17 @@
+{
+  "description": "Print statements during execution", 
+  "parameters": {
+    "msg": {
+      "type": "Optional[String]", 
+      "description": "The customized message that is printed. If omitted, prints a generic message."
+    }, 
+    "var": {
+      "type": "Optional[String]", 
+      "description": "A variable name to debug.  Mutually exclusive with the 'msg' option."
+    }, 
+    "verbosity": {
+      "type": "Optional[String]", 
+      "description": "A number that controls when the debug is run, if you set to 3 it will only run debug when -vvv or above"
+    }
+  }
+}

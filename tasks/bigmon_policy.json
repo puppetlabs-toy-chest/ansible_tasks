@@ -1,0 +1,49 @@
+{
+  "description": "Create and remove a bigmon out-of-band policy.", 
+  "parameters": {
+    "policy_description": {
+      "type": "Optional[String]", 
+      "description": "Description of policy."
+    }, 
+    "name": {
+      "type": "String", 
+      "description": "The name of the policy."
+    }, 
+    "access_token": {
+      "type": "Optional[String]", 
+      "description": "Bigmon access token. If this isn't set the the environment variable C(BIGSWITCH_ACCESS_TOKEN) is used."
+    }, 
+    "start_time": {
+      "type": "Optional[String]", 
+      "description": "Date the policy becomes active"
+    }, 
+    "controller": {
+      "type": "String", 
+      "description": "The controller address."
+    }, 
+    "priority": {
+      "type": "Optional[String]", 
+      "description": "A priority associated with this policy. The higher priority policy takes precedence over a lower priority."
+    }, 
+    "duration": {
+      "type": "Optional[String]", 
+      "description": "Run policy for duration duration or until delivery_packet_count packets are delivered, whichever comes first."
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "Whether the policy should be present or absent."
+    }, 
+    "action": {
+      "type": "Optional[String]", 
+      "description": "Forward matching packets to delivery interfaces, Drop is for measure rate of matching packets, but do not forward to delivery interfaces, capture packets and write to a PCAP file, or enable NetFlow generation."
+    }, 
+    "validate_certs": {
+      "type": "Optional[String]", 
+      "description": "If C(false), SSL certificates will not be validated. This should only be used on personally controlled devices using self-signed certificates."
+    }, 
+    "delivery_packet_count": {
+      "type": "Optional[String]", 
+      "description": "Run policy until delivery_packet_count packets are delivered."
+    }
+  }
+}

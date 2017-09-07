@@ -1,0 +1,17 @@
+{
+  "description": "Set owner", 
+  "parameters": {
+    "path": {
+      "type": "String", 
+      "description": "Path to be used for changing owner"
+    }, 
+    "recurse": {
+      "type": "Optional[Boolean]", 
+      "description": "Indicates if the owner should be changed recursively"
+    }, 
+    "user": {
+      "type": "String", 
+      "description": "Name to be used for changing owner"
+    }
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "description": "Wait for Ansible Tower job to finish.", 
+  "parameters": {
+    "min_interval": {
+      "type": "Optional[String]", 
+      "description": "Minimum interval in seconds, to request an update from Tower."
+    }, 
+    "job_id": {
+      "type": "String", 
+      "description": "ID of the job to monitor."
+    }, 
+    "tower_host": {
+      "type": "Optional[String]", 
+      "description": "URL to your Tower instance."
+    }, 
+    "tower_username": {
+      "type": "Optional[String]", 
+      "description": "Username for your Tower instance."
+    }, 
+    "max_interval": {
+      "type": "Optional[String]", 
+      "description": "Maximum interval in seconds, to request an update from Tower."
+    }, 
+    "timeout": {
+      "type": "Optional[String]", 
+      "description": "Maximum time in seconds to wait for a job to finish."
+    }, 
+    "tower_password": {
+      "type": "Optional[String]", 
+      "description": "Password for your Tower instance."
+    }, 
+    "tower_config_file": {
+      "type": "Optional[String]", 
+      "description": "Path to the Tower config file. See notes."
+    }, 
+    "tower_verify_ssl": {
+      "type": "Optional[String]", 
+      "description": "Dis/allow insecure connections to Tower. If C(no), SSL certificates will not be validated. This should only be used on personally controlled sites using self-signed certificates."
+    }
+  }
+}

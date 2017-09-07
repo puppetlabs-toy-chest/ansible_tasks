@@ -1,0 +1,29 @@
+{
+  "description": "create a dynamic address group", 
+  "parameters": {
+    "username": {
+      "type": "Optional[String]", 
+      "description": "username for authentication"
+    }, 
+    "dag_name": {
+      "type": "String", 
+      "description": "name of the dynamic address group"
+    }, 
+    "commit": {
+      "type": "Optional[String]", 
+      "description": "commit if changed"
+    }, 
+    "password": {
+      "type": "String", 
+      "description": "password for authentication"
+    }, 
+    "ip_address": {
+      "type": "String", 
+      "description": "IP address (or hostname) of PAN-OS device"
+    }, 
+    "dag_filter": {
+      "type": "String", 
+      "description": "dynamic filter user by the dynamic address group"
+    }
+  }
+}

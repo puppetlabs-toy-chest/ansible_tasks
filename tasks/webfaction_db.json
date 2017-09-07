@@ -1,0 +1,33 @@
+{
+  "description": "Add or remove a database on Webfaction", 
+  "parameters": {
+    "name": {
+      "type": "String", 
+      "description": "The name of the database"
+    }, 
+    "machine": {
+      "type": "Optional[String]", 
+      "description": "The machine name to use (optional for accounts with only one machine)"
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "Whether the database should exist"
+    }, 
+    "login_password": {
+      "type": "String", 
+      "description": "The webfaction password to use"
+    }, 
+    "password": {
+      "type": "Optional[String]", 
+      "description": "The password for the new database user."
+    }, 
+    "type": {
+      "type": "String", 
+      "description": "The type of database to create."
+    }, 
+    "login_name": {
+      "type": "String", 
+      "description": "The webfaction account to use"
+    }
+  }
+}

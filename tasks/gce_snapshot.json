@@ -1,0 +1,33 @@
+{
+  "description": "Create or destroy snapshots for GCE storage volumes", 
+  "parameters": {
+    "service_account_email": {
+      "type": "String", 
+      "description": "GCP service account email for the project where the instance resides"
+    }, 
+    "disks": {
+      "type": "Optional[String]", 
+      "description": "A list of disks to create snapshots for. If none is provided, all of the volumes will be snapshotted"
+    }, 
+    "instance_name": {
+      "type": "String", 
+      "description": "The GCE instance to snapshot"
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "Whether a snapshot should be C(present) or C(absent)"
+    }, 
+    "snapshot_name": {
+      "type": "Optional[String]", 
+      "description": "The name of the snapshot to manage"
+    }, 
+    "credentials_file": {
+      "type": "String", 
+      "description": "The path to the credentials file associated with the service account"
+    }, 
+    "project_id": {
+      "type": "String", 
+      "description": "The GCP project ID to use"
+    }
+  }
+}

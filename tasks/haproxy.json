@@ -1,0 +1,45 @@
+{
+  "description": "Enable, disable, and set weights for HAProxy backend servers using socket commands.", 
+  "parameters": {
+    "socket": {
+      "type": "Optional[String]", 
+      "description": "Path to the HAProxy socket file."
+    }, 
+    "weight": {
+      "type": "Optional[String]", 
+      "description": "The value passed in argument. If the value ends with the `%` sign, then the new weight will be relative to the initially configured weight. Relative weights are only permitted between 0 and 100% and absolute weights are permitted between 0 and 256."
+    }, 
+    "wait_interval": {
+      "type": "Optional[String]", 
+      "description": "Number of seconds to wait between retries."
+    }, 
+    "host": {
+      "type": "String", 
+      "description": "Name of the backend host to change."
+    }, 
+    "wait": {
+      "type": "Optional[String]", 
+      "description": "Wait until the server reports a status of 'UP' when `state=enabled`, or status of 'MAINT' when `state=disabled`."
+    }, 
+    "wait_retries": {
+      "type": "Optional[String]", 
+      "description": "Number of times to check for status after changing the state."
+    }, 
+    "state": {
+      "type": "String", 
+      "description": "Desired state of the provided backend host."
+    }, 
+    "fail_on_not_found": {
+      "type": "Optional[String]", 
+      "description": "Fail whenever trying to enable/disable a backend host that does not exist"
+    }, 
+    "shutdown_sessions": {
+      "type": "Optional[String]", 
+      "description": "When disabling a server, immediately terminate all the sessions attached to the specified server. This can be used to terminate long-running sessions after a server is put into maintenance mode."
+    }, 
+    "backend": {
+      "type": "Optional[String]", 
+      "description": "Name of the HAProxy backend pool."
+    }
+  }
+}

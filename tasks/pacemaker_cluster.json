@@ -1,0 +1,21 @@
+{
+  "description": "Manage a pacemaker cluster", 
+  "parameters": {
+    "node": {
+      "type": "Optional[String]", 
+      "description": "Specify which node of the cluster you want to manage. None == the cluster status itself, 'all' == check the status of all nodes."
+    }, 
+    "state": {
+      "type": "String", 
+      "description": "Indicate desired state of the cluster"
+    }, 
+    "force": {
+      "type": "Optional[String]", 
+      "description": "Force the change of the cluster state"
+    }, 
+    "timeout": {
+      "type": "Optional[String]", 
+      "description": "Timeout when the module should considered that the action has failed"
+    }
+  }
+}

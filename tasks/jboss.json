@@ -1,0 +1,21 @@
+{
+  "description": "deploy applications to JBoss", 
+  "parameters": {
+    "src": {
+      "type": "Optional[String]", 
+      "description": "The remote path of the application ear or war to deploy"
+    }, 
+    "deploy_path": {
+      "type": "Optional[String]", 
+      "description": "The location in the filesystem where the deployment scanner listens"
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "Whether the application should be deployed or undeployed"
+    }, 
+    "deployment": {
+      "type": "String", 
+      "description": "The name of the deployment"
+    }
+  }
+}

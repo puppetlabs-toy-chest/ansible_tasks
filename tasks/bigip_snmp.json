@@ -1,0 +1,45 @@
+{
+  "description": "Manipulate general SNMP settings on a BIG-IP.", 
+  "parameters": {
+    "agent_status_traps": {
+      "type": "Optional[String]", 
+      "description": "When C(enabled), ensures that the system sends a trap whenever the SNMP agent starts running or stops running. This is usually enabled by default on a BIG-IP."
+    }, 
+    "agent_authentication_traps": {
+      "type": "Optional[String]", 
+      "description": "When C(enabled), ensures that the system sends authentication warning traps to the trap destinations. This is usually disabled by default on a BIG-IP."
+    }, 
+    "device_warning_traps": {
+      "type": "Optional[String]", 
+      "description": "When C(enabled), ensures that the system sends device warning traps to the trap destinations. This is usually enabled by default on a BIG-IP."
+    }, 
+    "server": {
+      "type": "String", 
+      "description": "The BIG-IP host. This option can be omitted if the environment variable C(F5_SERVER) is set."
+    }, 
+    "contact": {
+      "type": "Optional[String]", 
+      "description": "Specifies the name of the person who administers the SNMP service for this system."
+    }, 
+    "user": {
+      "type": "String", 
+      "description": "The username to connect to the BIG-IP with. This user must have administrative privileges on the device. This option can be omitted if the environment variable C(F5_USER) is set."
+    }, 
+    "server_port": {
+      "type": "Optional[String]", 
+      "description": "The BIG-IP server port. This option can be omitted if the environment variable C(F5_SERVER_PORT) is set."
+    }, 
+    "password": {
+      "type": "String", 
+      "description": "The password for the user account used to connect to the BIG-IP. This option can be omitted if the environment variable C(F5_PASSWORD) is set."
+    }, 
+    "validate_certs": {
+      "type": "Optional[String]", 
+      "description": "If C(no), SSL certificates will not be validated. This should only be used on personally controlled sites using self-signed certificates. This option can be omitted if the environment variable C(F5_VALIDATE_CERTS) is set."
+    }, 
+    "location": {
+      "type": "Optional[String]", 
+      "description": "Specifies the description of this system's physical location."
+    }
+  }
+}

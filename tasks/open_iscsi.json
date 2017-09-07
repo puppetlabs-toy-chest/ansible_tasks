@@ -1,0 +1,45 @@
+{
+  "description": "Manage iscsi targets with open-iscsi", 
+  "parameters": {
+    "auto_node_startup": {
+      "type": "Optional[String]", 
+      "description": "whether the target node should be automatically connected at startup"
+    }, 
+    "target": {
+      "type": "Optional[String]", 
+      "description": "the iscsi target name"
+    }, 
+    "show_nodes": {
+      "type": "Optional[String]", 
+      "description": "whether the list of nodes in the persistent iscsi database should be returned by the module"
+    }, 
+    "node_auth": {
+      "type": "Optional[String]", 
+      "description": "discovery.sendtargets.auth.authmethod"
+    }, 
+    "node_pass": {
+      "type": "Optional[String]", 
+      "description": "discovery.sendtargets.auth.password"
+    }, 
+    "discover": {
+      "type": "Optional[String]", 
+      "description": "whether the list of target nodes on the portal should be (re)discovered and added to the persistent iscsi database. Keep in mind that iscsiadm discovery resets configurtion, like node.startup to manual, hence combined with auto_node_startup=yes will always return a changed state."
+    }, 
+    "portal": {
+      "type": "Optional[String]", 
+      "description": "the ip address of the iscsi target"
+    }, 
+    "login": {
+      "type": "Optional[String]", 
+      "description": "whether the target node should be connected"
+    }, 
+    "node_user": {
+      "type": "Optional[String]", 
+      "description": "discovery.sendtargets.auth.username"
+    }, 
+    "port": {
+      "type": "Optional[String]", 
+      "description": "the port on which the iscsi target process listens"
+    }
+  }
+}

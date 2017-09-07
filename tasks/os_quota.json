@@ -1,0 +1,185 @@
+{
+  "description": "Manage OpenStack Quotas", 
+  "parameters": {
+    "auth_type": {
+      "type": "Optional[String]", 
+      "description": "Name of the auth plugin to use. If the cloud uses something other than password authentication, the name of the plugin should be indicated here and the contents of the I(auth) parameter should be updated accordingly."
+    }, 
+    "snapshots_lvm": {
+      "type": "Optional[String]", 
+      "description": "N u m b e r   o f   L V M   s n a p s h o t s   t o   a l l o w ."
+    }, 
+    "server_groups": {
+      "type": "Optional[String]", 
+      "description": "N u m b e r   o f   s e r v e r   g r o u p s   t o   a l l o w ."
+    }, 
+    "ram": {
+      "type": "Optional[String]", 
+      "description": "M a x i m u m   a m o u n t   o f   r a m   i n   M B   t o   a l l o w ."
+    }, 
+    "snapshots": {
+      "type": "Optional[String]", 
+      "description": "N u m b e r   o f   s n a p s h o t s   t o   a l l o w ."
+    }, 
+    "instances": {
+      "type": "Optional[String]", 
+      "description": "M a x i m u m   n u m b e r   o f   i n s t a n c e s   a l l o w e d ."
+    }, 
+    "backups": {
+      "type": "Optional[String]", 
+      "description": "M a x i m u m   n u m b e r   o f   b a c k u p s   a l l o w e d ."
+    }, 
+    "fixed_ips": {
+      "type": "Optional[String]", 
+      "description": "N u m b e r   o f   f i x e d   I P ' s   t o   a l l o w ."
+    }, 
+    "port": {
+      "type": "Optional[String]", 
+      "description": "N u m b e r   o f   N e t w o r k   p o r t s   t o   a l l o w ,   t h i s   n e e d s   t o   b e   g r e a t e r   t h a n   t h e   i n s t a n c e s   l i m i t ."
+    }, 
+    "cloud": {
+      "type": "Optional[String]", 
+      "description": "Named cloud to operate against. Provides default values for I(auth) and I(auth_type). This parameter is not needed if I(auth) is provided or if OpenStack OS_* environment variables are present."
+    }, 
+    "subnet": {
+      "type": "Optional[String]", 
+      "description": "N u m b e r   o f   s u b n e t s   t o   a l l o w ."
+    }, 
+    "per_volume_gigabytes": {
+      "type": "Optional[String]", 
+      "description": "M a x i m u m   s i z e   i n   G B ' s   o f   i n d i v i d u a l   v o l u m e s ."
+    }, 
+    "network": {
+      "type": "Optional[String]", 
+      "description": "N u m b e r   o f   n e t w o r k s   t o   a l l o w ."
+    }, 
+    "floatingip": {
+      "type": "Optional[String]", 
+      "description": "N u m b e r   o f   f l o a t i n g   I P ' s   t o   a l l o w   i n   N e t w o r k ."
+    }, 
+    "availability_zone": {
+      "type": "Optional[String]", 
+      "description": "Ignored. Present for backwards compatibility"
+    }, 
+    "volumes_lvm": {
+      "type": "Optional[String]", 
+      "description": "N u m b e r   o f   L V M   v o l u m e s   t o   a l l o w ."
+    }, 
+    "floating_ips": {
+      "type": "Optional[String]", 
+      "description": "N u m b e r   o f   f l o a t i n g   I P ' s   t o   a l l o w   i n   C o m p u t e ."
+    }, 
+    "name": {
+      "type": "String", 
+      "description": "Name of the OpenStack Project to manage."
+    }, 
+    "security_group_rule": {
+      "type": "Optional[String]", 
+      "description": "N u m b e r   o f   r u l e s   p e r   s e c u r i t y   g r o u p   t o   a l l o w ."
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "A value of present sets the quota and a value of absent resets the quota to system defaults."
+    }, 
+    "injected_files": {
+      "type": "Optional[String]", 
+      "description": "N u m b e r   o f   i n j e c t e d   f i l e s   t o   a l l o w ."
+    }, 
+    "rbac_policy": {
+      "type": "Optional[String]", 
+      "description": "N u m b e r   o f   p o l i c i e s   t o   a l l o w ."
+    }, 
+    "api_timeout": {
+      "type": "Optional[String]", 
+      "description": "How long should the socket layer wait before timing out for API calls. If this is omitted, nothing will be passed to the requests library."
+    }, 
+    "injected_path_size": {
+      "type": "Optional[String]", 
+      "description": "M a x i m u m   p a t h   s i z e ."
+    }, 
+    "region_name": {
+      "type": "Optional[String]", 
+      "description": "Name of the region."
+    }, 
+    "gigabytes": {
+      "type": "Optional[String]", 
+      "description": "M a x i m u m   v o l u m e   s t o r a g e   a l l o w e d   f o r   p r o j e c t ."
+    }, 
+    "backup_gigabytes": {
+      "type": "Optional[String]", 
+      "description": "M a x i m u m   s i z e   o f   b a c k u p s   i n   G B ' s ."
+    }, 
+    "subnetpool": {
+      "type": "Optional[String]", 
+      "description": "N u m b e r   o f   s u b n e t   p o o l s   t o   a l l o w ."
+    }, 
+    "auth": {
+      "type": "Optional[String]", 
+      "description": "Dictionary containing auth information as needed by the cloud's auth plugin strategy. For the default I(password) plugin, this would contain I(auth_url), I(username), I(password), I(project_name) and any information about domains if the cloud supports them. For other plugins, this param will need to contain whatever parameters that auth plugin requires. This parameter is not needed if a named cloud is provided or OpenStack OS_* environment variables are present."
+    }, 
+    "endpoint_type": {
+      "type": "Optional[String]", 
+      "description": "Endpoint URL type to fetch from the service catalog."
+    }, 
+    "key_pairs": {
+      "type": "Optional[String]", 
+      "description": "N u m b e r   o f   k e y   p a i r s   t o   a l l o w ."
+    }, 
+    "key": {
+      "type": "Optional[String]", 
+      "description": "A path to a client key to use as part of the SSL transaction."
+    }, 
+    "router": {
+      "type": "Optional[String]", 
+      "description": "N u m b e r   o f   r o u t e r s   t o   a l l o w ."
+    }, 
+    "cacert": {
+      "type": "Optional[String]", 
+      "description": "A path to a CA Cert bundle that can be used as part of verifying SSL API requests."
+    }, 
+    "properties": {
+      "type": "Optional[String]", 
+      "description": "N u m b e r   o f   p r o p e r t i e s   t o   a l l o w ."
+    }, 
+    "wait": {
+      "type": "Optional[String]", 
+      "description": "Should ansible wait until the requested resource is complete."
+    }, 
+    "server_group_members": {
+      "type": "Optional[String]", 
+      "description": "N u m b e r   o f   s e r v e r   g r o u p   m e m b e r s   t o   a l l o w ."
+    }, 
+    "timeout": {
+      "type": "Optional[String]", 
+      "description": "How long should ansible wait for the requested resource."
+    }, 
+    "cert": {
+      "type": "Optional[String]", 
+      "description": "A path to a client certificate to use as part of the SSL transaction."
+    }, 
+    "volumes": {
+      "type": "Optional[String]", 
+      "description": "N u m b e r   o f   v o l u m e s   t o   a l l o w ."
+    }, 
+    "gigabytes_lvm": {
+      "type": "Optional[String]", 
+      "description": "M a x i m u m   s i z e   i n   G B ' s   o f   i n d i v i d u a l   l v m   v o l u m e s ."
+    }, 
+    "security_group": {
+      "type": "Optional[String]", 
+      "description": "N u m b e r   o f   s e c u r i t y   g r o u p s   t o   a l l o w ."
+    }, 
+    "cores": {
+      "type": "Optional[String]", 
+      "description": "M a x i m u m   n u m b e r   o f   C P U ' s   p e r   p r o j e c t ."
+    }, 
+    "validate_certs": {
+      "type": "Optional[String]", 
+      "description": "Whether or not SSL API requests should be verified. Before 2.3 this defaulted to True."
+    }, 
+    "injected_file_size": {
+      "type": "Optional[String]", 
+      "description": "M a x i m u m   f i l e   s i z e   i n   b y t e s ."
+    }
+  }
+}

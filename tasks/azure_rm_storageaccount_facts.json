@@ -1,0 +1,45 @@
+{
+  "description": "Get storage account facts.", 
+  "parameters": {
+    "profile": {
+      "type": "Optional[String]", 
+      "description": "Security profile found in ~/.azure/credentials file."
+    }, 
+    "name": {
+      "type": "Optional[String]", 
+      "description": "Only show results for a specific account."
+    }, 
+    "resource_group": {
+      "type": "Optional[String]", 
+      "description": "Limit results to a resource group. Required when filtering by name."
+    }, 
+    "tags": {
+      "type": "Optional[String]", 
+      "description": "Limit results by providing a list of tags. Format tags as 'key' or 'key:value'."
+    }, 
+    "ad_user": {
+      "type": "Optional[String]", 
+      "description": "Active Directory username. Use when authenticating with an Active Directory user rather than service principal."
+    }, 
+    "secret": {
+      "type": "Optional[String]", 
+      "description": "Azure client secret. Use when authenticating with a Service Principal."
+    }, 
+    "client_id": {
+      "type": "Optional[String]", 
+      "description": "Azure client ID. Use when authenticating with a Service Principal."
+    }, 
+    "subscription_id": {
+      "type": "Optional[String]", 
+      "description": "Your Azure subscription Id."
+    }, 
+    "password": {
+      "type": "Optional[String]", 
+      "description": "Active Directory user password. Use when authenticating with an Active Directory user rather than service principal."
+    }, 
+    "tenant": {
+      "type": "Optional[String]", 
+      "description": "Azure tenant ID. Use when authenticating with a Service Principal."
+    }
+  }
+}

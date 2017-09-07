@@ -1,0 +1,49 @@
+{
+  "description": "Load Rackspace Cloud Identity", 
+  "parameters": {
+    "username": {
+      "type": "Optional[String]", 
+      "description": "Rackspace username, overrides I(credentials)."
+    }, 
+    "identity_type": {
+      "type": "Optional[String]", 
+      "description": "Authentication mechanism to use, such as rackspace or keystone."
+    }, 
+    "tenant_id": {
+      "type": "Optional[String]", 
+      "description": "The tenant ID used for authentication."
+    }, 
+    "region": {
+      "type": "Optional[String]", 
+      "description": "Region to create an instance in."
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "Indicate desired state of the resource"
+    }, 
+    "verify_ssl": {
+      "type": "Optional[String]", 
+      "description": "Whether or not to require SSL validation of API endpoints."
+    }, 
+    "env": {
+      "type": "Optional[String]", 
+      "description": "Environment as configured in I(~/.pyrax.cfg), see U(https://github.com/rackspace/pyrax/blob/master/docs/getting_started.md#pyrax-configuration)."
+    }, 
+    "tenant_name": {
+      "type": "Optional[String]", 
+      "description": "The tenant name used for authentication."
+    }, 
+    "credentials": {
+      "type": "Optional[String]", 
+      "description": "File to find the Rackspace credentials in. Ignored if I(api_key) and I(username) are provided."
+    }, 
+    "api_key": {
+      "type": "Optional[String]", 
+      "description": "Rackspace API key, overrides I(credentials)."
+    }, 
+    "auth_endpoint": {
+      "type": "Optional[String]", 
+      "description": "The URI of the authentication service."
+    }
+  }
+}

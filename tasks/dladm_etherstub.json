@@ -1,0 +1,17 @@
+{
+  "description": "Manage etherstubs on Solaris/illumos systems.", 
+  "parameters": {
+    "state": {
+      "type": "Optional[String]", 
+      "description": "Create or delete Solaris/illumos etherstub."
+    }, 
+    "temporary": {
+      "type": "Optional[String]", 
+      "description": "Specifies that the etherstub is temporary. Temporary etherstubs do not persist across reboots."
+    }, 
+    "name": {
+      "type": "String", 
+      "description": "Etherstub name."
+    }
+  }
+}

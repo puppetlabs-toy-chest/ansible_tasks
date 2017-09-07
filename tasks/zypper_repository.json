@@ -1,0 +1,49 @@
+{
+  "description": "Add and remove Zypper repositories", 
+  "parameters": {
+    "priority": {
+      "type": "Optional[String]", 
+      "description": "Set priority of repository. Packages will always be installed from the repository with the smallest priority number. Needs zypper version >= 1.12.25."
+    }, 
+    "name": {
+      "type": "Optional[String]", 
+      "description": "A name for the repository. Not required when adding repofiles."
+    }, 
+    "auto_import_keys": {
+      "type": "Optional[String]", 
+      "description": "Automatically import the gpg signing key of the new or changed repository. Has an effect only if state is I(present). Has no effect on existing (unchanged) repositories or in combination with I(absent). Implies runrefresh."
+    }, 
+    "description": {
+      "type": "Optional[String]", 
+      "description": "A description of the repository"
+    }, 
+    "enabled": {
+      "type": "Optional[String]", 
+      "description": "Set repository to enabled (or disabled)."
+    }, 
+    "disable_gpg_check": {
+      "type": "Optional[String]", 
+      "description": "Whether to disable GPG signature checking of all packages. Has an effect only if state is I(present). Needs zypper version >= 1.6.2."
+    }, 
+    "repo": {
+      "type": "Optional[String]", 
+      "description": "URI of the repository or .repo file. Required when state=present."
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "A source string state."
+    }, 
+    "overwrite_multiple": {
+      "type": "Optional[String]", 
+      "description": "Overwrite multiple repository entries, if repositories with both name and URL already exist."
+    }, 
+    "runrefresh": {
+      "type": "Optional[String]", 
+      "description": "Refresh the package list of the given repository. Can be used with repo=* to refresh all repositories."
+    }, 
+    "autorefresh": {
+      "type": "Optional[String]", 
+      "description": "Enable autorefresh of the repository."
+    }
+  }
+}

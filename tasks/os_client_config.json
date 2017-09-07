@@ -1,0 +1,9 @@
+{
+  "description": "Get OpenStack Client config", 
+  "parameters": {
+    "clouds": {
+      "type": "Optional[String]", 
+      "description": "List of clouds to limit the return list to. No value means return information on all configured clouds"
+    }
+  }
+}

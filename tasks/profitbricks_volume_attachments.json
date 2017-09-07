@@ -1,0 +1,37 @@
+{
+  "description": "Attach or detach a volume.", 
+  "parameters": {
+    "datacenter": {
+      "type": "String", 
+      "description": "The datacenter in which to operate."
+    }, 
+    "subscription_user": {
+      "type": "Optional[String]", 
+      "description": "The ProfitBricks username. Overrides the PB_SUBSCRIPTION_ID environment variable."
+    }, 
+    "server": {
+      "type": "String", 
+      "description": "The name of the server you wish to detach or attach the volume."
+    }, 
+    "volume": {
+      "type": "String", 
+      "description": "The volume name or ID."
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "Indicate desired state of the resource"
+    }, 
+    "wait_timeout": {
+      "type": "Optional[String]", 
+      "description": "how long before wait gives up, in seconds"
+    }, 
+    "subscription_password": {
+      "type": "Optional[String]", 
+      "description": "THe ProfitBricks password. Overrides the PB_PASSWORD environment variable."
+    }, 
+    "wait": {
+      "type": "Optional[String]", 
+      "description": "wait for the operation to complete before returning"
+    }
+  }
+}

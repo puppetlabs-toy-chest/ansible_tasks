@@ -1,0 +1,109 @@
+{
+  "description": "CLI command to create/delete/modify a trunk.", 
+  "parameters": {
+    "pn_name": {
+      "type": "String", 
+      "description": "Specify the name for the trunk configuration."
+    }, 
+    "pn_lacp_fallback_timeout": {
+      "type": "Optional[String]", 
+      "description": "Specify the LACP fallback timeout in seconds. The range is between 30 and 60 seconds with a default value of 50 seconds."
+    }, 
+    "pn_lacp_timeout": {
+      "type": "Optional[String]", 
+      "description": "Specify the LACP time out as slow (30 seconds) or fast (4seconds). The default value is slow."
+    }, 
+    "pn_host": {
+      "type": "Optional[String]", 
+      "description": "Host facing port control setting."
+    }, 
+    "pn_port_macaddr": {
+      "type": "Optional[String]", 
+      "description": "Specify the MAC address of the port."
+    }, 
+    "pn_lacp_fallback": {
+      "type": "Optional[String]", 
+      "description": "Specify the LACP fallback mode as bundles or individual."
+    }, 
+    "pn_routing": {
+      "type": "Optional[String]", 
+      "description": "Specify if the port participates in routing on the network."
+    }, 
+    "pn_mirror_receive": {
+      "type": "Optional[String]", 
+      "description": "Specify if the configuration receives mirrored traffic."
+    }, 
+    "pn_egress_rate_limit": {
+      "type": "Optional[String]", 
+      "description": "Specify an egress port data rate limit for the configuration."
+    }, 
+    "state": {
+      "type": "String", 
+      "description": "State the action to perform. Use 'present' to create trunk, 'absent' to delete trunk and 'update' to modify trunk."
+    }, 
+    "pn_broadcast_level": {
+      "type": "Optional[String]", 
+      "description": "Specify a broadcast level in percent. The default value is 100%."
+    }, 
+    "pn_cliswitch": {
+      "type": "Optional[String]", 
+      "description": "Target switch(es) to run the cli on."
+    }, 
+    "pn_unknown_mcast_level": {
+      "type": "Optional[String]", 
+      "description": "Specify an unknown multicast level in percent. The default value is 100%."
+    }, 
+    "pn_unknown_ucast_level": {
+      "type": "Optional[String]", 
+      "description": "Specify an unknown unicast level in percent. The default value is 100%."
+    }, 
+    "pn_loopback": {
+      "type": "Optional[String]", 
+      "description": "Specify loopback if you want to use loopback."
+    }, 
+    "pn_speed": {
+      "type": "Optional[String]", 
+      "description": "Specify the port speed or disable the port."
+    }, 
+    "pn_edge_switch": {
+      "type": "Optional[String]", 
+      "description": "Specify if the switch is an edge switch."
+    }, 
+    "pn_jumbo": {
+      "type": "Optional[String]", 
+      "description": "Specify if the port can receive jumbo frames."
+    }, 
+    "pn_clipassword": {
+      "type": "Optional[String]", 
+      "description": "Provide login password if user is not root."
+    }, 
+    "pn_ports": {
+      "type": "Optional[String]", 
+      "description": "Specify the port number(s) for the link(s) to aggregate into the trunk. Required for trunk-create."
+    }, 
+    "pn_cliusername": {
+      "type": "Optional[String]", 
+      "description": "Provide login username if user is not root."
+    }, 
+    "pn_lacp_mode": {
+      "type": "Optional[String]", 
+      "description": "Specify the LACP mode for the configuration."
+    }, 
+    "pn_loopvlans": {
+      "type": "Optional[String]", 
+      "description": "Specify a list of looping vlans."
+    }, 
+    "pn_lacp_priority": {
+      "type": "Optional[String]", 
+      "description": "Specify the LACP priority. This is a number between 1 and 65535 with a default value of 32768."
+    }, 
+    "pn_pause": {
+      "type": "Optional[String]", 
+      "description": "Specify if pause frames are sent."
+    }, 
+    "pn_description": {
+      "type": "Optional[String]", 
+      "description": "Specify a description for the trunk configuration."
+    }
+  }
+}

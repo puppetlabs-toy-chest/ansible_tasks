@@ -1,0 +1,41 @@
+{
+  "description": "modify servers in CenturyLink Cloud.", 
+  "parameters": {
+    "alert_policy_name": {
+      "type": "Optional[String]", 
+      "description": "The alert policy name to be associated to the server. This is mutually exclusive with 'alert_policy_id'"
+    }, 
+    "anti_affinity_policy_name": {
+      "type": "Optional[String]", 
+      "description": "The anti affinity policy name to be set for a hyper scale server. This is mutually exclusive with 'anti_affinity_policy_id'"
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "The state to insure that the provided resources are in."
+    }, 
+    "anti_affinity_policy_id": {
+      "type": "Optional[String]", 
+      "description": "The anti affinity policy id to be set for a hyper scale server. This is mutually exclusive with 'anti_affinity_policy_name'"
+    }, 
+    "alert_policy_id": {
+      "type": "Optional[String]", 
+      "description": "The alert policy id to be associated to the server. This is mutually exclusive with 'alert_policy_name'"
+    }, 
+    "memory": {
+      "type": "Optional[String]", 
+      "description": "Memory (in GB) to set to the server."
+    }, 
+    "server_ids": {
+      "type": "String", 
+      "description": "A list of server Ids to modify."
+    }, 
+    "cpu": {
+      "type": "Optional[String]", 
+      "description": "How many CPUs to update on the server"
+    }, 
+    "wait": {
+      "type": "Optional[String]", 
+      "description": "Whether to wait for the provisioning tasks to finish before returning."
+    }
+  }
+}

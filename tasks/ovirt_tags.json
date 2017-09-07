@@ -1,0 +1,53 @@
+{
+  "description": "Module to manage tags in oVirt/RHV", 
+  "parameters": {
+    "name": {
+      "type": "String", 
+      "description": "Name of the tag to manage."
+    }, 
+    "parent": {
+      "type": "Optional[String]", 
+      "description": "Name of the parent tag."
+    }, 
+    "poll_interval": {
+      "type": "Optional[String]", 
+      "description": "Number of the seconds the module waits until another poll request on entity status is sent."
+    }, 
+    "fetch_nested": {
+      "type": "Optional[String]", 
+      "description": "If I(True) the module will fetch additional data from the API. It will fetch IDs of the VMs disks, snapshots, etc. User can configure to fetch other attributes of the nested entities by specifying C(nested_attributes)."
+    }, 
+    "nested_attributes": {
+      "type": "Optional[String]", 
+      "description": "Specifies list of the attributes which should be fetched from the API. This parameter apply only when C(fetch_nested) is I(true)."
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "Should the tag be present/absent/attached/detached. C(Note): I(attached) and I(detached) states are supported since version 2.4."
+    }, 
+    "hosts": {
+      "type": "Optional[String]", 
+      "description": "List of the hosts names, which should have assigned this tag."
+    }, 
+    "auth": {
+      "type": "String", 
+      "description": "Dictionary with values needed to create HTTP/HTTPS connection to oVirt: C(username)[I(required)] - The name of the user, something like I(admin@internal). Default value is set by I(OVIRT_USERNAME) environment variable. C(password)[I(required)] - The password of the user. Default value is set by I(OVIRT_PASSWORD) environment variable. C(url)[I(required)] - A string containing the base URL of the server, usually something like `I(https://server.example.com/ovirt-engine/api)`. Default value is set by I(OVIRT_URL) environment variable. C(token) - Token to be used instead of login with username/password. Default value is set by I(OVIRT_TOKEN) environment variable. C(insecure) - A boolean flag that indicates if the server TLS certificate and host name should be checked. C(ca_file) - A PEM file containing the trusted CA certificates. The certificate presented by the server will be verified using these CA certificates. If `C(ca_file)` parameter is not set, system wide CA certificate store is used. Default value is set by I(OVIRT_CAFILE) environment variable. C(kerberos) - A boolean flag indicating if Kerberos authentication should be used instead of the default basic authentication."
+    }, 
+    "timeout": {
+      "type": "Optional[String]", 
+      "description": "The amount of time in seconds the module should wait for the instance to get into desired state."
+    }, 
+    "wait": {
+      "type": "Optional[String]", 
+      "description": "I(True) if the module should wait for the entity to get into desired state."
+    }, 
+    "vms": {
+      "type": "Optional[String]", 
+      "description": "List of the VMs names, which should have assigned this tag."
+    }, 
+    "description": {
+      "type": "Optional[String]", 
+      "description": "Description of the tag to manage."
+    }
+  }
+}

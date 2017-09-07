@@ -1,0 +1,53 @@
+{
+  "description": "Installs packages using chocolatey", 
+  "parameters": {
+    "upgrade": {
+      "type": "Optional[String]", 
+      "description": "If package is already installed it, try to upgrade to the latest version or to the specified version. As of Ansible v2.3 this is deprecated, set parameter C(state) to \"latest\" for the same result."
+    }, 
+    "force": {
+      "type": "Optional[String]", 
+      "description": "Forces install of the package (even if it already exists). Using C(force) will cause ansible to always report that a change was made."
+    }, 
+    "name": {
+      "type": "String", 
+      "description": "Name of the package to be installed."
+    }, 
+    "ignore_checksums": {
+      "type": "Optional[String]", 
+      "description": "Ignore checksums altogether."
+    }, 
+    "allow_empty_checksums": {
+      "type": "Optional[String]", 
+      "description": "Allow empty checksums to be used."
+    }, 
+    "install_args": {
+      "type": "Optional[String]", 
+      "description": "Arguments to pass to the native installer."
+    }, 
+    "source": {
+      "type": "Optional[String]", 
+      "description": "Specify source rather than using default chocolatey repository."
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "State of the package on the system."
+    }, 
+    "version": {
+      "type": "Optional[String]", 
+      "description": "Specific version of the package to be installed. Ignored when C(state) is set to \"absent\"."
+    }, 
+    "params": {
+      "type": "Optional[String]", 
+      "description": "Parameters to pass to the package"
+    }, 
+    "ignore_dependencies": {
+      "type": "Optional[String]", 
+      "description": "Ignore dependencies, only install/upgrade the package itself."
+    }, 
+    "timeout": {
+      "type": "Optional[String]", 
+      "description": "The time to allow chocolatey to finish before timing out."
+    }
+  }
+}

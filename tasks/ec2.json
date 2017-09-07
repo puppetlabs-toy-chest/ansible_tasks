@@ -1,0 +1,173 @@
+{
+  "description": "create, terminate, start or stop an instance in ec2", 
+  "parameters": {
+    "kernel": {
+      "type": "Optional[String]", 
+      "description": "kernel I(eki) to use for the instance"
+    }, 
+    "image": {
+      "type": "String", 
+      "description": "I(ami) ID to use for the instance"
+    }, 
+    "user_data": {
+      "type": "Optional[String]", 
+      "description": "opaque blob of data which is made available to the ec2 instance"
+    }, 
+    "group": {
+      "type": "Optional[String]", 
+      "description": "security group (or list of groups) to use with the instance"
+    }, 
+    "count_tag": {
+      "type": "Optional[String]", 
+      "description": "Used with 'exact_count' to determine how many nodes based on a specific tag criteria should be running. This can be expressed in multiple ways and is shown in the EXAMPLES section.  For instance, one can request 25 servers that are tagged with \"class=webserver\". The specified tag must already exist or be passed in as the 'instance_tags' option."
+    }, 
+    "private_ip": {
+      "type": "Optional[String]", 
+      "description": "the private ip address to assign the instance (from the vpc subnet)"
+    }, 
+    "spot_type": {
+      "type": "Optional[String]", 
+      "description": "Type of spot request; one of \"one-time\" or \"persistent\". Defaults to \"one-time\" if not supplied."
+    }, 
+    "ec2_url": {
+      "type": "Optional[String]", 
+      "description": "Url to use to connect to EC2 or your Eucalyptus cloud (by default the module will use EC2 endpoints). Ignored for modules where region is required. Must be specified for all other modules if region is not used. If not set then the value of the EC2_URL environment variable, if any, is used."
+    }, 
+    "instance_initiated_shutdown_behavior": {
+      "type": "Optional[String]", 
+      "description": "Set whether AWS will Stop or Terminate an instance on shutdown"
+    }, 
+    "id": {
+      "type": "Optional[String]", 
+      "description": "identifier for this instance or set of instances, so that the module will be idempotent with respect to EC2 instances. This identifier is valid for at least 24 hours after the termination of the instance, and should not be reused for another call later on. For details, see the description of client token at U(http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html)."
+    }, 
+    "source_dest_check": {
+      "type": "Optional[String]", 
+      "description": "Enable or Disable the Source/Destination checks (for NAT instances and Virtual Routers)"
+    }, 
+    "aws_secret_key": {
+      "type": "Optional[String]", 
+      "description": "AWS secret key. If not set then the value of the AWS_SECRET_ACCESS_KEY, AWS_SECRET_KEY, or EC2_SECRET_KEY environment variable is used."
+    }, 
+    "spot_wait_timeout": {
+      "type": "Optional[String]", 
+      "description": "how long to wait for the spot instance request to be fulfilled"
+    }, 
+    "monitoring": {
+      "type": "Optional[String]", 
+      "description": "enable detailed monitoring (CloudWatch) for instance"
+    }, 
+    "zone": {
+      "type": "Optional[String]", 
+      "description": "AWS availability zone in which to launch the instance"
+    }, 
+    "exact_count": {
+      "type": "Optional[String]", 
+      "description": "An integer value which indicates how many instances that match the 'count_tag' parameter should be running. Instances are either created or terminated based on this value."
+    }, 
+    "ebs_optimized": {
+      "type": "Optional[String]", 
+      "description": "whether instance is using optimized EBS volumes, see U(http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSOptimized.html)"
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "create or terminate instances"
+    }, 
+    "placement_group": {
+      "type": "Optional[String]", 
+      "description": "placement group for the instance when using EC2 Clustered Compute"
+    }, 
+    "spot_launch_group": {
+      "type": "Optional[String]", 
+      "description": "Launch group for spot request, see U(http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/how-spot-instances-work.html#spot-launch-group)"
+    }, 
+    "ramdisk": {
+      "type": "Optional[String]", 
+      "description": "ramdisk I(eri) to use for the instance"
+    }, 
+    "key_name": {
+      "type": "Optional[String]", 
+      "description": "key pair to use on the instance"
+    }, 
+    "vpc_subnet_id": {
+      "type": "Optional[String]", 
+      "description": "the subnet ID in which to launch the instance (VPC)"
+    }, 
+    "instance_ids": {
+      "type": "Optional[String]", 
+      "description": "list of instance ids, currently used for states: absent, running, stopped"
+    }, 
+    "tenancy": {
+      "type": "Optional[String]", 
+      "description": "An instance with a tenancy of \"dedicated\" runs on single-tenant hardware and can only be launched into a VPC. Note that to use dedicated tenancy you MUST specify a vpc_subnet_id as well. Dedicated tenancy is not available for EC2 \"micro\" instances."
+    }, 
+    "profile": {
+      "type": "Optional[String]", 
+      "description": "Uses a boto profile. Only works with boto >= 2.24.0."
+    }, 
+    "assign_public_ip": {
+      "type": "Optional[String]", 
+      "description": "when provisioning within vpc, assign a public IP address. Boto library must be 2.13.0+"
+    }, 
+    "spot_price": {
+      "type": "Optional[String]", 
+      "description": "Maximum spot price to bid, If not set a regular on-demand instance is requested. A spot request is made with this maximum bid. When it is filled, the instance is started."
+    }, 
+    "wait": {
+      "type": "Optional[String]", 
+      "description": "wait for the instance to reach its desired state before returning.  Does not wait for SSH, see 'wait_for' example for details."
+    }, 
+    "count": {
+      "type": "Optional[String]", 
+      "description": "number of instances to launch"
+    }, 
+    "aws_access_key": {
+      "type": "Optional[String]", 
+      "description": "AWS access key. If not set then the value of the AWS_ACCESS_KEY_ID, AWS_ACCESS_KEY or EC2_ACCESS_KEY environment variable is used."
+    }, 
+    "security_token": {
+      "type": "Optional[String]", 
+      "description": "AWS STS security token. If not set then the value of the AWS_SECURITY_TOKEN or EC2_SECURITY_TOKEN environment variable is used."
+    }, 
+    "instance_profile_name": {
+      "type": "Optional[String]", 
+      "description": "Name of the IAM instance profile to use. Boto library must be 2.5.0+"
+    }, 
+    "region": {
+      "type": "Optional[String]", 
+      "description": "The AWS region to use.  Must be specified if ec2_url is not used. If not specified then the value of the EC2_REGION environment variable, if any, is used. See U(http://docs.aws.amazon.com/general/latest/gr/rande.html#ec2_region)"
+    }, 
+    "network_interfaces": {
+      "type": "Optional[String]", 
+      "description": "A list of existing network interfaces to attach to the instance at launch. When specifying existing network interfaces, none of the assign_public_ip, private_ip, vpc_subnet_id, group, or group_id parameters may be used. (Those parameters are for creating a new network interface at launch.)"
+    }, 
+    "termination_protection": {
+      "type": "Optional[String]", 
+      "description": "Enable or Disable the Termination Protection"
+    }, 
+    "instance_type": {
+      "type": "String", 
+      "description": "instance type to use for the instance, see U(http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html)"
+    }, 
+    "wait_timeout": {
+      "type": "Optional[String]", 
+      "description": "how long before wait gives up, in seconds"
+    }, 
+    "volumes": {
+      "type": "Optional[String]", 
+      "description": "a list of hash/dictionaries of volumes to add to the new instance; '[{\"key\":\"value\", \"key\":\"value\"}]'; keys allowed are - device_name (str; required), delete_on_termination (bool; False), device_type (deprecated), ephemeral (str), encrypted (bool; False), snapshot (str), volume_type (str), iops (int) - device_type is deprecated use volume_type, iops must be set when volume_type='io1', ephemeral and snapshot are mutually exclusive."
+    }, 
+    "instance_tags": {
+      "type": "Optional[String]", 
+      "description": "a hash/dictionary of tags to add to the new instance or for starting/stopping instance by tag; '{\"key\":\"value\"}' and '{\"key\":\"value\",\"key\":\"value\"}'"
+    }, 
+    "group_id": {
+      "type": "Optional[String]", 
+      "description": "security group id (or list of ids) to use with the instance"
+    }, 
+    "validate_certs": {
+      "type": "Optional[String]", 
+      "description": "When set to \"no\", SSL certificates will not be validated for boto versions >= 2.6.0."
+    }
+  }
+}

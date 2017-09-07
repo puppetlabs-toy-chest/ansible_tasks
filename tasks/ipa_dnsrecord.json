@@ -1,0 +1,49 @@
+{
+  "description": "Manage FreeIPA DNS records", 
+  "parameters": {
+    "ipa_port": {
+      "type": "Optional[String]", 
+      "description": "P o r t   o f   I P A   s e r v e r"
+    }, 
+    "record_name": {
+      "type": "String", 
+      "description": "The DNS record name to manage."
+    }, 
+    "ipa_prot": {
+      "type": "Optional[String]", 
+      "description": "P r o t o c o l   u s e d   b y   I P A   s e r v e r"
+    }, 
+    "record_ip": {
+      "type": "String", 
+      "description": "Manage DNS record name with this IP address."
+    }, 
+    "record_type": {
+      "type": "Optional[String]", 
+      "description": "The type of DNS record name Currently, 'A', 'AAAA' is supported"
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "S t a t e   t o   e n s u r e"
+    }, 
+    "ipa_host": {
+      "type": "Optional[String]", 
+      "description": "I P   o r   h o s t n a m e   o f   I P A   s e r v e r"
+    }, 
+    "ipa_user": {
+      "type": "Optional[String]", 
+      "description": "A d m i n i s t r a t i v e   a c c o u n t   u s e d   o n   I P A   s e r v e r"
+    }, 
+    "ipa_pass": {
+      "type": "String", 
+      "description": "P a s s w o r d   o f   a d m i n i s t r a t i v e   u s e r"
+    }, 
+    "zone_name": {
+      "type": "String", 
+      "description": "The DNS zone name to which DNS record needs to be managed."
+    }, 
+    "validate_certs": {
+      "type": "Optional[String]", 
+      "description": "This only applies if C(ipa_prot) is I(https). If set to C(no), the SSL certificates will not be validated. This should only set to C(no) used on personally controlled sites using self-signed certificates."
+    }
+  }
+}

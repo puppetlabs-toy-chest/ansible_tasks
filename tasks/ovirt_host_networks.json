@@ -1,0 +1,61 @@
+{
+  "description": "Module to manage host networks in oVirt/RHV", 
+  "parameters": {
+    "name": {
+      "type": "String", 
+      "description": "Name of the host to manage networks for."
+    }, 
+    "labels": {
+      "type": "Optional[String]", 
+      "description": "List of names of the network label to be assigned to bond or interface."
+    }, 
+    "poll_interval": {
+      "type": "Optional[String]", 
+      "description": "Number of the seconds the module waits until another poll request on entity status is sent."
+    }, 
+    "fetch_nested": {
+      "type": "Optional[String]", 
+      "description": "If I(True) the module will fetch additional data from the API. It will fetch IDs of the VMs disks, snapshots, etc. User can configure to fetch other attributes of the nested entities by specifying C(nested_attributes)."
+    }, 
+    "nested_attributes": {
+      "type": "Optional[String]", 
+      "description": "Specifies list of the attributes which should be fetched from the API. This parameter apply only when C(fetch_nested) is I(true)."
+    }, 
+    "networks": {
+      "type": "Optional[String]", 
+      "description": "List of dictionary describing networks to be attached to interface or bond: C(name) - Name of the logical network to be assigned to bond or interface. C(boot_protocol) - Boot protocol one of the I(none), I(static) or I(dhcp). C(address) - IP address in case of I(static) boot protocol is used. C(prefix) - Routing prefix in case of I(static) boot protocol is used. C(gateway) - Gateway in case of I(static) boot protocol is used. C(version) - IP version. Either v4 or v6. Default is v4."
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "Should the host be present/absent."
+    }, 
+    "auth": {
+      "type": "String", 
+      "description": "Dictionary with values needed to create HTTP/HTTPS connection to oVirt: C(username)[I(required)] - The name of the user, something like I(admin@internal). Default value is set by I(OVIRT_USERNAME) environment variable. C(password)[I(required)] - The password of the user. Default value is set by I(OVIRT_PASSWORD) environment variable. C(url)[I(required)] - A string containing the base URL of the server, usually something like `I(https://server.example.com/ovirt-engine/api)`. Default value is set by I(OVIRT_URL) environment variable. C(token) - Token to be used instead of login with username/password. Default value is set by I(OVIRT_TOKEN) environment variable. C(insecure) - A boolean flag that indicates if the server TLS certificate and host name should be checked. C(ca_file) - A PEM file containing the trusted CA certificates. The certificate presented by the server will be verified using these CA certificates. If `C(ca_file)` parameter is not set, system wide CA certificate store is used. Default value is set by I(OVIRT_CAFILE) environment variable. C(kerberos) - A boolean flag indicating if Kerberos authentication should be used instead of the default basic authentication."
+    }, 
+    "timeout": {
+      "type": "Optional[String]", 
+      "description": "The amount of time in seconds the module should wait for the instance to get into desired state."
+    }, 
+    "interface": {
+      "type": "Optional[String]", 
+      "description": "Name of the network interface where logical network should be attached."
+    }, 
+    "wait": {
+      "type": "Optional[String]", 
+      "description": "I(True) if the module should wait for the entity to get into desired state."
+    }, 
+    "save": {
+      "type": "Optional[String]", 
+      "description": "If I(true) network configuration will be persistent, by default they are temporary."
+    }, 
+    "check": {
+      "type": "Optional[String]", 
+      "description": "If I(true) verify connectivity between host and engine. Network configuration changes will be rolled back if connectivity between engine and the host is lost after changing network configuration."
+    }, 
+    "bond": {
+      "type": "Optional[String]", 
+      "description": "Dictionary describing network bond: C(name) - Bond name. C(mode) - Bonding mode. C(interfaces) - List of interfaces to create a bond."
+    }
+  }
+}

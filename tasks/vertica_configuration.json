@@ -1,0 +1,33 @@
+{
+  "description": "Updates Vertica configuration parameters.", 
+  "parameters": {
+    "name": {
+      "type": "String", 
+      "description": "Name of the parameter to update."
+    }, 
+    "login_user": {
+      "type": "Optional[String]", 
+      "description": "The username used to authenticate with."
+    }, 
+    "db": {
+      "type": "Optional[String]", 
+      "description": "Name of the Vertica database."
+    }, 
+    "value": {
+      "type": "String", 
+      "description": "Value of the parameter to be set."
+    }, 
+    "cluster": {
+      "type": "Optional[String]", 
+      "description": "Name of the Vertica cluster."
+    }, 
+    "login_password": {
+      "type": "Optional[String]", 
+      "description": "The password used to authenticate with."
+    }, 
+    "port": {
+      "type": "Optional[String]", 
+      "description": "Vertica cluster port to connect to."
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "description": "Obtain status of asynchronous task", 
+  "parameters": {
+    "jid": {
+      "type": "String", 
+      "description": "Job or task identifier"
+    }, 
+    "mode": {
+      "type": "Optional[String]", 
+      "description": "if C(status), obtain the status; if C(cleanup), clean up the async job cache located in C(~/.ansible_async/) for the specified job I(jid)."
+    }
+  }
+}

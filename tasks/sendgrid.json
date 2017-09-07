@@ -1,0 +1,53 @@
+{
+  "description": "Sends an email with the SendGrid API", 
+  "parameters": {
+    "username": {
+      "type": "Optional[String]", 
+      "description": "username for logging into the SendGrid account. Since 2.2 it is only required if api_key is not supplied."
+    }, 
+    "password": {
+      "type": "Optional[String]", 
+      "description": "password that corresponds to the username Since 2.2 it is only required if api_key is not supplied."
+    }, 
+    "from_name": {
+      "type": "Optional[String]", 
+      "description": "the name you want to appear in the from field, i.e 'John Doe'"
+    }, 
+    "from_address": {
+      "type": "String", 
+      "description": "the address in the \"from\" field for the email"
+    }, 
+    "cc": {
+      "type": "Optional[String]", 
+      "description": "a list of email addresses to cc"
+    }, 
+    "bcc": {
+      "type": "Optional[String]", 
+      "description": "a list of email addresses to bcc"
+    }, 
+    "attachments": {
+      "type": "Optional[String]", 
+      "description": "a list of relative or explicit paths of files you want to attach (7MB limit as per SendGrid docs)"
+    }, 
+    "headers": {
+      "type": "Optional[String]", 
+      "description": "a dict to pass on as headers"
+    }, 
+    "to_addresses": {
+      "type": "String", 
+      "description": "a list with one or more recipient email addresses"
+    }, 
+    "api_key": {
+      "type": "Optional[String]", 
+      "description": "sendgrid API key to use instead of username/password"
+    }, 
+    "html_body": {
+      "type": "Optional[String]", 
+      "description": "whether the body is html content that should be rendered"
+    }, 
+    "subject": {
+      "type": "String", 
+      "description": "the desired subject for the email"
+    }
+  }
+}

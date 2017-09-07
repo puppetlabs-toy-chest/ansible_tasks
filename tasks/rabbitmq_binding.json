@@ -1,0 +1,49 @@
+{
+  "description": "This module manages rabbitMQ bindings", 
+  "parameters": {
+    "login_port": {
+      "type": "Optional[String]", 
+      "description": "rabbitMQ management api port"
+    }, 
+    "name": {
+      "type": "String", 
+      "description": "source exchange to create binding on"
+    }, 
+    "login_user": {
+      "type": "Optional[String]", 
+      "description": "rabbitMQ user for connection"
+    }, 
+    "login_host": {
+      "type": "Optional[String]", 
+      "description": "rabbitMQ host for connection"
+    }, 
+    "destination": {
+      "type": "String", 
+      "description": "destination exchange or queue for the binding"
+    }, 
+    "routing_key": {
+      "type": "Optional[String]", 
+      "description": "routing key for the binding default is"
+    }, 
+    "vhost": {
+      "type": "Optional[String]", 
+      "description": "rabbitMQ virtual host default vhost is /"
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "Whether the exchange should be present or absent Only present implemented atm"
+    }, 
+    "arguments": {
+      "type": "Optional[String]", 
+      "description": "extra arguments for exchange. If defined this argument is a key/value dictionary"
+    }, 
+    "login_password": {
+      "type": "Optional[String]", 
+      "description": "rabbitMQ password for connection"
+    }, 
+    "destination_type": {
+      "type": "String", 
+      "description": "Either queue or exchange"
+    }
+  }
+}

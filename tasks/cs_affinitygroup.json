@@ -1,0 +1,61 @@
+{
+  "description": "Manages affinity groups on Apache CloudStack based clouds.", 
+  "parameters": {
+    "account": {
+      "type": "Optional[String]", 
+      "description": "Account the affinity group is related to."
+    }, 
+    "poll_async": {
+      "type": "Optional[String]", 
+      "description": "Poll async jobs until job has finished."
+    }, 
+    "api_url": {
+      "type": "Optional[String]", 
+      "description": "URL of the CloudStack API e.g. https://cloud.example.com/client/api."
+    }, 
+    "api_http_method": {
+      "type": "Optional[String]", 
+      "description": "HTTP method used."
+    }, 
+    "api_secret": {
+      "type": "Optional[String]", 
+      "description": "Secret key of the CloudStack API."
+    }, 
+    "api_timeout": {
+      "type": "Optional[String]", 
+      "description": "HTTP timeout."
+    }, 
+    "affinty_type": {
+      "type": "Optional[String]", 
+      "description": "Type of the affinity group. If not specified, first found affinity type is used."
+    }, 
+    "api_region": {
+      "type": "Optional[String]", 
+      "description": "Name of the ini section in the C(cloustack.ini) file."
+    }, 
+    "name": {
+      "type": "String", 
+      "description": "Name of the affinity group."
+    }, 
+    "project": {
+      "type": "Optional[String]", 
+      "description": "Name of the project the affinity group is related to."
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "State of the affinity group."
+    }, 
+    "domain": {
+      "type": "Optional[String]", 
+      "description": "Domain the affinity group is related to."
+    }, 
+    "api_key": {
+      "type": "Optional[String]", 
+      "description": "API key of the CloudStack API."
+    }, 
+    "description": {
+      "type": "Optional[String]", 
+      "description": "Description of the affinity group."
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "description": "Send a message to typetalk", 
+  "parameters": {
+    "topic": {
+      "type": "String", 
+      "description": "topic id to post message"
+    }, 
+    "client_secret": {
+      "type": "String", 
+      "description": "OAuth2 client secret"
+    }, 
+    "client_id": {
+      "type": "String", 
+      "description": "OAuth2 client ID"
+    }, 
+    "msg": {
+      "type": "String", 
+      "description": "message body"
+    }
+  }
+}

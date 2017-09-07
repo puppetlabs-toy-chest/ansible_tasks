@@ -1,0 +1,121 @@
+{
+  "description": "create / delete / stop / restart an instance in Linode Public Cloud", 
+  "parameters": {
+    "alert_diskio_enabled": {
+      "type": "Optional[String]", 
+      "description": "Set status of receiving disk IO alerts."
+    }, 
+    "payment_term": {
+      "type": "Optional[String]", 
+      "description": "payment term to use for the instance (payment term in months)"
+    }, 
+    "alert_bwquota_enabled": {
+      "type": "Optional[String]", 
+      "description": "Set status of bandwidth quota alerts as percentage of network transfer quota."
+    }, 
+    "private_ip": {
+      "type": "Optional[String]", 
+      "description": "Add private IPv4 address when Linode is created."
+    }, 
+    "watchdog": {
+      "type": "Optional[String]", 
+      "description": "Set status of Lassie watchdog."
+    }, 
+    "ssh_pub_key": {
+      "type": "Optional[String]", 
+      "description": "SSH public key applied to root user"
+    }, 
+    "backupweeklyday": {
+      "type": "Optional[String]", 
+      "description": "Integer value for what day of the week to store weekly backups."
+    }, 
+    "displaygroup": {
+      "type": "Optional[String]", 
+      "description": "Add the instance to a Display Group in Linode Manager"
+    }, 
+    "alert_bwout_enabled": {
+      "type": "Optional[String]", 
+      "description": "Set status of bandwidth out alerts."
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "Indicate desired state of the resource"
+    }, 
+    "swap": {
+      "type": "Optional[String]", 
+      "description": "swap size in MB"
+    }, 
+    "api_key": {
+      "type": "Optional[String]", 
+      "description": "Linode API key"
+    }, 
+    "additional_disks": {
+      "type": "Optional[String]", 
+      "description": "L i s t   o f   d i c t i o n a r i e s   f o r   c r e a t i n g   a d d i t i o n a l   d i s k s   t h a t   a r e   a d d e d   t o   t h e   L i n o d e   c o n f i g u r a t i o n   s e t t i n g s .   D i c t i o n a r y   t a k e s   S i z e ,   L a b e l ,   T y p e .   S i z e   i s   i n   M B . \n"
+    }, 
+    "alert_bwin_enabled": {
+      "type": "Optional[String]", 
+      "description": "Set status of bandwidth in alerts."
+    }, 
+    "kernel_id": {
+      "type": "Optional[String]", 
+      "description": "kernel to use for the instance (Linode Kernel)"
+    }, 
+    "alert_bwin_threshold": {
+      "type": "Optional[String]", 
+      "description": "Set threshold in MB of bandwidth in alerts."
+    }, 
+    "alert_cpu_enabled": {
+      "type": "Optional[String]", 
+      "description": "Set status of receiving CPU usage alerts."
+    }, 
+    "linode_id": {
+      "type": "Optional[String]", 
+      "description": "Unique ID of a linode server"
+    }, 
+    "alert_diskio_threshold": {
+      "type": "Optional[String]", 
+      "description": "Set threshold for average IO ops/sec over 2 hour period."
+    }, 
+    "wait_timeout": {
+      "type": "Optional[String]", 
+      "description": "how long before wait gives up, in seconds"
+    }, 
+    "plan": {
+      "type": "Optional[String]", 
+      "description": "plan to use for the instance (Linode plan)"
+    }, 
+    "password": {
+      "type": "Optional[String]", 
+      "description": "root password to apply to a new server (auto generated if missing)"
+    }, 
+    "wait": {
+      "type": "Optional[String]", 
+      "description": "wait for the instance to be in state 'running' before returning"
+    }, 
+    "datacenter": {
+      "type": "Optional[String]", 
+      "description": "datacenter to create an instance in (Linode Datacenter)"
+    }, 
+    "name": {
+      "type": "Optional[String]", 
+      "description": "Name to give the instance (alphanumeric, dashes, underscore) To keep sanity on the Linode Web Console, name is prepended with LinodeID_"
+    }, 
+    "alert_cpu_threshold": {
+      "type": "Optional[String]", 
+      "description": "Set percentage threshold for receiving CPU usage alerts. Each CPU core adds 100% to total."
+    }, 
+    "distribution": {
+      "type": "Optional[String]", 
+      "description": "distribution to use for the instance (Linode Distribution)"
+    }, 
+    "alert_bwquota_threshold": {
+      "type": "Optional[String]", 
+      "description": "Set threshold in MB of bandwidth quota alerts."
+    }, 
+    "alert_bwout_threshold": {
+      "type": "Optional[String]", 
+      "description": "Set threshold in MB of bandwidth out alerts."
+    }
+  }
+}

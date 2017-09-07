@@ -1,0 +1,21 @@
+{
+  "description": "Create or Delete Anti Affinity Policies at CenturyLink Cloud.", 
+  "parameters": {
+    "state": {
+      "type": "Optional[String]", 
+      "description": "Whether to create or delete the policy."
+    }, 
+    "wait": {
+      "type": "Optional[String]", 
+      "description": "Whether to wait for the tasks to finish before returning."
+    }, 
+    "location": {
+      "type": "String", 
+      "description": "Datacenter in which the policy lives/should live."
+    }, 
+    "name": {
+      "type": "String", 
+      "description": "The name of the Anti Affinity Policy."
+    }
+  }
+}

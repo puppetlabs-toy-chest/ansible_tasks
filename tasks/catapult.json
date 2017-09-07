@@ -1,0 +1,33 @@
+{
+  "description": "Send a sms / mms using the catapult bandwidth api", 
+  "parameters": {
+    "src": {
+      "type": "String", 
+      "description": "One of your catapult telephone numbers the message should come from (must be in E.164 format, like C(+19195551212))."
+    }, 
+    "user_id": {
+      "type": "String", 
+      "description": "User Id from Api account page."
+    }, 
+    "dest": {
+      "type": "String", 
+      "description": "The phone number or numbers the message should be sent to (must be in E.164 format, like C(+19195551212))."
+    }, 
+    "media": {
+      "type": "Optional[String]", 
+      "description": "For MMS messages, a media url to the location of the media to be sent with the message."
+    }, 
+    "api_secret": {
+      "type": "String", 
+      "description": "Api Secret from Api account page."
+    }, 
+    "api_token": {
+      "type": "String", 
+      "description": "Api Token from Api account page."
+    }, 
+    "msg": {
+      "type": "String", 
+      "description": "The contents of the text message (must be 2048 characters or less)."
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "description": "Add or remove a static route.", 
+  "parameters": {
+    "metric": {
+      "type": "Optional[String]", 
+      "description": "Metric used by the static route."
+    }, 
+    "destination": {
+      "type": "String", 
+      "description": "Destination IP address in CIDR format (ip address/prefix lenght)"
+    }, 
+    "gateway": {
+      "type": "Optional[String]", 
+      "description": "Gateway used by the static route. If gateway is not provided it will be set to \"0.0.0.0\""
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "If present, it adds a network static route. If absent, it removes a network static route."
+    }
+  }
+}

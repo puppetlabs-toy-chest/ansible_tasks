@@ -1,0 +1,97 @@
+{
+  "description": "Manages ISO images on Apache CloudStack based clouds.", 
+  "parameters": {
+    "is_featured": {
+      "type": "Optional[String]", 
+      "description": "Register the ISO to be featured. Only used if C(state) is present."
+    }, 
+    "api_http_method": {
+      "type": "Optional[String]", 
+      "description": "HTTP method used."
+    }, 
+    "iso_filter": {
+      "type": "Optional[String]", 
+      "description": "Name of the filter used to search for the ISO."
+    }, 
+    "domain": {
+      "type": "Optional[String]", 
+      "description": "Domain the ISO is related to."
+    }, 
+    "poll_async": {
+      "type": "Optional[String]", 
+      "description": "Poll async jobs until job has finished."
+    }, 
+    "api_url": {
+      "type": "Optional[String]", 
+      "description": "URL of the CloudStack API e.g. https://cloud.example.com/client/api."
+    }, 
+    "zone": {
+      "type": "Optional[String]", 
+      "description": "Name of the zone you wish the ISO to be registered or deleted from. If not specified, first zone found will be used."
+    }, 
+    "is_dynamically_scalable": {
+      "type": "Optional[String]", 
+      "description": "Register the ISO having XS/VMWare tools installed inorder to support dynamic scaling of VM cpu/memory. Only used if C(state) is present."
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "State of the ISO."
+    }, 
+    "is_ready": {
+      "type": "Optional[String]", 
+      "description": "This flag is used for searching existing ISOs. If set to C(true), it will only list ISO ready for deployment e.g. successfully downloaded and installed. Recommended to set it to C(false)."
+    }, 
+    "api_key": {
+      "type": "Optional[String]", 
+      "description": "API key of the CloudStack API."
+    }, 
+    "tags": {
+      "type": "Optional[String]", 
+      "description": "List of tags. Tags are a list of dictionaries having keys C(key) and C(value). To delete all tags, set a empty list e.g. C(tags: [])."
+    }, 
+    "api_secret": {
+      "type": "Optional[String]", 
+      "description": "Secret key of the CloudStack API."
+    }, 
+    "api_timeout": {
+      "type": "Optional[String]", 
+      "description": "HTTP timeout."
+    }, 
+    "is_public": {
+      "type": "Optional[String]", 
+      "description": "Register the ISO to be publicly available to all users. Only used if C(state) is present."
+    }, 
+    "account": {
+      "type": "Optional[String]", 
+      "description": "Account the ISO is related to."
+    }, 
+    "name": {
+      "type": "String", 
+      "description": "Name of the ISO."
+    }, 
+    "url": {
+      "type": "Optional[String]", 
+      "description": "URL where the ISO can be downloaded from. Required if C(state) is present."
+    }, 
+    "checksum": {
+      "type": "Optional[String]", 
+      "description": "The MD5 checksum value of this ISO. If set, we search by checksum instead of name."
+    }, 
+    "api_region": {
+      "type": "Optional[String]", 
+      "description": "Name of the ini section in the C(cloustack.ini) file."
+    }, 
+    "project": {
+      "type": "Optional[String]", 
+      "description": "Name of the project the ISO to be registered in."
+    }, 
+    "bootable": {
+      "type": "Optional[String]", 
+      "description": "Register the ISO to be bootable. Only used if C(state) is present."
+    }, 
+    "os_type": {
+      "type": "Optional[String]", 
+      "description": "Name of the OS that best represents the OS of this ISO. If the iso is bootable this parameter needs to be passed. Required if C(state) is present."
+    }
+  }
+}

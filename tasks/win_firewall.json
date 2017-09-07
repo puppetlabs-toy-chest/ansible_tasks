@@ -1,0 +1,13 @@
+{
+  "description": "Enable or disable the Windows Firewall", 
+  "parameters": {
+    "state": {
+      "type": "Optional[String]", 
+      "description": "Set state of firewall for given profile."
+    }, 
+    "profiles": {
+      "type": "Optional[String]", 
+      "description": "Specify one or more profiles to change."
+    }
+  }
+}

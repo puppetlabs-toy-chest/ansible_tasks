@@ -1,0 +1,13 @@
+{
+  "description": "Manage Icinga2 feature", 
+  "parameters": {
+    "state": {
+      "type": "Optional[String]", 
+      "description": "Apply feature state."
+    }, 
+    "name": {
+      "type": "String", 
+      "description": "This is the feature name to enable or disable."
+    }
+  }
+}

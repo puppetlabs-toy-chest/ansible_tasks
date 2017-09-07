@@ -1,0 +1,25 @@
+{
+  "description": "Create and remove tag(s) to DigitalOcean resource.", 
+  "parameters": {
+    "state": {
+      "type": "Optional[String]", 
+      "description": "Whether the tag should be present or absent on the resource."
+    }, 
+    "api_token": {
+      "type": "Optional[String]", 
+      "description": "DigitalOcean api token."
+    }, 
+    "name": {
+      "type": "String", 
+      "description": "The name of the tag. The supported characters for names include alphanumeric characters, dashes, and underscores."
+    }, 
+    "resource_type": {
+      "type": "Optional[String]", 
+      "description": "The type of resource to operate on. Currently only tagging of droplets is supported."
+    }, 
+    "resource_id": {
+      "type": "Optional[String]", 
+      "description": "The ID of the resource to operate on."
+    }
+  }
+}

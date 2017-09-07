@@ -1,0 +1,37 @@
+{
+  "description": "Create a VMware portgroup", 
+  "parameters": {
+    "username": {
+      "type": "String", 
+      "description": "The username of the vSphere vCenter."
+    }, 
+    "portgroup_name": {
+      "type": "String", 
+      "description": "Portgroup name to add"
+    }, 
+    "hostname": {
+      "type": "String", 
+      "description": "The hostname or IP address of the vSphere vCenter."
+    }, 
+    "network_policy": {
+      "type": "Optional[String]", 
+      "description": "Network policy specifies layer 2 security settings for a portgroup such as promiscuous mode, where guest adapter listens to all the packets, MAC address changes and forged transmits. Settings are promiscuous_mode, forged_transmits, mac_changes"
+    }, 
+    "password": {
+      "type": "String", 
+      "description": "The password of the vSphere vCenter."
+    }, 
+    "validate_certs": {
+      "type": "Optional[String]", 
+      "description": "Allows connection when SSL certificates are not valid. Set to false when certificates are not trusted."
+    }, 
+    "switch_name": {
+      "type": "String", 
+      "description": "vSwitch to modify"
+    }, 
+    "vlan_id": {
+      "type": "String", 
+      "description": "VLAN ID to assign to portgroup"
+    }
+  }
+}

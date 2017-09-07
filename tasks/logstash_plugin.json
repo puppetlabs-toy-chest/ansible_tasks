@@ -1,0 +1,29 @@
+{
+  "description": "Manage Logstash plugins", 
+  "parameters": {
+    "name": {
+      "type": "String", 
+      "description": "Install plugin with that name."
+    }, 
+    "proxy_host": {
+      "type": "Optional[String]", 
+      "description": "Proxy host to use during plugin installation."
+    }, 
+    "proxy_port": {
+      "type": "Optional[String]", 
+      "description": "Proxy port to use during plugin installation."
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "Apply plugin state."
+    }, 
+    "version": {
+      "type": "Optional[String]", 
+      "description": "Specify plugin Version of the plugin to install. If plugin exists with previous version, it will NOT be updated."
+    }, 
+    "plugin_bin": {
+      "type": "Optional[String]", 
+      "description": "Specify logstash-plugin to use for plugin management."
+    }
+  }
+}

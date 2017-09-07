@@ -1,0 +1,69 @@
+{
+  "description": "Manage FreeIPA host", 
+  "parameters": {
+    "ipa_port": {
+      "type": "Optional[String]", 
+      "description": "P o r t   o f   I P A   s e r v e r"
+    }, 
+    "force": {
+      "type": "Optional[String]", 
+      "description": "Force host name even if not in DNS."
+    }, 
+    "description": {
+      "type": "Optional[String]", 
+      "description": "A description of this host."
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "S t a t e   t o   e n s u r e"
+    }, 
+    "ns_host_location": {
+      "type": "Optional[String]", 
+      "description": "Host location (e.g. \"Lab 2\")"
+    }, 
+    "mac_address": {
+      "type": "Optional[String]", 
+      "description": "List of Hardware MAC address(es) off this host. If option is omitted MAC addresses will not be checked or changed. If an empty list is passed all assigned MAC addresses will be removed. MAC addresses that are already assigned but not passed will be removed."
+    }, 
+    "ipa_prot": {
+      "type": "Optional[String]", 
+      "description": "P r o t o c o l   u s e d   b y   I P A   s e r v e r"
+    }, 
+    "fqdn": {
+      "type": "String", 
+      "description": "Full qualified domain name. Can not be changed as it is the unique identifier."
+    }, 
+    "validate_certs": {
+      "type": "Optional[String]", 
+      "description": "This only applies if C(ipa_prot) is I(https). If set to C(no), the SSL certificates will not be validated. This should only set to C(no) used on personally controlled sites using self-signed certificates."
+    }, 
+    "ns_os_version": {
+      "type": "Optional[String]", 
+      "description": "Host operating system and version (e.g. \"Fedora 9\")"
+    }, 
+    "ipa_host": {
+      "type": "Optional[String]", 
+      "description": "I P   o r   h o s t n a m e   o f   I P A   s e r v e r"
+    }, 
+    "ipa_user": {
+      "type": "Optional[String]", 
+      "description": "A d m i n i s t r a t i v e   a c c o u n t   u s e d   o n   I P A   s e r v e r"
+    }, 
+    "user_certificate": {
+      "type": "Optional[String]", 
+      "description": "List of Base-64 encoded server certificates. If option is omitted certificates will not be checked or changed. If an empty list is passed all assigned certificates will be removed. Certificates already assigned but not passed will be removed."
+    }, 
+    "ipa_pass": {
+      "type": "String", 
+      "description": "P a s s w o r d   o f   a d m i n i s t r a t i v e   u s e r"
+    }, 
+    "ip_address": {
+      "type": "Optional[String]", 
+      "description": "Add the host to DNS with this IP address."
+    }, 
+    "ns_hardware_platform": {
+      "type": "Optional[String]", 
+      "description": "Host hardware platform (e.g. \"Lenovo T61\")"
+    }
+  }
+}

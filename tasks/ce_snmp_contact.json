@@ -1,0 +1,13 @@
+{
+  "description": "Manages SNMP contact configuration on HUAWEI CloudEngine switches.", 
+  "parameters": {
+    "state": {
+      "type": "Optional[String]", 
+      "description": "Manage the state of the resource."
+    }, 
+    "contact": {
+      "type": "String", 
+      "description": "Contact information."
+    }
+  }
+}

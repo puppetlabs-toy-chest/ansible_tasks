@@ -1,0 +1,45 @@
+{
+  "description": "Manage iRules across different modules on a BIG-IP.", 
+  "parameters": {
+    "src": {
+      "type": "String", 
+      "description": "The iRule file to interpret and upload to the BIG-IP. Either one of C(src) or C(content) must be provided."
+    }, 
+    "name": {
+      "type": "String", 
+      "description": "The name of the iRule."
+    }, 
+    "module": {
+      "type": "String", 
+      "description": "The BIG-IP module to add the iRule to."
+    }, 
+    "server": {
+      "type": "String", 
+      "description": "The BIG-IP host. This option can be omitted if the environment variable C(F5_SERVER) is set."
+    }, 
+    "content": {
+      "type": "Optional[String]", 
+      "description": "When used instead of 'src', sets the contents of an iRule directly to the specified value. This is for simple values, but can be used with lookup plugins for anything complex or with formatting. Either one of C(src) or C(content) must be provided."
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "Whether the iRule should exist or not."
+    }, 
+    "user": {
+      "type": "String", 
+      "description": "The username to connect to the BIG-IP with. This user must have administrative privileges on the device. This option can be omitted if the environment variable C(F5_USER) is set."
+    }, 
+    "server_port": {
+      "type": "Optional[String]", 
+      "description": "The BIG-IP server port. This option can be omitted if the environment variable C(F5_SERVER_PORT) is set."
+    }, 
+    "password": {
+      "type": "String", 
+      "description": "The password for the user account used to connect to the BIG-IP. This option can be omitted if the environment variable C(F5_PASSWORD) is set."
+    }, 
+    "validate_certs": {
+      "type": "Optional[String]", 
+      "description": "If C(no), SSL certificates will not be validated. This should only be used on personally controlled sites using self-signed certificates. This option can be omitted if the environment variable C(F5_VALIDATE_CERTS) is set."
+    }
+  }
+}

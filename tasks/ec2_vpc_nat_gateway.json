@@ -1,0 +1,73 @@
+{
+  "description": "Manage AWS VPC NAT Gateways.", 
+  "parameters": {
+    "profile": {
+      "type": "Optional[String]", 
+      "description": "Uses a boto profile. Only works with boto >= 2.24.0."
+    }, 
+    "aws_secret_key": {
+      "type": "Optional[String]", 
+      "description": "AWS secret key. If not set then the value of the AWS_SECRET_ACCESS_KEY, AWS_SECRET_KEY, or EC2_SECRET_KEY environment variable is used."
+    }, 
+    "aws_access_key": {
+      "type": "Optional[String]", 
+      "description": "AWS access key. If not set then the value of the AWS_ACCESS_KEY_ID, AWS_ACCESS_KEY or EC2_ACCESS_KEY environment variable is used."
+    }, 
+    "client_token": {
+      "type": "Optional[String]", 
+      "description": "Optional unique token to be used during create to ensure idempotency. When specifying this option, ensure you specify the eip_address parameter as well otherwise any subsequent runs will fail."
+    }, 
+    "nat_gateway_id": {
+      "type": "Optional[String]", 
+      "description": "The id AWS dynamically allocates to the NAT Gateway on creation. This is required when the absent option is present."
+    }, 
+    "security_token": {
+      "type": "Optional[String]", 
+      "description": "AWS STS security token. If not set then the value of the AWS_SECURITY_TOKEN or EC2_SECURITY_TOKEN environment variable is used."
+    }, 
+    "allocation_id": {
+      "type": "Optional[String]", 
+      "description": "The id of the elastic IP allocation. If this is not passed and the eip_address is not passed. An EIP is generated for this NAT Gateway."
+    }, 
+    "eip_address": {
+      "type": "Optional[String]", 
+      "description": "The elastic IP address of the EIP you want attached to this NAT Gateway. If this is not passed and the allocation_id is not passed, an EIP is generated for this NAT Gateway."
+    }, 
+    "region": {
+      "type": "Optional[String]", 
+      "description": "The AWS region to use. If not specified then the value of the AWS_REGION or EC2_REGION environment variable, if any, is used. See U(http://docs.aws.amazon.com/general/latest/gr/rande.html#ec2_region)"
+    }, 
+    "if_exist_do_not_create": {
+      "type": "Optional[String]", 
+      "description": "if a NAT Gateway exists already in the subnet_id, then do not create a new one."
+    }, 
+    "subnet_id": {
+      "type": "Optional[String]", 
+      "description": "The id of the subnet to create the NAT Gateway in. This is required with the present option."
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "Ensure NAT Gateway is present or absent."
+    }, 
+    "wait_timeout": {
+      "type": "Optional[String]", 
+      "description": "How many seconds to wait for an operation to complete before timing out."
+    }, 
+    "ec2_url": {
+      "type": "Optional[String]", 
+      "description": "Url to use to connect to EC2 or your Eucalyptus cloud (by default the module will use EC2 endpoints). Ignored for modules where region is required. Must be specified for all other modules if region is not used. If not set then the value of the EC2_URL environment variable, if any, is used."
+    }, 
+    "release_eip": {
+      "type": "Optional[String]", 
+      "description": "Deallocate the EIP from the VPC. Option is only valid with the absent state. You should use this with the wait option. Since you can not release an address while a delete operation is happening."
+    }, 
+    "validate_certs": {
+      "type": "Optional[String]", 
+      "description": "When set to \"no\", SSL certificates will not be validated for boto versions >= 2.6.0."
+    }, 
+    "wait": {
+      "type": "Optional[String]", 
+      "description": "Wait for operation to complete before returning."
+    }
+  }
+}

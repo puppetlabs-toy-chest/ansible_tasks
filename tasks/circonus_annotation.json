@@ -1,0 +1,33 @@
+{
+  "description": "create an annotation in circonus", 
+  "parameters": {
+    "category": {
+      "type": "String", 
+      "description": "Annotation Category"
+    }, 
+    "description": {
+      "type": "String", 
+      "description": "Description of annotation"
+    }, 
+    "title": {
+      "type": "String", 
+      "description": "Title of annotation"
+    }, 
+    "stop": {
+      "type": "Optional[String]", 
+      "description": "Unix timestamp of event end, defaults to now + duration"
+    }, 
+    "start": {
+      "type": "Optional[String]", 
+      "description": "Unix timestamp of event start, defaults to now"
+    }, 
+    "duration": {
+      "type": "Optional[String]", 
+      "description": "Duration in seconds of annotation, defaults to 0"
+    }, 
+    "api_key": {
+      "type": "String", 
+      "description": "Circonus API key"
+    }
+  }
+}

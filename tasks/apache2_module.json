@@ -1,0 +1,21 @@
+{
+  "description": "enables/disables a module of the Apache2 webserver", 
+  "parameters": {
+    "state": {
+      "type": "Optional[String]", 
+      "description": "indicate the desired state of the resource"
+    }, 
+    "force": {
+      "type": "Optional[String]", 
+      "description": "force disabling of default modules and override Debian warnings"
+    }, 
+    "name": {
+      "type": "String", 
+      "description": "name of the module to enable/disable"
+    }, 
+    "ignore_configcheck": {
+      "type": "Optional[String]", 
+      "description": "Ignore configuration checks about inconsistent module configuration. Especially for mpm_* modules."
+    }
+  }
+}

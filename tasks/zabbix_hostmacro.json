@@ -1,0 +1,45 @@
+{
+  "description": "Zabbix host macro creates/updates/deletes", 
+  "parameters": {
+    "http_login_password": {
+      "type": "Optional[String]", 
+      "description": "Basic Auth password"
+    }, 
+    "macro_name": {
+      "type": "String", 
+      "description": "Name of the host macro."
+    }, 
+    "macro_value": {
+      "type": "String", 
+      "description": "Value of the host macro."
+    }, 
+    "login_user": {
+      "type": "String", 
+      "description": "Zabbix user name."
+    }, 
+    "http_login_user": {
+      "type": "Optional[String]", 
+      "description": "Basic Auth login"
+    }, 
+    "server_url": {
+      "type": "String", 
+      "description": "Url of Zabbix server, with protocol (http or https)."
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "State of the macro. On C(present), it will create if macro does not exist or update the macro if the associated data is different. On C(absent) will remove a macro if it exists."
+    }, 
+    "host_name": {
+      "type": "String", 
+      "description": "Name of the host."
+    }, 
+    "timeout": {
+      "type": "Optional[String]", 
+      "description": "The timeout of API request (seconds)."
+    }, 
+    "login_password": {
+      "type": "String", 
+      "description": "Zabbix user password."
+    }
+  }
+}

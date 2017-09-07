@@ -1,0 +1,21 @@
+{
+  "description": "Login to AOS server for session token", 
+  "parameters": {
+    "passwd": {
+      "type": "Optional[String]", 
+      "description": "Password to use when connecting to the AOS server."
+    }, 
+    "port": {
+      "type": "Optional[String]", 
+      "description": "Port number to use when connecting to the AOS server."
+    }, 
+    "user": {
+      "type": "Optional[String]", 
+      "description": "Login username to use when connecting to the AOS server."
+    }, 
+    "server": {
+      "type": "String", 
+      "description": "Address of the AOS Server on which you want to open a connection."
+    }
+  }
+}

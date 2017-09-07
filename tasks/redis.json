@@ -1,0 +1,49 @@
+{
+  "description": "Various redis commands, slave and flush", 
+  "parameters": {
+    "login_port": {
+      "type": "Optional[String]", 
+      "description": "The port to connect to"
+    }, 
+    "name": {
+      "type": "Optional[String]", 
+      "description": "A redis config key."
+    }, 
+    "flush_mode": {
+      "type": "Optional[String]", 
+      "description": "Type of flush (all the dbs in a redis instance or a specific one) [flush command]"
+    }, 
+    "db": {
+      "type": "Optional[String]", 
+      "description": "The database to flush (used in db mode) [flush command]"
+    }, 
+    "login_host": {
+      "type": "Optional[String]", 
+      "description": "The host running the database"
+    }, 
+    "login_password": {
+      "type": "Optional[String]", 
+      "description": "The password used to authenticate with (usually not used)"
+    }, 
+    "master_host": {
+      "type": "Optional[String]", 
+      "description": "The host of the master instance [slave command]"
+    }, 
+    "value": {
+      "type": "Optional[String]", 
+      "description": "A redis config value."
+    }, 
+    "command": {
+      "type": "String", 
+      "description": "The selected redis command"
+    }, 
+    "master_port": {
+      "type": "Optional[String]", 
+      "description": "The port of the master instance [slave command]"
+    }, 
+    "slave_mode": {
+      "type": "Optional[String]", 
+      "description": "the mode of the redis instance [slave command]"
+    }
+  }
+}

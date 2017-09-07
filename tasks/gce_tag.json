@@ -1,0 +1,37 @@
+{
+  "description": "add or remove tag(s) to/from GCE instances", 
+  "parameters": {
+    "zone": {
+      "type": "Optional[String]", 
+      "description": "the zone of the disk specified by source"
+    }, 
+    "tags": {
+      "type": "String", 
+      "description": "comma-separated list of tags to add or remove"
+    }, 
+    "service_account_email": {
+      "type": "Optional[String]", 
+      "description": "service account email"
+    }, 
+    "pem_file": {
+      "type": "Optional[String]", 
+      "description": "path to the pem file associated with the service account email"
+    }, 
+    "instance_name": {
+      "type": "Optional[String]", 
+      "description": "The name of the GCE instance to add/remove tags.  Required if instance_pattern is not specified."
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "desired state of the tags"
+    }, 
+    "instance_pattern": {
+      "type": "Optional[String]", 
+      "description": "The pattern of GCE instance names to match for adding/removing tags.  Full-Python regex is supported. See U(https://docs.python.org/2/library/re.html) for details. If instance_name is not specified, this field is required."
+    }, 
+    "project_id": {
+      "type": "Optional[String]", 
+      "description": "your GCE project ID"
+    }
+  }
+}

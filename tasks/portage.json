@@ -1,0 +1,81 @@
+{
+  "description": "Package manager for Gentoo", 
+  "parameters": {
+    "state": {
+      "type": "Optional[String]", 
+      "description": "State of the package atom"
+    }, 
+    "nodeps": {
+      "type": "Optional[String]", 
+      "description": "Only merge packages but not their dependencies (--nodeps)"
+    }, 
+    "getbinpkg": {
+      "type": "Optional[String]", 
+      "description": "Prefer packages specified at PORTAGE_BINHOST in make.conf"
+    }, 
+    "onlydeps": {
+      "type": "Optional[String]", 
+      "description": "Only merge packages' dependencies but not the packages (--onlydeps)"
+    }, 
+    "newuse": {
+      "type": "Optional[String]", 
+      "description": "Include installed packages where USE flags have changed (--newuse)"
+    }, 
+    "package": {
+      "type": "Optional[String]", 
+      "description": "Package atom or set, e.g. C(sys-apps/foo) or C(>foo-2.13) or C(@world)"
+    }, 
+    "oneshot": {
+      "type": "Optional[String]", 
+      "description": "Do not add the packages to the world file (--oneshot)"
+    }, 
+    "update": {
+      "type": "Optional[String]", 
+      "description": "Update packages to the best version available (--update)"
+    }, 
+    "deep": {
+      "type": "Optional[String]", 
+      "description": "Consider the entire dependency tree of packages (--deep)"
+    }, 
+    "sync": {
+      "type": "Optional[String]", 
+      "description": "Sync package repositories first If yes, perform \"emerge --sync\" If web, perform \"emerge-webrsync\""
+    }, 
+    "changed_use": {
+      "type": "Optional[String]", 
+      "description": "Include installed packages where USE flags have changed, except when flags that the user has not enabled are added or removed (--changed-use)"
+    }, 
+    "keepgoing": {
+      "type": "Optional[String]", 
+      "description": "Continue as much as possible after an error."
+    }, 
+    "loadavg": {
+      "type": "Optional[String]", 
+      "description": "Specifies that no new builds should be started if there are other builds running and the load average is at least LOAD"
+    }, 
+    "usepkgonly": {
+      "type": "Optional[String]", 
+      "description": "Merge only binaries (no compiling). This sets getbinpkg=yes."
+    }, 
+    "depclean": {
+      "type": "Optional[String]", 
+      "description": "Remove packages not needed by explicitly merged packages (--depclean) If no package is specified, clean up the world's dependencies Otherwise, --depclean serves as a dependency aware version of --unmerge"
+    }, 
+    "jobs": {
+      "type": "Optional[String]", 
+      "description": "Specifies the number of packages to build simultaneously."
+    }, 
+    "noreplace": {
+      "type": "Optional[String]", 
+      "description": "Do not re-emerge installed packages (--noreplace)"
+    }, 
+    "quiet": {
+      "type": "Optional[String]", 
+      "description": "Run emerge in quiet mode (--quiet)"
+    }, 
+    "verbose": {
+      "type": "Optional[String]", 
+      "description": "Run emerge in verbose mode (--verbose)"
+    }
+  }
+}

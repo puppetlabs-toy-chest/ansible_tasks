@@ -1,0 +1,49 @@
+{
+  "description": "Adds, removes or changes procedural languages with a PostgreSQL database.", 
+  "parameters": {
+    "lang": {
+      "type": "String", 
+      "description": "name of the procedural language to add, remove or change"
+    }, 
+    "cascade": {
+      "type": "Optional[String]", 
+      "description": "when dropping a language, also delete object that depend on this language. only used when C(state=absent)."
+    }, 
+    "login_user": {
+      "type": "Optional[String]", 
+      "description": "User used to authenticate with PostgreSQL"
+    }, 
+    "login_host": {
+      "type": "Optional[String]", 
+      "description": "Host running PostgreSQL where you want to execute the actions."
+    }, 
+    "db": {
+      "type": "Optional[String]", 
+      "description": "name of database where the language will be added, removed or changed"
+    }, 
+    "force_trust": {
+      "type": "Optional[String]", 
+      "description": "marks the language as trusted, even if it's marked as untrusted in pg_pltemplate. use with care!"
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "The state of the language for the selected database"
+    }, 
+    "login_password": {
+      "type": "Optional[String]", 
+      "description": "Password used to authenticate with PostgreSQL (must match C(login_user))"
+    }, 
+    "trust": {
+      "type": "Optional[String]", 
+      "description": "make this language trusted for the selected db"
+    }, 
+    "fail_on_drop": {
+      "type": "Optional[String]", 
+      "description": "if C(yes), fail when removing a language. Otherwise just log and continue in some cases, it is not possible to remove a language (used by the db-system). When         dependencies block the removal, consider using C(cascade)."
+    }, 
+    "port": {
+      "type": "Optional[String]", 
+      "description": "Database port to connect to."
+    }
+  }
+}

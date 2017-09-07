@@ -1,0 +1,33 @@
+{
+  "description": "Zabbix screen creates/updates/deletes", 
+  "parameters": {
+    "http_login_password": {
+      "type": "Optional[String]", 
+      "description": "Basic Auth password"
+    }, 
+    "login_user": {
+      "type": "String", 
+      "description": "Zabbix user name."
+    }, 
+    "http_login_user": {
+      "type": "Optional[String]", 
+      "description": "Basic Auth login"
+    }, 
+    "server_url": {
+      "type": "String", 
+      "description": "Url of Zabbix server, with protocol (http or https)."
+    }, 
+    "screens": {
+      "type": "String", 
+      "description": "List of screens to be created/updated/deleted(see example). If the screen(s) already been added, the screen(s) name won't be updated. When creating or updating screen(s), C(screen_name), C(host_group) are required. When deleting screen(s), the C(screen_name) is required. The available states are: C(present) (default) and C(absent). If the screen(s) already exists, and the state is not C(absent), the screen(s) will just be updated as needed.\n"
+    }, 
+    "timeout": {
+      "type": "Optional[String]", 
+      "description": "The timeout of API request (seconds)."
+    }, 
+    "login_password": {
+      "type": "String", 
+      "description": "Zabbix user password."
+    }
+  }
+}

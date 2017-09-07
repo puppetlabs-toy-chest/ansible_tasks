@@ -1,0 +1,49 @@
+{
+  "description": "Manage SolidFire accounts", 
+  "parameters": {
+    "username": {
+      "type": "String", 
+      "description": "Please ensure that the user has the adequate permissions. For more information, please read the official documentation U(https://goo.gl/ddJa4Q)."
+    }, 
+    "new_name": {
+      "type": "Optional[String]", 
+      "description": "New name for the user account."
+    }, 
+    "password": {
+      "type": "String", 
+      "description": "Password for the specified user."
+    }, 
+    "name": {
+      "type": "String", 
+      "description": "Unique username for this account. (May be 1 to 64 characters in length)."
+    }, 
+    "hostname": {
+      "type": "String", 
+      "description": "The hostname or IP address of the SolidFire cluster."
+    }, 
+    "initiator_secret": {
+      "type": "Optional[String]", 
+      "description": "CHAP secret to use for the initiator. Should be 12-16 characters long and impenetrable. The CHAP initiator secrets must be unique and cannot be the same as the target CHAP secret. If not specified, a random secret is created."
+    }, 
+    "state": {
+      "type": "String", 
+      "description": "Whether the specified account should exist or not."
+    }, 
+    "status": {
+      "type": "Optional[String]", 
+      "description": "Status of the account."
+    }, 
+    "attributes": {
+      "type": "Optional[String]", 
+      "description": "L i s t   o f   N a m e / V a l u e   p a i r s   i n   J S O N   o b j e c t   f o r m a t ."
+    }, 
+    "target_secret": {
+      "type": "Optional[String]", 
+      "description": "CHAP secret to use for the target (mutual CHAP authentication). Should be 12-16 characters long and impenetrable. The CHAP target secrets must be unique and cannot be the same as the initiator CHAP secret. If not specified, a random secret is created."
+    }, 
+    "account_id": {
+      "type": "Optional[String]", 
+      "description": "The ID of the account to manage or update."
+    }
+  }
+}

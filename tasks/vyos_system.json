@@ -1,0 +1,29 @@
+{
+  "description": "Run `set system` commands on VyOS devices", 
+  "parameters": {
+    "name_server": {
+      "type": "Optional[String]", 
+      "description": "A list of name servers to use with the device. Mutually exclusive with I(domain_search)"
+    }, 
+    "domain_search": {
+      "type": "Optional[String]", 
+      "description": "A list of domain names to search. Mutually exclusive with I(name_server)"
+    }, 
+    "hostname": {
+      "type": "Optional[String]", 
+      "description": "Configure the device hostname parameter. This option takes an ASCII string value."
+    }, 
+    "domain_name": {
+      "type": "Optional[String]", 
+      "description": "The new domain name to apply to the device."
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "Whether to apply (C(present)) or remove (C(absent)) the settings."
+    }, 
+    "provider": {
+      "type": "Optional[String]", 
+      "description": "A dict object containing connection details."
+    }
+  }
+}

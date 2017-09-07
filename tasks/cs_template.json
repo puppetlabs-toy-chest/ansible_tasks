@@ -1,0 +1,153 @@
+{
+  "description": "Manages templates on Apache CloudStack based clouds.", 
+  "parameters": {
+    "domain": {
+      "type": "Optional[String]", 
+      "description": "Domain the template, snapshot or VM is related to."
+    }, 
+    "api_http_method": {
+      "type": "Optional[String]", 
+      "description": "HTTP method used."
+    }, 
+    "is_featured": {
+      "type": "Optional[String]", 
+      "description": "Register the template to be featured. Only used if C(state) is present."
+    }, 
+    "is_extractable": {
+      "type": "Optional[String]", 
+      "description": "True if the template or its derivatives are extractable."
+    }, 
+    "hypervisor": {
+      "type": "Optional[String]", 
+      "description": "Name the hypervisor to be used for creating the new template. Relevant when using C(state=present)."
+    }, 
+    "poll_async": {
+      "type": "Optional[String]", 
+      "description": "Poll async jobs until job has finished."
+    }, 
+    "api_url": {
+      "type": "Optional[String]", 
+      "description": "URL of the CloudStack API e.g. https://cloud.example.com/client/api."
+    }, 
+    "zone": {
+      "type": "Optional[String]", 
+      "description": "Name of the zone you wish the template to be registered or deleted from. If not specified, first found zone will be used."
+    }, 
+    "sshkey_enabled": {
+      "type": "Optional[String]", 
+      "description": "True if the template supports the sshkey upload feature."
+    }, 
+    "is_dynamically_scalable": {
+      "type": "Optional[String]", 
+      "description": "Register the template having XS/VMWare tools installed in order to support dynamic scaling of VM CPU/memory. Only used if C(state) is present."
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "State of the template."
+    }, 
+    "is_ready": {
+      "type": "Optional[String]", 
+      "description": "This flag is used for searching existing templates. If set to C(true), it will only list template ready for deployment e.g. successfully downloaded and installed. Recommended to set it to C(false)."
+    }, 
+    "details": {
+      "type": "Optional[String]", 
+      "description": "Template details in key/value pairs."
+    }, 
+    "is_routing": {
+      "type": "Optional[String]", 
+      "description": "True if the template type is routing i.e., if template is used to deploy router. Only considered if C(url) is used."
+    }, 
+    "api_key": {
+      "type": "Optional[String]", 
+      "description": "API key of the CloudStack API."
+    }, 
+    "bits": {
+      "type": "Optional[String]", 
+      "description": "32 or 64 bits support."
+    }, 
+    "format": {
+      "type": "Optional[String]", 
+      "description": "The format for the template. Relevant when using C(state=present)."
+    }, 
+    "api_secret": {
+      "type": "Optional[String]", 
+      "description": "Secret key of the CloudStack API."
+    }, 
+    "api_timeout": {
+      "type": "Optional[String]", 
+      "description": "HTTP timeout."
+    }, 
+    "vm": {
+      "type": "Optional[String]", 
+      "description": "VM name the template will be created from its volume or alternatively from a snapshot. VM must be in stopped state if created from its volume. Mutually exclusive with C(url)."
+    }, 
+    "is_public": {
+      "type": "Optional[String]", 
+      "description": "Register the template to be publicly available to all users. Only used if C(state) is present."
+    }, 
+    "tags": {
+      "type": "Optional[String]", 
+      "description": "List of tags. Tags are a list of dictionaries having keys C(key) and C(value). To delete all tags, set a empty list e.g. C(tags: [])."
+    }, 
+    "password_enabled": {
+      "type": "Optional[String]", 
+      "description": "True if the template supports the password reset feature."
+    }, 
+    "display_text": {
+      "type": "Optional[String]", 
+      "description": "Display text of the template."
+    }, 
+    "account": {
+      "type": "Optional[String]", 
+      "description": "Account the template, snapshot or VM is related to."
+    }, 
+    "template_tag": {
+      "type": "Optional[String]", 
+      "description": "the tag for this template."
+    }, 
+    "name": {
+      "type": "String", 
+      "description": "Name of the template."
+    }, 
+    "requires_hvm": {
+      "type": "Optional[String]", 
+      "description": "true if this template requires HVM."
+    }, 
+    "template_filter": {
+      "type": "Optional[String]", 
+      "description": "Name of the filter used to search for the template."
+    }, 
+    "api_region": {
+      "type": "Optional[String]", 
+      "description": "Name of the ini section in the C(cloustack.ini) file."
+    }, 
+    "cross_zones": {
+      "type": "Optional[String]", 
+      "description": "Whether the template should be synced or removed across zones. Only used if C(state) is present or absent."
+    }, 
+    "project": {
+      "type": "Optional[String]", 
+      "description": "Name of the project the template to be registered in."
+    }, 
+    "url": {
+      "type": "Optional[String]", 
+      "description": "URL of where the template is hosted on C(state=present). URL to which the template would be extracted on C(state=extracted). Mutually exclusive with C(vm)."
+    }, 
+    "snapshot": {
+      "type": "Optional[String]", 
+      "description": "Name of the snapshot, created from the VM ROOT volume, the template will be created from. C(vm) is required together with this argument."
+    }, 
+    "mode": {
+      "type": "Optional[String]", 
+      "description": "Mode for the template extraction. Only used if C(state=extracted)."
+    }, 
+    "checksum": {
+      "type": "Optional[String]", 
+      "description": "The MD5 checksum value of this template. If set, we search by checksum instead of name."
+    }, 
+    "os_type": {
+      "type": "Optional[String]", 
+      "description": "OS type that best represents the OS of this template."
+    }
+  }
+}

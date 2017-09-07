@@ -1,0 +1,37 @@
+{
+  "description": "Manage BIG-IP module provisioning.", 
+  "parameters": {
+    "level": {
+      "type": "Optional[String]", 
+      "description": "Sets the provisioning level for the requested modules. Changing the level for one module may require modifying the level of another module. For example, changing one module to C(dedicated) requires setting all others to C(none). Setting the level of a module to C(none) means that the module is not run."
+    }, 
+    "module": {
+      "type": "String", 
+      "description": "The module to provision in BIG-IP."
+    }, 
+    "server": {
+      "type": "String", 
+      "description": "The BIG-IP host. This option can be omitted if the environment variable C(F5_SERVER) is set."
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "The state of the provisioned module on the system. When C(present), guarantees that the specified module is provisioned at the requested level provided that there are sufficient resources on the device (such as physical RAM) to support the provisioned module. When C(absent), de-provision the module."
+    }, 
+    "user": {
+      "type": "String", 
+      "description": "The username to connect to the BIG-IP with. This user must have administrative privileges on the device. This option can be omitted if the environment variable C(F5_USER) is set."
+    }, 
+    "server_port": {
+      "type": "Optional[String]", 
+      "description": "The BIG-IP server port. This option can be omitted if the environment variable C(F5_SERVER_PORT) is set."
+    }, 
+    "password": {
+      "type": "String", 
+      "description": "The password for the user account used to connect to the BIG-IP. This option can be omitted if the environment variable C(F5_PASSWORD) is set."
+    }, 
+    "validate_certs": {
+      "type": "Optional[String]", 
+      "description": "If C(no), SSL certificates will not be validated. This should only be used on personally controlled sites using self-signed certificates. This option can be omitted if the environment variable C(F5_VALIDATE_CERTS) is set."
+    }
+  }
+}

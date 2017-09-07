@@ -1,0 +1,61 @@
+{
+  "description": "Module for setup of StringGroup Avi RESTful Object", 
+  "parameters": {
+    "username": {
+      "type": "Optional[String]", 
+      "description": "Username used for accessing Avi controller. The default value is the environment variable C(AVI_USERNAME)."
+    }, 
+    "uuid": {
+      "type": "Optional[String]", 
+      "description": "Uuid of the string group."
+    }, 
+    "url": {
+      "type": "Optional[String]", 
+      "description": "Avi controller URL of the object."
+    }, 
+    "tenant_ref": {
+      "type": "Optional[String]", 
+      "description": "It is a reference to an object of type tenant."
+    }, 
+    "controller": {
+      "type": "Optional[String]", 
+      "description": "IP address or hostname of the controller. The default value is the environment variable C(AVI_CONTROLLER)."
+    }, 
+    "name": {
+      "type": "String", 
+      "description": "Name of the string group."
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "The state that should be applied on the entity."
+    }, 
+    "kv": {
+      "type": "Optional[String]", 
+      "description": "Configure key value in the string group."
+    }, 
+    "tenant": {
+      "type": "Optional[String]", 
+      "description": "Name of tenant used for all Avi API calls and context of object."
+    }, 
+    "password": {
+      "type": "Optional[String]", 
+      "description": "Password of Avi user in Avi controller. The default value is the environment variable C(AVI_PASSWORD)."
+    }, 
+    "type": {
+      "type": "String", 
+      "description": "Type of stringgroup. Enum options - SG_TYPE_STRING, SG_TYPE_KEYVAL. Default value when not specified in API or module is interpreted by Avi Controller as SG_TYPE_STRING."
+    }, 
+    "tenant_uuid": {
+      "type": "Optional[String]", 
+      "description": "UUID of tenant used for all Avi API calls and context of object."
+    }, 
+    "api_version": {
+      "type": "Optional[String]", 
+      "description": "Avi API version of to use for Avi API and objects."
+    }, 
+    "description": {
+      "type": "Optional[String]", 
+      "description": "User defined description for the object."
+    }
+  }
+}

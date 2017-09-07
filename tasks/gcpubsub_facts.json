@@ -1,0 +1,17 @@
+{
+  "description": "List Topics/Subscriptions and Messages from Google PubSub.", 
+  "parameters": {
+    "topic": {
+      "type": "Optional[String]", 
+      "description": "GCP pubsub topic name.  Only the name, not the full path, is required."
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "list is the only valid option."
+    }, 
+    "view": {
+      "type": "String", 
+      "description": "Choices are 'topics' or 'subscriptions'"
+    }
+  }
+}

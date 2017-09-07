@@ -1,0 +1,49 @@
+{
+  "description": "Manage bandwidth resource control and priority for protocols, services and zones on Solaris/illumos systems", 
+  "parameters": {
+    "dsfield": {
+      "type": "Optional[String]", 
+      "description": "-   I d e n t i f i e s   t h e   8 - b i t   d i f f e r e n t i a t e d   s e r v i c e s   f i e l d   ( a s   d e f i n e d   i n   R F C   2 4 7 4 ) .   T h e   o p t i o n a l   d s f i e l d _ m a s k   i s   u s e d   t o   s t a t e   t h e   b i t s   o f   i n t e r e s t   i n   t h e   d i f f e r e n t i a t e d   s e r v i c e s   f i e l d   w h e n   c o m p a r i n g   w i t h   t h e   d s f i e l d   v a l u e .   B o t h   v a l u e s   m u s t   b e   i n   h e x a d e c i m a l . \n"
+    }, 
+    "temporary": {
+      "type": "Optional[String]", 
+      "description": "Specifies that the configured flow is temporary. Temporary flows do not persist across reboots."
+    }, 
+    "name": {
+      "type": "String", 
+      "description": "-   A   f l o w   i s   d e f i n e d   a s   a   s e t   o f   a t t r i b u t e s   b a s e d   o n   L a y e r   3   a n d   L a y e r   4   h e a d e r s ,   w h i c h   c a n   b e   u s e d   t o   i d e n t i f y   a   p r o t o c o l ,   s e r v i c e ,   o r   a   z o n e . \n"
+    }, 
+    "maxbw": {
+      "type": "Optional[String]", 
+      "description": "-   S e t s   t h e   f u l l   d u p l e x   b a n d w i d t h   f o r   t h e   f l o w .   T h e   b a n d w i d t h   i s   s p e c i f i e d   a s   a n   i n t e g e r   w i t h   o n e   o f   t h e   s c a l e   s u f f i x e s ( K ,   M ,   o r   G   f o r   K b p s ,   M b p s ,   a n d   G b p s ) .   I f   n o   u n i t s   a r e   s p e c i f i e d ,   t h e   i n p u t   v a l u e   w i l l   b e   r e a d   a s   M b p s . \n"
+    }, 
+    "local_ip": {
+      "type": "Optional[String]", 
+      "description": "Identifies a network flow by the local IP address."
+    }, 
+    "local_port": {
+      "type": "Optional[String]", 
+      "description": "Identifies a service specified by the local port."
+    }, 
+    "remove_ip": {
+      "type": "Optional[String]", 
+      "description": "Identifies a network flow by the remote IP address."
+    }, 
+    "priority": {
+      "type": "Optional[String]", 
+      "description": "Sets the relative priority for the flow."
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "Create/delete/enable/disable an IP address on the network interface."
+    }, 
+    "link": {
+      "type": "Optional[String]", 
+      "description": "Specifiies a link to configure flow on."
+    }, 
+    "transport": {
+      "type": "Optional[String]", 
+      "description": "-   S p e c i f i e s   a   L a y e r   4   p r o t o c o l   t o   b e   u s e d .   I t   i s   t y p i c a l l y   u s e d   i n   c o m b i n a t i o n   w i t h   I ( l o c a l _ p o r t )   t o   i d e n t i f y   t h e   s e r v i c e   t h a t   n e e d s   s p e c i a l   a t t e n t i o n . \n"
+    }
+  }
+}

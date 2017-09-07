@@ -1,0 +1,45 @@
+{
+  "description": "Will update the backend configuration of OpenDJ via the dsconfig set-backend-prop command.", 
+  "parameters": {
+    "username": {
+      "type": "Optional[String]", 
+      "description": "The username to connect to."
+    }, 
+    "name": {
+      "type": "String", 
+      "description": "The configuration setting to update."
+    }, 
+    "hostname": {
+      "type": "String", 
+      "description": "The hostname of the OpenDJ server."
+    }, 
+    "value": {
+      "type": "String", 
+      "description": "The value for the configuration item."
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "If configuration needs to be added/updated"
+    }, 
+    "passwordfile": {
+      "type": "Optional[String]", 
+      "description": "Location to the password file which holds the password for the cn=Directory Manager user. Either password or passwordfile is needed."
+    }, 
+    "password": {
+      "type": "Optional[String]", 
+      "description": "The password for the cn=Directory Manager user. Either password or passwordfile is needed."
+    }, 
+    "opendj_bindir": {
+      "type": "Optional[String]", 
+      "description": "The path to the bin directory of OpenDJ."
+    }, 
+    "port": {
+      "type": "String", 
+      "description": "The Admin port on which the OpenDJ instance is available."
+    }, 
+    "backend": {
+      "type": "String", 
+      "description": "The name of the backend on which the property needs to be updated."
+    }
+  }
+}

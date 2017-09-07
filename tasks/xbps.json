@@ -1,0 +1,25 @@
+{
+  "description": "Manage packages with XBPS", 
+  "parameters": {
+    "update_cache": {
+      "type": "Optional[String]", 
+      "description": "Whether or not to refresh the master package lists. This can be run as part of a package installation or as a separate step."
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "Desired state of the package."
+    }, 
+    "upgrade": {
+      "type": "Optional[String]", 
+      "description": "Whether or not to upgrade whole system"
+    }, 
+    "recurse": {
+      "type": "Optional[String]", 
+      "description": "When removing a package, also remove its dependencies, provided that they are not required by other packages and were not explicitly installed by a user."
+    }, 
+    "name": {
+      "type": "Optional[String]", 
+      "description": "Name of the package to install, upgrade, or remove."
+    }
+  }
+}

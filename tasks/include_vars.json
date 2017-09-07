@@ -1,0 +1,37 @@
+{
+  "description": "Load variables from files, dynamically within a task.", 
+  "parameters": {
+    "ignore_files": {
+      "type": "Optional[String]", 
+      "description": "List of file names to ignore."
+    }, 
+    "free-form": {
+      "type": "Optional[String]", 
+      "description": "This module allows you to specify the 'file' option directly w/o any other options. There is no 'free-form' option, this is just an indicator, see example below."
+    }, 
+    "files_matching": {
+      "type": "Optional[String]", 
+      "description": "Limit the files that are loaded within any directory to this regular expression."
+    }, 
+    "depth": {
+      "type": "Optional[String]", 
+      "description": "When using C(dir), this module will, by default, recursively go through each sub directory and load up the variables. By explicitly setting the depth, this module will only go as deep as the depth."
+    }, 
+    "extensions": {
+      "type": "Optional[String]", 
+      "description": "List of file extensions to read when using C(dir)."
+    }, 
+    "file": {
+      "type": "Optional[String]", 
+      "description": "The file name from which variables should be loaded. If the path is relative, it will look for the file in vars/ subdirectory of a role or relative to playbook."
+    }, 
+    "dir": {
+      "type": "Optional[String]", 
+      "description": "The directory name from which the variables should be loaded. If the path is relative, it will look for the file in vars/ subdirectory of a role or relative to playbook."
+    }, 
+    "name": {
+      "type": "Optional[String]", 
+      "description": "The name of a variable into which assign the included vars, if omitted (null) they will be made top level vars."
+    }
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "description": "Create, Update or Destroy a Managed Instance Group (MIG).", 
+  "parameters": {
+    "name": {
+      "type": "String", 
+      "description": "Name of the Managed Instance Group."
+    }, 
+    "zone": {
+      "type": "String", 
+      "description": "The GCE zone to use for this Managed Instance Group."
+    }, 
+    "service_account_email": {
+      "type": "Optional[String]", 
+      "description": "service account email"
+    }, 
+    "autoscaling": {
+      "type": "Optional[String]", 
+      "description": "A dictionary of configuration for the autoscaler. 'enabled (bool)', 'name (str)' and policy.max_instances (int) are required fields if autoscaling is used. See U(https://cloud.google.com/compute/docs/reference/beta/autoscalers) for more information on Autoscaling."
+    }, 
+    "named_ports": {
+      "type": "Optional[String]", 
+      "description": "Define named ports that backend services can forward data to.  Format is a a list of name:port dictionaries."
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "desired state of the resource"
+    }, 
+    "template": {
+      "type": "Optional[String]", 
+      "description": "Instance Template to be used in creating the VMs.  See U(https://cloud.google.com/compute/docs/instance-templates) to learn more about Instance Templates.  Required for creating MIGs."
+    }, 
+    "credentials_file": {
+      "type": "Optional[String]", 
+      "description": "Path to the JSON file associated with the service account email"
+    }, 
+    "project_id": {
+      "type": "Optional[String]", 
+      "description": "GCE project ID"
+    }, 
+    "size": {
+      "type": "Optional[String]", 
+      "description": "Size of Managed Instance Group.  If MIG already exists, it will be resized to the number provided here.  Required for creating MIGs."
+    }
+  }
+}

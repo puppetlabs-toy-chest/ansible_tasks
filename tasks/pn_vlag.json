@@ -1,0 +1,61 @@
+{
+  "description": "CLI command to create/delete/modify vlag.", 
+  "parameters": {
+    "pn_name": {
+      "type": "String", 
+      "description": "The C(pn_name) takes a valid name for vlag configuration."
+    }, 
+    "pn_lacp_fallback": {
+      "type": "Optional[String]", 
+      "description": "Specify the LACP fallback mode as bundles or individual."
+    }, 
+    "pn_lacp_fallback_timeout": {
+      "type": "Optional[String]", 
+      "description": "Specify the LACP fallback timeout in seconds. The range is between 30 and 60 seconds with a default value of 50 seconds."
+    }, 
+    "pn_clipassword": {
+      "type": "Optional[String]", 
+      "description": "Provide login password if user is not root."
+    }, 
+    "pn_lacp_timeout": {
+      "type": "Optional[String]", 
+      "description": "Specify the LACP timeout as slow(30 seconds) or fast(4 seconds)."
+    }, 
+    "pn_failover_action": {
+      "type": "Optional[String]", 
+      "description": "Specify the failover action as move or ignore."
+    }, 
+    "pn_cliusername": {
+      "type": "Optional[String]", 
+      "description": "Provide login username if user is not root."
+    }, 
+    "pn_lacp_mode": {
+      "type": "Optional[String]", 
+      "description": "Specify the LACP mode."
+    }, 
+    "state": {
+      "type": "String", 
+      "description": "State the action to perform. Use 'present' to create vlag, 'absent' to delete vlag and 'update' to modify vlag."
+    }, 
+    "pn_peer_port": {
+      "type": "Optional[String]", 
+      "description": "Specify the peer VLAG port. Required for vlag-create."
+    }, 
+    "pn_peer_switch": {
+      "type": "Optional[String]", 
+      "description": "Specify the fabric-name of the peer switch."
+    }, 
+    "pn_mode": {
+      "type": "Optional[String]", 
+      "description": "Specify the mode for the VLAG. Active-standby indicates one side is active and the other side is in standby mode. Active-active indicates that both sides of the vlag are up by default."
+    }, 
+    "pn_cliswitch": {
+      "type": "Optional[String]", 
+      "description": "Target switch(es) to run this command on."
+    }, 
+    "pn_port": {
+      "type": "Optional[String]", 
+      "description": "Specify the local VLAG port. Required for vlag-create."
+    }
+  }
+}

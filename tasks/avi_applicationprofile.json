@@ -1,0 +1,77 @@
+{
+  "description": "Module for setup of ApplicationProfile Avi RESTful Object", 
+  "parameters": {
+    "username": {
+      "type": "Optional[String]", 
+      "description": "Username used for accessing Avi controller. The default value is the environment variable C(AVI_USERNAME)."
+    }, 
+    "tcp_app_profile": {
+      "type": "Optional[String]", 
+      "description": "Specifies the tcp application proxy profile parameters."
+    }, 
+    "description": {
+      "type": "Optional[String]", 
+      "description": "User defined description for the object."
+    }, 
+    "dns_service_profile": {
+      "type": "Optional[String]", 
+      "description": "Specifies various dns service related controls for virtual service."
+    }, 
+    "type": {
+      "type": "String", 
+      "description": "Specifies which application layer proxy is enabled for the virtual service. Enum options - APPLICATION_PROFILE_TYPE_L4, APPLICATION_PROFILE_TYPE_HTTP, APPLICATION_PROFILE_TYPE_SYSLOG, APPLICATION_PROFILE_TYPE_DNS, APPLICATION_PROFILE_TYPE_SSL."
+    }, 
+    "tenant_ref": {
+      "type": "Optional[String]", 
+      "description": "It is a reference to an object of type tenant."
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "The state that should be applied on the entity."
+    }, 
+    "http_profile": {
+      "type": "Optional[String]", 
+      "description": "Specifies the http application proxy profile parameters."
+    }, 
+    "name": {
+      "type": "String", 
+      "description": "The name of the application profile."
+    }, 
+    "url": {
+      "type": "Optional[String]", 
+      "description": "Avi controller URL of the object."
+    }, 
+    "controller": {
+      "type": "Optional[String]", 
+      "description": "IP address or hostname of the controller. The default value is the environment variable C(AVI_CONTROLLER)."
+    }, 
+    "api_version": {
+      "type": "Optional[String]", 
+      "description": "Avi API version of to use for Avi API and objects."
+    }, 
+    "dos_rl_profile": {
+      "type": "Optional[String]", 
+      "description": "Specifies various security related controls for virtual service."
+    }, 
+    "password": {
+      "type": "Optional[String]", 
+      "description": "Password of Avi user in Avi controller. The default value is the environment variable C(AVI_PASSWORD)."
+    }, 
+    "preserve_client_ip": {
+      "type": "Optional[String]", 
+      "description": "Specifies if client ip needs to be preserved for backend connection. Not compatible with connection multiplexing. Default value when not specified in API or module is interpreted by Avi Controller as False."
+    }, 
+    "tenant_uuid": {
+      "type": "Optional[String]", 
+      "description": "UUID of tenant used for all Avi API calls and context of object."
+    }, 
+    "tenant": {
+      "type": "Optional[String]", 
+      "description": "Name of tenant used for all Avi API calls and context of object."
+    }, 
+    "uuid": {
+      "type": "Optional[String]", 
+      "description": "Uuid of the application profile."
+    }
+  }
+}

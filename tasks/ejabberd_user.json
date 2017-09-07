@@ -1,0 +1,25 @@
+{
+  "description": "Manages users for ejabberd servers", 
+  "parameters": {
+    "username": {
+      "type": "String", 
+      "description": "the name of the user to manage"
+    }, 
+    "host": {
+      "type": "String", 
+      "description": "the ejabberd host associated with this username"
+    }, 
+    "password": {
+      "type": "Optional[String]", 
+      "description": "the password to assign to the username"
+    }, 
+    "logging": {
+      "type": "Optional[String]", 
+      "description": "enables or disables the local syslog facility for this module"
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "describe the desired state of the user to be managed"
+    }
+  }
+}

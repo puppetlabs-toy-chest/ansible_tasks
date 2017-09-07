@@ -1,0 +1,41 @@
+{
+  "description": "Manages SNMP user configuration on HUAWEI CloudEngine switches.", 
+  "parameters": {
+    "priv_key": {
+      "type": "Optional[String]", 
+      "description": "The encryption password. Password length 8-255 characters."
+    }, 
+    "aaa_local_user": {
+      "type": "Optional[String]", 
+      "description": "Unique name to identify the local user."
+    }, 
+    "auth_key": {
+      "type": "Optional[String]", 
+      "description": "The authentication password. Password length, 8-255 characters."
+    }, 
+    "usm_user_name": {
+      "type": "Optional[String]", 
+      "description": "Unique name to identify the USM user."
+    }, 
+    "acl_number": {
+      "type": "Optional[String]", 
+      "description": "Access control list number."
+    }, 
+    "auth_protocol": {
+      "type": "Optional[String]", 
+      "description": "Authentication protocol."
+    }, 
+    "remote_engine_id": {
+      "type": "Optional[String]", 
+      "description": "Remote engine id of the USM user."
+    }, 
+    "priv_protocol": {
+      "type": "Optional[String]", 
+      "description": "Encryption protocol."
+    }, 
+    "user_group": {
+      "type": "Optional[String]", 
+      "description": "Name of the group where user belongs to."
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "description": "apply authcode to a device/instance", 
+  "parameters": {
+    "username": {
+      "type": "Optional[String]", 
+      "description": "username for authentication"
+    }, 
+    "force": {
+      "type": "Optional[String]", 
+      "description": "whether to apply authcode even if device is already licensed"
+    }, 
+    "password": {
+      "type": "String", 
+      "description": "password for authentication"
+    }, 
+    "ip_address": {
+      "type": "String", 
+      "description": "IP address (or hostname) of PAN-OS device"
+    }, 
+    "auth_code": {
+      "type": "String", 
+      "description": "authcode to be applied"
+    }
+  }
+}

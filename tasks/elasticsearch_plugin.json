@@ -1,0 +1,41 @@
+{
+  "description": "Manage Elasticsearch plugins", 
+  "parameters": {
+    "name": {
+      "type": "String", 
+      "description": "Name of the plugin to install. In ES 2.x, the name can be an url or file location"
+    }, 
+    "proxy_host": {
+      "type": "Optional[String]", 
+      "description": "Proxy host to use during plugin installation"
+    }, 
+    "url": {
+      "type": "Optional[String]", 
+      "description": "Set exact URL to download the plugin from (Only works for ES 1.x)"
+    }, 
+    "proxy_port": {
+      "type": "Optional[String]", 
+      "description": "Proxy port to use during plugin installation"
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "Desired state of a plugin."
+    }, 
+    "version": {
+      "type": "Optional[String]", 
+      "description": "Version of the plugin to be installed. If plugin exists with previous version, it will NOT be updated"
+    }, 
+    "timeout": {
+      "type": "Optional[String]", 
+      "description": "Timeout setting: 30s, 1m, 1h..."
+    }, 
+    "plugin_dir": {
+      "type": "Optional[String]", 
+      "description": "Your configured plugin directory specified in Elasticsearch"
+    }, 
+    "plugin_bin": {
+      "type": "Optional[String]", 
+      "description": "Location of the plugin binary"
+    }
+  }
+}

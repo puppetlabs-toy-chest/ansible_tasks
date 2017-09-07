@@ -1,0 +1,53 @@
+{
+  "description": "Create, update, and delete MCP 1.0 & 2.0 networks", 
+  "parameters": {
+    "service_plan": {
+      "type": "Optional[String]", 
+      "description": "The service plan, either \u201cESSENTIALS\u201d or \u201cADVANCED\u201d. MCP 2.0 Only."
+    }, 
+    "mcp_user": {
+      "type": "Optional[String]", 
+      "description": "The username used to authenticate to the CloudControl API. If not specified, will fall back to C(MCP_USER) from environment variable or C(~/.dimensiondata)."
+    }, 
+    "wait_poll_interval": {
+      "type": "Optional[String]", 
+      "description": "The amount of time (in seconds) to wait between checks for task completion. Only applicable if I(wait=true)."
+    }, 
+    "mcp_password": {
+      "type": "Optional[String]", 
+      "description": "The password used to authenticate to the CloudControl API. If not specified, will fall back to C(MCP_PASSWORD) from environment variable or C(~/.dimensiondata). Required if I(mcp_user) is specified."
+    }, 
+    "region": {
+      "type": "Optional[String]", 
+      "description": "The target region."
+    }, 
+    "name": {
+      "type": "String", 
+      "description": "The name of the network domain to create."
+    }, 
+    "wait_time": {
+      "type": "Optional[String]", 
+      "description": "The maximum amount of time (in seconds) to wait for the task to complete. Only applicable if I(wait=true)."
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "Should the resource be present or absent."
+    }, 
+    "location": {
+      "type": "String", 
+      "description": "The target datacenter."
+    }, 
+    "wait": {
+      "type": "Optional[String]", 
+      "description": "Should we wait for the task to complete before moving onto the next."
+    }, 
+    "validate_certs": {
+      "type": "Optional[String]", 
+      "description": "If C(false), SSL certificates will not be validated. This should only be used on private instances of the CloudControl API that use self-signed certificates."
+    }, 
+    "description": {
+      "type": "Optional[String]", 
+      "description": "Additional description of the network domain."
+    }
+  }
+}

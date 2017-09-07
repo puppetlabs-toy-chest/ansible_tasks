@@ -1,0 +1,109 @@
+{
+  "description": "Manages BGP configuration on HUAWEI CloudEngine switches.", 
+  "parameters": {
+    "vrf_rid_auto_sel": {
+      "type": "Optional[String]", 
+      "description": "If the value is true, VPN BGP instances are enabled to automatically select router IDs. If the value is false, VPN BGP instances are disabled from automatically selecting router IDs."
+    }, 
+    "suppress_interval": {
+      "type": "Optional[String]", 
+      "description": "Suppress interval."
+    }, 
+    "as_number": {
+      "type": "Optional[String]", 
+      "description": "Local AS number. The value is a string of 1 to 11 characters."
+    }, 
+    "is_shutdown": {
+      "type": "Optional[String]", 
+      "description": "Interrupt BGP all neighbor."
+    }, 
+    "check_first_as": {
+      "type": "Optional[String]", 
+      "description": "Check the first AS in the AS_Path of the update messages from EBGP peers."
+    }, 
+    "hold_interval": {
+      "type": "Optional[String]", 
+      "description": "Hold interval."
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "Specify desired state of the resource."
+    }, 
+    "keep_all_routes": {
+      "type": "Optional[String]", 
+      "description": "If the value is true, the system stores all route update messages received from all peers (groups) after BGP connection setup. If the value is false, the system stores only BGP update messages that are received from peers and pass the configured import policy."
+    }, 
+    "gr_peer_reset": {
+      "type": "Optional[String]", 
+      "description": "Peer disconnection through GR."
+    }, 
+    "graceful_restart": {
+      "type": "Optional[String]", 
+      "description": "Enable GR of the BGP speaker in the specified address family, peer address, or peer group."
+    }, 
+    "router_id": {
+      "type": "Optional[String]", 
+      "description": "ID of a router that is in IPv4 address format."
+    }, 
+    "memory_limit": {
+      "type": "Optional[String]", 
+      "description": "Support BGP RIB memory protection."
+    }, 
+    "as_path_limit": {
+      "type": "Optional[String]", 
+      "description": "Maximum number of AS numbers in the AS_Path attribute. The default value is 255."
+    }, 
+    "confed_id_number": {
+      "type": "Optional[String]", 
+      "description": "Confederation ID. The value is a string of 1 to 11 characters."
+    }, 
+    "bgp_rid_auto_sel": {
+      "type": "Optional[String]", 
+      "description": "The function to automatically select router IDs for all VPN BGP instances is enabled."
+    }, 
+    "conn_retry_time": {
+      "type": "Optional[String]", 
+      "description": "ConnectRetry interval. The value is an integer, in seconds. The default value is 32s."
+    }, 
+    "confed_peer_as_num": {
+      "type": "Optional[String]", 
+      "description": "Confederation AS number, in two-byte or four-byte format. The value is a string of 1 to 11 characters."
+    }, 
+    "min_hold_time": {
+      "type": "Optional[String]", 
+      "description": "Min hold time, in seconds. The value of the hold time can be 0 or range from 20 to 65535."
+    }, 
+    "ebgp_if_sensitive": {
+      "type": "Optional[String]", 
+      "description": "If the value is true, After the fast EBGP interface awareness function is enabled, EBGP sessions on an interface are deleted immediately when the interface goes Down. If the value is  false, After the fast EBGP interface awareness function is enabled, EBGP sessions on an interface are not deleted immediately when the interface goes Down."
+    }, 
+    "hold_time": {
+      "type": "Optional[String]", 
+      "description": "Hold time, in seconds. The value of the hold time can be 0 or range from 3 to 65535."
+    }, 
+    "clear_interval": {
+      "type": "Optional[String]", 
+      "description": "Clear interval."
+    }, 
+    "confed_nonstanded": {
+      "type": "Optional[String]", 
+      "description": "Configure the device to be compatible with devices in a nonstandard confederation."
+    }, 
+    "time_wait_for_rib": {
+      "type": "Optional[String]", 
+      "description": "Period of waiting for the End-Of-RIB flag. The value is an integer ranging from 3 to 3000. The default value is 600."
+    }, 
+    "default_af_type": {
+      "type": "Optional[String]", 
+      "description": "Type of a created address family, which can be IPv4 unicast or IPv6 unicast. The default type is IPv4 unicast."
+    }, 
+    "keepalive_time": {
+      "type": "Optional[String]", 
+      "description": "If the value of a timer changes, the BGP peer relationship between the routers is disconnected. The value is an integer ranging from 0 to 21845. The default value is 60."
+    }, 
+    "vrf_name": {
+      "type": "Optional[String]", 
+      "description": "Name of a BGP instance. The name is a case-sensitive string of characters."
+    }
+  }
+}

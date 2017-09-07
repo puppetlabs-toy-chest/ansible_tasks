@@ -1,0 +1,69 @@
+{
+  "description": "Manipulate Rackspace Cloud Autoscale Scaling Policy", 
+  "parameters": {
+    "username": {
+      "type": "Optional[String]", 
+      "description": "Rackspace username, overrides I(credentials)."
+    }, 
+    "is_percent": {
+      "type": "Optional[String]", 
+      "description": "Whether the value in I(change) is a percent value"
+    }, 
+    "name": {
+      "type": "String", 
+      "description": "Name to give the policy"
+    }, 
+    "scaling_group": {
+      "type": "String", 
+      "description": "Name of the scaling group that this policy will be added to"
+    }, 
+    "env": {
+      "type": "Optional[String]", 
+      "description": "Environment as configured in I(~/.pyrax.cfg), see U(https://github.com/rackspace/pyrax/blob/master/docs/getting_started.md#pyrax-configuration)."
+    }, 
+    "region": {
+      "type": "Optional[String]", 
+      "description": "Region to create an instance in."
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "Indicate desired state of the resource"
+    }, 
+    "cron": {
+      "type": "Optional[String]", 
+      "description": "The time when the policy will be executed, as a cron entry. For example, if this is parameter is set to C(1 0 * * *)"
+    }, 
+    "desired_capacity": {
+      "type": "Optional[String]", 
+      "description": "The desired server capacity of the scaling the group; that is, how many servers should be in the scaling group."
+    }, 
+    "verify_ssl": {
+      "type": "Optional[String]", 
+      "description": "Whether or not to require SSL validation of API endpoints."
+    }, 
+    "cooldown": {
+      "type": "Optional[String]", 
+      "description": "The period of time, in seconds, that must pass before any scaling can occur after the previous scaling. Must be an integer between 0 and 86400 (24 hrs)."
+    }, 
+    "at": {
+      "type": "Optional[String]", 
+      "description": "The UTC time when this policy will be executed. The time must be formatted according to C(yyyy-MM-dd'T'HH:mm:ss.SSS) such as C(2013-05-19T08:07:08Z)"
+    }, 
+    "policy_type": {
+      "type": "String", 
+      "description": "The type of policy that will be executed for the current release."
+    }, 
+    "credentials": {
+      "type": "Optional[String]", 
+      "description": "File to find the Rackspace credentials in. Ignored if I(api_key) and I(username) are provided."
+    }, 
+    "api_key": {
+      "type": "Optional[String]", 
+      "description": "Rackspace API key, overrides I(credentials)."
+    }, 
+    "change": {
+      "type": "Optional[String]", 
+      "description": "The change, either as a number of servers or as a percentage, to make in the scaling group. If this is a percentage, you must set I(is_percent) to C(true) also."
+    }
+  }
+}

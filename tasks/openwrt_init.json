@@ -1,0 +1,21 @@
+{
+  "description": "Manage services on OpenWrt.", 
+  "parameters": {
+    "pattern": {
+      "type": "Optional[String]", 
+      "description": "If the service does not respond to the 'running' command, name a substring to look for as would be found in the output of the I(ps) command as a stand-in for a 'running' result.  If the string is found, the service will be assumed to be running."
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "C(started)/C(stopped) are idempotent actions that will not run commands unless necessary. C(restarted) will always bounce the service. C(reloaded) will always reload."
+    }, 
+    "enabled": {
+      "type": "Optional[String]", 
+      "description": "Whether the service should start on boot. B(At least one of state and enabled are required.)"
+    }, 
+    "name": {
+      "type": "String", 
+      "description": "Name of the service."
+    }
+  }
+}

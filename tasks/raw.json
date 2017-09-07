@@ -1,0 +1,13 @@
+{
+  "description": "Executes a low-down and dirty SSH command", 
+  "parameters": {
+    "free_form": {
+      "type": "String", 
+      "description": "the raw module takes a free form command to run. There is no parameter actually named 'free form'; see the examples!"
+    }, 
+    "executable": {
+      "type": "Optional[String]", 
+      "description": "change the shell used to execute the command. Should be an absolute path to the executable. when using privilege escalation (C(become)), a default shell will be assigned if one is not provided as privilege escalation requires a shell."
+    }
+  }
+}

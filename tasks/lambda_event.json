@@ -1,0 +1,53 @@
+{
+  "description": "Creates, updates or deletes AWS Lambda function event mappings.", 
+  "parameters": {
+    "aws_secret_key": {
+      "type": "Optional[String]", 
+      "description": "AWS secret key. If not set then the value of the AWS_SECRET_ACCESS_KEY, AWS_SECRET_KEY, or EC2_SECRET_KEY environment variable is used."
+    }, 
+    "profile": {
+      "type": "Optional[String]", 
+      "description": "Uses a boto profile. Only works with boto >= 2.24.0."
+    }, 
+    "aws_access_key": {
+      "type": "Optional[String]", 
+      "description": "AWS access key. If not set then the value of the AWS_ACCESS_KEY_ID, AWS_ACCESS_KEY or EC2_ACCESS_KEY environment variable is used."
+    }, 
+    "event_source": {
+      "type": "Optional[String]", 
+      "description": "Source of the event that triggers the lambda function."
+    }, 
+    "security_token": {
+      "type": "Optional[String]", 
+      "description": "AWS STS security token. If not set then the value of the AWS_SECURITY_TOKEN or EC2_SECURITY_TOKEN environment variable is used."
+    }, 
+    "source_params": {
+      "type": "String", 
+      "description": "Sub-parameters required for event source. I(== stream event source ==) C(source_arn) The Amazon Resource Name (ARN) of the Kinesis or DynamoDB stream that is the event source. C(enabled) Indicates whether AWS Lambda should begin polling the event source. Default is True. C(batch_size) The largest number of records that AWS Lambda will retrieve from your event source at the time of invoking your function. Default is 100. C(starting_position) The position in the stream where AWS Lambda should start reading. Choices are TRIM_HORIZON or LATEST."
+    }, 
+    "lambda_function_arn": {
+      "type": "String", 
+      "description": "The name or ARN of the lambda function."
+    }, 
+    "alias": {
+      "type": "String", 
+      "description": "Name of the function alias. Mutually exclusive with C(version)."
+    }, 
+    "state": {
+      "type": "String", 
+      "description": "Describes the desired state."
+    }, 
+    "version": {
+      "type": "Optional[String]", 
+      "description": "Version of the Lambda function. Mutually exclusive with C(alias)."
+    }, 
+    "ec2_url": {
+      "type": "Optional[String]", 
+      "description": "Url to use to connect to EC2 or your Eucalyptus cloud (by default the module will use EC2 endpoints). Ignored for modules where region is required. Must be specified for all other modules if region is not used. If not set then the value of the EC2_URL environment variable, if any, is used."
+    }, 
+    "validate_certs": {
+      "type": "Optional[String]", 
+      "description": "When set to \"no\", SSL certificates will not be validated for boto versions >= 2.6.0."
+    }
+  }
+}

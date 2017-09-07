@@ -1,0 +1,69 @@
+{
+  "description": "Manages F5 BIG-IP LTM pools.", 
+  "parameters": {
+    "lb_method": {
+      "type": "Optional[String]", 
+      "description": "Load balancing method. When creating a new pool, if this value is not specified, the default of C(round-robin) will be used."
+    }, 
+    "quorum": {
+      "type": "Optional[String]", 
+      "description": "Monitor quorum value when C(monitor_type) is C(m_of_n)."
+    }, 
+    "description": {
+      "type": "Optional[String]", 
+      "description": "Specifies descriptive text that identifies the pool."
+    }, 
+    "server": {
+      "type": "String", 
+      "description": "The BIG-IP host. This option can be omitted if the environment variable C(F5_SERVER) is set."
+    }, 
+    "slow_ramp_time": {
+      "type": "Optional[String]", 
+      "description": "Sets the ramp-up time (in seconds) to gradually ramp up the load on newly added or freshly detected up pool members."
+    }, 
+    "service_down_action": {
+      "type": "Optional[String]", 
+      "description": "Sets the action to take when node goes down in pool."
+    }, 
+    "reselect_tries": {
+      "type": "Optional[String]", 
+      "description": "Sets the number of times the system tries to contact a pool member after a passive failure."
+    }, 
+    "port": {
+      "type": "Optional[String]", 
+      "description": "Pool member port."
+    }, 
+    "monitor_type": {
+      "type": "Optional[String]", 
+      "description": "Monitor rule type when C(monitors) > 1."
+    }, 
+    "host": {
+      "type": "Optional[String]", 
+      "description": "Pool member IP."
+    }, 
+    "user": {
+      "type": "String", 
+      "description": "The username to connect to the BIG-IP with. This user must have administrative privileges on the device. This option can be omitted if the environment variable C(F5_USER) is set."
+    }, 
+    "server_port": {
+      "type": "Optional[String]", 
+      "description": "The BIG-IP server port. This option can be omitted if the environment variable C(F5_SERVER_PORT) is set."
+    }, 
+    "password": {
+      "type": "String", 
+      "description": "The password for the user account used to connect to the BIG-IP. This option can be omitted if the environment variable C(F5_PASSWORD) is set."
+    }, 
+    "validate_certs": {
+      "type": "Optional[String]", 
+      "description": "If C(no), SSL certificates will not be validated. This should only be used on personally controlled sites using self-signed certificates. This option can be omitted if the environment variable C(F5_VALIDATE_CERTS) is set."
+    }, 
+    "monitors": {
+      "type": "Optional[String]", 
+      "description": "Monitor template name list. If the partition is not provided as part of the monitor name, then the C(partition) option will be used instead."
+    }, 
+    "name": {
+      "type": "String", 
+      "description": "Pool name"
+    }
+  }
+}

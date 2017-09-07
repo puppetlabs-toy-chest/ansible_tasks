@@ -1,0 +1,97 @@
+{
+  "description": "Manage Sensu checks", 
+  "parameters": {
+    "interval": {
+      "type": "Optional[String]", 
+      "description": "Check interval in seconds"
+    }, 
+    "metric": {
+      "type": "Optional[String]", 
+      "description": "Whether the check is a metric"
+    }, 
+    "subdue_begin": {
+      "type": "Optional[String]", 
+      "description": "When to disable handling of check failures"
+    }, 
+    "occurrences": {
+      "type": "Optional[String]", 
+      "description": "Number of event occurrences before the handler should take action"
+    }, 
+    "low_flap_threshold": {
+      "type": "Optional[String]", 
+      "description": "The low threshold for flap detection"
+    }, 
+    "publish": {
+      "type": "Optional[String]", 
+      "description": "Whether the check should be scheduled at all. You can still issue it via the sensu api"
+    }, 
+    "custom": {
+      "type": "Optional[String]", 
+      "description": "A hash/dictionary of custom parameters for mixing to the configuration. You can't rewrite others module parameters using this"
+    }, 
+    "source": {
+      "type": "Optional[String]", 
+      "description": "The check source, used to create a JIT Sensu client for an external resource (e.g. a network switch)."
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "Whether the check should be present or not"
+    }, 
+    "subdue_end": {
+      "type": "Optional[String]", 
+      "description": "When to enable handling of check failures"
+    }, 
+    "handle": {
+      "type": "Optional[String]", 
+      "description": "Whether the check should be handled or not"
+    }, 
+    "dependencies": {
+      "type": "Optional[String]", 
+      "description": "Other checks this check depends on, if dependencies fail, handling of this check will be disabled"
+    }, 
+    "subscribers": {
+      "type": "Optional[String]", 
+      "description": "List of subscribers/channels this check should run for See sensu_subscribers to subscribe a machine to a channel"
+    }, 
+    "aggregate": {
+      "type": "Optional[String]", 
+      "description": "Classifies the check as an aggregate check, making it available via the aggregate API"
+    }, 
+    "path": {
+      "type": "Optional[String]", 
+      "description": "Path to the json file of the check to be added/removed. Will be created if it does not exist (unless I(state=absent)). The parent folders need to exist when I(state=present), otherwise an error will be thrown"
+    }, 
+    "name": {
+      "type": "String", 
+      "description": "The name of the check This is the key that is used to determine whether a check exists"
+    }, 
+    "standalone": {
+      "type": "Optional[String]", 
+      "description": "Whether the check should be scheduled by the sensu client or server This option obviates the need for specifying the I(subscribers) option"
+    }, 
+    "handlers": {
+      "type": "Optional[String]", 
+      "description": "List of handlers to notify when the check fails"
+    }, 
+    "refresh": {
+      "type": "Optional[String]", 
+      "description": "Number of seconds handlers should wait before taking second action"
+    }, 
+    "command": {
+      "type": "String", 
+      "description": "Path to the sensu check to run (not required when I(state=absent))"
+    }, 
+    "high_flap_threshold": {
+      "type": "Optional[String]", 
+      "description": "The high threshold for flap detection"
+    }, 
+    "timeout": {
+      "type": "Optional[String]", 
+      "description": "Timeout for the check"
+    }, 
+    "backup": {
+      "type": "Optional[String]", 
+      "description": "Create a backup file (if yes), including the timestamp information so you can get the original file back if you somehow clobbered it incorrectly."
+    }
+  }
+}

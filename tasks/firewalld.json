@@ -1,0 +1,49 @@
+{
+  "description": "Manage arbitrary ports/services with firewalld", 
+  "parameters": {
+    "zone": {
+      "type": "Optional[String]", 
+      "description": "The firewalld zone to add/remove to/from (NOTE: default zone can be configured per system but \"public\" is default from upstream. Available choices can be extended based on per-system configs, listed here are \"out of the box\" defaults).\n"
+    }, 
+    "service": {
+      "type": "Optional[String]", 
+      "description": "Name of a service to add/remove to/from firewalld - service must be listed in output of firewall-cmd --get-services."
+    }, 
+    "masquerade": {
+      "type": "Optional[String]", 
+      "description": "The masquerade setting you would like to enable/disable to/from zones within firewalld"
+    }, 
+    "immediate": {
+      "type": "Optional[String]", 
+      "description": "Should this configuration be applied immediately, if set as permanent"
+    }, 
+    "source": {
+      "type": "Optional[String]", 
+      "description": "The source/network you would like to add/remove to/from firewalld"
+    }, 
+    "state": {
+      "type": "String", 
+      "description": "Should this port accept(enabled) or reject(disabled) connections."
+    }, 
+    "permanent": {
+      "type": "Optional[String]", 
+      "description": "Should this configuration be in the running firewalld configuration or persist across reboots. As of Ansible version 2.3, permanent operations can operate on firewalld configs when it's not running (requires firewalld >= 3.0.9)\n"
+    }, 
+    "timeout": {
+      "type": "Optional[String]", 
+      "description": "The amount of time the rule should be in effect for when non-permanent."
+    }, 
+    "interface": {
+      "type": "Optional[String]", 
+      "description": "The interface you would like to add/remove to/from a zone in firewalld"
+    }, 
+    "port": {
+      "type": "Optional[String]", 
+      "description": "Name of a port or port range to add/remove to/from firewalld. Must be in the form PORT/PROTOCOL or PORT-PORT/PROTOCOL for port ranges."
+    }, 
+    "rich_rule": {
+      "type": "Optional[String]", 
+      "description": "Rich rule to add/remove to/from firewalld."
+    }
+  }
+}

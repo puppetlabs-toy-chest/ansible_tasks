@@ -1,0 +1,57 @@
+{
+  "description": "add or delete Route53 zones", 
+  "parameters": {
+    "aws_secret_key": {
+      "type": "Optional[String]", 
+      "description": "AWS secret key. If not set then the value of the AWS_SECRET_ACCESS_KEY, AWS_SECRET_KEY, or EC2_SECRET_KEY environment variable is used."
+    }, 
+    "profile": {
+      "type": "Optional[String]", 
+      "description": "Uses a boto profile. Only works with boto >= 2.24.0."
+    }, 
+    "aws_access_key": {
+      "type": "Optional[String]", 
+      "description": "AWS access key. If not set then the value of the AWS_ACCESS_KEY_ID, AWS_ACCESS_KEY or EC2_ACCESS_KEY environment variable is used."
+    }, 
+    "security_token": {
+      "type": "Optional[String]", 
+      "description": "AWS STS security token. If not set then the value of the AWS_SECURITY_TOKEN or EC2_SECURITY_TOKEN environment variable is used."
+    }, 
+    "vpc_region": {
+      "type": "Optional[String]", 
+      "description": "The VPC Region the zone should be a part of (if this is going to be a private zone)"
+    }, 
+    "region": {
+      "type": "Optional[String]", 
+      "description": "The AWS region to use. If not specified then the value of the AWS_REGION or EC2_REGION environment variable, if any, is used. See U(http://docs.aws.amazon.com/general/latest/gr/rande.html#ec2_region)"
+    }, 
+    "comment": {
+      "type": "Optional[String]", 
+      "description": "Comment associated with the zone"
+    }, 
+    "hosted_zone_id": {
+      "type": "Optional[String]", 
+      "description": "The unique zone identifier you want to delete or \"all\" if there are many zones with the same domain name. Required if there are multiple zones identified with the above options"
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "whether or not the zone should exist or not"
+    }, 
+    "ec2_url": {
+      "type": "Optional[String]", 
+      "description": "Url to use to connect to EC2 or your Eucalyptus cloud (by default the module will use EC2 endpoints). Ignored for modules where region is required. Must be specified for all other modules if region is not used. If not set then the value of the EC2_URL environment variable, if any, is used."
+    }, 
+    "vpc_id": {
+      "type": "Optional[String]", 
+      "description": "The VPC ID the zone should be a part of (if this is going to be a private zone)"
+    }, 
+    "zone": {
+      "type": "String", 
+      "description": "The DNS zone record (eg: foo.com.)"
+    }, 
+    "validate_certs": {
+      "type": "Optional[String]", 
+      "description": "When set to \"no\", SSL certificates will not be validated for boto versions >= 2.6.0."
+    }
+  }
+}

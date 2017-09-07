@@ -1,0 +1,53 @@
+{
+  "description": "Manages virtual machines snapshots in vcenter", 
+  "parameters": {
+    "username": {
+      "type": "String", 
+      "description": "The username of the vSphere vCenter."
+    }, 
+    "datacenter": {
+      "type": "String", 
+      "description": "Destination datacenter for the deploy operation"
+    }, 
+    "uuid": {
+      "type": "Optional[String]", 
+      "description": "UUID of the instance to manage if known, this is VMware's unique identifier. This is required if name is not supplied."
+    }, 
+    "hostname": {
+      "type": "String", 
+      "description": "The hostname or IP address of the vSphere vCenter."
+    }, 
+    "name": {
+      "type": "String", 
+      "description": "Name of the VM to work with"
+    }, 
+    "state": {
+      "type": "String", 
+      "description": "Manage snapshots attached to a specific virtual machine."
+    }, 
+    "snapshot_name": {
+      "type": "Optional[String]", 
+      "description": "Sets the snapshot name to manage. This param is required only if state is not C(remove_all)"
+    }, 
+    "name_match": {
+      "type": "Optional[String]", 
+      "description": "If multiple VMs matching the name, use the first or last found"
+    }, 
+    "folder": {
+      "type": "Optional[String]", 
+      "description": "Define instance folder location."
+    }, 
+    "password": {
+      "type": "String", 
+      "description": "The password of the vSphere vCenter."
+    }, 
+    "validate_certs": {
+      "type": "Optional[String]", 
+      "description": "Allows connection when SSL certificates are not valid. Set to false when certificates are not trusted."
+    }, 
+    "description": {
+      "type": "Optional[String]", 
+      "description": "Define an arbitrary description to attach to snapshot."
+    }
+  }
+}

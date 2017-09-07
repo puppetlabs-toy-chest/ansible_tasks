@@ -1,0 +1,85 @@
+{
+  "description": "Module to manage hosts in oVirt/RHV", 
+  "parameters": {
+    "comment": {
+      "type": "Optional[String]", 
+      "description": "Description of the host."
+    }, 
+    "public_key": {
+      "type": "Optional[String]", 
+      "description": "I(True) if the public key should be used to authenticate to host. It's required in case C(password) is not set."
+    }, 
+    "kdump_integration": {
+      "type": "Optional[String]", 
+      "description": "Specify if host will have enabled Kdump integration."
+    }, 
+    "force": {
+      "type": "Optional[String]", 
+      "description": "If True host will be forcibly moved to desired state."
+    }, 
+    "name": {
+      "type": "String", 
+      "description": "Name of the host to manage."
+    }, 
+    "kernel_params": {
+      "type": "Optional[String]", 
+      "description": "List of kernel boot parameters. Following are most common kernel parameters used for host: Hostdev Passthrough & SR-IOV: intel_iommu=on Nested Virtualization: kvm-intel.nested=1 Unsafe Interrupts: vfio_iommu_type1.allow_unsafe_interrupts=1 PCI Reallocation: pci=realloc C(Note:) Modifying kernel boot parameters settings can lead to a host boot failure. Please consult the product documentation before doing any changes. Kernel boot parameters changes require host deploy and restart. The host needs to be I(reinstalled) suceesfully and then to be I(rebooted) for kernel boot parameters to be applied."
+    }, 
+    "spm_priority": {
+      "type": "Optional[String]", 
+      "description": "SPM priority of the host. Integer value from 1 to 10, where higher number means higher priority."
+    }, 
+    "address": {
+      "type": "Optional[String]", 
+      "description": "Host address. It can be either FQDN (preferred) or IP address."
+    }, 
+    "poll_interval": {
+      "type": "Optional[String]", 
+      "description": "Number of the seconds the module waits until another poll request on entity status is sent."
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "State which should a host to be in after successful completion."
+    }, 
+    "nested_attributes": {
+      "type": "Optional[String]", 
+      "description": "Specifies list of the attributes which should be fetched from the API. This parameter apply only when C(fetch_nested) is I(true)."
+    }, 
+    "cluster": {
+      "type": "Optional[String]", 
+      "description": "Name of the cluster, where host should be created."
+    }, 
+    "fetch_nested": {
+      "type": "Optional[String]", 
+      "description": "If I(True) the module will fetch additional data from the API. It will fetch IDs of the VMs disks, snapshots, etc. User can configure to fetch other attributes of the nested entities by specifying C(nested_attributes)."
+    }, 
+    "auth": {
+      "type": "String", 
+      "description": "Dictionary with values needed to create HTTP/HTTPS connection to oVirt: C(username)[I(required)] - The name of the user, something like I(admin@internal). Default value is set by I(OVIRT_USERNAME) environment variable. C(password)[I(required)] - The password of the user. Default value is set by I(OVIRT_PASSWORD) environment variable. C(url)[I(required)] - A string containing the base URL of the server, usually something like `I(https://server.example.com/ovirt-engine/api)`. Default value is set by I(OVIRT_URL) environment variable. C(token) - Token to be used instead of login with username/password. Default value is set by I(OVIRT_TOKEN) environment variable. C(insecure) - A boolean flag that indicates if the server TLS certificate and host name should be checked. C(ca_file) - A PEM file containing the trusted CA certificates. The certificate presented by the server will be verified using these CA certificates. If `C(ca_file)` parameter is not set, system wide CA certificate store is used. Default value is set by I(OVIRT_CAFILE) environment variable. C(kerberos) - A boolean flag indicating if Kerberos authentication should be used instead of the default basic authentication."
+    }, 
+    "timeout": {
+      "type": "Optional[String]", 
+      "description": "The amount of time in seconds the module should wait for the instance to get into desired state."
+    }, 
+    "hosted_engine": {
+      "type": "Optional[String]", 
+      "description": "If I(deploy) it means this host should deploy also hosted engine components. If I(undeploy) it means this host should un-deploy hosted engine components and this host will not function as part of the High Availability cluster."
+    }, 
+    "override_iptables": {
+      "type": "Optional[String]", 
+      "description": "If True host iptables will be overridden by host deploy script. Note that C(override_iptables) is I(false) by default in oVirt/RHV."
+    }, 
+    "password": {
+      "type": "Optional[String]", 
+      "description": "Password of the root. It's required in case C(public_key) is set to I(False)."
+    }, 
+    "override_display": {
+      "type": "Optional[String]", 
+      "description": "Override the display address of all VMs on this host with specified address."
+    }, 
+    "wait": {
+      "type": "Optional[String]", 
+      "description": "I(True) if the module should wait for the entity to get into desired state."
+    }
+  }
+}

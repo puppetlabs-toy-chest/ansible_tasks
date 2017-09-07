@@ -1,0 +1,41 @@
+{
+  "description": "Create address service object on PanOS devices", 
+  "parameters": {
+    "username": {
+      "type": "Optional[String]", 
+      "description": "Username credentials to use for authentication."
+    }, 
+    "description": {
+      "type": "Optional[String]", 
+      "description": "Description of the address object."
+    }, 
+    "ip_address": {
+      "type": "String", 
+      "description": "IP address (or hostname) of PAN-OS device being configured."
+    }, 
+    "tag": {
+      "type": "Optional[String]", 
+      "description": "Tag of the address object."
+    }, 
+    "address_name": {
+      "type": "String", 
+      "description": "Human readable name of the address."
+    }, 
+    "address": {
+      "type": "String", 
+      "description": "IP address with or without mask, range, or FQDN."
+    }, 
+    "commit": {
+      "type": "Optional[String]", 
+      "description": "Commit configuration to the Firewall if it is changed."
+    }, 
+    "password": {
+      "type": "String", 
+      "description": "Password credentials to use for authentication."
+    }, 
+    "type": {
+      "type": "Optional[String]", 
+      "description": "This is the type of the object created."
+    }
+  }
+}

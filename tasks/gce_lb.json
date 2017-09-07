@@ -1,0 +1,81 @@
+{
+  "description": "create/destroy GCE load-balancer resources", 
+  "parameters": {
+    "httphealthcheck_host": {
+      "type": "Optional[String]", 
+      "description": "host header to pass through on HTTP check requests"
+    }, 
+    "httphealthcheck_name": {
+      "type": "Optional[String]", 
+      "description": "the name identifier for the HTTP health check"
+    }, 
+    "name": {
+      "type": "Optional[String]", 
+      "description": "name of the load-balancer resource"
+    }, 
+    "external_ip": {
+      "type": "Optional[String]", 
+      "description": "the external static IPv4 (or auto-assigned) address for the LB"
+    }, 
+    "service_account_email": {
+      "type": "Optional[String]", 
+      "description": "service account email"
+    }, 
+    "region": {
+      "type": "Optional[String]", 
+      "description": "the GCE region where the load-balancer is defined"
+    }, 
+    "httphealthcheck_unhealthy_count": {
+      "type": "Optional[String]", 
+      "description": "number of consecutive failed checks before marking a node unhealthy"
+    }, 
+    "httphealthcheck_healthy_count": {
+      "type": "Optional[String]", 
+      "description": "number of consecutive successful checks before marking a node healthy"
+    }, 
+    "pem_file": {
+      "type": "Optional[String]", 
+      "description": "path to the pem file associated with the service account email This option is deprecated. Use 'credentials_file'."
+    }, 
+    "httphealthcheck_path": {
+      "type": "Optional[String]", 
+      "description": "the url path to use for HTTP health checking"
+    }, 
+    "port_range": {
+      "type": "Optional[String]", 
+      "description": "the port (range) to forward, e.g. 80 or 8000-8888 defaults to all ports"
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "desired state of the LB"
+    }, 
+    "httphealthcheck_timeout": {
+      "type": "Optional[String]", 
+      "description": "the timeout in seconds before a request is considered a failed check"
+    }, 
+    "members": {
+      "type": "Optional[String]", 
+      "description": "a list of zone/nodename pairs, e.g ['us-central1-a/www-a', ...]"
+    }, 
+    "credentials_file": {
+      "type": "Optional[String]", 
+      "description": "path to the JSON file associated with the service account email"
+    }, 
+    "httphealthcheck_port": {
+      "type": "Optional[String]", 
+      "description": "the TCP port to use for HTTP health checking"
+    }, 
+    "protocol": {
+      "type": "Optional[String]", 
+      "description": "the protocol used for the load-balancer packet forwarding, tcp or udp"
+    }, 
+    "project_id": {
+      "type": "Optional[String]", 
+      "description": "your GCE project ID"
+    }, 
+    "httphealthcheck_interval": {
+      "type": "Optional[String]", 
+      "description": "the duration in seconds between each health check request"
+    }
+  }
+}

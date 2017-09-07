@@ -1,0 +1,45 @@
+{
+  "description": "Manage OVH IP LoadBalancing backends", 
+  "parameters": {
+    "endpoint": {
+      "type": "String", 
+      "description": "The endpoint to use ( for instance ovh-eu)"
+    }, 
+    "name": {
+      "type": "String", 
+      "description": "Name of the LoadBalancing internal name (ip-X.X.X.X)"
+    }, 
+    "weight": {
+      "type": "Optional[String]", 
+      "description": "Determines the weight for this backend"
+    }, 
+    "probe": {
+      "type": "Optional[String]", 
+      "description": "Determines the type of probe to use for this backend"
+    }, 
+    "application_key": {
+      "type": "String", 
+      "description": "The applicationKey to use"
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "Determines whether the backend is to be created/modified or deleted"
+    }, 
+    "application_secret": {
+      "type": "String", 
+      "description": "The application secret to use"
+    }, 
+    "timeout": {
+      "type": "Optional[String]", 
+      "description": "The timeout in seconds used to wait for a task to be completed."
+    }, 
+    "consumer_key": {
+      "type": "String", 
+      "description": "The consumer key to use"
+    }, 
+    "backend": {
+      "type": "String", 
+      "description": "The IP address of the backend to update / modify / delete"
+    }
+  }
+}

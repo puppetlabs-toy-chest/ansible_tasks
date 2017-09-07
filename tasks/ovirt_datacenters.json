@@ -1,0 +1,61 @@
+{
+  "description": "Module to manage data centers in oVirt/RHV", 
+  "parameters": {
+    "comment": {
+      "type": "Optional[String]", 
+      "description": "Comment of the data center."
+    }, 
+    "compatibility_version": {
+      "type": "Optional[String]", 
+      "description": "Compatibility version of the data center."
+    }, 
+    "name": {
+      "type": "String", 
+      "description": "Name of the data center to manage."
+    }, 
+    "mac_pool": {
+      "type": "Optional[String]", 
+      "description": "MAC pool to be used by this datacenter. IMPORTANT: This option is deprecated in oVirt/RHV 4.1. You should use C(mac_pool) in C(ovirt_clusters) module, as MAC pools are set per cluster since 4.1."
+    }, 
+    "local": {
+      "type": "Optional[String]", 
+      "description": "I(True) if the data center should be local, I(False) if should be shared. Default value is set by engine."
+    }, 
+    "poll_interval": {
+      "type": "Optional[String]", 
+      "description": "Number of the seconds the module waits until another poll request on entity status is sent."
+    }, 
+    "fetch_nested": {
+      "type": "Optional[String]", 
+      "description": "If I(True) the module will fetch additional data from the API. It will fetch IDs of the VMs disks, snapshots, etc. User can configure to fetch other attributes of the nested entities by specifying C(nested_attributes)."
+    }, 
+    "nested_attributes": {
+      "type": "Optional[String]", 
+      "description": "Specifies list of the attributes which should be fetched from the API. This parameter apply only when C(fetch_nested) is I(true)."
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "Should the data center be present or absent"
+    }, 
+    "auth": {
+      "type": "String", 
+      "description": "Dictionary with values needed to create HTTP/HTTPS connection to oVirt: C(username)[I(required)] - The name of the user, something like I(admin@internal). Default value is set by I(OVIRT_USERNAME) environment variable. C(password)[I(required)] - The password of the user. Default value is set by I(OVIRT_PASSWORD) environment variable. C(url)[I(required)] - A string containing the base URL of the server, usually something like `I(https://server.example.com/ovirt-engine/api)`. Default value is set by I(OVIRT_URL) environment variable. C(token) - Token to be used instead of login with username/password. Default value is set by I(OVIRT_TOKEN) environment variable. C(insecure) - A boolean flag that indicates if the server TLS certificate and host name should be checked. C(ca_file) - A PEM file containing the trusted CA certificates. The certificate presented by the server will be verified using these CA certificates. If `C(ca_file)` parameter is not set, system wide CA certificate store is used. Default value is set by I(OVIRT_CAFILE) environment variable. C(kerberos) - A boolean flag indicating if Kerberos authentication should be used instead of the default basic authentication."
+    }, 
+    "timeout": {
+      "type": "Optional[String]", 
+      "description": "The amount of time in seconds the module should wait for the instance to get into desired state."
+    }, 
+    "wait": {
+      "type": "Optional[String]", 
+      "description": "I(True) if the module should wait for the entity to get into desired state."
+    }, 
+    "quota_mode": {
+      "type": "Optional[String]", 
+      "description": "Quota mode of the data center. One of I(disabled), I(audit) or I(enabled)"
+    }, 
+    "description": {
+      "type": "Optional[String]", 
+      "description": "Description of the data center."
+    }
+  }
+}

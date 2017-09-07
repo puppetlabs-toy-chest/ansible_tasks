@@ -1,0 +1,45 @@
+{
+  "description": "Add or remove LDAP entries.", 
+  "parameters": {
+    "dn": {
+      "type": "String", 
+      "description": "The DN of the entry to add or remove."
+    }, 
+    "objectClass": {
+      "type": "Optional[String]", 
+      "description": "If I(state=present), value or list of values to use when creating the entry. It can either be a string or an actual list of strings."
+    }, 
+    "start_tls": {
+      "type": "Optional[String]", 
+      "description": "If true, we'll use the START_TLS LDAP extension."
+    }, 
+    "bind_dn": {
+      "type": "Optional[String]", 
+      "description": "A DN to bind with. If this is omitted, we'll try a SASL bind with the EXTERNAL mechanism. If this is blank, we'll use an anonymous bind."
+    }, 
+    "server_uri": {
+      "type": "Optional[String]", 
+      "description": "A URI to the LDAP server. The default value lets the underlying LDAP client library look for a UNIX domain socket in its default location."
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "The target state of the entry."
+    }, 
+    "params": {
+      "type": "Optional[String]", 
+      "description": "List of options which allows to overwrite any of the task or the I(attributes) options. To remove an option, set the value of the option to C(null)."
+    }, 
+    "bind_pw": {
+      "type": "Optional[String]", 
+      "description": "The password to use with I(bind_dn)."
+    }, 
+    "attributes": {
+      "type": "Optional[String]", 
+      "description": "If I(state=present), attributes necessary to create an entry. Existing entries are never modified. To assert specific attribute values on an existing entry, use M(ldap_attr) module instead."
+    }, 
+    "validate_certs": {
+      "type": "Optional[String]", 
+      "description": "If C(no), SSL certificates will not be validated. This should only be used on sites using self-signed certificates."
+    }
+  }
+}

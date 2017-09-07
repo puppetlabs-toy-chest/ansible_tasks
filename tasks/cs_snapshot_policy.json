@@ -1,0 +1,81 @@
+{
+  "description": "Manages volume snapshot policies on Apache CloudStack based clouds.", 
+  "parameters": {
+    "project": {
+      "type": "Optional[String]", 
+      "description": "Name of the project the volume is related to."
+    }, 
+    "domain": {
+      "type": "Optional[String]", 
+      "description": "Domain the volume is related to."
+    }, 
+    "interval_type": {
+      "type": "Optional[String]", 
+      "description": "Interval of the snapshot."
+    }, 
+    "api_url": {
+      "type": "Optional[String]", 
+      "description": "URL of the CloudStack API e.g. https://cloud.example.com/client/api."
+    }, 
+    "api_http_method": {
+      "type": "Optional[String]", 
+      "description": "HTTP method used."
+    }, 
+    "schedule": {
+      "type": "Optional[String]", 
+      "description": "Time the snapshot is scheduled. Required if C(state=present). Format for C(interval_type=HOURLY): C(MM) Format for C(interval_type=DAILY): C(MM:HH) Format for C(interval_type=WEEKLY): C(MM:HH:DD (1-7)) Format for C(interval_type=MONTHLY): C(MM:HH:DD (1-28))"
+    }, 
+    "api_secret": {
+      "type": "Optional[String]", 
+      "description": "Secret key of the CloudStack API."
+    }, 
+    "api_timeout": {
+      "type": "Optional[String]", 
+      "description": "HTTP timeout."
+    }, 
+    "vm": {
+      "type": "Optional[String]", 
+      "description": "Name of the instance to select the volume from. Use C(volume_type) if VM has a DATADISK and ROOT volume. In case of C(volume_type=DATADISK), additionally use C(device_id) if VM has more than one DATADISK volume. Either C(volume) or C(vm) is required."
+    }, 
+    "volume_type": {
+      "type": "Optional[String]", 
+      "description": "Type of the volume."
+    }, 
+    "time_zone": {
+      "type": "Optional[String]", 
+      "description": "Specifies a timezone for this command."
+    }, 
+    "volume": {
+      "type": "Optional[String]", 
+      "description": "Name of the volume. Either C(volume) or C(vm) is required."
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "State of the snapshot policy."
+    }, 
+    "api_region": {
+      "type": "Optional[String]", 
+      "description": "Name of the ini section in the C(cloustack.ini) file."
+    }, 
+    "vpc": {
+      "type": "Optional[String]", 
+      "description": "Name of the vpc the instance is deployed in."
+    }, 
+    "account": {
+      "type": "Optional[String]", 
+      "description": "Account the volume is related to."
+    }, 
+    "max_snaps": {
+      "type": "Optional[String]", 
+      "description": "Max number of snapshots."
+    }, 
+    "api_key": {
+      "type": "Optional[String]", 
+      "description": "API key of the CloudStack API."
+    }, 
+    "device_id": {
+      "type": "Optional[String]", 
+      "description": "ID of the device on a VM the volume is attached to. This will only be considered if VM has multiple DATADISK volumes."
+    }
+  }
+}

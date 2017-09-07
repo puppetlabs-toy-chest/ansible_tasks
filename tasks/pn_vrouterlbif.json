@@ -1,0 +1,33 @@
+{
+  "description": "CLI command to add/remove vrouter-loopback-interface.", 
+  "parameters": {
+    "pn_vrouter_name": {
+      "type": "String", 
+      "description": "Specify the name of the vRouter."
+    }, 
+    "pn_clipassword": {
+      "type": "Optional[String]", 
+      "description": "Provide login password if user is not root."
+    }, 
+    "pn_cliusername": {
+      "type": "Optional[String]", 
+      "description": "Provide login username if user is not root."
+    }, 
+    "pn_interface_ip": {
+      "type": "String", 
+      "description": "Specify the IP address."
+    }, 
+    "state": {
+      "type": "String", 
+      "description": "State the action to perform. Use 'present' to add vrouter loopback interface and 'absent' to remove vrouter loopback interface."
+    }, 
+    "pn_index": {
+      "type": "Optional[String]", 
+      "description": "Specify the interface index from 1 to 255."
+    }, 
+    "pn_cliswitch": {
+      "type": "Optional[String]", 
+      "description": "Target switch(es) to run the cli on."
+    }
+  }
+}

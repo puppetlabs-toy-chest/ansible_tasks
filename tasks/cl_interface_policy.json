@@ -1,0 +1,13 @@
+{
+  "description": "Configure interface enforcement policy on Cumulus Linux", 
+  "parameters": {
+    "location": {
+      "type": "Optional[String]", 
+      "description": "Directory to store interface files."
+    }, 
+    "allowed": {
+      "type": "String", 
+      "description": "List of ports to run initial run at 10G."
+    }
+  }
+}

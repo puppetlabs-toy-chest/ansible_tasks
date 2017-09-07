@@ -1,0 +1,77 @@
+{
+  "description": "Manages accounts on Apache CloudStack based clouds.", 
+  "parameters": {
+    "username": {
+      "type": "Optional[String]", 
+      "description": "Username of the user to be created if account did not exist. Required on C(state=present)."
+    }, 
+    "domain": {
+      "type": "Optional[String]", 
+      "description": "Domain the account is related to."
+    }, 
+    "last_name": {
+      "type": "Optional[String]", 
+      "description": "Last name of the user to be created if account did not exist. Required on C(state=present)."
+    }, 
+    "account_type": {
+      "type": "Optional[String]", 
+      "description": "Type of the account."
+    }, 
+    "name": {
+      "type": "String", 
+      "description": "Name of account."
+    }, 
+    "api_http_method": {
+      "type": "Optional[String]", 
+      "description": "HTTP method used."
+    }, 
+    "network_domain": {
+      "type": "Optional[String]", 
+      "description": "Network domain of the account."
+    }, 
+    "api_secret": {
+      "type": "Optional[String]", 
+      "description": "Secret key of the CloudStack API."
+    }, 
+    "api_timeout": {
+      "type": "Optional[String]", 
+      "description": "HTTP timeout."
+    }, 
+    "first_name": {
+      "type": "Optional[String]", 
+      "description": "First name of the user to be created if account did not exist. Required on C(state=present)."
+    }, 
+    "api_region": {
+      "type": "Optional[String]", 
+      "description": "Name of the ini section in the C(cloustack.ini) file."
+    }, 
+    "api_key": {
+      "type": "Optional[String]", 
+      "description": "API key of the CloudStack API."
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "State of the account. C(unlocked) is an alias for C(enabled)."
+    }, 
+    "poll_async": {
+      "type": "Optional[String]", 
+      "description": "Poll async jobs until job has finished."
+    }, 
+    "timezone": {
+      "type": "Optional[String]", 
+      "description": "Timezone of the user to be created if account did not exist."
+    }, 
+    "password": {
+      "type": "Optional[String]", 
+      "description": "Password of the user to be created if account did not exist. Required on C(state=present)."
+    }, 
+    "email": {
+      "type": "Optional[String]", 
+      "description": "Email of the user to be created if account did not exist. Required on C(state=present)."
+    }, 
+    "api_url": {
+      "type": "Optional[String]", 
+      "description": "URL of the CloudStack API e.g. https://cloud.example.com/client/api."
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "description": "Installing packages from FreeBSD's ports system", 
+  "parameters": {
+    "state": {
+      "type": "Optional[String]", 
+      "description": "state of the package"
+    }, 
+    "use_packages": {
+      "type": "Optional[String]", 
+      "description": "use packages instead of ports whenever available"
+    }, 
+    "name": {
+      "type": "String", 
+      "description": "name of package to install/remove"
+    }
+  }
+}

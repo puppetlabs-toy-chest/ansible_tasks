@@ -1,0 +1,41 @@
+{
+  "description": "Create/destroy or attach/detach Block Storage volumes in DigitalOcean", 
+  "parameters": {
+    "droplet_id": {
+      "type": "Optional[String]", 
+      "description": "The droplet id you want to operate on. Required when command=attach."
+    }, 
+    "description": {
+      "type": "Optional[String]", 
+      "description": "Description of the Block Storage volume."
+    }, 
+    "region": {
+      "type": "String", 
+      "description": "The slug of the region where your Block Storage volume should be located in."
+    }, 
+    "api_token": {
+      "type": "String", 
+      "description": "DigitalOcean api token."
+    }, 
+    "state": {
+      "type": "String", 
+      "description": "Indicate desired state of the target."
+    }, 
+    "command": {
+      "type": "String", 
+      "description": "Which operation do you want to perform."
+    }, 
+    "timeout": {
+      "type": "Optional[String]", 
+      "description": "The timeout in seconds used for polling DigitalOcean's API."
+    }, 
+    "volume_name": {
+      "type": "String", 
+      "description": "The name of the Block Storage volume."
+    }, 
+    "block_size": {
+      "type": "Optional[String]", 
+      "description": "The size of the Block Storage volume in gigabytes. Required when command=create and state=present."
+    }
+  }
+}

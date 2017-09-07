@@ -1,0 +1,17 @@
+{
+  "description": "apt_rpm package manager", 
+  "parameters": {
+    "state": {
+      "type": "Optional[String]", 
+      "description": "Indicates the desired package state"
+    }, 
+    "update_cache": {
+      "type": "Optional[String]", 
+      "description": "update the package database first C(apt-get update)."
+    }, 
+    "pkg": {
+      "type": "String", 
+      "description": "name of package to install, upgrade or remove."
+    }
+  }
+}

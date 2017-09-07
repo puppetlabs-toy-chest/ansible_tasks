@@ -1,0 +1,49 @@
+{
+  "description": "Create PagerDuty maintenance windows", 
+  "parameters": {
+    "name": {
+      "type": "String", 
+      "description": "PagerDuty unique subdomain."
+    }, 
+    "service": {
+      "type": "Optional[String]", 
+      "description": "A comma separated list of PagerDuty service IDs."
+    }, 
+    "passwd": {
+      "type": "String", 
+      "description": "PagerDuty user password."
+    }, 
+    "validate_certs": {
+      "type": "Optional[String]", 
+      "description": "If C(no), SSL certificates will not be validated. This should only be used on personally controlled sites using self-signed certificates."
+    }, 
+    "token": {
+      "type": "String", 
+      "description": "A pagerduty token, generated on the pagerduty site. Can be used instead of user/passwd combination."
+    }, 
+    "hours": {
+      "type": "Optional[String]", 
+      "description": "Length of maintenance window in hours."
+    }, 
+    "state": {
+      "type": "String", 
+      "description": "Create a maintenance window or get a list of ongoing windows."
+    }, 
+    "user": {
+      "type": "String", 
+      "description": "PagerDuty user ID."
+    }, 
+    "requester_id": {
+      "type": "String", 
+      "description": "ID of user making the request. Only needed when using a token and creating a maintenance_window."
+    }, 
+    "minutes": {
+      "type": "Optional[String]", 
+      "description": "Maintenance window in minutes (this is added to the hours)."
+    }, 
+    "desc": {
+      "type": "Optional[String]", 
+      "description": "Short description of maintenance window."
+    }
+  }
+}

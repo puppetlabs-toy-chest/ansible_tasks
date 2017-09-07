@@ -1,0 +1,37 @@
+{
+  "description": "Adds or removes Vertica database roles and assigns roles to them.", 
+  "parameters": {
+    "assigned_roles": {
+      "type": "Optional[String]", 
+      "description": "Comma separated list of roles to assign to the role."
+    }, 
+    "name": {
+      "type": "String", 
+      "description": "Name of the role to add or remove."
+    }, 
+    "login_user": {
+      "type": "Optional[String]", 
+      "description": "The username used to authenticate with."
+    }, 
+    "db": {
+      "type": "Optional[String]", 
+      "description": "Name of the Vertica database."
+    }, 
+    "cluster": {
+      "type": "Optional[String]", 
+      "description": "Name of the Vertica cluster."
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "Whether to create C(present), drop C(absent) or lock C(locked) a role."
+    }, 
+    "login_password": {
+      "type": "Optional[String]", 
+      "description": "The password used to authenticate with."
+    }, 
+    "port": {
+      "type": "Optional[String]", 
+      "description": "Vertica cluster port to connect to."
+    }
+  }
+}

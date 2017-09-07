@@ -1,0 +1,37 @@
+{
+  "description": "Configures a IIS Web site.", 
+  "parameters": {
+    "protocol": {
+      "type": "Optional[String]", 
+      "description": "The protocol to be used for the Web binding (usually HTTP, HTTPS, or FTP)."
+    }, 
+    "name": {
+      "type": "String", 
+      "description": "Names of web site"
+    }, 
+    "certificate_hash": {
+      "type": "Optional[String]", 
+      "description": "Certificate hash for the SSL binding. The certificate hash is the unique identifier for the certificate."
+    }, 
+    "ip": {
+      "type": "Optional[String]", 
+      "description": "The IP address to bind to / use for the new site."
+    }, 
+    "host_header": {
+      "type": "Optional[String]", 
+      "description": "The host header to bind to / use for the new site."
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "State of the binding"
+    }, 
+    "port": {
+      "type": "Optional[String]", 
+      "description": "The port to bind to / use for the new site."
+    }, 
+    "certificate_store_name": {
+      "type": "Optional[String]", 
+      "description": "Name of the certificate store where the certificate for the binding is located."
+    }
+  }
+}

@@ -1,0 +1,4 @@
+{
+  "description": "Runs the discovery program I(facter) on the remote system", 
+  "parameters": {}
+}

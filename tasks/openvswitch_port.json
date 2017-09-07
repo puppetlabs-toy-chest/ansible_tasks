@@ -1,0 +1,33 @@
+{
+  "description": "Manage Open vSwitch ports", 
+  "parameters": {
+    "bridge": {
+      "type": "String", 
+      "description": "Name of bridge to manage"
+    }, 
+    "set": {
+      "type": "Optional[String]", 
+      "description": "Set a single property on a port."
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "Whether the port should exist"
+    }, 
+    "tag": {
+      "type": "Optional[String]", 
+      "description": "VLAN tag for this port. Must be a value between 0 and 4095."
+    }, 
+    "timeout": {
+      "type": "Optional[String]", 
+      "description": "How long to wait for ovs-vswitchd to respond"
+    }, 
+    "external_ids": {
+      "type": "Optional[String]", 
+      "description": "Dictionary of external_ids applied to a port."
+    }, 
+    "port": {
+      "type": "String", 
+      "description": "Name of port to manage on the bridge"
+    }
+  }
+}

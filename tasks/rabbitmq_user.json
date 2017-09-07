@@ -1,0 +1,49 @@
+{
+  "description": "Adds or removes users to RabbitMQ", 
+  "parameters": {
+    "node": {
+      "type": "Optional[String]", 
+      "description": "erlang node name of the rabbit we wish to configure"
+    }, 
+    "force": {
+      "type": "Optional[String]", 
+      "description": "Deletes and recreates the user."
+    }, 
+    "write_priv": {
+      "type": "Optional[String]", 
+      "description": "Regular expression to restrict configure actions on a resource for the specified vhost. By default all actions are restricted. This option will be ignored when permissions option is used."
+    }, 
+    "tags": {
+      "type": "Optional[String]", 
+      "description": "User tags specified as comma delimited"
+    }, 
+    "read_priv": {
+      "type": "Optional[String]", 
+      "description": "Regular expression to restrict configure actions on a resource for the specified vhost. By default all actions are restricted. This option will be ignored when permissions option is used."
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "Specify if user is to be added or removed"
+    }, 
+    "user": {
+      "type": "String", 
+      "description": "Name of user to add"
+    }, 
+    "configure_priv": {
+      "type": "Optional[String]", 
+      "description": "Regular expression to restrict configure actions on a resource for the specified vhost. By default all actions are restricted. This option will be ignored when permissions option is used."
+    }, 
+    "vhost": {
+      "type": "Optional[String]", 
+      "description": "vhost to apply access privileges. This option will be ignored when permissions option is used."
+    }, 
+    "password": {
+      "type": "Optional[String]", 
+      "description": "Password of user to add. To change the password of an existing user, you must also specify C(force=yes)."
+    }, 
+    "permissions": {
+      "type": "Optional[String]", 
+      "description": "a list of dicts, each dict contains vhost, configure_priv, write_priv, and read_priv, and represents a permission rule for that vhost. This option should be preferable when you care about all permissions of the user. You should use vhost, configure_priv, write_priv, and read_priv options instead if you care about permissions for just some vhosts."
+    }
+  }
+}

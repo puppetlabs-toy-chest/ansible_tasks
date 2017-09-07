@@ -1,0 +1,45 @@
+{
+  "description": "Manage DNS records.", 
+  "parameters": {
+    "key_algorithm": {
+      "type": "Optional[String]", 
+      "description": "Specify key algorithm used by C(key_secret)."
+    }, 
+    "zone": {
+      "type": "String", 
+      "description": "DNS record will be modified on this C(zone)."
+    }, 
+    "key_name": {
+      "type": "Optional[String]", 
+      "description": "Use TSIG key name to authenticate against DNS C(server)"
+    }, 
+    "value": {
+      "type": "Optional[String]", 
+      "description": "Sets the record value."
+    }, 
+    "server": {
+      "type": "String", 
+      "description": "Apply DNS modification on this server."
+    }, 
+    "record": {
+      "type": "String", 
+      "description": "Sets the DNS record to modify."
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "Manage DNS record."
+    }, 
+    "ttl": {
+      "type": "Optional[String]", 
+      "description": "Sets the record TTL."
+    }, 
+    "type": {
+      "type": "Optional[String]", 
+      "description": "Sets the record type."
+    }, 
+    "key_secret": {
+      "type": "Optional[String]", 
+      "description": "Use TSIG key secret, associated with C(key_name), to authenticate against C(server)"
+    }
+  }
+}

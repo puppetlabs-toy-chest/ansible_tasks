@@ -1,0 +1,49 @@
+{
+  "description": "Manage domains on Rackspace Cloud DNS", 
+  "parameters": {
+    "username": {
+      "type": "Optional[String]", 
+      "description": "Rackspace username, overrides I(credentials)."
+    }, 
+    "comment": {
+      "type": "Optional[String]", 
+      "description": "Brief description of the domain. Maximum length of 160 characters"
+    }, 
+    "name": {
+      "type": "Optional[String]", 
+      "description": "Domain name to create"
+    }, 
+    "region": {
+      "type": "Optional[String]", 
+      "description": "Region to create an instance in."
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "Indicate desired state of the resource"
+    }, 
+    "verify_ssl": {
+      "type": "Optional[String]", 
+      "description": "Whether or not to require SSL validation of API endpoints."
+    }, 
+    "env": {
+      "type": "Optional[String]", 
+      "description": "Environment as configured in I(~/.pyrax.cfg), see U(https://github.com/rackspace/pyrax/blob/master/docs/getting_started.md#pyrax-configuration)."
+    }, 
+    "ttl": {
+      "type": "Optional[String]", 
+      "description": "Time to live of domain in seconds"
+    }, 
+    "credentials": {
+      "type": "Optional[String]", 
+      "description": "File to find the Rackspace credentials in. Ignored if I(api_key) and I(username) are provided."
+    }, 
+    "api_key": {
+      "type": "Optional[String]", 
+      "description": "Rackspace API key, overrides I(credentials)."
+    }, 
+    "email": {
+      "type": "Optional[String]", 
+      "description": "Email address of the domain administrator"
+    }
+  }
+}

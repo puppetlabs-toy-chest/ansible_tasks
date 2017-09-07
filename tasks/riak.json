@@ -1,0 +1,37 @@
+{
+  "description": "This module handles some common Riak operations", 
+  "parameters": {
+    "target_node": {
+      "type": "Optional[String]", 
+      "description": "The target node for certain operations (join, ping)"
+    }, 
+    "validate_certs": {
+      "type": "Optional[String]", 
+      "description": "If C(no), SSL certificates will not be validated. This should only be used on personally controlled sites using self-signed certificates."
+    }, 
+    "wait_for_service": {
+      "type": "Optional[String]", 
+      "description": "Waits for a riak service to come online before continuing."
+    }, 
+    "http_conn": {
+      "type": "Optional[String]", 
+      "description": "The ip address and port that is listening for Riak HTTP queries"
+    }, 
+    "wait_for_ring": {
+      "type": "Optional[String]", 
+      "description": "Number of seconds to wait for all nodes to agree on the ring."
+    }, 
+    "wait_for_handoffs": {
+      "type": "Optional[String]", 
+      "description": "Number of seconds to wait for handoffs to complete."
+    }, 
+    "command": {
+      "type": "Optional[String]", 
+      "description": "The command you would like to perform against the cluster."
+    }, 
+    "config_dir": {
+      "type": "Optional[String]", 
+      "description": "The path to the riak configuration directory"
+    }
+  }
+}

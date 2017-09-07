@@ -1,0 +1,57 @@
+{
+  "description": "Manage Azure subnets.", 
+  "parameters": {
+    "profile": {
+      "type": "Optional[String]", 
+      "description": "Security profile found in ~/.azure/credentials file."
+    }, 
+    "name": {
+      "type": "String", 
+      "description": "Name of the subnet."
+    }, 
+    "resource_group": {
+      "type": "String", 
+      "description": "Name of resource group."
+    }, 
+    "virtual_network_name": {
+      "type": "String", 
+      "description": "Name of an existing virtual network with which the subnet is or will be associated."
+    }, 
+    "ad_user": {
+      "type": "Optional[String]", 
+      "description": "Active Directory username. Use when authenticating with an Active Directory user rather than service principal."
+    }, 
+    "secret": {
+      "type": "Optional[String]", 
+      "description": "Azure client secret. Use when authenticating with a Service Principal."
+    }, 
+    "security_group_name": {
+      "type": "Optional[String]", 
+      "description": "Name of an existing security group with which to associate the subnet."
+    }, 
+    "state": {
+      "type": "String", 
+      "description": "Assert the state of the subnet. Use 'present' to create or update a subnet and 'absent' to delete a subnet."
+    }, 
+    "client_id": {
+      "type": "Optional[String]", 
+      "description": "Azure client ID. Use when authenticating with a Service Principal."
+    }, 
+    "address_prefix_cidr": {
+      "type": "String", 
+      "description": "CIDR defining the IPv4 address space of the subnet. Must be valid within the context of the virtual network."
+    }, 
+    "subscription_id": {
+      "type": "Optional[String]", 
+      "description": "Your Azure subscription Id."
+    }, 
+    "password": {
+      "type": "Optional[String]", 
+      "description": "Active Directory user password. Use when authenticating with an Active Directory user rather than service principal."
+    }, 
+    "tenant": {
+      "type": "Optional[String]", 
+      "description": "Azure tenant ID. Use when authenticating with a Service Principal."
+    }
+  }
+}

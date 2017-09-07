@@ -1,0 +1,77 @@
+{
+  "description": "Create or delete a Rackspace Cloud Monitoring alarm.", 
+  "parameters": {
+    "username": {
+      "type": "Optional[String]", 
+      "description": "Rackspace username, overrides I(credentials)."
+    }, 
+    "entity_id": {
+      "type": "String", 
+      "description": "ID of the entity this alarm is attached to. May be acquired by registering the value of a rax_mon_entity task."
+    }, 
+    "tenant_name": {
+      "type": "Optional[String]", 
+      "description": "The tenant name used for authentication."
+    }, 
+    "notification_plan_id": {
+      "type": "String", 
+      "description": "ID of the notification plan to trigger if this alarm fires. May be acquired by registering the value of a rax_mon_notification_plan task."
+    }, 
+    "identity_type": {
+      "type": "Optional[String]", 
+      "description": "Authentication mechanism to use, such as rackspace or keystone."
+    }, 
+    "tenant_id": {
+      "type": "Optional[String]", 
+      "description": "The tenant ID used for authentication."
+    }, 
+    "region": {
+      "type": "Optional[String]", 
+      "description": "Region to create an instance in."
+    }, 
+    "auth_endpoint": {
+      "type": "Optional[String]", 
+      "description": "The URI of the authentication service."
+    }, 
+    "verify_ssl": {
+      "type": "Optional[String]", 
+      "description": "Whether or not to require SSL validation of API endpoints."
+    }, 
+    "label": {
+      "type": "String", 
+      "description": "Friendly name for this alarm, used to achieve idempotence. Must be a String between 1 and 255 characters long."
+    }, 
+    "disabled": {
+      "type": "Optional[String]", 
+      "description": "If yes, create this alarm, but leave it in an inactive state. Defaults to no."
+    }, 
+    "check_id": {
+      "type": "String", 
+      "description": "ID of the check that should be alerted on. May be acquired by registering the value of a rax_mon_check task."
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "Ensure that the alarm with this C(label) exists or does not exist."
+    }, 
+    "env": {
+      "type": "Optional[String]", 
+      "description": "Environment as configured in I(~/.pyrax.cfg), see U(https://github.com/rackspace/pyrax/blob/master/docs/getting_started.md#pyrax-configuration)."
+    }, 
+    "criteria": {
+      "type": "Optional[String]", 
+      "description": "Alarm DSL that describes alerting conditions and their output states. Must be between 1 and 16384 characters long. See http://docs.rackspace.com/cm/api/v1.0/cm-devguide/content/alerts-language.html for a reference on the alerting language."
+    }, 
+    "credentials": {
+      "type": "Optional[String]", 
+      "description": "File to find the Rackspace credentials in. Ignored if I(api_key) and I(username) are provided."
+    }, 
+    "api_key": {
+      "type": "Optional[String]", 
+      "description": "Rackspace API key, overrides I(credentials)."
+    }, 
+    "metadata": {
+      "type": "Optional[String]", 
+      "description": "Arbitrary key/value pairs to accompany the alarm. Must be a hash of String keys and values between 1 and 255 characters long."
+    }
+  }
+}

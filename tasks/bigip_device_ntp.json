@@ -1,0 +1,37 @@
+{
+  "description": "Manage NTP servers on a BIG-IP", 
+  "parameters": {
+    "ntp_servers": {
+      "type": "Optional[String]", 
+      "description": "A list of NTP servers to set on the device. At least one of C(ntp_servers) or C(timezone) is required."
+    }, 
+    "server": {
+      "type": "String", 
+      "description": "The BIG-IP host. This option can be omitted if the environment variable C(F5_SERVER) is set."
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "The state of the NTP servers on the system. When C(present), guarantees that the NTP servers are set on the system. When C(absent), removes the specified NTP servers from the device configuration."
+    }, 
+    "user": {
+      "type": "String", 
+      "description": "The username to connect to the BIG-IP with. This user must have administrative privileges on the device. This option can be omitted if the environment variable C(F5_USER) is set."
+    }, 
+    "server_port": {
+      "type": "Optional[String]", 
+      "description": "The BIG-IP server port. This option can be omitted if the environment variable C(F5_SERVER_PORT) is set."
+    }, 
+    "timezone": {
+      "type": "Optional[String]", 
+      "description": "The timezone to set for NTP lookups. At least one of C(ntp_servers) or C(timezone) is required."
+    }, 
+    "password": {
+      "type": "String", 
+      "description": "The password for the user account used to connect to the BIG-IP. This option can be omitted if the environment variable C(F5_PASSWORD) is set."
+    }, 
+    "validate_certs": {
+      "type": "Optional[String]", 
+      "description": "If C(no), SSL certificates will not be validated. This should only be used on personally controlled sites using self-signed certificates. This option can be omitted if the environment variable C(F5_VALIDATE_CERTS) is set."
+    }
+  }
+}

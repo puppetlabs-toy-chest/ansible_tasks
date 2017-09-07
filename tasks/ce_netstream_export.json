@@ -1,0 +1,41 @@
+{
+  "description": "Manages netstream export on HUAWEI CloudEngine switches.", 
+  "parameters": {
+    "bgp_nexthop": {
+      "type": "Optional[String]", 
+      "description": "Configures the statistics to carry BGP next hop information. Currently, only V9 supports the exported packets carrying BGP next hop information."
+    }, 
+    "host_port": {
+      "type": "Optional[String]", 
+      "description": "Specifies the destination UDP port number of the exported packets. The value is an integer that ranges from 1 to 65535."
+    }, 
+    "source_ip": {
+      "type": "Optional[String]", 
+      "description": "Specifies source address which can be IPv6 or IPv4 of the exported NetStream packet."
+    }, 
+    "as_option": {
+      "type": "Optional[String]", 
+      "description": "Specifies the AS number recorded in the statistics as the original or the peer AS number."
+    }, 
+    "host_ip": {
+      "type": "Optional[String]", 
+      "description": "Specifies destination address which can be IPv6 or IPv4 of the exported NetStream packet."
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "Manage the state of the resource."
+    }, 
+    "version": {
+      "type": "Optional[String]", 
+      "description": "Sets the version of exported packets."
+    }, 
+    "type": {
+      "type": "String", 
+      "description": "Specifies NetStream feature."
+    }, 
+    "host_vpn": {
+      "type": "Optional[String]", 
+      "description": "Specifies the VPN instance of the exported packets carrying flow statistics. Ensure the VPN instance has been created on the device."
+    }
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "description": "Downloads an Artifact from a Maven Repository", 
+  "parameters": {
+    "username": {
+      "type": "Optional[String]", 
+      "description": "The username to authenticate as to the Maven Repository. Use AWS secret key of the repository is hosted on S3"
+    }, 
+    "password": {
+      "type": "Optional[String]", 
+      "description": "The password to authenticate with to the Maven Repository. Use AWS secret access key of the repository is hosted on S3"
+    }, 
+    "artifact_id": {
+      "type": "String", 
+      "description": "The maven artifactId coordinate"
+    }, 
+    "extension": {
+      "type": "Optional[String]", 
+      "description": "The maven type/extension coordinate"
+    }, 
+    "dest": {
+      "type": "String", 
+      "description": "The path where the artifact should be written to"
+    }, 
+    "state": {
+      "type": "String", 
+      "description": "The desired state of the artifact"
+    }, 
+    "version": {
+      "type": "Optional[String]", 
+      "description": "The maven version coordinate"
+    }, 
+    "timeout": {
+      "type": "Optional[String]", 
+      "description": "Specifies a timeout in seconds for the connection attempt"
+    }, 
+    "repository_url": {
+      "type": "Optional[String]", 
+      "description": "The URL of the Maven Repository to download from. Use s3://... if the repository is hosted on Amazon S3, added in version 2.2."
+    }, 
+    "group_id": {
+      "type": "String", 
+      "description": "The Maven groupId coordinate"
+    }, 
+    "validate_certs": {
+      "type": "Optional[String]", 
+      "description": "If C(no), SSL certificates will not be validated. This should only be set to C(no) when no other option exists."
+    }, 
+    "classifier": {
+      "type": "Optional[String]", 
+      "description": "The maven classifier coordinate"
+    }
+  }
+}

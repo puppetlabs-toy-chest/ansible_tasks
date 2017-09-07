@@ -1,0 +1,17 @@
+{
+  "description": "Manage awall policies", 
+  "parameters": {
+    "state": {
+      "type": "Optional[String]", 
+      "description": "The policy(ies) will be C(enabled) The policy(ies) will be C(disabled)"
+    }, 
+    "activate": {
+      "type": "Optional[String]", 
+      "description": "Activate the new firewall rules. Can be run with other steps or on it's own."
+    }, 
+    "name": {
+      "type": "Optional[String]", 
+      "description": "A policy name, like C(foo), or multiple policies, like C(foo, bar)."
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "description": "Send a message to a Cisco Spark Room or Individual.", 
+  "parameters": {
+    "personal_token": {
+      "type": "String", 
+      "description": "Your personal access token required to validate the Spark API."
+    }, 
+    "message": {
+      "type": "String", 
+      "description": "The message you would like to send."
+    }, 
+    "recipient_id": {
+      "type": "String", 
+      "description": "The unique identifier associated with the supplied C(recipient_type)."
+    }, 
+    "message_type": {
+      "type": "Optional[String]", 
+      "description": "Specifies how you would like the message formatted."
+    }, 
+    "recipient_type": {
+      "type": "String", 
+      "description": "The request parameter you would like to send the message to. Messages can be sent to either a room or individual (by ID or E-Mail)."
+    }
+  }
+}

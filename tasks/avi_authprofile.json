@@ -1,0 +1,69 @@
+{
+  "description": "Module for setup of AuthProfile Avi RESTful Object", 
+  "parameters": {
+    "username": {
+      "type": "Optional[String]", 
+      "description": "Username used for accessing Avi controller. The default value is the environment variable C(AVI_USERNAME)."
+    }, 
+    "api_version": {
+      "type": "Optional[String]", 
+      "description": "Avi API version of to use for Avi API and objects."
+    }, 
+    "http": {
+      "type": "Optional[String]", 
+      "description": "Http user authentication params."
+    }, 
+    "description": {
+      "type": "Optional[String]", 
+      "description": "User defined description for the object."
+    }, 
+    "url": {
+      "type": "Optional[String]", 
+      "description": "Avi controller URL of the object."
+    }, 
+    "tenant_ref": {
+      "type": "Optional[String]", 
+      "description": "It is a reference to an object of type tenant."
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "The state that should be applied on the entity."
+    }, 
+    "name": {
+      "type": "String", 
+      "description": "Name of the auth profile."
+    }, 
+    "controller": {
+      "type": "Optional[String]", 
+      "description": "IP address or hostname of the controller. The default value is the environment variable C(AVI_CONTROLLER)."
+    }, 
+    "tacacs_plus": {
+      "type": "Optional[String]", 
+      "description": "Tacacs+ settings."
+    }, 
+    "ldap": {
+      "type": "Optional[String]", 
+      "description": "Ldap server and directory settings."
+    }, 
+    "password": {
+      "type": "Optional[String]", 
+      "description": "Password of Avi user in Avi controller. The default value is the environment variable C(AVI_PASSWORD)."
+    }, 
+    "type": {
+      "type": "String", 
+      "description": "Type of the auth profile. Enum options - AUTH_PROFILE_LDAP, AUTH_PROFILE_TACACS_PLUS."
+    }, 
+    "tenant_uuid": {
+      "type": "Optional[String]", 
+      "description": "UUID of tenant used for all Avi API calls and context of object."
+    }, 
+    "tenant": {
+      "type": "Optional[String]", 
+      "description": "Name of tenant used for all Avi API calls and context of object."
+    }, 
+    "uuid": {
+      "type": "Optional[String]", 
+      "description": "Uuid of the auth profile."
+    }
+  }
+}

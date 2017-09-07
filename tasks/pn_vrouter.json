@@ -1,0 +1,77 @@
+{
+  "description": "CLI command to create/delete/modify a vrouter.", 
+  "parameters": {
+    "pn_ospf_redistribute": {
+      "type": "Optional[String]", 
+      "description": "Specify how OSPF routes are redistributed."
+    }, 
+    "pn_name": {
+      "type": "String", 
+      "description": "Specify the name of the vRouter."
+    }, 
+    "state": {
+      "type": "String", 
+      "description": "State the action to perform. Use 'present' to create vrouter, 'absent' to delete vrouter and 'update' to modify vrouter."
+    }, 
+    "pn_clipassword": {
+      "type": "Optional[String]", 
+      "description": "Provide login password if user is not root."
+    }, 
+    "pn_bgp_redistribute": {
+      "type": "Optional[String]", 
+      "description": "Specify how BGP routes are redistributed."
+    }, 
+    "pn_router_type": {
+      "type": "Optional[String]", 
+      "description": "Specify if the vRouter uses software or hardware. Note that if you specify hardware as router type, you cannot assign IP addresses using DHCP. You must specify a static IP address."
+    }, 
+    "pn_hw_vrrp_id": {
+      "type": "Optional[String]", 
+      "description": "Specifies the VRRP ID for a hardware vrouter."
+    }, 
+    "pn_vnet": {
+      "type": "Optional[String]", 
+      "description": "Specify the name of the VNET. Required for vrouter-create."
+    }, 
+    "pn_cliusername": {
+      "type": "Optional[String]", 
+      "description": "Provide login username if user is not root."
+    }, 
+    "pn_rip_redistribute": {
+      "type": "Optional[String]", 
+      "description": "Specify how RIP routes are redistributed."
+    }, 
+    "pn_bgp_options": {
+      "type": "Optional[String]", 
+      "description": "Specify other BGP options as a whitespaces separated string within single quotes ''."
+    }, 
+    "pn_router_id": {
+      "type": "Optional[String]", 
+      "description": "Specify the vRouter IP address."
+    }, 
+    "pn_bgp_max_paths": {
+      "type": "Optional[String]", 
+      "description": "Specify the maximum number of paths for BGP. This is a number between 1 and 255 or 0 to unset."
+    }, 
+    "pn_service_state": {
+      "type": "Optional[String]", 
+      "description": "Specify to enable or disable vRouter service."
+    }, 
+    "pn_service_type": {
+      "type": "Optional[String]", 
+      "description": "Specify if the vRouter is a dedicated or shared VNET service."
+    }, 
+    "pn_cliswitch": {
+      "type": "Optional[String]", 
+      "description": "Target switch(es) to run the CLI on."
+    }, 
+    "pn_ospf_options": {
+      "type": "Optional[String]", 
+      "description": "Specify other OSPF options as a whitespaces separated string within single quotes ''."
+    }, 
+    "pn_bgp_as": {
+      "type": "Optional[String]", 
+      "description": "Specify the Autonomous System Number(ASN) if the vRouter runs Border Gateway Protocol(BGP)."
+    }
+  }
+}

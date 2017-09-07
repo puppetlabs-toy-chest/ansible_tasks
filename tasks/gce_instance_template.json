@@ -1,0 +1,105 @@
+{
+  "description": "create or destroy instance templates of Compute Engine of GCP.", 
+  "parameters": {
+    "automatic_restart": {
+      "type": "Optional[String]", 
+      "description": "Defines whether the instance should be automatically restarted when it is terminated by Compute Engine."
+    }, 
+    "image": {
+      "type": "Optional[String]", 
+      "description": "The image to use to create the instance. Cannot specify both both I(image) and I(source)."
+    }, 
+    "service_account_permissions": {
+      "type": "Optional[String]", 
+      "description": "service account permissions (see U(https://cloud.google.com/sdk/gcloud/reference/compute/instances/create), --scopes section for detailed information)"
+    }, 
+    "pem_file": {
+      "type": "Optional[String]", 
+      "description": "path to the pem file associated with the service account email This option is deprecated. Use 'credentials_file'."
+    }, 
+    "subnetwork_region": {
+      "type": "Optional[String]", 
+      "description": "Region that subnetwork resides in. (Required for subnetwork to successfully complete)"
+    }, 
+    "size": {
+      "type": "Optional[String]", 
+      "description": "The desired machine type for the instance template."
+    }, 
+    "network": {
+      "type": "Optional[String]", 
+      "description": "The network to associate with the instance."
+    }, 
+    "service_account_email": {
+      "type": "Optional[String]", 
+      "description": "service account email"
+    }, 
+    "nic_gce_struct": {
+      "type": "Optional[String]", 
+      "description": "Support passing in the GCE-specific formatted networkInterfaces[] structure."
+    }, 
+    "disk_auto_delete": {
+      "type": "Optional[String]", 
+      "description": "Indicate that the boot disk should be deleted when the Node is deleted."
+    }, 
+    "source": {
+      "type": "Optional[String]", 
+      "description": "A source disk to attach to the instance. Cannot specify both I(image) and I(source)."
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "The desired state for the instance template."
+    }, 
+    "project_id": {
+      "type": "Optional[String]", 
+      "description": "your GCE project ID"
+    }, 
+    "preemptible": {
+      "type": "Optional[String]", 
+      "description": "Defines whether the instance is preemptible."
+    }, 
+    "metadata": {
+      "type": "Optional[String]", 
+      "description": "a hash/dictionary of custom data for the instance; '{\"key\":\"value\", ...}'"
+    }, 
+    "description": {
+      "type": "Optional[String]", 
+      "description": "description of instance template"
+    }, 
+    "tags": {
+      "type": "Optional[String]", 
+      "description": "a comma-separated list of tags to associate with the instance"
+    }, 
+    "image_family": {
+      "type": "Optional[String]", 
+      "description": "The image family to use to create the instance. If I(image) has been used I(image_family) is ignored. Cannot specify both I(image) and I(source)."
+    }, 
+    "can_ip_forward": {
+      "type": "Optional[String]", 
+      "description": "Set to True to allow instance to send/receive non-matching src/dst packets."
+    }, 
+    "disk_type": {
+      "type": "Optional[String]", 
+      "description": "Specify a C(pd-standard) disk or C(pd-ssd) for an SSD disk."
+    }, 
+    "name": {
+      "type": "String", 
+      "description": "The name of the GCE instance template."
+    }, 
+    "external_ip": {
+      "type": "Optional[String]", 
+      "description": "The external IP address to use. If C(ephemeral), a new non-static address will be used.  If C(None), then no external address will be used.  To use an existing static IP address specify address name."
+    }, 
+    "disks": {
+      "type": "Optional[String]", 
+      "description": "a list of persistent disks to attach to the instance; a string value gives the name of the disk; alternatively, a dictionary value can define 'name' and 'mode' ('READ_ONLY' or 'READ_WRITE'). The first entry will be the boot disk (which must be READ_WRITE)."
+    }, 
+    "credentials_file": {
+      "type": "Optional[String]", 
+      "description": "path to the JSON file associated with the service account email"
+    }, 
+    "subnetwork": {
+      "type": "Optional[String]", 
+      "description": "The Subnetwork resource name for this instance."
+    }
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "description": "Manage snapshot groups", 
+  "parameters": {
+    "repo_pct": {
+      "type": "Optional[String]", 
+      "description": "The size of the repository in relation to the size of the base volume"
+    }, 
+    "name": {
+      "type": "String", 
+      "description": "The name to give the snapshot group"
+    }, 
+    "rollback_priority": {
+      "type": "Optional[String]", 
+      "description": "The importance of the rollback operation. This value is overridden by consistency group setting if this snapshot group is associated with a consistency group"
+    }, 
+    "delete_limit": {
+      "type": "Optional[String]", 
+      "description": "The automatic deletion indicator. If non-zero, the oldest snapshot image will be automatically deleted when creating a new snapshot image to keep the total number of snapshot images limited to the number specified. This value is overridden by the consistency group setting if this snapshot group is associated with a consistency group."
+    }, 
+    "api_password": {
+      "type": "String", 
+      "description": "The password to authenticate with the SANtricity WebServices Proxy or embedded REST API."
+    }, 
+    "state": {
+      "type": "String", 
+      "description": "Whether to ensure the group is present or absent."
+    }, 
+    "storage_pool_name": {
+      "type": "String", 
+      "description": "The name of the storage pool on which to allocate the repository volume."
+    }, 
+    "api_username": {
+      "type": "String", 
+      "description": "The username to authenticate with the SANtricity WebServices Proxy or embedded REST API."
+    }, 
+    "api_url": {
+      "type": "String", 
+      "description": "The url to the SANtricity WebServices Proxy or embedded REST API."
+    }, 
+    "base_volume_name": {
+      "type": "String", 
+      "description": "The name of the base volume or thin volume to use as the base for the new snapshot group. If a snapshot group with an identical C(name) already exists but with a different base volume an error will be returned."
+    }, 
+    "full_policy": {
+      "type": "Optional[String]", 
+      "description": "The behavior on when the data repository becomes full. This value is overridden by consistency group setting if this snapshot group is associated with a consistency group"
+    }, 
+    "validate_certs": {
+      "type": "Optional[String]", 
+      "description": "Should https certificates be validated?"
+    }, 
+    "warning_threshold": {
+      "type": "Optional[String]", 
+      "description": "The repository utilization warning threshold, as a percentage of the repository volume capacity."
+    }
+  }
+}

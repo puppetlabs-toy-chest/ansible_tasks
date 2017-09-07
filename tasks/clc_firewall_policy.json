@@ -1,0 +1,45 @@
+{
+  "description": "Create/delete/update firewall policies", 
+  "parameters": {
+    "destination_account_alias": {
+      "type": "Optional[String]", 
+      "description": "CLC alias for the destination account"
+    }, 
+    "destination": {
+      "type": "Optional[String]", 
+      "description": "The list of destination addresses for traffic on the terminating firewall. This is required when state is 'present'"
+    }, 
+    "enabled": {
+      "type": "Optional[String]", 
+      "description": "Whether the firewall policy is enabled or disabled"
+    }, 
+    "source": {
+      "type": "Optional[String]", 
+      "description": "The list  of source addresses for traffic on the originating firewall. This is required when state is 'present\""
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "Whether to create or delete the firewall policy"
+    }, 
+    "location": {
+      "type": "String", 
+      "description": "Target datacenter for the firewall policy"
+    }, 
+    "source_account_alias": {
+      "type": "String", 
+      "description": "CLC alias for the source account"
+    }, 
+    "wait": {
+      "type": "Optional[String]", 
+      "description": "Whether to wait for the provisioning tasks to finish before returning."
+    }, 
+    "ports": {
+      "type": "Optional[String]", 
+      "description": "The list of ports associated with the policy. TCP and UDP can take in single ports or port ranges."
+    }, 
+    "firewall_policy_id": {
+      "type": "Optional[String]", 
+      "description": "Id of the firewall policy. This is required to update or delete an existing firewall policy"
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "description": "Send notification to Hall", 
+  "parameters": {
+    "msg": {
+      "type": "String", 
+      "description": "The message you wish to deliver as a notification"
+    }, 
+    "room_token": {
+      "type": "String", 
+      "description": "Room token provided to you by setting up the Ansible room integation on U(https://hall.com)"
+    }, 
+    "picture": {
+      "type": "Optional[String]", 
+      "description": "The full URL to the image you wish to use for the Icon of the message. Defaults to U(http://cdn2.hubspot.net/hub/330046/file-769078210-png/Official_Logos/ansible_logo_black_square_small.png?t=1421076128627)\n"
+    }, 
+    "title": {
+      "type": "String", 
+      "description": "The title of the message"
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "description": "Migrates a virtual machine from a standard vswitch to distributed", 
+  "parameters": {
+    "username": {
+      "type": "String", 
+      "description": "The username of the vSphere vCenter."
+    }, 
+    "vm_name": {
+      "type": "String", 
+      "description": "Name of the virtual machine to migrate to a dvSwitch"
+    }, 
+    "hostname": {
+      "type": "String", 
+      "description": "The hostname or IP address of the vSphere vCenter."
+    }, 
+    "dvportgroup_name": {
+      "type": "String", 
+      "description": "Name of the portgroup to migrate to the virtual machine to"
+    }, 
+    "password": {
+      "type": "String", 
+      "description": "The password of the vSphere vCenter."
+    }, 
+    "validate_certs": {
+      "type": "Optional[String]", 
+      "description": "Allows connection when SSL certificates are not valid. Set to false when certificates are not trusted."
+    }
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "description": "Sets Windows machine timezone", 
+  "parameters": {
+    "timezone": {
+      "type": "String", 
+      "description": "Timezone to set to. Example Central Standard Time"
+    }
+  }
+}

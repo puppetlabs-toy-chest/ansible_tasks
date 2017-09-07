@@ -1,0 +1,45 @@
+{
+  "description": "Manage the collection of VRF definitions on Cisco IOS devices", 
+  "parameters": {
+    "authorize": {
+      "type": "Optional[String]", 
+      "description": "Instructs the module to enter privileged mode on the remote device before sending any commands.  If not specified, the device will attempt to execute all commands in non-privileged mode. If the value is not specified in the task, the value of environment variable C(ANSIBLE_NET_AUTHORIZE) will be used instead."
+    }, 
+    "purge": {
+      "type": "Optional[String]", 
+      "description": "Instructs the module to consider the VRF definition absolute.  It will remove any previously configured VRFs on the device."
+    }, 
+    "description": {
+      "type": "Optional[String]", 
+      "description": "Provides a short description of the VRF definition in the current active configuration.  The VRF definition value accepts alphanumeric characters used to provide additional information about the VRF."
+    }, 
+    "interfaces": {
+      "type": "Optional[String]", 
+      "description": "Identifies the set of interfaces that should be configured in the VRF.  Interfaces must be routed interfaces in order to be placed into a VRF."
+    }, 
+    "auth_pass": {
+      "type": "Optional[String]", 
+      "description": "Specifies the password to use if required to enter privileged mode on the remote device.  If I(authorize) is false, then this argument does nothing. If the value is not specified in the task, the value of environment variable C(ANSIBLE_NET_AUTH_PASS) will be used instead."
+    }, 
+    "rd": {
+      "type": "Optional[String]", 
+      "description": "The router-distinguisher value uniquely identifies the VRF to routing processes on the remote IOS system.  The RD value takes the form of C(A:B) where C(A) and C(B) are both numeric values."
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "Configures the state of the VRF definition as it relates to the device operational configuration.  When set to I(present), the VRF should be configured in the device active configuration and when set to I(absent) the VRF should not be in the device active configuration"
+    }, 
+    "vrfs": {
+      "type": "Optional[String]", 
+      "description": "The set of VRF definition objects to be configured on the remote IOS device.  Ths list entries can either be the VRF name or a hash of VRF definitions and attributes.  This argument is mutually exclusive with the C(name) argument."
+    }, 
+    "provider": {
+      "type": "Optional[String]", 
+      "description": "A dict object containing connection details."
+    }, 
+    "name": {
+      "type": "Optional[String]", 
+      "description": "The name of the VRF definition to be managed on the remote IOS device.  The VRF definition name is an ASCII string name used to uniquely identify the VRF.  This argument is mutually exclusive with the C(vrfs) argument"
+    }
+  }
+}

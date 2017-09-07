@@ -1,0 +1,25 @@
+{
+  "description": "Urpmi manager", 
+  "parameters": {
+    "force": {
+      "type": "Optional[String]", 
+      "description": "Assume \"yes\" is the answer to any question urpmi has to ask. Corresponds to the C(--force) option for I(urpmi)."
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "Indicates the desired package state"
+    }, 
+    "update_cache": {
+      "type": "Optional[String]", 
+      "description": "update the package database first C(urpmi.update -a)."
+    }, 
+    "pkg": {
+      "type": "String", 
+      "description": "name of package to install, upgrade or remove."
+    }, 
+    "no-recommends": {
+      "type": "Optional[String]", 
+      "description": "Corresponds to the C(--no-recommends) option for I(urpmi)."
+    }
+  }
+}

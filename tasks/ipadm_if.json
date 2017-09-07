@@ -1,0 +1,17 @@
+{
+  "description": "Manage IP interfaces  on Solaris/illumos systems.", 
+  "parameters": {
+    "state": {
+      "type": "Optional[String]", 
+      "description": "Create or delete Solaris/illumos IP interfaces."
+    }, 
+    "temporary": {
+      "type": "Optional[String]", 
+      "description": "Specifies that the IP interface is temporary. Temporary IP interfaces do not persist across reboots."
+    }, 
+    "name": {
+      "type": "String", 
+      "description": "IP interface name."
+    }
+  }
+}

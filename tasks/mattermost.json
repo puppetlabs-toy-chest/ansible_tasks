@@ -1,0 +1,33 @@
+{
+  "description": "Send Mattermost notifications", 
+  "parameters": {
+    "username": {
+      "type": "Optional[String]", 
+      "description": "This is the sender of the message (Username Override need to be enabled by mattermost admin, see mattermost doc."
+    }, 
+    "url": {
+      "type": "String", 
+      "description": "Mattermost url (i.e. http://mattermost.yourcompany.com)."
+    }, 
+    "icon_url": {
+      "type": "Optional[String]", 
+      "description": "Url for the message sender's icon."
+    }, 
+    "text": {
+      "type": "String", 
+      "description": "Text to send. Note that the module does not handle escaping characters."
+    }, 
+    "api_key": {
+      "type": "String", 
+      "description": "Mattermost webhook api key. Log into your mattermost site, go to Menu -> Integration -> Incoming Webhook -> Add Incoming Webhook. This will give you full URL. api_key is the last part. http://mattermost.example.com/hooks/C(API_KEY)"
+    }, 
+    "validate_certs": {
+      "type": "Optional[String]", 
+      "description": "If C(no), SSL certificates will not be validated. This should only be used on personally controlled sites using self-signed certificates."
+    }, 
+    "channel": {
+      "type": "Optional[String]", 
+      "description": "Channel to send the message to. If absent, the message goes to the channel selected for the I(api_key)."
+    }
+  }
+}

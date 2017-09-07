@@ -1,0 +1,17 @@
+{
+  "description": "Package manager for MacPorts", 
+  "parameters": {
+    "state": {
+      "type": "Optional[String]", 
+      "description": "state of the package"
+    }, 
+    "update_cache": {
+      "type": "Optional[String]", 
+      "description": "update the package db first"
+    }, 
+    "name": {
+      "type": "String", 
+      "description": "name of package to install/remove"
+    }
+  }
+}

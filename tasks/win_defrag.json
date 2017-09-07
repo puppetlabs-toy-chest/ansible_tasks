@@ -1,0 +1,25 @@
+{
+  "description": "Consolidate fragmented files on local volumes.", 
+  "parameters": {
+    "priority": {
+      "type": "Optional[String]", 
+      "description": "Run the operation at low or normal priority."
+    }, 
+    "excluded_volumes": {
+      "type": "Optional[String]", 
+      "description": "A list of drive letters or mount point paths to exclude from defragmentation."
+    }, 
+    "included_volumes": {
+      "type": "Optional[String]", 
+      "description": "A list of drive letters or mount point paths of the volumes to be defragmented. If this parameter is omitted, all volumes (not excluded) will be fragmented."
+    }, 
+    "freespace_consolidation": {
+      "type": "Optional[String]", 
+      "description": "Perform free space consolidation on the specified volumes."
+    }, 
+    "parallel": {
+      "type": "Optional[String]", 
+      "description": "Run the operation on each volume in parallel in the background."
+    }
+  }
+}

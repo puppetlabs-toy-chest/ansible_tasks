@@ -1,0 +1,29 @@
+{
+  "description": "Installs and uninstalls Windows Features on Windows Server", 
+  "parameters": {
+    "name": {
+      "type": "String", 
+      "description": "Names of roles or features to install as a single feature or a comma-separated list of features"
+    }, 
+    "include_management_tools": {
+      "type": "Optional[String]", 
+      "description": "Adds the corresponding management tools to the specified feature. Not supported in Windows 2008. If present when using Windows 2008 this option will be ignored."
+    }, 
+    "include_sub_features": {
+      "type": "Optional[String]", 
+      "description": "Adds all subfeatures of the specified feature"
+    }, 
+    "source": {
+      "type": "Optional[String]", 
+      "description": "Specify a source to install the feature from. Not supported in Windows 2008. If present when using Windows 2008 this option will be ignored."
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "State of the features or roles on the system"
+    }, 
+    "restart": {
+      "type": "Optional[String]", 
+      "description": "Restarts the computer automatically when installation is complete, if restarting is required by the roles or features installed. DEPRECATED in Ansible 2.4, as unmanaged reboots cause numerous issues under Ansible. Check the C(reboot_required) return value from this module to determine if a reboot is necessary, and if so, use the M(win_reboot) action to perform it."
+    }
+  }
+}

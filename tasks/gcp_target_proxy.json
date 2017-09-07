@@ -1,0 +1,17 @@
+{
+  "description": "Create, Update or Destroy a Target_Proxy.", 
+  "parameters": {
+    "target_proxy_type": {
+      "type": "String", 
+      "description": "Type of Target_Proxy. HTTP, HTTPS or SSL. Only HTTP is currently supported."
+    }, 
+    "target_proxy_name": {
+      "type": "String", 
+      "description": "Name of the Target_Proxy."
+    }, 
+    "url_map_name": {
+      "type": "Optional[String]", 
+      "description": "Name of the Url Map.  Required if type is HTTP or HTTPS proxy."
+    }
+  }
+}

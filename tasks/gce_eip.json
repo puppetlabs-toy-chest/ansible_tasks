@@ -1,0 +1,17 @@
+{
+  "description": "Create or Destroy Global or Regional External IP addresses.", 
+  "parameters": {
+    "region": {
+      "type": "String", 
+      "description": "Region to create the address in. Set to 'global' to create a global address."
+    }, 
+    "name": {
+      "type": "String", 
+      "description": "Name of Address."
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "T h e   s t a t e   t h e   a d d r e s s   s h o u l d   b e   i n .   C ( p r e s e n t )   o r   C ( a b s e n t )   a r e   t h e   o n l y   v a l i d   o p t i o n s ."
+    }
+  }
+}

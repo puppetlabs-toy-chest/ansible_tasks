@@ -1,0 +1,25 @@
+{
+  "description": "Run commands on remote devices running Dell OS10", 
+  "parameters": {
+    "retries": {
+      "type": "Optional[String]", 
+      "description": "Specifies the number of retries a command should by tried before it is considered failed. The command is run on the target device every retry and evaluated against the I(wait_for) conditions."
+    }, 
+    "commands": {
+      "type": "String", 
+      "description": "List of commands to send to the remote dellos10 device over the configured provider. The resulting output from the command is returned. If the I(wait_for) argument is provided, the module is not returned until the condition is satisfied or the number of retries has expired."
+    }, 
+    "wait_for": {
+      "type": "Optional[String]", 
+      "description": "List of conditions to evaluate against the output of the command. The task will wait for each condition to be true before moving forward. If the conditional is not true within the configured number of I(retries), the task fails. See examples."
+    }, 
+    "provider": {
+      "type": "Optional[String]", 
+      "description": "A dict object containing connection details."
+    }, 
+    "interval": {
+      "type": "Optional[String]", 
+      "description": "Configures the interval in seconds to wait between retries of the command. If the command does not pass the specified conditions, the interval indicates how long to wait before trying the command again."
+    }
+  }
+}

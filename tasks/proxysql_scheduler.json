@@ -1,0 +1,77 @@
+{
+  "description": "Adds or removes schedules from proxysql admin interface.", 
+  "parameters": {
+    "comment": {
+      "type": "Optional[String]", 
+      "description": "Text field that can be used for any purposed defined by the user."
+    }, 
+    "login_port": {
+      "type": "Optional[String]", 
+      "description": "The port used to connect to ProxySQL admin interface."
+    }, 
+    "config_file": {
+      "type": "Optional[String]", 
+      "description": "Specify a config file from which login_user and login_password are to be read."
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "When C(present) - adds the schedule, when C(absent) - removes the schedule."
+    }, 
+    "arg1": {
+      "type": "Optional[String]", 
+      "description": "Argument that can be passed to the job."
+    }, 
+    "login_user": {
+      "type": "Optional[String]", 
+      "description": "The username used to authenticate to ProxySQL admin interface."
+    }, 
+    "arg2": {
+      "type": "Optional[String]", 
+      "description": "Argument that can be passed to the job."
+    }, 
+    "arg3": {
+      "type": "Optional[String]", 
+      "description": "Argument that can be passed to the job."
+    }, 
+    "arg4": {
+      "type": "Optional[String]", 
+      "description": "Argument that can be passed to the job."
+    }, 
+    "arg5": {
+      "type": "Optional[String]", 
+      "description": "Argument that can be passed to the job."
+    }, 
+    "filename": {
+      "type": "String", 
+      "description": "Full path of the executable to be executed."
+    }, 
+    "force_delete": {
+      "type": "Optional[String]", 
+      "description": "By default we avoid deleting more than one schedule in a single batch, however if you need this behaviour and you're not concerned about the schedules deleted, you can set I(force_delete) to C(True)."
+    }, 
+    "interval_ms": {
+      "type": "Optional[String]", 
+      "description": "How often (in millisecond) the job will be started. The minimum value for I(interval_ms) is 100 milliseconds."
+    }, 
+    "load_to_runtime": {
+      "type": "Optional[String]", 
+      "description": "Dynamically load mysql host config to runtime memory."
+    }, 
+    "login_password": {
+      "type": "Optional[String]", 
+      "description": "The password used to authenticate to ProxySQL admin interface."
+    }, 
+    "active": {
+      "type": "Optional[String]", 
+      "description": "A schedule with I(active) set to C(False) will be tracked in the database, but will be never loaded in the in-memory data structures."
+    }, 
+    "save_to_disk": {
+      "type": "Optional[String]", 
+      "description": "Save mysql host config to sqlite db on disk to persist the configuration."
+    }, 
+    "login_host": {
+      "type": "Optional[String]", 
+      "description": "The host used to connect to ProxySQL admin interface."
+    }
+  }
+}

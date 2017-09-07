@@ -1,0 +1,37 @@
+{
+  "description": "Manage variables in crontabs", 
+  "parameters": {
+    "name": {
+      "type": "String", 
+      "description": "Name of the crontab variable."
+    }, 
+    "insertbefore": {
+      "type": "Optional[String]", 
+      "description": "Used with C(state=present). If specified, the variable will be inserted just before the variable specified."
+    }, 
+    "cron_file": {
+      "type": "Optional[String]", 
+      "description": "If specified, uses this file instead of an individual user's crontab. Without a leading /, this is assumed to be in /etc/cron.d.  With a leading /, this is taken as absolute."
+    }, 
+    "value": {
+      "type": "Optional[String]", 
+      "description": "The value to set this variable to.  Required if state=present."
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "Whether to ensure that the variable is present or absent."
+    }, 
+    "user": {
+      "type": "Optional[String]", 
+      "description": "The specific user whose crontab should be modified."
+    }, 
+    "insertafter": {
+      "type": "Optional[String]", 
+      "description": "Used with C(state=present). If specified, the variable will be inserted after the variable specified."
+    }, 
+    "backup": {
+      "type": "Optional[String]", 
+      "description": "If set, create a backup of the crontab before it is modified. The location of the backup is returned in the C(backup) variable by this module."
+    }
+  }
+}

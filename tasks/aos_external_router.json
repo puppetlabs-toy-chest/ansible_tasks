@@ -1,0 +1,33 @@
+{
+  "description": "Manage AOS External Router", 
+  "parameters": {
+    "name": {
+      "type": "Optional[String]", 
+      "description": "Name of the External Router to manage. Only one of I(name), I(id) or I(content) can be set."
+    }, 
+    "loopback": {
+      "type": "Optional[String]", 
+      "description": "IP address of the Loopback interface of the external_router."
+    }, 
+    "id": {
+      "type": "Optional[String]", 
+      "description": "AOS Id of the External Router to manage (can't be used to create a new External Router), Only one of I(name), I(id) or I(content) can be set."
+    }, 
+    "content": {
+      "type": "Optional[String]", 
+      "description": "Datastructure of the External Router to create. The format is defined by the I(content_format) parameter. It's the same datastructure that is returned on success in I(value)."
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "Indicate what is the expected state of the External Router (present or not)."
+    }, 
+    "session": {
+      "type": "String", 
+      "description": "An existing AOS session as obtained by M(aos_login) module."
+    }, 
+    "asn": {
+      "type": "Optional[String]", 
+      "description": "ASN id of the external_router."
+    }
+  }
+}

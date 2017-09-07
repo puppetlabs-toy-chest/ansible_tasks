@@ -1,0 +1,57 @@
+{
+  "description": "Execute an AWS Lambda function", 
+  "parameters": {
+    "aws_secret_key": {
+      "type": "Optional[String]", 
+      "description": "AWS secret key. If not set then the value of the AWS_SECRET_ACCESS_KEY, AWS_SECRET_KEY, or EC2_SECRET_KEY environment variable is used."
+    }, 
+    "profile": {
+      "type": "Optional[String]", 
+      "description": "Uses a boto profile. Only works with boto >= 2.24.0."
+    }, 
+    "aws_access_key": {
+      "type": "Optional[String]", 
+      "description": "AWS access key. If not set then the value of the AWS_ACCESS_KEY_ID, AWS_ACCESS_KEY or EC2_ACCESS_KEY environment variable is used."
+    }, 
+    "name": {
+      "type": "Optional[String]", 
+      "description": "The name of the function to be invoked. This can only be used for invocations within the calling account. To invoke a function in another account, use I(function_arn) to specify the full ARN."
+    }, 
+    "security_token": {
+      "type": "Optional[String]", 
+      "description": "AWS STS security token. If not set then the value of the AWS_SECURITY_TOKEN or EC2_SECURITY_TOKEN environment variable is used."
+    }, 
+    "dry_run": {
+      "type": "Optional[String]", 
+      "description": "Do not *actually* invoke the function. A C(DryRun) call will check that the caller has permissions to call the function, especially for checking cross-account permissions."
+    }, 
+    "function_arn": {
+      "type": "Optional[String]", 
+      "description": "The name of the function to be invoked"
+    }, 
+    "tail_log": {
+      "type": "Optional[String]", 
+      "description": "If C(tail_log=true), the result of the task will include the last 4 KB of the CloudWatch log for the function execution. Log tailing only works if you use synchronous invocation C(wait=true). This is usually used for development or testing Lambdas."
+    }, 
+    "ec2_url": {
+      "type": "Optional[String]", 
+      "description": "Url to use to connect to EC2 or your Eucalyptus cloud (by default the module will use EC2 endpoints). Ignored for modules where region is required. Must be specified for all other modules if region is not used. If not set then the value of the EC2_URL environment variable, if any, is used."
+    }, 
+    "version_qualifier": {
+      "type": "Optional[String]", 
+      "description": "Which version/alias of the function to run. This defaults to the C(LATEST) revision, but can be set to any existing version or alias. See https;//docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html for details."
+    }, 
+    "validate_certs": {
+      "type": "Optional[String]", 
+      "description": "When set to \"no\", SSL certificates will not be validated for boto versions >= 2.6.0."
+    }, 
+    "payload": {
+      "type": "Optional[String]", 
+      "description": "A dictionary in any form to be provided as input to the Lambda function."
+    }, 
+    "wait": {
+      "type": "Optional[String]", 
+      "description": "Whether to wait for the function results or not. If I(wait) is false, the task will not return any results. To wait for the Lambda function to complete, set C(wait=true) and the result will be available in the I(output) key."
+    }
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "description": "create, destroy, start, stop, and reboot a Packet Host machine.", 
+  "parameters": {
+    "count": {
+      "type": "Optional[String]", 
+      "description": "The number of devices to create. Count number can be included in hostname via the %d string formatter."
+    }, 
+    "operating_system": {
+      "type": "Optional[String]", 
+      "description": "OS slug for device creation. See Packet docs or API for current list."
+    }, 
+    "features": {
+      "type": "Optional[String]", 
+      "description": "Dict with \"features\" for device creation. See Packet API docs for details."
+    }, 
+    "facility": {
+      "type": "Optional[String]", 
+      "description": "Facility slug for device creation. As of 2016, it should be one of [ewr1, sjc1, ams1, nrt1]."
+    }, 
+    "lock": {
+      "type": "Optional[String]", 
+      "description": "Whether to lock a created device."
+    }, 
+    "auth_token": {
+      "type": "Optional[String]", 
+      "description": "Packet api token. You can also supply it in env var C(PACKET_API_TOKEN)."
+    }, 
+    "count_offset": {
+      "type": "Optional[String]", 
+      "description": "From which number to start the count."
+    }, 
+    "user_data": {
+      "type": "Optional[String]", 
+      "description": "Userdata blob made available to the machine"
+    }, 
+    "project_id": {
+      "type": "String", 
+      "description": "ID of project of the device."
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "Desired state of the device."
+    }, 
+    "hostnames": {
+      "type": "Optional[String]", 
+      "description": "A hostname of a device, or a list of hostnames. If given string or one-item list, you can use the C(\"%d\") Python string format to expand numbers from count. If only one hostname, it might be expanded to list if count>1."
+    }, 
+    "plan": {
+      "type": "Optional[String]", 
+      "description": "Plan slug for device creation. See Packet docs or API for current list."
+    }, 
+    "device_ids": {
+      "type": "Optional[String]", 
+      "description": "List of device IDs on which to operate."
+    }, 
+    "wait_timeout": {
+      "type": "Optional[String]", 
+      "description": "How long to wait for IP address of new devices before quitting. In seconds."
+    }, 
+    "wait": {
+      "type": "Optional[Boolean]", 
+      "description": "Whether to wait for the instance to be assigned IP address before returning."
+    }
+  }
+}

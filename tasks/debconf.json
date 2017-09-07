@@ -1,0 +1,25 @@
+{
+  "description": "Configure a .deb package", 
+  "parameters": {
+    "unseen": {
+      "type": "Optional[String]", 
+      "description": "Do not set 'seen' flag when pre-seeding"
+    }, 
+    "vtype": {
+      "type": "Optional[String]", 
+      "description": "The type of the value supplied. C(seen) was added in 2.2."
+    }, 
+    "question": {
+      "type": "Optional[String]", 
+      "description": "A debconf configuration setting"
+    }, 
+    "name": {
+      "type": "String", 
+      "description": "Name of package to configure."
+    }, 
+    "value": {
+      "type": "Optional[String]", 
+      "description": "Value to set the configuration to"
+    }
+  }
+}

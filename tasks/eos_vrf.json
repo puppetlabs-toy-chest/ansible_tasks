@@ -1,0 +1,29 @@
+{
+  "description": "Manage VRFs on Arista EOS network devices", 
+  "parameters": {
+    "rd": {
+      "type": "Optional[String]", 
+      "description": "Route distinguisher of the VRF"
+    }, 
+    "name": {
+      "type": "String", 
+      "description": "Name of the VRF."
+    }, 
+    "interfaces": {
+      "type": "Optional[String]", 
+      "description": "List of interfaces to check the VRF has been configured correctly."
+    }, 
+    "collection": {
+      "type": "Optional[String]", 
+      "description": "L i s t   o f   V R F s   d e f i n i t i o n s"
+    }, 
+    "purge": {
+      "type": "Optional[String]", 
+      "description": "Purge VRFs not defined in the collections parameter."
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "State of the VRF configuration."
+    }
+  }
+}

@@ -1,0 +1,69 @@
+{
+  "description": "add, modify and remove nodes from a Rackspace Cloud Load Balancer", 
+  "parameters": {
+    "username": {
+      "type": "Optional[String]", 
+      "description": "Rackspace username, overrides I(credentials)."
+    }, 
+    "node_id": {
+      "type": "Optional[String]", 
+      "description": "Node id"
+    }, 
+    "weight": {
+      "type": "Optional[String]", 
+      "description": "Weight of node"
+    }, 
+    "region": {
+      "type": "Optional[String]", 
+      "description": "Region to create an instance in."
+    }, 
+    "load_balancer_id": {
+      "type": "String", 
+      "description": "Load balancer id"
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "Indicate desired state of the node"
+    }, 
+    "verify_ssl": {
+      "type": "Optional[String]", 
+      "description": "Whether or not to require SSL validation of API endpoints."
+    }, 
+    "wait_timeout": {
+      "type": "Optional[String]", 
+      "description": "How long to wait before giving up and returning an error"
+    }, 
+    "env": {
+      "type": "Optional[String]", 
+      "description": "Environment as configured in I(~/.pyrax.cfg), see U(https://github.com/rackspace/pyrax/blob/master/docs/getting_started.md#pyrax-configuration)."
+    }, 
+    "address": {
+      "type": "Optional[String]", 
+      "description": "IP address or domain name of the node"
+    }, 
+    "credentials": {
+      "type": "Optional[String]", 
+      "description": "File to find the Rackspace credentials in. Ignored if I(api_key) and I(username) are provided."
+    }, 
+    "api_key": {
+      "type": "Optional[String]", 
+      "description": "Rackspace API key, overrides I(credentials)."
+    }, 
+    "type": {
+      "type": "Optional[String]", 
+      "description": "Type of node"
+    }, 
+    "port": {
+      "type": "Optional[String]", 
+      "description": "Port number of the load balanced service on the node"
+    }, 
+    "condition": {
+      "type": "Optional[String]", 
+      "description": "Condition for the node, which determines its role within the load balancer"
+    }, 
+    "wait": {
+      "type": "Optional[String]", 
+      "description": "Wait for the load balancer to become active before returning"
+    }
+  }
+}

@@ -1,0 +1,85 @@
+{
+  "description": "Manages zones on Apache CloudStack based clouds.", 
+  "parameters": {
+    "internal_dns1": {
+      "type": "Optional[String]", 
+      "description": "First internal DNS for the zone. If not set C(dns1) will be used on C(state=present)."
+    }, 
+    "domain": {
+      "type": "Optional[String]", 
+      "description": "Domain the zone is related to. Zone is a public zone if not set."
+    }, 
+    "api_key": {
+      "type": "Optional[String]", 
+      "description": "API key of the CloudStack API."
+    }, 
+    "name": {
+      "type": "String", 
+      "description": "Name of the zone."
+    }, 
+    "api_http_method": {
+      "type": "Optional[String]", 
+      "description": "HTTP method used."
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "State of the zone."
+    }, 
+    "api_secret": {
+      "type": "Optional[String]", 
+      "description": "Secret key of the CloudStack API."
+    }, 
+    "dhcp_provider": {
+      "type": "Optional[String]", 
+      "description": "DHCP provider for the Zone."
+    }, 
+    "api_timeout": {
+      "type": "Optional[String]", 
+      "description": "HTTP timeout."
+    }, 
+    "dns1": {
+      "type": "Optional[String]", 
+      "description": "First DNS for the zone. Required if C(state=present)"
+    }, 
+    "dns2_ipv6": {
+      "type": "Optional[String]", 
+      "description": "Second DNS for IPv6 for the zone."
+    }, 
+    "api_region": {
+      "type": "Optional[String]", 
+      "description": "Name of the ini section in the C(cloustack.ini) file."
+    }, 
+    "internal_dns2": {
+      "type": "Optional[String]", 
+      "description": "Second internal DNS for the zone."
+    }, 
+    "guest_cidr_address": {
+      "type": "Optional[String]", 
+      "description": "Guest CIDR address for the zone."
+    }, 
+    "dns2": {
+      "type": "Optional[String]", 
+      "description": "Second DNS for the zone."
+    }, 
+    "api_url": {
+      "type": "Optional[String]", 
+      "description": "URL of the CloudStack API e.g. https://cloud.example.com/client/api."
+    }, 
+    "network_domain": {
+      "type": "Optional[String]", 
+      "description": "Network domain for the zone."
+    }, 
+    "id": {
+      "type": "Optional[String]", 
+      "description": "uuid of the existing zone."
+    }, 
+    "network_type": {
+      "type": "Optional[String]", 
+      "description": "Network type of the zone."
+    }, 
+    "dns1_ipv6": {
+      "type": "Optional[String]", 
+      "description": "First DNS for IPv6 for the zone."
+    }
+  }
+}

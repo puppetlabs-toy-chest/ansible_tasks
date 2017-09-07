@@ -1,0 +1,85 @@
+{
+  "description": "Manage IAM users, groups, roles and keys", 
+  "parameters": {
+    "profile": {
+      "type": "Optional[String]", 
+      "description": "Uses a boto profile. Only works with boto >= 2.24.0."
+    }, 
+    "new_name": {
+      "type": "Optional[String]", 
+      "description": "When state is update, will replace name with new_name on IAM resource"
+    }, 
+    "update_password": {
+      "type": "Optional[String]", 
+      "description": "C(always) will update passwords if they differ.  C(on_create) will only set the password for newly created users."
+    }, 
+    "new_path": {
+      "type": "Optional[String]", 
+      "description": "When state is update, will replace the path with new_path on the IAM resource"
+    }, 
+    "name": {
+      "type": "String", 
+      "description": "Name of IAM resource to create or identify"
+    }, 
+    "security_token": {
+      "type": "Optional[String]", 
+      "description": "AWS STS security token. If not set then the value of the AWS_SECURITY_TOKEN or EC2_SECURITY_TOKEN environment variable is used."
+    }, 
+    "validate_certs": {
+      "type": "Optional[String]", 
+      "description": "When set to \"no\", SSL certificates will not be validated for boto versions >= 2.6.0."
+    }, 
+    "access_key_state": {
+      "type": "Optional[String]", 
+      "description": "When type is user, it creates, removes, deactivates or activates a user's access key(s). Note that actions apply only to keys specified."
+    }, 
+    "aws_secret_key": {
+      "type": "Optional[String]", 
+      "description": "AWS secret key. If not set then the value of the AWS_SECRET_ACCESS_KEY, AWS_SECRET_KEY, or EC2_SECRET_KEY environment variable is used."
+    }, 
+    "key_count": {
+      "type": "Optional[String]", 
+      "description": "When access_key_state is create it will ensure this quantity of keys are present. Defaults to 1."
+    }, 
+    "aws_access_key": {
+      "type": "Optional[String]", 
+      "description": "AWS access key. If not set then the value of the AWS_ACCESS_KEY_ID, AWS_ACCESS_KEY or EC2_ACCESS_KEY environment variable is used."
+    }, 
+    "iam_type": {
+      "type": "String", 
+      "description": "Type of IAM resource"
+    }, 
+    "trust_policy": {
+      "type": "Optional[String]", 
+      "description": "The inline (JSON or YAML) trust policy document that grants an entity permission to assume the role. Mutually exclusive with C(trust_policy_filepath)."
+    }, 
+    "state": {
+      "type": "String", 
+      "description": "Whether to create, delete or update the IAM resource. Note, roles cannot be updated."
+    }, 
+    "access_key_ids": {
+      "type": "Optional[String]", 
+      "description": "A list of the keys that you want impacted by the access_key_state parameter."
+    }, 
+    "groups": {
+      "type": "Optional[String]", 
+      "description": "A list of groups the user should belong to. When update, will gracefully remove groups not listed."
+    }, 
+    "ec2_url": {
+      "type": "Optional[String]", 
+      "description": "Url to use to connect to EC2 or your Eucalyptus cloud (by default the module will use EC2 endpoints). Ignored for modules where region is required. Must be specified for all other modules if region is not used. If not set then the value of the EC2_URL environment variable, if any, is used."
+    }, 
+    "path": {
+      "type": "Optional[String]", 
+      "description": "When creating or updating, specify the desired path of the resource. If state is present, it will replace the current path to match what is passed in when they do not match."
+    }, 
+    "password": {
+      "type": "Optional[String]", 
+      "description": "When type is user and state is present, define the users login password. Also works with update. Note that always returns changed."
+    }, 
+    "trust_policy_filepath": {
+      "type": "Optional[String]", 
+      "description": "The path to the trust policy document that grants an entity permission to assume the role. Mutually exclusive with C(trust_policy)."
+    }
+  }
+}

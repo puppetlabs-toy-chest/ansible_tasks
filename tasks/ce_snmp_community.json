@@ -1,0 +1,45 @@
+{
+  "description": "Manages SNMP community configuration on HUAWEI CloudEngine switches.", 
+  "parameters": {
+    "notify_view": {
+      "type": "Optional[String]", 
+      "description": "Mib view name for notification."
+    }, 
+    "write_view": {
+      "type": "Optional[String]", 
+      "description": "Mib view name for write."
+    }, 
+    "community_mib_view": {
+      "type": "Optional[String]", 
+      "description": "Mib view name."
+    }, 
+    "read_view": {
+      "type": "Optional[String]", 
+      "description": "Mib view name for read."
+    }, 
+    "acl_number": {
+      "type": "Optional[String]", 
+      "description": "Access control list number."
+    }, 
+    "group_name": {
+      "type": "Optional[String]", 
+      "description": "Unique name to identify the SNMPv3 group."
+    }, 
+    "community_name": {
+      "type": "Optional[String]", 
+      "description": "Unique name to identify the community."
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "Manage the state of the resource."
+    }, 
+    "security_level": {
+      "type": "Optional[String]", 
+      "description": "Security level indicating whether to use authentication and encryption."
+    }, 
+    "access_right": {
+      "type": "Optional[String]", 
+      "description": "Access right read or write."
+    }
+  }
+}

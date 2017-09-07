@@ -1,0 +1,25 @@
+{
+  "description": "Manage AOS blueprint parameter values", 
+  "parameters": {
+    "blueprint": {
+      "type": "String", 
+      "description": "Blueprint Name or Id as defined in AOS."
+    }, 
+    "content": {
+      "type": "Optional[String]", 
+      "description": "Datastructure of the Virtual Network to manage. The data can be in YAML / JSON or directly a variable. It's the same datastructure that is returned on success in I(value)."
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "Indicate what is the expected state of the Virtual Network (present or not)."
+    }, 
+    "session": {
+      "type": "String", 
+      "description": "An existing AOS session as obtained by M(aos_login) module."
+    }, 
+    "name": {
+      "type": "Optional[String]", 
+      "description": "Name of Virtual Network as part of the Blueprint."
+    }
+  }
+}

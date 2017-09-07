@@ -1,0 +1,29 @@
+{
+  "description": "Manages L3 attributes for IPv4 and IPv6 interfaces on HUAWEI CloudEngine switches.", 
+  "parameters": {
+    "addr": {
+      "type": "Optional[String]", 
+      "description": "IPv4 or IPv6 Address."
+    }, 
+    "mask": {
+      "type": "Optional[String]", 
+      "description": "Subnet mask for IPv4 or IPv6 Address in decimal format."
+    }, 
+    "ipv4_type": {
+      "type": "Optional[String]", 
+      "description": "Specifies an address type. The value is an enumerated type. main, primary IP address. sub, secondary IP address."
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "Specify desired state of the resource."
+    }, 
+    "version": {
+      "type": "Optional[String]", 
+      "description": "IP address version."
+    }, 
+    "interface": {
+      "type": "String", 
+      "description": "Full name of interface, i.e. 40GE1/0/22, vlanif10."
+    }
+  }
+}

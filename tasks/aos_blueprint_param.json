@@ -1,0 +1,33 @@
+{
+  "description": "Manage AOS blueprint parameter values", 
+  "parameters": {
+    "blueprint": {
+      "type": "String", 
+      "description": "Blueprint Name or Id as defined in AOS."
+    }, 
+    "name": {
+      "type": "Optional[String]", 
+      "description": "Name of blueprint parameter, as defined by AOS design template. You can use the option I(get_param_list) to get the complete list of supported parameters for your blueprint."
+    }, 
+    "value": {
+      "type": "Optional[String]", 
+      "description": "Blueprint parameter value.  This value may be transformed by using the I(param_map) field; used when the the blueprint parameter requires an AOS unique ID value."
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "Indicate what is the expected state of the Blueprint Parameter (present or not)."
+    }, 
+    "session": {
+      "type": "String", 
+      "description": "An existing AOS session as obtained by M(aos_login) module."
+    }, 
+    "param_map": {
+      "type": "Optional[String]", 
+      "description": "Defines the aos-pyez collection that will is used to map the user-defined item name into the AOS unique ID value.  For example, if the caller provides an IP address pool I(param_value) called \"Server-IpAddrs\", then the aos-pyez collection is 'IpPools'. Some I(param_map) are already defined by default like I(logical_device_maps)."
+    }, 
+    "get_param_list": {
+      "type": "Optional[String]", 
+      "description": "Get the complete list of supported parameters for this blueprint and the description of those parameters."
+    }
+  }
+}

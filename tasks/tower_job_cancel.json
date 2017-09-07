@@ -1,0 +1,33 @@
+{
+  "description": "Cancel an Ansible Tower Job.", 
+  "parameters": {
+    "job_id": {
+      "type": "String", 
+      "description": "ID of the job to cancel"
+    }, 
+    "tower_host": {
+      "type": "Optional[String]", 
+      "description": "URL to your Tower instance."
+    }, 
+    "fail_if_not_running": {
+      "type": "Optional[String]", 
+      "description": "Fail loudly if the job_id does not reference a running job."
+    }, 
+    "tower_username": {
+      "type": "Optional[String]", 
+      "description": "Username for your Tower instance."
+    }, 
+    "tower_password": {
+      "type": "Optional[String]", 
+      "description": "Password for your Tower instance."
+    }, 
+    "tower_config_file": {
+      "type": "Optional[String]", 
+      "description": "Path to the Tower config file. See notes."
+    }, 
+    "tower_verify_ssl": {
+      "type": "Optional[String]", 
+      "description": "Dis/allow insecure connections to Tower. If C(no), SSL certificates will not be validated. This should only be used on personally controlled sites using self-signed certificates."
+    }
+  }
+}

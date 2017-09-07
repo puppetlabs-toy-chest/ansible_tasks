@@ -1,0 +1,85 @@
+{
+  "description": "Manage an Application load balancer", 
+  "parameters": {
+    "profile": {
+      "type": "Optional[String]", 
+      "description": "Uses a boto profile. Only works with boto >= 2.24.0."
+    }, 
+    "subnets": {
+      "type": "Optional[String]", 
+      "description": "A list of the IDs of the subnets to attach to the load balancer. You can specify only one subnet per Availability Zone. You must specify subnets from at least two Availability Zones. Required if state=present."
+    }, 
+    "aws_access_key": {
+      "type": "Optional[String]", 
+      "description": "AWS access key. If not set then the value of the AWS_ACCESS_KEY_ID, AWS_ACCESS_KEY or EC2_ACCESS_KEY environment variable is used."
+    }, 
+    "access_logs_enabled": {
+      "type": "Optional[String]", 
+      "description": "Whether or not to enable access logs. When true, I(access_logs_s3_bucket) must be set."
+    }, 
+    "security_token": {
+      "type": "Optional[String]", 
+      "description": "AWS STS security token. If not set then the value of the AWS_SECURITY_TOKEN or EC2_SECURITY_TOKEN environment variable is used."
+    }, 
+    "tags": {
+      "type": "Optional[String]", 
+      "description": "A dictionary of one or more tags to assign to the load balancer."
+    }, 
+    "purge_tags": {
+      "type": "Optional[String]", 
+      "description": "If yes, existing tags will be purged from the resource to match exactly what is defined by tags parameter. If the tag parameter is not set then tags will not be modified."
+    }, 
+    "region": {
+      "type": "Optional[String]", 
+      "description": "The AWS region to use. If not specified then the value of the AWS_REGION or EC2_REGION environment variable, if any, is used. See U(http://docs.aws.amazon.com/general/latest/gr/rande.html#ec2_region)"
+    }, 
+    "aws_secret_key": {
+      "type": "Optional[String]", 
+      "description": "AWS secret key. If not set then the value of the AWS_SECRET_ACCESS_KEY, AWS_SECRET_KEY, or EC2_SECRET_KEY environment variable is used."
+    }, 
+    "state": {
+      "type": "String", 
+      "description": "Create or destroy the load balancer."
+    }, 
+    "validate_certs": {
+      "type": "Optional[String]", 
+      "description": "When set to \"no\", SSL certificates will not be validated for boto versions >= 2.6.0."
+    }, 
+    "idle_timeout": {
+      "type": "Optional[String]", 
+      "description": "The number of seconds to wait before an idle connection is closed."
+    }, 
+    "deletion_protection": {
+      "type": "Optional[String]", 
+      "description": "Indicates whether deletion protection for the ELB is enabled."
+    }, 
+    "ec2_url": {
+      "type": "Optional[String]", 
+      "description": "Url to use to connect to EC2 or your Eucalyptus cloud (by default the module will use EC2 endpoints). Ignored for modules where region is required. Must be specified for all other modules if region is not used. If not set then the value of the EC2_URL environment variable, if any, is used."
+    }, 
+    "access_logs_s3_prefix": {
+      "type": "Optional[String]", 
+      "description": "The prefix for the location in the S3 bucket. If you don't specify a prefix, the access logs are stored in the root of the bucket."
+    }, 
+    "scheme": {
+      "type": "Optional[String]", 
+      "description": "Internet-facing or internal load balancer. An ELB scheme can not be modified after creation."
+    }, 
+    "access_logs_s3_bucket": {
+      "type": "Optional[String]", 
+      "description": "The name of the S3 bucket for the access logs. This attribute is required if access logs in Amazon S3 are enabled. The bucket must exist in the same region as the load balancer and have a bucket policy that grants Elastic Load Balancing permission to write to the bucket."
+    }, 
+    "listeners": {
+      "type": "Optional[String]", 
+      "description": "A list of dicts containing listeners to attach to the ELB. See examples for detail of the dict required. Note that listener keys are CamelCased."
+    }, 
+    "security_groups": {
+      "type": "Optional[String]", 
+      "description": "A list of the names or IDs of the security groups to assign to the load balancer. Required if state=present."
+    }, 
+    "name": {
+      "type": "String", 
+      "description": "The name of the load balancer. This name must be unique within your AWS account, can have a maximum of 32 characters, must contain only alphanumeric characters or hyphens, and must not begin or end with a hyphen."
+    }
+  }
+}

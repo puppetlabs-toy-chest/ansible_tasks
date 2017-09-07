@@ -1,0 +1,29 @@
+{
+  "description": "Manage VLANs on Arista EOS network devices", 
+  "parameters": {
+    "name": {
+      "type": "Optional[String]", 
+      "description": "Name of the VLAN."
+    }, 
+    "interfaces": {
+      "type": "Optional[String]", 
+      "description": "List of interfaces to check the VLAN has been configured correctly."
+    }, 
+    "collection": {
+      "type": "Optional[String]", 
+      "description": "L i s t   o f   V L A N s   d e f i n i t i o n s"
+    }, 
+    "purge": {
+      "type": "Optional[String]", 
+      "description": "Purge VLANs not defined in the collections parameter."
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "State of the VLAN configuration."
+    }, 
+    "vlan_id": {
+      "type": "String", 
+      "description": "ID of the VLAN."
+    }
+  }
+}

@@ -1,0 +1,105 @@
+{
+  "description": "Manages network access control list (ACL) rules on Apache CloudStack based clouds.", 
+  "parameters": {
+    "domain": {
+      "type": "Optional[String]", 
+      "description": "Domain the VPC is related to."
+    }, 
+    "protocol": {
+      "type": "Optional[String]", 
+      "description": "Protocol of the rule"
+    }, 
+    "action_policy": {
+      "type": "Optional[String]", 
+      "description": "Action policy of the rule."
+    }, 
+    "api_http_method": {
+      "type": "Optional[String]", 
+      "description": "HTTP method used."
+    }, 
+    "end_port": {
+      "type": "Optional[String]", 
+      "description": "End port for this rule. Considered if C(protocol=tcp) or C(protocol=udp). If not specified, equal C(start_port)."
+    }, 
+    "icmp_type": {
+      "type": "Optional[String]", 
+      "description": "Type of the icmp message being sent. Considered if C(protocol=icmp)."
+    }, 
+    "poll_async": {
+      "type": "Optional[String]", 
+      "description": "Poll async jobs until job has finished."
+    }, 
+    "api_url": {
+      "type": "Optional[String]", 
+      "description": "URL of the CloudStack API e.g. https://cloud.example.com/client/api."
+    }, 
+    "zone": {
+      "type": "Optional[String]", 
+      "description": "Name of the zone the VPC related to. If not set, default zone is used."
+    }, 
+    "protocol_number": {
+      "type": "Optional[String]", 
+      "description": "Protocol number from 1 to 256 required if C(protocol=by_number)."
+    }, 
+    "rule_position": {
+      "type": "String", 
+      "description": "CIDR of the rule."
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "State of the network ACL rule."
+    }, 
+    "traffic_type": {
+      "type": "Optional[String]", 
+      "description": "Traffic type of the rule."
+    }, 
+    "api_key": {
+      "type": "Optional[String]", 
+      "description": "API key of the CloudStack API."
+    }, 
+    "icmp_code": {
+      "type": "Optional[String]", 
+      "description": "Error code for this icmp message. Considered if C(protocol=icmp)."
+    }, 
+    "start_port": {
+      "type": "Optional[String]", 
+      "description": "Start port for this rule. Considered if C(protocol=tcp) or C(protocol=udp)."
+    }, 
+    "tags": {
+      "type": "Optional[String]", 
+      "description": "List of tags. Tags are a list of dictionaries having keys C(key) and C(value). If you want to delete all tags, set a empty list e.g. C(tags: [])."
+    }, 
+    "api_secret": {
+      "type": "Optional[String]", 
+      "description": "Secret key of the CloudStack API."
+    }, 
+    "api_timeout": {
+      "type": "Optional[String]", 
+      "description": "HTTP timeout."
+    }, 
+    "network_acl": {
+      "type": "String", 
+      "description": "Name of the network ACL."
+    }, 
+    "vpc": {
+      "type": "String", 
+      "description": "VPC the network ACL is related to."
+    }, 
+    "cidr": {
+      "type": "Optional[String]", 
+      "description": "CIDR of the rule."
+    }, 
+    "account": {
+      "type": "Optional[String]", 
+      "description": "Account the VPC is related to."
+    }, 
+    "api_region": {
+      "type": "Optional[String]", 
+      "description": "Name of the ini section in the C(cloustack.ini) file."
+    }, 
+    "project": {
+      "type": "Optional[String]", 
+      "description": "Name of the project the VPC is related to."
+    }
+  }
+}

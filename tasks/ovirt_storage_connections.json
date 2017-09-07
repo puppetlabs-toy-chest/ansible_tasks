@@ -1,0 +1,93 @@
+{
+  "description": "Module to manage storage connections in oVirt", 
+  "parameters": {
+    "force": {
+      "type": "Optional[String]", 
+      "description": "This parameter is releven only when updating a connection. If I(true) the storage domain don't have to be in I(MAINTENANCE) state, so the storage connection is updated."
+    }, 
+    "fetch_nested": {
+      "type": "Optional[String]", 
+      "description": "If I(True) the module will fetch additional data from the API. It will fetch IDs of the VMs disks, snapshots, etc. User can configure to fetch other attributes of the nested entities by specifying C(nested_attributes)."
+    }, 
+    "mount_options": {
+      "type": "Optional[String]", 
+      "description": "Option which will be passed when mounting storage."
+    }, 
+    "id": {
+      "type": "Optional[String]", 
+      "description": "Id of the the storage connection to manage."
+    }, 
+    "storage": {
+      "type": "Optional[String]", 
+      "description": "Name of the the storage domain to be used with storage connection."
+    }, 
+    "port": {
+      "type": "Optional[String]", 
+      "description": "Port of the iSCSI storage server."
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "Should the storage connection be present or absent."
+    }, 
+    "type": {
+      "type": "Optional[String]", 
+      "description": "Storage type. For example: I(nfs), I(iscsi), etc."
+    }, 
+    "username": {
+      "type": "Optional[String]", 
+      "description": "A CHAP username for logging into a target."
+    }, 
+    "auth": {
+      "type": "String", 
+      "description": "Dictionary with values needed to create HTTP/HTTPS connection to oVirt: C(username)[I(required)] - The name of the user, something like I(admin@internal). Default value is set by I(OVIRT_USERNAME) environment variable. C(password)[I(required)] - The password of the user. Default value is set by I(OVIRT_PASSWORD) environment variable. C(url)[I(required)] - A string containing the base URL of the server, usually something like `I(https://server.example.com/ovirt-engine/api)`. Default value is set by I(OVIRT_URL) environment variable. C(token) - Token to be used instead of login with username/password. Default value is set by I(OVIRT_TOKEN) environment variable. C(insecure) - A boolean flag that indicates if the server TLS certificate and host name should be checked. C(ca_file) - A PEM file containing the trusted CA certificates. The certificate presented by the server will be verified using these CA certificates. If `C(ca_file)` parameter is not set, system wide CA certificate store is used. Default value is set by I(OVIRT_CAFILE) environment variable. C(kerberos) - A boolean flag indicating if Kerberos authentication should be used instead of the default basic authentication."
+    }, 
+    "nested_attributes": {
+      "type": "Optional[String]", 
+      "description": "Specifies list of the attributes which should be fetched from the API. This parameter apply only when C(fetch_nested) is I(true)."
+    }, 
+    "address": {
+      "type": "Optional[String]", 
+      "description": "Address of the storage server. E.g.: myserver.mydomain.com"
+    }, 
+    "nfs_timeout": {
+      "type": "Optional[String]", 
+      "description": "The time in tenths of a second to wait for a response before retrying NFS requests. Range 0 to 65535."
+    }, 
+    "path": {
+      "type": "Optional[String]", 
+      "description": "Path of the mount point of the storage. E.g.: /path/to/my/data"
+    }, 
+    "password": {
+      "type": "Optional[String]", 
+      "description": "A CHAP password for logging into a target."
+    }, 
+    "nfs_version": {
+      "type": "Optional[String]", 
+      "description": "NFS version. One of: I(auto), I(v3), I(v4) or I(v4_1)."
+    }, 
+    "wait": {
+      "type": "Optional[String]", 
+      "description": "I(True) if the module should wait for the entity to get into desired state."
+    }, 
+    "target": {
+      "type": "Optional[String]", 
+      "description": "The target IQN for the storage device."
+    }, 
+    "poll_interval": {
+      "type": "Optional[String]", 
+      "description": "Number of the seconds the module waits until another poll request on entity status is sent."
+    }, 
+    "nfs_retrans": {
+      "type": "Optional[String]", 
+      "description": "The number of times to retry a request before attempting further recovery actions. Range 0 to 65535."
+    }, 
+    "timeout": {
+      "type": "Optional[String]", 
+      "description": "The amount of time in seconds the module should wait for the instance to get into desired state."
+    }, 
+    "vfs_type": {
+      "type": "Optional[String]", 
+      "description": "Virtual File System type."
+    }
+  }
+}

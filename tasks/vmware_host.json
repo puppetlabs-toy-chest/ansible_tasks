@@ -1,0 +1,45 @@
+{
+  "description": "Add/remove ESXi host to/from vCenter", 
+  "parameters": {
+    "username": {
+      "type": "String", 
+      "description": "The username of the vSphere vCenter."
+    }, 
+    "datacenter_name": {
+      "type": "String", 
+      "description": "Name of the datacenter to add the host"
+    }, 
+    "esxi_hostname": {
+      "type": "String", 
+      "description": "ESXi hostname to manage"
+    }, 
+    "hostname": {
+      "type": "String", 
+      "description": "The hostname or IP address of the vSphere vCenter."
+    }, 
+    "esxi_username": {
+      "type": "String", 
+      "description": "ESXi username"
+    }, 
+    "cluster_name": {
+      "type": "String", 
+      "description": "Name of the cluster to add the host"
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "Add or remove the host"
+    }, 
+    "esxi_password": {
+      "type": "String", 
+      "description": "ESXi password"
+    }, 
+    "password": {
+      "type": "String", 
+      "description": "The password of the vSphere vCenter."
+    }, 
+    "validate_certs": {
+      "type": "Optional[String]", 
+      "description": "Allows connection when SSL certificates are not valid. Set to false when certificates are not trusted."
+    }
+  }
+}

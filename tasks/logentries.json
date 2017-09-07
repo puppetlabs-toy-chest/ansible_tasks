@@ -1,0 +1,21 @@
+{
+  "description": "Module for tracking logs via logentries.com", 
+  "parameters": {
+    "path": {
+      "type": "String", 
+      "description": "path to a log file"
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "following state of the log"
+    }, 
+    "name": {
+      "type": "Optional[String]", 
+      "description": "name of the log"
+    }, 
+    "logtype": {
+      "type": "Optional[String]", 
+      "description": "type of the log"
+    }
+  }
+}

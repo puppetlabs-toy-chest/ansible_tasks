@@ -1,0 +1,33 @@
+{
+  "description": "Executes a command and responds to prompts.", 
+  "parameters": {
+    "chdir": {
+      "type": "Optional[String]", 
+      "description": "Change into this directory before running the command."
+    }, 
+    "responses": {
+      "type": "String", 
+      "description": "Mapping of expected string/regex and string to respond with. If the response is a list, successive matches return successive responses. List functionality is new in 2.1."
+    }, 
+    "removes": {
+      "type": "Optional[String]", 
+      "description": "A filename, when it does not exist, this step will B(not) be run."
+    }, 
+    "echo": {
+      "type": "Optional[String]", 
+      "description": "Whether or not to echo out your response strings."
+    }, 
+    "creates": {
+      "type": "Optional[String]", 
+      "description": "A filename, when it already exists, this step will B(not) be run."
+    }, 
+    "command": {
+      "type": "String", 
+      "description": "The command module takes command to run."
+    }, 
+    "timeout": {
+      "type": "Optional[String]", 
+      "description": "Amount of time in seconds to wait for the expected strings."
+    }
+  }
+}

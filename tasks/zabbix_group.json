@@ -1,0 +1,37 @@
+{
+  "description": "Zabbix host groups creates/deletes", 
+  "parameters": {
+    "http_login_password": {
+      "type": "Optional[String]", 
+      "description": "Basic Auth password"
+    }, 
+    "host_groups": {
+      "type": "String", 
+      "description": "List of host groups to create or delete."
+    }, 
+    "login_user": {
+      "type": "String", 
+      "description": "Zabbix user name."
+    }, 
+    "http_login_user": {
+      "type": "Optional[String]", 
+      "description": "Basic Auth login"
+    }, 
+    "server_url": {
+      "type": "String", 
+      "description": "Url of Zabbix server, with protocol (http or https). C(url) is an alias for C(server_url)."
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "Create or delete host group."
+    }, 
+    "timeout": {
+      "type": "Optional[String]", 
+      "description": "The timeout of API request(seconds)."
+    }, 
+    "login_password": {
+      "type": "String", 
+      "description": "Zabbix user password."
+    }
+  }
+}

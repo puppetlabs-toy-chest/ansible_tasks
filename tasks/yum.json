@@ -1,0 +1,53 @@
+{
+  "description": "Manages packages with the I(yum) package manager", 
+  "parameters": {
+    "name": {
+      "type": "String", 
+      "description": "Package name, or package specifier with version, like C(name-1.0). When using state=latest, this can be '*' which means run: yum -y update. You can also pass a url or a local path to a rpm file (using state=present).  To operate on several packages this can accept a comma separated list of packages or (as of 2.0) a list of packages."
+    }, 
+    "list": {
+      "type": "Optional[String]", 
+      "description": "Package name to run the equivalent of yum list <package> against."
+    }, 
+    "disable_gpg_check": {
+      "type": "Optional[String]", 
+      "description": "Whether to disable the GPG checking of signatures of packages being installed. Has an effect only if state is I(present) or I(latest)."
+    }, 
+    "conf_file": {
+      "type": "Optional[String]", 
+      "description": "The remote yum configuration file to use for the transaction."
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "Whether to install (C(present) or C(installed), C(latest)), or remove (C(absent) or C(removed)) a package."
+    }, 
+    "disablerepo": {
+      "type": "Optional[String]", 
+      "description": "I(Repoid) of repositories to disable for the install/update operation. These repos will not persist beyond the transaction. When specifying multiple repos, separate them with a \",\"."
+    }, 
+    "update_cache": {
+      "type": "Optional[String]", 
+      "description": "Force yum to check if cache is out of date and redownload if needed. Has an effect only if state is I(present) or I(latest)."
+    }, 
+    "enablerepo": {
+      "type": "Optional[String]", 
+      "description": "I(Repoid) of repositories to enable for the install/update operation. These repos will not persist beyond the transaction. When specifying multiple repos, separate them with a \",\"."
+    }, 
+    "exclude": {
+      "type": "Optional[String]", 
+      "description": "Package name(s) to exclude when state=present, or latest"
+    }, 
+    "validate_certs": {
+      "type": "Optional[String]", 
+      "description": "This only applies if using a https url as the source of the rpm. e.g. for localinstall. If set to C(no), the SSL certificates will not be validated. This should only set to C(no) used on personally controlled sites using self-signed certificates as it avoids verifying the source site. Prior to 2.1 the code worked as if this was set to C(yes)."
+    }, 
+    "installroot": {
+      "type": "Optional[String]", 
+      "description": "Specifies an alternative installroot, relative to which all packages will be installed."
+    }, 
+    "skip_broken": {
+      "type": "Optional[String]", 
+      "description": "Resolve depsolve problems by removing packages that are causing problems from the trans\u2010 action."
+    }
+  }
+}

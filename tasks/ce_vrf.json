@@ -1,0 +1,17 @@
+{
+  "description": "Manages VPN instance on HUAWEI CloudEngine switches.", 
+  "parameters": {
+    "state": {
+      "type": "Optional[String]", 
+      "description": "Manage the state of the resource."
+    }, 
+    "vrf": {
+      "type": "String", 
+      "description": "VPN instance, the length of vrf name is 1 - 31, i.e. \"test\", but can not be C(_public_)."
+    }, 
+    "description": {
+      "type": "Optional[String]", 
+      "description": "Description of the vrf, the string length is 1 - 242 ."
+    }
+  }
+}

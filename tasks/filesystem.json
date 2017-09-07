@@ -1,0 +1,25 @@
+{
+  "description": "Makes file system on block device", 
+  "parameters": {
+    "resizefs": {
+      "type": "Optional[String]", 
+      "description": "If yes, if the block device and filessytem size differ, grow the filesystem into the space. Note, XFS Will only grow if mounted."
+    }, 
+    "force": {
+      "type": "Optional[String]", 
+      "description": "If yes, allows to create new filesystem on devices that already has filesystem."
+    }, 
+    "opts": {
+      "type": "Optional[String]", 
+      "description": "List of options to be passed to mkfs command."
+    }, 
+    "dev": {
+      "type": "String", 
+      "description": "Target block device."
+    }, 
+    "fstype": {
+      "type": "String", 
+      "description": "File System type to be created. reiserfs support was added in 2.2."
+    }
+  }
+}

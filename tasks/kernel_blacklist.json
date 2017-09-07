@@ -1,0 +1,17 @@
+{
+  "description": "Blacklist kernel modules", 
+  "parameters": {
+    "blacklist_file": {
+      "type": "Optional[String]", 
+      "description": "If specified, use this blacklist file instead of C(/etc/modprobe.d/blacklist-ansible.conf)."
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "Whether the module should be present in the blacklist or absent."
+    }, 
+    "name": {
+      "type": "String", 
+      "description": "Name of kernel module to black- or whitelist."
+    }
+  }
+}

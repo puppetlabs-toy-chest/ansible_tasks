@@ -1,0 +1,77 @@
+{
+  "description": "Tweak settings in INI files", 
+  "parameters": {
+    "seuser": {
+      "type": "Optional[String]", 
+      "description": "User part of SELinux file context. Will default to system policy, if applicable. If set to C(_default), it will use the C(user) portion of the policy if available."
+    }, 
+    "group": {
+      "type": "Optional[String]", 
+      "description": "Name of the group that should own the file/directory, as would be fed to I(chown)."
+    }, 
+    "option": {
+      "type": "Optional[String]", 
+      "description": "If set (required for changing a I(value)), this is the name of the option. May be omitted if adding/removing a whole I(section)."
+    }, 
+    "unsafe_writes": {
+      "type": "Optional[String]", 
+      "description": "Normally this module uses atomic operations to prevent data corruption or inconsistent reads from the target files, sometimes systems are configured or just broken in ways that prevent this. One example are docker mounted files, they cannot be updated atomically and can only be done in an unsafe manner. This boolean option allows ansible to fall back to unsafe methods of updating files for those cases in which you do not have any other choice. Be aware that this is subject to race conditions and can lead to data corruption."
+    }, 
+    "selevel": {
+      "type": "Optional[String]", 
+      "description": "Level part of the SELinux file context. This is the MLS/MCS attribute, sometimes known as the C(range). C(_default) feature works as for I(seuser)."
+    }, 
+    "section": {
+      "type": "String", 
+      "description": "Section name in INI file. This is added if C(state=present) automatically when a single value is being set. If left empty or set to `null`, the I(option) will be placed before the first I(section). Using `null` is also required if the config format does not support sections."
+    }, 
+    "no_extra_spaces": {
+      "type": "Optional[String]", 
+      "description": "Do not insert spaces before and after '=' symbol"
+    }, 
+    "serole": {
+      "type": "Optional[String]", 
+      "description": "Role part of SELinux file context, C(_default) feature works as for I(seuser)."
+    }, 
+    "value": {
+      "type": "Optional[String]", 
+      "description": "The string value to be associated with an I(option). May be omitted when removing an I(option)."
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "If set to C(absent) the option or section will be removed if present instead of created."
+    }, 
+    "mode": {
+      "type": "Optional[String]", 
+      "description": "Mode the file or directory should be. For those used to I(/usr/bin/chmod) remember that modes are actually octal numbers (like 0644). Leaving off the leading zero will likely have unexpected results. As of version 1.8, the mode may be specified as a symbolic mode (for example, C(u+rwx) or C(u=rw,g=r,o=r))."
+    }, 
+    "others": {
+      "type": "Optional[String]", 
+      "description": "All arguments accepted by the M(file) module also work here"
+    }, 
+    "owner": {
+      "type": "Optional[String]", 
+      "description": "Name of the user that should own the file/directory, as would be fed to I(chown)."
+    }, 
+    "attributes": {
+      "type": "Optional[String]", 
+      "description": "Attributes the file or directory should have. To get supported flags look at the man page for I(chattr) on the target system. This string should contain the attributes in the same order as the one displayed by I(lsattr)."
+    }, 
+    "path": {
+      "type": "String", 
+      "description": "Path to the INI-style file; this file is created if required. Before 2.3 this option was only usable as I(dest)."
+    }, 
+    "backup": {
+      "type": "Optional[String]", 
+      "description": "Create a backup file including the timestamp information so you can get the original file back if you somehow clobbered it incorrectly."
+    }, 
+    "create": {
+      "type": "Optional[String]", 
+      "description": "If set to 'no', the module will fail if the file does not already exist. By default it will create the file if it is missing."
+    }, 
+    "setype": {
+      "type": "Optional[String]", 
+      "description": "Type part of SELinux file context, C(_default) feature works as for I(seuser)."
+    }
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "description": "Create or Remove a NIC.", 
+  "parameters": {
+    "datacenter": {
+      "type": "String", 
+      "description": "The datacenter in which to operate."
+    }, 
+    "lan": {
+      "type": "String", 
+      "description": "The LAN to place the NIC on. You can pass a LAN that doesn't exist and it will be created. Required on create."
+    }, 
+    "name": {
+      "type": "String", 
+      "description": "The name or ID of the NIC. This is only required on deletes, but not on create."
+    }, 
+    "subscription_user": {
+      "type": "Optional[String]", 
+      "description": "The ProfitBricks username. Overrides the PB_SUBSCRIPTION_ID environment variable."
+    }, 
+    "server": {
+      "type": "String", 
+      "description": "The server name or ID."
+    }, 
+    "subscription_password": {
+      "type": "Optional[String]", 
+      "description": "THe ProfitBricks password. Overrides the PB_PASSWORD environment variable."
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "Indicate desired state of the resource"
+    }, 
+    "wait_timeout": {
+      "type": "Optional[String]", 
+      "description": "how long before wait gives up, in seconds"
+    }, 
+    "wait": {
+      "type": "Optional[String]", 
+      "description": "wait for the operation to complete before returning"
+    }
+  }
+}

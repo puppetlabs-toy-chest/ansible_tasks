@@ -1,0 +1,65 @@
+{
+  "description": "Manage interface configuration on devices running Lenovo CNOS", 
+  "parameters": {
+    "username": {
+      "type": "String", 
+      "description": "Configures the username used to authenticate the connection to the remote device. The value of the username parameter is used to authenticate the SSH session. While generally the value should come from the inventory file, you can also specify it as a variable. This parameter is optional. If it is not specified, no default value will be used."
+    }, 
+    "password": {
+      "type": "String", 
+      "description": "Configures the password used to authenticate the connection to the remote device. The value of the password parameter is used to authenticate the SSH session. While generally the value should come from the inventory file, you can also specify it as a variable. This parameter is optional. If it is not specified, no default value will be used."
+    }, 
+    "outputfile": {
+      "type": "String", 
+      "description": "This specifies the file path where the output of each command execution is saved. Each command that is specified in the merged template file and each response from the device are saved here. Usually the location is the results folder, but you can choose another location based on your write permission."
+    }, 
+    "interfaceOption": {
+      "type": "String", 
+      "description": "This specifies the attribute you specify subsequent to interface command"
+    }, 
+    "host": {
+      "type": "String", 
+      "description": "This is the variable used to search the hosts file at /etc/ansible/hosts and identify the IP address of the device on which the template is going to be applied. Usually the Ansible keyword {{ inventory_hostname }} is specified in the playbook as an abstraction of the group of network elements that need to be configured."
+    }, 
+    "deviceType": {
+      "type": "String", 
+      "description": "This specifies the type of device where the method is executed."
+    }, 
+    "interfaceRange": {
+      "type": "String", 
+      "description": "This specifies the interface range in which the port aggregation is envisaged"
+    }, 
+    "interfaceArg4": {
+      "type": "Optional[String]", 
+      "description": "This is an overloaded interface fourth argument. Usage of this argument can be found is the User Guide referenced above."
+    }, 
+    "interfaceArg5": {
+      "type": "Optional[String]", 
+      "description": "This is an overloaded interface fifth argument. Usage of this argument can be found is the User Guide referenced above."
+    }, 
+    "interfaceArg6": {
+      "type": "Optional[String]", 
+      "description": "This is an overloaded interface sixth argument. Usage of this argument can be found is the User Guide referenced above."
+    }, 
+    "interfaceArg7": {
+      "type": "Optional[String]", 
+      "description": "This is an overloaded interface seventh argument. Usage of this argument can be found is the User Guide referenced above."
+    }, 
+    "enablePassword": {
+      "type": "Optional[String]", 
+      "description": "Configures the password used to enter Global Configuration command mode on the switch. If the switch does not request this password, the parameter is ignored.While generally the value should come from the inventory file, you can also specify it as a variable. This parameter is optional. If it is not specified, no default value will be used."
+    }, 
+    "interfaceArg1": {
+      "type": "String", 
+      "description": "This is an overloaded interface first argument. Usage of this argument can be found is the User Guide referenced above."
+    }, 
+    "interfaceArg2": {
+      "type": "Optional[String]", 
+      "description": "This is an overloaded interface second argument. Usage of this argument can be found is the User Guide referenced above."
+    }, 
+    "interfaceArg3": {
+      "type": "Optional[String]", 
+      "description": "This is an overloaded interface third argument. Usage of this argument can be found is the User Guide referenced above."
+    }
+  }
+}

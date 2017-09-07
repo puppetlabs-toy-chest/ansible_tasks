@@ -1,0 +1,49 @@
+{
+  "description": "Manage Interface on network devices", 
+  "parameters": {
+    "purge": {
+      "type": "Optional[String]", 
+      "description": "Purge Interfaces not defined in the collections parameter. This applies only for logical interface."
+    }, 
+    "name": {
+      "type": "String", 
+      "description": "Name of the Interface."
+    }, 
+    "duplex": {
+      "type": "Optional[String]", 
+      "description": "Interface link status"
+    }, 
+    "enabled": {
+      "type": "Optional[String]", 
+      "description": "Configure operational status of the interface link. If value is I(yes) interface is configured in up state, for I(no) interface is configured in down state."
+    }, 
+    "collection": {
+      "type": "Optional[String]", 
+      "description": "L i s t   o f   I n t e r f a c e s   d e f i n i t i o n s ."
+    }, 
+    "mtu": {
+      "type": "Optional[String]", 
+      "description": "Maximum size of transmit packet."
+    }, 
+    "rx_rate": {
+      "type": "Optional[String]", 
+      "description": "Receiver rate"
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "State of the Interface configuration."
+    }, 
+    "speed": {
+      "type": "Optional[String]", 
+      "description": "Interface link speed."
+    }, 
+    "tx_rate": {
+      "type": "Optional[String]", 
+      "description": "Transmit rate"
+    }, 
+    "description": {
+      "type": "Optional[String]", 
+      "description": "Description of Interface."
+    }
+  }
+}

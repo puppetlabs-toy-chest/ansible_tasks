@@ -1,0 +1,37 @@
+{
+  "description": "Manage Sensu silence entries", 
+  "parameters": {
+    "creator": {
+      "type": "Optional[String]", 
+      "description": "Specifies the entity responsible for this entry."
+    }, 
+    "url": {
+      "type": "Optional[String]", 
+      "description": "Specifies the URL of the Sensu monitoring host server."
+    }, 
+    "expire_on_resolve": {
+      "type": "Optional[Boolean]", 
+      "description": "If specified as true, the silence entry will be automatically cleared once the condition it is silencing is resolved."
+    }, 
+    "reason": {
+      "type": "Optional[String]", 
+      "description": "If specified, this free-form string is used to provide context or rationale for the reason this silence entry was created."
+    }, 
+    "state": {
+      "type": "String", 
+      "description": "Specifies to create or clear (delete) a silence entry via the Sensu API"
+    }, 
+    "expire": {
+      "type": "Optional[String]", 
+      "description": "If specified, the silence entry will be automatically cleared after this number of seconds."
+    }, 
+    "check": {
+      "type": "Optional[String]", 
+      "description": "Specifies the check which the silence entry applies to."
+    }, 
+    "subscription": {
+      "type": "String", 
+      "description": "Specifies the subscription which the silence entry applies to. To create a silence entry for a client append C(client:) to client name. Example - C(client:server1.example.dev)"
+    }
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "description": "Manage Ruby gems", 
+  "parameters": {
+    "include_dependencies": {
+      "type": "Optional[String]", 
+      "description": "Whether to include dependencies or not."
+    }, 
+    "executable": {
+      "type": "Optional[String]", 
+      "description": "Override the path to the gem executable"
+    }, 
+    "name": {
+      "type": "String", 
+      "description": "The name of the gem to be managed."
+    }, 
+    "repository": {
+      "type": "Optional[String]", 
+      "description": "The repository from which the gem will be installed"
+    }, 
+    "build_flags": {
+      "type": "Optional[String]", 
+      "description": "Allow adding build flags for gem compilation"
+    }, 
+    "include_doc": {
+      "type": "Optional[String]", 
+      "description": "Install with or without docs."
+    }, 
+    "user_install": {
+      "type": "Optional[String]", 
+      "description": "Install gem in user's local gems cache or for all users"
+    }, 
+    "pre_release": {
+      "type": "Optional[String]", 
+      "description": "Allow installation of pre-release versions of the gem."
+    }, 
+    "env_shebang": {
+      "type": "Optional[String]", 
+      "description": "Rewrite the shebang line on installed scripts to use /usr/bin/env."
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "The desired state of the gem. C(latest) ensures that the latest version is installed."
+    }, 
+    "version": {
+      "type": "Optional[String]", 
+      "description": "Version of the gem to be installed/removed."
+    }, 
+    "gem_source": {
+      "type": "Optional[String]", 
+      "description": "The path to a local gem used as installation source."
+    }
+  }
+}

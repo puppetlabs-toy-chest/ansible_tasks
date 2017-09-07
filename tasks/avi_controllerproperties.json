@@ -1,0 +1,209 @@
+{
+  "description": "Module for setup of ControllerProperties Avi RESTful Object", 
+  "parameters": {
+    "vs_se_ping_fail": {
+      "type": "Optional[String]", 
+      "description": "Number of vs_se_ping_fail. Default value when not specified in API or module is interpreted by Avi Controller as 60."
+    }, 
+    "portal_token": {
+      "type": "Optional[String]", 
+      "description": "Token used for uploading tech-support to portal. Field introduced in 17.1.2."
+    }, 
+    "cluster_ip_gratuitous_arp_period": {
+      "type": "Optional[String]", 
+      "description": "Number of cluster_ip_gratuitous_arp_period. Default value when not specified in API or module is interpreted by Avi Controller as 60."
+    }, 
+    "persistence_key_rotate_period": {
+      "type": "Optional[String]", 
+      "description": "Allowed values are 1-1051200. Special values are 0 - 'disabled'. Default value when not specified in API or module is interpreted by Avi Controller as 60."
+    }, 
+    "unresponsive_se_reboot": {
+      "type": "Optional[String]", 
+      "description": "Number of unresponsive_se_reboot. Default value when not specified in API or module is interpreted by Avi Controller as 300."
+    }, 
+    "attach_ip_retry_interval": {
+      "type": "Optional[String]", 
+      "description": "Number of attach_ip_retry_interval. Default value when not specified in API or module is interpreted by Avi Controller as 360."
+    }, 
+    "vs_se_vnic_fail": {
+      "type": "Optional[String]", 
+      "description": "Number of vs_se_vnic_fail. Default value when not specified in API or module is interpreted by Avi Controller as 300."
+    }, 
+    "attach_ip_retry_limit": {
+      "type": "Optional[String]", 
+      "description": "Number of attach_ip_retry_limit. Default value when not specified in API or module is interpreted by Avi Controller as 4."
+    }, 
+    "se_vnic_cooldown": {
+      "type": "Optional[String]", 
+      "description": "Number of se_vnic_cooldown. Default value when not specified in API or module is interpreted by Avi Controller as 120."
+    }, 
+    "vnic_op_fail_time": {
+      "type": "Optional[String]", 
+      "description": "Number of vnic_op_fail_time. Default value when not specified in API or module is interpreted by Avi Controller as 180."
+    }, 
+    "vs_key_rotate_period": {
+      "type": "Optional[String]", 
+      "description": "Allowed values are 1-1051200. Special values are 0 - 'disabled'. Default value when not specified in API or module is interpreted by Avi Controller as 60."
+    }, 
+    "vs_se_bootup_fail": {
+      "type": "Optional[String]", 
+      "description": "Number of vs_se_bootup_fail. Default value when not specified in API or module is interpreted by Avi Controller as 300."
+    }, 
+    "seupgrade_fabric_pool_size": {
+      "type": "Optional[String]", 
+      "description": "Pool size used for all fabric commands during se upgrade. Default value when not specified in API or module is interpreted by Avi Controller as 20."
+    }, 
+    "max_pcap_per_tenant": {
+      "type": "Optional[String]", 
+      "description": "Maximum number of pcap files stored per tenant. Default value when not specified in API or module is interpreted by Avi Controller as 4."
+    }, 
+    "seupgrade_segroup_min_dead_timeout": {
+      "type": "Optional[String]", 
+      "description": "Time to wait before marking segroup upgrade as stuck. Default value when not specified in API or module is interpreted by Avi Controller as 360."
+    }, 
+    "dns_refresh_period": {
+      "type": "Optional[String]", 
+      "description": "Number of dns_refresh_period. Default value when not specified in API or module is interpreted by Avi Controller as 60."
+    }, 
+    "upgrade_lease_time": {
+      "type": "Optional[String]", 
+      "description": "Number of upgrade_lease_time. Default value when not specified in API or module is interpreted by Avi Controller as 360."
+    }, 
+    "se_create_timeout": {
+      "type": "Optional[String]", 
+      "description": "Number of se_create_timeout. Default value when not specified in API or module is interpreted by Avi Controller as 900."
+    }, 
+    "query_host_fail": {
+      "type": "Optional[String]", 
+      "description": "Number of query_host_fail. Default value when not specified in API or module is interpreted by Avi Controller as 180."
+    }, 
+    "vs_apic_scaleout_timeout": {
+      "type": "Optional[String]", 
+      "description": "Time to wait for the scaled out se to become ready before marking the scaleout done, applies to apic configuration only. Default value when not specified in API or module is interpreted by Avi Controller as 360."
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "The state that should be applied on the entity."
+    }, 
+    "se_offline_del": {
+      "type": "Optional[String]", 
+      "description": "Number of se_offline_del. Default value when not specified in API or module is interpreted by Avi Controller as 172000."
+    }, 
+    "max_dead_se_in_grp": {
+      "type": "Optional[String]", 
+      "description": "Number of max_dead_se_in_grp. Default value when not specified in API or module is interpreted by Avi Controller as 1."
+    }, 
+    "upgrade_dns_ttl": {
+      "type": "Optional[String]", 
+      "description": "Time to account for dns ttl during upgrade. This is in addition to vs_scalein_timeout_for_upgrade in se_group. Field introduced in 17.1.1. Default value when not specified in API or module is interpreted by Avi Controller as 5."
+    }, 
+    "fatal_error_lease_time": {
+      "type": "Optional[String]", 
+      "description": "Number of fatal_error_lease_time. Default value when not specified in API or module is interpreted by Avi Controller as 120."
+    }, 
+    "secure_channel_controller_token_timeout": {
+      "type": "Optional[String]", 
+      "description": "Number of secure_channel_controller_token_timeout. Default value when not specified in API or module is interpreted by Avi Controller as 60."
+    }, 
+    "api_version": {
+      "type": "Optional[String]", 
+      "description": "Avi API version of to use for Avi API and objects."
+    }, 
+    "username": {
+      "type": "Optional[String]", 
+      "description": "Username used for accessing Avi controller. The default value is the environment variable C(AVI_USERNAME)."
+    }, 
+    "allow_ip_forwarding": {
+      "type": "Optional[String]", 
+      "description": "Field introduced in 17.1.1. Default value when not specified in API or module is interpreted by Avi Controller as False."
+    }, 
+    "max_seq_vnic_failures": {
+      "type": "Optional[String]", 
+      "description": "Number of max_seq_vnic_failures. Default value when not specified in API or module is interpreted by Avi Controller as 3."
+    }, 
+    "allow_unauthenticated_nodes": {
+      "type": "Optional[String]", 
+      "description": "Boolean flag to set allow_unauthenticated_nodes. Default value when not specified in API or module is interpreted by Avi Controller as False."
+    }, 
+    "allow_unauthenticated_apis": {
+      "type": "Optional[String]", 
+      "description": "Allow unauthenticated access for special apis. Default value when not specified in API or module is interpreted by Avi Controller as False."
+    }, 
+    "controller": {
+      "type": "Optional[String]", 
+      "description": "IP address or hostname of the controller. The default value is the environment variable C(AVI_CONTROLLER)."
+    }, 
+    "vs_awaiting_se_timeout": {
+      "type": "Optional[String]", 
+      "description": "Number of vs_awaiting_se_timeout. Default value when not specified in API or module is interpreted by Avi Controller as 60."
+    }, 
+    "warmstart_se_reconnect_wait_time": {
+      "type": "Optional[String]", 
+      "description": "Number of warmstart_se_reconnect_wait_time. Default value when not specified in API or module is interpreted by Avi Controller as 300."
+    }, 
+    "password": {
+      "type": "Optional[String]", 
+      "description": "Password of Avi user in Avi controller. The default value is the environment variable C(AVI_PASSWORD)."
+    }, 
+    "tenant": {
+      "type": "Optional[String]", 
+      "description": "Name of tenant used for all Avi API calls and context of object."
+    }, 
+    "uuid": {
+      "type": "Optional[String]", 
+      "description": "Unique object identifier of the object."
+    }, 
+    "dummy": {
+      "type": "Optional[String]", 
+      "description": "Number of dummy."
+    }, 
+    "secure_channel_cleanup_timeout": {
+      "type": "Optional[String]", 
+      "description": "Number of secure_channel_cleanup_timeout. Default value when not specified in API or module is interpreted by Avi Controller as 60."
+    }, 
+    "ssl_certificate_expiry_warning_days": {
+      "type": "Optional[String]", 
+      "description": "Number of days for ssl certificate expiry warning."
+    }, 
+    "vs_se_vnic_ip_fail": {
+      "type": "Optional[String]", 
+      "description": "Number of vs_se_vnic_ip_fail. Default value when not specified in API or module is interpreted by Avi Controller as 120."
+    }, 
+    "secure_channel_se_token_timeout": {
+      "type": "Optional[String]", 
+      "description": "Number of secure_channel_se_token_timeout. Default value when not specified in API or module is interpreted by Avi Controller as 60."
+    }, 
+    "url": {
+      "type": "Optional[String]", 
+      "description": "Avi controller URL of the object."
+    }, 
+    "vs_se_create_fail": {
+      "type": "Optional[String]", 
+      "description": "Number of vs_se_create_fail. Default value when not specified in API or module is interpreted by Avi Controller as 1500."
+    }, 
+    "api_idle_timeout": {
+      "type": "Optional[String]", 
+      "description": "Allowed values are 0-1440. Default value when not specified in API or module is interpreted by Avi Controller as 15."
+    }, 
+    "crashed_se_reboot": {
+      "type": "Optional[String]", 
+      "description": "Number of crashed_se_reboot. Default value when not specified in API or module is interpreted by Avi Controller as 900."
+    }, 
+    "appviewx_compat_mode": {
+      "type": "Optional[String]", 
+      "description": "Export configuration in appviewx compatibility mode. Field introduced in 17.1.1. Default value when not specified in API or module is interpreted by Avi Controller as False."
+    }, 
+    "se_failover_attempt_interval": {
+      "type": "Optional[String]", 
+      "description": "Interval between attempting failovers to an se. Default value when not specified in API or module is interpreted by Avi Controller as 300."
+    }, 
+    "dead_se_detection_timer": {
+      "type": "Optional[String]", 
+      "description": "Number of dead_se_detection_timer. Default value when not specified in API or module is interpreted by Avi Controller as 360."
+    }, 
+    "tenant_uuid": {
+      "type": "Optional[String]", 
+      "description": "UUID of tenant used for all Avi API calls and context of object."
+    }
+  }
+}

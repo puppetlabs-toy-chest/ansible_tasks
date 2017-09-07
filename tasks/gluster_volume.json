@@ -1,0 +1,73 @@
+{
+  "description": "Manage GlusterFS volumes", 
+  "parameters": {
+    "force": {
+      "type": "Optional[String]", 
+      "description": "If brick is being created in the root partition, module will fail. Set force to true to override this behaviour"
+    }, 
+    "name": {
+      "type": "String", 
+      "description": "The volume name"
+    }, 
+    "replicas": {
+      "type": "Optional[String]", 
+      "description": "Replica count for volume"
+    }, 
+    "bricks": {
+      "type": "Optional[String]", 
+      "description": "Brick paths on servers. Multiple brick paths can be separated by commas"
+    }, 
+    "disperses": {
+      "type": "Optional[String]", 
+      "description": "Disperse count for volume"
+    }, 
+    "quota": {
+      "type": "Optional[String]", 
+      "description": "Quota value for limit-usage (be sure to use 10.0MB instead of 10MB, see quota list)"
+    }, 
+    "stripes": {
+      "type": "Optional[String]", 
+      "description": "Stripe count for volume"
+    }, 
+    "cluster": {
+      "type": "Optional[String]", 
+      "description": "List of hosts to use for probing and brick setup"
+    }, 
+    "host": {
+      "type": "Optional[String]", 
+      "description": "Override local hostname (for peer probing purposes)"
+    }, 
+    "state": {
+      "type": "String", 
+      "description": "Use present/absent ensure if a volume exists or not, use started/stopped to control it's availability."
+    }, 
+    "arbiter": {
+      "type": "Optional[String]", 
+      "description": "Arbiter count for volume"
+    }, 
+    "redundancies": {
+      "type": "Optional[String]", 
+      "description": "Redundancy count for volume"
+    }, 
+    "directory": {
+      "type": "Optional[String]", 
+      "description": "Directory for limit-usage"
+    }, 
+    "start_on_create": {
+      "type": "Optional[String]", 
+      "description": "Controls whether the volume is started after creation or not, defaults to yes"
+    }, 
+    "rebalance": {
+      "type": "Optional[String]", 
+      "description": "Controls whether the cluster is rebalanced after changes"
+    }, 
+    "options": {
+      "type": "Optional[String]", 
+      "description": "A dictionary/hash with options/settings for the volume"
+    }, 
+    "transport": {
+      "type": "Optional[String]", 
+      "description": "Transport type for volume"
+    }
+  }
+}

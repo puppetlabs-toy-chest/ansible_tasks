@@ -1,0 +1,9 @@
+{
+  "description": "Installs packages using Web Platform Installer command-line", 
+  "parameters": {
+    "name": {
+      "type": "String", 
+      "description": "Name of the package to be installed"
+    }
+  }
+}

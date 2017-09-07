@@ -1,0 +1,93 @@
+{
+  "description": "Creates/removes networks from OpenStack", 
+  "parameters": {
+    "auth_type": {
+      "type": "Optional[String]", 
+      "description": "Name of the auth plugin to use. If the cloud uses something other than password authentication, the name of the plugin should be indicated here and the contents of the I(auth) parameter should be updated accordingly."
+    }, 
+    "availability_zone": {
+      "type": "Optional[String]", 
+      "description": "Ignored. Present for backwards compatibility"
+    }, 
+    "provider_physical_network": {
+      "type": "Optional[String]", 
+      "description": "The physical network where this network object is implemented."
+    }, 
+    "cloud": {
+      "type": "Optional[String]", 
+      "description": "Named cloud to operate against. Provides default values for I(auth) and I(auth_type). This parameter is not needed if I(auth) is provided or if OpenStack OS_* environment variables are present."
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "Indicate desired state of the resource."
+    }, 
+    "shared": {
+      "type": "Optional[String]", 
+      "description": "Whether this network is shared or not."
+    }, 
+    "region_name": {
+      "type": "Optional[String]", 
+      "description": "Name of the region."
+    }, 
+    "provider_network_type": {
+      "type": "Optional[String]", 
+      "description": "The type of physical network that maps to this network resource."
+    }, 
+    "api_timeout": {
+      "type": "Optional[String]", 
+      "description": "How long should the socket layer wait before timing out for API calls. If this is omitted, nothing will be passed to the requests library."
+    }, 
+    "auth": {
+      "type": "Optional[String]", 
+      "description": "Dictionary containing auth information as needed by the cloud's auth plugin strategy. For the default I(password) plugin, this would contain I(auth_url), I(username), I(password), I(project_name) and any information about domains if the cloud supports them. For other plugins, this param will need to contain whatever parameters that auth plugin requires. This parameter is not needed if a named cloud is provided or OpenStack OS_* environment variables are present."
+    }, 
+    "endpoint_type": {
+      "type": "Optional[String]", 
+      "description": "Endpoint URL type to fetch from the service catalog."
+    }, 
+    "external": {
+      "type": "Optional[String]", 
+      "description": "Whether this network is externally accessible."
+    }, 
+    "key": {
+      "type": "Optional[String]", 
+      "description": "A path to a client key to use as part of the SSL transaction."
+    }, 
+    "cacert": {
+      "type": "Optional[String]", 
+      "description": "A path to a CA Cert bundle that can be used as part of verifying SSL API requests."
+    }, 
+    "wait": {
+      "type": "Optional[String]", 
+      "description": "Should ansible wait until the requested resource is complete."
+    }, 
+    "name": {
+      "type": "String", 
+      "description": "Name to be assigned to the network."
+    }, 
+    "admin_state_up": {
+      "type": "Optional[String]", 
+      "description": "Whether the state should be marked as up or down."
+    }, 
+    "project": {
+      "type": "Optional[String]", 
+      "description": "Project name or ID containing the network (name admin-only)"
+    }, 
+    "cert": {
+      "type": "Optional[String]", 
+      "description": "A path to a client certificate to use as part of the SSL transaction."
+    }, 
+    "provider_segmentation_id": {
+      "type": "Optional[String]", 
+      "description": "An isolated segment on the physical network. The I(network_type) attribute defines the segmentation model. For example, if the I(network_type) value is vlan, this ID is a vlan identifier. If the I(network_type) value is gre, this ID is a gre key."
+    }, 
+    "timeout": {
+      "type": "Optional[String]", 
+      "description": "How long should ansible wait for the requested resource."
+    }, 
+    "validate_certs": {
+      "type": "Optional[String]", 
+      "description": "Whether or not SSL API requests should be verified. Before 2.3 this defaulted to True."
+    }
+  }
+}

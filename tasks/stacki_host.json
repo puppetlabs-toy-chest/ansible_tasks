@@ -1,0 +1,37 @@
+{
+  "description": "Add or remove host to stacki front-end", 
+  "parameters": {
+    "prim_intf_ip": {
+      "type": "Optional[String]", 
+      "description": "IP Address for the primary network interface."
+    }, 
+    "name": {
+      "type": "String", 
+      "description": "Name of the host to be added to Stacki."
+    }, 
+    "stacki_user": {
+      "type": "String", 
+      "description": "Username for authenticating with Stacki API, but if not specified, the environment variable C(stacki_user) is used instead."
+    }, 
+    "stacki_endpoint": {
+      "type": "String", 
+      "description": "URL for the Stacki API Endpoint."
+    }, 
+    "prim_intf": {
+      "type": "Optional[String]", 
+      "description": "Name of the primary network interface."
+    }, 
+    "force_install": {
+      "type": "Optional[String]", 
+      "description": "Set value to True to force node into install state if it already exists in stacki."
+    }, 
+    "stacki_password": {
+      "type": "String", 
+      "description": "Password for authenticating with Stacki API, but if not specified, the environment variable C(stacki_password) is used instead."
+    }, 
+    "prim_intf_mac": {
+      "type": "Optional[String]", 
+      "description": "MAC Address for the primary PXE boot network interface."
+    }
+  }
+}

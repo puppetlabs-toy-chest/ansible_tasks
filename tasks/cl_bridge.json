@@ -1,0 +1,65 @@
+{
+  "description": "Configures a bridge port on Cumulus Linux", 
+  "parameters": {
+    "addr_method": {
+      "type": "Optional[String]", 
+      "description": "Configures the port to use DHCP. To enable this feature use the option I(dhcp)."
+    }, 
+    "name": {
+      "type": "String", 
+      "description": "Name of the interface."
+    }, 
+    "vlan_aware": {
+      "type": "Optional[String]", 
+      "description": "Enables vlan-aware mode."
+    }, 
+    "mstpctl_treeprio": {
+      "type": "Optional[String]", 
+      "description": "Set spanning tree root priority. Must be a multiple of 4096."
+    }, 
+    "virtual_mac": {
+      "type": "Optional[String]", 
+      "description": "Define Ethernet mac associated with Cumulus Linux VRR feature."
+    }, 
+    "mtu": {
+      "type": "Optional[String]", 
+      "description": "Set MTU. Configure Jumbo Frame by setting MTU to I(9000)."
+    }, 
+    "pvid": {
+      "type": "Optional[String]", 
+      "description": "In vlan-aware mode, defines vlan that is the untagged vlan."
+    }, 
+    "ipv4": {
+      "type": "Optional[String]", 
+      "description": "List of IPv4 addresses to configure on the interface. In the form I(X.X.X.X/YY)."
+    }, 
+    "stp": {
+      "type": "Optional[String]", 
+      "description": "Enables spanning tree Protocol. As of Cumulus Linux 2.5 the default bridging mode, only per vlan RSTP or 802.1d is supported. For the vlan aware mode, only common instance STP is supported"
+    }, 
+    "virtual_ip": {
+      "type": "Optional[String]", 
+      "description": "Define IPv4 virtual IP used by the Cumulus Linux VRR feature."
+    }, 
+    "ipv6": {
+      "type": "Optional[String]", 
+      "description": "List of IPv6 addresses to configure on the interface. In the form I(X:X:X::X/YYY)."
+    }, 
+    "vids": {
+      "type": "Optional[String]", 
+      "description": "In vlan-aware mode, lists VLANs defined under the interface."
+    }, 
+    "alias_name": {
+      "type": "Optional[String]", 
+      "description": "Description of the port."
+    }, 
+    "ports": {
+      "type": "String", 
+      "description": "List of bridge members."
+    }, 
+    "location": {
+      "type": "Optional[String]", 
+      "description": "Interface directory location."
+    }
+  }
+}

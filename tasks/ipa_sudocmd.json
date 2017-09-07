@@ -1,0 +1,41 @@
+{
+  "description": "Manage FreeIPA sudo command", 
+  "parameters": {
+    "ipa_port": {
+      "type": "Optional[String]", 
+      "description": "P o r t   o f   I P A   s e r v e r"
+    }, 
+    "description": {
+      "type": "Optional[String]", 
+      "description": "A description of this command."
+    }, 
+    "ipa_prot": {
+      "type": "Optional[String]", 
+      "description": "P r o t o c o l   u s e d   b y   I P A   s e r v e r"
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "S t a t e   t o   e n s u r e"
+    }, 
+    "ipa_host": {
+      "type": "Optional[String]", 
+      "description": "I P   o r   h o s t n a m e   o f   I P A   s e r v e r"
+    }, 
+    "ipa_user": {
+      "type": "Optional[String]", 
+      "description": "A d m i n i s t r a t i v e   a c c o u n t   u s e d   o n   I P A   s e r v e r"
+    }, 
+    "ipa_pass": {
+      "type": "String", 
+      "description": "P a s s w o r d   o f   a d m i n i s t r a t i v e   u s e r"
+    }, 
+    "sudocmd": {
+      "type": "String", 
+      "description": "Sudo Command."
+    }, 
+    "validate_certs": {
+      "type": "Optional[String]", 
+      "description": "This only applies if C(ipa_prot) is I(https). If set to C(no), the SSL certificates will not be validated. This should only set to C(no) used on personally controlled sites using self-signed certificates."
+    }
+  }
+}

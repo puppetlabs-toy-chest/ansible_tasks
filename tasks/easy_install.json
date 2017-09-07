@@ -1,0 +1,29 @@
+{
+  "description": "Installs Python libraries", 
+  "parameters": {
+    "virtualenv": {
+      "type": "Optional[String]", 
+      "description": "an optional I(virtualenv) directory path to install into. If the I(virtualenv) does not exist, it is created automatically"
+    }, 
+    "virtualenv_command": {
+      "type": "Optional[String]", 
+      "description": "The command to create the virtual environment with. For example C(pyvenv), C(virtualenv), C(virtualenv2)."
+    }, 
+    "name": {
+      "type": "String", 
+      "description": "A Python library name"
+    }, 
+    "executable": {
+      "type": "Optional[String]", 
+      "description": "The explicit executable or a pathname to the executable to be used to run easy_install for a specific version of Python installed in the system. For example C(easy_install-3.3), if there are both Python 2.7 and 3.3 installations in the system and you want to run easy_install for the Python 3.3 installation."
+    }, 
+    "virtualenv_site_packages": {
+      "type": "Optional[String]", 
+      "description": "Whether the virtual environment will inherit packages from the global site-packages directory.  Note that if this setting is changed on an already existing virtual environment it will not have any effect, the environment must be deleted and newly created."
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "The desired state of the library. C(latest) ensures that the latest version is installed."
+    }
+  }
+}

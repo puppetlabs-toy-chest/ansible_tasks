@@ -1,0 +1,65 @@
+{
+  "description": "Manages network access control lists (ACL) on Apache CloudStack based clouds.", 
+  "parameters": {
+    "account": {
+      "type": "Optional[String]", 
+      "description": "Account the network ACL rule is related to."
+    }, 
+    "api_key": {
+      "type": "Optional[String]", 
+      "description": "API key of the CloudStack API."
+    }, 
+    "poll_async": {
+      "type": "Optional[String]", 
+      "description": "Poll async jobs until job has finished."
+    }, 
+    "api_url": {
+      "type": "Optional[String]", 
+      "description": "URL of the CloudStack API e.g. https://cloud.example.com/client/api."
+    }, 
+    "api_http_method": {
+      "type": "Optional[String]", 
+      "description": "HTTP method used."
+    }, 
+    "api_secret": {
+      "type": "Optional[String]", 
+      "description": "Secret key of the CloudStack API."
+    }, 
+    "api_timeout": {
+      "type": "Optional[String]", 
+      "description": "HTTP timeout."
+    }, 
+    "api_region": {
+      "type": "Optional[String]", 
+      "description": "Name of the ini section in the C(cloustack.ini) file."
+    }, 
+    "name": {
+      "type": "String", 
+      "description": "Name of the network ACL."
+    }, 
+    "project": {
+      "type": "Optional[String]", 
+      "description": "Name of the project the network ACL is related to."
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "State of the network ACL."
+    }, 
+    "domain": {
+      "type": "Optional[String]", 
+      "description": "Domain the network ACL rule is related to."
+    }, 
+    "zone": {
+      "type": "Optional[String]", 
+      "description": "Name of the zone the VPC is related to. If not set, default zone is used."
+    }, 
+    "vpc": {
+      "type": "String", 
+      "description": "VPC the network ACL is related to."
+    }, 
+    "description": {
+      "type": "Optional[String]", 
+      "description": "Description of the network ACL. If not set, identical to C(name)."
+    }
+  }
+}

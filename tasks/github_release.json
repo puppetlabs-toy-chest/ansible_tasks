@@ -1,0 +1,25 @@
+{
+  "description": "Interact with GitHub Releases", 
+  "parameters": {
+    "repo": {
+      "type": "String", 
+      "description": "Repository name"
+    }, 
+    "action": {
+      "type": "String", 
+      "description": "Action to perform"
+    }, 
+    "token": {
+      "type": "Optional[String]", 
+      "description": "GitHub Personal Access Token for authenticating"
+    }, 
+    "password": {
+      "type": "Optional[String]", 
+      "description": "The GitHub account password for the user"
+    }, 
+    "user": {
+      "type": "String", 
+      "description": "The GitHub account that owns the repository"
+    }
+  }
+}

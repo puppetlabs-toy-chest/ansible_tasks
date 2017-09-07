@@ -1,0 +1,49 @@
+{
+  "description": "Posts events to DataDog  service", 
+  "parameters": {
+    "date_happened": {
+      "type": "Optional[String]", 
+      "description": "POSIX timestamp of the event. Default value is now."
+    }, 
+    "alert_type": {
+      "type": "Optional[String]", 
+      "description": "Type of alert."
+    }, 
+    "tags": {
+      "type": "Optional[String]", 
+      "description": "Comma separated list of tags to apply to the event."
+    }, 
+    "text": {
+      "type": "String", 
+      "description": "The body of the event."
+    }, 
+    "title": {
+      "type": "String", 
+      "description": "The event title."
+    }, 
+    "app_key": {
+      "type": "String", 
+      "description": "Your DataDog app key."
+    }, 
+    "priority": {
+      "type": "Optional[String]", 
+      "description": "The priority of the event."
+    }, 
+    "host": {
+      "type": "Optional[String]", 
+      "description": "Host name to associate with the event."
+    }, 
+    "aggregation_key": {
+      "type": "Optional[String]", 
+      "description": "An arbitrary string to use for aggregation."
+    }, 
+    "api_key": {
+      "type": "String", 
+      "description": "Your DataDog API key."
+    }, 
+    "validate_certs": {
+      "type": "Optional[String]", 
+      "description": "If C(no), SSL certificates will not be validated. This should only be used on personally controlled sites using self-signed certificates."
+    }
+  }
+}

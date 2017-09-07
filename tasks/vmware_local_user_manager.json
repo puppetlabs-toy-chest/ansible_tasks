@@ -1,0 +1,37 @@
+{
+  "description": "Manage local users on an ESXi host", 
+  "parameters": {
+    "username": {
+      "type": "String", 
+      "description": "The username of the vSphere vCenter."
+    }, 
+    "local_user_description": {
+      "type": "Optional[String]", 
+      "description": "Description for the user"
+    }, 
+    "hostname": {
+      "type": "String", 
+      "description": "The hostname or IP address of the vSphere vCenter."
+    }, 
+    "local_user_password": {
+      "type": "Optional[String]", 
+      "description": "The password to be set"
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "Indicate desired state of the user. If the user already exists when C(state=present), the user info is updated"
+    }, 
+    "password": {
+      "type": "String", 
+      "description": "The password of the vSphere vCenter."
+    }, 
+    "validate_certs": {
+      "type": "Optional[String]", 
+      "description": "Allows connection when SSL certificates are not valid. Set to false when certificates are not trusted."
+    }, 
+    "local_user_name": {
+      "type": "String", 
+      "description": "The local user name to be changed"
+    }
+  }
+}

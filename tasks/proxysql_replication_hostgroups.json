@@ -1,0 +1,49 @@
+{
+  "description": "Manages replication hostgroups using the proxysql admin interface.", 
+  "parameters": {
+    "comment": {
+      "type": "Optional[String]", 
+      "description": "Text field that can be used for any purposed defined by the user."
+    }, 
+    "login_port": {
+      "type": "Optional[String]", 
+      "description": "The port used to connect to ProxySQL admin interface."
+    }, 
+    "reader_hostgroup": {
+      "type": "String", 
+      "description": "Id of the reader hostgroup."
+    }, 
+    "config_file": {
+      "type": "Optional[String]", 
+      "description": "Specify a config file from which login_user and login_password are to be read."
+    }, 
+    "login_user": {
+      "type": "Optional[String]", 
+      "description": "The username used to authenticate to ProxySQL admin interface."
+    }, 
+    "login_host": {
+      "type": "Optional[String]", 
+      "description": "The host used to connect to ProxySQL admin interface."
+    }, 
+    "login_password": {
+      "type": "Optional[String]", 
+      "description": "The password used to authenticate to ProxySQL admin interface."
+    }, 
+    "writer_hostgroup": {
+      "type": "String", 
+      "description": "Id of the writer hostgroup."
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "When C(present) - adds the replication hostgroup, when C(absent) - removes the replication hostgroup."
+    }, 
+    "load_to_runtime": {
+      "type": "Optional[String]", 
+      "description": "Dynamically load mysql host config to runtime memory."
+    }, 
+    "save_to_disk": {
+      "type": "Optional[String]", 
+      "description": "Save mysql host config to sqlite db on disk to persist the configuration."
+    }
+  }
+}

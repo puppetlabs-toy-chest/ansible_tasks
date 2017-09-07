@@ -1,0 +1,9 @@
+{
+  "description": "Fail with custom message", 
+  "parameters": {
+    "msg": {
+      "type": "Optional[String]", 
+      "description": "The customized message used for failing execution. If omitted, fail will simply bail out with a generic message."
+    }
+  }
+}

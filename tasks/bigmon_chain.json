@@ -1,0 +1,25 @@
+{
+  "description": "Create and remove a bigmon inline service chain.", 
+  "parameters": {
+    "access_token": {
+      "type": "Optional[String]", 
+      "description": "Bigmon access token. If this isn't set the the environment variable C(BIGSWITCH_ACCESS_TOKEN) is used."
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "Whether the service chain should be present or absent."
+    }, 
+    "validate_certs": {
+      "type": "Optional[String]", 
+      "description": "If C(false), SSL certificates will not be validated. This should only be used on personally controlled devices using self-signed certificates."
+    }, 
+    "controller": {
+      "type": "String", 
+      "description": "The controller IP address."
+    }, 
+    "name": {
+      "type": "String", 
+      "description": "The name of the chain."
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "description": "Manages timeout mode of NetStream on HUAWEI CloudEngine switches.", 
+  "parameters": {
+    "timeout_type": {
+      "type": "Optional[String]", 
+      "description": "Netstream timeout type."
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "Specify desired state of the resource."
+    }, 
+    "type": {
+      "type": "Optional[String]", 
+      "description": "Specifies the packet type of netstream timeout active interval."
+    }, 
+    "manual_slot": {
+      "type": "Optional[String]", 
+      "description": "Specifies the slot number of netstream manual timeout."
+    }, 
+    "timeout_interval": {
+      "type": "Optional[String]", 
+      "description": "Netstream timeout interval. If is active type the interval is 1-60. If is inactive ,the interval is 5-600."
+    }
+  }
+}

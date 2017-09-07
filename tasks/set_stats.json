@@ -1,0 +1,17 @@
+{
+  "description": "Set stats for the current ansible run", 
+  "parameters": {
+    "aggregate": {
+      "type": "Optional[String]", 
+      "description": "boolean that indicates if the provided value is aggregated to the existing stat C(yes) or will replace it C(no)"
+    }, 
+    "data": {
+      "type": "String", 
+      "description": "A dictionary of which each key represents a stat (or variable) you want to keep track of"
+    }, 
+    "per_host": {
+      "type": "Optional[String]", 
+      "description": "boolean that indicates if the stats is per host or for all hosts in the run."
+    }
+  }
+}

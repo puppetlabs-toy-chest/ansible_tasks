@@ -1,0 +1,17 @@
+{
+  "description": "Gather facts through an HP iLO interface", 
+  "parameters": {
+    "host": {
+      "type": "String", 
+      "description": "The HP iLO hostname/address that is linked to the physical system."
+    }, 
+    "password": {
+      "type": "Optional[String]", 
+      "description": "The password to authenticate to the HP iLO interface."
+    }, 
+    "login": {
+      "type": "Optional[String]", 
+      "description": "The login name to authenticate to the HP iLO interface."
+    }
+  }
+}

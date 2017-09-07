@@ -1,0 +1,25 @@
+{
+  "description": "Send a message to Campfire", 
+  "parameters": {
+    "msg": {
+      "type": "String", 
+      "description": "The message body."
+    }, 
+    "token": {
+      "type": "String", 
+      "description": "API token."
+    }, 
+    "room": {
+      "type": "String", 
+      "description": "Room number to which the message should be sent."
+    }, 
+    "notify": {
+      "type": "Optional[String]", 
+      "description": "Send a notification sound before the message."
+    }, 
+    "subscription": {
+      "type": "String", 
+      "description": "The subscription name to use."
+    }
+  }
+}

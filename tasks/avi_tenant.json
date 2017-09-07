@@ -1,0 +1,61 @@
+{
+  "description": "Module for setup of Tenant Avi RESTful Object", 
+  "parameters": {
+    "username": {
+      "type": "Optional[String]", 
+      "description": "Username used for accessing Avi controller. The default value is the environment variable C(AVI_USERNAME)."
+    }, 
+    "uuid": {
+      "type": "Optional[String]", 
+      "description": "Unique object identifier of the object."
+    }, 
+    "password": {
+      "type": "Optional[String]", 
+      "description": "Password of Avi user in Avi controller. The default value is the environment variable C(AVI_PASSWORD)."
+    }, 
+    "name": {
+      "type": "String", 
+      "description": "Name of the object."
+    }, 
+    "url": {
+      "type": "Optional[String]", 
+      "description": "Avi controller URL of the object."
+    }, 
+    "controller": {
+      "type": "Optional[String]", 
+      "description": "IP address or hostname of the controller. The default value is the environment variable C(AVI_CONTROLLER)."
+    }, 
+    "created_by": {
+      "type": "Optional[String]", 
+      "description": "Creator of this tenant."
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "The state that should be applied on the entity."
+    }, 
+    "tenant": {
+      "type": "Optional[String]", 
+      "description": "Name of tenant used for all Avi API calls and context of object."
+    }, 
+    "config_settings": {
+      "type": "Optional[String]", 
+      "description": "Tenantconfiguration settings for tenant."
+    }, 
+    "local": {
+      "type": "Optional[String]", 
+      "description": "Boolean flag to set local. Default value when not specified in API or module is interpreted by Avi Controller as True."
+    }, 
+    "tenant_uuid": {
+      "type": "Optional[String]", 
+      "description": "UUID of tenant used for all Avi API calls and context of object."
+    }, 
+    "api_version": {
+      "type": "Optional[String]", 
+      "description": "Avi API version of to use for Avi API and objects."
+    }, 
+    "description": {
+      "type": "Optional[String]", 
+      "description": "User defined description for the object."
+    }
+  }
+}

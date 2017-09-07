@@ -1,0 +1,37 @@
+{
+  "description": "Update the role of a storage array within an Asynchronous Mirror Group (AMG).", 
+  "parameters": {
+    "force": {
+      "type": "Optional[String]", 
+      "description": "Whether to force the role reversal regardless of the online-state of the primary"
+    }, 
+    "ssid": {
+      "type": "String", 
+      "description": "The ID of the primary storage array for the async mirror action"
+    }, 
+    "api_password": {
+      "type": "String", 
+      "description": "The password to authenticate with the SANtricity WebServices Proxy or embedded REST API."
+    }, 
+    "role": {
+      "type": "String", 
+      "description": "Whether the array should be the primary or secondary array for the AMG"
+    }, 
+    "api_username": {
+      "type": "String", 
+      "description": "The username to authenticate with the SANtricity WebServices Proxy or embedded REST API."
+    }, 
+    "validate_certs": {
+      "type": "Optional[String]", 
+      "description": "Should https certificates be validated?"
+    }, 
+    "noSync": {
+      "type": "Optional[String]", 
+      "description": "Whether to avoid synchronization prior to role reversal"
+    }, 
+    "api_url": {
+      "type": "String", 
+      "description": "The url to the SANtricity WebServices Proxy or embedded REST API."
+    }
+  }
+}

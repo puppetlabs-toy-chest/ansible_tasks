@@ -1,0 +1,65 @@
+{
+  "description": "Manages apt-packages", 
+  "parameters": {
+    "dpkg_options": {
+      "type": "Optional[String]", 
+      "description": "Add dpkg options to apt command. Defaults to '-o \"Dpkg::Options::=--force-confdef\" -o \"Dpkg::Options::=--force-confold\"' Options should be supplied as comma separated list"
+    }, 
+    "upgrade": {
+      "type": "Optional[String]", 
+      "description": "If yes or safe, performs an aptitude safe-upgrade. If full, performs an aptitude full-upgrade. If dist, performs an apt-get dist-upgrade. Note: This does not upgrade a specific package, use state=latest for that."
+    }, 
+    "force": {
+      "type": "Optional[String]", 
+      "description": "If C(yes), force installs/removes."
+    }, 
+    "name": {
+      "type": "Optional[String]", 
+      "description": "A package name, like C(foo), or package specifier with version, like C(foo=1.0). Name wildcards (fnmatch) like C(apt*) and version wildcards like C(foo=1.0*) are also supported.  Note that the apt-get commandline supports implicit regex matches here but we do not because it can let typos through easier (If you typo C(foo) as C(fo) apt-get would install packages that have \"fo\" in their name with a warning and a prompt for the user.  Since we don't have warnings and prompts before installing we disallow this.  Use an explicit fnmatch pattern if you want wildcarding)"
+    }, 
+    "install_recommends": {
+      "type": "Optional[String]", 
+      "description": "Corresponds to the C(--no-install-recommends) option for I(apt). C(yes) installs recommended packages.  C(no) does not install recommended packages. By default, Ansible will use the same defaults as the operating system. Suggested packages are never installed."
+    }, 
+    "autoclean": {
+      "type": "Optional[String]", 
+      "description": "If C(yes), cleans the local repository of retrieved package files that can no longer be downloaded."
+    }, 
+    "purge": {
+      "type": "Optional[String]", 
+      "description": "Will force purging of configuration files if the module state is set to I(absent)."
+    }, 
+    "allow_unauthenticated": {
+      "type": "Optional[String]", 
+      "description": "Ignore if packages cannot be authenticated. This is useful for bootstrapping environments that manage their own apt-key setup."
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "Indicates the desired package state. C(latest) ensures that the latest version is installed. C(build-dep) ensures the package build dependencies are installed."
+    }, 
+    "autoremove": {
+      "type": "Optional[String]", 
+      "description": "If C(yes), remove unused dependency packages for all module states except I(build-dep). It can also be used as the only option. Previous to version 2.4, autoclean was also an alias for autoremove, now it is its own separate command. See documentation for further information."
+    }, 
+    "update_cache": {
+      "type": "Optional[String]", 
+      "description": "Run the equivalent of C(apt-get update) before the operation. Can be run as part of the package installation or as a separate step."
+    }, 
+    "default_release": {
+      "type": "Optional[String]", 
+      "description": "Corresponds to the C(-t) option for I(apt) and sets pin priorities"
+    }, 
+    "only_upgrade": {
+      "type": "Optional[String]", 
+      "description": "Only upgrade a package if it is already installed."
+    }, 
+    "deb": {
+      "type": "Optional[String]", 
+      "description": "Path to a .deb package on the remote machine. If :// in the path, ansible will attempt to download deb before installing. (Version added 2.1)"
+    }, 
+    "cache_valid_time": {
+      "type": "Optional[String]", 
+      "description": "Update the apt cache if its older than the I(cache_valid_time). This option is set in seconds."
+    }
+  }
+}

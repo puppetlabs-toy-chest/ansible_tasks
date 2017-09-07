@@ -1,0 +1,69 @@
+{
+  "description": "manage Cloudflare DNS records", 
+  "parameters": {
+    "solo": {
+      "type": "Optional[String]", 
+      "description": "Whether the record should be the only one for that record type and record name. Only use with C(state=present) This will delete all other records with the same record name and type."
+    }, 
+    "account_email": {
+      "type": "String", 
+      "description": "Account email."
+    }, 
+    "weight": {
+      "type": "Optional[String]", 
+      "description": "S e r v i c e   w e i g h t .   R e q u i r e d   f o r   C ( t y p e = S R V )"
+    }, 
+    "proto": {
+      "type": "Optional[String]", 
+      "description": "S e r v i c e   p r o t o c o l .   R e q u i r e d   f o r   C ( t y p e = S R V )"
+    }, 
+    "proxied": {
+      "type": "Optional[String]", 
+      "description": "P r o x y   t h r o u g h   c l o u d f l a r e   n e t w o r k   o r   j u s t   u s e   D N S"
+    }, 
+    "value": {
+      "type": "Optional[String]", 
+      "description": "The record value. Required for C(state=present)"
+    }, 
+    "priority": {
+      "type": "Optional[String]", 
+      "description": "R e c o r d   p r i o r i t y .   R e q u i r e d   f o r   C ( t y p e = M X )   a n d   C ( t y p e = S R V )"
+    }, 
+    "record": {
+      "type": "Optional[String]", 
+      "description": "Record to add. Required if C(state=present). Default is C(@) (e.g. the zone name)"
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "Whether the record(s) should exist or not"
+    }, 
+    "service": {
+      "type": "Optional[String]", 
+      "description": "R e c o r d   s e r v i c e .   R e q u i r e d   f o r   C ( t y p e = S R V )"
+    }, 
+    "timeout": {
+      "type": "Optional[String]", 
+      "description": "Timeout for Cloudflare API calls"
+    }, 
+    "ttl": {
+      "type": "Optional[String]", 
+      "description": "The TTL to give the new record. Must be between 120 and 2,147,483,647 seconds, or 1 for automatic."
+    }, 
+    "zone": {
+      "type": "String", 
+      "description": "The name of the Zone to work with (e.g. \"example.com\"). The Zone must already exist."
+    }, 
+    "type": {
+      "type": "Optional[String]", 
+      "description": "The type of DNS record to create. Required if C(state=present)"
+    }, 
+    "port": {
+      "type": "Optional[String]", 
+      "description": "S e r v i c e   p o r t .   R e q u i r e d   f o r   C ( t y p e = S R V )"
+    }, 
+    "account_api_token": {
+      "type": "String", 
+      "description": "Account API token. You can obtain your API key from the bottom of the Cloudflare 'My Account' page, found here: U(https://www.cloudflare.com/a/account)\n"
+    }
+  }
+}

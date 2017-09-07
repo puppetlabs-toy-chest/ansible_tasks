@@ -1,0 +1,45 @@
+{
+  "description": "Manage NetApp Storage Array Host Groups", 
+  "parameters": {
+    "new_name": {
+      "type": "Optional[String]", 
+      "description": "specify this when you need to update the name of a host group"
+    }, 
+    "ssid": {
+      "type": "String", 
+      "description": "The ID of the array to manage (as configured on the web services proxy)."
+    }, 
+    "name": {
+      "type": "Optional[String]", 
+      "description": "The name of the host group to manage. Either this or C(id_num) must be supplied."
+    }, 
+    "api_password": {
+      "type": "String", 
+      "description": "The password to authenticate with the SANtricity WebServices Proxy or embedded REST API."
+    }, 
+    "hosts:": {
+      "type": "Optional[String]", 
+      "description": "a list of host names/labels to add to the group"
+    }, 
+    "state": {
+      "type": "String", 
+      "description": "Whether the specified host group should exist or not."
+    }, 
+    "api_username": {
+      "type": "String", 
+      "description": "The username to authenticate with the SANtricity WebServices Proxy or embedded REST API."
+    }, 
+    "validate_certs": {
+      "type": "Optional[String]", 
+      "description": "Should https certificates be validated?"
+    }, 
+    "id": {
+      "type": "Optional[String]", 
+      "description": "The id number of the host group to manage. Either this or C(name) must be supplied."
+    }, 
+    "api_url": {
+      "type": "String", 
+      "description": "The url to the SANtricity WebServices Proxy or embedded REST API."
+    }
+  }
+}

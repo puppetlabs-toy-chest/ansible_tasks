@@ -1,0 +1,33 @@
+{
+  "description": "Manage libvirt storage pools", 
+  "parameters": {
+    "xml": {
+      "type": "Optional[String]", 
+      "description": "XML document used with the define command."
+    }, 
+    "name": {
+      "type": "Optional[String]", 
+      "description": "name of the storage pool being managed. Note that pool must be previously defined with xml."
+    }, 
+    "uri": {
+      "type": "Optional[String]", 
+      "description": "I(libvirt) connection uri."
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "specify which state you want a storage pool to be in. If 'active', pool will be started. If 'present', ensure that pool is present but do not change its state; if it's missing, you need to specify xml argument. If 'inactive', pool will be stopped. If 'undefined' or 'absent', pool will be removed from I(libvirt) configuration. If 'deleted', pool contents will be deleted and then pool undefined."
+    }, 
+    "command": {
+      "type": "Optional[String]", 
+      "description": "in addition to state management, various non-idempotent commands are available. See examples."
+    }, 
+    "mode": {
+      "type": "Optional[String]", 
+      "description": "Pass additional parameters to 'build' or 'delete' commands."
+    }, 
+    "autostart": {
+      "type": "Optional[String]", 
+      "description": "Specify if a given storage pool should be started automatically on system boot."
+    }
+  }
+}

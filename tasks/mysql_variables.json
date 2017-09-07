@@ -1,0 +1,53 @@
+{
+  "description": "Manage MySQL global variables", 
+  "parameters": {
+    "login_port": {
+      "type": "Optional[String]", 
+      "description": "Port of the MySQL server. Requires I(login_host) be defined as other then localhost if login_port is used."
+    }, 
+    "ssl_cert": {
+      "type": "Optional[String]", 
+      "description": "The path to a client public key certificate."
+    }, 
+    "config_file": {
+      "type": "Optional[String]", 
+      "description": "Specify a config file from which user and password are to be read."
+    }, 
+    "ssl_key": {
+      "type": "Optional[String]", 
+      "description": "The path to the client private key."
+    }, 
+    "login_user": {
+      "type": "Optional[String]", 
+      "description": "The username used to authenticate with."
+    }, 
+    "login_host": {
+      "type": "Optional[String]", 
+      "description": "Host running the database."
+    }, 
+    "value": {
+      "type": "Optional[String]", 
+      "description": "If set, then sets variable value to this"
+    }, 
+    "ssl_ca": {
+      "type": "Optional[String]", 
+      "description": "The path to a Certificate Authority (CA) certificate. This option, if used, must specify the same certificate as used by the server."
+    }, 
+    "login_unix_socket": {
+      "type": "Optional[String]", 
+      "description": "The path to a Unix domain socket for local connections."
+    }, 
+    "login_password": {
+      "type": "Optional[String]", 
+      "description": "The password used to authenticate with."
+    }, 
+    "variable": {
+      "type": "String", 
+      "description": "Variable name to operate"
+    }, 
+    "connect_timeout": {
+      "type": "Optional[String]", 
+      "description": "The connection timeout when connecting to the MySQL server."
+    }
+  }
+}

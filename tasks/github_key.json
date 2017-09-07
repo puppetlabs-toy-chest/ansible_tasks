@@ -1,0 +1,25 @@
+{
+  "description": "Manage GitHub access keys.", 
+  "parameters": {
+    "force": {
+      "type": "Optional[String]", 
+      "description": "The default is C(yes), which will replace the existing remote key if it's different than C(pubkey). If C(no), the key will only be set if no key with the given C(name) exists."
+    }, 
+    "token": {
+      "type": "String", 
+      "description": "GitHub Access Token with permission to list and create public keys."
+    }, 
+    "pubkey": {
+      "type": "Optional[String]", 
+      "description": "SSH public key value. Required when C(state=present)."
+    }, 
+    "name": {
+      "type": "String", 
+      "description": "SSH key name"
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "Whether to remove a key, ensure that it exists, or update its value."
+    }
+  }
+}

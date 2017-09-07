@@ -1,0 +1,29 @@
+{
+  "description": "Manages interface DLDP configuration on HUAWEI CloudEngine switches.", 
+  "parameters": {
+    "reset": {
+      "type": "Optional[String]", 
+      "description": "Specify whether reseting interface DLDP state."
+    }, 
+    "enable": {
+      "type": "Optional[String]", 
+      "description": "Set interface DLDP enable state."
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "Manage the state of the resource."
+    }, 
+    "interface": {
+      "type": "String", 
+      "description": "Must be fully qualified interface name, i.e. GE1/0/1, 10GE1/0/1, 40GE1/0/22, 100GE1/0/1."
+    }, 
+    "mode_enable": {
+      "type": "Optional[String]", 
+      "description": "Set DLDP compatible-mode enable state."
+    }, 
+    "local_mac": {
+      "type": "Optional[String]", 
+      "description": "Set the source MAC address for DLDP packets sent in the DLDP-compatible mode. The value of MAC address is in H-H-H format. H contains 1 to 4 hexadecimal digits."
+    }
+  }
+}

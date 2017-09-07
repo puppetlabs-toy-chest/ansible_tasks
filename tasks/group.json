@@ -1,0 +1,21 @@
+{
+  "description": "Add or remove groups", 
+  "parameters": {
+    "state": {
+      "type": "Optional[String]", 
+      "description": "Whether the group should be present or not on the remote host."
+    }, 
+    "gid": {
+      "type": "Optional[String]", 
+      "description": "Optional I(GID) to set for the group."
+    }, 
+    "name": {
+      "type": "String", 
+      "description": "Name of the group to manage."
+    }, 
+    "system": {
+      "type": "Optional[String]", 
+      "description": "If I(yes), indicates that the group created is a system group."
+    }
+  }
+}

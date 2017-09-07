@@ -1,0 +1,49 @@
+{
+  "description": "Manage SolidFire Volume Access Groups", 
+  "parameters": {
+    "username": {
+      "type": "String", 
+      "description": "Please ensure that the user has the adequate permissions. For more information, please read the official documentation U(https://goo.gl/ddJa4Q)."
+    }, 
+    "password": {
+      "type": "String", 
+      "description": "Password for the specified user."
+    }, 
+    "name": {
+      "type": "String", 
+      "description": "Name of the volume access group. It is not required to be unique, but recommended."
+    }, 
+    "hostname": {
+      "type": "String", 
+      "description": "The hostname or IP address of the SolidFire cluster."
+    }, 
+    "virtual_network_id": {
+      "type": "Optional[String]", 
+      "description": "The ID of the SolidFire Virtual Network ID to associate the volume access group with."
+    }, 
+    "state": {
+      "type": "String", 
+      "description": "Whether the specified volume access group should exist or not."
+    }, 
+    "volumes": {
+      "type": "Optional[String]", 
+      "description": "List of volumes to initially include in the volume access group. If unspecified, the access group will start without any volumes."
+    }, 
+    "initiators": {
+      "type": "Optional[String]", 
+      "description": "List of initiators to include in the volume access group. If unspecified, the access group will start out without configured initiators."
+    }, 
+    "attributes": {
+      "type": "Optional[String]", 
+      "description": "L i s t   o f   N a m e / V a l u e   p a i r s   i n   J S O N   o b j e c t   f o r m a t ."
+    }, 
+    "virtual_network_tags": {
+      "type": "Optional[String]", 
+      "description": "The ID of the VLAN Virtual Network Tag to associate the volume access group with."
+    }, 
+    "volume_access_group_id": {
+      "type": "Optional[String]", 
+      "description": "The ID of the volume access group to modify or delete."
+    }
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "description": "Manage FreeIPA group", 
+  "parameters": {
+    "ipa_port": {
+      "type": "Optional[String]", 
+      "description": "P o r t   o f   I P A   s e r v e r"
+    }, 
+    "group": {
+      "type": "Optional[String]", 
+      "description": "List of group names assigned to this group. If an empty list is passed all groups will be removed from this group. If option is omitted assigned groups will not be checked or changed. Groups that are already assigned but not passed will be removed."
+    }, 
+    "cn": {
+      "type": "String", 
+      "description": "Canonical name. Can not be changed as it is the unique identifier."
+    }, 
+    "user": {
+      "type": "Optional[String]", 
+      "description": "List of user names assigned to this group. If an empty list is passed all users will be removed from this group. If option is omitted assigned users will not be checked or changed. Users that are already assigned but not passed will be removed."
+    }, 
+    "ipa_prot": {
+      "type": "Optional[String]", 
+      "description": "P r o t o c o l   u s e d   b y   I P A   s e r v e r"
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "State to ensure"
+    }, 
+    "gidnumber": {
+      "type": "Optional[String]", 
+      "description": "GID (use this option to set it manually)."
+    }, 
+    "external": {
+      "type": "Optional[String]", 
+      "description": "Allow adding external non-IPA members from trusted domains."
+    }, 
+    "ipa_user": {
+      "type": "Optional[String]", 
+      "description": "A d m i n i s t r a t i v e   a c c o u n t   u s e d   o n   I P A   s e r v e r"
+    }, 
+    "ipa_pass": {
+      "type": "String", 
+      "description": "P a s s w o r d   o f   a d m i n i s t r a t i v e   u s e r"
+    }, 
+    "validate_certs": {
+      "type": "Optional[String]", 
+      "description": "This only applies if C(ipa_prot) is I(https). If set to C(no), the SSL certificates will not be validated. This should only set to C(no) used on personally controlled sites using self-signed certificates."
+    }, 
+    "nonposix": {
+      "type": "Optional[String]", 
+      "description": "Create as a non-POSIX group."
+    }, 
+    "ipa_host": {
+      "type": "Optional[String]", 
+      "description": "I P   o r   h o s t n a m e   o f   I P A   s e r v e r"
+    }
+  }
+}

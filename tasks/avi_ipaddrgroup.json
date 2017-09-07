@@ -1,0 +1,85 @@
+{
+  "description": "Module for setup of IpAddrGroup Avi RESTful Object", 
+  "parameters": {
+    "username": {
+      "type": "Optional[String]", 
+      "description": "Username used for accessing Avi controller. The default value is the environment variable C(AVI_USERNAME)."
+    }, 
+    "country_codes": {
+      "type": "Optional[String]", 
+      "description": "Populate the ip address ranges from the geo database for this country."
+    }, 
+    "uuid": {
+      "type": "Optional[String]", 
+      "description": "Uuid of the ip address group."
+    }, 
+    "api_version": {
+      "type": "Optional[String]", 
+      "description": "Avi API version of to use for Avi API and objects."
+    }, 
+    "description": {
+      "type": "Optional[String]", 
+      "description": "User defined description for the object."
+    }, 
+    "prefixes": {
+      "type": "Optional[String]", 
+      "description": "Configure ip address prefix(es)."
+    }, 
+    "url": {
+      "type": "Optional[String]", 
+      "description": "Avi controller URL of the object."
+    }, 
+    "tenant_ref": {
+      "type": "Optional[String]", 
+      "description": "It is a reference to an object of type tenant."
+    }, 
+    "marathon_service_port": {
+      "type": "Optional[String]", 
+      "description": "Task port associated with marathon service port. If marathon app has multiple service ports, this is required. Else, the first task port is used."
+    }, 
+    "ip_ports": {
+      "type": "Optional[String]", 
+      "description": "Configure (ip address, port) tuple(s)."
+    }, 
+    "apic_epg_name": {
+      "type": "Optional[String]", 
+      "description": "Populate ip addresses from members of this cisco apic epg."
+    }, 
+    "ranges": {
+      "type": "Optional[String]", 
+      "description": "Configure ip address range(s)."
+    }, 
+    "controller": {
+      "type": "Optional[String]", 
+      "description": "IP address or hostname of the controller. The default value is the environment variable C(AVI_CONTROLLER)."
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "The state that should be applied on the entity."
+    }, 
+    "addrs": {
+      "type": "Optional[String]", 
+      "description": "Configure ip address(es)."
+    }, 
+    "password": {
+      "type": "Optional[String]", 
+      "description": "Password of Avi user in Avi controller. The default value is the environment variable C(AVI_PASSWORD)."
+    }, 
+    "tenant_uuid": {
+      "type": "Optional[String]", 
+      "description": "UUID of tenant used for all Avi API calls and context of object."
+    }, 
+    "marathon_app_name": {
+      "type": "Optional[String]", 
+      "description": "Populate ip addresses from tasks of this marathon app."
+    }, 
+    "tenant": {
+      "type": "Optional[String]", 
+      "description": "Name of tenant used for all Avi API calls and context of object."
+    }, 
+    "name": {
+      "type": "String", 
+      "description": "Name of the ip address group."
+    }
+  }
+}

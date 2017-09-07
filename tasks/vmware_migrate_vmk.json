@@ -1,0 +1,45 @@
+{
+  "description": "Migrate a VMK interface from VSS to VDS", 
+  "parameters": {
+    "username": {
+      "type": "String", 
+      "description": "The username of the vSphere vCenter."
+    }, 
+    "current_switch_name": {
+      "type": "String", 
+      "description": "Switch VMK interface is currently on"
+    }, 
+    "migrate_portgroup_name": {
+      "type": "String", 
+      "description": "Portgroup name to migrate VMK interface to"
+    }, 
+    "validate_certs": {
+      "type": "Optional[String]", 
+      "description": "Allows connection when SSL certificates are not valid. Set to false when certificates are not trusted."
+    }, 
+    "hostname": {
+      "type": "String", 
+      "description": "The hostname or IP address of the vSphere vCenter."
+    }, 
+    "esxi_hostname": {
+      "type": "String", 
+      "description": "ESXi hostname to be managed"
+    }, 
+    "device": {
+      "type": "String", 
+      "description": "VMK interface name"
+    }, 
+    "password": {
+      "type": "String", 
+      "description": "The password of the vSphere vCenter."
+    }, 
+    "current_portgroup_name": {
+      "type": "String", 
+      "description": "Portgroup name VMK interface is currently on"
+    }, 
+    "migrate_switch_name": {
+      "type": "String", 
+      "description": "Switch name to migrate VMK interface to"
+    }
+  }
+}

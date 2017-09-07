@@ -1,0 +1,37 @@
+{
+  "description": "Manage BIG-IP system database variables", 
+  "parameters": {
+    "key": {
+      "type": "String", 
+      "description": "The database variable to manipulate."
+    }, 
+    "value": {
+      "type": "Optional[String]", 
+      "description": "The value to set the key to. At least one of value and state C(reset) are required."
+    }, 
+    "server": {
+      "type": "String", 
+      "description": "The BIG-IP host. This option can be omitted if the environment variable C(F5_SERVER) is set."
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "The state of the variable on the system. When C(present), guarantees that an existing variable is set to C(value). When C(reset) sets the variable back to the default value. At least one of value and state C(reset) are required."
+    }, 
+    "user": {
+      "type": "String", 
+      "description": "The username to connect to the BIG-IP with. This user must have administrative privileges on the device. This option can be omitted if the environment variable C(F5_USER) is set."
+    }, 
+    "server_port": {
+      "type": "Optional[String]", 
+      "description": "The BIG-IP server port. This option can be omitted if the environment variable C(F5_SERVER_PORT) is set."
+    }, 
+    "password": {
+      "type": "String", 
+      "description": "The password for the user account used to connect to the BIG-IP. This option can be omitted if the environment variable C(F5_PASSWORD) is set."
+    }, 
+    "validate_certs": {
+      "type": "Optional[String]", 
+      "description": "If C(no), SSL certificates will not be validated. This should only be used on personally controlled sites using self-signed certificates. This option can be omitted if the environment variable C(F5_VALIDATE_CERTS) is set."
+    }
+  }
+}

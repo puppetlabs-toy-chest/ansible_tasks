@@ -1,0 +1,53 @@
+{
+  "description": "create a security profiles group", 
+  "parameters": {
+    "username": {
+      "type": "Optional[String]", 
+      "description": "username for authentication"
+    }, 
+    "wildfire": {
+      "type": "Optional[String]", 
+      "description": "name of the wildfire analysis profile"
+    }, 
+    "data_filtering": {
+      "type": "Optional[String]", 
+      "description": "name of the data filtering profile"
+    }, 
+    "url_filtering": {
+      "type": "Optional[String]", 
+      "description": "name of the url filtering profile"
+    }, 
+    "pg_name": {
+      "type": "String", 
+      "description": "name of the security profile group"
+    }, 
+    "vulnerability": {
+      "type": "Optional[String]", 
+      "description": "name of the vulnerability profile"
+    }, 
+    "spyware": {
+      "type": "Optional[String]", 
+      "description": "name of the spyware profile"
+    }, 
+    "file_blocking": {
+      "type": "Optional[String]", 
+      "description": "name of the file blocking profile"
+    }, 
+    "virus": {
+      "type": "Optional[String]", 
+      "description": "name of the anti-virus profile"
+    }, 
+    "commit": {
+      "type": "Optional[String]", 
+      "description": "commit if changed"
+    }, 
+    "password": {
+      "type": "String", 
+      "description": "password for authentication"
+    }, 
+    "ip_address": {
+      "type": "String", 
+      "description": "IP address (or hostname) of PAN-OS device"
+    }
+  }
+}

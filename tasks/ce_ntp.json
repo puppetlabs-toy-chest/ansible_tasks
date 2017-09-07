@@ -1,0 +1,33 @@
+{
+  "description": "Manages core NTP configuration on HUAWEI CloudEngine switches.", 
+  "parameters": {
+    "is_preferred": {
+      "type": "Optional[String]", 
+      "description": "Makes given NTP server or peer the preferred NTP server or peer for the device."
+    }, 
+    "vpn_name": {
+      "type": "Optional[String]", 
+      "description": "Makes the device communicate with the given NTP server or peer over a specific vpn."
+    }, 
+    "server": {
+      "type": "Optional[String]", 
+      "description": "Network address of NTP server."
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "Manage the state of the resource."
+    }, 
+    "peer": {
+      "type": "Optional[String]", 
+      "description": "Network address of NTP peer."
+    }, 
+    "key_id": {
+      "type": "Optional[String]", 
+      "description": "Authentication key identifier to use with given NTP server or peer."
+    }, 
+    "source_int": {
+      "type": "Optional[String]", 
+      "description": "Local source interface from which NTP messages are sent. Must be fully qualified interface name, i.e. C(40GE1/0/22), C(vlanif10). Interface types, such as C(10GE), C(40GE), C(100GE), C(Eth-Trunk), C(LoopBack), C(MEth), C(NULL), C(Tunnel), C(Vlanif)."
+    }
+  }
+}

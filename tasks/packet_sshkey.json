@@ -1,0 +1,33 @@
+{
+  "description": "Create/delete an SSH key in Packet host.", 
+  "parameters": {
+    "auth_token": {
+      "type": "Optional[String]", 
+      "description": "Packet api token. You can also supply it in env var C(PACKET_API_TOKEN)."
+    }, 
+    "label": {
+      "type": "Optional[String]", 
+      "description": "Label for the key. If you keep it empty, it will be read from key string."
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "Indicate desired state of the target."
+    }, 
+    "key": {
+      "type": "Optional[String]", 
+      "description": "Public Key string ({type} {base64 encoded key} {description})."
+    }, 
+    "fingerprint": {
+      "type": "Optional[String]", 
+      "description": "Fingerprint of the key which you want to remove."
+    }, 
+    "key_file": {
+      "type": "Optional[String]", 
+      "description": "File with the public key."
+    }, 
+    "id": {
+      "type": "Optional[String]", 
+      "description": "UUID of the key which you want to remove."
+    }
+  }
+}

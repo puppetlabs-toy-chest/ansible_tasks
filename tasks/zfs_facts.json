@@ -1,0 +1,29 @@
+{
+  "description": "Gather facts about ZFS datasets.", 
+  "parameters": {
+    "name": {
+      "type": "String", 
+      "description": "ZFS dataset name."
+    }, 
+    "recurse": {
+      "type": "Optional[Boolean]", 
+      "description": "Specifies if properties for any children should be recursively displayed."
+    }, 
+    "parsable": {
+      "type": "Optional[Boolean]", 
+      "description": "Specifies if property values should be displayed in machine friendly format."
+    }, 
+    "depth": {
+      "type": "Optional[String]", 
+      "description": "Specifiies recurion depth."
+    }, 
+    "type": {
+      "type": "Optional[String]", 
+      "description": "Specifies which datasets types to display. Multiple values have to be provided in comma-separated form."
+    }, 
+    "properties": {
+      "type": "Optional[String]", 
+      "description": "Specifies which dataset properties should be queried in comma-separated format. For more information about dataset properties, check zfs(1M) man page."
+    }
+  }
+}

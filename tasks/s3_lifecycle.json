@@ -1,0 +1,73 @@
+{
+  "description": "Manage s3 bucket lifecycle rules in AWS", 
+  "parameters": {
+    "profile": {
+      "type": "Optional[String]", 
+      "description": "Uses a boto profile. Only works with boto >= 2.24.0."
+    }, 
+    "status": {
+      "type": "Optional[String]", 
+      "description": "If 'enabled', the rule is currently being applied. If 'disabled', the rule is not currently being applied."
+    }, 
+    "aws_access_key": {
+      "type": "Optional[String]", 
+      "description": "AWS access key. If not set then the value of the AWS_ACCESS_KEY_ID, AWS_ACCESS_KEY or EC2_ACCESS_KEY environment variable is used."
+    }, 
+    "name": {
+      "type": "String", 
+      "description": "Name of the s3 bucket"
+    }, 
+    "security_token": {
+      "type": "Optional[String]", 
+      "description": "AWS STS security token. If not set then the value of the AWS_SECURITY_TOKEN or EC2_SECURITY_TOKEN environment variable is used."
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "Create or remove the lifecycle rule"
+    }, 
+    "expiration_date": {
+      "type": "Optional[String]", 
+      "description": "Indicates the lifetime of the objects that are subject to the rule by the date they will expire. The value must be ISO-8601 format, the time must be midnight and a GMT timezone must be specified.\n"
+    }, 
+    "region": {
+      "type": "Optional[String]", 
+      "description": "The AWS region to use. If not specified then the value of the AWS_REGION or EC2_REGION environment variable, if any, is used. See U(http://docs.aws.amazon.com/general/latest/gr/rande.html#ec2_region)"
+    }, 
+    "aws_secret_key": {
+      "type": "Optional[String]", 
+      "description": "AWS secret key. If not set then the value of the AWS_SECRET_ACCESS_KEY, AWS_SECRET_KEY, or EC2_SECRET_KEY environment variable is used."
+    }, 
+    "transition_days": {
+      "type": "Optional[String]", 
+      "description": "Indicates when, in days, an object transitions to a different storage class. If transition_date is not specified, this parameter is required."
+    }, 
+    "prefix": {
+      "type": "Optional[String]", 
+      "description": "Prefix identifying one or more objects to which the rule applies.  If no prefix is specified, the rule will apply to the whole bucket."
+    }, 
+    "storage_class": {
+      "type": "Optional[String]", 
+      "description": "The storage class to transition to. Currently there are two supported values - 'glacier' or 'standard_ia'. The 'standard_ia' class is only being available from Ansible version 2.2."
+    }, 
+    "ec2_url": {
+      "type": "Optional[String]", 
+      "description": "Url to use to connect to EC2 or your Eucalyptus cloud (by default the module will use EC2 endpoints). Ignored for modules where region is required. Must be specified for all other modules if region is not used. If not set then the value of the EC2_URL environment variable, if any, is used."
+    }, 
+    "expiration_days": {
+      "type": "Optional[String]", 
+      "description": "Indicates the lifetime, in days, of the objects that are subject to the rule. The value must be a non-zero positive integer."
+    }, 
+    "validate_certs": {
+      "type": "Optional[String]", 
+      "description": "When set to \"no\", SSL certificates will not be validated for boto versions >= 2.6.0."
+    }, 
+    "rule_id": {
+      "type": "Optional[String]", 
+      "description": "Unique identifier for the rule. The value cannot be longer than 255 characters. A unique value for the rule will be generated if no value is provided."
+    }, 
+    "transition_date": {
+      "type": "Optional[String]", 
+      "description": "Indicates the lifetime of the objects that are subject to the rule by the date they will transition to a different storage class. The value must be ISO-8601 format, the time must be midnight and a GMT timezone must be specified. If transition_days is not specified, this parameter is required.\"\n"
+    }
+  }
+}

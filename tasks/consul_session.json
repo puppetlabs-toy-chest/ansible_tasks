@@ -1,0 +1,49 @@
+{
+  "description": "manipulate consul sessions", 
+  "parameters": {
+    "node": {
+      "type": "Optional[String]", 
+      "description": "the name of the node that with which the session will be associated. by default this is the name of the agent."
+    }, 
+    "datacenter": {
+      "type": "Optional[String]", 
+      "description": "name of the datacenter in which the session exists or should be created."
+    }, 
+    "name": {
+      "type": "Optional[String]", 
+      "description": "the name that should be associated with the session. This is opaque to Consul and not required."
+    }, 
+    "host": {
+      "type": "Optional[String]", 
+      "description": "host of the consul agent defaults to localhost"
+    }, 
+    "port": {
+      "type": "Optional[String]", 
+      "description": "the port on which the consul agent is running"
+    }, 
+    "delay": {
+      "type": "Optional[String]", 
+      "description": "the optional lock delay that can be attached to the session when it is created. Locks for invalidated sessions ar blocked from being acquired until this delay has expired. Durations are in seconds"
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "whether the session should be present i.e. created if it doesn't exist, or absent, removed if present. If created, the ID for the session is returned in the output. If absent, the name or ID is required to remove the session. Info for a single session, all the sessions for a node or all available sessions can be retrieved by specifying info, node or list for the state; for node or info, the node name or session id is required as parameter."
+    }, 
+    "behavior": {
+      "type": "Optional[String]", 
+      "description": "the optional behavior that can be attached to the session when it is created. This can be set to either \u2018release\u2019 or \u2018delete\u2019. This controls the behavior when a session is invalidated."
+    }, 
+    "scheme": {
+      "type": "Optional[String]", 
+      "description": "the protocol scheme on which the consul agent is running"
+    }, 
+    "validate_certs": {
+      "type": "Optional[String]", 
+      "description": "whether to verify the tls certificate of the consul agent"
+    }, 
+    "checks": {
+      "type": "Optional[String]", 
+      "description": "a list of checks that will be used to verify the session health. If all the checks fail, the session will be invalidated and any locks associated with the session will be release and can be acquired once the associated lock delay has expired."
+    }
+  }
+}

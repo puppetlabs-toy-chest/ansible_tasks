@@ -1,0 +1,33 @@
+{
+  "description": "Manage services.", 
+  "parameters": {
+    "no_block": {
+      "type": "Optional[String]", 
+      "description": "Do not synchronously wait for the requested operation to finish. Enqueued job will continue without Ansible blocking on its completion."
+    }, 
+    "name": {
+      "type": "Optional[String]", 
+      "description": "Name of the service. When using in a chroot environment you always need to specify the full name i.e. (crond.service)."
+    }, 
+    "enabled": {
+      "type": "Optional[String]", 
+      "description": "Whether the service should start on boot. B(At least one of state and enabled are required.)"
+    }, 
+    "daemon_reload": {
+      "type": "Optional[String]", 
+      "description": "run daemon-reload before doing any other operations, to make sure systemd has read any changes."
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "C(started)/C(stopped) are idempotent actions that will not run commands unless necessary. C(restarted) will always bounce the service. C(reloaded) will always reload."
+    }, 
+    "masked": {
+      "type": "Optional[String]", 
+      "description": "Whether the unit should be masked or not, a masked unit is impossible to start."
+    }, 
+    "user": {
+      "type": "Optional[String]", 
+      "description": "run systemctl talking to the service manager of the calling user, rather than the service manager of the system."
+    }
+  }
+}

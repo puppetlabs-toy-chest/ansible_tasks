@@ -1,0 +1,9 @@
+{
+  "description": "Create Ansible groups based on facts", 
+  "parameters": {
+    "key": {
+      "type": "String", 
+      "description": "The variables whose values will be used as groups"
+    }
+  }
+}

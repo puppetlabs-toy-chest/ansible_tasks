@@ -1,0 +1,81 @@
+{
+  "description": "CLI command to add/remove/modify vrouter-interface.", 
+  "parameters": {
+    "pn_nic_enable": {
+      "type": "Optional[String]", 
+      "description": "Specify if the NIC is enabled or not"
+    }, 
+    "pn_clipassword": {
+      "type": "Optional[String]", 
+      "description": "Provide login password if user is not root."
+    }, 
+    "pn_exclusive": {
+      "type": "Optional[String]", 
+      "description": "Specify if the interface is exclusive to the configuration. Exclusive means that other configurations cannot use the interface. Exclusive is specified when you configure the interface as span interface and allows higher throughput through the interface."
+    }, 
+    "pn_nic_str": {
+      "type": "Optional[String]", 
+      "description": "Specify the type of NIC. Used for vrouter-interface remove/modify."
+    }, 
+    "pn_vrouter_name": {
+      "type": "String", 
+      "description": "Specify the name of the vRouter interface."
+    }, 
+    "pn_vrrp_adv_int": {
+      "type": "Optional[String]", 
+      "description": "Specify a VRRP advertisement interval in milliseconds. The range is from 30 to 40950 with a default value of 1000."
+    }, 
+    "pn_vrrp_priority": {
+      "type": "Optional[String]", 
+      "description": "Specify the priority for the VRRP interface. This is a value between 1 (lowest) and 255 (highest)."
+    }, 
+    "pn_alias": {
+      "type": "Optional[String]", 
+      "description": "Specify an alias for the interface."
+    }, 
+    "pn_secondary_macs": {
+      "type": "Optional[String]", 
+      "description": "Specify a secondary MAC address for the interface."
+    }, 
+    "pn_cliusername": {
+      "type": "Optional[String]", 
+      "description": "Provide login username if user is not root."
+    }, 
+    "pn_interface_ip": {
+      "type": "Optional[String]", 
+      "description": "Specify the IP address of the interface in x.x.x.x/n format."
+    }, 
+    "state": {
+      "type": "String", 
+      "description": "State the action to perform. Use 'present' to add vrouter interface, 'absent' to remove vrouter interface and 'update' to modify vrouter interface."
+    }, 
+    "pn_vrrp_id": {
+      "type": "Optional[String]", 
+      "description": "Specify the ID for the VRRP interface. The IDs on both vRouters must be the same IS number."
+    }, 
+    "pn_vlan": {
+      "type": "Optional[String]", 
+      "description": "Specify the VLAN identifier. This is a value between 1 and 4092."
+    }, 
+    "pn_interface": {
+      "type": "Optional[String]", 
+      "description": "Specify if the interface is management, data or span interface."
+    }, 
+    "pn_l3port": {
+      "type": "Optional[String]", 
+      "description": "Specify a Layer 3 port for the interface."
+    }, 
+    "pn_vxlan": {
+      "type": "Optional[String]", 
+      "description": "Specify the VXLAN identifier. This is a value between 1 and 16777215."
+    }, 
+    "pn_cliswitch": {
+      "type": "Optional[String]", 
+      "description": "Target switch to run the cli on."
+    }, 
+    "pn_assignment": {
+      "type": "Optional[String]", 
+      "description": "Specify the DHCP method for IP address assignment."
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "description": "Notify Rollbar about app deployments", 
+  "parameters": {
+    "comment": {
+      "type": "Optional[String]", 
+      "description": "Deploy comment (e.g. what is being deployed)."
+    }, 
+    "rollbar_user": {
+      "type": "Optional[String]", 
+      "description": "Rollbar username of the user who deployed."
+    }, 
+    "url": {
+      "type": "Optional[String]", 
+      "description": "Optional URL to submit the notification to."
+    }, 
+    "environment": {
+      "type": "String", 
+      "description": "Name of the environment being deployed, e.g. 'production'."
+    }, 
+    "token": {
+      "type": "String", 
+      "description": "Your project access token."
+    }, 
+    "user": {
+      "type": "Optional[String]", 
+      "description": "User who deployed."
+    }, 
+    "validate_certs": {
+      "type": "Optional[String]", 
+      "description": "If C(no), SSL certificates for the target url will not be validated. This should only be used on personally controlled sites using self-signed certificates."
+    }, 
+    "revision": {
+      "type": "String", 
+      "description": "Revision number/sha being deployed."
+    }
+  }
+}

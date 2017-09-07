@@ -1,0 +1,81 @@
+{
+  "description": "Configures a front panel port, loopback or management port on Cumulus Linux.", 
+  "parameters": {
+    "clagd_sys_mac": {
+      "type": "Optional[String]", 
+      "description": "Clagd system mac address. Recommended to use the range starting with 44:38:39:ff. Needs to be the same between 2 Clag switches."
+    }, 
+    "name": {
+      "type": "String", 
+      "description": "Name of the interface."
+    }, 
+    "clagd_enable": {
+      "type": "Optional[String]", 
+      "description": "Enables the clagd daemon. This command should only be applied to the clag peerlink interface."
+    }, 
+    "mstpctl_portnetwork": {
+      "type": "Optional[String]", 
+      "description": "Enables bridge assurance in vlan-aware mode."
+    }, 
+    "speed": {
+      "type": "Optional[String]", 
+      "description": "Set speed of the swp(front panel) or management(eth0) interface. speed is in MB."
+    }, 
+    "clagd_peer_ip": {
+      "type": "Optional[String]", 
+      "description": "IP address of the directly connected peer switch interface."
+    }, 
+    "clagd_priority": {
+      "type": "Optional[String]", 
+      "description": "Integer that changes the role the switch has in the clag domain. The lower priority switch will assume the primary role. The number can be between 0 and 65535."
+    }, 
+    "location": {
+      "type": "Optional[String]", 
+      "description": "Interface directory location"
+    }, 
+    "mstpctl_portadminedge": {
+      "type": "Optional[String]", 
+      "description": "Enables admin edge port."
+    }, 
+    "mtu": {
+      "type": "Optional[String]", 
+      "description": "Set MTU. Configure Jumbo Frame by setting MTU to I(9000)."
+    }, 
+    "pvid": {
+      "type": "Optional[String]", 
+      "description": "In vlan-aware mode, defines vlan that is the untagged vlan."
+    }, 
+    "virtual_mac": {
+      "type": "Optional[String]", 
+      "description": "Define Ethernet mac associated with Cumulus Linux VRR feature."
+    }, 
+    "ipv6": {
+      "type": "Optional[String]", 
+      "description": "List of IPv6 addresses to configure on the interface. In the form I(X:X:X::X/YYY)."
+    }, 
+    "vids": {
+      "type": "Optional[String]", 
+      "description": "In vlan-aware mode, lists VLANs defined under the interface."
+    }, 
+    "addr_method": {
+      "type": "Optional[String]", 
+      "description": "Address method."
+    }, 
+    "mstpctl_bpduguard": {
+      "type": "Optional[String]", 
+      "description": "Enables BPDU Guard on a port in vlan-aware mode."
+    }, 
+    "alias_name": {
+      "type": "Optional[String]", 
+      "description": "Description of the port."
+    }, 
+    "ipv4": {
+      "type": "Optional[String]", 
+      "description": "List of IPv4 addresses to configure on the interface. In the form I(X.X.X.X/YY)."
+    }, 
+    "virtual_ip": {
+      "type": "Optional[String]", 
+      "description": "Define IPv4 virtual IP used by the Cumulus Linux VRR feature."
+    }
+  }
+}

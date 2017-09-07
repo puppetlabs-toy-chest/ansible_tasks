@@ -1,0 +1,17 @@
+{
+  "description": "Configures the Junos Netconf system service", 
+  "parameters": {
+    "state": {
+      "type": "Optional[String]", 
+      "description": "Specifies the state of the C(junos_netconf) resource on the remote device.  If the I(state) argument is set to I(present) the netconf service will be configured.  If the I(state) argument is set to I(absent) the netconf service will be removed from the configuration."
+    }, 
+    "provider": {
+      "type": "Optional[String]", 
+      "description": "A dict object containing connection details."
+    }, 
+    "netconf_port": {
+      "type": "Optional[String]", 
+      "description": "This argument specifies the port the netconf service should listen on for SSH connections.  The default port as defined in RFC 6242 is 830."
+    }
+  }
+}

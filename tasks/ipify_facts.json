@@ -1,0 +1,13 @@
+{
+  "description": "Retrieve the public IP of your internet gateway.", 
+  "parameters": {
+    "api_url": {
+      "type": "Optional[String]", 
+      "description": "URL of the ipify.org API service. C(?format=json) will be appended per default."
+    }, 
+    "timeout": {
+      "type": "Optional[String]", 
+      "description": "HTTP connection timeout in seconds."
+    }
+  }
+}

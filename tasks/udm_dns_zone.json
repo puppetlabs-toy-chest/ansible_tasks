@@ -1,0 +1,49 @@
+{
+  "description": "Manage dns zones on a univention corporate server", 
+  "parameters": {
+    "retry": {
+      "type": "Optional[String]", 
+      "description": "Interval that should elapse before a failed refresh should be retried."
+    }, 
+    "zone": {
+      "type": "String", 
+      "description": "DNS zone name, e.g. C(example.com)."
+    }, 
+    "interfaces": {
+      "type": "Optional[String]", 
+      "description": "List of interface IP addresses, on which the server should response this zone. Required if C(state=present)."
+    }, 
+    "refresh": {
+      "type": "Optional[String]", 
+      "description": "Interval before the zone should be refreshed."
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "Whether the dns zone is present or not."
+    }, 
+    "contact": {
+      "type": "Optional[String]", 
+      "description": "Contact person in the SOA record."
+    }, 
+    "expire": {
+      "type": "Optional[String]", 
+      "description": "Specifies the upper limit on the time interval that can elapse before the zone is no longer authoritative."
+    }, 
+    "ttl": {
+      "type": "Optional[String]", 
+      "description": "Minimum TTL field that should be exported with any RR from this zone."
+    }, 
+    "nameserver": {
+      "type": "Optional[String]", 
+      "description": "List of appropriate name servers. Required if C(state=present)."
+    }, 
+    "type": {
+      "type": "String", 
+      "description": "Define if the zone is a forward or reverse DNS zone."
+    }, 
+    "mx": {
+      "type": "Optional[String]", 
+      "description": "List of MX servers. (Must declared as A or AAAA records)."
+    }
+  }
+}

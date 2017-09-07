@@ -1,0 +1,25 @@
+{
+  "description": "Manage link properties on Solaris/illumos systems.", 
+  "parameters": {
+    "temporary": {
+      "type": "Optional[Boolean]", 
+      "description": "Specifies that lin property configuration is temporary. Temporary link property configuration does not persist across reboots."
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "Set or reset the property value."
+    }, 
+    "property": {
+      "type": "String", 
+      "description": "Specifies the name of the property we want to manage."
+    }, 
+    "link": {
+      "type": "String", 
+      "description": "Link interface name."
+    }, 
+    "value": {
+      "type": "Optional[String]", 
+      "description": "Specifies the value we want to set for the link property."
+    }
+  }
+}

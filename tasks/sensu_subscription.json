@@ -1,0 +1,21 @@
+{
+  "description": "Manage Sensu subscriptions", 
+  "parameters": {
+    "path": {
+      "type": "Optional[String]", 
+      "description": "Path to the subscriptions json file"
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "Whether the machine should subscribe or unsubscribe from the channel"
+    }, 
+    "backup": {
+      "type": "Optional[String]", 
+      "description": "Create a backup file (if yes), including the timestamp information so you can get the original file back if you somehow clobbered it incorrectly."
+    }, 
+    "name": {
+      "type": "String", 
+      "description": "The name of the channel"
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "description": "Manages Mercurial (hg) repositories.", 
+  "parameters": {
+    "purge": {
+      "type": "Optional[String]", 
+      "description": "Deletes untracked files. Runs C(hg purge)."
+    }, 
+    "executable": {
+      "type": "Optional[String]", 
+      "description": "Path to hg executable to use. If not supplied, the normal mechanism for resolving binary paths will be used."
+    }, 
+    "force": {
+      "type": "Optional[String]", 
+      "description": "Discards uncommitted changes. Runs C(hg update -C).  Prior to 1.9, the default was `yes`."
+    }, 
+    "dest": {
+      "type": "String", 
+      "description": "Absolute path of where the repository should be cloned to. This parameter is required, unless clone and update are set to no"
+    }, 
+    "clone": {
+      "type": "Optional[String]", 
+      "description": "If C(no), do not clone the repository if it does not exist locally."
+    }, 
+    "update": {
+      "type": "Optional[String]", 
+      "description": "If C(no), do not retrieve new revisions from the origin repository"
+    }, 
+    "repo": {
+      "type": "String", 
+      "description": "The repository address."
+    }, 
+    "revision": {
+      "type": "Optional[String]", 
+      "description": "Equivalent C(-r) option in hg command which could be the changeset, revision number, branch name or even tag."
+    }
+  }
+}

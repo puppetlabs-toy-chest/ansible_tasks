@@ -1,0 +1,49 @@
+{
+  "description": "Manages user roles on Apache CloudStack based clouds.", 
+  "parameters": {
+    "name": {
+      "type": "String", 
+      "description": "Name of the role."
+    }, 
+    "api_http_method": {
+      "type": "Optional[String]", 
+      "description": "HTTP method used."
+    }, 
+    "api_secret": {
+      "type": "Optional[String]", 
+      "description": "Secret key of the CloudStack API."
+    }, 
+    "description": {
+      "type": "Optional[String]", 
+      "description": "Description of the role."
+    }, 
+    "api_timeout": {
+      "type": "Optional[String]", 
+      "description": "HTTP timeout."
+    }, 
+    "api_region": {
+      "type": "Optional[String]", 
+      "description": "Name of the ini section in the C(cloustack.ini) file."
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "State of the role."
+    }, 
+    "api_key": {
+      "type": "Optional[String]", 
+      "description": "API key of the CloudStack API."
+    }, 
+    "id": {
+      "type": "Optional[String]", 
+      "description": "ID of the role. If provided, C(id) is used as key."
+    }, 
+    "role_type": {
+      "type": "Optional[String]", 
+      "description": "Type of the role. Only considered for creation."
+    }, 
+    "api_url": {
+      "type": "Optional[String]", 
+      "description": "URL of the CloudStack API e.g. https://cloud.example.com/client/api."
+    }
+  }
+}

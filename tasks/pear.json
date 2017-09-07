@@ -1,0 +1,13 @@
+{
+  "description": "Manage pear/pecl packages", 
+  "parameters": {
+    "state": {
+      "type": "Optional[String]", 
+      "description": "Desired state of the package."
+    }, 
+    "name": {
+      "type": "String", 
+      "description": "Name of the package to install, upgrade, or remove."
+    }
+  }
+}

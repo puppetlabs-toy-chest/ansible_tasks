@@ -1,0 +1,33 @@
+{
+  "description": "Manages RR for the VXLAN Network on HUAWEI CloudEngine switches.", 
+  "parameters": {
+    "as_number": {
+      "type": "String", 
+      "description": "Specifies the number of the AS, in integer format. The value is an integer that ranges from 1 to 4294967295."
+    }, 
+    "bgp_evpn_enable": {
+      "type": "Optional[String]", 
+      "description": "Enable or disable the BGP-EVPN address family."
+    }, 
+    "policy_vpn_target": {
+      "type": "Optional[String]", 
+      "description": "Enable or disable the VPN-Target filtering."
+    }, 
+    "reflect_client": {
+      "type": "Optional[String]", 
+      "description": "Configure the local device as the route reflector and the peer or peer group as the client of the route reflector."
+    }, 
+    "bgp_instance": {
+      "type": "Optional[String]", 
+      "description": "Specifies the name of a BGP instance. The value of instance-name can be an integer 1 or a string of 1 to 31."
+    }, 
+    "peer": {
+      "type": "Optional[String]", 
+      "description": "Specifies the IPv4 address or the group name of a peer."
+    }, 
+    "peer_type": {
+      "type": "Optional[String]", 
+      "description": "Specify the peer type."
+    }
+  }
+}

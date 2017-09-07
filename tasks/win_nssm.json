@@ -1,0 +1,49 @@
+{
+  "description": "NSSM - the Non-Sucking Service Manager", 
+  "parameters": {
+    "name": {
+      "type": "String", 
+      "description": "Name of the service to operate on"
+    }, 
+    "start_mode": {
+      "type": "Optional[String]", 
+      "description": "If C(auto) is selected, the service will start at bootup. C(manual) means that the service will start only when another service needs it. C(disabled) means that the service will stay off, regardless if it is needed or not."
+    }, 
+    "stderr_file": {
+      "type": "Optional[String]", 
+      "description": "Path to receive error output"
+    }, 
+    "app_parameters_free_form": {
+      "type": "Optional[String]", 
+      "description": "Single string of parameters to be passed to the service. Use either this or C(app_parameters), not both"
+    }, 
+    "application": {
+      "type": "Optional[String]", 
+      "description": "The application binary to run as a service Specify this whenever the service may need to be installed (state: present, started, stopped, restarted) Note that the application name must look like the following, if the directory includes spaces: nssm install service \"c:\\\\Program Files\\\\app.exe\\\\\" \"C:\\\\Path with spaces\\\\\" See commit 0b386fc1984ab74ee59b7bed14b7e8f57212c22b in the nssm.git project for more info: U(https://git.nssm.cc/?p=nssm.git;a=commit;h=0b386fc1984ab74ee59b7bed14b7e8f57212c22b)\n"
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "State of the service on the system Note that NSSM actions like \"pause\", \"continue\", \"rotate\" do not fit the declarative style of ansible, so these should be implemented via the ansible command module"
+    }, 
+    "dependencies": {
+      "type": "Optional[String]", 
+      "description": "Service dependencies that has to be started to trigger startup, separated by comma."
+    }, 
+    "user": {
+      "type": "Optional[String]", 
+      "description": "User to be used for service startup"
+    }, 
+    "password": {
+      "type": "Optional[String]", 
+      "description": "Password to be used for service startup"
+    }, 
+    "stdout_file": {
+      "type": "Optional[String]", 
+      "description": "Path to receive output"
+    }, 
+    "app_parameters": {
+      "type": "Optional[String]", 
+      "description": "Parameters to be passed to the application when it starts. Use either this or C(app_parameters_free_form), not both"
+    }
+  }
+}

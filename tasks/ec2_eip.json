@@ -1,0 +1,61 @@
+{
+  "description": "manages EC2 elastic IP (EIP) addresses.", 
+  "parameters": {
+    "aws_secret_key": {
+      "type": "Optional[String]", 
+      "description": "AWS secret key. If not set then the value of the AWS_SECRET_ACCESS_KEY, AWS_SECRET_KEY, or EC2_SECRET_KEY environment variable is used."
+    }, 
+    "profile": {
+      "type": "Optional[String]", 
+      "description": "Uses a boto profile. Only works with boto >= 2.24.0."
+    }, 
+    "aws_access_key": {
+      "type": "Optional[String]", 
+      "description": "AWS access key. If not set then the value of the AWS_ACCESS_KEY_ID, AWS_ACCESS_KEY or EC2_ACCESS_KEY environment variable is used."
+    }, 
+    "security_token": {
+      "type": "Optional[String]", 
+      "description": "AWS STS security token. If not set then the value of the AWS_SECURITY_TOKEN or EC2_SECURITY_TOKEN environment variable is used."
+    }, 
+    "reuse_existing_ip_allowed": {
+      "type": "Optional[String]", 
+      "description": "Reuse an EIP that is not associated to a device (when available), instead of allocating a new one."
+    }, 
+    "region": {
+      "type": "Optional[String]", 
+      "description": "The AWS region to use. If not specified then the value of the AWS_REGION or EC2_REGION environment variable, if any, is used. See U(http://docs.aws.amazon.com/general/latest/gr/rande.html#ec2_region)"
+    }, 
+    "public_ip": {
+      "type": "Optional[String]", 
+      "description": "The IP address of a previously allocated EIP. If present and device is specified, the EIP is associated with the device. If absent and device is specified, the EIP is disassociated from the device."
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "If present, allocate an EIP or associate an existing EIP with a device. If absent, disassociate the EIP from the device and optionally release it."
+    }, 
+    "in_vpc": {
+      "type": "Optional[String]", 
+      "description": "allocate an EIP inside a VPC or not"
+    }, 
+    "ec2_url": {
+      "type": "Optional[String]", 
+      "description": "Url to use to connect to EC2 or your Eucalyptus cloud (by default the module will use EC2 endpoints). Ignored for modules where region is required. Must be specified for all other modules if region is not used. If not set then the value of the EC2_URL environment variable, if any, is used."
+    }, 
+    "private_ip_address": {
+      "type": "Optional[String]", 
+      "description": "The primary or secondary private IP address to associate with the Elastic IP address."
+    }, 
+    "validate_certs": {
+      "type": "Optional[String]", 
+      "description": "When set to \"no\", SSL certificates will not be validated for boto versions >= 2.6.0."
+    }, 
+    "release_on_disassociation": {
+      "type": "Optional[String]", 
+      "description": "whether or not to automatically release the EIP when it is disassociated"
+    }, 
+    "device_id": {
+      "type": "Optional[String]", 
+      "description": "The id of the device for the EIP. Can be an EC2 Instance id or Elastic Network Interface (ENI) id."
+    }
+  }
+}

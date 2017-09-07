@@ -1,0 +1,113 @@
+{
+  "description": "Manage docker images.", 
+  "parameters": {
+    "force": {
+      "type": "Optional[Boolean]", 
+      "description": "Use with state I(absent) to un-tag and remove all images matching the specified name. Use with state C(present) to build, load or pull an image when the image already exists."
+    }, 
+    "docker_host": {
+      "type": "Optional[String]", 
+      "description": "The URL or Unix socket path used to connect to the Docker API. To connect to a remote host, provide the TCP connection string. For example, 'tcp://192.0.2.23:2376'. If TLS is used to encrypt the connection, the module will automatically replace 'tcp' in the connection URL with 'https'."
+    }, 
+    "tls_verify": {
+      "type": "Optional[String]", 
+      "description": "Secure the connection to the API by using TLS and verifying the authenticity of the Docker host server."
+    }, 
+    "path": {
+      "type": "Optional[String]", 
+      "description": "Use with state 'present' to build an image. Will be the path to a directory containing the context and Dockerfile for building an image."
+    }, 
+    "nocache": {
+      "type": "Optional[Boolean]", 
+      "description": "Do not use cache when building an image."
+    }, 
+    "load_path": {
+      "type": "Optional[String]", 
+      "description": "Use with state C(present) to load an image from a .tar file."
+    }, 
+    "use_tls": {
+      "type": "Optional[String]", 
+      "description": "DEPRECATED. Whether to use tls to connect to the docker server. Set to C(no) when TLS will not be used. Set to C(encrypt) to use TLS. And set to C(verify) to use TLS and verify that the server's certificate is valid for the server. NOTE: If you specify this option, it will set the value of the tls or tls_verify parameters."
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "Make assertions about the state of an image. When C(absent) an image will be removed. Use the force option to un-tag and remove all images matching the provided name. When C(present) check if an image exists using the provided name and tag. If the image is not found or the force option is used, the image will either be pulled, built or loaded. By default the image will be pulled from Docker Hub. To build the image, provide a path value set to a directory containing a context and Dockerfile. To load an image, specify load_path to provide a path to an archive file. To tag an image to a repository, provide a repository path. If the name contains a repository path, it will be pushed. NOTE: C(build) is DEPRECATED and will be removed in release 2.3. Specifying C(build) will behave the same as C(present)."
+    }, 
+    "key_path": {
+      "type": "Optional[String]", 
+      "description": "Path to the client's TLS key file."
+    }, 
+    "rm": {
+      "type": "Optional[Boolean]", 
+      "description": "Remove intermediate containers after build."
+    }, 
+    "dockerfile": {
+      "type": "Optional[String]", 
+      "description": "Use with state C(present) to provide an alternate name for the Dockerfile to use when building an image."
+    }, 
+    "api_version": {
+      "type": "Optional[String]", 
+      "description": "The version of the Docker API running on the Docker Host. Defaults to the latest version of the API supported by docker-py."
+    }, 
+    "archive_path": {
+      "type": "Optional[String]", 
+      "description": "Use with state C(present) to archive an image to a .tar file."
+    }, 
+    "cacert_path": {
+      "type": "Optional[String]", 
+      "description": "Use a CA certificate when performing server verification by providing the path to a CA certificate file."
+    }, 
+    "timeout": {
+      "type": "Optional[String]", 
+      "description": "The maximum amount of time in seconds to wait on a response from the API."
+    }, 
+    "repository": {
+      "type": "Optional[String]", 
+      "description": "Full path to a repository. Use with state C(present) to tag the image into the repository. Expects format I(repository:tag). If no tag is provided, will use the value of the C(tag) parameter or I(latest)."
+    }, 
+    "tls_hostname": {
+      "type": "Optional[String]", 
+      "description": "When verifying the authenticity of the Docker Host server, provide the expected name of the server."
+    }, 
+    "cert_path": {
+      "type": "Optional[String]", 
+      "description": "Path to the client's TLS certificate file."
+    }, 
+    "tls": {
+      "type": "Optional[String]", 
+      "description": "Secure the connection to the API by using TLS without verifying the authenticity of the Docker host server."
+    }, 
+    "pull": {
+      "type": "Optional[Boolean]", 
+      "description": "When building an image downloads any updates to the FROM image in Dockerfile."
+    }, 
+    "name": {
+      "type": "String", 
+      "description": "Image name. Name format will be one of: name, repository/name, registry_server:port/name. When pushing or pulling an image the name can optionally include the tag by appending ':tag_name'."
+    }, 
+    "container_limits": {
+      "type": "Optional[String]", 
+      "description": "A dictionary of limits applied to each container created by the build process."
+    }, 
+    "http_timeout": {
+      "type": "Optional[String]", 
+      "description": "Timeout for HTTP requests during the image build operation. Provide a positive integer value for the number of seconds."
+    }, 
+    "ssl_version": {
+      "type": "Optional[String]", 
+      "description": "Provide a valid SSL version number. Default value determined by docker-py, currently 1.0."
+    }, 
+    "tag": {
+      "type": "Optional[String]", 
+      "description": "Used to select an image when pulling. Will be added to the image when pushing, tagging or building. Defaults to I(latest). If C(name) parameter format is I(name:tag), then tag value from C(name) will take precedence."
+    }, 
+    "buildargs": {
+      "type": "Optional[String]", 
+      "description": "Provide a dictionary of C(key:value) build arguments that map to Dockerfile ARG directive. Docker expects the value to be a string. For convenience any non-string values will be converted to strings. Requires Docker API >= 1.21 and docker-py >= 1.7.0."
+    }, 
+    "push": {
+      "type": "Optional[Boolean]", 
+      "description": "Push the image to the registry. Specify the registry as part of the I(name) or I(repository) parameter."
+    }
+  }
+}

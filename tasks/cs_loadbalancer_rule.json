@@ -1,0 +1,85 @@
+{
+  "description": "Manages load balancer rules on Apache CloudStack based clouds.", 
+  "parameters": {
+    "domain": {
+      "type": "Optional[String]", 
+      "description": "Domain the rule is related to."
+    }, 
+    "algorithm": {
+      "type": "Optional[String]", 
+      "description": "Load balancer algorithm Required when using C(state=present)."
+    }, 
+    "protocol": {
+      "type": "Optional[String]", 
+      "description": "The protocol to be used on the load balancer"
+    }, 
+    "description": {
+      "type": "Optional[String]", 
+      "description": "The description of the load balancer rule."
+    }, 
+    "api_http_method": {
+      "type": "Optional[String]", 
+      "description": "HTTP method used."
+    }, 
+    "api_secret": {
+      "type": "Optional[String]", 
+      "description": "Secret key of the CloudStack API."
+    }, 
+    "api_timeout": {
+      "type": "Optional[String]", 
+      "description": "HTTP timeout."
+    }, 
+    "public_port": {
+      "type": "String", 
+      "description": "The public port from where the network traffic will be load balanced from. Required when using C(state=present). Can not be changed once the rule exists due API limitation."
+    }, 
+    "account": {
+      "type": "Optional[String]", 
+      "description": "Account the rule is related to."
+    }, 
+    "api_region": {
+      "type": "Optional[String]", 
+      "description": "Name of the ini section in the C(cloustack.ini) file."
+    }, 
+    "project": {
+      "type": "Optional[String]", 
+      "description": "Name of the project the load balancer IP address is related to."
+    }, 
+    "private_port": {
+      "type": "Optional[String]", 
+      "description": "The private port of the private ip address/virtual machine where the network traffic will be load balanced to. Required when using C(state=present). Can not be changed once the rule exists due API limitation."
+    }, 
+    "state": {
+      "type": "String", 
+      "description": "State of the rule."
+    }, 
+    "api_key": {
+      "type": "Optional[String]", 
+      "description": "API key of the CloudStack API."
+    }, 
+    "open_firewall": {
+      "type": "Optional[String]", 
+      "description": "Whether the firewall rule for public port should be created, while creating the new rule. Use M(cs_firewall) for managing firewall rules."
+    }, 
+    "api_url": {
+      "type": "Optional[String]", 
+      "description": "URL of the CloudStack API e.g. https://cloud.example.com/client/api."
+    }, 
+    "cidr": {
+      "type": "Optional[String]", 
+      "description": "CIDR (full notation) to be used for firewall rule if required."
+    }, 
+    "zone": {
+      "type": "Optional[String]", 
+      "description": "Name of the zone in which the rule should be created. If not set, default zone is used."
+    }, 
+    "ip_address": {
+      "type": "String", 
+      "description": "Public IP address from where the network traffic will be load balanced from."
+    }, 
+    "name": {
+      "type": "String", 
+      "description": "The name of the load balancer rule."
+    }
+  }
+}

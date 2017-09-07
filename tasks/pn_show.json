@@ -1,0 +1,29 @@
+{
+  "description": "Run show commands on nvOS device.", 
+  "parameters": {
+    "pn_clipassword": {
+      "type": "Optional[String]", 
+      "description": "Provide login password if user is not root."
+    }, 
+    "pn_command": {
+      "type": "String", 
+      "description": "The C(pn_command) takes a CLI show command as value."
+    }, 
+    "pn_cliusername": {
+      "type": "Optional[String]", 
+      "description": "Provide login username if user is not root."
+    }, 
+    "pn_parameters": {
+      "type": "Optional[String]", 
+      "description": "Display output using a specific parameter. Use 'all' to display possible output. List of comma separated parameters."
+    }, 
+    "pn_options": {
+      "type": "Optional[String]", 
+      "description": "Specify formatting options."
+    }, 
+    "pn_cliswitch": {
+      "type": "Optional[String]", 
+      "description": "Target switch(es) to run the cli on."
+    }
+  }
+}

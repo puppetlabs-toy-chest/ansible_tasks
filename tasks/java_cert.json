@@ -1,0 +1,41 @@
+{
+  "description": "Uses keytool to import/remove key from java keystore(cacerts)", 
+  "parameters": {
+    "keystore_create": {
+      "type": "Optional[String]", 
+      "description": "Create keystore if it doesn't exist"
+    }, 
+    "cert_alias": {
+      "type": "Optional[String]", 
+      "description": "Imported certificate alias."
+    }, 
+    "executable": {
+      "type": "Optional[String]", 
+      "description": "Path to keytool binary if not used we search in PATH for it."
+    }, 
+    "cert_port": {
+      "type": "Optional[String]", 
+      "description": "Port to connect to URL. This will be used to create server URL:PORT"
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "Defines action which can be either certificate import or removal."
+    }, 
+    "keystore_pass": {
+      "type": "String", 
+      "description": "Keystore password."
+    }, 
+    "cert_url": {
+      "type": "Optional[String]", 
+      "description": "Basic URL to fetch SSL certificate from. One of cert_url or cert_path is required to load certificate."
+    }, 
+    "cert_path": {
+      "type": "Optional[String]", 
+      "description": "Local path to load certificate from. One of cert_url or cert_path is required to load certificate."
+    }, 
+    "keystore_path": {
+      "type": "Optional[String]", 
+      "description": "Path to keystore."
+    }
+  }
+}

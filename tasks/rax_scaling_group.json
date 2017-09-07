@@ -1,0 +1,101 @@
+{
+  "description": "Manipulate Rackspace Cloud Autoscale Groups", 
+  "parameters": {
+    "files": {
+      "type": "Optional[String]", 
+      "description": "Files to insert into the instance. Hash of C(remotepath: localpath)"
+    }, 
+    "image": {
+      "type": "String", 
+      "description": "image to use for the instance. Can be an C(id), C(human_id) or C(name)"
+    }, 
+    "user_data": {
+      "type": "Optional[String]", 
+      "description": "Data to be uploaded to the servers config drive. This option implies I(config_drive). Can be a file path or a string"
+    }, 
+    "min_entities": {
+      "type": "String", 
+      "description": "The minimum number of entities that are allowed in the scaling group. Must be an integer between 0 and 1000."
+    }, 
+    "verify_ssl": {
+      "type": "Optional[String]", 
+      "description": "Whether or not to require SSL validation of API endpoints."
+    }, 
+    "cooldown": {
+      "type": "Optional[String]", 
+      "description": "The period of time, in seconds, that must pass before any scaling can occur after the previous scaling. Must be an integer between 0 and 86400 (24 hrs)."
+    }, 
+    "flavor": {
+      "type": "String", 
+      "description": "flavor to use for the instance"
+    }, 
+    "networks": {
+      "type": "Optional[String]", 
+      "description": "The network to attach to the instances. If specified, you must include ALL networks including the public and private interfaces. Can be C(id) or C(label)."
+    }, 
+    "max_entities": {
+      "type": "String", 
+      "description": "The maximum number of entities that are allowed in the scaling group. Must be an integer between 0 and 1000."
+    }, 
+    "server_name": {
+      "type": "String", 
+      "description": "The base name for servers created by Autoscale"
+    }, 
+    "loadbalancers": {
+      "type": "Optional[String]", 
+      "description": "List of load balancer C(id) and C(port) hashes"
+    }, 
+    "disk_config": {
+      "type": "Optional[String]", 
+      "description": "Disk partitioning strategy"
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "Indicate desired state of the resource"
+    }, 
+    "env": {
+      "type": "Optional[String]", 
+      "description": "Environment as configured in I(~/.pyrax.cfg), see U(https://github.com/rackspace/pyrax/blob/master/docs/getting_started.md#pyrax-configuration)."
+    }, 
+    "api_key": {
+      "type": "Optional[String]", 
+      "description": "Rackspace API key, overrides I(credentials)."
+    }, 
+    "config_drive": {
+      "type": "Optional[String]", 
+      "description": "Attach read-only configuration drive to server as label config-2"
+    }, 
+    "username": {
+      "type": "Optional[String]", 
+      "description": "Rackspace username, overrides I(credentials)."
+    }, 
+    "key_name": {
+      "type": "Optional[String]", 
+      "description": "key pair to use on the instance"
+    }, 
+    "wait_timeout": {
+      "type": "Optional[String]", 
+      "description": "how long before wait gives up, in seconds"
+    }, 
+    "credentials": {
+      "type": "Optional[String]", 
+      "description": "File to find the Rackspace credentials in. Ignored if I(api_key) and I(username) are provided."
+    }, 
+    "wait": {
+      "type": "Optional[String]", 
+      "description": "wait for the scaling group to finish provisioning the minimum amount of servers"
+    }, 
+    "name": {
+      "type": "String", 
+      "description": "Name to give the scaling group"
+    }, 
+    "region": {
+      "type": "Optional[String]", 
+      "description": "Region to create an instance in."
+    }, 
+    "meta": {
+      "type": "Optional[String]", 
+      "description": "A hash of metadata to associate with the instance"
+    }
+  }
+}

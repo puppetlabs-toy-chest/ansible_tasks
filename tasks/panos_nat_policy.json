@@ -1,0 +1,77 @@
+{
+  "description": "create a policy NAT rule", 
+  "parameters": {
+    "username": {
+      "type": "Optional[String]", 
+      "description": "username for authentication"
+    }, 
+    "dnat_address": {
+      "type": "Optional[String]", 
+      "description": "dnat translated address"
+    }, 
+    "snat_bidirectional": {
+      "type": "Optional[String]", 
+      "description": "bidirectional flag"
+    }, 
+    "to_zone": {
+      "type": "String", 
+      "description": "destination zone"
+    }, 
+    "snat_type": {
+      "type": "Optional[String]", 
+      "description": "type of source translation"
+    }, 
+    "service": {
+      "type": "Optional[String]", 
+      "description": "service"
+    }, 
+    "source": {
+      "type": "Optional[String]", 
+      "description": "list of source addresses"
+    }, 
+    "from_zone": {
+      "type": "String", 
+      "description": "list of source zones"
+    }, 
+    "destination": {
+      "type": "Optional[String]", 
+      "description": "list of destination addresses"
+    }, 
+    "dnat_port": {
+      "type": "Optional[String]", 
+      "description": "dnat translated port"
+    }, 
+    "snat_interface_address": {
+      "type": "Optional[String]", 
+      "description": "snat interface address"
+    }, 
+    "rule_name": {
+      "type": "String", 
+      "description": "name of the SNAT rule"
+    }, 
+    "override": {
+      "type": "Optional[String]", 
+      "description": "attempt to override rule if one with the same name already exists"
+    }, 
+    "commit": {
+      "type": "Optional[String]", 
+      "description": "commit if changed"
+    }, 
+    "password": {
+      "type": "String", 
+      "description": "password for authentication"
+    }, 
+    "ip_address": {
+      "type": "String", 
+      "description": "IP address (or hostname) of PAN-OS device"
+    }, 
+    "snat_address": {
+      "type": "Optional[String]", 
+      "description": "snat translated address"
+    }, 
+    "snat_interface": {
+      "type": "Optional[String]", 
+      "description": "snat interface"
+    }
+  }
+}

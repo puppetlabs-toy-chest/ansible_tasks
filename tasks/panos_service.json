@@ -1,0 +1,37 @@
+{
+  "description": "create a service object", 
+  "parameters": {
+    "username": {
+      "type": "Optional[String]", 
+      "description": "username for authentication"
+    }, 
+    "protocol": {
+      "type": "String", 
+      "description": "protocol for the service, should be tcp or udp"
+    }, 
+    "service_name": {
+      "type": "String", 
+      "description": "name of the service"
+    }, 
+    "source_port": {
+      "type": "Optional[String]", 
+      "description": "source port"
+    }, 
+    "commit": {
+      "type": "Optional[String]", 
+      "description": "commit if changed"
+    }, 
+    "password": {
+      "type": "String", 
+      "description": "password for authentication"
+    }, 
+    "ip_address": {
+      "type": "String", 
+      "description": "IP address (or hostname) of PAN-OS device"
+    }, 
+    "port": {
+      "type": "String", 
+      "description": "destination port"
+    }
+  }
+}

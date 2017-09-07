@@ -1,0 +1,29 @@
+{
+  "description": "Manages the inittab on AIX.", 
+  "parameters": {
+    "name": {
+      "type": "String", 
+      "description": "Name of the inittab entry."
+    }, 
+    "insertafter": {
+      "type": "Optional[String]", 
+      "description": "After which inittabline should the new entry inserted."
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "Whether the entry should be present or absent in the inittab file"
+    }, 
+    "command": {
+      "type": "String", 
+      "description": "What command has to run."
+    }, 
+    "runlevel": {
+      "type": "String", 
+      "description": "Runlevel of the entry."
+    }, 
+    "action": {
+      "type": "String", 
+      "description": "Action what the init has to do with this entry."
+    }
+  }
+}

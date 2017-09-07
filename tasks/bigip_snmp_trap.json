@@ -1,0 +1,53 @@
+{
+  "description": "Manipulate SNMP trap information on a BIG-IP.", 
+  "parameters": {
+    "snmp_version": {
+      "type": "Optional[String]", 
+      "description": "Specifies to which Simple Network Management Protocol (SNMP) version the trap destination applies."
+    }, 
+    "network": {
+      "type": "Optional[String]", 
+      "description": "Specifies the name of the trap network. This option is not supported in versions of BIG-IP < 12.1.0. If used on versions < 12.1.0, it will simply be ignored."
+    }, 
+    "destination": {
+      "type": "Optional[String]", 
+      "description": "Specifies the address for the trap destination. This can be either an IP address or a hostname."
+    }, 
+    "community": {
+      "type": "Optional[String]", 
+      "description": "Specifies the community name for the trap destination."
+    }, 
+    "server": {
+      "type": "String", 
+      "description": "The BIG-IP host. This option can be omitted if the environment variable C(F5_SERVER) is set."
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "When C(present), ensures that the cloud connector exists. When C(absent), ensures that the cloud connector does not exist."
+    }, 
+    "user": {
+      "type": "String", 
+      "description": "The username to connect to the BIG-IP with. This user must have administrative privileges on the device. This option can be omitted if the environment variable C(F5_USER) is set."
+    }, 
+    "server_port": {
+      "type": "Optional[String]", 
+      "description": "The BIG-IP server port. This option can be omitted if the environment variable C(F5_SERVER_PORT) is set."
+    }, 
+    "password": {
+      "type": "String", 
+      "description": "The password for the user account used to connect to the BIG-IP. This option can be omitted if the environment variable C(F5_PASSWORD) is set."
+    }, 
+    "validate_certs": {
+      "type": "Optional[String]", 
+      "description": "If C(no), SSL certificates will not be validated. This should only be used on personally controlled sites using self-signed certificates. This option can be omitted if the environment variable C(F5_VALIDATE_CERTS) is set."
+    }, 
+    "port": {
+      "type": "Optional[String]", 
+      "description": "Specifies the port for the trap destination."
+    }, 
+    "name": {
+      "type": "String", 
+      "description": "Name of the SNMP configuration endpoint."
+    }
+  }
+}

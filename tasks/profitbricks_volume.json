@@ -1,0 +1,73 @@
+{
+  "description": "Create or destroy a volume.", 
+  "parameters": {
+    "count": {
+      "type": "Optional[String]", 
+      "description": "The number of volumes you wish to create."
+    }, 
+    "datacenter": {
+      "type": "String", 
+      "description": "The datacenter in which to create the volumes."
+    }, 
+    "name": {
+      "type": "String", 
+      "description": "The name of the volumes. You can enumerate the names using auto_increment."
+    }, 
+    "subscription_user": {
+      "type": "Optional[String]", 
+      "description": "The ProfitBricks username. Overrides the PB_SUBSCRIPTION_ID environment variable."
+    }, 
+    "image_password": {
+      "type": "Optional[String]", 
+      "description": "Password set for the administrative user."
+    }, 
+    "licence_type": {
+      "type": "Optional[String]", 
+      "description": "The licence type for the volume. This is used when the image is non-standard."
+    }, 
+    "bus": {
+      "type": "Optional[String]", 
+      "description": "The bus type."
+    }, 
+    "image": {
+      "type": "String", 
+      "description": "The system image ID for the volume, e.g. a3eae284-a2fe-11e4-b187-5f1f641608c8. This can also be a snapshot image ID."
+    }, 
+    "size": {
+      "type": "Optional[String]", 
+      "description": "The size of the volume."
+    }, 
+    "instance_ids": {
+      "type": "Optional[String]", 
+      "description": "list of instance ids, currently only used when state='absent' to remove instances."
+    }, 
+    "subscription_password": {
+      "type": "Optional[String]", 
+      "description": "THe ProfitBricks password. Overrides the PB_PASSWORD environment variable."
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "create or terminate datacenters"
+    }, 
+    "wait_timeout": {
+      "type": "Optional[String]", 
+      "description": "how long before wait gives up, in seconds"
+    }, 
+    "auto_increment": {
+      "type": "Optional[String]", 
+      "description": "Whether or not to increment a single number in the name for created virtual machines."
+    }, 
+    "disk_type": {
+      "type": "Optional[String]", 
+      "description": "The disk type of the volume."
+    }, 
+    "ssh_keys": {
+      "type": "Optional[String]", 
+      "description": "Public SSH keys allowing access to the virtual machine."
+    }, 
+    "wait": {
+      "type": "Optional[String]", 
+      "description": "wait for the datacenter to be created before returning"
+    }
+  }
+}

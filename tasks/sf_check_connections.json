@@ -1,0 +1,29 @@
+{
+  "description": "Check connectivity to MVIP and SVIP.", 
+  "parameters": {
+    "username": {
+      "type": "String", 
+      "description": "Please ensure that the user has the adequate permissions. For more information, please read the official documentation U(https://goo.gl/ddJa4Q)."
+    }, 
+    "skip": {
+      "type": "Optional[String]", 
+      "description": "Skip checking connection to SVIP or MVIP."
+    }, 
+    "hostname": {
+      "type": "String", 
+      "description": "The hostname or IP address of the SolidFire cluster."
+    }, 
+    "svip": {
+      "type": "Optional[String]", 
+      "description": "Optionally, use to test connection of a different SVIP. This is not needed to test the connection to the target cluster."
+    }, 
+    "mvip": {
+      "type": "Optional[String]", 
+      "description": "Optionally, use to test connection of a different MVIP. This is not needed to test the connection to the target cluster."
+    }, 
+    "password": {
+      "type": "String", 
+      "description": "Password for the specified user."
+    }
+  }
+}

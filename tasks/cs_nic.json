@@ -1,0 +1,69 @@
+{
+  "description": "Manages NICs and secondary IPs of an instance on Apache CloudStack based clouds.", 
+  "parameters": {
+    "vm_guest_ip": {
+      "type": "Optional[String]", 
+      "description": "Secondary IP address to be added to the instance nic. If not set, the API always returns a new IP address and idempotency is not given."
+    }, 
+    "domain": {
+      "type": "Optional[String]", 
+      "description": "Domain the instance is related to."
+    }, 
+    "api_key": {
+      "type": "Optional[String]", 
+      "description": "API key of the CloudStack API."
+    }, 
+    "poll_async": {
+      "type": "Optional[String]", 
+      "description": "Poll async jobs until job has finished."
+    }, 
+    "network": {
+      "type": "Optional[String]", 
+      "description": "Name of the network. Required to find the NIC if instance has multiple networks assigned."
+    }, 
+    "api_http_method": {
+      "type": "Optional[String]", 
+      "description": "HTTP method used."
+    }, 
+    "api_secret": {
+      "type": "Optional[String]", 
+      "description": "Secret key of the CloudStack API."
+    }, 
+    "api_timeout": {
+      "type": "Optional[String]", 
+      "description": "HTTP timeout."
+    }, 
+    "vm": {
+      "type": "String", 
+      "description": "Name of instance."
+    }, 
+    "api_region": {
+      "type": "Optional[String]", 
+      "description": "Name of the ini section in the C(cloustack.ini) file."
+    }, 
+    "project": {
+      "type": "Optional[String]", 
+      "description": "Name of the project the instance is deployed in."
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "State of the ipaddress."
+    }, 
+    "vpc": {
+      "type": "Optional[String]", 
+      "description": "Name of the VPC the C(vm) is related to."
+    }, 
+    "account": {
+      "type": "Optional[String]", 
+      "description": "Account the instance is related to."
+    }, 
+    "zone": {
+      "type": "Optional[String]", 
+      "description": "Name of the zone in which the instance is deployed in. If not set, default zone is used."
+    }, 
+    "api_url": {
+      "type": "Optional[String]", 
+      "description": "URL of the CloudStack API e.g. https://cloud.example.com/client/api."
+    }
+  }
+}

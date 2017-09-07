@@ -1,0 +1,113 @@
+{
+  "description": "management of instances in Proxmox VE cluster", 
+  "parameters": {
+    "force": {
+      "type": "Optional[Boolean]", 
+      "description": "forcing operations can be used only with states C(present), C(stopped), C(restarted) with C(state=present) force option allow to overwrite existing container with states C(stopped) , C(restarted) allow to force stop instance"
+    }, 
+    "cpus": {
+      "type": "Optional[String]", 
+      "description": "numbers of allocated cpus for instance"
+    }, 
+    "ostemplate": {
+      "type": "Optional[String]", 
+      "description": "the template for VM creating required only for C(state=present)"
+    }, 
+    "unprivileged": {
+      "type": "Optional[String]", 
+      "description": "Indicate if the container should be unprivileged"
+    }, 
+    "disk": {
+      "type": "Optional[String]", 
+      "description": "hard disk size in GB for instance"
+    }, 
+    "searchdomain": {
+      "type": "Optional[String]", 
+      "description": "sets DNS search domain for a container"
+    }, 
+    "api_user": {
+      "type": "String", 
+      "description": "the user to authenticate with"
+    }, 
+    "hostname": {
+      "type": "Optional[String]", 
+      "description": "the instance hostname required only for C(state=present) must be unique if vmid is not passed"
+    }, 
+    "storage": {
+      "type": "Optional[String]", 
+      "description": "target storage"
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "Indicate desired state of the instance"
+    }, 
+    "swap": {
+      "type": "Optional[String]", 
+      "description": "swap memory size in MB for instance"
+    }, 
+    "memory": {
+      "type": "Optional[String]", 
+      "description": "memory size in MB for instance"
+    }, 
+    "pubkey": {
+      "type": "Optional[String]", 
+      "description": "Public key to add to /root/.ssh/authorized_keys. This was added on Proxmox 4.2, it is ignored for earlier versions"
+    }, 
+    "node": {
+      "type": "Optional[String]", 
+      "description": "Proxmox VE node, when new VM will be created required only for C(state=present) for another states will be autodiscovered"
+    }, 
+    "cpuunits": {
+      "type": "Optional[String]", 
+      "description": "CPU weight for a VM"
+    }, 
+    "api_password": {
+      "type": "Optional[String]", 
+      "description": "the password to authenticate with you can use PROXMOX_PASSWORD environment variable"
+    }, 
+    "password": {
+      "type": "Optional[String]", 
+      "description": "the instance root password required only for C(state=present)"
+    }, 
+    "ip_address": {
+      "type": "Optional[String]", 
+      "description": "specifies the address the container will be assigned"
+    }, 
+    "pool": {
+      "type": "Optional[String]", 
+      "description": "Proxmox VE resource pool"
+    }, 
+    "netif": {
+      "type": "Optional[String]", 
+      "description": "specifies network interfaces for the container. As a hash/dictionary defining interfaces."
+    }, 
+    "api_host": {
+      "type": "String", 
+      "description": "the host of the Proxmox VE cluster"
+    }, 
+    "vmid": {
+      "type": "Optional[String]", 
+      "description": "the instance id if not set, the next available VM ID will be fetched from ProxmoxAPI. if not set, will be fetched from PromoxAPI based on the hostname"
+    }, 
+    "timeout": {
+      "type": "Optional[String]", 
+      "description": "timeout for operations"
+    }, 
+    "mounts": {
+      "type": "Optional[String]", 
+      "description": "specifies additional mounts (separate disks) for the container. As a hash/dictionary defining mount points"
+    }, 
+    "nameserver": {
+      "type": "Optional[String]", 
+      "description": "sets DNS server IP address for a container"
+    }, 
+    "validate_certs": {
+      "type": "Optional[Boolean]", 
+      "description": "enable / disable https certificate verification"
+    }, 
+    "onboot": {
+      "type": "Optional[String]", 
+      "description": "specifies whether a VM will be started during system bootup"
+    }
+  }
+}

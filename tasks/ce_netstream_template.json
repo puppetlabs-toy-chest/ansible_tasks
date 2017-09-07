@@ -1,0 +1,33 @@
+{
+  "description": "Manages NetStream template configuration on HUAWEI CloudEngine switches.", 
+  "parameters": {
+    "record_name": {
+      "type": "Optional[String]", 
+      "description": "Configure the name of netstream record. The value is a string of 1 to 32 case-insensitive characters."
+    }, 
+    "description": {
+      "type": "Optional[String]", 
+      "description": "Configure the description of netstream record. The value is a string of 1 to 80 case-insensitive characters."
+    }, 
+    "collect_counter": {
+      "type": "Optional[String]", 
+      "description": "Configure the number of packets and bytes that are included in the flexible flow statistics sent to NSC."
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "Specify desired state of the resource."
+    }, 
+    "collect_interface": {
+      "type": "Optional[String]", 
+      "description": "Configure the input or output interface that are included in the flexible flow statistics sent to NSC."
+    }, 
+    "type": {
+      "type": "String", 
+      "description": "Configure the type of netstream record."
+    }, 
+    "match": {
+      "type": "Optional[String]", 
+      "description": "Configure flexible flow statistics template keywords."
+    }
+  }
+}

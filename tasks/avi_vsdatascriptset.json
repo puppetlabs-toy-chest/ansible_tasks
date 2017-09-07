@@ -1,0 +1,73 @@
+{
+  "description": "Module for setup of VSDataScriptSet Avi RESTful Object", 
+  "parameters": {
+    "username": {
+      "type": "Optional[String]", 
+      "description": "Username used for accessing Avi controller. The default value is the environment variable C(AVI_USERNAME)."
+    }, 
+    "uuid": {
+      "type": "Optional[String]", 
+      "description": "Uuid of the virtual service datascript collection."
+    }, 
+    "datascript": {
+      "type": "Optional[String]", 
+      "description": "Datascripts to execute."
+    }, 
+    "description": {
+      "type": "Optional[String]", 
+      "description": "User defined description for the object."
+    }, 
+    "pool_refs": {
+      "type": "Optional[String]", 
+      "description": "Uuid of pools that could be referred by vsdatascriptset objects. It is a reference to an object of type pool."
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "The state that should be applied on the entity."
+    }, 
+    "url": {
+      "type": "Optional[String]", 
+      "description": "Avi controller URL of the object."
+    }, 
+    "tenant_ref": {
+      "type": "Optional[String]", 
+      "description": "It is a reference to an object of type tenant."
+    }, 
+    "pool_group_refs": {
+      "type": "Optional[String]", 
+      "description": "Uuid of pool groups that could be referred by vsdatascriptset objects. It is a reference to an object of type poolgroup."
+    }, 
+    "string_group_refs": {
+      "type": "Optional[String]", 
+      "description": "Uuid of string groups that could be referred by vsdatascriptset objects. It is a reference to an object of type stringgroup."
+    }, 
+    "ipgroup_refs": {
+      "type": "Optional[String]", 
+      "description": "Uuid of ip groups that could be referred by vsdatascriptset objects. It is a reference to an object of type ipaddrgroup."
+    }, 
+    "controller": {
+      "type": "Optional[String]", 
+      "description": "IP address or hostname of the controller. The default value is the environment variable C(AVI_CONTROLLER)."
+    }, 
+    "api_version": {
+      "type": "Optional[String]", 
+      "description": "Avi API version of to use for Avi API and objects."
+    }, 
+    "password": {
+      "type": "Optional[String]", 
+      "description": "Password of Avi user in Avi controller. The default value is the environment variable C(AVI_PASSWORD)."
+    }, 
+    "tenant_uuid": {
+      "type": "Optional[String]", 
+      "description": "UUID of tenant used for all Avi API calls and context of object."
+    }, 
+    "tenant": {
+      "type": "Optional[String]", 
+      "description": "Name of tenant used for all Avi API calls and context of object."
+    }, 
+    "name": {
+      "type": "String", 
+      "description": "Name for the virtual service datascript collection."
+    }
+  }
+}

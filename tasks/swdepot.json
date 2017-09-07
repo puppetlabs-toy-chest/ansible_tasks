@@ -1,0 +1,17 @@
+{
+  "description": "Manage packages with swdepot package manager (HP-UX)", 
+  "parameters": {
+    "state": {
+      "type": "String", 
+      "description": "whether to install (C(present), C(latest)), or remove (C(absent)) a package."
+    }, 
+    "depot": {
+      "type": "Optional[String]", 
+      "description": "The source repository from which install or upgrade a package."
+    }, 
+    "name": {
+      "type": "String", 
+      "description": "package name."
+    }
+  }
+}

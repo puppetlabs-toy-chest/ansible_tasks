@@ -1,0 +1,61 @@
+{
+  "description": "Manages pods on Apache CloudStack based clouds.", 
+  "parameters": {
+    "api_key": {
+      "type": "Optional[String]", 
+      "description": "API key of the CloudStack API."
+    }, 
+    "api_url": {
+      "type": "Optional[String]", 
+      "description": "URL of the CloudStack API e.g. https://cloud.example.com/client/api."
+    }, 
+    "api_http_method": {
+      "type": "Optional[String]", 
+      "description": "HTTP method used."
+    }, 
+    "api_secret": {
+      "type": "Optional[String]", 
+      "description": "Secret key of the CloudStack API."
+    }, 
+    "api_timeout": {
+      "type": "Optional[String]", 
+      "description": "HTTP timeout."
+    }, 
+    "api_region": {
+      "type": "Optional[String]", 
+      "description": "Name of the ini section in the C(cloustack.ini) file."
+    }, 
+    "gateway": {
+      "type": "Optional[String]", 
+      "description": "Gateway for the Pod. Required on C(state=present)"
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "State of the pod."
+    }, 
+    "end_ip": {
+      "type": "Optional[String]", 
+      "description": "Ending IP address for the Pod."
+    }, 
+    "start_ip": {
+      "type": "Optional[String]", 
+      "description": "Starting IP address for the Pod. Required on C(state=present)"
+    }, 
+    "zone": {
+      "type": "Optional[String]", 
+      "description": "Name of the zone in which the pod belongs to. If not set, default zone is used."
+    }, 
+    "netmask": {
+      "type": "Optional[String]", 
+      "description": "Netmask for the Pod. Required on C(state=present)"
+    }, 
+    "id": {
+      "type": "Optional[String]", 
+      "description": "uuid of the existing pod."
+    }, 
+    "name": {
+      "type": "String", 
+      "description": "Name of the pod."
+    }
+  }
+}

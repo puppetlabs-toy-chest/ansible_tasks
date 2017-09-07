@@ -1,0 +1,29 @@
+{
+  "description": "Manages virtual machines supported by libvirt", 
+  "parameters": {
+    "xml": {
+      "type": "Optional[String]", 
+      "description": "XML document used with the define command"
+    }, 
+    "name": {
+      "type": "String", 
+      "description": "name of the guest VM being managed. Note that VM must be previously defined with xml."
+    }, 
+    "uri": {
+      "type": "Optional[String]", 
+      "description": "libvirt connection uri"
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "Note that there may be some lag for state requests like C(shutdown) since these refer only to VM states. After starting a guest, it may not be immediately accessible."
+    }, 
+    "command": {
+      "type": "Optional[String]", 
+      "description": "in addition to state management, various non-idempotent commands are available. See examples"
+    }, 
+    "autostart": {
+      "type": "Optional[String]", 
+      "description": "start VM at host startup"
+    }
+  }
+}

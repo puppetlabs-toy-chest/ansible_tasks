@@ -1,0 +1,33 @@
+{
+  "description": "Notify Honeybadger.io about app deployments", 
+  "parameters": {
+    "environment": {
+      "type": "String", 
+      "description": "The environment name, typically 'production', 'staging', etc."
+    }, 
+    "url": {
+      "type": "Optional[String]", 
+      "description": "Optional URL to submit the notification to."
+    }, 
+    "repo": {
+      "type": "Optional[String]", 
+      "description": "URL of the project repository"
+    }, 
+    "token": {
+      "type": "String", 
+      "description": "API token."
+    }, 
+    "user": {
+      "type": "Optional[String]", 
+      "description": "The username of the person doing the deployment"
+    }, 
+    "validate_certs": {
+      "type": "Optional[String]", 
+      "description": "If C(no), SSL certificates for the target url will not be validated. This should only be used on personally controlled sites using self-signed certificates."
+    }, 
+    "revision": {
+      "type": "Optional[String]", 
+      "description": "A hash, number, tag, or other identifier showing what revision was deployed"
+    }
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "description": "Notify BigPanda about deployments", 
+  "parameters": {
+    "description": {
+      "type": "Optional[String]", 
+      "description": "Free text description of the deployment."
+    }, 
+    "url": {
+      "type": "Optional[String]", 
+      "description": "Base URL of the API server."
+    }, 
+    "component": {
+      "type": "String", 
+      "description": "The name of the component being deployed. Ex: billing"
+    }, 
+    "state": {
+      "type": "String", 
+      "description": "State of the deployment."
+    }, 
+    "token": {
+      "type": "String", 
+      "description": "API token."
+    }, 
+    "version": {
+      "type": "String", 
+      "description": "The deployment version."
+    }, 
+    "hosts": {
+      "type": "Optional[String]", 
+      "description": "Name of affected host name. Can be a list."
+    }, 
+    "env": {
+      "type": "Optional[String]", 
+      "description": "The environment name, typically 'production', 'staging', etc."
+    }, 
+    "owner": {
+      "type": "Optional[String]", 
+      "description": "The person responsible for the deployment."
+    }, 
+    "validate_certs": {
+      "type": "Optional[String]", 
+      "description": "If C(no), SSL certificates for the target url will not be validated. This should only be used on personally controlled sites using self-signed certificates."
+    }
+  }
+}

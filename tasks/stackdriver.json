@@ -1,0 +1,49 @@
+{
+  "description": "Send code deploy and annotation events to stackdriver", 
+  "parameters": {
+    "repository": {
+      "type": "Optional[String]", 
+      "description": "The repository (or project) deployed"
+    }, 
+    "level": {
+      "type": "Optional[String]", 
+      "description": "one of INFO/WARN/ERROR, defaults to INFO if not supplied. \u00a0May affect display."
+    }, 
+    "annotated_by": {
+      "type": "Optional[String]", 
+      "description": "The person or robot\u00a0who the annotation should be attributed to."
+    }, 
+    "deployed_by": {
+      "type": "Optional[String]", 
+      "description": "The person or robot responsible for deploying the code"
+    }, 
+    "deployed_to": {
+      "type": "Optional[String]", 
+      "description": "The environment code was deployed to. (ie: development, staging, production)"
+    }, 
+    "instance_id": {
+      "type": "Optional[String]", 
+      "description": "id of an EC2 instance that this event should be attached to, which will limit the contexts where this event is shown"
+    }, 
+    "key": {
+      "type": "String", 
+      "description": "API key."
+    }, 
+    "msg": {
+      "type": "Optional[String]", 
+      "description": "The contents of the annotation message, in plain text. \u00a0Limited to 256 characters. Required for annotation."
+    }, 
+    "event_epoch": {
+      "type": "Optional[String]", 
+      "description": "Unix timestamp of where the event should appear in the timeline, defaults to now. Be careful with this."
+    }, 
+    "revision_id": {
+      "type": "Optional[String]", 
+      "description": "The revision of the code that was deployed. Required for deploy events"
+    }, 
+    "event": {
+      "type": "Optional[String]", 
+      "description": "The type of event to send, either annotation or deploy"
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "description": "Sends a message to logged in users on Windows hosts.", 
+  "parameters": {
+    "msg": {
+      "type": "Optional[String]", 
+      "description": "The text of the message to be displayed."
+    }, 
+    "to": {
+      "type": "Optional[String]", 
+      "description": "Who to send the message to. Can be a username, sessionname or sessionid."
+    }, 
+    "wait": {
+      "type": "Optional[String]", 
+      "description": "Whether to wait for users to respond.  Module will only wait for the number of seconds specified in display_seconds or 10 seconds if not specified. However, if I(wait) is true, the message is sent to each logged on user in turn, waiting for the user to either press 'ok' or for the timeout to elapse before moving on to the next user."
+    }, 
+    "display_seconds": {
+      "type": "Optional[String]", 
+      "description": "How long to wait for receiver to acknowledge message, in seconds."
+    }
+  }
+}

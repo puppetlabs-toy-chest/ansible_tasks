@@ -1,0 +1,101 @@
+{
+  "description": "Manages volumes on Apache CloudStack based clouds.", 
+  "parameters": {
+    "domain": {
+      "type": "Optional[String]", 
+      "description": "Name of the domain the volume to be deployed in."
+    }, 
+    "force": {
+      "type": "Optional[String]", 
+      "description": "Force removal of volume even it is attached to a VM. Considered on C(state=absnet) only."
+    }, 
+    "disk_offering": {
+      "type": "Optional[String]", 
+      "description": "Name of the disk offering to be used. Required one of C(disk_offering), C(snapshot) if volume is not already C(state=present)."
+    }, 
+    "api_http_method": {
+      "type": "Optional[String]", 
+      "description": "HTTP method used."
+    }, 
+    "shrink_ok": {
+      "type": "Optional[String]", 
+      "description": "Whether to allow to shrink the volume."
+    }, 
+    "display_volume": {
+      "type": "Optional[String]", 
+      "description": "Whether to display the volume to the end user or not. Allowed to Root Admins only."
+    }, 
+    "size": {
+      "type": "Optional[String]", 
+      "description": "Size of disk in GB"
+    }, 
+    "poll_async": {
+      "type": "Optional[String]", 
+      "description": "Poll async jobs until job has finished."
+    }, 
+    "api_url": {
+      "type": "Optional[String]", 
+      "description": "URL of the CloudStack API e.g. https://cloud.example.com/client/api."
+    }, 
+    "zone": {
+      "type": "Optional[String]", 
+      "description": "Name of the zone in which the volume should be deployed. If not set, default zone is used."
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "State of the volume."
+    }, 
+    "max_iops": {
+      "type": "Optional[String]", 
+      "description": "Max iops"
+    }, 
+    "api_key": {
+      "type": "Optional[String]", 
+      "description": "API key of the CloudStack API."
+    }, 
+    "tags": {
+      "type": "Optional[String]", 
+      "description": "List of tags. Tags are a list of dictionaries having keys C(key) and C(value). To delete all tags, set a empty list e.g. C(tags: [])."
+    }, 
+    "api_secret": {
+      "type": "Optional[String]", 
+      "description": "Secret key of the CloudStack API."
+    }, 
+    "api_timeout": {
+      "type": "Optional[String]", 
+      "description": "HTTP timeout."
+    }, 
+    "account": {
+      "type": "Optional[String]", 
+      "description": "Account the volume is related to."
+    }, 
+    "vm": {
+      "type": "Optional[String]", 
+      "description": "Name of the virtual machine to attach the volume to."
+    }, 
+    "min_iops": {
+      "type": "Optional[String]", 
+      "description": "Min iops"
+    }, 
+    "custom_id": {
+      "type": "Optional[String]", 
+      "description": "Custom id to the resource. Allowed to Root Admins only."
+    }, 
+    "name": {
+      "type": "String", 
+      "description": "Name of the volume. C(name) can only contain ASCII letters."
+    }, 
+    "api_region": {
+      "type": "Optional[String]", 
+      "description": "Name of the ini section in the C(cloustack.ini) file."
+    }, 
+    "project": {
+      "type": "Optional[String]", 
+      "description": "Name of the project the volume to be deployed in."
+    }, 
+    "snapshot": {
+      "type": "Optional[String]", 
+      "description": "The snapshot name for the disk volume. Required one of C(disk_offering), C(snapshot) if volume is not already C(state=present)."
+    }
+  }
+}

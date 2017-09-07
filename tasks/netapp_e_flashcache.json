@@ -1,0 +1,49 @@
+{
+  "description": "Manage NetApp SSD caches", 
+  "parameters": {
+    "cache_size_min": {
+      "type": "Optional[String]", 
+      "description": "The minimum size (in size_units) of the ssd cache. The cache will be expanded if this exceeds the current size of the cache."
+    }, 
+    "ssid": {
+      "type": "String", 
+      "description": "The ID of the array to manage (as configured on the web services proxy)."
+    }, 
+    "name": {
+      "type": "String", 
+      "description": "The name of the SSD cache to manage"
+    }, 
+    "api_password": {
+      "type": "String", 
+      "description": "The password to authenticate with the SANtricity WebServices Proxy or embedded REST API."
+    }, 
+    "io_type": {
+      "type": "Optional[String]", 
+      "description": "The type of workload to optimize the cache for."
+    }, 
+    "size_unit": {
+      "type": "Optional[String]", 
+      "description": "The unit to be applied to size arguments"
+    }, 
+    "disk_count": {
+      "type": "Optional[String]", 
+      "description": "The minimum number of disks to use for building the cache. The cache will be expanded if this number exceeds the number of disks already in place"
+    }, 
+    "state": {
+      "type": "String", 
+      "description": "Whether the specified SSD cache should exist or not."
+    }, 
+    "api_username": {
+      "type": "String", 
+      "description": "The username to authenticate with the SANtricity WebServices Proxy or embedded REST API."
+    }, 
+    "validate_certs": {
+      "type": "Optional[String]", 
+      "description": "Should https certificates be validated?"
+    }, 
+    "api_url": {
+      "type": "String", 
+      "description": "The url to the SANtricity WebServices Proxy or embedded REST API."
+    }
+  }
+}

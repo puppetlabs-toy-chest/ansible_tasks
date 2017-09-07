@@ -1,0 +1,33 @@
+{
+  "description": "Add or modify PAN-OS user accounts password.", 
+  "parameters": {
+    "username": {
+      "type": "Optional[String]", 
+      "description": "username for authentication"
+    }, 
+    "admin_username": {
+      "type": "Optional[String]", 
+      "description": "username for admin user"
+    }, 
+    "role": {
+      "type": "Optional[String]", 
+      "description": "role for admin user"
+    }, 
+    "admin_password": {
+      "type": "String", 
+      "description": "password for admin user"
+    }, 
+    "commit": {
+      "type": "Optional[String]", 
+      "description": "commit if changed"
+    }, 
+    "password": {
+      "type": "String", 
+      "description": "password for authentication"
+    }, 
+    "ip_address": {
+      "type": "String", 
+      "description": "IP address (or hostname) of PAN-OS device"
+    }
+  }
+}

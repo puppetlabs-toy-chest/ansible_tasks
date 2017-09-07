@@ -1,0 +1,25 @@
+{
+  "description": "Manage AOS Rack Type", 
+  "parameters": {
+    "content": {
+      "type": "Optional[String]", 
+      "description": "Datastructure of the Rack Type to create. The data can be in YAML / JSON or directly a variable. It's the same datastructure that is returned on success in I(value)."
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "Indicate what is the expected state of the Rack Type (present or not)."
+    }, 
+    "session": {
+      "type": "String", 
+      "description": "An existing AOS session as obtained by M(aos_login) module."
+    }, 
+    "name": {
+      "type": "Optional[String]", 
+      "description": "Name of the Rack Type to manage. Only one of I(name), I(id) or I(content) can be set."
+    }, 
+    "id": {
+      "type": "Optional[String]", 
+      "description": "AOS Id of the Rack Type to manage (can't be used to create a new Rack Type), Only one of I(name), I(id) or I(content) can be set."
+    }
+  }
+}

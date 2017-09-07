@@ -1,0 +1,49 @@
+{
+  "description": "Configure block device partitions", 
+  "parameters": {
+    "part_start": {
+      "type": "Optional[String]", 
+      "description": "Where the partition will start as offset from the beginning of the disk, that is, the \"distance\" from the start of the disk. The distance can be specified with all the units supported by parted (except compat) and it is case sensitive. E.g. C(10GiB), C(15%)."
+    }, 
+    "part_end": {
+      "type": "Optional[String]", 
+      "description": "Where the partition will end as offset from the beginning of the disk, that is, the \"distance\" from the start of the disk. The distance can be specified with all the units supported by parted (except compat) and it is case sensitive. E.g. C(10GiB), C(15%)."
+    }, 
+    "name": {
+      "type": "Optional[String]", 
+      "description": "Sets the name for the partition number (GPT, Mac, MIPS and PC98 only)."
+    }, 
+    "align": {
+      "type": "Optional[String]", 
+      "description": "S e t   a l i g n m e n t   f o r   n e w l y   c r e a t e d   p a r t i t i o n s ."
+    }, 
+    "number": {
+      "type": "Optional[String]", 
+      "description": "The number of the partition to work with or the number of the partition that will be created. Required when performing any action on the disk, except fetching information."
+    }, 
+    "label": {
+      "type": "Optional[String]", 
+      "description": "C r e a t e s   a   n e w   d i s k   l a b e l ."
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "If to create or delete a partition. If set to C(info) the module will only return the device information."
+    }, 
+    "part_type": {
+      "type": "Optional[String]", 
+      "description": "Is one of 'primary', 'extended' or 'logical' and may be specified only with 'msdos' or 'dvh' partition tables. A name must be specified for a 'gpt' partition table. Neither part-type nor name may be used with a 'sun' partition table."
+    }, 
+    "flags": {
+      "type": "Optional[String]", 
+      "description": "A   l i s t   o f   t h e   f l a g s   t h a t   h a s   t o   b e   s e t   o n   t h e   p a r t i t i o n ."
+    }, 
+    "device": {
+      "type": "String", 
+      "description": "T h e   b l o c k   d e v i c e   ( d i s k )   w h e r e   t o   o p e r a t e ."
+    }, 
+    "unit": {
+      "type": "Optional[String]", 
+      "description": "Selects the current default unit that Parted will use to display locations and capacities on the disk and to interpret those given by the user if they are not suffixed by an unit. When fetching information about a disk, it is always recommended to specify a unit."
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "description": "Sends notifications to Pushbullet", 
+  "parameters": {
+    "body": {
+      "type": "Optional[String]", 
+      "description": "Body of the notification, e.g. Details of the fault you're alerting."
+    }, 
+    "title": {
+      "type": "String", 
+      "description": "Title of the notification."
+    }, 
+    "push_type": {
+      "type": "Optional[String]", 
+      "description": "Thing you wish to push."
+    }, 
+    "device": {
+      "type": "Optional[String]", 
+      "description": "The device NAME you wish to send a push notification, as seen on the Pushbullet main page."
+    }, 
+    "api_key": {
+      "type": "String", 
+      "description": "Push bullet API token"
+    }, 
+    "channel": {
+      "type": "Optional[String]", 
+      "description": "The channel TAG you wish to broadcast a push notification, as seen on the \"My Channels\" > \"Edit your channel\" at Pushbullet page."
+    }
+  }
+}

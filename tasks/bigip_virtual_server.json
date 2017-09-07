@@ -1,0 +1,85 @@
+{
+  "description": "Manages F5 BIG-IP LTM virtual servers", 
+  "parameters": {
+    "route_advertisement_state": {
+      "type": "Optional[String]", 
+      "description": "Enable route advertisement for destination"
+    }, 
+    "destination": {
+      "type": "String", 
+      "description": "Destination IP of the virtual server (only host is currently supported). Required when state=present and vs does not exist."
+    }, 
+    "description": {
+      "type": "Optional[String]", 
+      "description": "Virtual server description"
+    }, 
+    "fallback_persistence_profile": {
+      "type": "Optional[String]", 
+      "description": "Specifies the persistence profile you want the system to use if it cannot use the specified default persistence profile."
+    }, 
+    "validate_certs": {
+      "type": "Optional[String]", 
+      "description": "If C(no), SSL certificates will not be validated. This should only be used on personally controlled sites using self-signed certificates. This option can be omitted if the environment variable C(F5_VALIDATE_CERTS) is set."
+    }, 
+    "default_persistence_profile": {
+      "type": "Optional[String]", 
+      "description": "Default Profile which manages the session persistence"
+    }, 
+    "partition": {
+      "type": "Optional[String]", 
+      "description": "Partition"
+    }, 
+    "all_profiles": {
+      "type": "Optional[String]", 
+      "description": "List of all Profiles (HTTP,ClientSSL,ServerSSL,etc) that must be used by the virtual server"
+    }, 
+    "server": {
+      "type": "String", 
+      "description": "The BIG-IP host. This option can be omitted if the environment variable C(F5_SERVER) is set."
+    }, 
+    "all_rules": {
+      "type": "Optional[String]", 
+      "description": "List of rules to be applied in priority order"
+    }, 
+    "enabled_vlans": {
+      "type": "Optional[String]", 
+      "description": "List of vlans to be enabled. When a VLAN named C(ALL) is used, all VLANs will be allowed."
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "Virtual Server state Absent, delete the VS if present C(present) (and its synonym enabled), create if needed the VS and set state to enabled C(disabled), create if needed the VS and set state to disabled"
+    }, 
+    "pool": {
+      "type": "Optional[String]", 
+      "description": "Default pool for the virtual server"
+    }, 
+    "user": {
+      "type": "String", 
+      "description": "The username to connect to the BIG-IP with. This user must have administrative privileges on the device. This option can be omitted if the environment variable C(F5_USER) is set."
+    }, 
+    "server_port": {
+      "type": "Optional[String]", 
+      "description": "The BIG-IP server port. This option can be omitted if the environment variable C(F5_SERVER_PORT) is set."
+    }, 
+    "password": {
+      "type": "String", 
+      "description": "The password for the user account used to connect to the BIG-IP. This option can be omitted if the environment variable C(F5_PASSWORD) is set."
+    }, 
+    "snat": {
+      "type": "Optional[String]", 
+      "description": "Source network address policy"
+    }, 
+    "port": {
+      "type": "Optional[String]", 
+      "description": "Port of the virtual server. Required when state=present and vs does not exist. If you specify a value for this field, it must be a number between 0 and 65535."
+    }, 
+    "all_policies": {
+      "type": "Optional[String]", 
+      "description": "List of all policies enabled for the virtual server."
+    }, 
+    "name": {
+      "type": "String", 
+      "description": "Virtual server name"
+    }
+  }
+}

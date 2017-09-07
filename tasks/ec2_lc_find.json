@@ -1,0 +1,21 @@
+{
+  "description": "Find AWS Autoscaling Launch Configurations", 
+  "parameters": {
+    "limit": {
+      "type": "Optional[String]", 
+      "description": "How many results to show. Corresponds to Python slice notation like list[:limit]."
+    }, 
+    "region": {
+      "type": "String", 
+      "description": "The AWS region to use."
+    }, 
+    "sort_order": {
+      "type": "Optional[String]", 
+      "description": "Order in which to sort results."
+    }, 
+    "name_regex": {
+      "type": "String", 
+      "description": "A Launch Configuration to match It'll be compiled as regex"
+    }
+  }
+}

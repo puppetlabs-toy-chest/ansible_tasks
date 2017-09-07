@@ -1,0 +1,73 @@
+{
+  "description": "Add or remove MySQL databases from a remote host.", 
+  "parameters": {
+    "ssl_key": {
+      "type": "Optional[String]", 
+      "description": "The path to the client private key."
+    }, 
+    "ssl_cert": {
+      "type": "Optional[String]", 
+      "description": "The path to a client public key certificate."
+    }, 
+    "config_file": {
+      "type": "Optional[String]", 
+      "description": "Specify a config file from which user and password are to be read."
+    }, 
+    "target": {
+      "type": "Optional[String]", 
+      "description": "Location, on the remote host, of the dump file to read from or write to. Uncompressed SQL files (C(.sql)) as well as bzip2 (C(.bz2)), gzip (C(.gz)) and xz (Added in 2.0) compressed files are supported."
+    }, 
+    "login_port": {
+      "type": "Optional[String]", 
+      "description": "Port of the MySQL server. Requires I(login_host) be defined as other then localhost if login_port is used."
+    }, 
+    "login_user": {
+      "type": "Optional[String]", 
+      "description": "The username used to authenticate with."
+    }, 
+    "login_host": {
+      "type": "Optional[String]", 
+      "description": "Host running the database."
+    }, 
+    "encoding": {
+      "type": "Optional[String]", 
+      "description": "Encoding mode to use, examples include C(utf8) or C(latin1_swedish_ci)"
+    }, 
+    "ssl_ca": {
+      "type": "Optional[String]", 
+      "description": "The path to a Certificate Authority (CA) certificate. This option, if used, must specify the same certificate as used by the server."
+    }, 
+    "login_unix_socket": {
+      "type": "Optional[String]", 
+      "description": "The path to a Unix domain socket for local connections."
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "The database state"
+    }, 
+    "login_password": {
+      "type": "Optional[String]", 
+      "description": "The password used to authenticate with."
+    }, 
+    "collation": {
+      "type": "Optional[String]", 
+      "description": "Collation mode (sorting). This only applies to new table/databases and does not update existing ones, this is a limitation of MySQL."
+    }, 
+    "quick": {
+      "type": "Optional[String]", 
+      "description": "Option used for dumping large tables"
+    }, 
+    "single_transaction": {
+      "type": "Optional[String]", 
+      "description": "Execute the dump in a single transaction"
+    }, 
+    "connect_timeout": {
+      "type": "Optional[String]", 
+      "description": "The connection timeout when connecting to the MySQL server."
+    }, 
+    "name": {
+      "type": "String", 
+      "description": "name of the database to add or remove name=all May only be provided if I(state) is C(dump) or C(import). if name=all Works like --all-databases option for mysqldump (Added in 2.0)"
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "description": "Find the folder path(s) for a VM by name or UUID", 
+  "parameters": {
+    "username": {
+      "type": "String", 
+      "description": "The username of the vSphere vCenter."
+    }, 
+    "datacenter": {
+      "type": "String", 
+      "description": "Destination datacenter for the deploy operation."
+    }, 
+    "name": {
+      "type": "Optional[String]", 
+      "description": "Name of the VM to work with. This is required if uuid is not supplied."
+    }, 
+    "hostname": {
+      "type": "String", 
+      "description": "The hostname or IP address of the vSphere vCenter."
+    }, 
+    "password": {
+      "type": "String", 
+      "description": "The password of the vSphere vCenter."
+    }, 
+    "validate_certs": {
+      "type": "Optional[String]", 
+      "description": "Allows connection when SSL certificates are not valid. Set to false when certificates are not trusted."
+    }, 
+    "uuid": {
+      "type": "Optional[String]", 
+      "description": "UUID of the instance to manage if known, this is VMware's BIOS UUID. This is required if name is not supplied."
+    }
+  }
+}

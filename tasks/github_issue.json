@@ -1,0 +1,21 @@
+{
+  "description": "View GitHub issue.", 
+  "parameters": {
+    "repo": {
+      "type": "String", 
+      "description": "Name of repository from which issue needs to be retrieved."
+    }, 
+    "organization": {
+      "type": "String", 
+      "description": "Name of the GitHub organization in which the repository is hosted."
+    }, 
+    "issue": {
+      "type": "String", 
+      "description": "Issue number for which information is required."
+    }, 
+    "action": {
+      "type": "Optional[String]", 
+      "description": "Get various details about issue depending upon action specified."
+    }
+  }
+}

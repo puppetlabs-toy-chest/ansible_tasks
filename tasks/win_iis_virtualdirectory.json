@@ -1,0 +1,25 @@
+{
+  "description": "Configures a virtual directory in IIS.", 
+  "parameters": {
+    "application": {
+      "type": "Optional[String]", 
+      "description": "The application under which the virtual directory is created or exists."
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "Whether to add or remove the specified virtual directory"
+    }, 
+    "name": {
+      "type": "String", 
+      "description": "The name of the virtual directory to create or remove"
+    }, 
+    "physical_path": {
+      "type": "Optional[String]", 
+      "description": "The physical path to the folder in which the new virtual directory is created. The specified folder must already exist."
+    }, 
+    "site": {
+      "type": "String", 
+      "description": "The site name under which the virtual directory is created or exists."
+    }
+  }
+}

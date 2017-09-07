@@ -1,0 +1,33 @@
+{
+  "description": "Manages domain records on Exoscale DNS API.", 
+  "parameters": {
+    "name": {
+      "type": "String", 
+      "description": "Name of the record."
+    }, 
+    "api_secret": {
+      "type": "Optional[String]", 
+      "description": "Secret key of the Exoscale DNS API."
+    }, 
+    "api_timeout": {
+      "type": "Optional[String]", 
+      "description": "HTTP timeout to Exoscale DNS API."
+    }, 
+    "api_region": {
+      "type": "Optional[String]", 
+      "description": "Name of the ini section in the C(cloustack.ini) file."
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "State of the resource."
+    }, 
+    "api_key": {
+      "type": "Optional[String]", 
+      "description": "API key of the Exoscale DNS API."
+    }, 
+    "validate_certs": {
+      "type": "Optional[String]", 
+      "description": "Validate SSL certs of the Exoscale DNS API."
+    }
+  }
+}

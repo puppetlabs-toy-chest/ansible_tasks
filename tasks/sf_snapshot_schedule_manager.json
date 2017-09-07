@@ -1,0 +1,65 @@
+{
+  "description": "Manage SolidFire snapshot schedules", 
+  "parameters": {
+    "username": {
+      "type": "String", 
+      "description": "Please ensure that the user has the adequate permissions. For more information, please read the official documentation U(https://goo.gl/ddJa4Q)."
+    }, 
+    "time_interval_days": {
+      "type": "Optional[String]", 
+      "description": "T i m e   i n t e r v a l   i n   d a y s ."
+    }, 
+    "name": {
+      "type": "String", 
+      "description": "Name for the snapshot schedule."
+    }, 
+    "time_interval_minutes": {
+      "type": "Optional[String]", 
+      "description": "T i m e   i n t e r v a l   i n   m i n u t e s ."
+    }, 
+    "hostname": {
+      "type": "String", 
+      "description": "The hostname or IP address of the SolidFire cluster."
+    }, 
+    "state": {
+      "type": "String", 
+      "description": "Whether the specified schedule should exist or not."
+    }, 
+    "time_interval_hours": {
+      "type": "Optional[String]", 
+      "description": "T i m e   i n t e r v a l   i n   h o u r s ."
+    }, 
+    "paused": {
+      "type": "Optional[String]", 
+      "description": "Pause / Resume a schedule."
+    }, 
+    "schedule_id": {
+      "type": "Optional[String]", 
+      "description": "The schedule ID for the schedule that you want to update or delete."
+    }, 
+    "snapshot_name": {
+      "type": "Optional[String]", 
+      "description": "Name for the created snapshots."
+    }, 
+    "volumes": {
+      "type": "Optional[String]", 
+      "description": "Volume IDs that you want to set the snapshot schedule for. At least 1 volume ID is required for creating a new schedule. required when C(state=present)"
+    }, 
+    "starting_date": {
+      "type": "Optional[String]", 
+      "description": "Starting date for the schedule. Required when C(state=present). Please use two '-' in the above format, or you may see an error- TypeError, is not JSON serializable description. Format: C(2016--12--01T00:00:00Z)"
+    }, 
+    "password": {
+      "type": "String", 
+      "description": "Password for the specified user."
+    }, 
+    "recurring": {
+      "type": "Optional[String]", 
+      "description": "Should the schedule recur?"
+    }, 
+    "retention": {
+      "type": "Optional[String]", 
+      "description": "Retention period for the snapshot. Format is 'HH:mm:ss'."
+    }
+  }
+}

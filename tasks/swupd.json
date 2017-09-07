@@ -1,0 +1,41 @@
+{
+  "description": "Manages updates and bundles in ClearLinux systems.", 
+  "parameters": {
+    "contenturl": {
+      "type": "Optional[String]", 
+      "description": "URL pointing to the contents of available bundles. If not specified, the contents are retrieved from clearlinux.org."
+    }, 
+    "name": {
+      "type": "Optional[String]", 
+      "description": "Name of the (I)bundle to install or remove."
+    }, 
+    "format": {
+      "type": "Optional[String]", 
+      "description": "The format suffix for version file downloads. For example [1,2,3,staging,etc]. If not specified, the default format is used."
+    }, 
+    "url": {
+      "type": "Optional[String]", 
+      "description": "Overrides both I(contenturl) and I(versionurl)."
+    }, 
+    "verify": {
+      "type": "Optional[String]", 
+      "description": "Verify content for OS version."
+    }, 
+    "update": {
+      "type": "Optional[String]", 
+      "description": "Updates the OS to the latest version."
+    }, 
+    "manifest": {
+      "type": "Optional[String]", 
+      "description": "The manifest contains information about the bundles at certaion version of the OS. Specify a Manifest version to verify against that version or leave unspecified to verify against the current version."
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "Indicates the desired (I)bundle state. C(present) ensures the bundle is installed while C(absent) ensures the (I)bundle is not installed."
+    }, 
+    "versionurl": {
+      "type": "Optional[String]", 
+      "description": "URL for version string download."
+    }
+  }
+}

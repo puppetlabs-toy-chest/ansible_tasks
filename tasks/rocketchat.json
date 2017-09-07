@@ -1,0 +1,53 @@
+{
+  "description": "Send notifications to Rocket Chat", 
+  "parameters": {
+    "username": {
+      "type": "Optional[String]", 
+      "description": "This is the sender of the message."
+    }, 
+    "domain": {
+      "type": "String", 
+      "description": "The domain for your environment without protocol. (i.e. C(example.com) or C(chat.example.com))"
+    }, 
+    "protocol": {
+      "type": "Optional[String]", 
+      "description": "Specify the protocol used to send notification messages before the webhook url. (i.e. http or https)"
+    }, 
+    "attachments": {
+      "type": "Optional[String]", 
+      "description": "Define a list of attachments."
+    }, 
+    "color": {
+      "type": "Optional[String]", 
+      "description": "Allow text to use default colors - use the default of 'normal' to not send a custom color bar at the start of the message"
+    }, 
+    "icon_url": {
+      "type": "Optional[String]", 
+      "description": "URL for the message sender's icon."
+    }, 
+    "token": {
+      "type": "String", 
+      "description": "Rocket Chat Incoming Webhook integration token.  This provides authentication to Rocket Chat's Incoming webhook for posting messages."
+    }, 
+    "icon_emoji": {
+      "type": "Optional[String]", 
+      "description": "Emoji for the message sender. The representation for the available emojis can be got from Rocket Chat. (for example :thumbsup:) (if I(icon_emoji) is set, I(icon_url) will not be used)"
+    }, 
+    "link_names": {
+      "type": "Optional[String]", 
+      "description": "Automatically create links for channels and usernames in I(msg)."
+    }, 
+    "msg": {
+      "type": "Optional[String]", 
+      "description": "Message to be sent."
+    }, 
+    "validate_certs": {
+      "type": "Optional[String]", 
+      "description": "If C(no), SSL certificates will not be validated. This should only be used on personally controlled sites using self-signed certificates."
+    }, 
+    "channel": {
+      "type": "Optional[String]", 
+      "description": "Channel to send the message to. If absent, the message goes to the channel selected for the I(token) specified during the creation of webhook."
+    }
+  }
+}

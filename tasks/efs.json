@@ -1,0 +1,61 @@
+{
+  "description": "create and maintain EFS file systems", 
+  "parameters": {
+    "aws_secret_key": {
+      "type": "Optional[String]", 
+      "description": "AWS secret key. If not set then the value of the AWS_SECRET_ACCESS_KEY, AWS_SECRET_KEY, or EC2_SECRET_KEY environment variable is used."
+    }, 
+    "profile": {
+      "type": "Optional[String]", 
+      "description": "Uses a boto profile. Only works with boto >= 2.24.0."
+    }, 
+    "aws_access_key": {
+      "type": "Optional[String]", 
+      "description": "AWS access key. If not set then the value of the AWS_ACCESS_KEY_ID, AWS_ACCESS_KEY or EC2_ACCESS_KEY environment variable is used."
+    }, 
+    "name": {
+      "type": "Optional[String]", 
+      "description": "Creation Token of Amazon EFS file system. Required for create. Either name or ID required for delete."
+    }, 
+    "security_token": {
+      "type": "Optional[String]", 
+      "description": "AWS STS security token. If not set then the value of the AWS_SECURITY_TOKEN or EC2_SECURITY_TOKEN environment variable is used."
+    }, 
+    "tags": {
+      "type": "Optional[String]", 
+      "description": "List of tags of Amazon EFS. Should be defined as dictionary In case of 'present' state with list of tags and existing EFS (matched by 'name'), tags of EFS will be replaced with provided data."
+    }, 
+    "validate_certs": {
+      "type": "Optional[String]", 
+      "description": "When set to \"no\", SSL certificates will not be validated for boto versions >= 2.6.0."
+    }, 
+    "targets": {
+      "type": "Optional[String]", 
+      "description": "List of mounted targets. It should be a list of dictionaries, every dictionary should include next attributes: - subnet_id - Mandatory. The ID of the subnet to add the mount target in. - ip_address - Optional. A valid IPv4 address within the address range of the specified subnet. - security_groups - Optional. List of security group IDs, of the form 'sg-xxxxxxxx'. These must be for the same VPC as subnet specified This data may be modified for existing EFS using state 'present' and new list of mount targets."
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "Allows to create, search and destroy Amazon EFS file system"
+    }, 
+    "wait_timeout": {
+      "type": "Optional[String]", 
+      "description": "How long the module should wait (in seconds) for desired state before returning. Zero means wait as long as necessary."
+    }, 
+    "ec2_url": {
+      "type": "Optional[String]", 
+      "description": "Url to use to connect to EC2 or your Eucalyptus cloud (by default the module will use EC2 endpoints). Ignored for modules where region is required. Must be specified for all other modules if region is not used. If not set then the value of the EC2_URL environment variable, if any, is used."
+    }, 
+    "performance_mode": {
+      "type": "Optional[String]", 
+      "description": "File system's performance mode to use. Only takes effect during creation."
+    }, 
+    "id": {
+      "type": "Optional[String]", 
+      "description": "ID of Amazon EFS. Either name or ID required for delete."
+    }, 
+    "wait": {
+      "type": "Optional[String]", 
+      "description": "In case of 'present' state should wait for EFS 'available' life cycle state (of course, if current state not 'deleting' or 'deleted') In case of 'absent' state should wait for EFS 'deleted' life cycle state"
+    }
+  }
+}

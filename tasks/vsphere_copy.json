@@ -1,0 +1,37 @@
+{
+  "description": "Copy a file to a vCenter datastore", 
+  "parameters": {
+    "src": {
+      "type": "String", 
+      "description": "The file to push to vCenter"
+    }, 
+    "datacenter": {
+      "type": "String", 
+      "description": "The datacenter on the vCenter server that holds the datastore."
+    }, 
+    "host": {
+      "type": "String", 
+      "description": "The vCenter server on which the datastore is available."
+    }, 
+    "path": {
+      "type": "String", 
+      "description": "The file to push to the datastore on the vCenter server."
+    }, 
+    "login": {
+      "type": "String", 
+      "description": "The login name to authenticate on the vCenter server."
+    }, 
+    "password": {
+      "type": "String", 
+      "description": "The password to authenticate on the vCenter server."
+    }, 
+    "validate_certs": {
+      "type": "Optional[String]", 
+      "description": "If C(no), SSL certificates will not be validated. This should only be set to C(no) when no other option exists."
+    }, 
+    "datastore": {
+      "type": "String", 
+      "description": "The datastore on the vCenter server to push files to."
+    }
+  }
+}

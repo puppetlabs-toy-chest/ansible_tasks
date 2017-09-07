@@ -1,0 +1,225 @@
+{
+  "description": "manage docker containers", 
+  "parameters": {
+    "publish_all_ports": {
+      "type": "Optional[String]", 
+      "description": "Publish all exposed ports to the host interfaces."
+    }, 
+    "tty": {
+      "type": "Optional[String]", 
+      "description": "Allocate a pseudo-tty within the container."
+    }, 
+    "cap_add": {
+      "type": "Optional[String]", 
+      "description": "Add capabilities for the container. Requires docker-py >= 0.5.0."
+    }, 
+    "insecure_registry": {
+      "type": "Optional[String]", 
+      "description": "Use insecure private registry by HTTP instead of HTTPS. Needed for docker-py >= 0.5.0."
+    }, 
+    "links": {
+      "type": "Optional[String]", 
+      "description": "List of other containers to link within this container with an optional alias. Use docker CLI-style syntax: C(redis:myredis)."
+    }, 
+    "docker_user": {
+      "type": "Optional[String]", 
+      "description": "Username or UID to use within the container"
+    }, 
+    "lxc_conf": {
+      "type": "Optional[String]", 
+      "description": "LXC configuration parameters, such as C(lxc.aa_profile:unconfined)."
+    }, 
+    "image": {
+      "type": "String", 
+      "description": "Container image used to match and launch containers."
+    }, 
+    "labels": {
+      "type": "Optional[String]", 
+      "description": "Set container labels. Requires docker >= 1.6 and docker-py >= 1.2.0."
+    }, 
+    "pid": {
+      "type": "Optional[String]", 
+      "description": "Set the PID namespace mode for the container (currently only supports 'host'). Requires docker-py >= 1.0.0 and docker >= 1.5.0"
+    }, 
+    "docker_api_version": {
+      "type": "Optional[String]", 
+      "description": "Remote API version to use. This defaults to the current default as specified by docker-py."
+    }, 
+    "stop_timeout": {
+      "type": "Optional[String]", 
+      "description": "How many seconds to wait for the container to stop before killing it."
+    }, 
+    "tls_client_key": {
+      "type": "Optional[String]", 
+      "description": "Path to the PEM-encoded key used to authenticate docker client. If specified tls_client_cert must be valid"
+    }, 
+    "env_file": {
+      "type": "Optional[String]", 
+      "description": "Pass in a path to a file with environment variable (FOO=BAR). If a key value is present in both explicitly presented (i.e. as 'env') and in the environment file, the explicit value will override. Requires docker-py >= 1.4.0."
+    }, 
+    "read_only": {
+      "type": "Optional[String]", 
+      "description": "Mount the container's root filesystem as read only"
+    }, 
+    "tls_ca_cert": {
+      "type": "Optional[String]", 
+      "description": "Path to a PEM-encoded certificate authority to secure the Docker connection. This has no effect if use_tls is encrypt."
+    }, 
+    "timeout": {
+      "type": "Optional[String]", 
+      "description": "Docker daemon response timeout in seconds."
+    }, 
+    "detach": {
+      "type": "Optional[String]", 
+      "description": "Enable detached mode to leave the container running in background. If disabled, fail unless the process exits cleanly."
+    }, 
+    "hostname": {
+      "type": "Optional[String]", 
+      "description": "Container hostname."
+    }, 
+    "docker_url": {
+      "type": "Optional[String]", 
+      "description": "URL of the host running the docker daemon. This will default to the env var DOCKER_HOST if unspecified."
+    }, 
+    "use_tls": {
+      "type": "Optional[String]", 
+      "description": "Whether to use tls to connect to the docker server.  \"no\" means not to use tls (and ignore any other tls related parameters). \"encrypt\" means to use tls to encrypt the connection to the server.  \"verify\" means to also verify that the server's certificate is valid for the server (this both verifies the certificate against the CA and that the certificate was issued for that host. If this is unspecified, tls will only be used if one of the other tls options require it."
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "Assert the container's desired state. \"present\" only asserts that the matching containers exist. \"started\" asserts that the matching containers both exist and are running, but takes no action if any configuration has changed. \"reloaded\" (added in Ansible 1.9) asserts that all matching containers are running and restarts any that have any images or configuration out of date. \"restarted\" unconditionally restarts (or starts) the matching containers. \"stopped\" and '\"killed\" stop and kill all matching containers. \"absent\" stops and then' removes any matching containers."
+    }, 
+    "tls_client_cert": {
+      "type": "Optional[String]", 
+      "description": "Path to the PEM-encoded certificate used to authenticate docker client. If specified tls_client_key must be valid"
+    }, 
+    "entrypoint": {
+      "type": "Optional[String]", 
+      "description": "Corresponds to ``--entrypoint`` option of ``docker run`` command and ``ENTRYPOINT`` directive of Dockerfile. Used to match and launch containers."
+    }, 
+    "env": {
+      "type": "Optional[String]", 
+      "description": "Pass a dict of environment variables to the container."
+    }, 
+    "volumes_from": {
+      "type": "Optional[String]", 
+      "description": "List of names of containers to mount volumes from."
+    }, 
+    "net": {
+      "type": "Optional[String]", 
+      "description": "Network mode for the launched container: bridge, none, container:<name|id> or host. Requires docker >= 0.11."
+    }, 
+    "privileged": {
+      "type": "Optional[String]", 
+      "description": "Whether the container should run in privileged mode or not."
+    }, 
+    "username": {
+      "type": "Optional[String]", 
+      "description": "Remote API username."
+    }, 
+    "memory_limit": {
+      "type": "Optional[String]", 
+      "description": "RAM allocated to the container as a number of bytes or as a human-readable string like \"512MB\". Leave as \"0\" to specify no limit."
+    }, 
+    "extra_hosts": {
+      "type": "Optional[String]", 
+      "description": "Dict of custom host-to-IP mappings to be defined in the container"
+    }, 
+    "log_driver": {
+      "type": "Optional[String]", 
+      "description": "You can specify a different logging driver for the container than for the daemon. \"json-file\" Default logging driver for Docker. Writes JSON messages to file. docker logs command is available only for this logging driver. \"none\" disables any logging for the container. \"syslog\" Syslog logging driver for Docker. Writes log messages to syslog. docker logs command is not available for this logging driver. \"journald\" Journald logging driver for Docker. Writes log messages to \"journald\". \"gelf\" Graylog Extended Log Format (GELF) logging driver for Docker. Writes log messages to a GELF endpoint likeGraylog or Logstash. \"fluentd\" Fluentd logging driver for Docker. Writes log messages to \"fluentd\" (forward input). \"awslogs\" (added in 2.1) Awslogs logging driver for Docker. Writes log messages to AWS Cloudwatch Logs. If not defined explicitly, the Docker daemon's default (\"json-file\") will apply. Requires docker >= 1.6.0."
+    }, 
+    "expose": {
+      "type": "Optional[String]", 
+      "description": "List of additional container ports to expose for port mappings or links. If the port is already exposed using EXPOSE in a Dockerfile, you don't need to expose it again."
+    }, 
+    "stdin_open": {
+      "type": "Optional[String]", 
+      "description": "Keep stdin open after a container is launched."
+    }, 
+    "tls_hostname": {
+      "type": "Optional[String]", 
+      "description": "A hostname to check matches what's supplied in the docker server's certificate.  If unspecified, the hostname is taken from the docker_url."
+    }, 
+    "domainname": {
+      "type": "Optional[String]", 
+      "description": "Container domain name."
+    }, 
+    "registry": {
+      "type": "Optional[String]", 
+      "description": "Remote registry URL to pull images from."
+    }, 
+    "password": {
+      "type": "Optional[String]", 
+      "description": "Remote API password."
+    }, 
+    "cpu_set": {
+      "type": "Optional[String]", 
+      "description": "CPUs in which to allow execution. Requires docker-py >= 0.6.0."
+    }, 
+    "pull": {
+      "type": "Optional[String]", 
+      "description": "Control when container images are updated from the C(docker_url) registry. If \"missing,\" images will be pulled only when missing from the host; if '\"always,\" the registry will be checked for a newer version of the image' each time the task executes."
+    }, 
+    "dns": {
+      "type": "Optional[String]", 
+      "description": "List of custom DNS servers for the container."
+    }, 
+    "name": {
+      "type": "Optional[String]", 
+      "description": "Name used to match and uniquely name launched containers. Explicit names are used to uniquely identify a single container or to link among containers. Mutually exclusive with a \"count\" other than \"1\"."
+    }, 
+    "signal": {
+      "type": "Optional[String]", 
+      "description": "With the state \"killed\", you can alter the signal sent to the container."
+    }, 
+    "log_opt": {
+      "type": "Optional[String]", 
+      "description": "Additional options to pass to the logging driver selected above. See Docker `log-driver <https://docs.docker.com/reference/logging/overview/>` documentation for more information. Requires docker >=1.7.0."
+    }, 
+    "restart_policy": {
+      "type": "Optional[String]", 
+      "description": "Container restart policy. The 'unless-stopped' choice is only available starting in Ansible 2.1 and for Docker 1.9 and above."
+    }, 
+    "count": {
+      "type": "Optional[String]", 
+      "description": "Number of matching containers that should be in the desired state."
+    }, 
+    "devices": {
+      "type": "Optional[String]", 
+      "description": "List of host devices to expose to container"
+    }, 
+    "email": {
+      "type": "Optional[String]", 
+      "description": "Remote API email."
+    }, 
+    "command": {
+      "type": "Optional[String]", 
+      "description": "Command used to match and launch containers."
+    }, 
+    "restart_policy_retry": {
+      "type": "Optional[String]", 
+      "description": "Maximum number of times to restart a container. Leave as \"0\" for unlimited retries."
+    }, 
+    "volumes": {
+      "type": "Optional[String]", 
+      "description": "List of volumes to mount within the container Use docker CLI-style syntax: C(/host:/container[:mode]) You can specify a read mode for the mount with either C(ro) or C(rw). Starting at version 2.1, SELinux hosts can additionally use C(z) or C(Z) mount options to use a shared or private label for the volume."
+    }, 
+    "cap_drop": {
+      "type": "Optional[String]", 
+      "description": "Drop capabilities for the container. Requires docker-py >= 0.5.0."
+    }, 
+    "ports": {
+      "type": "Optional[String]", 
+      "description": "List containing private to public port mapping specification. Use docker 'CLI-style syntax: C(8000), C(9000:8000), or C(0.0.0.0:9000:8000)' where 8000 is a container port, 9000 is a host port, and 0.0.0.0 is - a host interface. The container ports need to be exposed either in the Dockerfile or via the C(expose) option."
+    }, 
+    "ulimits": {
+      "type": "Optional[String]", 
+      "description": "ulimits, list ulimits with name, soft and optionally hard limit separated by colons. e.g. nofile:1024:2048 Requires docker-py >= 1.2.0 and docker >= 1.6.0"
+    }, 
+    "cpu_shares": {
+      "type": "Optional[String]", 
+      "description": "CPU shares (relative weight). Requires docker-py >= 0.6.0."
+    }
+  }
+}

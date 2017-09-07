@@ -1,0 +1,29 @@
+{
+  "description": "Manages global DLDP configuration on HUAWEI CloudEngine switches.", 
+  "parameters": {
+    "reset": {
+      "type": "Optional[String]", 
+      "description": "Specify whether reset DLDP state of disabled interfaces."
+    }, 
+    "enable": {
+      "type": "Optional[String]", 
+      "description": "Set global DLDP enable state."
+    }, 
+    "auth_pwd": {
+      "type": "Optional[String]", 
+      "description": "Specifies authentication password. The value is a string of 1 to 16 case-sensitive plaintexts or 24/32/48/108/128 case-sensitive encrypted characters. The string excludes a question mark (?)."
+    }, 
+    "time_internal": {
+      "type": "Optional[String]", 
+      "description": "Specifies the interval for sending Advertisement packets. The value is an integer ranging from 1 to 100, in seconds. The default interval for sending Advertisement packets is 5 seconds."
+    }, 
+    "auth_mode": {
+      "type": "Optional[String]", 
+      "description": "Specifies authentication algorithm of DLDP."
+    }, 
+    "work_mode": {
+      "type": "Optional[String]", 
+      "description": "Set global DLDP work-mode."
+    }
+  }
+}

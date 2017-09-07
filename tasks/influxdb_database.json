@@ -1,0 +1,29 @@
+{
+  "description": "Manage InfluxDB databases", 
+  "parameters": {
+    "username": {
+      "type": "Optional[String]", 
+      "description": "Username that will be used to authenticate against InfluxDB server"
+    }, 
+    "database_name": {
+      "type": "String", 
+      "description": "Name of the database that will be created/destroyed"
+    }, 
+    "hostname": {
+      "type": "String", 
+      "description": "The hostname or IP address on which InfluxDB server is listening"
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "Determines if the database should be created or destroyed"
+    }, 
+    "password": {
+      "type": "Optional[String]", 
+      "description": "Password that will be used to authenticate against InfluxDB server"
+    }, 
+    "port": {
+      "type": "Optional[String]", 
+      "description": "The port on which InfluxDB server is listening"
+    }
+  }
+}

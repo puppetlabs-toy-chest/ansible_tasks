@@ -1,0 +1,157 @@
+{
+  "description": "Create/Delete Compute Instances from OpenStack", 
+  "parameters": {
+    "auth_type": {
+      "type": "Optional[String]", 
+      "description": "Name of the auth plugin to use. If the cloud uses something other than password authentication, the name of the plugin should be indicated here and the contents of the I(auth) parameter should be updated accordingly."
+    }, 
+    "availability_zone": {
+      "type": "Optional[String]", 
+      "description": "Availability zone in which to create the server."
+    }, 
+    "image": {
+      "type": "String", 
+      "description": "The name or id of the base image to boot."
+    }, 
+    "image_exclude": {
+      "type": "Optional[String]", 
+      "description": "Text to use to filter image names, for the case, such as HP, where there are multiple image names matching the common identifying portions. image_exclude is a negative match filter - it is text that may not exist in the image name. Defaults to \"(deprecated)\""
+    }, 
+    "flavor_include": {
+      "type": "Optional[String]", 
+      "description": "Text to use to filter flavor names, for the case, such as Rackspace, where there are multiple flavors that have the same ram count. flavor_include is a positive match filter - it must exist in the flavor name."
+    }, 
+    "meta": {
+      "type": "Optional[String]", 
+      "description": "A list of key value pairs that should be provided as a metadata to the new instance or a string containing a list of key-value pairs. Eg:  meta: \"key1=value1,key2=value2\""
+    }, 
+    "flavor": {
+      "type": "Optional[String]", 
+      "description": "The name or id of the flavor in which the new instance has to be created. Mutually exclusive with flavor_ram"
+    }, 
+    "security_groups": {
+      "type": "Optional[String]", 
+      "description": "Names of the security groups to which the instance should be added. This may be a YAML list or a comma separated string."
+    }, 
+    "scheduler_hints": {
+      "type": "Optional[String]", 
+      "description": "Arbitrary key/value pairs to the scheduler for custom use"
+    }, 
+    "boot_from_volume": {
+      "type": "Optional[String]", 
+      "description": "Should the instance boot from a persistent volume created based on the image given. Mututally exclusive with boot_volume."
+    }, 
+    "userdata": {
+      "type": "Optional[String]", 
+      "description": "Opaque blob of data which is made available to the instance"
+    }, 
+    "network": {
+      "type": "Optional[String]", 
+      "description": "Name or ID of a network to attach this instance to. A simpler version of the nics parameter, only one of network or nics should be supplied."
+    }, 
+    "nics": {
+      "type": "Optional[String]", 
+      "description": "A list of networks to which the instance's interface should be attached. Networks may be referenced by net-id/net-name/port-id or port-name. Also this accepts a string containing a list of (net/port)-(id/name) Eg: nics: \"net-id=uuid-1,port-name=myport\" Only one of network or nics should be supplied."
+    }, 
+    "floating_ips": {
+      "type": "Optional[String]", 
+      "description": "list of valid floating IPs that pre-exist to assign to this node"
+    }, 
+    "flavor_ram": {
+      "type": "Optional[String]", 
+      "description": "The minimum amount of ram in MB that the flavor in which the new instance has to be created must have. Mutually exclusive with flavor."
+    }, 
+    "volume_size": {
+      "type": "Optional[String]", 
+      "description": "The size of the volume to create in GB if booting from volume based on an image."
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "Should the resource be present or absent."
+    }, 
+    "auto_ip": {
+      "type": "Optional[String]", 
+      "description": "Ensure instance has public ip however the cloud wants to do that"
+    }, 
+    "cloud": {
+      "type": "Optional[String]", 
+      "description": "Named cloud to operate against. Provides default values for I(auth) and I(auth_type). This parameter is not needed if I(auth) is provided or if OpenStack OS_* environment variables are present."
+    }, 
+    "config_drive": {
+      "type": "Optional[String]", 
+      "description": "Whether to boot the server with config drive enabled"
+    }, 
+    "region_name": {
+      "type": "Optional[String]", 
+      "description": "Name of the region."
+    }, 
+    "key_name": {
+      "type": "Optional[String]", 
+      "description": "The key pair name to be used when creating a instance"
+    }, 
+    "api_timeout": {
+      "type": "Optional[String]", 
+      "description": "How long should the socket layer wait before timing out for API calls. If this is omitted, nothing will be passed to the requests library."
+    }, 
+    "auth": {
+      "type": "Optional[String]", 
+      "description": "Dictionary containing auth information as needed by the cloud's auth plugin strategy. For the default I(password) plugin, this would contain I(auth_url), I(username), I(password), I(project_name) and any information about domains if the cloud supports them. For other plugins, this param will need to contain whatever parameters that auth plugin requires. This parameter is not needed if a named cloud is provided or OpenStack OS_* environment variables are present."
+    }, 
+    "endpoint_type": {
+      "type": "Optional[String]", 
+      "description": "Endpoint URL type to fetch from the service catalog."
+    }, 
+    "boot_volume": {
+      "type": "Optional[String]", 
+      "description": "Volume name or id to use as the volume to boot from. Implies boot_from_volume. Mutually exclusive with image and boot_from_volume."
+    }, 
+    "key": {
+      "type": "Optional[String]", 
+      "description": "A path to a client key to use as part of the SSL transaction."
+    }, 
+    "cacert": {
+      "type": "Optional[String]", 
+      "description": "A path to a CA Cert bundle that can be used as part of verifying SSL API requests."
+    }, 
+    "volumes": {
+      "type": "Optional[String]", 
+      "description": "A list of preexisting volumes names or ids to attach to the instance"
+    }, 
+    "wait": {
+      "type": "Optional[String]", 
+      "description": "If the module should wait for the instance to be created."
+    }, 
+    "name": {
+      "type": "String", 
+      "description": "Name that has to be given to the instance"
+    }, 
+    "timeout": {
+      "type": "Optional[String]", 
+      "description": "The amount of time the module should wait for the instance to get into active state."
+    }, 
+    "delete_fip": {
+      "type": "Optional[String]", 
+      "description": "When I(state) is absent and this option is true, any floating IP associated with the instance will be deleted along with the instance."
+    }, 
+    "cert": {
+      "type": "Optional[String]", 
+      "description": "A path to a client certificate to use as part of the SSL transaction."
+    }, 
+    "terminate_volume": {
+      "type": "Optional[String]", 
+      "description": "If true, delete volume when deleting instance (if booted from volume)"
+    }, 
+    "floating_ip_pools": {
+      "type": "Optional[String]", 
+      "description": "Name of floating IP pool from which to choose a floating IP"
+    }, 
+    "validate_certs": {
+      "type": "Optional[String]", 
+      "description": "Whether or not SSL API requests should be verified. Before 2.3 this defaulted to True."
+    }, 
+    "reuse_ips": {
+      "type": "Optional[String]", 
+      "description": "When I(auto_ip) is true and this option is true, the I(auto_ip) code will attempt to re-use unassigned floating ips in the project before creating a new one. It is important to note that it is impossible to safely do this concurrently, so if your use case involves concurrent server creation, it is highly recommended to set this to false and to delete the floating ip associated with a server when the server is deleted using I(delete_fip)."
+    }
+  }
+}

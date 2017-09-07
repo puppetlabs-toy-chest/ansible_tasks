@@ -1,0 +1,29 @@
+{
+  "description": "Power management for machine", 
+  "parameters": {
+    "name": {
+      "type": "String", 
+      "description": "Hostname or ip address of the BMC."
+    }, 
+    "state": {
+      "type": "String", 
+      "description": "Whether to ensure that the machine in desired state."
+    }, 
+    "user": {
+      "type": "String", 
+      "description": "Username to use to connect to the BMC."
+    }, 
+    "timeout": {
+      "type": "Optional[String]", 
+      "description": "Maximum number of seconds before interrupt request."
+    }, 
+    "password": {
+      "type": "String", 
+      "description": "Password to connect to the BMC."
+    }, 
+    "port": {
+      "type": "Optional[String]", 
+      "description": "Remote RMCP port."
+    }
+  }
+}

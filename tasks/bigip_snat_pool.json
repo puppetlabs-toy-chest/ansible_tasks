@@ -1,0 +1,41 @@
+{
+  "description": "Manage SNAT pools on a BIG-IP.", 
+  "parameters": {
+    "members": {
+      "type": "Optional[String]", 
+      "description": "List of members to put in the SNAT pool. When a C(state) of present is provided, this parameter is required. Otherwise, it is optional."
+    }, 
+    "server": {
+      "type": "String", 
+      "description": "The BIG-IP host. This option can be omitted if the environment variable C(F5_SERVER) is set."
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "Whether the SNAT pool should exist or not."
+    }, 
+    "user": {
+      "type": "String", 
+      "description": "The username to connect to the BIG-IP with. This user must have administrative privileges on the device. This option can be omitted if the environment variable C(F5_USER) is set."
+    }, 
+    "server_port": {
+      "type": "Optional[String]", 
+      "description": "The BIG-IP server port. This option can be omitted if the environment variable C(F5_SERVER_PORT) is set."
+    }, 
+    "password": {
+      "type": "String", 
+      "description": "The password for the user account used to connect to the BIG-IP. This option can be omitted if the environment variable C(F5_PASSWORD) is set."
+    }, 
+    "validate_certs": {
+      "type": "Optional[String]", 
+      "description": "If C(no), SSL certificates will not be validated. This should only be used on personally controlled sites using self-signed certificates. This option can be omitted if the environment variable C(F5_VALIDATE_CERTS) is set."
+    }, 
+    "append": {
+      "type": "Optional[String]", 
+      "description": "When C(yes), will only add members to the SNAT pool. When C(no), will replace the existing member list with the provided member list."
+    }, 
+    "name": {
+      "type": "String", 
+      "description": "T h e   n a m e   o f   t h e   S N A T   p o o l ."
+    }
+  }
+}

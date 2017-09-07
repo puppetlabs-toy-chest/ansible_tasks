@@ -1,0 +1,29 @@
+{
+  "description": "Executes a command on a remote node", 
+  "parameters": {
+    "creates": {
+      "type": "Optional[String]", 
+      "description": "a filename or (since 2.0) glob pattern, when it already exists, this step will B(not) be run."
+    }, 
+    "executable": {
+      "type": "Optional[String]", 
+      "description": "change the shell used to execute the command. Should be an absolute path to the executable."
+    }, 
+    "chdir": {
+      "type": "Optional[String]", 
+      "description": "cd into this directory before running the command"
+    }, 
+    "removes": {
+      "type": "Optional[String]", 
+      "description": "a filename or (since 2.0) glob pattern, when it does not exist, this step will B(not) be run."
+    }, 
+    "warn": {
+      "type": "Optional[String]", 
+      "description": "if command warnings are on in ansible.cfg, do not warn about this particular line if set to no/false."
+    }, 
+    "free_form": {
+      "type": "String", 
+      "description": "the command module takes a free form command to run.  There is no parameter actually named 'free form'. See the examples!"
+    }
+  }
+}

@@ -1,0 +1,101 @@
+{
+  "description": "Manages outputting logs on HUAWEI CloudEngine switches.", 
+  "parameters": {
+    "facility": {
+      "type": "Optional[String]", 
+      "description": "Log record tool."
+    }, 
+    "transport_mode": {
+      "type": "Optional[String]", 
+      "description": "Transport mode. The value is of the enumerated type and case-sensitive."
+    }, 
+    "channel_cfg_name": {
+      "type": "Optional[String]", 
+      "description": "Channel name.The value is a string of 1 to 30 case-sensitive characters. The default value is console."
+    }, 
+    "suppress_enable": {
+      "type": "Optional[String]", 
+      "description": "Whether a device is enabled to suppress duplicate statistics. The value is of the Boolean type."
+    }, 
+    "channel_name": {
+      "type": "Optional[String]", 
+      "description": "Channel name. The value is a string of 1 to 30 case-sensitive characters."
+    }, 
+    "packet_priority": {
+      "type": "Optional[String]", 
+      "description": "Set the priority of the syslog packet.The value is an integer ranging from 0 to 7. The default value is 0."
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "Specify desired state of the resource."
+    }, 
+    "logfile_max_size": {
+      "type": "Optional[String]", 
+      "description": "Maximum size (in MB) of a log file. The default value is 32. The value range for log files is [4, 8, 16, 32], for security files is [1, 4], and for operation files is [1, 4]."
+    }, 
+    "server_port": {
+      "type": "Optional[String]", 
+      "description": "Number of a port sending logs.The value is an integer ranging from 1 to 65535. For UDP, the default value is 514. For TCP, the default value is 601. For TSL, the default value is 6514."
+    }, 
+    "info_center_enable": {
+      "type": "Optional[String]", 
+      "description": "Whether the info-center function is enabled. The value is of the Boolean type."
+    }, 
+    "ip_type": {
+      "type": "Optional[String]", 
+      "description": "Log server address type, IPv4 or IPv6."
+    }, 
+    "logfile_max_num": {
+      "type": "Optional[String]", 
+      "description": "Maximum number of log files of the same type. The default value is 200. The value range for log files is[3, 500], for security files is [1, 3],and for operation files is [1, 7]."
+    }, 
+    "server_ip": {
+      "type": "Optional[String]", 
+      "description": "Log server address, IPv4 or IPv6 type. The value is a string of 0 to 255 characters. The value can be an valid IPv4 or IPv6 address."
+    }, 
+    "filter_log_name": {
+      "type": "Optional[String]", 
+      "description": "Name of the filtered log. The value is a string of 1 to 63 case-sensitive characters."
+    }, 
+    "ssl_policy_name": {
+      "type": "Optional[String]", 
+      "description": "SSL policy name. The value is a string of 1 to 23 case-sensitive characters."
+    }, 
+    "timestamp": {
+      "type": "Optional[String]", 
+      "description": "Log server timestamp. The value is of the enumerated type and case-sensitive."
+    }, 
+    "channel_out_direct": {
+      "type": "Optional[String]", 
+      "description": "Direction of information output."
+    }, 
+    "filter_feature_name": {
+      "type": "Optional[String]", 
+      "description": "Feature name of the filtered log. The value is a string of 1 to 31 case-insensitive characters."
+    }, 
+    "is_default_vpn": {
+      "type": "Optional[String]", 
+      "description": "Use the default VPN or not."
+    }, 
+    "server_domain": {
+      "type": "Optional[String]", 
+      "description": "Server name. The value is a string of 1 to 255 case-sensitive characters."
+    }, 
+    "level": {
+      "type": "Optional[String]", 
+      "description": "Level of logs saved on a log server."
+    }, 
+    "source_ip": {
+      "type": "Optional[String]", 
+      "description": "Log source ip address, IPv4 or IPv6 type. The value is a string of 0 to 255. The value can be an valid IPv4 or IPv6 address."
+    }, 
+    "channel_id": {
+      "type": "Optional[String]", 
+      "description": "Number for channel. The value is an integer ranging from 0 to 9. The default value is 0."
+    }, 
+    "vrf_name": {
+      "type": "Optional[String]", 
+      "description": "VPN name on a log server. The value is a string of 1 to 31 case-sensitive characters. The default value is _public_."
+    }
+  }
+}

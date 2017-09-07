@@ -1,0 +1,45 @@
+{
+  "description": "utilize GCE image resources", 
+  "parameters": {
+    "name": {
+      "type": "String", 
+      "description": "the name of the image to create or delete"
+    }, 
+    "family": {
+      "type": "Optional[String]", 
+      "description": "an optional family name"
+    }, 
+    "service_account_email": {
+      "type": "Optional[String]", 
+      "description": "service account email"
+    }, 
+    "pem_file": {
+      "type": "Optional[String]", 
+      "description": "path to the pem file associated with the service account email"
+    }, 
+    "source": {
+      "type": "Optional[String]", 
+      "description": "the source disk or the Google Cloud Storage URI to create the image from"
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "desired state of the image"
+    }, 
+    "zone": {
+      "type": "Optional[String]", 
+      "description": "the zone of the disk specified by source"
+    }, 
+    "timeout": {
+      "type": "Optional[String]", 
+      "description": "timeout for the operation"
+    }, 
+    "project_id": {
+      "type": "Optional[String]", 
+      "description": "your GCE project ID"
+    }, 
+    "description": {
+      "type": "Optional[String]", 
+      "description": "an optional description"
+    }
+  }
+}

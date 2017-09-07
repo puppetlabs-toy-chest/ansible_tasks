@@ -1,0 +1,37 @@
+{
+  "description": "Manage NetApp cDOT svm", 
+  "parameters": {
+    "username": {
+      "type": "String", 
+      "description": "This can be a Cluster-scoped or SVM-scoped account, depending on whether a Cluster-level or SVM-level API is required. For more information, please read the documentation U(https://goo.gl/BRu78Z)."
+    }, 
+    "root_volume_aggregate": {
+      "type": "Optional[String]", 
+      "description": "The aggregate on which the root volume will be created. Required when C(state=present)."
+    }, 
+    "name": {
+      "type": "String", 
+      "description": "The name of the SVM to manage."
+    }, 
+    "hostname": {
+      "type": "String", 
+      "description": "The hostname or IP address of the ONTAP instance."
+    }, 
+    "root_volume_security_style": {
+      "type": "Optional[String]", 
+      "description": "Security Style of the root volume. When specified as part of the vserver-create, this field represents the security style for the Vserver root volume. When specified as part of vserver-get-iter call, this will return the list of matching Vservers. Possible values are 'unix', 'ntfs', 'mixed'. The 'unified' security style, which applies only to Infinite Volumes, cannot be applied to a Vserver's root volume. Valid options are \"unix\" for NFS, \"ntfs\" for CIFS, \"mixed\" for Mixed, \"unified\" for Unified. Required when C(state=present)"
+    }, 
+    "state": {
+      "type": "String", 
+      "description": "Whether the specified SVM should exist or not."
+    }, 
+    "password": {
+      "type": "String", 
+      "description": "Password for the specified user."
+    }, 
+    "root_volume": {
+      "type": "Optional[String]", 
+      "description": "Root volume of the SVM. Required when C(state=present)."
+    }
+  }
+}

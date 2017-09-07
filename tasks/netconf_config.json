@@ -1,0 +1,49 @@
+{
+  "description": "netconf device configuration", 
+  "parameters": {
+    "username": {
+      "type": "String", 
+      "description": "the username to authenticate with"
+    }, 
+    "xml": {
+      "type": "Optional[String]", 
+      "description": "the XML content to send to the device"
+    }, 
+    "password": {
+      "type": "String", 
+      "description": "password of the user to authenticate with"
+    }, 
+    "allow_agent": {
+      "type": "Optional[String]", 
+      "description": "if true, enables querying SSH agent (if found) for keys if false, disables querying the SSH agent for ssh keys"
+    }, 
+    "src": {
+      "type": "Optional[String]", 
+      "description": "Specifies the source path to the xml file that contains the configuration or configuration template to load.  The path to the source file can either be the full path on the Ansible control host or a relative path from the playbook or role root directory.  This argument is mutually exclusive with I(xml)."
+    }, 
+    "host": {
+      "type": "String", 
+      "description": "the hostname or ip address of the netconf device"
+    }, 
+    "look_for_keys": {
+      "type": "Optional[String]", 
+      "description": "if true, enables looking in the usual locations for ssh keys (e.g. ~/.ssh/id_*) if false, disables looking for ssh keys"
+    }, 
+    "hostkey_verify": {
+      "type": "Optional[String]", 
+      "description": "if true, the ssh host key of the device must match a ssh key present on the host if false, the ssh host key of the device is not checked"
+    }, 
+    "datastore": {
+      "type": "Optional[String]", 
+      "description": "auto, uses candidate and fallback to running candidate, edit <candidate/> datastore and then commit running, edit <running/> datastore directly"
+    }, 
+    "save": {
+      "type": "Optional[String]", 
+      "description": "The C(save) argument instructs the module to save the running- config to the startup-config if changed."
+    }, 
+    "port": {
+      "type": "Optional[String]", 
+      "description": "the netconf port"
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "description": "Ensures the existence of a Windows domain.", 
+  "parameters": {
+    "dns_domain_name": {
+      "type": "String", 
+      "description": "the DNS name of the domain which should exist and be reachable or reside on the target Windows host"
+    }, 
+    "safe_mode_password": {
+      "type": "String", 
+      "description": "safe mode password for the domain controller"
+    }
+  }
+}

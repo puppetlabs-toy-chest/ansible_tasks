@@ -1,0 +1,85 @@
+{
+  "description": "Create or delete an AWS CloudFormation stack", 
+  "parameters": {
+    "profile": {
+      "type": "Optional[String]", 
+      "description": "Uses a boto profile. Only works with boto >= 2.24.0."
+    }, 
+    "aws_secret_key": {
+      "type": "Optional[String]", 
+      "description": "AWS secret key. If not set then the value of the AWS_SECRET_ACCESS_KEY, AWS_SECRET_KEY, or EC2_SECRET_KEY environment variable is used."
+    }, 
+    "aws_access_key": {
+      "type": "Optional[String]", 
+      "description": "AWS access key. If not set then the value of the AWS_ACCESS_KEY_ID, AWS_ACCESS_KEY or EC2_ACCESS_KEY environment variable is used."
+    }, 
+    "disable_rollback": {
+      "type": "Optional[String]", 
+      "description": "If a stacks fails to form, rollback will remove the stack"
+    }, 
+    "role_arn": {
+      "type": "Optional[String]", 
+      "description": "The role that AWS CloudFormation assumes to create the stack. See the AWS CloudFormation Service Role docs U(http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-servicerole.html)"
+    }, 
+    "notification_arns": {
+      "type": "Optional[String]", 
+      "description": "The Simple Notification Service (SNS) topic ARNs to publish stack related events."
+    }, 
+    "security_token": {
+      "type": "Optional[String]", 
+      "description": "AWS STS security token. If not set then the value of the AWS_SECURITY_TOKEN or EC2_SECURITY_TOKEN environment variable is used."
+    }, 
+    "tags": {
+      "type": "Optional[String]", 
+      "description": "Dictionary of tags to associate with stack and its resources during stack creation. Can be updated later, updating tags removes previous entries."
+    }, 
+    "stack_name": {
+      "type": "String", 
+      "description": "name of the cloudformation stack"
+    }, 
+    "stack_policy": {
+      "type": "Optional[String]", 
+      "description": "the path of the cloudformation stack policy. A policy cannot be removed once placed, but it can be modified. (for instance, [allow all updates](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/protect-stack-resources.html#d0e9051)"
+    }, 
+    "region": {
+      "type": "Optional[String]", 
+      "description": "The AWS region to use. If not specified then the value of the AWS_REGION or EC2_REGION environment variable, if any, is used. See U(http://docs.aws.amazon.com/general/latest/gr/rande.html#ec2_region)"
+    }, 
+    "template_format": {
+      "type": "Optional[String]", 
+      "description": "(deprecated) For local templates, allows specification of json or yaml format. Templates are now passed raw to CloudFormation regardless of format. This parameter is ignored since Ansible 2.3."
+    }, 
+    "template_parameters": {
+      "type": "Optional[String]", 
+      "description": "a list of hashes of all the template variables for the stack"
+    }, 
+    "state": {
+      "type": "String", 
+      "description": "If state is \"present\", stack will be created.  If state is \"present\" and if stack exists and template has changed, it will be updated. If state is \"absent\", stack will be removed."
+    }, 
+    "template_url": {
+      "type": "Optional[String]", 
+      "description": "Location of file containing the template body. The URL must point to a template (max size 307,200 bytes) located in an S3 bucket in the same region as the stack. If 'state' is 'present' and the stack does not exist yet, either 'template' or 'template_url' must be specified (but not both). If 'state' is present, the stack does exist, and neither 'template' nor 'template_url' are specified, the previous template will be reused."
+    }, 
+    "changeset_name": {
+      "type": "Optional[String]", 
+      "description": "Name given to the changeset when creating a changeset, only used when create_changeset is true. By default a name prefixed with Ansible-STACKNAME is generated based on input parameters. See the AWS Change Sets docs U(http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-changesets.html)"
+    }, 
+    "template": {
+      "type": "Optional[String]", 
+      "description": "The local path of the cloudformation template. This must be the full path to the file, relative to the working directory. If using roles this may look like \"roles/cloudformation/files/cloudformation-example.json\". If 'state' is 'present' and the stack does not exist yet, either 'template' or 'template_url' must be specified (but not both). If 'state' is present, the stack does exist, and neither 'template' nor 'template_url' are specified, the previous template will be reused."
+    }, 
+    "ec2_url": {
+      "type": "Optional[String]", 
+      "description": "Url to use to connect to EC2 or your Eucalyptus cloud (by default the module will use EC2 endpoints). Ignored for modules where region is required. Must be specified for all other modules if region is not used. If not set then the value of the EC2_URL environment variable, if any, is used."
+    }, 
+    "validate_certs": {
+      "type": "Optional[String]", 
+      "description": "When set to \"no\", SSL certificates will not be validated for boto versions >= 2.6.0."
+    }, 
+    "create_changeset": {
+      "type": "Optional[String]", 
+      "description": "If stack already exists create a changeset instead of directly applying changes. See the AWS Change Sets docs U(http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-changesets.html). WARNING: if the stack does not exist, it will be created without changeset. If the state is absent, the stack will be deleted immediately with no changeset."
+    }
+  }
+}

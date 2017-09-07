@@ -1,0 +1,121 @@
+{
+  "description": "Creates or destroys Amazon ELB.", 
+  "parameters": {
+    "purge_subnets": {
+      "type": "Optional[String]", 
+      "description": "Purge existing subnet on ELB that are not found in subnets"
+    }, 
+    "purge_instance_ids": {
+      "type": "Optional[String]", 
+      "description": "Purge existing instance ids on ELB that are not found in instance_ids"
+    }, 
+    "ec2_url": {
+      "type": "Optional[String]", 
+      "description": "Url to use to connect to EC2 or your Eucalyptus cloud (by default the module will use EC2 endpoints). Ignored for modules where region is required. Must be specified for all other modules if region is not used. If not set then the value of the EC2_URL environment variable, if any, is used."
+    }, 
+    "aws_secret_key": {
+      "type": "Optional[String]", 
+      "description": "AWS secret key. If not set then the value of the AWS_SECRET_ACCESS_KEY, AWS_SECRET_KEY, or EC2_SECRET_KEY environment variable is used."
+    }, 
+    "connection_draining_timeout": {
+      "type": "Optional[String]", 
+      "description": "Wait a specified timeout allowing connections to drain before terminating an instance"
+    }, 
+    "access_logs": {
+      "type": "Optional[String]", 
+      "description": "An associative array of access logs configuration settings (see example)"
+    }, 
+    "state": {
+      "type": "String", 
+      "description": "Create or destroy the ELB"
+    }, 
+    "purge_listeners": {
+      "type": "Optional[String]", 
+      "description": "Purge existing listeners on ELB that are not found in listeners"
+    }, 
+    "scheme": {
+      "type": "Optional[String]", 
+      "description": "The scheme to use when creating the ELB. For a private VPC-visible ELB use 'internal'. If you choose to update your scheme with a different value the ELB will be destroyed and recreated. To update scheme you must use the option wait."
+    }, 
+    "profile": {
+      "type": "Optional[String]", 
+      "description": "Uses a boto profile. Only works with boto >= 2.24.0."
+    }, 
+    "subnets": {
+      "type": "Optional[String]", 
+      "description": "A list of VPC subnets to use when creating ELB. Zones should be empty if using this."
+    }, 
+    "health_check": {
+      "type": "Optional[String]", 
+      "description": "An associative array of health check configuration settings (see example)"
+    }, 
+    "tags": {
+      "type": "Optional[String]", 
+      "description": "An associative array of tags. To delete all tags, supply an empty dict."
+    }, 
+    "instance_ids": {
+      "type": "Optional[String]", 
+      "description": "List of instance ids to attach to this ELB"
+    }, 
+    "idle_timeout": {
+      "type": "Optional[String]", 
+      "description": "ELB connections from clients and to servers are timed out after this amount of time"
+    }, 
+    "wait_timeout": {
+      "type": "Optional[String]", 
+      "description": "Used in conjunction with wait. Number of seconds to wait for the elb to be terminated. A maximum of 600 seconds (10 minutes) is allowed."
+    }, 
+    "cross_az_load_balancing": {
+      "type": "Optional[String]", 
+      "description": "Distribute load across all configured Availability Zones"
+    }, 
+    "security_group_ids": {
+      "type": "Optional[String]", 
+      "description": "A list of security groups to apply to the elb"
+    }, 
+    "purge_zones": {
+      "type": "Optional[String]", 
+      "description": "Purge existing availability zones on ELB that are not found in zones"
+    }, 
+    "wait": {
+      "type": "Optional[String]", 
+      "description": "When specified, Ansible will check the status of the load balancer to ensure it has been successfully removed from AWS."
+    }, 
+    "zones": {
+      "type": "Optional[String]", 
+      "description": "List of availability zones to enable on this ELB"
+    }, 
+    "aws_access_key": {
+      "type": "Optional[String]", 
+      "description": "AWS access key. If not set then the value of the AWS_ACCESS_KEY_ID, AWS_ACCESS_KEY or EC2_ACCESS_KEY environment variable is used."
+    }, 
+    "name": {
+      "type": "String", 
+      "description": "The name of the ELB"
+    }, 
+    "security_token": {
+      "type": "Optional[String]", 
+      "description": "AWS STS security token. If not set then the value of the AWS_SECURITY_TOKEN or EC2_SECURITY_TOKEN environment variable is used."
+    }, 
+    "region": {
+      "type": "Optional[String]", 
+      "description": "The AWS region to use. If not specified then the value of the AWS_REGION or EC2_REGION environment variable, if any, is used. See U(http://docs.aws.amazon.com/general/latest/gr/rande.html#ec2_region)"
+    }, 
+    "listeners": {
+      "type": "Optional[String]", 
+      "description": "List of ports/protocols for this ELB to listen on (see example)"
+    }, 
+    "security_group_names": {
+      "type": "Optional[String]", 
+      "description": "A list of security group names to apply to the elb"
+    }, 
+    "validate_certs": {
+      "type": "Optional[String]", 
+      "description": "When set to \"no\", SSL certificates will not be validated for boto versions >= 2.6.0."
+    }, 
+    "stickiness": {
+      "type": "Optional[String]", 
+      "description": "An associative array of stickiness policy settings. Policy will be applied to all listeners ( see example )"
+    }
+  }
+}

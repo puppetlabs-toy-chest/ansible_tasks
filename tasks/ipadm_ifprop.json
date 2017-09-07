@@ -1,0 +1,29 @@
+{
+  "description": "Manage IP interface properties on Solaris/illumos systems.", 
+  "parameters": {
+    "protocol": {
+      "type": "String", 
+      "description": "Specifies the procotol for which we want to manage properties."
+    }, 
+    "value": {
+      "type": "Optional[String]", 
+      "description": "Specifies the value we want to set for the property."
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "Set or reset the property value."
+    }, 
+    "interface": {
+      "type": "String", 
+      "description": "Specifies the IP interface we want to manage."
+    }, 
+    "temporary": {
+      "type": "Optional[String]", 
+      "description": "Specifies that the property value is temporary. Temporary property values do not persist across reboots."
+    }, 
+    "property": {
+      "type": "String", 
+      "description": "Specifies the name of the property we want to manage."
+    }
+  }
+}

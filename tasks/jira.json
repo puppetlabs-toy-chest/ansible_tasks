@@ -1,0 +1,73 @@
+{
+  "description": "create and modify issues in a JIRA instance", 
+  "parameters": {
+    "username": {
+      "type": "String", 
+      "description": "The username to log-in with."
+    }, 
+    "comment": {
+      "type": "Optional[String]", 
+      "description": "The comment text to add."
+    }, 
+    "description": {
+      "type": "Optional[String]", 
+      "description": "The issue description, where appropriate."
+    }, 
+    "fields": {
+      "type": "Optional[String]", 
+      "description": "This is a free-form data structure that can contain arbitrary data. This is passed directly to the JIRA REST API (possibly after merging with other required data, as when passed to create). See examples for more information, and the JIRA REST API for the structure required for various fields."
+    }, 
+    "outwardissue": {
+      "type": "Optional[String]", 
+      "description": "Set issue to which link will be created."
+    }, 
+    "uri": {
+      "type": "String", 
+      "description": "Base URI for the JIRA instance."
+    }, 
+    "summary": {
+      "type": "Optional[String]", 
+      "description": "The issue summary, where appropriate."
+    }, 
+    "project": {
+      "type": "Optional[String]", 
+      "description": "The project for this operation. Required for issue creation."
+    }, 
+    "assignee": {
+      "type": "Optional[String]", 
+      "description": "Sets the assignee on create or transition operations. Note not all transitions will allow this."
+    }, 
+    "inwardissue": {
+      "type": "Optional[String]", 
+      "description": "Set issue from which link will be created."
+    }, 
+    "status": {
+      "type": "Optional[String]", 
+      "description": "The desired status; only relevant for the transition operation."
+    }, 
+    "timeout": {
+      "type": "Optional[String]", 
+      "description": "Set timeout, in seconds, on requests to JIRA API."
+    }, 
+    "issuetype": {
+      "type": "Optional[String]", 
+      "description": "The issue type, for issue creation."
+    }, 
+    "linktype": {
+      "type": "Optional[String]", 
+      "description": "Set type of link, when action 'link' selected."
+    }, 
+    "operation": {
+      "type": "String", 
+      "description": "The operation to perform."
+    }, 
+    "password": {
+      "type": "String", 
+      "description": "The password to log-in with."
+    }, 
+    "issue": {
+      "type": "Optional[String]", 
+      "description": "An existing issue key to operate on."
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "description": "Manage the state of a program or group of programs running via supervisord", 
+  "parameters": {
+    "username": {
+      "type": "Optional[String]", 
+      "description": "username to use for authentication"
+    }, 
+    "supervisorctl_path": {
+      "type": "Optional[String]", 
+      "description": "path to supervisorctl executable"
+    }, 
+    "name": {
+      "type": "String", 
+      "description": "The name of the supervisord program or group to manage. The name will be taken as group name when it ends with a colon I(:) Group support is only available in Ansible version 1.6 or later."
+    }, 
+    "server_url": {
+      "type": "Optional[String]", 
+      "description": "URL on which supervisord server is listening"
+    }, 
+    "state": {
+      "type": "String", 
+      "description": "The desired state of program/group."
+    }, 
+    "password": {
+      "type": "Optional[String]", 
+      "description": "password to use for authentication"
+    }, 
+    "config": {
+      "type": "Optional[String]", 
+      "description": "The supervisor configuration file path"
+    }
+  }
+}

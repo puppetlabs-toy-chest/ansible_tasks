@@ -1,0 +1,29 @@
+{
+  "description": "Manage AOS ASN Pool", 
+  "parameters": {
+    "content": {
+      "type": "Optional[String]", 
+      "description": "Datastructure of the ASN Pool to manage. The data can be in YAML / JSON or directly a variable. It's the same datastructure that is returned on success in I(value)."
+    }, 
+    "name": {
+      "type": "Optional[String]", 
+      "description": "Name of the ASN Pool to manage. Only one of I(name), I(id) or I(content) can be set."
+    }, 
+    "ranges": {
+      "type": "Optional[String]", 
+      "description": "List of ASNs ranges to add to the ASN Pool. Each range must have 2 values."
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "Indicate what is the expected state of the ASN Pool (present or not)."
+    }, 
+    "session": {
+      "type": "String", 
+      "description": "An existing AOS session as obtained by M(aos_login) module."
+    }, 
+    "id": {
+      "type": "Optional[String]", 
+      "description": "AOS Id of the ASN Pool to manage. Only one of I(name), I(id) or I(content) can be set."
+    }
+  }
+}

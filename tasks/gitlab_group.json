@@ -1,0 +1,37 @@
+{
+  "description": "Creates/updates/deletes Gitlab Groups", 
+  "parameters": {
+    "name": {
+      "type": "String", 
+      "description": "Name of the group you want to create."
+    }, 
+    "login_user": {
+      "type": "Optional[String]", 
+      "description": "Gitlab user name."
+    }, 
+    "login_token": {
+      "type": "Optional[String]", 
+      "description": "Gitlab token for logging in."
+    }, 
+    "server_url": {
+      "type": "String", 
+      "description": "Url of Gitlab server, with protocol (http or https)."
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "create or delete group. Possible values are present and absent."
+    }, 
+    "login_password": {
+      "type": "Optional[String]", 
+      "description": "Gitlab password for login_user"
+    }, 
+    "path": {
+      "type": "Optional[String]", 
+      "description": "The path of the group you want to create, this will be server_url/group_path If not supplied, the group_name will be used."
+    }, 
+    "validate_certs": {
+      "type": "Optional[String]", 
+      "description": "When using https if SSL certificate needs to be verified."
+    }
+  }
+}

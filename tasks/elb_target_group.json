@@ -1,0 +1,117 @@
+{
+  "description": "Manage a target group for an Application load balancer", 
+  "parameters": {
+    "protocol": {
+      "type": "Optional[String]", 
+      "description": "The protocol to use for routing traffic to the targets. Required when I(state) is C(present)."
+    }, 
+    "purge_tags": {
+      "type": "Optional[String]", 
+      "description": "If yes, existing tags will be purged from the resource to match exactly what is defined by I(tags) parameter. If the tag parameter is not set then tags will not be modified."
+    }, 
+    "health_check_port": {
+      "type": "Optional[String]", 
+      "description": "The port the load balancer uses when performing health checks on targets."
+    }, 
+    "ec2_url": {
+      "type": "Optional[String]", 
+      "description": "Url to use to connect to EC2 or your Eucalyptus cloud (by default the module will use EC2 endpoints). Ignored for modules where region is required. Must be specified for all other modules if region is not used. If not set then the value of the EC2_URL environment variable, if any, is used."
+    }, 
+    "modify_targets": {
+      "type": "Optional[String]", 
+      "description": "Whether or not to alter existing targets in the group to match what is passed with the module"
+    }, 
+    "port": {
+      "type": "Optional[String]", 
+      "description": "The port on which the targets receive traffic. This port is used unless you specify a port override when registering the target. Required if I(state) is C(present)."
+    }, 
+    "health_check_path": {
+      "type": "Optional[String]", 
+      "description": "The ping path that is the destination on the targets for health checks. The path must be defined in order to set a health check."
+    }, 
+    "health_check_protocol": {
+      "type": "Optional[String]", 
+      "description": "The protocol the load balancer uses when performing health checks on targets."
+    }, 
+    "aws_secret_key": {
+      "type": "Optional[String]", 
+      "description": "AWS secret key. If not set then the value of the AWS_SECRET_ACCESS_KEY, AWS_SECRET_KEY, or EC2_SECRET_KEY environment variable is used."
+    }, 
+    "targets": {
+      "type": "Optional[String]", 
+      "description": "A list of targets to assign to the target group. This parameter defaults to an empty list. Unless you set the 'modify_targets' parameter then all existing targets will be removed from the group. The list should be an Id and a Port parameter. See the Examples for detail."
+    }, 
+    "state": {
+      "type": "String", 
+      "description": "Create or destroy the target group."
+    }, 
+    "stickiness_enabled": {
+      "type": "Optional[String]", 
+      "description": "Indicates whether sticky sessions are enabled."
+    }, 
+    "deregistration_delay_timeout": {
+      "type": "Optional[String]", 
+      "description": "The amount time for Elastic Load Balancing to wait before changing the state of a deregistering target from draining to unused. The range is 0-3600 seconds."
+    }, 
+    "profile": {
+      "type": "Optional[String]", 
+      "description": "Uses a boto profile. Only works with boto >= 2.24.0."
+    }, 
+    "tags": {
+      "type": "Optional[String]", 
+      "description": "A dictionary of one or more tags to assign to the target group."
+    }, 
+    "successful_response_codes": {
+      "type": "Optional[String]", 
+      "description": "The HTTP codes to use when checking for a successful response from a target. You can specify multiple values (for example, \"200,202\") or a range of values (for example, \"200-299\").\n"
+    }, 
+    "stickiness_type": {
+      "type": "Optional[String]", 
+      "description": "The type of sticky sessions. The possible value is lb_cookie."
+    }, 
+    "healthy_threshold_count": {
+      "type": "Optional[String]", 
+      "description": "The number of consecutive health checks successes required before considering an unhealthy target healthy."
+    }, 
+    "unhealthy_threshold_count": {
+      "type": "Optional[String]", 
+      "description": "The number of consecutive health check failures required before considering a target unhealthy."
+    }, 
+    "aws_access_key": {
+      "type": "Optional[String]", 
+      "description": "AWS access key. If not set then the value of the AWS_ACCESS_KEY_ID, AWS_ACCESS_KEY or EC2_ACCESS_KEY environment variable is used."
+    }, 
+    "health_check_interval": {
+      "type": "Optional[String]", 
+      "description": "The approximate amount of time, in seconds, between health checks of an individual target."
+    }, 
+    "name": {
+      "type": "String", 
+      "description": "The name of the target group."
+    }, 
+    "security_token": {
+      "type": "Optional[String]", 
+      "description": "AWS STS security token. If not set then the value of the AWS_SECURITY_TOKEN or EC2_SECURITY_TOKEN environment variable is used."
+    }, 
+    "region": {
+      "type": "Optional[String]", 
+      "description": "The AWS region to use. If not specified then the value of the AWS_REGION or EC2_REGION environment variable, if any, is used. See U(http://docs.aws.amazon.com/general/latest/gr/rande.html#ec2_region)"
+    }, 
+    "stickiness_lb_cookie_duration": {
+      "type": "Optional[String]", 
+      "description": "The time period, in seconds, during which requests from a client should be routed to the same target. After this time period expires, the load balancer-generated cookie is considered stale. The range is 1 second to 1 week (604800 seconds)."
+    }, 
+    "vpc_id": {
+      "type": "Optional[String]", 
+      "description": "The identifier of the virtual private cloud (VPC). Required when I(state) is C(present)."
+    }, 
+    "validate_certs": {
+      "type": "Optional[String]", 
+      "description": "When set to \"no\", SSL certificates will not be validated for boto versions >= 2.6.0."
+    }, 
+    "health_check_timeout": {
+      "type": "Optional[String]", 
+      "description": "The amount of time, in seconds, during which no response from a target means a failed health check."
+    }
+  }
+}

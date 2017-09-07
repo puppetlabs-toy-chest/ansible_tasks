@@ -1,0 +1,25 @@
+{
+  "description": "Manages SNMP traps configuration on HUAWEI CloudEngine switches.", 
+  "parameters": {
+    "trap_name": {
+      "type": "Optional[String]", 
+      "description": "Alarm trap name."
+    }, 
+    "interface_type": {
+      "type": "Optional[String]", 
+      "description": "Interface type."
+    }, 
+    "feature_name": {
+      "type": "Optional[String]", 
+      "description": "Alarm feature name."
+    }, 
+    "port_number": {
+      "type": "Optional[String]", 
+      "description": "Source port number."
+    }, 
+    "interface_number": {
+      "type": "Optional[String]", 
+      "description": "Interface number."
+    }
+  }
+}

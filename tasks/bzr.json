@@ -1,0 +1,25 @@
+{
+  "description": "Deploy software (or files) from bzr branches", 
+  "parameters": {
+    "dest": {
+      "type": "String", 
+      "description": "Absolute path of where the branch should be cloned to."
+    }, 
+    "executable": {
+      "type": "Optional[String]", 
+      "description": "Path to bzr executable to use. If not supplied, the normal mechanism for resolving binary paths will be used."
+    }, 
+    "version": {
+      "type": "Optional[String]", 
+      "description": "What version of the branch to clone.  This can be the bzr revno or revid."
+    }, 
+    "force": {
+      "type": "Optional[String]", 
+      "description": "If C(yes), any modified files in the working tree will be discarded.  Before 1.9 the default value was \"yes\"."
+    }, 
+    "name": {
+      "type": "String", 
+      "description": "SSH or HTTP protocol address of the parent branch."
+    }
+  }
+}

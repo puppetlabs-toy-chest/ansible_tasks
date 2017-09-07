@@ -1,0 +1,69 @@
+{
+  "description": "Manage Azure storage accounts.", 
+  "parameters": {
+    "profile": {
+      "type": "Optional[String]", 
+      "description": "Security profile found in ~/.azure/credentials file."
+    }, 
+    "kind": {
+      "type": "Optional[String]", 
+      "description": "The 'kind' of storage."
+    }, 
+    "account_type": {
+      "type": "Optional[String]", 
+      "description": "Type of storage account. Required when creating a storage account. NOTE: Standard_ZRS and Premium_LRS accounts cannot be changed to other account types, and other account types cannot be changed to Standard_ZRS or Premium_LRS."
+    }, 
+    "name": {
+      "type": "Optional[String]", 
+      "description": "Name of the storage account to update or create."
+    }, 
+    "resource_group": {
+      "type": "String", 
+      "description": "Name of the resource group to use."
+    }, 
+    "tags": {
+      "type": "Optional[String]", 
+      "description": "Dictionary of string:string pairs to assign as metadata to the object. Metadata tags on the object will be updated with any provided values. To remove tags set append_tags option to false.\n"
+    }, 
+    "append_tags": {
+      "type": "Optional[String]", 
+      "description": "Use to control if tags field is canonical or just appends to existing tags. When canonical, any tags not found in the tags parameter will be removed from the object's metadata."
+    }, 
+    "ad_user": {
+      "type": "Optional[String]", 
+      "description": "Active Directory username. Use when authenticating with an Active Directory user rather than service principal."
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "Assert the state of the storage account. Use 'present' to create or update a storage account and 'absent' to delete an account."
+    }, 
+    "secret": {
+      "type": "Optional[String]", 
+      "description": "Azure client secret. Use when authenticating with a Service Principal."
+    }, 
+    "location": {
+      "type": "Optional[String]", 
+      "description": "Valid azure location. Defaults to location of the resource group."
+    }, 
+    "client_id": {
+      "type": "Optional[String]", 
+      "description": "Azure client ID. Use when authenticating with a Service Principal."
+    }, 
+    "subscription_id": {
+      "type": "Optional[String]", 
+      "description": "Your Azure subscription Id."
+    }, 
+    "password": {
+      "type": "Optional[String]", 
+      "description": "Active Directory user password. Use when authenticating with an Active Directory user rather than service principal."
+    }, 
+    "tenant": {
+      "type": "Optional[String]", 
+      "description": "Azure tenant ID. Use when authenticating with a Service Principal."
+    }, 
+    "custom_domain": {
+      "type": "Optional[String]", 
+      "description": "User domain assigned to the storage account. Must be a dictionary with 'name' and 'use_sub_domain' keys where 'name' is the CNAME source. Only one custom domain is supported per storage account at this time. To clear the existing custom domain, use an empty string for the custom domain name property. Can be added to an existing storage account. Will be ignored during storage account creation."
+    }
+  }
+}

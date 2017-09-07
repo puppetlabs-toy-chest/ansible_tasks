@@ -1,0 +1,37 @@
+{
+  "description": "Manage Kibana plugins", 
+  "parameters": {
+    "force": {
+      "type": "Optional[String]", 
+      "description": "Delete and re-install the plugin. Can be useful for plugins update"
+    }, 
+    "name": {
+      "type": "String", 
+      "description": "Name of the plugin to install"
+    }, 
+    "url": {
+      "type": "Optional[String]", 
+      "description": "Set exact URL to download the plugin from. For local file, prefix its absolute path with file://"
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "Desired state of a plugin."
+    }, 
+    "version": {
+      "type": "Optional[String]", 
+      "description": "Version of the plugin to be installed. If plugin exists with previous version, it will NOT be updated if C(force) is not set to yes"
+    }, 
+    "timeout": {
+      "type": "Optional[String]", 
+      "description": "Timeout setting: 30s, 1m, 1h..."
+    }, 
+    "plugin_dir": {
+      "type": "Optional[String]", 
+      "description": "Your configured plugin directory specified in Kibana"
+    }, 
+    "plugin_bin": {
+      "type": "Optional[String]", 
+      "description": "Location of the plugin binary"
+    }
+  }
+}

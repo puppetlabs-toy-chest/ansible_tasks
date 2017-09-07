@@ -1,0 +1,29 @@
+{
+  "description": "Manages information center debug configuration on HUAWEI CloudEngine switches.", 
+  "parameters": {
+    "debug_enable": {
+      "type": "Optional[String]", 
+      "description": "Whether a device is enabled to output debugging information."
+    }, 
+    "debug_level": {
+      "type": "Optional[String]", 
+      "description": "Debug level permitted to output."
+    }, 
+    "debug_time_stamp": {
+      "type": "Optional[String]", 
+      "description": "Timestamp type of debugging information."
+    }, 
+    "channel_id": {
+      "type": "Optional[String]", 
+      "description": "Number of a channel. The value is an integer ranging from 0 to 9. The default value is 0."
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "Specify desired state of the resource."
+    }, 
+    "module_name": {
+      "type": "Optional[String]", 
+      "description": "Module name of the rule. The value is a string of 1 to 31 case-insensitive characters. The default value is default. Please use lower-case letter, such as [aaa, acl, arp, bfd]."
+    }
+  }
+}

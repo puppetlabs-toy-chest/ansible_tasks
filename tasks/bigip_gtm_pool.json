@@ -1,0 +1,53 @@
+{
+  "description": "Manages F5 BIG-IP GTM pools.", 
+  "parameters": {
+    "alternate_lb_method": {
+      "type": "Optional[String]", 
+      "description": "The load balancing mode that the system tries if the C(preferred_lb_method) is unsuccessful in picking a pool."
+    }, 
+    "name": {
+      "type": "String", 
+      "description": "Name of the GTM pool."
+    }, 
+    "validate_certs": {
+      "type": "Optional[String]", 
+      "description": "If C(no), SSL certificates will not be validated. This should only be used on personally controlled sites using self-signed certificates. This option can be omitted if the environment variable C(F5_VALIDATE_CERTS) is set."
+    }, 
+    "fallback_ip": {
+      "type": "Optional[String]", 
+      "description": "Specifies the IPv4, or IPv6 address of the server to which the system directs requests when it cannot use one of its pools to do so. Note that the system uses the fallback IP only if you select the C(fallback_ip) load balancing method."
+    }, 
+    "server": {
+      "type": "String", 
+      "description": "The BIG-IP host. This option can be omitted if the environment variable C(F5_SERVER) is set."
+    }, 
+    "state": {
+      "type": "String", 
+      "description": "Pool member state. When C(present), ensures that the pool is created and enabled. When C(absent), ensures that the pool is removed from the system. When C(enabled) or C(disabled), ensures that the pool is enabled or disabled (respectively) on the remote device."
+    }, 
+    "fallback_lb_method": {
+      "type": "Optional[String]", 
+      "description": "The load balancing mode that the system tries if both the C(preferred_lb_method) and C(alternate_lb_method)s are unsuccessful in picking a pool."
+    }, 
+    "user": {
+      "type": "String", 
+      "description": "The username to connect to the BIG-IP with. This user must have administrative privileges on the device. This option can be omitted if the environment variable C(F5_USER) is set."
+    }, 
+    "server_port": {
+      "type": "Optional[String]", 
+      "description": "The BIG-IP server port. This option can be omitted if the environment variable C(F5_SERVER_PORT) is set."
+    }, 
+    "preferred_lb_method": {
+      "type": "Optional[String]", 
+      "description": "The load balancing mode that the system tries first."
+    }, 
+    "password": {
+      "type": "String", 
+      "description": "The password for the user account used to connect to the BIG-IP. This option can be omitted if the environment variable C(F5_PASSWORD) is set."
+    }, 
+    "type": {
+      "type": "Optional[String]", 
+      "description": "The type of GTM pool that you want to create. On BIG-IP releases prior to version 12, this parameter is not required. On later versions of BIG-IP, this is a required parameter."
+    }
+  }
+}

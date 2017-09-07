@@ -1,0 +1,17 @@
+{
+  "description": "Pause and start Uptime Robot monitoring", 
+  "parameters": {
+    "monitorid": {
+      "type": "String", 
+      "description": "ID of the monitor to check."
+    }, 
+    "state": {
+      "type": "String", 
+      "description": "Define whether or not the monitor should be running or paused."
+    }, 
+    "apikey": {
+      "type": "String", 
+      "description": "Uptime Robot API key."
+    }
+  }
+}

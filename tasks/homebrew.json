@@ -1,0 +1,29 @@
+{
+  "description": "Package manager for Homebrew", 
+  "parameters": {
+    "install_options": {
+      "type": "Optional[String]", 
+      "description": "options flags to install a package"
+    }, 
+    "name": {
+      "type": "Optional[String]", 
+      "description": "name of package to install/remove"
+    }, 
+    "update_homebrew": {
+      "type": "Optional[String]", 
+      "description": "update homebrew itself first"
+    }, 
+    "upgrade_all": {
+      "type": "Optional[String]", 
+      "description": "upgrade all homebrew packages"
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "state of the package"
+    }, 
+    "path": {
+      "type": "Optional[String]", 
+      "description": "':' separated list of paths to search for 'brew' executable. Since A package (I(formula) in homebrew parlance) location is prefixed relative to the actual path of I(brew) command, providing an alternative I(brew) path enables managing different set of packages in an alternative location in the system.\n"
+    }
+  }
+}

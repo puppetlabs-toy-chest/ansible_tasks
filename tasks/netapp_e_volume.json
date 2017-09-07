@@ -1,0 +1,69 @@
+{
+  "description": "Manage storage volumes (standard and thin)", 
+  "parameters": {
+    "segment_size_kb": {
+      "type": "Optional[String]", 
+      "description": "The segment size of the new volume"
+    }, 
+    "ssid": {
+      "type": "String", 
+      "description": "The ID of the array to manage (as configured on the web services proxy)."
+    }, 
+    "ssd_cache_enabled": {
+      "type": "Optional[String]", 
+      "description": "Whether an existing SSD cache should be enabled on the volume (fails if no SSD cache defined)"
+    }, 
+    "api_url": {
+      "type": "String", 
+      "description": "The url to the SANtricity WebServices Proxy or embedded REST API."
+    }, 
+    "data_assurance_enabled": {
+      "type": "Optional[String]", 
+      "description": "If data assurance should be enabled for the volume"
+    }, 
+    "thin_provision": {
+      "type": "Optional[String]", 
+      "description": "Whether the volume should be thin provisioned.  Thin volumes can only be created on disk pools (raidDiskPool)."
+    }, 
+    "api_password": {
+      "type": "String", 
+      "description": "The password to authenticate with the SANtricity WebServices Proxy or embedded REST API."
+    }, 
+    "size_unit": {
+      "type": "Optional[String]", 
+      "description": "The unit used to interpret the size parameter"
+    }, 
+    "state": {
+      "type": "String", 
+      "description": "Whether the specified volume should exist or not."
+    }, 
+    "storage_pool_name": {
+      "type": "String", 
+      "description": "Required only when requested state is 'present'.  The name of the storage pool the volume should exist on."
+    }, 
+    "thin_volume_max_repo_size": {
+      "type": "Optional[String]", 
+      "description": "Maximum size that the thin volume repository volume will automatically expand to"
+    }, 
+    "api_username": {
+      "type": "String", 
+      "description": "The username to authenticate with the SANtricity WebServices Proxy or embedded REST API."
+    }, 
+    "thin_volume_repo_size": {
+      "type": "String", 
+      "description": "Initial size of the thin volume repository volume (in size_unit)"
+    }, 
+    "size": {
+      "type": "String", 
+      "description": "Required only when state = 'present'.  The size of the volume in (size_unit)."
+    }, 
+    "validate_certs": {
+      "type": "Optional[String]", 
+      "description": "Should https certificates be validated?"
+    }, 
+    "name": {
+      "type": "String", 
+      "description": "The name of the volume to manage"
+    }
+  }
+}

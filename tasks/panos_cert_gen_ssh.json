@@ -1,0 +1,33 @@
+{
+  "description": "generates a self-signed certificate using SSH protocol with SSH key", 
+  "parameters": {
+    "cert_friendly_name": {
+      "type": "String", 
+      "description": "Human friendly certificate name (not CN but just a friendly name)."
+    }, 
+    "key_filename": {
+      "type": "String", 
+      "description": "Location of the filename that is used for the auth. Either I(key_filename) or I(password) is required."
+    }, 
+    "rsa_nbits": {
+      "type": "Optional[String]", 
+      "description": "Number of bits used by the RSA algorithm for the certificate generation."
+    }, 
+    "cert_cn": {
+      "type": "String", 
+      "description": "Certificate CN (common name) embedded in the certificate signature."
+    }, 
+    "password": {
+      "type": "String", 
+      "description": "Password credentials to use for auth. Either I(key_filename) or I(password) is required."
+    }, 
+    "ip_address": {
+      "type": "String", 
+      "description": "IP address (or hostname) of PAN-OS device being configured."
+    }, 
+    "signed_by": {
+      "type": "String", 
+      "description": "Undersigning authority (CA) that MUST already be presents on the device."
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "description": "Reboot a HUAWEI CloudEngine switches.", 
+  "parameters": {
+    "save_config": {
+      "type": "Optional[Boolean]", 
+      "description": "Flag indicating whether to save the configuration."
+    }, 
+    "confirm": {
+      "type": "Optional[Boolean]", 
+      "description": "Safeguard boolean. Set to true if you're sure you want to reboot."
+    }
+  }
+}

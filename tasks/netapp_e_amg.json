@@ -1,0 +1,61 @@
+{
+  "description": "Create, Remove, and Update Asynchronous Mirror Groups", 
+  "parameters": {
+    "ssid": {
+      "type": "String", 
+      "description": "The ID of the array to manage. This value must be unique for each array."
+    }, 
+    "syncIntervalMinutes": {
+      "type": "Optional[String]", 
+      "description": "The synchronization interval in minutes"
+    }, 
+    "recoveryWarnThresholdMinutes": {
+      "type": "Optional[String]", 
+      "description": "Recovery point warning threshold (minutes). The user will be warned when the age of the last good failures point exceeds this value"
+    }, 
+    "secondaryArrayId": {
+      "type": "String", 
+      "description": "The ID of the secondary array to be used in mirroing process"
+    }, 
+    "api_password": {
+      "type": "String", 
+      "description": "The password to authenticate with the SANtricity WebServices Proxy or embedded REST API."
+    }, 
+    "repoUtilizationWarnThreshold": {
+      "type": "Optional[String]", 
+      "description": "Recovery point warning threshold"
+    }, 
+    "state": {
+      "type": "String", 
+      "description": "A C(state) of present will either create or update the async mirror group. A C(state) of absent will remove the async mirror group."
+    }, 
+    "interfaceType": {
+      "type": "Optional[String]", 
+      "description": "The intended protocol to use if both Fibre and iSCSI are available."
+    }, 
+    "manualSync": {
+      "type": "Optional[String]", 
+      "description": "Setting this to true will cause other synchronization values to be ignored"
+    }, 
+    "api_username": {
+      "type": "String", 
+      "description": "The username to authenticate with the SANtricity WebServices Proxy or embedded REST API."
+    }, 
+    "api_url": {
+      "type": "String", 
+      "description": "The url to the SANtricity WebServices Proxy or embedded REST API."
+    }, 
+    "syncWarnThresholdMinutes": {
+      "type": "Optional[String]", 
+      "description": "The threshold (in minutes) for notifying the user that periodic synchronization has taken too long to complete."
+    }, 
+    "validate_certs": {
+      "type": "Optional[String]", 
+      "description": "Should https certificates be validated?"
+    }, 
+    "name": {
+      "type": "String", 
+      "description": "The name of the async array you wish to target, or create. If C(state) is present and the name isn't found, it will attempt to create."
+    }
+  }
+}

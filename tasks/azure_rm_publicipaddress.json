@@ -1,0 +1,65 @@
+{
+  "description": "Manage Azure Public IP Addresses.", 
+  "parameters": {
+    "profile": {
+      "type": "Optional[String]", 
+      "description": "Security profile found in ~/.azure/credentials file."
+    }, 
+    "name": {
+      "type": "String", 
+      "description": "Name of the Public IP."
+    }, 
+    "resource_group": {
+      "type": "String", 
+      "description": "Name of resource group with which the Public IP is associated."
+    }, 
+    "tags": {
+      "type": "Optional[String]", 
+      "description": "Dictionary of string:string pairs to assign as metadata to the object. Metadata tags on the object will be updated with any provided values. To remove tags set append_tags option to false.\n"
+    }, 
+    "append_tags": {
+      "type": "Optional[String]", 
+      "description": "Use to control if tags field is canonical or just appends to existing tags. When canonical, any tags not found in the tags parameter will be removed from the object's metadata."
+    }, 
+    "ad_user": {
+      "type": "Optional[String]", 
+      "description": "Active Directory username. Use when authenticating with an Active Directory user rather than service principal."
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "Assert the state of the Public IP. Use 'present' to create or update a and 'absent' to delete."
+    }, 
+    "secret": {
+      "type": "Optional[String]", 
+      "description": "Azure client secret. Use when authenticating with a Service Principal."
+    }, 
+    "domain_name_label": {
+      "type": "Optional[String]", 
+      "description": "The customizable portion of the FQDN assigned to public IP address. This is an explicit setting. If no value is provided, any existing value will be removed on an existing public IP."
+    }, 
+    "location": {
+      "type": "Optional[String]", 
+      "description": "Valid azure location. Defaults to location of the resource group."
+    }, 
+    "client_id": {
+      "type": "Optional[String]", 
+      "description": "Azure client ID. Use when authenticating with a Service Principal."
+    }, 
+    "allocation_method": {
+      "type": "Optional[String]", 
+      "description": "Control whether the assigned Public IP remains permanently assigned to the object. If not set to 'Static', the IP address my changed anytime an associated virtual machine is power cycled."
+    }, 
+    "subscription_id": {
+      "type": "Optional[String]", 
+      "description": "Your Azure subscription Id."
+    }, 
+    "password": {
+      "type": "Optional[String]", 
+      "description": "Active Directory user password. Use when authenticating with an Active Directory user rather than service principal."
+    }, 
+    "tenant": {
+      "type": "Optional[String]", 
+      "description": "Azure tenant ID. Use when authenticating with a Service Principal."
+    }
+  }
+}

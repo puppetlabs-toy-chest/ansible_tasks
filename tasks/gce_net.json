@@ -1,0 +1,69 @@
+{
+  "description": "create/destroy GCE networks and firewall rules", 
+  "parameters": {
+    "src_tags": {
+      "type": "Optional[String]", 
+      "description": "the source instance tags for creating a firewall rule"
+    }, 
+    "subnet_region": {
+      "type": "Optional[String]", 
+      "description": "region of subnet to create"
+    }, 
+    "name": {
+      "type": "Optional[String]", 
+      "description": "name of the network"
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "desired state of the network or firewall"
+    }, 
+    "src_range": {
+      "type": "Optional[String]", 
+      "description": "the source IPv4 address range in CIDR notation"
+    }, 
+    "credentials_file": {
+      "type": "Optional[String]", 
+      "description": "path to the JSON file associated with the service account email"
+    }, 
+    "fwname": {
+      "type": "Optional[String]", 
+      "description": "name of the firewall rule"
+    }, 
+    "pem_file": {
+      "type": "Optional[String]", 
+      "description": "path to the pem file associated with the service account email This option is deprecated. Use 'credentials_file'."
+    }, 
+    "service_account_email": {
+      "type": "Optional[String]", 
+      "description": "service account email"
+    }, 
+    "target_tags": {
+      "type": "Optional[String]", 
+      "description": "the target instance tags for creating a firewall rule"
+    }, 
+    "subnet_name": {
+      "type": "Optional[String]", 
+      "description": "name of subnet to create"
+    }, 
+    "mode": {
+      "type": "Optional[String]", 
+      "description": "network mode for Google Cloud \"legacy\" indicates a network with an IP address range \"auto\" automatically generates subnetworks in different regions \"custom\" uses networks to group subnets of user specified IP address ranges https://cloud.google.com/compute/docs/networking#network_types"
+    }, 
+    "allowed": {
+      "type": "Optional[String]", 
+      "description": "the protocol:ports to allow ('tcp:80' or 'tcp:80,443' or 'tcp:80-800;udp:1-25') this parameter is mandatory when creating or updating a firewall rule"
+    }, 
+    "ipv4_range": {
+      "type": "Optional[String]", 
+      "description": "the IPv4 address range in CIDR notation for the network this parameter is not mandatory when you specified existing network in name parameter, but when you create new network, this parameter is mandatory"
+    }, 
+    "project_id": {
+      "type": "Optional[String]", 
+      "description": "your GCE project ID"
+    }, 
+    "subnet_desc": {
+      "type": "Optional[String]", 
+      "description": "description of subnet to create"
+    }
+  }
+}

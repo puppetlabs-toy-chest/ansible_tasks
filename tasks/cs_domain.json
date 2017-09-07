@@ -1,0 +1,49 @@
+{
+  "description": "Manages domains on Apache CloudStack based clouds.", 
+  "parameters": {
+    "api_key": {
+      "type": "Optional[String]", 
+      "description": "API key of the CloudStack API."
+    }, 
+    "poll_async": {
+      "type": "Optional[String]", 
+      "description": "Poll async jobs until job has finished."
+    }, 
+    "api_url": {
+      "type": "Optional[String]", 
+      "description": "URL of the CloudStack API e.g. https://cloud.example.com/client/api."
+    }, 
+    "api_http_method": {
+      "type": "Optional[String]", 
+      "description": "HTTP method used."
+    }, 
+    "api_secret": {
+      "type": "Optional[String]", 
+      "description": "Secret key of the CloudStack API."
+    }, 
+    "api_timeout": {
+      "type": "Optional[String]", 
+      "description": "HTTP timeout."
+    }, 
+    "api_region": {
+      "type": "Optional[String]", 
+      "description": "Name of the ini section in the C(cloustack.ini) file."
+    }, 
+    "clean_up": {
+      "type": "Optional[String]", 
+      "description": "Clean up all domain resources like child domains and accounts. Considered on C(state=absent)."
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "State of the domain."
+    }, 
+    "path": {
+      "type": "String", 
+      "description": "Path of the domain. Prefix C(ROOT/) or C(/ROOT/) in path is optional."
+    }, 
+    "network_domain": {
+      "type": "Optional[String]", 
+      "description": "Network domain for networks in the domain."
+    }
+  }
+}

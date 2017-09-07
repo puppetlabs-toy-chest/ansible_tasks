@@ -1,0 +1,57 @@
+{
+  "description": "Manages DNS records on Exoscale DNS.", 
+  "parameters": {
+    "domain": {
+      "type": "String", 
+      "description": "Domain the record is related to."
+    }, 
+    "multiple": {
+      "type": "Optional[String]", 
+      "description": "Whether there are more than one records with similar C(name). Only allowed with C(record_type=A). C(content) will not be updated as it is used as key to find the record."
+    }, 
+    "name": {
+      "type": "Optional[String]", 
+      "description": "Name of the record."
+    }, 
+    "prio": {
+      "type": "Optional[String]", 
+      "description": "Priority of the record."
+    }, 
+    "api_secret": {
+      "type": "Optional[String]", 
+      "description": "Secret key of the Exoscale DNS API."
+    }, 
+    "api_timeout": {
+      "type": "Optional[String]", 
+      "description": "HTTP timeout to Exoscale DNS API."
+    }, 
+    "api_region": {
+      "type": "Optional[String]", 
+      "description": "Name of the ini section in the C(cloustack.ini) file."
+    }, 
+    "content": {
+      "type": "Optional[String]", 
+      "description": "Content of the record. Required if C(state=present) or C(name=\"\")"
+    }, 
+    "record_type": {
+      "type": "Optional[String]", 
+      "description": "Type of the record."
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "State of the record."
+    }, 
+    "ttl": {
+      "type": "Optional[String]", 
+      "description": "TTL of the record in seconds."
+    }, 
+    "api_key": {
+      "type": "Optional[String]", 
+      "description": "API key of the Exoscale DNS API."
+    }, 
+    "validate_certs": {
+      "type": "Optional[String]", 
+      "description": "Validate SSL certs of the Exoscale DNS API."
+    }
+  }
+}

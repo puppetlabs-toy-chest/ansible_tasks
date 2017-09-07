@@ -1,0 +1,37 @@
+{
+  "description": "Create, Delete or Modify NFS Client(s) for existing exports on Infinibox", 
+  "parameters": {
+    "no_root_squash": {
+      "type": "Optional[String]", 
+      "description": "Don't squash root user to anonymous. Will be set to \"no\" on creation if not specified explicitly."
+    }, 
+    "password": {
+      "type": "Optional[String]", 
+      "description": "Infinibox User password."
+    }, 
+    "system": {
+      "type": "String", 
+      "description": "Infinibox Hostname or IPv4 Address."
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "Creates/Modifies client when present and removes when absent."
+    }, 
+    "client": {
+      "type": "String", 
+      "description": "Client IP or Range. Ranges can be defined as follows 192.168.0.1-192.168.0.254."
+    }, 
+    "export": {
+      "type": "String", 
+      "description": "Name of the export."
+    }, 
+    "user": {
+      "type": "Optional[String]", 
+      "description": "Infinibox User username with sufficient priveledges ( see notes )."
+    }, 
+    "access_mode": {
+      "type": "Optional[String]", 
+      "description": "Read Write or Read Only Access."
+    }
+  }
+}

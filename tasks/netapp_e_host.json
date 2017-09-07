@@ -1,0 +1,41 @@
+{
+  "description": "manage eseries hosts", 
+  "parameters": {
+    "group": {
+      "type": "Optional[String]", 
+      "description": "the group you want the host to be a member of"
+    }, 
+    "api_url": {
+      "type": "String", 
+      "description": "The url to the SANtricity WebServices Proxy or embedded REST API, for example C(https://prod-1.wahoo.acme.com/devmgr/v2)."
+    }, 
+    "api_password": {
+      "type": "String", 
+      "description": "The password to authenticate with the SANtricity WebServices Proxy or embedded REST API."
+    }, 
+    "name": {
+      "type": "String", 
+      "description": "If the host doesn't yet exist, the label to assign at creation time. If the hosts already exists, this is what is used to identify the host to apply any desired changes"
+    }, 
+    "api_username": {
+      "type": "String", 
+      "description": "The username to authenticate with the SANtricity WebServices Proxy or embedded REST API."
+    }, 
+    "host_type_index": {
+      "type": "String", 
+      "description": "The index that maps to host type you wish to create. It is recommended to use the M(netapp_e_facts) module to gather this information. Alternatively you can use the WSP portal to retrieve the information."
+    }, 
+    "validate_certs": {
+      "type": "Optional[String]", 
+      "description": "Should https certificates be validated?"
+    }, 
+    "ports": {
+      "type": "Optional[String]", 
+      "description": "a list of of dictionaries of host ports you wish to associate with the newly created host"
+    }, 
+    "ssid": {
+      "type": "String", 
+      "description": "the id of the storage array you wish to act against"
+    }
+  }
+}

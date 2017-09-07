@@ -1,0 +1,25 @@
+{
+  "description": "check if PAN-OS device is ready for configuration", 
+  "parameters": {
+    "username": {
+      "type": "Optional[String]", 
+      "description": "username for authentication"
+    }, 
+    "password": {
+      "type": "String", 
+      "description": "password for authentication"
+    }, 
+    "ip_address": {
+      "type": "String", 
+      "description": "IP address (or hostname) of PAN-OS device"
+    }, 
+    "timeout": {
+      "type": "Optional[String]", 
+      "description": "timeout of API calls"
+    }, 
+    "interval": {
+      "type": "Optional[String]", 
+      "description": "time waited between checks"
+    }
+  }
+}

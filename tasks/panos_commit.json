@@ -1,0 +1,29 @@
+{
+  "description": "commit firewall's candidate configuration", 
+  "parameters": {
+    "username": {
+      "type": "Optional[String]", 
+      "description": "username for authentication"
+    }, 
+    "interval": {
+      "type": "Optional[String]", 
+      "description": "interval for checking commit job"
+    }, 
+    "sync": {
+      "type": "Optional[String]", 
+      "description": "if commit should be synchronous"
+    }, 
+    "timeout": {
+      "type": "Optional[String]", 
+      "description": "timeout for commit job"
+    }, 
+    "password": {
+      "type": "String", 
+      "description": "password for authentication"
+    }, 
+    "ip_address": {
+      "type": "String", 
+      "description": "IP address (or hostname) of PAN-OS device"
+    }
+  }
+}

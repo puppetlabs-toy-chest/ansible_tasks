@@ -1,0 +1,45 @@
+{
+  "description": "Manage Red Hat Network registration using the C(rhnreg_ks) command", 
+  "parameters": {
+    "username": {
+      "type": "Optional[String]", 
+      "description": "Red Hat Network username"
+    }, 
+    "systemorgid": {
+      "type": "Optional[String]", 
+      "description": "supply an organizational id for use with registration"
+    }, 
+    "enable_eus": {
+      "type": "Optional[String]", 
+      "description": "If true, extended update support will be requested."
+    }, 
+    "server_url": {
+      "type": "Optional[String]", 
+      "description": "Specify an alternative Red Hat Network server URL"
+    }, 
+    "channels": {
+      "type": "Optional[String]", 
+      "description": "Optionally specify a list of comma-separated channels to subscribe to upon successful registration."
+    }, 
+    "state": {
+      "type": "Optional[String]", 
+      "description": "whether to register (C(present)), or unregister (C(absent)) a system"
+    }, 
+    "sslcacert": {
+      "type": "Optional[String]", 
+      "description": "supply a custom ssl CA certificate file for use with registration"
+    }, 
+    "activationkey": {
+      "type": "Optional[String]", 
+      "description": "supply an activation key for use with registration"
+    }, 
+    "profilename": {
+      "type": "Optional[String]", 
+      "description": "supply an profilename for use with registration"
+    }, 
+    "password": {
+      "type": "Optional[String]", 
+      "description": "Red Hat Network password"
+    }
+  }
+}

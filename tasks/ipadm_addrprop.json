@@ -1,0 +1,25 @@
+{
+  "description": "Manage IP address properties on Solaris/illumos systems.", 
+  "parameters": {
+    "state": {
+      "type": "Optional[String]", 
+      "description": "Set or reset the property value."
+    }, 
+    "property": {
+      "type": "String", 
+      "description": "Specifies the name of the address property we want to manage."
+    }, 
+    "temporary": {
+      "type": "Optional[String]", 
+      "description": "Specifies that the address property value is temporary. Temporary values do not persist across reboots."
+    }, 
+    "value": {
+      "type": "Optional[String]", 
+      "description": "Specifies the value we want to set for the address property."
+    }, 
+    "addrobj": {
+      "type": "String", 
+      "description": "Specifies the address object we want to manage."
+    }
+  }
+}

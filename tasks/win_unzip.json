@@ -1,0 +1,25 @@
+{
+  "description": "Unzips compressed files and archives on the Windows node", 
+  "parameters": {
+    "dest": {
+      "type": "String", 
+      "description": "Destination of zip file (provide absolute path of directory). If it does not exist, the directory will be created."
+    }, 
+    "src": {
+      "type": "String", 
+      "description": "File to be unzipped (provide absolute path)"
+    }, 
+    "recurse": {
+      "type": "Optional[String]", 
+      "description": "Recursively expand zipped files within the src file."
+    }, 
+    "creates": {
+      "type": "Optional[String]", 
+      "description": "If this file or directory exists the specified src will not be extracted."
+    }, 
+    "rm": {
+      "type": "Optional[String]", 
+      "description": "Remove the zip file, after unzipping"
+    }
+  }
+}

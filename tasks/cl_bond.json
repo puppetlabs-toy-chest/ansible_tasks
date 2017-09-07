@@ -1,0 +1,105 @@
+{
+  "description": "Configures a bond port on Cumulus Linux", 
+  "parameters": {
+    "clag_id": {
+      "type": "Optional[String]", 
+      "description": "Specify a unique clag_id for every dual connected bond on each peer switch. The value must be between 1 and 65535 and must be the same on both peer switches in order for the bond to be considered dual-connected."
+    }, 
+    "lacp_rate": {
+      "type": "Optional[String]", 
+      "description": "The lacp rate."
+    }, 
+    "xmit_hash_policy": {
+      "type": "Optional[String]", 
+      "description": "Transmit load balancing algorithm. As of Cumulus Linux 2.5 only I(layer3+4) policy is supported."
+    }, 
+    "mstpctl_portadminedge": {
+      "type": "Optional[String]", 
+      "description": "Enables admin edge port."
+    }, 
+    "min_links": {
+      "type": "Optional[String]", 
+      "description": "Minimum number of links."
+    }, 
+    "alias_name": {
+      "type": "Optional[String]", 
+      "description": "Description of the port."
+    }, 
+    "mstpctl_bpduguard": {
+      "type": "Optional[String]", 
+      "description": "Enables BPDU Guard on a port in vlan-aware mode."
+    }, 
+    "ipv4": {
+      "type": "Optional[String]", 
+      "description": "List of IPv4 addresses to configure on the interface. In the form I(X.X.X.X/YY)."
+    }, 
+    "ipv6": {
+      "type": "Optional[String]", 
+      "description": "List of IPv6 addresses to configure on the interface. In the form I(X:X:X::X/YYY)."
+    }, 
+    "vids": {
+      "type": "Optional[String]", 
+      "description": "In vlan-aware mode, lists VLANs defined under the interface."
+    }, 
+    "mstpctl_portnetwork": {
+      "type": "Optional[String]", 
+      "description": "Enables bridge assurance in vlan-aware mode."
+    }, 
+    "location": {
+      "type": "Optional[String]", 
+      "description": "Interface directory location."
+    }, 
+    "miimon": {
+      "type": "Optional[String]", 
+      "description": "The mii link monitoring interval."
+    }, 
+    "virtual_mac": {
+      "type": "Optional[String]", 
+      "description": "Define Ethernet mac associated with Cumulus Linux VRR feature."
+    }, 
+    "lacp_bypass_all_active": {
+      "type": "Optional[String]", 
+      "description": "Activate all interfaces for bypass. It is recommended to configure all_active instead of using bypass_priority."
+    }, 
+    "lacp_bypass_period": {
+      "type": "Optional[String]", 
+      "description": "Period for enabling LACP bypass. Max value is 900."
+    }, 
+    "lacp_bypass_allow": {
+      "type": "Optional[String]", 
+      "description": "Enable LACP bypass."
+    }, 
+    "lacp_bypass_priority": {
+      "type": "Optional[String]", 
+      "description": "List of ports and priorities. Example I(\"swp1=10, swp2=20\")."
+    }, 
+    "addr_method": {
+      "type": "Optional[String]", 
+      "description": "Configures the port to use DHCP. To enable this feature use the option I(dhcp)."
+    }, 
+    "name": {
+      "type": "String", 
+      "description": "Name of the interface."
+    }, 
+    "virtual_ip": {
+      "type": "Optional[String]", 
+      "description": "Define IPv4 virtual IP used by the Cumulus Linux VRR feature."
+    }, 
+    "mtu": {
+      "type": "Optional[String]", 
+      "description": "Set MTU. Configure Jumbo Frame by setting MTU to I(9000)."
+    }, 
+    "pvid": {
+      "type": "Optional[String]", 
+      "description": "In vlan-aware mode, defines vlan that is the untagged vlan."
+    }, 
+    "mode": {
+      "type": "Optional[String]", 
+      "description": "The bond mode, as of Cumulus Linux 2.5 only LACP bond mode is supported."
+    }, 
+    "slaves": {
+      "type": "String", 
+      "description": "Bond members."
+    }
+  }
+}
