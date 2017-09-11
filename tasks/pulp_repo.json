@@ -1,84 +1,85 @@
 {
+  "input_method": "stdin", 
   "description": "Add or remove Pulp repos from a remote host.", 
   "parameters": {
     "feed": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Upstream feed URL to receive updates from."
     }, 
     "url_password": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "The password for use in HTTP basic authentication to the pulp API. If the I(url_username) parameter is not specified, the I(url_password) parameter will not be used."
     }, 
     "repo_type": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Repo plugin type to use (i.e. C(rpm), C(docker))."
     }, 
     "pulp_host": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "URL of the pulp server to connect to."
     }, 
     "publish_distributor": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Distributor to use when state is C(publish). The default is to publish all distributors."
     }, 
     "name": {
-      "type": "String", 
+      "type": "String[0]", 
       "description": "Name of the repo to add or remove. This correlates to repo-id in Pulp."
     }, 
     "relative_url": {
-      "type": "String", 
+      "type": "String[0]", 
       "description": "Relative URL for the local repository."
     }, 
     "proxy_host": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Proxy url setting for the pulp repository importer. This is in the format scheme://host."
     }, 
     "force_basic_auth": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"yes\", \"no\"]]", 
       "description": "httplib2, the library used by the M(uri) module only sends authentication information when a webservice responds to an initial request with a 401 status. Since some basic auth services do not properly send a 401, logins will fail. This option forces the sending of the Basic authentication header upon initial request."
     }, 
     "importer_ssl_client_key": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Private key to the certificate specified in I(importer_ssl_client_cert), assuming it is not included in the certificate file itself. This can be the file content or the path to the file."
     }, 
     "importer_ssl_client_cert": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Certificate used as the client certificate when synchronizing the repository. This is used to communicate authentication information to the feed source. The value to this option must be the full path to the certificate. The specified file may be the certificate itself or a single file containing both the certificate and private key. This can be the file content or the path to the file."
     }, 
     "proxy_port": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Proxy port setting for the pulp repository importer."
     }, 
     "state": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"present\", \"absent\", \"sync\", \"publish\"]]", 
       "description": "The repo state. A state of C(sync) will queue a sync of the repo. This is asynchronous but not delayed like a scheduled sync. A state of C(publish) will use the repository's distributor to publish the content."
     }, 
     "serve_https": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Make the repo available over HTTPS."
     }, 
     "serve_http": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Make the repo available over HTTP."
     }, 
     "url_username": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "The username for use in HTTP basic authentication to the pulp API."
     }, 
     "wait_for_completion": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"yes\", \"no\"]]", 
       "description": "Wait for asynchronous tasks to complete before returning."
     }, 
     "validate_certs": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"yes\", \"no\"]]", 
       "description": "If C(no), SSL certificates will not be validated. This should only be used on personally controlled sites using self-signed certificates."
     }, 
     "add_export_distributor": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Whether or not to add the export distributor to new C(rpm) repositories."
     }, 
     "importer_ssl_ca_cert": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "CA certificate string used to validate the feed source SSL certificate. This can be the file content or the path to the file."
     }
   }

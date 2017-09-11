@@ -1,16 +1,17 @@
 {
-  "description": "apt_rpm package manager", 
+  "input_method": "stdin", 
+  "description": "Manages packages with I(apt-rpm). Both low-level (I(rpm)) and high-level (I(apt-get)) package manager binaries required.", 
   "parameters": {
     "state": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"absent\", \"present\"]]", 
       "description": "Indicates the desired package state"
     }, 
     "update_cache": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"yes\", \"no\"]]", 
       "description": "update the package database first C(apt-get update)."
     }, 
     "pkg": {
-      "type": "String", 
+      "type": "String[0]", 
       "description": "name of package to install, upgrade or remove."
     }
   }

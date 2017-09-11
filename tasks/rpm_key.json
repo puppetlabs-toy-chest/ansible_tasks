@@ -1,16 +1,17 @@
 {
-  "description": "Adds or removes a gpg key from the rpm db", 
+  "input_method": "stdin", 
+  "description": "Adds or removes (rpm --import) a gpg key to your rpm database.", 
   "parameters": {
     "state": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"present\", \"absent\"]]", 
       "description": "If the key will be imported or removed from the rpm db."
     }, 
     "validate_certs": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"yes\", \"no\"]]", 
       "description": "If C(no) and the C(key) is a url starting with https, SSL certificates will not be validated. This should only be used on personally controlled sites using self-signed certificates."
     }, 
     "key": {
-      "type": "String", 
+      "type": "String[0]", 
       "description": "Key that will be modified. Can be a url, a file, or a keyid if the key already exists in the database."
     }
   }

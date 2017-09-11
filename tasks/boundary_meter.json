@@ -1,24 +1,25 @@
 {
-  "description": "Manage boundary meters", 
+  "input_method": "stdin", 
+  "description": "This module manages boundary meters", 
   "parameters": {
     "state": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"present\", \"absent\"]]", 
       "description": "Whether to create or remove the client from boundary"
     }, 
     "apikey": {
-      "type": "String", 
+      "type": "String[0]", 
       "description": "Organizations boundary API KEY"
     }, 
     "validate_certs": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"yes\", \"no\"]]", 
       "description": "If C(no), SSL certificates will not be validated. This should only be used on personally controlled sites using self-signed certificates."
     }, 
     "apiid": {
-      "type": "String", 
+      "type": "String[0]", 
       "description": "Organizations boundary API ID"
     }, 
     "name": {
-      "type": "String", 
+      "type": "String[0]", 
       "description": "meter name"
     }
   }

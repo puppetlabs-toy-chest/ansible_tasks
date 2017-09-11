@@ -1,17 +1,18 @@
 {
-  "description": "Manages packages with the Solaris 11 Image Packaging System", 
+  "input_method": "stdin", 
+  "description": "IPS packages are the native packages in Solaris 11 and higher.", 
   "parameters": {
     "accept_licenses": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"True\", \"False\"]]", 
       "description": "Accept any licences."
     }, 
     "state": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"present\", \"latest\", \"absent\"]]", 
       "description": "Whether to install (I(present), I(latest)), or remove (I(absent)) a package."
     }, 
     "name": {
-      "type": "String", 
-      "description": "An FRMI of the package(s) to be installed/removed/updated. Multiple packages may be specified, separated by C(,)."
+      "type": "String[0]", 
+      "description": "An FRMI of the package(s) to be installed/removed/updated."
     }
   }
 }

@@ -1,28 +1,29 @@
 {
-  "description": "Adds or removes parameters to RabbitMQ", 
+  "input_method": "stdin", 
+  "description": "Manage dynamic, cluster-wide parameters for RabbitMQ", 
   "parameters": {
     "node": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "erlang node name of the rabbit we wish to configure"
     }, 
     "name": {
-      "type": "String", 
+      "type": "String[0]", 
       "description": "Name of the parameter being set"
     }, 
     "component": {
-      "type": "String", 
+      "type": "String[0]", 
       "description": "Name of the component of which the parameter is being set"
     }, 
     "value": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Value of the parameter, as a JSON term"
     }, 
     "vhost": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "vhost to apply access privileges."
     }, 
     "state": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"present\", \"absent\"]]", 
       "description": "Specify if user is to be added or removed"
     }
   }

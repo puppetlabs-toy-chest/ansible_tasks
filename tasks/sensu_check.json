@@ -1,97 +1,98 @@
 {
-  "description": "Manage Sensu checks", 
+  "input_method": "stdin", 
+  "description": "Manage the checks that should be run on a machine by I(Sensu).", 
   "parameters": {
     "interval": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Check interval in seconds"
     }, 
     "metric": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"yes\", \"no\"]]", 
       "description": "Whether the check is a metric"
     }, 
     "subdue_begin": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "When to disable handling of check failures"
     }, 
     "occurrences": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Number of event occurrences before the handler should take action"
     }, 
     "low_flap_threshold": {
-      "type": "Optional[String]", 
-      "description": "The low threshold for flap detection"
+      "type": "Optional[String[0]]", 
+      "description": "The low threshhold for flap detection"
     }, 
     "publish": {
-      "type": "Optional[String]", 
-      "description": "Whether the check should be scheduled at all. You can still issue it via the sensu api"
+      "type": "Optional[Enum[\"yes\", \"no\"]]", 
+      "description": "Whether the check should be scheduled at all."
     }, 
     "custom": {
-      "type": "Optional[String]", 
-      "description": "A hash/dictionary of custom parameters for mixing to the configuration. You can't rewrite others module parameters using this"
+      "type": "Optional[String[0]]", 
+      "description": "A hash/dictionary of custom parameters for mixing to the configuration."
     }, 
     "source": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "The check source, used to create a JIT Sensu client for an external resource (e.g. a network switch)."
     }, 
     "state": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"present\", \"absent\"]]", 
       "description": "Whether the check should be present or not"
     }, 
     "subdue_end": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "When to enable handling of check failures"
     }, 
     "handle": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"yes\", \"no\"]]", 
       "description": "Whether the check should be handled or not"
     }, 
     "dependencies": {
-      "type": "Optional[String]", 
-      "description": "Other checks this check depends on, if dependencies fail, handling of this check will be disabled"
+      "type": "Optional[String[0]]", 
+      "description": "Other checks this check depends on, if dependencies fail,"
     }, 
     "subscribers": {
-      "type": "Optional[String]", 
-      "description": "List of subscribers/channels this check should run for See sensu_subscribers to subscribe a machine to a channel"
+      "type": "Optional[String[0]]", 
+      "description": "List of subscribers/channels this check should run for"
     }, 
     "aggregate": {
-      "type": "Optional[String]", 
-      "description": "Classifies the check as an aggregate check, making it available via the aggregate API"
+      "type": "Optional[Enum[\"yes\", \"no\"]]", 
+      "description": "Classifies the check as an aggregate check,"
     }, 
     "path": {
-      "type": "Optional[String]", 
-      "description": "Path to the json file of the check to be added/removed. Will be created if it does not exist (unless I(state=absent)). The parent folders need to exist when I(state=present), otherwise an error will be thrown"
+      "type": "Optional[String[0]]", 
+      "description": "Path to the json file of the check to be added/removed."
     }, 
     "name": {
-      "type": "String", 
-      "description": "The name of the check This is the key that is used to determine whether a check exists"
+      "type": "String[0]", 
+      "description": "The name of the check"
     }, 
     "standalone": {
-      "type": "Optional[String]", 
-      "description": "Whether the check should be scheduled by the sensu client or server This option obviates the need for specifying the I(subscribers) option"
+      "type": "Optional[Enum[\"yes\", \"no\"]]", 
+      "description": "Whether the check should be scheduled by the sensu client or server"
     }, 
     "handlers": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "List of handlers to notify when the check fails"
     }, 
     "refresh": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Number of seconds handlers should wait before taking second action"
     }, 
     "command": {
-      "type": "String", 
+      "type": "String[0]", 
       "description": "Path to the sensu check to run (not required when I(state=absent))"
     }, 
     "high_flap_threshold": {
-      "type": "Optional[String]", 
-      "description": "The high threshold for flap detection"
+      "type": "Optional[String[0]]", 
+      "description": "The high threshhold for flap detection"
     }, 
     "timeout": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Timeout for the check"
     }, 
     "backup": {
-      "type": "Optional[String]", 
-      "description": "Create a backup file (if yes), including the timestamp information so you can get the original file back if you somehow clobbered it incorrectly."
+      "type": "Optional[Enum[\"yes\", \"no\"]]", 
+      "description": "Create a backup file (if yes), including the timestamp information so"
     }
   }
 }

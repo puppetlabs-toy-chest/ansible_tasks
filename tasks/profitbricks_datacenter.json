@@ -1,36 +1,37 @@
 {
-  "description": "Create or destroy a ProfitBricks Virtual Datacenter.", 
+  "input_method": "stdin", 
+  "description": "This is a simple module that supports creating or removing vDCs. A vDC is required before you can create servers. This module has a dependency on profitbricks >= 1.0.0", 
   "parameters": {
     "name": {
-      "type": "String", 
+      "type": "String[0]", 
       "description": "The name of the virtual datacenter."
     }, 
     "subscription_user": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "The ProfitBricks username. Overrides the PB_SUBSCRIPTION_ID environment variable."
     }, 
     "description": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "The description of the virtual datacenter."
     }, 
     "subscription_password": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "THe ProfitBricks password. Overrides the PB_PASSWORD environment variable."
     }, 
     "state": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"present\", \"absent\"]]", 
       "description": "create or terminate datacenters"
     }, 
     "wait_timeout": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "how long before wait gives up, in seconds"
     }, 
     "location": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"us/las\", \"de/fra\", \"de/fkb\"]]", 
       "description": "The datacenter location."
     }, 
     "wait": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"yes\", \"no\"]]", 
       "description": "wait for the datacenter to be created before returning"
     }
   }

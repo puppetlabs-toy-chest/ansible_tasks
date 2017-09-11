@@ -1,60 +1,61 @@
 {
-  "description": "Send a message to an IRC channel", 
+  "input_method": "stdin", 
+  "description": "Send a message to an IRC channel. This is a very simplistic implementation.", 
   "parameters": {
     "style": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"bold\", \"underline\", \"reverse\", \"italic\"]]", 
       "description": "Text style for the message. Note italic does not work on some clients"
     }, 
     "timeout": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Timeout to use while waiting for successful registration and join messages, this is to prevent an endless loop"
     }, 
     "nick": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Nickname to send the message from. May be shortened, depending on server's NICKLEN setting."
     }, 
     "passwd": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Server password"
     }, 
     "server": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "IRC server name/address"
     }, 
     "topic": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Set the channel topic"
     }, 
     "color": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"none\", \"white\", \"black\", \"blue\", \"green\", \"red\", \"brown\", \"purple\", \"orange\", \"yellow\", \"light_green\", \"teal\", \"light_cyan\", \"light_blue\", \"pink\", \"gray\", \"light_gray\"]]", 
       "description": "Text color for the message. (\"none\" is a valid option in 1.6 or later, in 1.6 and prior, the default color is black, not \"none\"). Added 11 more colors in version 2.0."
     }, 
     "part": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Designates whether user should part from channel after sending message or not. Useful for when using a faux bot and not wanting join/parts between messages."
     }, 
     "nick_to": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "A list of nicknames to send the message to. One of nick_to or channel needs to be set.  When both are defined, the message will be sent to both of them."
     }, 
     "key": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Channel key"
     }, 
     "msg": {
-      "type": "String", 
+      "type": "String[0]", 
       "description": "The message body."
     }, 
     "use_ssl": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Designates whether TLS/SSL should be used when connecting to the IRC server"
     }, 
     "port": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "IRC server port number"
     }, 
     "channel": {
-      "type": "String", 
+      "type": "String[0]", 
       "description": "Channel name.  One of nick_to or channel needs to be set.  When both are set, the message will be sent to both of them."
     }
   }

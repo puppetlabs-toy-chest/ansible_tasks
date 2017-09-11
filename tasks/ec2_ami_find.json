@@ -1,77 +1,78 @@
 {
-  "description": "Searches for AMIs to obtain the AMI ID and other information", 
+  "input_method": "stdin", 
+  "description": "Returns list of matching AMIs with AMI ID, along with other useful information", 
   "parameters": {
     "sort": {
-      "type": "Optional[String]", 
-      "description": "Optional attribute which with to sort the results. If specifying 'tag', the 'tag_name' parameter is required. Starting at version 2.1, additional sort choices of architecture, block_device_mapping, creationDate, hypervisor, is_public, location, owner_id, platform, root_device_name, root_device_type, state, and virtualization_type are supported."
+      "type": "Optional[Enum[\"name\", \"description\", \"tag\", \"architecture\", \"block_device_mapping\", \"creationDate\", \"hypervisor\", \"is_public\", \"location\", \"owner_id\", \"platform\", \"root_device_name\", \"root_device_type\", \"state\", \"virtualization_type\"]]", 
+      "description": "Optional attribute which with to sort the results."
     }, 
     "no_result_action": {
-      "type": "Optional[String]", 
-      "description": "What to do when no results are found. 'success' reports success and returns an empty array 'fail' causes the module to report failure"
+      "type": "Optional[Enum[\"success\", \"fail\"]]", 
+      "description": "What to do when no results are found."
     }, 
     "sort_end": {
-      "type": "Optional[String]", 
-      "description": "Which result to end with (when sorting). Corresponds to Python slice notation."
+      "type": "Optional[String[0]]", 
+      "description": "Which result to end with (when sorting)."
     }, 
     "ami_id": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "An AMI ID to match."
     }, 
     "name": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "An AMI name to match."
     }, 
     "platform": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Platform type to match."
     }, 
     "hypervisor": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "A hypervisor type type to match (e.g. xen)."
     }, 
     "region": {
-      "type": "String", 
+      "type": "String[0]", 
       "description": "The AWS region to use."
     }, 
     "sort_start": {
-      "type": "Optional[String]", 
-      "description": "Which result to start with (when sorting). Corresponds to Python slice notation."
+      "type": "Optional[String[0]]", 
+      "description": "Which result to start with (when sorting)."
     }, 
     "virtualization_type": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Virtualization type to match (e.g. hvm)."
     }, 
     "ami_tags": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "A hash/dictionary of tags to match for the AMI."
     }, 
     "state": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "AMI state to match."
     }, 
     "sort_order": {
-      "type": "Optional[String]", 
-      "description": "Order in which to sort results. Only used when the 'sort' parameter is specified."
+      "type": "Optional[Enum[\"ascending\", \"descending\"]]", 
+      "description": "Order in which to sort results."
     }, 
     "architecture": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "An architecture type to match (e.g. x86_64)."
     }, 
     "owner": {
-      "type": "Optional[String]", 
-      "description": "Search AMIs owned by the specified owner Can specify an AWS account ID, or one of the special IDs 'self', 'amazon' or 'aws-marketplace' If not specified, all EC2 AMIs in the specified region will be searched. You can include wildcards in many of the search options. An asterisk (*) matches zero or more characters, and a question mark (?) matches exactly one character. You can escape special characters using a backslash (\\) before the character. For example, a value of \\*amazon\\?\\ searches for the literal string *amazon?\\."
+      "type": "Optional[String[0]]", 
+      "description": "Search AMIs owned by the specified owner"
     }, 
     "is_public": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"yes\", \"no\"]]", 
       "description": "Whether or not the image(s) are public."
     }, 
     "product_code": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Marketplace product code to match."
     }, 
     "sort_tag": {
-      "type": "Optional[String]", 
-      "description": "Tag name with which to sort results. Required when specifying 'sort=tag'."
+      "type": "Optional[String[0]]", 
+      "description": "Tag name with which to sort results."
     }
   }
 }

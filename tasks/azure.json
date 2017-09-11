@@ -1,84 +1,85 @@
 {
-  "description": "create or terminate a virtual machine in azure", 
+  "input_method": "stdin", 
+  "description": "Creates or terminates azure instances. When created optionally waits for it to be 'running'.", 
   "parameters": {
     "endpoints": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "a comma-separated list of TCP ports to expose on the virtual machine (e.g., \"22,80\")"
     }, 
     "role_size": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "azure role size for the new virtual machine (e.g., Small, ExtraLarge, A6). You have to pay attention to the fact that instances of type G and DS are not available in all regions (locations). Make sure if you selected the size and type of instance available in your chosen location."
     }, 
     "name": {
-      "type": "String", 
+      "type": "String[0]", 
       "description": "name of the virtual machine and associated cloud service."
     }, 
     "location": {
-      "type": "String", 
+      "type": "String[0]", 
       "description": "the azure location to use (e.g. 'East US')"
     }, 
     "virtual_network_name": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Name of virtual network."
     }, 
     "image": {
-      "type": "String", 
+      "type": "String[0]", 
       "description": "system image for creating the virtual machine (e.g., b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu_DAILY_BUILD-precise-12_04_3-LTS-amd64-server-20131205-en-us-30GB)"
     }, 
     "hostname": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "hostname to write /etc/hostname. Defaults to <name>.cloudapp.net."
     }, 
     "enable_winrm": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"yes\", \"no\"]]", 
       "description": "Enable winrm on Windows Machines"
     }, 
     "state": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "create or terminate instances"
     }, 
     "wait_timeout_redirects": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "how long before wait gives up for redirects, in seconds"
     }, 
     "management_cert_path": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "path to an azure management certificate associated with the subscription id. Overrides the AZURE_CERT_PATH environment variable."
     }, 
     "ssh_cert_path": {
-      "type": "Optional[String]", 
-      "description": "path to an X509 certificate containing the public ssh key to install in the virtual machine. See http://www.windowsazure.com/en-us/manage/linux/tutorials/intro-to-linux/ for more details. if this option is specified, password-based ssh authentication will be disabled."
+      "type": "Optional[String[0]]", 
+      "description": "path to an X509 certificate containing the public ssh key to install in the virtual machine. See http://www.windowsazure.com/en-us/manage/linux/tutorials/intro-to-linux/ for more details."
     }, 
     "wait_timeout": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "how long before wait gives up, in seconds"
     }, 
     "user": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "the unix username for the new virtual machine."
     }, 
     "auto_updates": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"yes\", \"no\"]]", 
       "description": "Enable Auto Updates on Windows Machines"
     }, 
     "storage_account": {
-      "type": "String", 
+      "type": "String[0]", 
       "description": "the azure storage account in which to store the data disks."
     }, 
     "os_type": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"windows\", \"linux\"]]", 
       "description": "The type of the os that is gettings provisioned"
     }, 
     "password": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "the unix password for the new virtual machine."
     }, 
     "subscription_id": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "azure subscription id. Overrides the AZURE_SUBSCRIPTION_ID environment variable."
     }, 
     "wait": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"yes\", \"no\"]]", 
       "description": "wait for the instance to be in state 'running' before returning"
     }
   }

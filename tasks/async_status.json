@@ -1,12 +1,13 @@
 {
-  "description": "Obtain status of asynchronous task", 
+  "input_method": "stdin", 
+  "description": "This module gets the status of an asynchronous task.", 
   "parameters": {
     "jid": {
-      "type": "String", 
+      "type": "String[0]", 
       "description": "Job or task identifier"
     }, 
     "mode": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"status\", \"cleanup\"]]", 
       "description": "if C(status), obtain the status; if C(cleanup), clean up the async job cache located in C(~/.ansible_async/) for the specified job I(jid)."
     }
   }

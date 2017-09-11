@@ -1,16 +1,17 @@
 {
-  "description": "Add or remove kernel modules", 
+  "input_method": "stdin", 
+  "description": "Add or remove kernel modules.", 
   "parameters": {
     "state": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"present\", \"absent\"]]", 
       "description": "Whether the module should be present or absent."
     }, 
     "params": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Modules parameters."
     }, 
     "name": {
-      "type": "String", 
+      "type": "String[0]", 
       "description": "Name of kernel module to manage."
     }
   }

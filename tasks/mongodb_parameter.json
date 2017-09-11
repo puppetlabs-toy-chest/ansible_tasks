@@ -1,48 +1,49 @@
 {
+  "input_method": "stdin", 
   "description": "Change an administrative parameter on a MongoDB server.", 
   "parameters": {
     "login_port": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "The port to connect to"
     }, 
     "database": {
-      "type": "String", 
+      "type": "String[0]", 
       "description": "The name of the database to add/remove the user from"
     }, 
     "login_user": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "The username used to authenticate with"
     }, 
     "login_host": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "The host running the database"
     }, 
     "login_password": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "The password used to authenticate with"
     }, 
     "param": {
-      "type": "String", 
+      "type": "String[0]", 
       "description": "MongoDB administrative parameter to modify"
     }, 
     "ssl": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Whether to use an SSL connection when connecting to the database"
     }, 
     "param_type": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Define the parameter value (str, int)"
     }, 
     "value": {
-      "type": "String", 
+      "type": "String[0]", 
       "description": "MongoDB administrative parameter value to set"
     }, 
     "login_database": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "The database where login credentials are stored"
     }, 
     "replica_set": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Replica set to connect to (automatically connects to primary for writes)"
     }
   }

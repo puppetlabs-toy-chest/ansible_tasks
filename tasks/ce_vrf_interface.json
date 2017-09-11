@@ -1,16 +1,17 @@
 {
-  "description": "Manages interface specific VPN configuration on HUAWEI CloudEngine switches.", 
+  "input_method": "stdin", 
+  "description": "Manages interface specific VPN configuration of HUAWEI CloudEngine switches.", 
   "parameters": {
     "state": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"present\", \"absent\"]]", 
       "description": "Manage the state of the resource."
     }, 
     "vrf": {
-      "type": "String", 
+      "type": "String[0]", 
       "description": "VPN instance, the length of vrf name is 1 ~ 31, i.e. \"test\", but can not be C(_public_)."
     }, 
     "vpn_interface": {
-      "type": "String", 
+      "type": "String[0]", 
       "description": "An interface that can binding VPN instance, i.e. 40GE1/0/22, Vlanif10. Must be fully qualified interface name. Interface types, such as 10GE, 40GE, 100GE, LoopBack, MEth, Tunnel, Vlanif...."
     }
   }

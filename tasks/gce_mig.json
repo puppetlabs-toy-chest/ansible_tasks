@@ -1,44 +1,45 @@
 {
-  "description": "Create, Update or Destroy a Managed Instance Group (MIG).", 
+  "input_method": "stdin", 
+  "description": "Create, Update or Destroy a Managed Instance Group (MIG).  See U(https://cloud.google.com/compute/docs/instance-groups) for an overview. Full install/configuration instructions for the gce* modules can be found in the comments of ansible/test/gce_tests.py.", 
   "parameters": {
     "name": {
-      "type": "String", 
+      "type": "String[0]", 
       "description": "Name of the Managed Instance Group."
     }, 
     "zone": {
-      "type": "String", 
+      "type": "String[0]", 
       "description": "The GCE zone to use for this Managed Instance Group."
     }, 
     "service_account_email": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "service account email"
     }, 
     "autoscaling": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "A dictionary of configuration for the autoscaler. 'enabled (bool)', 'name (str)' and policy.max_instances (int) are required fields if autoscaling is used. See U(https://cloud.google.com/compute/docs/reference/beta/autoscalers) for more information on Autoscaling."
     }, 
     "named_ports": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Define named ports that backend services can forward data to.  Format is a a list of name:port dictionaries."
     }, 
     "state": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"absent\", \"present\"]]", 
       "description": "desired state of the resource"
     }, 
     "template": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Instance Template to be used in creating the VMs.  See U(https://cloud.google.com/compute/docs/instance-templates) to learn more about Instance Templates.  Required for creating MIGs."
     }, 
     "credentials_file": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Path to the JSON file associated with the service account email"
     }, 
     "project_id": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "GCE project ID"
     }, 
     "size": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Size of Managed Instance Group.  If MIG already exists, it will be resized to the number provided here.  Required for creating MIGs."
     }
   }

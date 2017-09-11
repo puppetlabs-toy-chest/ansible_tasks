@@ -1,28 +1,29 @@
 {
+  "input_method": "stdin", 
   "description": "Manage VMware vSphere Datacenters", 
   "parameters": {
     "username": {
-      "type": "String", 
+      "type": "String[0]", 
       "description": "The username of the vSphere vCenter"
     }, 
     "datacenter_name": {
-      "type": "String", 
+      "type": "String[0]", 
       "description": "The name of the datacenter the cluster will be created in."
     }, 
     "hostname": {
-      "type": "String", 
+      "type": "String[0]", 
       "description": "The hostname or IP address of the vSphere vCenter API server"
     }, 
     "state": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"present\", \"absent\"]]", 
       "description": "If the datacenter should be present or absent"
     }, 
     "password": {
-      "type": "String", 
+      "type": "String[0]", 
       "description": "The password of the vSphere vCenter"
     }, 
     "validate_certs": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"True\", \"False\"]]", 
       "description": "Allows connection when SSL certificates are not valid. Set to false when certificates are not trusted."
     }
   }

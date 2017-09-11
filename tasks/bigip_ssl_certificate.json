@@ -1,56 +1,57 @@
 {
-  "description": "Import/Delete certificates from BIG-IP", 
+  "input_method": "stdin", 
+  "description": "This module will import/delete SSL certificates on BIG-IP LTM. Certificates can be imported from certificate and key files on the local disk, in PEM format.", 
   "parameters": {
     "name": {
-      "type": "String", 
+      "type": "String[0]", 
       "description": "SSL Certificate Name.  This is the cert/key pair name used when importing a certificate/key into the F5. It also determines the filenames of the objects on the LTM (:Partition:name.cer_11111_1 and :Partition_name.key_11111_1)."
     }, 
     "validate_certs": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"True\", \"False\"]]", 
       "description": "If C(no), SSL certificates will not be validated. This should only be used on personally controlled sites using self-signed certificates. This option can be omitted if the environment variable C(F5_VALIDATE_CERTS) is set."
     }, 
     "cert_content": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "When used instead of 'cert_src', sets the contents of a certificate directly to the specified value. This is used with lookup plugins or for anything with formatting or templating. Either one of C(key_src), C(key_content), C(cert_src) or C(cert_content) must be provided when C(state) is C(present)."
     }, 
     "partition": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "BIG-IP partition to use when adding/deleting certificate."
     }, 
     "server": {
-      "type": "String", 
+      "type": "String[0]", 
       "description": "The BIG-IP host. This option can be omitted if the environment variable C(F5_SERVER) is set."
     }, 
     "cert_src": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "This is the local filename of the certificate. Either one of C(key_src), C(key_content), C(cert_src) or C(cert_content) must be provided when C(state) is C(present)."
     }, 
     "state": {
-      "type": "String", 
+      "type": "Optional[Enum[\"present\", \"absent\"]]", 
       "description": "Certificate and key state. This determines if the provided certificate and key is to be made C(present) on the device or C(absent)."
     }, 
     "user": {
-      "type": "String", 
+      "type": "String[0]", 
       "description": "The username to connect to the BIG-IP with. This user must have administrative privileges on the device. This option can be omitted if the environment variable C(F5_USER) is set."
     }, 
     "server_port": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "The BIG-IP server port. This option can be omitted if the environment variable C(F5_SERVER_PORT) is set."
     }, 
     "password": {
-      "type": "String", 
+      "type": "String[0]", 
       "description": "The password for the user account used to connect to the BIG-IP. This option can be omitted if the environment variable C(F5_PASSWORD) is set."
     }, 
     "key_content": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "When used instead of 'key_src', sets the contents of a certificate key directly to the specified value. This is used with lookup plugins or for anything with formatting or templating. Either one of C(key_src), C(key_content), C(cert_src) or C(cert_content) must be provided when C(state) is C(present)."
     }, 
     "passphrase": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Passphrase on certificate private key"
     }, 
     "key_src": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "This is the local filename of the private key. Either one of C(key_src), C(key_content), C(cert_src) or C(cert_content) must be provided when C(state) is C(present)."
     }
   }

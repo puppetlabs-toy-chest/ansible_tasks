@@ -1,349 +1,350 @@
 {
-  "description": "Module for setup of VirtualService Avi RESTful Object", 
+  "input_method": "stdin", 
+  "description": "This module is used to configure VirtualService object", 
   "parameters": {
     "port_uuid": {
-      "type": "Optional[String]", 
-      "description": "(internal-use) network port assigned to the virtual service ip address. Field deprecated in 17.1.1."
+      "type": "Optional[String[0]]", 
+      "description": "(internal-use) network port assigned to the virtual service ip address."
     }, 
     "availability_zone": {
-      "type": "Optional[String]", 
-      "description": "Availability-zone to place the virtual service. Field deprecated in 17.1.1."
+      "type": "Optional[String[0]]", 
+      "description": "Availability-zone to place the virtual service."
     }, 
     "flow_dist": {
-      "type": "Optional[String]", 
-      "description": "Criteria for flow distribution among ses. Enum options - LOAD_AWARE, CONSISTENT_HASH_SOURCE_IP_ADDRESS, CONSISTENT_HASH_SOURCE_IP_ADDRESS_AND_PORT. Default value when not specified in API or module is interpreted by Avi Controller as LOAD_AWARE."
+      "type": "Optional[String[0]]", 
+      "description": "Criteria for flow distribution among ses."
     }, 
     "enable_rhi_snat": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Enable route health injection for source nat'ted floating ip address using the bgp config in the vrf context."
     }, 
     "sideband_profile": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Sideband configuration to be used for this virtualservice.it can be used for sending traffic to sideband vips for external inspection etc."
     }, 
     "requests_rate_limit": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Rate limit the incoming requests to this virtual service."
     }, 
     "uuid": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Uuid of the virtualservice."
     }, 
     "ssl_profile_ref": {
-      "type": "Optional[String]", 
-      "description": "Determines the set of ssl versions and ciphers to accept for ssl/tls terminated connections. It is a reference to an object of type sslprofile."
+      "type": "Optional[String[0]]", 
+      "description": "Determines the set of ssl versions and ciphers to accept for ssl/tls terminated connections."
     }, 
     "created_by": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Creator name."
     }, 
     "max_cps_per_client": {
-      "type": "Optional[String]", 
-      "description": "Maximum connections per second per client ip. Allowed values are 10-1000. Special values are 0- 'unlimited'. Default value when not specified in API or module is interpreted by Avi Controller as 0."
+      "type": "Optional[String[0]]", 
+      "description": "Maximum connections per second per client ip."
     }, 
     "vs_datascripts": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Datascripts applied on the data traffic of the virtual service."
     }, 
     "application_profile_ref": {
-      "type": "Optional[String]", 
-      "description": "Enable application layer specific features for the virtual service. It is a reference to an object of type applicationprofile."
+      "type": "Optional[String[0]]", 
+      "description": "Enable application layer specific features for the virtual service."
     }, 
     "active_standby_se_tag": {
-      "type": "Optional[String]", 
-      "description": "This configuration only applies if the virtualservice is in legacy active standby ha mode and load distribution among active standby is enabled. This field is used to tag the virtualservice so that virtualservices with the same tag will share the same active serviceengine. Virtualservices with different tags will have different active serviceengines. If one of the serviceengine's in the serviceenginegroup fails, all virtualservices will end up using the same active serviceengine. Redistribution of the virtualservices can be either manual or automated when the failed serviceengine recovers. Redistribution is based on the auto redistribute property of the serviceenginegroup. Enum options - ACTIVE_STANDBY_SE_1, ACTIVE_STANDBY_SE_2. Default value when not specified in API or module is interpreted by Avi Controller as ACTIVE_STANDBY_SE_1."
+      "type": "Optional[String[0]]", 
+      "description": "This configuration only applies if the virtualservice is in legacy active standby ha mode and load distribution among active standby is enabled."
     }, 
     "password": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Password of Avi user in Avi controller. The default value is the environment variable C(AVI_PASSWORD)."
     }, 
     "ip_address": {
-      "type": "Optional[String]", 
-      "description": "Ip address of the virtual service. Field deprecated in 17.1.1."
+      "type": "Optional[String[0]]", 
+      "description": "Ip address of the virtual service."
     }, 
     "subnet_uuid": {
-      "type": "Optional[String]", 
-      "description": "It represents subnet for the virtual service ip address allocation when auto_allocate_ip is true.it is only applicable in openstack or aws cloud. This field is required if auto_allocate_ip is true. Field deprecated in 17.1.1."
+      "type": "Optional[String[0]]", 
+      "description": "It represents subnet for the virtual service ip address allocation when auto_allocate_ip is true.it is only applicable in openstack or aws cloud."
     }, 
     "name": {
-      "type": "String", 
+      "type": "String[0]", 
       "description": "Name for the virtual service."
     }, 
     "enable_autogw": {
-      "type": "Optional[String]", 
-      "description": "Response traffic to clients will be sent back to the source mac address of the connection, rather than statically sent to a default gateway. Default value when not specified in API or module is interpreted by Avi Controller as True."
+      "type": "Optional[String[0]]", 
+      "description": "Response traffic to clients will be sent back to the source mac address of the connection, rather than statically sent to a default gateway."
     }, 
     "tenant_ref": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "It is a reference to an object of type tenant."
     }, 
     "remove_listening_port_on_vs_down": {
-      "type": "Optional[String]", 
-      "description": "Remove listening port if virtualservice is down. Default value when not specified in API or module is interpreted by Avi Controller as False."
+      "type": "Optional[String[0]]", 
+      "description": "Remove listening port if virtualservice is down."
     }, 
     "static_dns_records": {
-      "type": "Optional[String]", 
-      "description": "List of static dns records applied to this virtual service. These are static entries and no health monitoring is performed against the ip addresses."
+      "type": "Optional[String[0]]", 
+      "description": "List of static dns records applied to this virtual service."
     }, 
     "analytics_policy": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Determines analytics settings for the application."
     }, 
     "tenant_uuid": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "UUID of tenant used for all Avi API calls and context of object."
     }, 
     "weight": {
-      "type": "Optional[String]", 
-      "description": "The quality of service weight to assign to traffic transmitted from this virtual service. A higher weight will prioritize traffic versus other virtual services sharing the same service engines. Default value when not specified in API or module is interpreted by Avi Controller as 1."
+      "type": "Optional[String[0]]", 
+      "description": "The quality of service weight to assign to traffic transmitted from this virtual service."
     }, 
     "enabled": {
-      "type": "Optional[String]", 
-      "description": "Enable or disable the virtual service. Default value when not specified in API or module is interpreted by Avi Controller as True."
+      "type": "Optional[String[0]]", 
+      "description": "Enable or disable the virtual service."
     }, 
     "content_rewrite": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Profile used to match and rewrite strings in request and/or response body."
     }, 
     "traffic_clone_profile_ref": {
-      "type": "Optional[String]", 
-      "description": "Server network or list of servers for cloning traffic. It is a reference to an object of type trafficcloneprofile. Field introduced in 17.1.1."
+      "type": "Optional[String[0]]", 
+      "description": "Server network or list of servers for cloning traffic."
     }, 
     "vrf_context_ref": {
-      "type": "Optional[String]", 
-      "description": "Virtual routing context that the virtual service is bound to. This is used to provide the isolation of the set of networks the application is attached to. It is a reference to an object of type vrfcontext."
+      "type": "Optional[String[0]]", 
+      "description": "Virtual routing context that the virtual service is bound to."
     }, 
     "subnet": {
-      "type": "Optional[String]", 
-      "description": "Subnet providing reachability for client facing virtual service ip. Field deprecated in 17.1.1."
+      "type": "Optional[String[0]]", 
+      "description": "Subnet providing reachability for client facing virtual service ip."
     }, 
     "vh_domain_name": {
-      "type": "Optional[String]", 
-      "description": "The exact name requested from the client's sni-enabled tls hello domain name field. If this is a match, the parent vs will forward the connection to this child vs."
+      "type": "Optional[String[0]]", 
+      "description": "The exact name requested from the client's sni-enabled tls hello domain name field."
     }, 
     "se_group_ref": {
-      "type": "Optional[String]", 
-      "description": "The service engine group to use for this virtual service. Moving to a new se group is disruptive to existing connections for this vs. It is a reference to an object of type serviceenginegroup."
+      "type": "Optional[String[0]]", 
+      "description": "The service engine group to use for this virtual service."
     }, 
     "scaleout_ecmp": {
-      "type": "Optional[String]", 
-      "description": "Disable re-distribution of flows across service engines for a virtual service. Enable if the network itself performs flow hashing with ecmp in environments such as gcp. Default value when not specified in API or module is interpreted by Avi Controller as False."
+      "type": "Optional[String[0]]", 
+      "description": "Disable re-distribution of flows across service engines for a virtual service."
     }, 
     "state": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"absent\", \"present\"]]", 
       "description": "The state that should be applied on the entity."
     }, 
     "api_version": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Avi API version of to use for Avi API and objects."
     }, 
     "vsvip_ref": {
-      "type": "Optional[String]", 
-      "description": "Mostly used during the creation of shared vs, this fieldrefers to entities that can be shared across virtual services. It is a reference to an object of type vsvip. Field introduced in 17.1.1."
+      "type": "Optional[String[0]]", 
+      "description": "Mostly used during the creation of shared vs, this fieldrefers to entities that can be shared across virtual services."
     }, 
     "performance_limits": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Optional settings that determine performance limits like max connections or bandwdith etc."
     }, 
     "floating_ip": {
-      "type": "Optional[String]", 
-      "description": "Floating ip to associate with this virtual service. Field deprecated in 17.1.1."
+      "type": "Optional[String[0]]", 
+      "description": "Floating ip to associate with this virtual service."
     }, 
     "auto_allocate_floating_ip": {
-      "type": "Optional[String]", 
-      "description": "Auto-allocate floating/elastic ip from the cloud infrastructure. Field deprecated in 17.1.1. Default value when not specified in API or module is interpreted by Avi Controller as False."
+      "type": "Optional[String[0]]", 
+      "description": "Auto-allocate floating/elastic ip from the cloud infrastructure."
     }, 
     "connections_rate_limit": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Rate limit the incoming connections to this virtual service."
     }, 
     "server_network_profile_ref": {
-      "type": "Optional[String]", 
-      "description": "Determines the network settings profile for the server side of tcp proxied connections. Leave blank to use the same settings as the client to vs side of the connection. It is a reference to an object of type networkprofile."
+      "type": "Optional[String[0]]", 
+      "description": "Determines the network settings profile for the server side of tcp proxied connections."
     }, 
     "ign_pool_net_reach": {
-      "type": "Optional[String]", 
-      "description": "Ignore pool servers network reachability constraints for virtual service placement. Default value when not specified in API or module is interpreted by Avi Controller as False."
+      "type": "Optional[String[0]]", 
+      "description": "Ignore pool servers network reachability constraints for virtual service placement."
     }, 
     "tenant": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Name of tenant used for all Avi API calls and context of object."
     }, 
     "auto_allocate_ip": {
-      "type": "Optional[String]", 
-      "description": "Auto-allocate vip from the provided subnet. Field deprecated in 17.1.1. Default value when not specified in API or module is interpreted by Avi Controller as False."
+      "type": "Optional[String[0]]", 
+      "description": "Auto-allocate vip from the provided subnet."
     }, 
     "fqdn": {
-      "type": "Optional[String]", 
-      "description": "Dns resolvable, fully qualified domain name of the virtualservice. Only one of 'fqdn' and 'dns_info' configuration is allowed."
+      "type": "Optional[String[0]]", 
+      "description": "Dns resolvable, fully qualified domain name of the virtualservice."
     }, 
     "network_security_policy_ref": {
-      "type": "Optional[String]", 
-      "description": "Network security policies for the virtual service. It is a reference to an object of type networksecuritypolicy."
+      "type": "Optional[String[0]]", 
+      "description": "Network security policies for the virtual service."
     }, 
     "vh_parent_vs_uuid": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Specifies the virtual service acting as virtual hosting (sni) parent."
     }, 
     "client_auth": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Http authentication configuration for protected resources."
     }, 
     "floating_subnet_uuid": {
-      "type": "Optional[String]", 
-      "description": "If auto_allocate_floating_ip is true and more than one floating-ip subnets exist, then the subnet for the floating ip address allocation. This field is applicable only if the virtualservice belongs to an openstack or aws cloud. In openstack or aws cloud it is required when auto_allocate_floating_ip is selected. Field deprecated in 17.1.1."
+      "type": "Optional[String[0]]", 
+      "description": "If auto_allocate_floating_ip is true and more than one floating-ip subnets exist, then the subnet for the floating ip address allocation."
     }, 
     "delay_fairness": {
-      "type": "Optional[String]", 
-      "description": "Select the algorithm for qos fairness. This determines how multiple virtual services sharing the same service engines will prioritize traffic over a congested network. Default value when not specified in API or module is interpreted by Avi Controller as False."
+      "type": "Optional[String[0]]", 
+      "description": "Select the algorithm for qos fairness."
     }, 
     "vip": {
-      "type": "Optional[String]", 
-      "description": "List of virtual service ips. While creating a 'shared vs',please use vsvip_ref to point to the shared entities. Field introduced in 17.1.1."
+      "type": "Optional[String[0]]", 
+      "description": "List of virtual service ips."
     }, 
     "snat_ip": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Nat'ted floating source ip address(es) for upstream connection to servers."
     }, 
     "avi_allocated_vip": {
-      "type": "Optional[String]", 
-      "description": "(internal-use) vip allocated by avi in the cloud infrastructure. Field deprecated in 17.1.1. Default value when not specified in API or module is interpreted by Avi Controller as False."
+      "type": "Optional[String[0]]", 
+      "description": "(internal-use) vip allocated by avi in the cloud infrastructure."
     }, 
     "analytics_profile_ref": {
-      "type": "Optional[String]", 
-      "description": "Specifies settings related to analytics. It is a reference to an object of type analyticsprofile."
+      "type": "Optional[String[0]]", 
+      "description": "Specifies settings related to analytics."
     }, 
     "avi_allocated_fip": {
-      "type": "Optional[String]", 
-      "description": "(internal-use) fip allocated by avi in the cloud infrastructure. Field deprecated in 17.1.1. Default value when not specified in API or module is interpreted by Avi Controller as False."
+      "type": "Optional[String[0]]", 
+      "description": "(internal-use) fip allocated by avi in the cloud infrastructure."
     }, 
     "pool_ref": {
-      "type": "Optional[String]", 
-      "description": "The pool is an object that contains destination servers and related attributes such as load-balancing and persistence. It is a reference to an object of type pool."
+      "type": "Optional[String[0]]", 
+      "description": "The pool is an object that contains destination servers and related attributes such as load-balancing and persistence."
     }, 
     "ssl_sess_cache_avg_size": {
-      "type": "Optional[String]", 
-      "description": "Expected number of ssl session cache entries (may be exceeded). Allowed values are 1024-16383. Default value when not specified in API or module is interpreted by Avi Controller as 1024."
+      "type": "Optional[String[0]]", 
+      "description": "Expected number of ssl session cache entries (may be exceeded)."
     }, 
     "username": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Username used for accessing Avi controller. The default value is the environment variable C(AVI_USERNAME)."
     }, 
     "http_policies": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Http policies applied on the data traffic of the virtual service."
     }, 
     "controller": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "IP address or hostname of the controller. The default value is the environment variable C(AVI_CONTROLLER)."
     }, 
     "pool_group_ref": {
-      "type": "Optional[String]", 
-      "description": "The pool group is an object that contains pools. It is a reference to an object of type poolgroup."
+      "type": "Optional[String[0]]", 
+      "description": "The pool group is an object that contains pools."
     }, 
     "east_west_placement": {
-      "type": "Optional[String]", 
-      "description": "Force placement on all se's in service group (mesos mode only). Default value when not specified in API or module is interpreted by Avi Controller as False."
+      "type": "Optional[String[0]]", 
+      "description": "Force placement on all se's in service group (mesos mode only)."
     }, 
     "service_pool_select": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Select pool based on destination port."
     }, 
     "type": {
-      "type": "Optional[String]", 
-      "description": "Specify if this is a normal virtual service, or if it is the parent or child of an sni-enabled virtual hosted virtual service. Enum options - VS_TYPE_NORMAL, VS_TYPE_VH_PARENT, VS_TYPE_VH_CHILD. Default value when not specified in API or module is interpreted by Avi Controller as VS_TYPE_NORMAL."
+      "type": "Optional[String[0]]", 
+      "description": "Specify if this is a normal virtual service, or if it is the parent or child of an sni-enabled virtual hosted virtual service."
     }, 
     "discovered_networks": {
-      "type": "Optional[String]", 
-      "description": "(internal-use) discovered networks providing reachability for client facing virtual service ip. This field is used internally by avi, not editable by the user. Field deprecated in 17.1.1."
+      "type": "Optional[String[0]]", 
+      "description": "(internal-use) discovered networks providing reachability for client facing virtual service ip."
     }, 
     "dns_info": {
-      "type": "Optional[String]", 
-      "description": "Service discovery specific data including fully qualified domain name, type and time-to-live of the dns record. Note that only one of fqdn and dns_info setting is allowed."
+      "type": "Optional[String[0]]", 
+      "description": "Service discovery specific data including fully qualified domain name, type and time-to-live of the dns record."
     }, 
     "ipam_network_subnet": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Subnet and/or network for allocating virtualservice ip by ipam provider module."
     }, 
     "ssl_key_and_certificate_refs": {
-      "type": "Optional[String]", 
-      "description": "Select or create one or two certificates, ec and/or rsa, that will be presented to ssl/tls terminated connections. It is a reference to an object of type sslkeyandcertificate."
+      "type": "Optional[String[0]]", 
+      "description": "Select or create one or two certificates, ec and/or rsa, that will be presented to ssl/tls terminated connections."
     }, 
     "flow_label_type": {
-      "type": "Optional[String]", 
-      "description": "Criteria for flow labelling. Enum options - NO_LABEL, SERVICE_LABEL. Default value when not specified in API or module is interpreted by Avi Controller as NO_LABEL."
+      "type": "Optional[String[0]]", 
+      "description": "Criteria for flow labelling."
     }, 
     "network_profile_ref": {
-      "type": "Optional[String]", 
-      "description": "Determines network settings such as protocol, tcp or udp, and related options for the protocol. It is a reference to an object of type networkprofile."
+      "type": "Optional[String[0]]", 
+      "description": "Determines network settings such as protocol, tcp or udp, and related options for the protocol."
     }, 
     "service_metadata": {
-      "type": "Optional[String]", 
-      "description": "Metadata pertaining to the service provided by this virtual service. In openshift/kubernetes environments, egress pod info is stored. Any user input to this field will be overwritten by avi vantage."
+      "type": "Optional[String[0]]", 
+      "description": "Metadata pertaining to the service provided by this virtual service."
     }, 
     "cloud_type": {
-      "type": "Optional[String]", 
-      "description": "Enum options - cloud_none, cloud_vcenter, cloud_openstack, cloud_aws, cloud_vca, cloud_apic, cloud_mesos, cloud_linuxserver, cloud_docker_ucp, cloud_rancher, cloud_oshift_k8s. Default value when not specified in API or module is interpreted by Avi Controller as CLOUD_NONE."
+      "type": "Optional[String[0]]", 
+      "description": "Enum options - cloud_none, cloud_vcenter, cloud_openstack, cloud_aws, cloud_vca, cloud_apic, cloud_mesos, cloud_linuxserver, cloud_docker_ucp,"
     }, 
     "cloud_ref": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "It is a reference to an object of type cloud."
     }, 
     "enable_rhi": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Enable route health injection using the bgp config in the vrf context."
     }, 
     "nsx_securitygroup": {
-      "type": "Optional[String]", 
-      "description": "A list of nsx service groups representing the clients which can access the virtual ip of the virtual service. Field introduced in 17.1.1."
+      "type": "Optional[String[0]]", 
+      "description": "A list of nsx service groups representing the clients which can access the virtual ip of the virtual service."
     }, 
     "description": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "User defined description for the object."
     }, 
     "use_bridge_ip_as_vip": {
-      "type": "Optional[String]", 
-      "description": "Use bridge ip as vip on each host in mesos deployments. Default value when not specified in API or module is interpreted by Avi Controller as False."
+      "type": "Optional[String[0]]", 
+      "description": "Use bridge ip as vip on each host in mesos deployments."
     }, 
     "host_name_xlate": {
-      "type": "Optional[String]", 
-      "description": "Translate the host name sent to the servers to this value. Translate the host name sent from servers back to the value used by the client."
+      "type": "Optional[String[0]]", 
+      "description": "Translate the host name sent to the servers to this value."
     }, 
     "services": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "List of services defined for this virtual service."
     }, 
     "microservice_ref": {
-      "type": "Optional[String]", 
-      "description": "Microservice representing the virtual service. It is a reference to an object of type microservice."
+      "type": "Optional[String[0]]", 
+      "description": "Microservice representing the virtual service."
     }, 
     "discovered_network_ref": {
-      "type": "Optional[String]", 
-      "description": "(internal-use) discovered networks providing reachability for client facing virtual service ip. This field is deprecated. It is a reference to an object of type network. Field deprecated in 17.1.1."
+      "type": "Optional[String[0]]", 
+      "description": "(internal-use) discovered networks providing reachability for client facing virtual service ip."
     }, 
     "limit_doser": {
-      "type": "Optional[String]", 
-      "description": "Limit potential dos attackers who exceed max_cps_per_client significantly to a fraction of max_cps_per_client for a while. Default value when not specified in API or module is interpreted by Avi Controller as False."
+      "type": "Optional[String[0]]", 
+      "description": "Limit potential dos attackers who exceed max_cps_per_client significantly to a fraction of max_cps_per_client for a while."
     }, 
     "url": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Avi controller URL of the object."
     }, 
     "network_ref": {
-      "type": "Optional[String]", 
-      "description": "Manually override the network on which the virtual service is placed. It is a reference to an object of type network. Field deprecated in 17.1.1."
+      "type": "Optional[String[0]]", 
+      "description": "Manually override the network on which the virtual service is placed."
     }, 
     "discovered_subnet": {
-      "type": "Optional[String]", 
-      "description": "(internal-use) discovered subnets providing reachability for client facing virtual service ip. This field is deprecated. Field deprecated in 17.1.1."
+      "type": "Optional[String[0]]", 
+      "description": "(internal-use) discovered subnets providing reachability for client facing virtual service ip."
     }, 
     "dns_policies": {
-      "type": "Optional[String]", 
-      "description": "Dns policies applied on the dns traffic of the virtual service. Field introduced in 17.1.1."
+      "type": "Optional[String[0]]", 
+      "description": "Dns policies applied on the dns traffic of the virtual service."
     }, 
     "cloud_config_cksum": {
-      "type": "Optional[String]", 
-      "description": "Checksum of cloud configuration for vs. Internally set by cloud connector."
+      "type": "Optional[String[0]]", 
+      "description": "Checksum of cloud configuration for vs."
     }
   }
 }

@@ -1,8 +1,9 @@
 {
-  "description": "Gather facts on instances of Apache CloudStack based clouds.", 
+  "input_method": "stdin", 
+  "description": "This module fetches data from the metadata API in CloudStack. The module must be called from within the instance itself.", 
   "parameters": {
     "filter": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"cloudstack_service_offering\", \"cloudstack_availability_zone\", \"cloudstack_public_hostname\", \"cloudstack_public_ipv4\", \"cloudstack_local_hostname\", \"cloudstack_local_ipv4\", \"cloudstack_instance_id\", \"cloudstack_user_data\"]]", 
       "description": "Filter for a specific fact."
     }
   }

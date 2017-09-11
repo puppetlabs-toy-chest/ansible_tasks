@@ -1,57 +1,58 @@
 {
-  "description": "Manage FreeIPA group", 
+  "input_method": "stdin", 
+  "description": "Add, modify and delete group within IPA server", 
   "parameters": {
     "ipa_port": {
-      "type": "Optional[String]", 
-      "description": "P o r t   o f   I P A   s e r v e r"
+      "type": "Optional[String[0]]", 
+      "description": "P"
     }, 
     "group": {
-      "type": "Optional[String]", 
-      "description": "List of group names assigned to this group. If an empty list is passed all groups will be removed from this group. If option is omitted assigned groups will not be checked or changed. Groups that are already assigned but not passed will be removed."
+      "type": "Optional[String[0]]", 
+      "description": "List of group names assigned to this group."
     }, 
     "cn": {
-      "type": "String", 
-      "description": "Canonical name. Can not be changed as it is the unique identifier."
+      "type": "String[0]", 
+      "description": "Canonical name."
     }, 
     "user": {
-      "type": "Optional[String]", 
-      "description": "List of user names assigned to this group. If an empty list is passed all users will be removed from this group. If option is omitted assigned users will not be checked or changed. Users that are already assigned but not passed will be removed."
+      "type": "Optional[String[0]]", 
+      "description": "List of user names assigned to this group."
     }, 
     "ipa_prot": {
-      "type": "Optional[String]", 
-      "description": "P r o t o c o l   u s e d   b y   I P A   s e r v e r"
+      "type": "Optional[Enum[\"http\", \"https\"]]", 
+      "description": "P"
     }, 
     "state": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"present\", \"absent\"]]", 
       "description": "State to ensure"
     }, 
     "gidnumber": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "GID (use this option to set it manually)."
     }, 
     "external": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Allow adding external non-IPA members from trusted domains."
     }, 
     "ipa_user": {
-      "type": "Optional[String]", 
-      "description": "A d m i n i s t r a t i v e   a c c o u n t   u s e d   o n   I P A   s e r v e r"
+      "type": "Optional[String[0]]", 
+      "description": "A"
     }, 
     "ipa_pass": {
-      "type": "String", 
-      "description": "P a s s w o r d   o f   a d m i n i s t r a t i v e   u s e r"
+      "type": "String[0]", 
+      "description": "P"
     }, 
     "validate_certs": {
-      "type": "Optional[String]", 
-      "description": "This only applies if C(ipa_prot) is I(https). If set to C(no), the SSL certificates will not be validated. This should only set to C(no) used on personally controlled sites using self-signed certificates."
+      "type": "Optional[String[0]]", 
+      "description": "This only applies if C(ipa_prot) is I(https)."
     }, 
     "nonposix": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Create as a non-POSIX group."
     }, 
     "ipa_host": {
-      "type": "Optional[String]", 
-      "description": "I P   o r   h o s t n a m e   o f   I P A   s e r v e r"
+      "type": "Optional[String[0]]", 
+      "description": "I"
     }
   }
 }

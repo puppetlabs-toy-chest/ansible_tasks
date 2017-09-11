@@ -1,84 +1,85 @@
 {
+  "input_method": "stdin", 
   "description": "Manipulate Rackspace Cloud Block Storage Volumes", 
   "parameters": {
     "username": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Rackspace username, overrides I(credentials)."
     }, 
     "api_key": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Rackspace API key, overrides I(credentials)."
     }, 
     "tenant_name": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "The tenant name used for authentication."
     }, 
     "description": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Description to give the volume being created"
     }, 
     "identity_type": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Authentication mechanism to use, such as rackspace or keystone."
     }, 
     "tenant_id": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "The tenant ID used for authentication."
     }, 
     "region": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Region to create an instance in."
     }, 
     "auth_endpoint": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "The URI of the authentication service."
     }, 
     "verify_ssl": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Whether or not to require SSL validation of API endpoints."
     }, 
     "volume_type": {
-      "type": "String", 
+      "type": "Optional[Enum[\"SATA\", \"SSD\"]]", 
       "description": "Type of the volume being created"
     }, 
     "name": {
-      "type": "String", 
+      "type": "String[0]", 
       "description": "Name to give the volume being created"
     }, 
     "state": {
-      "type": "String", 
+      "type": "Optional[Enum[\"present\", \"absent\"]]", 
       "description": "Indicate desired state of the resource"
     }, 
     "meta": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "A hash of metadata to associate with the volume"
     }, 
     "env": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Environment as configured in I(~/.pyrax.cfg), see U(https://github.com/rackspace/pyrax/blob/master/docs/getting_started.md#pyrax-configuration)."
     }, 
     "snapshot_id": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "The id of the snapshot to create the volume from"
     }, 
     "credentials": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "File to find the Rackspace credentials in. Ignored if I(api_key) and I(username) are provided."
     }, 
     "wait": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"yes\", \"no\"]]", 
       "description": "wait for the volume to be in state 'available' before returning"
     }, 
     "image": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "image to use for bootable volumes. Can be an C(id), C(human_id) or C(name). This option requires C(pyrax>=1.9.3)"
     }, 
     "wait_timeout": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "how long before wait gives up, in seconds"
     }, 
     "size": {
-      "type": "String", 
+      "type": "Optional[String[0]]", 
       "description": "Size of the volume to create in Gigabytes"
     }
   }

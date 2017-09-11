@@ -1,16 +1,17 @@
 {
-  "description": "Installing packages from FreeBSD's ports system", 
+  "input_method": "stdin", 
+  "description": "Manage packages for FreeBSD using 'portinstall'.", 
   "parameters": {
     "state": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"present\", \"absent\"]]", 
       "description": "state of the package"
     }, 
     "use_packages": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"yes\", \"no\"]]", 
       "description": "use packages instead of ports whenever available"
     }, 
     "name": {
-      "type": "String", 
+      "type": "String[0]", 
       "description": "name of package to install/remove"
     }
   }

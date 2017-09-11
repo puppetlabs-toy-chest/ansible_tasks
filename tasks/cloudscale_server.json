@@ -1,61 +1,62 @@
 {
-  "description": "Manages servers on the cloudscale.ch IaaS service", 
+  "input_method": "stdin", 
+  "description": "Create, start, stop and delete servers on the cloudscale.ch IaaS service.", 
   "parameters": {
     "anti_affinity_with": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "UUID of another server to create an anti-affinity group with"
     }, 
     "uuid": {
-      "type": "Optional[String]", 
-      "description": "UUID of the server Either C(name) or C(uuid) are required. These options are mutually exclusive."
+      "type": "Optional[String[0]]", 
+      "description": "UUID of the server"
     }, 
     "use_public_network": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Attach a public network interface to the server"
     }, 
     "image": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Image used to create the server"
     }, 
     "api_token": {
-      "type": "Optional[String]", 
-      "description": "cloudscale.ch API token. This can also be passed in the CLOUDSCALE_API_TOKEN environment variable."
+      "type": "Optional[String[0]]", 
+      "description": "cloudscale.ch API token."
     }, 
     "user_data": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Cloud-init configuration (cloud-config) data to use for the server."
     }, 
     "bulk_volume_size_gb": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Size of the bulk storage volume in GB"
     }, 
     "volume_size_gb": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Size of the root volume in GB"
     }, 
     "use_private_network": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Attach a private network interface to the server"
     }, 
     "state": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"running\", \"stopped\", \"absent\"]]", 
       "description": "State of the server"
     }, 
     "use_ipv6": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Enable IPv6 on the public network interface"
     }, 
     "flavor": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Flavor of the server"
     }, 
     "ssh_keys": {
-      "type": "Optional[String]", 
-      "description": "List of SSH public keys Use the full content of your .pub file here."
+      "type": "Optional[String[0]]", 
+      "description": "List of SSH public keys"
     }, 
     "name": {
-      "type": "Optional[String]", 
-      "description": "Name of the Server Either C(name) or C(uuid) are required. These options are mutually exclusive."
+      "type": "Optional[String[0]]", 
+      "description": "Name of the Server"
     }
   }
 }

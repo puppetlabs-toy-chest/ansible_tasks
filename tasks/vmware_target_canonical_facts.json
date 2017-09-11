@@ -1,24 +1,25 @@
 {
-  "description": "Return canonical (NAA) from an ESXi host", 
+  "input_method": "stdin", 
+  "description": "Return canonical (NAA) from an ESXi host based on SCSI target ID", 
   "parameters": {
     "username": {
-      "type": "String", 
+      "type": "String[0]", 
       "description": "The username of the vSphere vCenter."
     }, 
     "validate_certs": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"True\", \"False\"]]", 
       "description": "Allows connection when SSL certificates are not valid. Set to false when certificates are not trusted."
     }, 
     "password": {
-      "type": "String", 
+      "type": "String[0]", 
       "description": "The password of the vSphere vCenter."
     }, 
     "target_id": {
-      "type": "String", 
+      "type": "String[0]", 
       "description": "The target id based on order of scsi device"
     }, 
     "hostname": {
-      "type": "String", 
+      "type": "String[0]", 
       "description": "The hostname or IP address of the vSphere vCenter."
     }
   }

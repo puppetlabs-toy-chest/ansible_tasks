@@ -1,92 +1,93 @@
 {
-  "description": "Activate/Deactivate Bare Metal Resources from OpenStack", 
+  "input_method": "stdin", 
+  "description": "Deploy to nodes controlled by Ironic.", 
   "parameters": {
     "auth_type": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Name of the auth plugin to use. If the cloud uses something other than password authentication, the name of the plugin should be indicated here and the contents of the I(auth) parameter should be updated accordingly."
     }, 
     "availability_zone": {
-      "type": "Optional[String]", 
-      "description": "Ignored. Present for backwards compatibility"
+      "type": "Optional[String[0]]", 
+      "description": "Ignored. Present for backwards compatability"
     }, 
     "maintenance_reason": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "A string expression regarding the reason a node is in a maintenance mode."
     }, 
     "cloud": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Named cloud to operate against. Provides default values for I(auth) and I(auth_type). This parameter is not needed if I(auth) is provided or if OpenStack OS_* environment variables are present."
     }, 
     "uuid": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "globally unique identifier (UUID) to be given to the resource."
     }, 
     "ironic_url": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "If noauth mode is utilized, this is required to be set to the endpoint URL for the Ironic API.  Use with \"auth\" and \"auth_type\" settings set to None."
     }, 
     "state": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"present\", \"absent\"]]", 
       "description": "Indicates desired state of the resource"
     }, 
     "maintenance": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "A setting to allow the direct control if a node is in maintenance mode."
     }, 
     "config_drive": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "A configdrive file or HTTP(S) URL that will be passed along to the node."
     }, 
     "region_name": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Name of the region."
     }, 
     "power": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"present\", \"absent\"]]", 
       "description": "A setting to allow power state to be asserted allowing nodes that are not yet deployed to be powered on, and nodes that are deployed to be powered off."
     }, 
     "deploy": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"true\", \"false\"]]", 
       "description": "Indicates if the resource should be deployed. Allows for deployment logic to be disengaged and control of the node power or maintenance state to be changed."
     }, 
     "api_timeout": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "How long should the socket layer wait before timing out for API calls. If this is omitted, nothing will be passed to the requests library."
     }, 
     "auth": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Dictionary containing auth information as needed by the cloud's auth plugin strategy. For the default I(password) plugin, this would contain I(auth_url), I(username), I(password), I(project_name) and any information about domains if the cloud supports them. For other plugins, this param will need to contain whatever parameters that auth plugin requires. This parameter is not needed if a named cloud is provided or OpenStack OS_* environment variables are present."
     }, 
     "endpoint_type": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"public\", \"internal\", \"admin\"]]", 
       "description": "Endpoint URL type to fetch from the service catalog."
     }, 
     "key": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "A path to a client key to use as part of the SSL transaction."
     }, 
     "cacert": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "A path to a CA Cert bundle that can be used as part of verifying SSL API requests."
     }, 
     "wait": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "A boolean value instructing the module to wait for node activation or deactivation to complete before returning."
     }, 
     "cert": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "A path to a client certificate to use as part of the SSL transaction."
     }, 
     "timeout": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "An integer value representing the number of seconds to wait for the node activation or deactivation to complete."
     }, 
     "validate_certs": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Whether or not SSL API requests should be verified. Before 2.3 this defaulted to True."
     }, 
     "instance_info": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Definition of the instance information which is used to deploy the node.  This information is only required when an instance is set to present."
     }
   }

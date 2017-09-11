@@ -1,16 +1,17 @@
 {
-  "description": "Extract files from an ISO image.", 
+  "input_method": "stdin", 
+  "description": "This module mounts an iso image in a temporary directory and extracts files from there to a given destination.", 
   "parameters": {
     "dest": {
-      "type": "String", 
+      "type": "String[0]", 
       "description": "The destination directory to extract files to."
     }, 
     "files": {
-      "type": "String", 
-      "description": "A list of files to extract from the image. Extracting directories does not work."
+      "type": "String[0]", 
+      "description": "A list of files to extract from the image."
     }, 
     "image": {
-      "type": "String", 
+      "type": "String[0]", 
       "description": "The ISO image to extract files from."
     }
   }

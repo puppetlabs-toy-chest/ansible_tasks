@@ -1,4 +1,5 @@
 {
-  "description": "get facts reported on xenserver", 
+  "input_method": "stdin", 
+  "description": "Reads data out of XenAPI, can be used instead of multiple xe commands.", 
   "parameters": {}
 }

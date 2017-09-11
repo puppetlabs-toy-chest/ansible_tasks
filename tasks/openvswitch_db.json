@@ -1,32 +1,33 @@
 {
-  "description": "Configure open vswitch database.", 
+  "input_method": "stdin", 
+  "description": "Set column values in record in database table.", 
   "parameters": {
     "key": {
-      "type": "String", 
+      "type": "String[0]", 
       "description": "Identifies the key in the record column"
     }, 
     "column": {
-      "type": "String", 
+      "type": "String[0]", 
       "description": "Identifies the column in the record."
     }, 
     "value": {
-      "type": "String", 
+      "type": "String[0]", 
       "description": "Expected value for the table, record, column and key."
     }, 
     "record": {
-      "type": "String", 
+      "type": "String[0]", 
       "description": "Identifies the recoard in the table."
     }, 
     "state": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"present\", \"absent\"]]", 
       "description": "Configures the state of the key. When set to I(present), the I(key) and I(value) pair will be set on the I(record) and when set to I(absent) the I(key) will not be set."
     }, 
     "timeout": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "How long to wait for ovs-vswitchd to respond"
     }, 
     "table": {
-      "type": "String", 
+      "type": "String[0]", 
       "description": "Identifies the table in the database."
     }
   }

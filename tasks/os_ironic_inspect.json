@@ -1,72 +1,73 @@
 {
-  "description": "Explicitly triggers baremetal node introspection in ironic.", 
+  "input_method": "stdin", 
+  "description": "Requests Ironic to set a node into inspect state in order to collect metadata regarding the node. This command may be out of band or in-band depending on the ironic driver configuration. This is only possible on nodes in 'manageable' and 'available' state.", 
   "parameters": {
     "auth_type": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Name of the auth plugin to use. If the cloud uses something other than password authentication, the name of the plugin should be indicated here and the contents of the I(auth) parameter should be updated accordingly."
     }, 
     "uuid": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "globally unique identifier (UUID) to identify the host."
     }, 
     "region_name": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Name of the region."
     }, 
     "availability_zone": {
-      "type": "Optional[String]", 
-      "description": "Ignored. Present for backwards compatibility"
+      "type": "Optional[String[0]]", 
+      "description": "Ignored. Present for backwards compatability"
     }, 
     "cert": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "A path to a client certificate to use as part of the SSL transaction."
     }, 
     "api_timeout": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "How long should the socket layer wait before timing out for API calls. If this is omitted, nothing will be passed to the requests library."
     }, 
     "mac": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "unique mac address that is used to attempt to identify the host."
     }, 
     "auth": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Dictionary containing auth information as needed by the cloud's auth plugin strategy. For the default I(password) plugin, this would contain I(auth_url), I(username), I(password), I(project_name) and any information about domains if the cloud supports them. For other plugins, this param will need to contain whatever parameters that auth plugin requires. This parameter is not needed if a named cloud is provided or OpenStack OS_* environment variables are present."
     }, 
     "key": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "A path to a client key to use as part of the SSL transaction."
     }, 
     "ironic_url": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "If noauth mode is utilized, this is required to be set to the endpoint URL for the Ironic API. Use with \"auth\" and \"auth_type\" settings set to None."
     }, 
     "endpoint_type": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"public\", \"internal\", \"admin\"]]", 
       "description": "Endpoint URL type to fetch from the service catalog."
     }, 
     "timeout": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "A timeout in seconds to tell the role to wait for the node to complete introspection if wait is set to True."
     }, 
     "cacert": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "A path to a CA Cert bundle that can be used as part of verifying SSL API requests."
     }, 
     "wait": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"yes\", \"no\"]]", 
       "description": "Should ansible wait until the requested resource is complete."
     }, 
     "validate_certs": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Whether or not SSL API requests should be verified. Before 2.3 this defaulted to True."
     }, 
     "cloud": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Named cloud to operate against. Provides default values for I(auth) and I(auth_type). This parameter is not needed if I(auth) is provided or if OpenStack OS_* environment variables are present."
     }, 
     "name": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "unique name identifier to identify the host in Ironic."
     }
   }

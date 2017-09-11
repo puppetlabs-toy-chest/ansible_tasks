@@ -1,12 +1,13 @@
 {
-  "description": "Install licenses fo Cumulus Linux", 
+  "input_method": "stdin", 
+  "description": "Installs a Cumulus Linux license. The module reports no change of status when a license is installed. For more details go the Cumulus Linux License Documentation at U(http://docs.cumulusnetwork.com) and the Licensing KB Site at U(https://support.cumulusnetworks.com/hc/en-us/sections/200507688)", 
   "parameters": {
     "src": {
-      "type": "String", 
+      "type": "String[0]", 
       "description": "The full path to the license. Can be local path or HTTP URL."
     }, 
     "force": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"True\", \"False\"]]", 
       "description": "Force installation of a license. Typically not needed. It is recommended to manually run this command via the ansible command. A reload of switchd is not required. Running the force option in a playbook will break the idempotent state machine of the module and cause the switchd notification to kick in all the time, causing a disruption."
     }
   }

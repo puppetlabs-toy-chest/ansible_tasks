@@ -1,12 +1,13 @@
 {
-  "description": "Manage Icinga2 feature", 
+  "input_method": "stdin", 
+  "description": "Enable or disable an Icinga2 feature", 
   "parameters": {
     "state": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"present\", \"absent\"]]", 
       "description": "Apply feature state."
     }, 
     "name": {
-      "type": "String", 
+      "type": "String[0]", 
       "description": "This is the feature name to enable or disable."
     }
   }

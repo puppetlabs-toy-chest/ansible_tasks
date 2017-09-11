@@ -1,32 +1,33 @@
 {
-  "description": "Create or destroy snapshots for GCE storage volumes", 
+  "input_method": "stdin", 
+  "description": "Manages snapshots for GCE instances. This module manages snapshots for the storage volumes of a GCE compute instance. If there are multiple volumes, each snapshot will be prepended with the disk name", 
   "parameters": {
     "service_account_email": {
-      "type": "String", 
+      "type": "String[0]", 
       "description": "GCP service account email for the project where the instance resides"
     }, 
     "disks": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "A list of disks to create snapshots for. If none is provided, all of the volumes will be snapshotted"
     }, 
     "instance_name": {
-      "type": "String", 
+      "type": "String[0]", 
       "description": "The GCE instance to snapshot"
     }, 
     "state": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"present\", \"absent\"]]", 
       "description": "Whether a snapshot should be C(present) or C(absent)"
     }, 
     "snapshot_name": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "The name of the snapshot to manage"
     }, 
     "credentials_file": {
-      "type": "String", 
+      "type": "String[0]", 
       "description": "The path to the credentials file associated with the service account"
     }, 
     "project_id": {
-      "type": "String", 
+      "type": "String[0]", 
       "description": "The GCP project ID to use"
     }
   }

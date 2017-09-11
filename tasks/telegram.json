@@ -1,20 +1,21 @@
 {
-  "description": "module for sending notifications via telegram", 
+  "input_method": "stdin", 
+  "description": "Send notifications via telegram bot, to a verified group or user", 
   "parameters": {
     "msg": {
-      "type": "String", 
+      "type": "String[0]", 
       "description": "What message you wish to send."
     }, 
     "msg_format": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"plain\", \"markdown\", \"html\"]]", 
       "description": "Message format. Formatting options `markdown` and `html` described in Telegram API docs (https://core.telegram.org/bots/api#formatting-options). If option `plain` set, message will not be formatted."
     }, 
     "token": {
-      "type": "String", 
+      "type": "String[0]", 
       "description": "Token identifying your telegram bot."
     }, 
     "chat_id": {
-      "type": "String", 
+      "type": "String[0]", 
       "description": "Telegram group or user chat_id"
     }
   }

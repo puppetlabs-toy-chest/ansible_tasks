@@ -1,60 +1,61 @@
 {
-  "description": "Manage IAM policies for users, groups, and roles", 
+  "input_method": "stdin", 
+  "description": "Allows uploading or removing IAM policies for IAM users, groups or roles.", 
   "parameters": {
     "aws_secret_key": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "AWS secret key. If not set then the value of the AWS_SECRET_ACCESS_KEY, AWS_SECRET_KEY, or EC2_SECRET_KEY environment variable is used."
     }, 
     "profile": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Uses a boto profile. Only works with boto >= 2.24.0."
     }, 
     "aws_access_key": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "AWS access key. If not set then the value of the AWS_ACCESS_KEY_ID, AWS_ACCESS_KEY or EC2_ACCESS_KEY environment variable is used."
     }, 
     "security_token": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "AWS STS security token. If not set then the value of the AWS_SECURITY_TOKEN or EC2_SECURITY_TOKEN environment variable is used."
     }, 
     "policy_document": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "The path to the properly json formatted policy file (mutually exclusive with C(policy_json))"
     }, 
     "region": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "The AWS region to use. If not specified then the value of the AWS_REGION or EC2_REGION environment variable, if any, is used. See U(http://docs.aws.amazon.com/general/latest/gr/rande.html#ec2_region)"
     }, 
     "iam_name": {
-      "type": "String", 
+      "type": "String[0]", 
       "description": "Name of IAM resource you wish to target for policy actions. In other words, the user name, group name or role name."
     }, 
     "iam_type": {
-      "type": "String", 
+      "type": "Enum[\"user\", \"group\", \"role\"]", 
       "description": "Type of IAM resource"
     }, 
     "policy_name": {
-      "type": "String", 
+      "type": "String[0]", 
       "description": "The name label for the policy to create or remove."
     }, 
     "state": {
-      "type": "String", 
+      "type": "Enum[\"present\", \"absent\"]", 
       "description": "Whether to create or delete the IAM policy."
     }, 
     "policy_json": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "A properly json formatted policy as string (mutually exclusive with C(policy_document), see https://github.com/ansible/ansible/issues/7005#issuecomment-42894813 on how to use it properly)"
     }, 
     "skip_duplicates": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "By default the module looks for any policies that match the document you pass in, if there is a match it will not make a new policy object with the same rules. You can override this by specifying false which would allow for two policy objects with different names but same rules."
     }, 
     "ec2_url": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Url to use to connect to EC2 or your Eucalyptus cloud (by default the module will use EC2 endpoints). Ignored for modules where region is required. Must be specified for all other modules if region is not used. If not set then the value of the EC2_URL environment variable, if any, is used."
     }, 
     "validate_certs": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"yes\", \"no\"]]", 
       "description": "When set to \"no\", SSL certificates will not be validated for boto versions >= 2.6.0."
     }
   }

@@ -1,24 +1,25 @@
 {
-  "description": "Urpmi manager", 
+  "input_method": "stdin", 
+  "description": "Manages packages with I(urpmi) (such as for Mageia or Mandriva)", 
   "parameters": {
     "force": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"yes\", \"no\"]]", 
       "description": "Assume \"yes\" is the answer to any question urpmi has to ask. Corresponds to the C(--force) option for I(urpmi)."
     }, 
     "state": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"absent\", \"present\"]]", 
       "description": "Indicates the desired package state"
     }, 
     "update_cache": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"yes\", \"no\"]]", 
       "description": "update the package database first C(urpmi.update -a)."
     }, 
     "pkg": {
-      "type": "String", 
+      "type": "String[0]", 
       "description": "name of package to install, upgrade or remove."
     }, 
     "no-recommends": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"yes\", \"no\"]]", 
       "description": "Corresponds to the C(--no-recommends) option for I(urpmi)."
     }
   }

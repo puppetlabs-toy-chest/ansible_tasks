@@ -1,52 +1,53 @@
 {
-  "description": "PubNub blocks management module.", 
+  "input_method": "stdin", 
+  "description": "This module allows Ansible to interface with the PubNub BLOCKS infrastructure by providing the following operations: create / remove, start / stop and rename for blocks and create / modify / remove for event handlers", 
   "parameters": {
     "account": {
-      "type": "Optional[String]", 
-      "description": "Name of PubNub account for from which C(application) will be used to manage blocks. User's account will be used if value not set or empty."
+      "type": "Optional[String[0]]", 
+      "description": "Name of PubNub account for from which C(application) will be used to manage blocks."
     }, 
     "name": {
-      "type": "String", 
+      "type": "String[0]", 
       "description": "Name of managed block which will be later visible on admin.pubnub.com."
     }, 
     "application": {
-      "type": "String", 
+      "type": "String[0]", 
       "description": "Name of target PubNub application for which blocks configuration on specific C(keyset) will be done."
     }, 
     "validate_certs": {
-      "type": "Optional[String]", 
-      "description": "This key allow to try skip certificates check when performing REST API calls. Sometimes host may have issues with certificates on it and this will cause problems to call PubNub REST API. If check should be ignored C(False) should be passed to this parameter."
+      "type": "Optional[String[0]]", 
+      "description": "This key allow to try skip certificates check when performing REST API calls. Sometimes host may have issues with certificates on it and this will cause problems to call PubNub REST API."
     }, 
     "cache": {
-      "type": "Optional[String]", 
-      "description": "I n   c a s e   i f   s i n g l e   p l a y   u s e   b l o c k s   m a n a g e m e n t   m o d u l e   f e w   t i m e s   i t   i s   p r e f e r r e d   t o   e n a b l e d   ' c a c h i n g '   b y   m a k i n g   p r e v i o u s   m o d u l e   t o   s h a r e   g a t h e r e d   a r t i f a c t s   a n d   p a s s   t h e m   t o   t h i s   p a r a m e t e r . \n"
+      "type": "Optional[String[0]]", 
+      "description": "I"
     }, 
     "keyset": {
-      "type": "String", 
+      "type": "String[0]", 
       "description": "Name of application's keys set which is bound to managed blocks."
     }, 
     "state": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"started\", \"stopped\", \"present\", \"absent\"]]", 
       "description": "Intended block state after event handlers creation / update process will be completed."
     }, 
     "password": {
-      "type": "Optional[String]", 
-      "description": "Password which match to account to which specified C(email) belong. Not required if C(cache) contains result of previous module call (in same play)."
+      "type": "Optional[String[0]]", 
+      "description": "Password which match to account to which specified C(email) belong."
     }, 
     "changes": {
-      "type": "Optional[String]", 
-      "description": "List of fields which should be changed by block itself (doesn't affect any event handlers). Possible options for change is: C(name)."
+      "type": "Optional[String[0]]", 
+      "description": "List of fields which should be changed by block itself (doesn't affect any event handlers)."
     }, 
     "email": {
-      "type": "Optional[String]", 
-      "description": "Email from account for which new session should be started. Not required if C(cache) contains result of previous module call (in same play)."
+      "type": "Optional[String[0]]", 
+      "description": "Email from account for which new session should be started."
     }, 
     "event_handlers": {
-      "type": "Optional[String]", 
-      "description": "List of event handlers which should be updated for specified block C(name). Each entry for new event handler should contain: C(name), C(src), C(channels), C(event). C(name) used as event handler name which can be used later to make changes to it. C(src) is full path to file with event handler code. C(channels) is name of channel from which event handler is waiting for events. C(event) is type of event which is able to trigger event handler: I(js-before-publish), I(js-after-publish), I(js-after-presence). Each entry for existing handlers should contain C(name) (so target handler can be identified). Rest parameters (C(src), C(channels) and C(event)) can be added if changes required for them. It is possible to rename event handler by adding C(changes) key to event handler payload and pass dictionary, which will contain single key C(name), where new name should be passed. To remove particular event handler it is possible to set C(state) for it to C(absent) and it will be removed."
+      "type": "Optional[String[0]]", 
+      "description": "List of event handlers which should be updated for specified block C(name)."
     }, 
     "description": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Short block description which will be later visible on admin.pubnub.com. Used only if block doesn't exists and won't change description for existing block."
     }
   }

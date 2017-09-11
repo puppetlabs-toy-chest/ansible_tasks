@@ -1,16 +1,17 @@
 {
-  "description": "Manage Linux capabilities", 
+  "input_method": "stdin", 
+  "description": "This module manipulates files privileges using the Linux capabilities(7) system.", 
   "parameters": {
     "capability": {
-      "type": "String", 
+      "type": "String[0]", 
       "description": "Desired capability to set (with operator and flags, if state is C(present)) or remove (if state is C(absent))"
     }, 
     "path": {
-      "type": "String", 
+      "type": "String[0]", 
       "description": "Specifies the path to the file to be managed."
     }, 
     "state": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"present\", \"absent\"]]", 
       "description": "Whether the entry should be present or absent in the file's capabilities."
     }
   }

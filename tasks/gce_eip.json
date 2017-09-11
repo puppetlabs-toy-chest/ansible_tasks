@@ -1,17 +1,18 @@
 {
-  "description": "Create or Destroy Global or Regional External IP addresses.", 
+  "input_method": "stdin", 
+  "description": "Create (reserve) or Destroy (release) Regional or Global IP Addresses. See U(https://cloud.google.com/compute/docs/configure-instance-ip-addresses#reserve_new_static) for more on reserving static addresses.", 
   "parameters": {
     "region": {
-      "type": "String", 
+      "type": "String[0]", 
       "description": "Region to create the address in. Set to 'global' to create a global address."
     }, 
     "name": {
-      "type": "String", 
+      "type": "String[0]", 
       "description": "Name of Address."
     }, 
     "state": {
-      "type": "Optional[String]", 
-      "description": "T h e   s t a t e   t h e   a d d r e s s   s h o u l d   b e   i n .   C ( p r e s e n t )   o r   C ( a b s e n t )   a r e   t h e   o n l y   v a l i d   o p t i o n s ."
+      "type": "Optional[Enum[\"present\", \"absent\"]]", 
+      "description": "T"
     }
   }
 }

@@ -1,204 +1,205 @@
 {
-  "description": "Manages BGP configuration.", 
+  "input_method": "stdin", 
+  "description": "Manages BGP configurations on NX-OS switches.", 
   "parameters": {
     "neighbor_down_fib_accelerate": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"true\", \"false\"]]", 
       "description": "Enable/Disable handle BGP neighbor down event, due to various reasons."
     }, 
     "confederation_peers": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "AS confederation parameters."
     }, 
     "confederation_id": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Routing domain confederation AS."
     }, 
     "event_history_cli": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"size_small\", \"size_medium\", \"size_large\", \"size_disable\", \"default\"]]", 
       "description": "Enable/Disable cli event history buffer."
     }, 
     "bestpath_always_compare_med": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"true\", \"false\"]]", 
       "description": "Enable/Disable MED comparison on paths from different autonomous systems."
     }, 
     "cluster_id": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Route Reflector Cluster-ID."
     }, 
     "shutdown": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"true\", \"false\"]]", 
       "description": "Administratively shutdown the BGP protocol."
     }, 
     "log_neighbor_changes": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"true\", \"false\"]]", 
       "description": "Enable/Disable message logging for neighbor up/down event."
     }, 
     "use_ssl": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"yes\", \"no\"]]", 
       "description": "Configures the I(transport) to use SSL if set to true only when the C(transport=nxapi), otherwise this value is ignored."
     }, 
     "bestpath_aspath_multipath_relax": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"true\", \"false\"]]", 
       "description": "Enable/Disable load sharing across the providers with different (but equal-length) AS paths."
     }, 
     "port": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Specifies the port to use when building the connection to the remote device.  This value applies to either I(cli) or I(nxapi).  The port value will default to the appropriate transport common port if none is provided in the task.  (cli=22, http=80, https=443)."
     }, 
     "transport": {
-      "type": "String", 
+      "type": "Optional[String[0]]", 
       "description": "Configures the transport connection to use when connecting to the remote device.  The transport argument supports connectivity to the device over cli (ssh) or nxapi."
     }, 
     "event_history_events": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"size_small\", \"size_medium\", \"size_large\", \"size_disable\", \"default\"]]", 
       "description": "Enable/Disable event history buffer."
     }, 
     "graceful_restart_timers_stalepath_time": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"true\", \"false\"]]", 
       "description": "Set maximum time that BGP keeps the stale routes from the restarting BGP peer."
     }, 
     "maxas_limit": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Specify Maximum number of AS numbers allowed in the AS-path attribute. Valid values are between 1 and 512."
     }, 
     "bestpath_med_confed": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"true\", \"false\"]]", 
       "description": "Enable/Disable enforcement of bestpath to do a MED comparison only between paths originated within a confederation."
     }, 
     "isolate": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"true\", \"false\"]]", 
       "description": "Enable/Disable isolate this router from BGP perspective."
     }, 
     "timer_bgp_keepalive": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Set BGP keepalive timer."
     }, 
     "bestpath_cost_community_ignore": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"true\", \"false\"]]", 
       "description": "Enable/Disable Ignores the cost community for BGP best-path calculations."
     }, 
     "fast_external_fallover": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"true\", \"false\"]]", 
       "description": "Enable/Disable immediately reset the session if the link to a directly connected BGP peer goes down.  Only supported in the global BGP context."
     }, 
     "state": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"present\", \"absent\"]]", 
       "description": "Determines whether the config should be present or not on the device."
     }, 
     "disable_policy_batching": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"true\", \"false\"]]", 
       "description": "Enable/Disable the batching evaluation of prefix advertisement to all peers."
     }, 
     "provider": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Convenience method that allows all I(nxos) arguments to be passed as a dict object.  All constraints (required, choices, etc) must be met either by individual arguments or values in this dict."
     }, 
     "bestpath_med_missing_as_worst": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"true\", \"false\"]]", 
       "description": "Enable/Disable assigns the value of infinity to received routes that do not carry the MED attribute, making these routes the least desirable."
     }, 
     "username": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Configures the username to use to authenticate the connection to the remote device.  This value is used to authenticate either the CLI login or the nxapi authentication depending on which transport is used. If the value is not specified in the task, the value of environment variable C(ANSIBLE_NET_USERNAME) will be used instead."
     }, 
     "timer_bestpath_limit": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Specify timeout for the first best path after a restart, in seconds."
     }, 
     "suppress_fib_pending": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"true\", \"false\"]]", 
       "description": "Enable/Disable advertise only routes programmed in hardware to peers."
     }, 
     "local_as": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Local AS number to be used within a VRF instance."
     }, 
     "event_history_periodic": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"size_small\", \"size_medium\", \"size_large\", \"size_disable\", \"default\"]]", 
       "description": "Enable/Disable periodic event history buffer."
     }, 
     "timer_bestpath_limit_always": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"true\", \"false\"]]", 
       "description": "Enable/Disable update-delay-always option."
     }, 
     "host": {
-      "type": "String", 
+      "type": "String[0]", 
       "description": "Specifies the DNS host name or address for connecting to the remote device over the specified transport.  The value of host is used as the destination address for the transport."
     }, 
     "disable_policy_batching_ipv4_prefix_list": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Enable/Disable the batching evaluation of prefix advertisements to all peers with prefix list."
     }, 
     "vrf": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Name of the VRF. The name 'default' is a valid VRF representing the global BGP."
     }, 
     "graceful_restart_helper": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"true\", \"false\"]]", 
       "description": "Enable/Disable graceful restart helper mode."
     }, 
     "timer_bgp_hold": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Set BGP hold timer."
     }, 
     "password": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Specifies the password to use to authenticate the connection to the remote device.  This is a common argument used for either I(cli) or I(nxapi) transports. If the value is not specified in the task, the value of environment variable C(ANSIBLE_NET_PASSWORD) will be used instead."
     }, 
     "asn": {
-      "type": "String", 
+      "type": "String[0]", 
       "description": "BGP autonomous system number. Valid values are String, Integer in ASPLAIN or ASDOT notation."
     }, 
     "disable_policy_batching_ipv6_prefix_list": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Enable/Disable the batching evaluation of prefix advertisements to all peers with prefix list."
     }, 
     "event_history_detail": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"size_small\", \"size_medium\", \"size_large\", \"size_disable\", \"default\"]]", 
       "description": "Enable/Disable detail event history buffer."
     }, 
     "ssh_keyfile": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Specifies the SSH key to use to authenticate the connection to the remote device.  This argument is only used for the I(cli) transport. If the value is not specified in the task, the value of environment variable C(ANSIBLE_NET_SSH_KEYFILE) will be used instead."
     }, 
     "graceful_restart": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"true\", \"false\"]]", 
       "description": "Enable/Disable graceful restart."
     }, 
     "flush_routes": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"true\", \"false\"]]", 
       "description": "Enable/Disable flush routes in RIB upon controlled restart. On NX-OS, this property is only supported in the global BGP context."
     }, 
     "enforce_first_as": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"true\", \"false\"]]", 
       "description": "Enable/Disable enforces the neighbor autonomous system to be the first AS number listed in the AS path attribute for eBGP. On NX-OS, this property is only supported in the global BGP context."
     }, 
     "bestpath_med_non_deterministic": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"true\", \"false\"]]", 
       "description": "Enable/Disable deterministic selection of the best MED pat from among the paths from the same autonomous system."
     }, 
     "reconnect_interval": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "The BGP reconnection interval for dropped sessions. Valid values are between 1 and 60."
     }, 
     "router_id": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Router Identifier (ID) of the BGP router VRF instance."
     }, 
     "timeout": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Specifies the timeout in seconds for communicating with the network device for either connecting or sending commands.  If the timeout is exceeded before the operation is completed, the module will error. NX-API can be slow to return on long-running commands (sh mac, sh bgp, etc)."
     }, 
     "graceful_restart_timers_restart": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"true\", \"false\"]]", 
       "description": "Set maximum time for a restart sent to the BGP peer."
     }, 
     "validate_certs": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"yes\", \"no\"]]", 
       "description": "If C(no), SSL certificates will not be validated. This should only be used on personally controlled sites using self-signed certificates.  If the transport argument is not nxapi, this value is ignored."
     }, 
     "bestpath_compare_routerid": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"true\", \"false\"]]", 
       "description": "Enable/Disable comparison of router IDs for identical eBGP paths."
     }
   }

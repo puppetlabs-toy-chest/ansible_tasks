@@ -1,8 +1,9 @@
 {
-  "description": "Manage hostname", 
+  "input_method": "stdin", 
+  "description": "Set system's hostname, supports most OSs/Distributions, including those using systemd.", 
   "parameters": {
     "name": {
-      "type": "String", 
+      "type": "String[0]", 
       "description": "Name of the host"
     }
   }

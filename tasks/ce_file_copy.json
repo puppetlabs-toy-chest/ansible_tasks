@@ -1,16 +1,17 @@
 {
+  "input_method": "stdin", 
   "description": "Copy a file to a remote cloudengine device over SCP on HUAWEI CloudEngine switches.", 
   "parameters": {
     "remote_file": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Remote file path of the copy. Remote directories must exist. If omitted, the name of the local file will be used. The maximum length of remote_file is 4096."
     }, 
     "local_file": {
-      "type": "String", 
+      "type": "String[0]", 
       "description": "Path to local file. Local directory must exist. The maximum length of local_file is 4096."
     }, 
     "file_system": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "The remote file system of the device. If omitted, devices that support a file_system parameter will use their default values. File system indicates the storage medium and can be set to as follows, 1) 'flash:' is root directory of the flash memory on the master MPU. 2) 'slave#flash:' is root directory of the flash memory on the slave MPU. If no slave MPU exists, this drive is unavailable. 3) 'chassis ID/slot number#flash:' is root directory of the flash memory on a device in a stack. For example, 1/5#flash indicates the flash memory whose chassis ID is 1 and slot number is 5."
     }
   }

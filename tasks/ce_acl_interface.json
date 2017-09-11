@@ -1,20 +1,21 @@
 {
+  "input_method": "stdin", 
   "description": "Manages applying ACLs to interfaces on HUAWEI CloudEngine switches.", 
   "parameters": {
     "interface": {
-      "type": "String", 
+      "type": "String[0]", 
       "description": "Interface name. Only support interface full name, such as \"40GE2/0/1\"."
     }, 
     "direction": {
-      "type": "String", 
+      "type": "Enum[\"inbound\", \"outbound\"]", 
       "description": "Direction ACL to be applied in on the interface."
     }, 
     "state": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"present\", \"absent\"]]", 
       "description": "Determines whether the config should be present or not on the device."
     }, 
     "acl_name": {
-      "type": "String", 
+      "type": "String[0]", 
       "description": "ACL number or name. For a numbered rule group, the value ranging from 2000 to 4999. For a named rule group, the value is a string of 1 to 32 case-sensitive characters starting with a letter, spaces not supported."
     }
   }

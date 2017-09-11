@@ -1,32 +1,33 @@
 {
-  "description": "Manage AOS External Router", 
+  "input_method": "stdin", 
+  "description": "Apstra AOS External Router module let you manage your External Router easily. You can create create and delete External Router by Name, ID or by using a JSON File. This module is idempotent and support the I(check) mode. It's using the AOS REST API.", 
   "parameters": {
     "name": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Name of the External Router to manage. Only one of I(name), I(id) or I(content) can be set."
     }, 
     "loopback": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "IP address of the Loopback interface of the external_router."
     }, 
     "id": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "AOS Id of the External Router to manage (can't be used to create a new External Router), Only one of I(name), I(id) or I(content) can be set."
     }, 
     "content": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Datastructure of the External Router to create. The format is defined by the I(content_format) parameter. It's the same datastructure that is returned on success in I(value)."
     }, 
     "state": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"present\", \"absent\"]]", 
       "description": "Indicate what is the expected state of the External Router (present or not)."
     }, 
     "session": {
-      "type": "String", 
+      "type": "String[0]", 
       "description": "An existing AOS session as obtained by M(aos_login) module."
     }, 
     "asn": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "ASN id of the external_router."
     }
   }

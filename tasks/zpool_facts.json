@@ -1,16 +1,17 @@
 {
-  "description": "Gather facts about ZFS pools.", 
+  "input_method": "stdin", 
+  "description": "Gather facts from ZFS pool properties.", 
   "parameters": {
     "parsable": {
-      "type": "Optional[Boolean]", 
+      "type": "Optional[String[0]]", 
       "description": "Specifies if property values should be displayed in machine friendly format."
     }, 
     "name": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "ZFS pool name."
     }, 
     "properties": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Specifies which dataset properties should be queried in comma-separated format. For more information about dataset properties, check zpool(1M) man page."
     }
   }

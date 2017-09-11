@@ -1,36 +1,37 @@
 {
-  "description": "useradmin configuration and management", 
+  "input_method": "stdin", 
+  "description": "Create or destroy user roles", 
   "parameters": {
     "username": {
-      "type": "String", 
+      "type": "String[0]", 
       "description": "This can be a Cluster-scoped or SVM-scoped account, depending on whether a Cluster-level or SVM-level API is required. For more information, please read the documentation U(https://goo.gl/BRu78Z)."
     }, 
     "name": {
-      "type": "String", 
+      "type": "String[0]", 
       "description": "The name of the role to manage."
     }, 
     "hostname": {
-      "type": "String", 
+      "type": "String[0]", 
       "description": "The hostname or IP address of the ONTAP instance."
     }, 
     "vserver": {
-      "type": "String", 
+      "type": "String[0]", 
       "description": "The name of the vserver to use."
     }, 
     "access_level": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"none\", \"readonly\", \"all\"]]", 
       "description": "The name of the role to manage."
     }, 
     "state": {
-      "type": "String", 
+      "type": "Enum[\"present\", \"absent\"]", 
       "description": "Whether the specified user should exist or not."
     }, 
     "password": {
-      "type": "String", 
+      "type": "String[0]", 
       "description": "Password for the specified user."
     }, 
     "command_directory_name": {
-      "type": "String", 
+      "type": "String[0]", 
       "description": "The command or command directory to which the role has an access."
     }
   }

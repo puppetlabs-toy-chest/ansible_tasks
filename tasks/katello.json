@@ -1,24 +1,25 @@
 {
-  "description": "Manage Katello Resources", 
+  "input_method": "stdin", 
+  "description": "Allows the management of Katello resources inside your Foreman server", 
   "parameters": {
     "username": {
-      "type": "String", 
+      "type": "String[0]", 
       "description": "Username on Foreman server"
     }, 
     "password": {
-      "type": "String", 
+      "type": "String[0]", 
       "description": "Password for user accessing Foreman server"
     }, 
     "params": {
-      "type": "String", 
+      "type": "String[0]", 
       "description": "Parameters associated to the entity resource to set or edit in dictionary format (e.g. name, description)"
     }, 
     "server_url": {
-      "type": "String", 
+      "type": "String[0]", 
       "description": "URL of Foreman server"
     }, 
     "entity": {
-      "type": "String", 
+      "type": "String[0]", 
       "description": "The Foreman resource that the action will be performed on (e.g. organization, host)"
     }
   }

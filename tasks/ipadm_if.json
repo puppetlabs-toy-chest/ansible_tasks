@@ -1,16 +1,17 @@
 {
-  "description": "Manage IP interfaces  on Solaris/illumos systems.", 
+  "input_method": "stdin", 
+  "description": "Create, delete, enable or disable IP interfaces on Solaris/illumos systems.", 
   "parameters": {
     "state": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"present\", \"absent\", \"enabled\", \"disabled\"]]", 
       "description": "Create or delete Solaris/illumos IP interfaces."
     }, 
     "temporary": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"true\", \"false\"]]", 
       "description": "Specifies that the IP interface is temporary. Temporary IP interfaces do not persist across reboots."
     }, 
     "name": {
-      "type": "String", 
+      "type": "String[0]", 
       "description": "IP interface name."
     }
   }

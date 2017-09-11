@@ -1,36 +1,37 @@
 {
+  "input_method": "stdin", 
   "description": "Add or remove a host from distributed virtual switch", 
   "parameters": {
     "username": {
-      "type": "String", 
+      "type": "String[0]", 
       "description": "The username of the vSphere vCenter."
     }, 
     "validate_certs": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"True\", \"False\"]]", 
       "description": "Allows connection when SSL certificates are not valid. Set to false when certificates are not trusted."
     }, 
     "hostname": {
-      "type": "String", 
+      "type": "String[0]", 
       "description": "The hostname or IP address of the vSphere vCenter."
     }, 
     "state": {
-      "type": "String", 
+      "type": "Enum[\"present\", \"absent\"]", 
       "description": "If the host should be present or absent attached to the vSwitch"
     }, 
     "esxi_hostname": {
-      "type": "String", 
+      "type": "String[0]", 
       "description": "The ESXi hostname"
     }, 
     "password": {
-      "type": "String", 
+      "type": "String[0]", 
       "description": "The password of the vSphere vCenter."
     }, 
     "vmnics": {
-      "type": "String", 
+      "type": "String[0]", 
       "description": "The ESXi hosts vmnics to use with the Distributed vSwitch"
     }, 
     "switch_name": {
-      "type": "String", 
+      "type": "String[0]", 
       "description": "The name of the Distributed vSwitch"
     }
   }

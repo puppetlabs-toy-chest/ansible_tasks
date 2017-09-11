@@ -1,4 +1,5 @@
 {
-  "description": "Runs the discovery program I(facter) on the remote system", 
+  "input_method": "stdin", 
+  "description": "Runs the I(facter) discovery program (U(https://github.com/puppetlabs/facter)) on the remote system, returning JSON data that can be useful for inventory purposes.", 
   "parameters": {}
 }

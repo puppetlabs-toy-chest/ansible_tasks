@@ -1,21 +1,22 @@
 {
-  "description": "Find AWS Autoscaling Launch Configurations", 
+  "input_method": "stdin", 
+  "description": "Returns list of matching Launch Configurations for a given name, along with other useful information", 
   "parameters": {
     "limit": {
-      "type": "Optional[String]", 
-      "description": "How many results to show. Corresponds to Python slice notation like list[:limit]."
+      "type": "Optional[String[0]]", 
+      "description": "How many results to show."
     }, 
     "region": {
-      "type": "String", 
+      "type": "String[0]", 
       "description": "The AWS region to use."
     }, 
     "sort_order": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"ascending\", \"descending\"]]", 
       "description": "Order in which to sort results."
     }, 
     "name_regex": {
-      "type": "String", 
-      "description": "A Launch Configuration to match It'll be compiled as regex"
+      "type": "String[0]", 
+      "description": "A Launch Configuration to match"
     }
   }
 }

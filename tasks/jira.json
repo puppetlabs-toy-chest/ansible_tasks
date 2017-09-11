@@ -1,72 +1,73 @@
 {
-  "description": "create and modify issues in a JIRA instance", 
+  "input_method": "stdin", 
+  "description": "Create and modify issues in a JIRA instance.", 
   "parameters": {
     "username": {
-      "type": "String", 
+      "type": "String[0]", 
       "description": "The username to log-in with."
     }, 
     "comment": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "The comment text to add."
     }, 
     "description": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "The issue description, where appropriate."
     }, 
     "fields": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "This is a free-form data structure that can contain arbitrary data. This is passed directly to the JIRA REST API (possibly after merging with other required data, as when passed to create). See examples for more information, and the JIRA REST API for the structure required for various fields."
     }, 
     "outwardissue": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Set issue to which link will be created."
     }, 
     "uri": {
-      "type": "String", 
+      "type": "String[0]", 
       "description": "Base URI for the JIRA instance."
     }, 
     "summary": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "The issue summary, where appropriate."
     }, 
     "project": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "The project for this operation. Required for issue creation."
     }, 
     "assignee": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Sets the assignee on create or transition operations. Note not all transitions will allow this."
     }, 
     "inwardissue": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Set issue from which link will be created."
     }, 
     "status": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "The desired status; only relevant for the transition operation."
     }, 
     "timeout": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Set timeout, in seconds, on requests to JIRA API."
     }, 
     "issuetype": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "The issue type, for issue creation."
     }, 
     "linktype": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Set type of link, when action 'link' selected."
     }, 
     "operation": {
-      "type": "String", 
+      "type": "Enum[\"create\", \"comment\", \"edit\", \"fetch\", \"transition\"]", 
       "description": "The operation to perform."
     }, 
     "password": {
-      "type": "String", 
+      "type": "String[0]", 
       "description": "The password to log-in with."
     }, 
     "issue": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "An existing issue key to operate on."
     }
   }

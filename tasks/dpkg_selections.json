@@ -1,12 +1,13 @@
 {
-  "description": "Dpkg package selection selections", 
+  "input_method": "stdin", 
+  "description": "Change dpkg package selection state via --get-selections and --set-selections.", 
   "parameters": {
     "selection": {
-      "type": "String", 
+      "type": "Enum[\"install\", \"hold\", \"deinstall\", \"purge\"]", 
       "description": "The selection state to set the package to."
     }, 
     "name": {
-      "type": "String", 
+      "type": "String[0]", 
       "description": "Name of the package"
     }
   }

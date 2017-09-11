@@ -1,152 +1,153 @@
 {
-  "description": "Manages instances and virtual machines on Apache CloudStack based clouds.", 
+  "input_method": "stdin", 
+  "description": "Deploy, start, update, scale, restart, restore, stop and destroy instances.", 
   "parameters": {
     "domain": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Domain the instance is related to."
     }, 
     "force": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Force stop/start the instance if required to apply changes, otherwise a running instance will not be changed."
     }, 
     "disk_offering": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Name of the disk offering to be used."
     }, 
     "api_http_method": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"get\", \"post\"]]", 
       "description": "HTTP method used."
     }, 
     "cpu_speed": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "The clock speed/shares allocated to the instance, used with custom service offerings"
     }, 
     "user_data": {
-      "type": "Optional[String]", 
-      "description": "Optional data (ASCII) that can be sent to the instance upon a successful deployment. The data will be automatically base64 encoded. Consider switching to HTTP_POST by using C(CLOUDSTACK_METHOD=post) to increase the HTTP_GET size limit of 2KB to 32 KB."
+      "type": "Optional[String[0]]", 
+      "description": "Optional data (ASCII) that can be sent to the instance upon a successful deployment."
     }, 
     "root_disk_size": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Root disk size in GByte required if deploying instance with KVM hypervisor and want resize the root disk size at startup (need CloudStack >= 4.4, cloud-initramfs-growroot installed and enabled in the template)"
     }, 
     "keyboard": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"de\", \"de-ch\", \"es\", \"fi\", \"fr\", \"fr-be\", \"fr-ch\", \"is\", \"it\", \"jp\", \"nl-be\", \"no\", \"pt\", \"uk\", \"us\"]]", 
       "description": "Keyboard device type for the instance."
     }, 
     "ip6_address": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "IPv6 address for default instance's network."
     }, 
     "networks": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "List of networks to use for the new instance."
     }, 
     "security_groups": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "List of security groups the instance to be applied to."
     }, 
     "display_name": {
-      "type": "Optional[String]", 
-      "description": "Custom display name of the instances. Display name will be set to C(name) if not specified. Either C(name) or C(display_name) is required."
+      "type": "Optional[String[0]]", 
+      "description": "Custom display name of the instances."
     }, 
     "api_url": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "URL of the CloudStack API e.g. https://cloud.example.com/client/api."
     }, 
     "zone": {
-      "type": "Optional[String]", 
-      "description": "Name of the zone in which the instance should be deployed. If not set, default zone is used."
+      "type": "Optional[String[0]]", 
+      "description": "Name of the zone in which the instance should be deployed."
     }, 
     "state": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"deployed\", \"started\", \"stopped\", \"restarted\", \"restored\", \"destroyed\", \"expunged\", \"present\", \"absent\"]]", 
       "description": "State of the instance."
     }, 
     "template": {
-      "type": "Optional[String]", 
-      "description": "Name or id of the template to be used for creating the new instance. Required when using C(state=present). Mutually exclusive with C(ISO) option."
+      "type": "Optional[String[0]]", 
+      "description": "Name or id of the template to be used for creating the new instance."
     }, 
     "memory": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "The memory allocated to the instance, used with custom service offerings"
     }, 
     "affinity_groups": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Affinity groups names to be applied to the new instance."
     }, 
     "api_key": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "API key of the CloudStack API."
     }, 
     "template_filter": {
-      "type": "Optional[String]", 
-      "description": "Name of the filter used to search for the template or iso. Used for params C(iso) or C(template) on C(state=present)."
+      "type": "Optional[Enum[\"featured\", \"self\", \"selfexecutable\", \"sharedexecutable\", \"executable\", \"community\"]]", 
+      "description": "Name of the filter used to search for the template or iso."
     }, 
     "tags": {
-      "type": "Optional[String]", 
-      "description": "List of tags. Tags are a list of dictionaries having keys C(key) and C(value). If you want to delete all tags, set a empty list e.g. C(tags: [])."
+      "type": "Optional[String[0]]", 
+      "description": "List of tags. Tags are a list of dictionaries having keys C(key) and C(value)."
     }, 
     "api_secret": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Secret key of the CloudStack API."
     }, 
     "api_timeout": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "HTTP timeout."
     }, 
     "ssh_key": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Name of the SSH key to be deployed on the new instance."
     }, 
     "group": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Group in where the new instance should be in."
     }, 
     "service_offering": {
-      "type": "Optional[String]", 
-      "description": "Name or id of the service offering of the new instance. If not set, first found service offering is used."
+      "type": "Optional[String[0]]", 
+      "description": "Name or id of the service offering of the new instance."
     }, 
     "ip_address": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "IPv4 address for default instance's network during creation."
     }, 
     "account": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Account the instance is related to."
     }, 
     "disk_size": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Disk size in GByte required if deploying instance from ISO."
     }, 
     "name": {
-      "type": "Optional[String]", 
-      "description": "Host name of the instance. C(name) can only contain ASCII letters. Name will be generated (UUID) by CloudStack if not specified and can not be changed afterwards. Either C(name) or C(display_name) is required."
+      "type": "Optional[String[0]]", 
+      "description": "Host name of the instance. C(name) can only contain ASCII letters."
     }, 
     "hypervisor": {
-      "type": "Optional[String]", 
-      "description": "Name the hypervisor to be used for creating the new instance. Relevant when using C(state=present), but only considered if not set on ISO/template. If not set or found on ISO/template, first found hypervisor will be used."
+      "type": "Optional[Enum[\"KVM\", \"VMware\", \"BareMetal\", \"XenServer\", \"LXC\", \"HyperV\", \"UCS\", \"OVM\"]]", 
+      "description": "Name the hypervisor to be used for creating the new instance."
     }, 
     "ip_to_networks": {
-      "type": "Optional[String]", 
-      "description": "List of mappings in the form {'network': NetworkName, 'ip': 1.2.3.4} Mutually exclusive with C(networks) option."
+      "type": "Optional[String[0]]", 
+      "description": "List of mappings in the form {'network': NetworkName, 'ip': 1.2.3.4}"
     }, 
     "api_region": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Name of the ini section in the C(cloustack.ini) file."
     }, 
     "project": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Name of the project the instance to be deployed in."
     }, 
     "iso": {
-      "type": "Optional[String]", 
-      "description": "Name or id of the ISO to be used for creating the new instance. Required when using C(state=present). Mutually exclusive with C(template) option."
+      "type": "Optional[String[0]]", 
+      "description": "Name or id of the ISO to be used for creating the new instance."
     }, 
     "poll_async": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Poll async jobs until job has finished."
     }, 
     "cpu": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "The number of CPUs to allocate to the instance, used with custom service offerings"
     }
   }

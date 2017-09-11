@@ -1,44 +1,45 @@
 {
-  "description": "Add/remove ESXi host to/from vCenter", 
+  "input_method": "stdin", 
+  "description": "This module can be used to add/remove an ESXi host to/from vCenter", 
   "parameters": {
     "username": {
-      "type": "String", 
+      "type": "String[0]", 
       "description": "The username of the vSphere vCenter."
     }, 
     "datacenter_name": {
-      "type": "String", 
+      "type": "String[0]", 
       "description": "Name of the datacenter to add the host"
     }, 
     "esxi_hostname": {
-      "type": "String", 
+      "type": "String[0]", 
       "description": "ESXi hostname to manage"
     }, 
     "hostname": {
-      "type": "String", 
+      "type": "String[0]", 
       "description": "The hostname or IP address of the vSphere vCenter."
     }, 
     "esxi_username": {
-      "type": "String", 
+      "type": "String[0]", 
       "description": "ESXi username"
     }, 
     "cluster_name": {
-      "type": "String", 
+      "type": "String[0]", 
       "description": "Name of the cluster to add the host"
     }, 
     "state": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"present\", \"absent\"]]", 
       "description": "Add or remove the host"
     }, 
     "esxi_password": {
-      "type": "String", 
+      "type": "String[0]", 
       "description": "ESXi password"
     }, 
     "password": {
-      "type": "String", 
+      "type": "String[0]", 
       "description": "The password of the vSphere vCenter."
     }, 
     "validate_certs": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"True\", \"False\"]]", 
       "description": "Allows connection when SSL certificates are not valid. Set to false when certificates are not trusted."
     }
   }

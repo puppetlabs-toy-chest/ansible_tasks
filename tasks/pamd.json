@@ -1,44 +1,45 @@
 {
-  "description": "Manage PAM Modules", 
+  "input_method": "stdin", 
+  "description": "Edit PAM service's type, control, module path and module arguments. In order for a PAM rule to be modified, the type, control and module_path must match an existing rule.  See man(5) pam.d for details.", 
   "parameters": {
     "control": {
-      "type": "String", 
+      "type": "String[0]", 
       "description": "The control of the PAM rule being modified.  This may be a complicated control with brackets.  If this is the case, be sure to put \"[bracketed controls]\" in quotes.  The type, control and module_path all must match a rule to be modified."
     }, 
     "new_module_path": {
-      "type": "Optional[String]", 
-      "description": "The new module path to be assigned to the new rule."
+      "type": "Optional[String[0]]", 
+      "description": "The control to assign to the new rule."
     }, 
     "name": {
-      "type": "String", 
+      "type": "String[0]", 
       "description": "The name generally refers to the PAM service file to change, for example system-auth."
     }, 
     "new_type": {
-      "type": "Optional[String]", 
-      "description": "The new type to assign to the new rule."
+      "type": "Optional[String[0]]", 
+      "description": "The type to assign to the new rule."
     }, 
     "state": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"updated\", \"before\", \"after\", \"args_present\", \"args_absent\"]]", 
       "description": "The default of 'updated' will modify an existing rule if type, control and module_path all match an existing rule.  With 'before', the new rule will be inserted before a rule matching type, control and module_path.  Similarly, with 'after', the new rule will be inserted after an existing rule matching type, control and module_path.  With either 'before' or 'after' new_type, new_control, and new_module_path must all be specified.  If state is 'args_absent' or 'args_present', new_type, new_control, and new_module_path will be ignored."
     }, 
     "new_control": {
-      "type": "Optional[String]", 
-      "description": "The new control to assign to the new rule."
+      "type": "Optional[String[0]]", 
+      "description": "The control to assign to the new rule."
     }, 
     "module_path": {
-      "type": "String", 
+      "type": "String[0]", 
       "description": "The module path of the PAM rule being modified.  The type, control and module_path all must match a rule to be modified."
     }, 
     "path": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "This is the path to the PAM service files"
     }, 
     "type": {
-      "type": "String", 
+      "type": "String[0]", 
       "description": "The type of the PAM rule being modified.  The type, control and module_path all must match a rule to be modified."
     }, 
     "module_arguments": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "When state is 'updated', the module_arguments will replace existing module_arguments.  When state is 'args_absent' args matching those listed in module_arguments will be removed.  When state is 'args_present' any args listed in module_arguments are added if missing from the existing rule.  Furthermore, if the module argument takes a value denoted by '=', the value will be changed to that specified in module_arguments."
     }
   }

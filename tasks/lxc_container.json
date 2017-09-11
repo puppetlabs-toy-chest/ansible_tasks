@@ -1,96 +1,97 @@
 {
-  "description": "Manage LXC Containers", 
+  "input_method": "stdin", 
+  "description": "Management of LXC containers", 
   "parameters": {
     "zfs_root": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Create zfs under given zfsroot."
     }, 
     "clone_name": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Name of the new cloned server. This is only used when state is clone."
     }, 
     "container_config": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "list of 'key=value' options to use when configuring a container."
     }, 
     "fs_type": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Create fstype TYPE."
     }, 
     "archive": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"True\", \"False\"]]", 
       "description": "Create an archive of a container. This will create a tarball of the running container."
     }, 
     "container_log": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"True\", \"False\"]]", 
       "description": "Enable a container log for host actions to the container."
     }, 
     "state": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"started\", \"stopped\", \"restarted\", \"absent\", \"frozen\"]]", 
       "description": "Define the state of a container. If you clone a container using `clone_name` the newly cloned container created in a stopped state. The running container will be stopped while the clone operation is happening and upon completion of the clone the original container state will be restored."
     }, 
     "template": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Name of the template to use within an LXC create."
     }, 
     "config": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Path to the LXC configuration file."
     }, 
     "archive_path": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Path the save the archived container. If the path does not exist the archive method will attempt to create it."
     }, 
     "container_log_level": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"INFO\", \"ERROR\", \"DEBUG\"]]", 
       "description": "Set the log level for a container where *container_log* was set."
     }, 
     "template_options": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Template options when building the container."
     }, 
     "container_command": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Run a command within a container."
     }, 
     "lxc_path": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Place container under PATH"
     }, 
     "archive_compression": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"gzip\", \"bzip2\", \"none\"]]", 
       "description": "Type of compression to use when creating an archive of a running container."
     }, 
     "thinpool": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Use LVM thin pool called TP."
     }, 
     "clone_snapshot": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"True\", \"False\"]]", 
       "description": "Create a snapshot a container when cloning. This is not supported by all container storage backends. Enabling this may fail if the backing store does not support snapshots."
     }, 
     "name": {
-      "type": "String", 
+      "type": "String[0]", 
       "description": "Name of a container."
     }, 
     "lv_name": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Name of the logical volume, defaults to the container name."
     }, 
     "fs_size": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "File system Size."
     }, 
     "backing_store": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"dir\", \"lvm\", \"loop\", \"btrfs\", \"overlayfs\", \"zfs\"]]", 
       "description": "Backend storage type for the container."
     }, 
     "vg_name": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "If Backend store is lvm, specify the name of the volume group."
     }, 
     "directory": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Place rootfs directory under DIR."
     }
   }

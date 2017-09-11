@@ -1,53 +1,54 @@
 {
-  "description": "Creates or removes resource records in Google Cloud DNS", 
+  "input_method": "stdin", 
+  "description": "Creates or removes resource records in Google Cloud DNS.", 
   "parameters": {
     "zone_id": {
-      "type": "Optional[String]", 
-      "description": "The Google Cloud ID of the zone (e.g., example-com). One of either I(zone) or I(zone_id) must be specified as an option, or the module will fail. These usually take the form of domain names with the dots replaced with dashes. A zone ID will never have any dots in it. I(zone_id) can be faster than I(zone) in projects with a large number of zones. If both I(zone) and I(zone_id) are specified, I(zone_id) will be used."
+      "type": "Optional[String[0]]", 
+      "description": "The Google Cloud ID of the zone (e.g., example-com)."
     }, 
     "zone": {
-      "type": "Optional[String]", 
-      "description": "The DNS domain name of the zone (e.g., example.com). One of either I(zone) or I(zone_id) must be specified as an option, or the module will fail. If both I(zone) and I(zone_id) are specified, I(zone_id) will be used."
+      "type": "Optional[String[0]]", 
+      "description": "The DNS domain name of the zone (e.g., example.com)."
     }, 
     "record_data": {
-      "type": "Optional[String]", 
-      "description": "The record_data to use for the resource record. I(record_data) must be specified if I(state) is C(present) or I(overwrite) is C(True), or the module will fail. Valid record_data vary based on the record's I(type). In addition, resource records that contain a DNS domain name in the value field (e.g., CNAME, PTR, SRV, .etc) MUST include a trailing dot in the value. Individual string record_data for TXT records must be enclosed in double quotes. For resource records that have the same name but different record_data (e.g., multiple A records), they must be defined as multiple list entries in a single record."
+      "type": "Optional[String[0]]", 
+      "description": "The record_data to use for the resource record."
     }, 
     "service_account_email": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "The e-mail address for a service account with access to Google Cloud DNS."
     }, 
     "credentials_file": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "The path to the JSON file associated with the service account email."
     }, 
     "pem_file": {
-      "type": "Optional[String]", 
-      "description": "The path to the PEM file associated with the service account email. This option is deprecated and may be removed in a future release. Use I(credentials_file) instead."
+      "type": "Optional[String[0]]", 
+      "description": "The path to the PEM file associated with the service account email."
     }, 
     "record": {
-      "type": "String", 
+      "type": "String[0]", 
       "description": "The fully-qualified domain name of the resource record."
     }, 
     "state": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"present\", \"absent\"]]", 
       "description": "Whether the given resource record should or should not be present."
     }, 
     "ttl": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "The amount of time in seconds that a resource record will remain cached by a caching resolver."
     }, 
     "project_id": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "The Google Cloud Platform project ID to use."
     }, 
     "type": {
-      "type": "String", 
+      "type": "Enum[\"A\", \"AAAA\", \"CNAME\", \"SRV\", \"TXT\", \"SOA\", \"NS\", \"MX\", \"SPF\", \"PTR\"]", 
       "description": "The type of resource record to add."
     }, 
     "overwrite": {
-      "type": "Optional[String]", 
-      "description": "Whether an attempt to overwrite an existing record should succeed or fail. The behavior of this option depends on I(state). If I(state) is C(present) and I(overwrite) is C(True), this module will replace an existing resource record of the same name with the provided I(record_data). If I(state) is C(present) and I(overwrite) is C(False), this module will fail if there is an existing resource record with the same name and type, but different resource data. If I(state) is C(absent) and I(overwrite) is C(True), this module will remove the given resource record unconditionally. If I(state) is C(absent) and I(overwrite) is C(False), this module will fail if the provided record_data do not match exactly with the existing resource record's record_data."
+      "type": "Optional[Enum[\"True\", \"False\"]]", 
+      "description": "Whether an attempt to overwrite an existing record should succeed or fail. The behavior of this option depends on I(state)."
     }
   }
 }

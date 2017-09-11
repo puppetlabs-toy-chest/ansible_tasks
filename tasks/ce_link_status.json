@@ -1,8 +1,9 @@
 {
+  "input_method": "stdin", 
   "description": "Get interface link status on HUAWEI CloudEngine switches.", 
   "parameters": {
     "interface": {
-      "type": "String", 
+      "type": "String[0]", 
       "description": "For the interface parameter, you can enter C(all) to display information about all interface, an interface type such as C(40GE) to display information about interfaces of the specified type, or full name of an interface such as C(40GE1/0/22) or C(vlanif10) to display information about the specific interface."
     }
   }

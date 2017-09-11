@@ -1,8 +1,9 @@
 {
+  "input_method": "stdin", 
   "description": "Manages global configuration of EVPN on HUAWEI CloudEngine switches.", 
   "parameters": {
     "evpn_overlay_enable": {
-      "type": "String", 
+      "type": "Enum[\"enable\", \"disable\"]", 
       "description": "Configure EVPN as the VXLAN control plane."
     }
   }

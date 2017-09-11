@@ -1,12 +1,13 @@
 {
-  "description": "Run an arbitrary netconf command on HUAWEI CloudEngine switches.", 
+  "input_method": "stdin", 
+  "description": "Sends an arbitrary netconf command on HUAWEI CloudEngine switches.", 
   "parameters": {
     "rpc": {
-      "type": "String", 
+      "type": "Enum[\"get\", \"edit-config\", \"execute-action\", \"execute-cli\"]", 
       "description": "The type of rpc."
     }, 
     "cfg_xml": {
-      "type": "String", 
+      "type": "String[0]", 
       "description": "The config xml string."
     }
   }
