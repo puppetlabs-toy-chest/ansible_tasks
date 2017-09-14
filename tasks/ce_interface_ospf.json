@@ -1,52 +1,53 @@
 {
+  "input_method": "stdin", 
   "description": "Manages configuration of an OSPF interface instanceon HUAWEI CloudEngine switches.", 
   "parameters": {
     "process_id": {
-      "type": "String", 
+      "type": "String[0]", 
       "description": "Specifies a process ID. The value is an integer ranging from 1 to 4294967295."
     }, 
     "cost": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "The cost associated with this interface. Valid values are an integer in the range from 1 to 65535."
     }, 
     "area": {
-      "type": "String", 
+      "type": "String[0]", 
       "description": "Ospf area associated with this ospf process. Valid values are a string, formatted as an IP address (i.e. \"0.0.0.0\") or as an integer between 1 and 4294967295."
     }, 
     "silent_interface": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Setting to true will prevent this interface from receiving HELLO packets. Valid values are 'true' and 'false'."
     }, 
     "auth_mode": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"none\", \"null\", \"hmac-sha256\", \"md5\", \"hmac-md5\", \"simple\"]]", 
       "description": "Specifies the authentication type."
     }, 
     "auth_key_id": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Authentication key id when C(auth_mode) is 'hmac-sha256', 'md5' or 'hmac-md5. Valid value is an integer is in the range from 1 to 255."
     }, 
     "auth_text_simple": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Specifies a password for simple authentication. The value is a string of 1 to 8 characters."
     }, 
     "state": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"present\", \"absent\"]]", 
       "description": "Determines whether the config should be present or not on the device."
     }, 
     "dead_interval": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Time interval an ospf neighbor waits for a hello packet before tearing down adjacencies. Valid values are an integer in the range from 1 to 235926000."
     }, 
     "hello_interval": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Time between sending successive hello packets. Valid values are an integer in the range from 1 to 65535."
     }, 
     "auth_text_md5": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Specifies a password for MD5, HMAC-MD5, or HMAC-SHA256 authentication. The value is a string of 1 to 255 case-sensitive characters, spaces not supported."
     }, 
     "interface": {
-      "type": "String", 
+      "type": "String[0]", 
       "description": "Full name of interface, i.e. 40GE1/0/10."
     }
   }

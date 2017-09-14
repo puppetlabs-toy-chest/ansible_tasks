@@ -1,12 +1,13 @@
 {
-  "description": "Manage pear/pecl packages", 
+  "input_method": "stdin", 
+  "description": "Manage PHP packages with the pear package manager.", 
   "parameters": {
     "state": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"present\", \"absent\", \"latest\"]]", 
       "description": "Desired state of the package."
     }, 
     "name": {
-      "type": "String", 
+      "type": "String[0]", 
       "description": "Name of the package to install, upgrade, or remove."
     }
   }

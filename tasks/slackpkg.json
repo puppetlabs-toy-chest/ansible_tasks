@@ -1,16 +1,17 @@
 {
-  "description": "Package manager for Slackware >= 12.2", 
+  "input_method": "stdin", 
+  "description": "Manage binary packages for Slackware using 'slackpkg' which is available in versions after 12.2.", 
   "parameters": {
     "state": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"present\", \"absent\", \"latest\"]]", 
       "description": "state of the package, you can use \"installed\" as an alias for C(present) and removed as one for c(absent)."
     }, 
     "update_cache": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"True\", \"False\"]]", 
       "description": "update the package database first"
     }, 
     "name": {
-      "type": "String", 
+      "type": "String[0]", 
       "description": "name of package to install/remove"
     }
   }

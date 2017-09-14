@@ -1,80 +1,81 @@
 {
-  "description": "create/destroy GCE load-balancer resources", 
+  "input_method": "stdin", 
+  "description": "This module can create and destroy Google Compute Engine C(loadbalancer) and C(httphealthcheck) resources.  The primary LB resource is the C(load_balancer) resource and the health check parameters are all prefixed with I(httphealthcheck). The full documentation for Google Compute Engine load balancing is at U(https://developers.google.com/compute/docs/load-balancing/).  However, the ansible module simplifies the configuration by following the libcloud model. Full install/configuration instructions for the gce* modules can be found in the comments of ansible/test/gce_tests.py.", 
   "parameters": {
     "httphealthcheck_host": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "host header to pass through on HTTP check requests"
     }, 
     "httphealthcheck_name": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "the name identifier for the HTTP health check"
     }, 
     "name": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "name of the load-balancer resource"
     }, 
     "external_ip": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "the external static IPv4 (or auto-assigned) address for the LB"
     }, 
     "service_account_email": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "service account email"
     }, 
     "region": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "the GCE region where the load-balancer is defined"
     }, 
     "httphealthcheck_unhealthy_count": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "number of consecutive failed checks before marking a node unhealthy"
     }, 
     "httphealthcheck_healthy_count": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "number of consecutive successful checks before marking a node healthy"
     }, 
     "pem_file": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "path to the pem file associated with the service account email This option is deprecated. Use 'credentials_file'."
     }, 
     "httphealthcheck_path": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "the url path to use for HTTP health checking"
     }, 
     "port_range": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "the port (range) to forward, e.g. 80 or 8000-8888 defaults to all ports"
     }, 
     "state": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"active\", \"present\", \"absent\", \"deleted\"]]", 
       "description": "desired state of the LB"
     }, 
     "httphealthcheck_timeout": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "the timeout in seconds before a request is considered a failed check"
     }, 
     "members": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "a list of zone/nodename pairs, e.g ['us-central1-a/www-a', ...]"
     }, 
     "credentials_file": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "path to the JSON file associated with the service account email"
     }, 
     "httphealthcheck_port": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "the TCP port to use for HTTP health checking"
     }, 
     "protocol": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"tcp\", \"udp\"]]", 
       "description": "the protocol used for the load-balancer packet forwarding, tcp or udp"
     }, 
     "project_id": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "your GCE project ID"
     }, 
     "httphealthcheck_interval": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "the duration in seconds between each health check request"
     }
   }

@@ -1,80 +1,81 @@
 {
-  "description": "Add, modify & delete services within a consul cluster.", 
+  "input_method": "stdin", 
+  "description": "Registers services and checks for an agent with a consul cluster. A service is some process running on the agent node that should be advertised by consul's discovery mechanism. It may optionally supply a check definition, a periodic service test to notify the consul cluster of service's health.", 
   "parameters": {
     "service_address": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "the address to advertise that the service will be listening on. This value will be passed as the I(Address) parameter to Consul's U(/v1/agent/service/register) API method, so refer to the Consul API documentation for further details."
     }, 
     "http": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "checks can be registered with an http endpoint. This means that consul will check that the http endpoint returns a successful http status. Interval must also be provided with this option."
     }, 
     "tags": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "a list of tags that will be attached to the service registration."
     }, 
     "check_name": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "a name for the service check, defaults to the check id. required if standalone, ignored if part of service definition."
     }, 
     "service_name": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Unique name for the service on a node, must be unique per node, required if registering a service. May be omitted if registering a node level check"
     }, 
     "notes": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Notes to attach to check when registering it."
     }, 
     "script": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "the script/command that will be run periodically to check the health of the service. Scripts require an interval and vise versa"
     }, 
     "token": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "the token key indentifying an ACL rule set. May be required to register services."
     }, 
     "interval": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "the interval at which the service check will be run. This is a number with a s or m suffix to signify the units of seconds or minutes e.g 15s or 1m. If no suffix is supplied, m will be used by default e.g. 1 will be 1m. Required if the script param is specified."
     }, 
     "check_id": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "an ID for the service check, defaults to the check name, ignored if part of a service definition."
     }, 
     "host": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "host of the consul agent defaults to localhost"
     }, 
     "state": {
-      "type": "String", 
+      "type": "Enum[\"present\", \"absent\"]", 
       "description": "register or deregister the consul service, defaults to present"
     }, 
     "service_port": {
-      "type": "Optional[String]", 
-      "description": "the port on which the service is listening. Can optionally be supplied for registration of a service, i.e. if service_name or service_id is set"
+      "type": "Optional[String[0]]", 
+      "description": "the port on which the service is listening required for registration of a service, i.e. if service_name or service_id is set"
     }, 
     "timeout": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "A custom HTTP check timeout. The consul default is 10 seconds. Similar to the interval this is a number with a s or m suffix to signify the units of seconds or minutes, e.g. 15s or 1m."
     }, 
     "ttl": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "checks can be registered with a ttl instead of a script and interval this means that the service will check in with the agent before the ttl expires. If it doesn't the check will be considered failed. Required if registering a check and the script an interval are missing Similar to the interval this is a number with a s or m suffix to signify the units of seconds or minutes e.g 15s or 1m. If no suffix is supplied, m will be used by default e.g. 1 will be 1m"
     }, 
     "service_id": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "the ID for the service, must be unique per node, defaults to the service name if the service name is supplied"
     }, 
     "scheme": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "the protocol scheme on which the consul agent is running"
     }, 
     "validate_certs": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "whether to verify the tls certificate of the consul agent"
     }, 
     "port": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "the port on which the consul agent is running"
     }
   }

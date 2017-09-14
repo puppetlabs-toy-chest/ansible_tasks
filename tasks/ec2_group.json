@@ -1,69 +1,66 @@
 {
-  "description": "maintain an ec2 VPC security group.", 
+  "input_method": "stdin", 
+  "description": "maintains ec2 security groups. This module has a dependency on python-boto >= 2.5", 
   "parameters": {
-    "profile": {
-      "type": "Optional[String]", 
-      "description": "Uses a boto profile. Only works with boto >= 2.24.0."
-    }, 
-    "rules_egress": {
-      "type": "Optional[String]", 
-      "description": "List of firewall outbound rules to enforce in this group (see example). If none are supplied, a default all-out rule is assumed. If an empty list is supplied, no outbound rules will be enabled. Rule Egress sources list support was added in version 2.4."
-    }, 
-    "aws_access_key": {
-      "type": "Optional[String]", 
-      "description": "AWS access key. If not set then the value of the AWS_ACCESS_KEY_ID, AWS_ACCESS_KEY or EC2_ACCESS_KEY environment variable is used."
-    }, 
-    "description": {
-      "type": "Optional[String]", 
-      "description": "Description of the security group. Required when C(state) is C(present)."
-    }, 
-    "purge_rules": {
-      "type": "Optional[String]", 
-      "description": "Purge existing rules on security group that are not found in rules"
-    }, 
-    "rules": {
-      "type": "Optional[String]", 
-      "description": "List of firewall inbound rules to enforce in this group (see example). If none are supplied, no inbound rules will be enabled. Rules list may include its own name in `group_name`. This allows idempotent loopback additions (e.g. allow group to access itself). Rule sources list support was added in version 2.4. This allows to define multiple sources per source type as well as multiple source types per rule. Prior to 2.4 an individual source is allowed."
-    }, 
-    "region": {
-      "type": "Optional[String]", 
-      "description": "The AWS region to use. If not specified then the value of the AWS_REGION or EC2_REGION environment variable, if any, is used. See U(http://docs.aws.amazon.com/general/latest/gr/rande.html#ec2_region)"
-    }, 
     "aws_secret_key": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "AWS secret key. If not set then the value of the AWS_SECRET_ACCESS_KEY, AWS_SECRET_KEY, or EC2_SECRET_KEY environment variable is used."
     }, 
+    "profile": {
+      "type": "Optional[String[0]]", 
+      "description": "Uses a boto profile. Only works with boto >= 2.24.0."
+    }, 
+    "aws_access_key": {
+      "type": "Optional[String[0]]", 
+      "description": "AWS access key. If not set then the value of the AWS_ACCESS_KEY_ID, AWS_ACCESS_KEY or EC2_ACCESS_KEY environment variable is used."
+    }, 
     "name": {
-      "type": "Optional[String]", 
-      "description": "Name of the security group. One of and only one of I(name) or I(group_id) is required. Required if I(state=present)."
+      "type": "String[0]", 
+      "description": "Name of the security group."
+    }, 
+    "security_token": {
+      "type": "Optional[String[0]]", 
+      "description": "AWS STS security token. If not set then the value of the AWS_SECURITY_TOKEN or EC2_SECURITY_TOKEN environment variable is used."
+    }, 
+    "rules_egress": {
+      "type": "Optional[String[0]]", 
+      "description": "List of firewall outbound rules to enforce in this group (see example). If none are supplied, a default all-out rule is assumed. If an empty list is supplied, no outbound rules will be enabled. Rule Egress sources list support was added in version 2.4."
+    }, 
+    "rules": {
+      "type": "Optional[String[0]]", 
+      "description": "List of firewall inbound rules to enforce in this group (see example). If none are supplied, no inbound rules will be enabled. Rules list may include its own name in `group_name`. This allows idempotent loopback additions (e.g. allow group to acccess itself). Rule sources list support was added in version 2.4. This allows to define multiple sources per source type as well as multiple source types per rule. Prior to 2.4 an individual source is allowed."
+    }, 
+    "region": {
+      "type": "Optional[String[0]]", 
+      "description": "The AWS region to use. If not specified then the value of the AWS_REGION or EC2_REGION environment variable, if any, is used. See U(http://docs.aws.amazon.com/general/latest/gr/rande.html#ec2_region)"
     }, 
     "state": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"present\", \"absent\"]]", 
       "description": "Create or delete a security group"
     }, 
+    "purge_rules": {
+      "type": "Optional[String[0]]", 
+      "description": "Purge existing rules on security group that are not found in rules"
+    }, 
     "ec2_url": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Url to use to connect to EC2 or your Eucalyptus cloud (by default the module will use EC2 endpoints). Ignored for modules where region is required. Must be specified for all other modules if region is not used. If not set then the value of the EC2_URL environment variable, if any, is used."
     }, 
     "vpc_id": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "ID of the VPC to create the group in."
     }, 
-    "security_token": {
-      "type": "Optional[String]", 
-      "description": "AWS STS security token. If not set then the value of the AWS_SECURITY_TOKEN or EC2_SECURITY_TOKEN environment variable is used."
-    }, 
-    "group_id": {
-      "type": "Optional[String]", 
-      "description": "Id of group to delete (works only with absent). One of and only one of I(name) or I(group_id) is required."
+    "purge_rules_egress": {
+      "type": "Optional[String[0]]", 
+      "description": "Purge existing rules_egress on security group that are not found in rules_egress"
     }, 
     "validate_certs": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"yes\", \"no\"]]", 
       "description": "When set to \"no\", SSL certificates will not be validated for boto versions >= 2.6.0."
     }, 
-    "purge_rules_egress": {
-      "type": "Optional[String]", 
-      "description": "Purge existing rules_egress on security group that are not found in rules_egress"
+    "description": {
+      "type": "Optional[String[0]]", 
+      "description": "Description of the security group. Required when C(state) is C(present)."
     }
   }
 }

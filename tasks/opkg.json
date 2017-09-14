@@ -1,20 +1,21 @@
 {
-  "description": "Package manager for OpenWrt", 
+  "input_method": "stdin", 
+  "description": "Manages OpenWrt packages", 
   "parameters": {
     "update_cache": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"yes\", \"no\"]]", 
       "description": "update the package db first"
     }, 
     "state": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"present\", \"absent\"]]", 
       "description": "state of the package"
     }, 
     "force": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"\", \"depends\", \"maintainer\", \"reinstall\", \"overwrite\", \"downgrade\", \"space\", \"postinstall\", \"remove\", \"checksum\", \"removal-of-dependent-packages\"]]", 
       "description": "opkg --force parameter used"
     }, 
     "name": {
-      "type": "String", 
+      "type": "String[0]", 
       "description": "name of package to install/remove"
     }
   }

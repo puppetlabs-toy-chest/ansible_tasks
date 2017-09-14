@@ -1,88 +1,89 @@
 {
-  "description": "Add/Remove floating IP from an instance", 
+  "input_method": "stdin", 
+  "description": "Add or Remove a floating IP to an instance", 
   "parameters": {
     "auth_type": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Name of the auth plugin to use. If the cloud uses something other than password authentication, the name of the plugin should be indicated here and the contents of the I(auth) parameter should be updated accordingly."
     }, 
     "fixed_address": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "To which fixed IP of server the floating IP address should be attached to."
     }, 
     "region_name": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Name of the region."
     }, 
     "availability_zone": {
-      "type": "Optional[String]", 
-      "description": "Ignored. Present for backwards compatibility"
+      "type": "Optional[String[0]]", 
+      "description": "Ignored. Present for backwards compatability"
     }, 
     "reuse": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "When I(state) is present, and I(floating_ip_address) is not present, this parameter can be used to specify whether we should try to reuse a floating IP address already allocated to the project."
     }, 
     "api_timeout": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "How long should the socket layer wait before timing out for API calls. If this is omitted, nothing will be passed to the requests library."
     }, 
     "cert": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "A path to a client certificate to use as part of the SSL transaction."
     }, 
     "auth": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Dictionary containing auth information as needed by the cloud's auth plugin strategy. For the default I(password) plugin, this would contain I(auth_url), I(username), I(password), I(project_name) and any information about domains if the cloud supports them. For other plugins, this param will need to contain whatever parameters that auth plugin requires. This parameter is not needed if a named cloud is provided or OpenStack OS_* environment variables are present."
     }, 
     "server": {
-      "type": "String", 
+      "type": "String[0]", 
       "description": "The name or ID of the instance to which the IP address should be assigned."
     }, 
     "purge": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "When I(state) is absent, indicates whether or not to delete the floating IP completely, or only detach it from the server. Default is to detach only."
     }, 
     "network": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "The name or ID of a neutron external network or a nova pool name."
     }, 
     "state": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"present\", \"absent\"]]", 
       "description": "Should the resource be present or absent."
     }, 
     "endpoint_type": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"public\", \"internal\", \"admin\"]]", 
       "description": "Endpoint URL type to fetch from the service catalog."
     }, 
     "floating_ip_address": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "A floating IP address to attach or to detach. Required only if I(state) is absent. When I(state) is present can be used to specify a IP address to attach."
     }, 
     "timeout": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Time to wait for an IP address to appear as attached. See wait."
     }, 
     "key": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "A path to a client key to use as part of the SSL transaction."
     }, 
     "cacert": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "A path to a CA Cert bundle that can be used as part of verifying SSL API requests."
     }, 
     "nat_destination": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "The name or id of a neutron private network that the fixed IP to attach floating IP is on"
     }, 
     "validate_certs": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Whether or not SSL API requests should be verified. Before 2.3 this defaulted to True."
     }, 
     "cloud": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Named cloud to operate against. Provides default values for I(auth) and I(auth_type). This parameter is not needed if I(auth) is provided or if OpenStack OS_* environment variables are present."
     }, 
     "wait": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "When attaching a floating IP address, specify whether we should wait for it to appear as attached."
     }
   }

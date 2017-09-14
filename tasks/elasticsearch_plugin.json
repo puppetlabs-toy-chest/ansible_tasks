@@ -1,40 +1,41 @@
 {
-  "description": "Manage Elasticsearch plugins", 
+  "input_method": "stdin", 
+  "description": "Manages Elasticsearch plugins.", 
   "parameters": {
     "name": {
-      "type": "String", 
+      "type": "String[0]", 
       "description": "Name of the plugin to install. In ES 2.x, the name can be an url or file location"
     }, 
     "proxy_host": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Proxy host to use during plugin installation"
     }, 
     "url": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Set exact URL to download the plugin from (Only works for ES 1.x)"
     }, 
     "proxy_port": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Proxy port to use during plugin installation"
     }, 
     "state": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"present\", \"absent\"]]", 
       "description": "Desired state of a plugin."
     }, 
     "version": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Version of the plugin to be installed. If plugin exists with previous version, it will NOT be updated"
     }, 
     "timeout": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Timeout setting: 30s, 1m, 1h..."
     }, 
     "plugin_dir": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Your configured plugin directory specified in Elasticsearch"
     }, 
     "plugin_bin": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Location of the plugin binary"
     }
   }

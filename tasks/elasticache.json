@@ -1,88 +1,89 @@
 {
+  "input_method": "stdin", 
   "description": "Manage cache clusters in Amazon Elasticache.", 
   "parameters": {
     "profile": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Uses a boto profile. Only works with boto >= 2.24.0."
     }, 
     "engine": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"redis\", \"memcached\"]]", 
       "description": "Name of the cache engine to be used."
     }, 
     "aws_access_key": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "AWS access key. If not set then the value of the AWS_ACCESS_KEY_ID, AWS_ACCESS_KEY or EC2_ACCESS_KEY environment variable is used."
     }, 
     "cache_parameter_group": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "The name of the cache parameter group to associate with this cache cluster. If this argument is omitted, the default cache parameter group for the specified engine will be used."
     }, 
     "name": {
-      "type": "String", 
+      "type": "String[0]", 
       "description": "The cache cluster identifier"
     }, 
     "cache_engine_version": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "The version number of the cache engine"
     }, 
     "state": {
-      "type": "String", 
+      "type": "Enum[\"present\", \"absent\", \"rebooted\"]", 
       "description": "C(absent) or C(present) are idempotent actions that will create or destroy a cache cluster as needed. C(rebooted) will reboot the cluster, resulting in a momentary outage."
     }, 
     "region": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "The AWS region to use. If not specified then the value of the AWS_REGION or EC2_REGION environment variable, if any, is used. See U(http://docs.aws.amazon.com/general/latest/gr/rande.html#ec2_region)"
     }, 
     "aws_secret_key": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "AWS secret key. If not set then the value of the AWS_SECRET_ACCESS_KEY, AWS_SECRET_KEY, or EC2_SECRET_KEY environment variable is used."
     }, 
     "cache_port": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "The port number on which each of the cache nodes will accept connections"
     }, 
     "num_nodes": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "The initial number of cache nodes that the cache cluster will have. Required when state=present."
     }, 
     "node_type": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "The compute and memory capacity of the nodes in the cache cluster"
     }, 
     "cache_security_groups": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "A list of cache security group names to associate with this cache cluster. Must be an empty list if inside a vpc"
     }, 
     "zone": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "The EC2 Availability Zone in which the cache cluster will be created"
     }, 
     "security_token": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "AWS STS security token. If not set then the value of the AWS_SECURITY_TOKEN or EC2_SECURITY_TOKEN environment variable is used."
     }, 
     "ec2_url": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Url to use to connect to EC2 or your Eucalyptus cloud (by default the module will use EC2 endpoints). Ignored for modules where region is required. Must be specified for all other modules if region is not used. If not set then the value of the EC2_URL environment variable, if any, is used."
     }, 
     "cache_subnet_group": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "The subnet group name to associate with. Only use if inside a vpc. Required if inside a vpc"
     }, 
     "hard_modify": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"yes\", \"no\"]]", 
       "description": "Whether to destroy and recreate an existing cache cluster if necessary in order to modify its state"
     }, 
     "security_group_ids": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "A list of vpc security group names to associate with this cache cluster. Only use if inside a vpc"
     }, 
     "validate_certs": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"yes\", \"no\"]]", 
       "description": "When set to \"no\", SSL certificates will not be validated for boto versions >= 2.6.0."
     }, 
     "wait": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"yes\", \"no\"]]", 
       "description": "Wait for cache cluster result before returning"
     }
   }

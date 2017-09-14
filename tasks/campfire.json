@@ -1,24 +1,25 @@
 {
-  "description": "Send a message to Campfire", 
+  "input_method": "stdin", 
+  "description": "Send a message to Campfire.", 
   "parameters": {
     "msg": {
-      "type": "String", 
+      "type": "String[0]", 
       "description": "The message body."
     }, 
     "token": {
-      "type": "String", 
+      "type": "String[0]", 
       "description": "API token."
     }, 
     "room": {
-      "type": "String", 
+      "type": "String[0]", 
       "description": "Room number to which the message should be sent."
     }, 
     "notify": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"56k\", \"bell\", \"bezos\", \"bueller\", \"clowntown\", \"cottoneyejoe\", \"crickets\", \"dadgummit\", \"dangerzone\", \"danielsan\", \"deeper\", \"drama\", \"greatjob\", \"greyjoy\", \"guarantee\", \"heygirl\", \"horn\", \"horror\", \"inconceivable\", \"live\", \"loggins\", \"makeitso\", \"noooo\", \"nyan\", \"ohmy\", \"ohyeah\", \"pushit\", \"rimshot\", \"rollout\", \"rumble\", \"sax\", \"secret\", \"sexyback\", \"story\", \"tada\", \"tmyk\", \"trololo\", \"trombone\", \"unix\", \"vuvuzela\", \"what\", \"whoomp\", \"yeah\", \"yodel\"]]", 
       "description": "Send a notification sound before the message."
     }, 
     "subscription": {
-      "type": "String", 
+      "type": "String[0]", 
       "description": "The subscription name to use."
     }
   }

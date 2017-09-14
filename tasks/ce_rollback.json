@@ -1,28 +1,29 @@
 {
-  "description": "Set a checkpoint or rollback to a checkpoint on HUAWEI CloudEngine switches.", 
+  "input_method": "stdin", 
+  "description": "This module offers the ability to set a configuration checkpoint file or rollback to a configuration checkpoint file on HUAWEI CloudEngine switches.", 
   "parameters": {
     "commit_id": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Specifies the label of the configuration rollback point to which system configurations are expected to roll back. The value is an integer that the system generates automatically."
     }, 
     "last": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Specifies the number of configuration rollback points. The value is an integer that ranges from 1 to 80."
     }, 
     "filename": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Specifies a configuration file for configuration rollback. The value is a string of 5 to 64 case-sensitive characters in the format of *.zip, *.cfg, or *.dat, spaces not supported."
     }, 
     "label": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Specifies a user label for a configuration rollback point. The value is a string of 1 to 256 case-sensitive ASCII characters, spaces not supported. The value must start with a letter and cannot be presented in a single hyphen (-)."
     }, 
     "action": {
-      "type": "String", 
+      "type": "Enum[\"rollback\", \"clear\", \"set\", \"display\", \"commit\"]", 
       "description": "The operation of configuration rollback."
     }, 
     "oldest": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Specifies the number of configuration rollback points. The value is an integer that ranges from 1 to 80."
     }
   }

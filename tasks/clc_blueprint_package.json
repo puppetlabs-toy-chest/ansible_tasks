@@ -1,24 +1,25 @@
 {
-  "description": "deploys a blue print package on a set of servers in CenturyLink Cloud.", 
+  "input_method": "stdin", 
+  "description": "An Ansible module to deploy blue print package on a set of servers in CenturyLink Cloud.", 
   "parameters": {
     "server_ids": {
-      "type": "String", 
+      "type": "String[0]", 
       "description": "A list of server Ids to deploy the blue print package."
     }, 
     "package_id": {
-      "type": "String", 
+      "type": "String[0]", 
       "description": "The package id of the blue print."
     }, 
     "wait": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"True\", \"False\"]]", 
       "description": "Whether to wait for the tasks to finish before returning."
     }, 
     "state": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"present\"]]", 
       "description": "Whether to install or un-install the package. Currently it supports only \"present\" for install action."
     }, 
     "package_params": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "The dictionary of arguments required to deploy the blue print."
     }
   }

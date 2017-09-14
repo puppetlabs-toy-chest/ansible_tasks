@@ -1,144 +1,145 @@
 {
-  "description": "Manage Networking", 
+  "input_method": "stdin", 
+  "description": "Manage the network devices. Create, modify, and manage, ethernet, teams, bonds, vlans etc.", 
   "parameters": {
     "conn_name": {
-      "type": "String", 
+      "type": "String[0]", 
       "description": "Where conn_name will be the name used to call the connection. when not provided a default name is generated: <type>[-<ifname>][-<num>]"
     }, 
     "ingress": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "This is only used with VLAN - VLAN ingress priority mapping"
     }, 
     "slavepriority": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "This is only used with 'bridge-slave' - [<0-63>] - STP priority of this slave"
     }, 
     "path_cost": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "This is only used with 'bridge-slave' - [<1-65535>] - STP port cost for destinations via this slave"
     }, 
     "vlandev": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "This is only used with VLAN - parent device this VLAN is on, can use ifname"
     }, 
     "forwarddelay": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "This is only used with bridge - [forward-delay <2-30>] STP forwarding delay, in seconds"
     }, 
     "primary": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "This is only used with bond and is the primary interface name (for \"active-backup\" mode), this is the usually the 'ifname'"
     }, 
     "hairpin": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "This is only used with 'bridge-slave' - 'hairpin mode' for the slave, which allows frames to be sent back out through the slave the frame was received on."
     }, 
     "egress": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "This is only used with VLAN - VLAN egress priority mapping"
     }, 
     "ageingtime": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "This is only used with bridge - [ageing-time <0-1000000>] the Ethernet MAC address aging time, in seconds"
     }, 
     "mtu": {
-      "type": "Optional[String]", 
-      "description": "The connection MTU, e.g. 9000. This can't be applied when creating the interface and is done once the interface has been created. Can be used when modifying Team, VLAN, Ethernet (Future plans to implement wifi, pppoe, infiniband)"
+      "type": "Optional[String[0]]", 
+      "description": "The connection MTU, e.g. 9000. This can't be applied when creating the interface and is done once the interface has been created."
     }, 
     "arp_ip_target": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "This is only used with bond - ARP IP target"
     }, 
     "maxage": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "This is only used with bridge - [max-age <6-42>] STP maximum message age, in seconds"
     }, 
     "vlanid": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "This is only used with VLAN - VLAN ID in range <0-4095>"
     }, 
     "priority": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "This is only used with 'bridge' - sets STP priority"
     }, 
     "gw4": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "The IPv4 gateway for this interface using this format ie: \"192.0.2.1\""
     }, 
     "state": {
-      "type": "String", 
+      "type": "Enum[\"present\", \"absent\"]", 
       "description": "Whether the device should exist or not, taking action if the state is different from what is stated."
     }, 
     "gw6": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "The IPv6 gateway for this interface using this format ie: \"2001:db8::1\""
     }, 
     "master": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "master <master (ifname, or connection UUID or conn_name) of bridge, team, bond master connection profile."
     }, 
     "flags": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "This is only used with VLAN - flags"
     }, 
     "ifname": {
-      "type": "Optional[String]", 
-      "description": "Where IFNAME will be the what we call the interface name. interface to bind the connection to. The connection will only be applicable to this interface name. A special value of \"*\" can be used for interface-independent connections. The ifname argument is mandatory for all connection types except bond, team, bridge and vlan."
+      "type": "Optional[String[0]]", 
+      "description": "Where IFNAME will be the what we call the interface name."
     }, 
     "type": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"ethernet\", \"team\", \"team-slave\", \"bond\", \"bond-slave\", \"bridge\", \"vlan\"]]", 
       "description": "This is the type of device or network connection that you wish to create or modify."
     }, 
     "miimon": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "This is only used with bond - miimon"
     }, 
     "hellotime": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "This is only used with bridge - [hello-time <1-10>] STP hello time, in seconds"
     }, 
     "downdelay": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "This is only used with bond - downdelay"
     }, 
     "mac": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "This is only used with bridge - MAC address of the bridge (note: this requires a recent kernel feature, originally introduced in 3.15 upstream kernel)\n"
     }, 
     "ip6": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "The IPv6 address to this interface using this format ie: \"abbe::cafe\""
     }, 
     "ip4": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "The IPv4 address to this interface using this format ie: \"192.0.2.24/24\""
     }, 
     "autoconnect": {
-      "type": "Optional[String]", 
-      "description": "Whether the connection should start on boot. Whether the connection profile can be automatically activated"
+      "type": "Optional[Enum[\"yes\", \"no\"]]", 
+      "description": "Whether the connection should start on boot."
     }, 
     "dns6": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "A list of upto 3 dns servers, ipv6 format e.g. To add two IPv6 DNS server addresses: \"2001:4860:4860::8888 2001:4860:4860::8844\""
     }, 
     "dns4": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "A list of upto 3 dns servers, ipv4 format e.g. To add two IPv4 DNS server addresses: \"192.0.2.53 198.51.100.53\""
     }, 
     "arp_interval": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "This is only used with bond - ARP interval"
     }, 
     "stp": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "This is only used with bridge and controls whether Spanning Tree Protocol (STP) is enabled for this bridge"
     }, 
     "mode": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"balance-rr\", \"active-backup\", \"balance-xor\", \"broadcast\", \"802.3ad\", \"balance-tlb\", \"balance-alb\"]]", 
       "description": "This is the type of device or network connection that you wish to create for a bond, team or bridge."
     }, 
     "updelay": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "This is only used with bond - updelay"
     }
   }

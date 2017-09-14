@@ -1,20 +1,21 @@
 {
+  "input_method": "stdin", 
   "description": "Manage the container images on the atomic host platform", 
   "parameters": {
     "started": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"yes\", \"no\"]]", 
       "description": "Start or Stop the container"
     }, 
     "state": {
-      "type": "Optional[String]", 
-      "description": "The state of the container image. The state C(latest) will ensure container image is upgraded to the latest version and forcefully restart container, if running."
+      "type": "Optional[Enum[\"present\", \"absent\", \"latest\"]]", 
+      "description": "The state of the container image."
     }, 
     "name": {
-      "type": "String", 
+      "type": "String[0]", 
       "description": "Name of the container image"
     }, 
     "backend": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"docker\", \"ostree\"]]", 
       "description": "Define the backend where the image is pulled."
     }
   }

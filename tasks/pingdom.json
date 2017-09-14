@@ -1,24 +1,25 @@
 {
-  "description": "Pause/unpause Pingdom alerts", 
+  "input_method": "stdin", 
+  "description": "This module will let you pause/unpause Pingdom alerts", 
   "parameters": {
     "checkid": {
-      "type": "String", 
+      "type": "String[0]", 
       "description": "Pingdom ID of the check."
     }, 
     "passwd": {
-      "type": "String", 
+      "type": "String[0]", 
       "description": "Pingdom user password."
     }, 
     "state": {
-      "type": "String", 
+      "type": "Enum[\"running\", \"paused\"]", 
       "description": "Define whether or not the check should be running or paused."
     }, 
     "uid": {
-      "type": "String", 
+      "type": "String[0]", 
       "description": "Pingdom user ID."
     }, 
     "key": {
-      "type": "String", 
+      "type": "String[0]", 
       "description": "Pingdom API key."
     }
   }

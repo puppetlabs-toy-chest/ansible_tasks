@@ -1,100 +1,97 @@
 {
-  "description": "Module for setup of GslbService Avi RESTful Object", 
+  "input_method": "stdin", 
+  "description": "This module is used to configure GslbService object", 
   "parameters": {
     "enabled": {
-      "type": "Optional[String]", 
-      "description": "Enable or disable the gslb service. If the gslb service is enabled, then the vips are sent in the dns responses based on reachability and configured algorithm. If the gslb service is disabled, then the vips are no longer available in the dns response. Default value when not specified in API or module is interpreted by Avi Controller as True."
+      "type": "Optional[String[0]]", 
+      "description": "Enable or disable the gslb service."
     }, 
     "domain_names": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Fully qualified domain name of the gslb service."
     }, 
     "ttl": {
-      "type": "Optional[String]", 
-      "description": "Ttl value (in seconds) for records served for this gslb service by the dns service. Allowed values are 1-86400."
+      "type": "Optional[String[0]]", 
+      "description": "Ttl value (in seconds) for records served for this gslb service by the dns service."
     }, 
     "health_monitor_scope": {
-      "type": "Optional[String]", 
-      "description": "Health monitor probe can be executed for all the members or it can be executed only for third-party members. This operational mode is useful to reduce the number of health monitor probes in case of a hybrid scenario. In such a case, avi members can have controller derived status while non-avi members can be probed by via health monitor probes in dataplane. Enum options - GSLB_SERVICE_HEALTH_MONITOR_ALL_MEMBERS, GSLB_SERVICE_HEALTH_MONITOR_ONLY_NON_AVI_MEMBERS. Default value when not specified in API or module is interpreted by Avi Controller as GSLB_SERVICE_HEALTH_MONITOR_ALL_MEMBERS."
+      "type": "Optional[String[0]]", 
+      "description": "Health monitor probe can be executed for all the members or it can be executed only for third-party members."
     }, 
     "uuid": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Uuid of the gslb service."
     }, 
     "down_response": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Response to the client query when the gslb service is down."
     }, 
-    "created_by": {
-      "type": "Optional[String]", 
-      "description": "Creator name. Field introduced in 17.1.2."
-    }, 
     "state": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"absent\", \"present\"]]", 
       "description": "The state that should be applied on the entity."
     }, 
     "api_version": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Avi API version of to use for Avi API and objects."
     }, 
     "username": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Username used for accessing Avi controller. The default value is the environment variable C(AVI_USERNAME)."
     }, 
     "description": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "User defined description for the object."
     }, 
     "wildcard_match": {
-      "type": "Optional[String]", 
-      "description": "Enable wild-card match of fqdn  if an exact match is not found in the dns table, the longest match is chosen by wild-carding the fqdn in the dns request. Default is false. Field introduced in 17.1.1. Default value when not specified in API or module is interpreted by Avi Controller as False."
+      "type": "Optional[String[0]]", 
+      "description": "Enable wild-card match of fqdn  if an exact match is not found in the dns table, the longest match is chosen by wild-carding the fqdn in the dns"
     }, 
     "use_edns_client_subnet": {
-      "type": "Optional[String]", 
-      "description": "Use the client ip subnet from the edns option as source ipaddress for client geo-location and consistent hash algorithm. Default is true. Field introduced in 17.1.1. Default value when not specified in API or module is interpreted by Avi Controller as True."
+      "type": "Optional[String[0]]", 
+      "description": "Use the client ip subnet from the edns option as source ipaddress for client geo-location and consistent hash algorithm."
     }, 
     "groups": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Select list of pools belonging to this gslb service."
     }, 
     "password": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Password of Avi user in Avi controller. The default value is the environment variable C(AVI_PASSWORD)."
     }, 
     "tenant": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Name of tenant used for all Avi API calls and context of object."
     }, 
     "controller_health_status_enabled": {
-      "type": "Optional[String]", 
-      "description": "Gs member's overall health status is derived based on a combination of controller and datapath health-status inputs. Note that the datapath status is determined by the association of health monitor profiles. Only the controller provided status is determined through this configuration. Default value when not specified in API or module is interpreted by Avi Controller as True."
+      "type": "Optional[String[0]]", 
+      "description": "Gs member's overall health status is derived based on a combination of controller and datapath health-status inputs."
     }, 
     "name": {
-      "type": "String", 
+      "type": "String[0]", 
       "description": "Name for the gslb service."
     }, 
     "url": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Avi controller URL of the object."
     }, 
     "tenant_ref": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "It is a reference to an object of type tenant."
     }, 
     "controller": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "IP address or hostname of the controller. The default value is the environment variable C(AVI_CONTROLLER)."
     }, 
     "health_monitor_refs": {
-      "type": "Optional[String]", 
-      "description": "Verify vs health by applying one or more health monitors. Active monitors generate synthetic traffic from dns service engine and to mark a vs up or down based on the response. It is a reference to an object of type gslbhealthmonitor."
+      "type": "Optional[String[0]]", 
+      "description": "Verify vs health by applying one or more health monitors."
     }, 
     "num_dns_ip": {
-      "type": "Optional[String]", 
-      "description": "Number of ip addresses of this gslb service to be returned by the dns service. Enter 0 to return all ip addresses. Allowed values are 1-20. Special values are 0- 'return all ip addresses'."
+      "type": "Optional[String[0]]", 
+      "description": "Number of ip addresses of this gslb service to be returned by the dns service."
     }, 
     "tenant_uuid": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "UUID of tenant used for all Avi API calls and context of object."
     }
   }

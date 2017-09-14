@@ -1,8 +1,9 @@
 {
-  "description": "Gathers facts about remote hosts within ec2 (aws)", 
+  "input_method": "stdin", 
+  "description": "This module fetches data from the metadata servers in ec2 (aws) as per http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html. The module must be called from within the EC2 instance itself.", 
   "parameters": {
     "validate_certs": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"yes\", \"no\"]]", 
       "description": "If C(no), SSL certificates will not be validated. This should only be used on personally controlled sites using self-signed certificates."
     }
   }

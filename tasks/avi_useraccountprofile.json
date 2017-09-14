@@ -1,64 +1,65 @@
 {
-  "description": "Module for setup of UserAccountProfile Avi RESTful Object", 
+  "input_method": "stdin", 
+  "description": "This module is used to configure UserAccountProfile object", 
   "parameters": {
     "username": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Username used for accessing Avi controller. The default value is the environment variable C(AVI_USERNAME)."
     }, 
     "max_concurrent_sessions": {
-      "type": "Optional[String]", 
-      "description": "Maximum number of concurrent sessions allowed. There are unlimited sessions by default. Default value when not specified in API or module is interpreted by Avi Controller as 0."
+      "type": "Optional[String[0]]", 
+      "description": "Maximum number of concurrent sessions allowed."
     }, 
     "uuid": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Unique object identifier of the object."
     }, 
     "url": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Avi controller URL of the object."
     }, 
     "credentials_timeout_threshold": {
-      "type": "Optional[String]", 
-      "description": "The time period after which credentials expire. Default is 180 days. Default value when not specified in API or module is interpreted by Avi Controller as 180."
+      "type": "Optional[String[0]]", 
+      "description": "The time period after which credentials expire."
     }, 
     "controller": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "IP address or hostname of the controller. The default value is the environment variable C(AVI_CONTROLLER)."
     }, 
     "account_lock_timeout": {
-      "type": "Optional[String]", 
-      "description": "Lock timeout period (in minutes). Default is 30 minutes. Default value when not specified in API or module is interpreted by Avi Controller as 30."
+      "type": "Optional[String[0]]", 
+      "description": "Lock timeout period (in minutes)."
     }, 
     "state": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"absent\", \"present\"]]", 
       "description": "The state that should be applied on the entity."
     }, 
     "max_login_failure_count": {
-      "type": "Optional[String]", 
-      "description": "Number of login attempts before lockout. Default is 3 attempts. Default value when not specified in API or module is interpreted by Avi Controller as 3."
+      "type": "Optional[String[0]]", 
+      "description": "Number of login attempts before lockout."
     }, 
     "tenant": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Name of tenant used for all Avi API calls and context of object."
     }, 
     "max_password_history_count": {
-      "type": "Optional[String]", 
-      "description": "Maximum number of passwords to be maintained in the password history. Default is 4 passwords. Default value when not specified in API or module is interpreted by Avi Controller as 4."
+      "type": "Optional[String[0]]", 
+      "description": "Maximum number of passwords to be maintained in the password history."
     }, 
     "password": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Password of Avi user in Avi controller. The default value is the environment variable C(AVI_PASSWORD)."
     }, 
     "tenant_uuid": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "UUID of tenant used for all Avi API calls and context of object."
     }, 
     "api_version": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Avi API version of to use for Avi API and objects."
     }, 
     "name": {
-      "type": "String", 
+      "type": "String[0]", 
       "description": "Name of the object."
     }
   }

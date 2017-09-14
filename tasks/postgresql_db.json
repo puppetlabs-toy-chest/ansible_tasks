@@ -1,60 +1,61 @@
 {
+  "input_method": "stdin", 
   "description": "Add or remove PostgreSQL databases from a remote host.", 
   "parameters": {
     "ssl_rootcert": {
-      "type": "Optional[String]", 
-      "description": "Specifies the name of a file containing SSL certificate authority (CA) certificate(s). If the file exists, the server's certificate will be verified to be signed by one of these authorities."
+      "type": "Optional[String[0]]", 
+      "description": "Specifies the name of a file containing SSL certificate authority (CA) certificate(s)."
     }, 
     "ssl_mode": {
-      "type": "Optional[String]", 
-      "description": "Determines whether or with what priority a secure SSL TCP/IP connection will be negotiated with the server. See https://www.postgresql.org/docs/current/static/libpq-ssl.html for more information on the modes. Default of C(prefer) matches libpq default."
+      "type": "Optional[Enum[\"disable\", \"allow\", \"prefer\", \"require\", \"verify-ca\", \"verify-full\"]]", 
+      "description": "Determines whether or with what priority a secure SSL TCP/IP connection will be negotiated with the server."
     }, 
     "name": {
-      "type": "String", 
+      "type": "String[0]", 
       "description": "name of the database to add or remove"
     }, 
     "encoding": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Encoding of the database"
     }, 
     "login_user": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "The username used to authenticate with"
     }, 
     "lc_collate": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Collation order (LC_COLLATE) to use in the database. Must match collation order of template database unless C(template0) is used as template."
     }, 
     "lc_ctype": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Character classification (LC_CTYPE) to use in the database (e.g. lower, upper, ...) Must match LC_CTYPE of template database unless C(template0) is used as template."
     }, 
     "port": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Database port to connect to."
     }, 
     "login_unix_socket": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Path to a Unix domain socket for local connections"
     }, 
     "state": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"present\", \"absent\"]]", 
       "description": "The database state"
     }, 
     "template": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Template used to create the database"
     }, 
     "login_password": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "The password used to authenticate with"
     }, 
     "owner": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Name of the role to set as owner of the database"
     }, 
     "login_host": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Host running the database"
     }
   }

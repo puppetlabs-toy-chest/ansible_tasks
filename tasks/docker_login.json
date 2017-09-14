@@ -1,72 +1,73 @@
 {
-  "description": "Log into a Docker registry.", 
+  "input_method": "stdin", 
+  "description": "Provides functionality similar to the \"docker login\" command.", 
   "parameters": {
     "tls": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Secure the connection to the API by using TLS without verifying the authenticity of the Docker host server."
     }, 
     "username": {
-      "type": "String", 
+      "type": "String[0]", 
       "description": "The username for the registry account"
     }, 
     "cacert_path": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Use a CA certificate when performing server verification by providing the path to a CA certificate file."
     }, 
     "config_path": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Custom path to the Docker CLI configuration file."
     }, 
     "reauthorize": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"yes\", \"no\"]]", 
       "description": "Refresh exiting authentication found in the configuration file."
     }, 
     "ssl_version": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Provide a valid SSL version number. Default value determined by docker-py, currently 1.0."
     }, 
     "docker_host": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "The URL or Unix socket path used to connect to the Docker API. To connect to a remote host, provide the TCP connection string. For example, 'tcp://192.0.2.23:2376'. If TLS is used to encrypt the connection, the module will automatically replace 'tcp' in the connection URL with 'https'."
     }, 
     "tls_hostname": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "When verifying the authenticity of the Docker Host server, provide the expected name of the server."
     }, 
     "state": {
-      "type": "Optional[String]", 
-      "description": "This controls the current state of the user. C(present) will login in a user, C(absent) will log him out. To logout you only need the registry server, which defaults to DockerHub. Before 2.1 you could ONLY log in. docker does not support 'logout' with a custom config file."
+      "type": "Optional[Enum[\"present\", \"absent\"]]", 
+      "description": "This controls the current state of the user. C(present) will login in a user, C(absent) will log him out."
     }, 
     "tls_verify": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Secure the connection to the API by using TLS and verifying the authenticity of the Docker host server."
     }, 
     "key_path": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Path to the client's TLS key file."
     }, 
     "timeout": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "The maximum amount of time in seconds to wait on a response from the API."
     }, 
     "cert_path": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Path to the client's TLS certificate file."
     }, 
     "password": {
-      "type": "String", 
+      "type": "String[0]", 
       "description": "The plaintext password for the registry account"
     }, 
     "email": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "The email address for the registry account. NOTE: private registries may not require this, but Docker Hub requires it."
     }, 
     "api_version": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "The version of the Docker API running on the Docker Host. Defaults to the latest version of the API supported by docker-py."
     }, 
     "registry_url": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "The registry URL."
     }
   }

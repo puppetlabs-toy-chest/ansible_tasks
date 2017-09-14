@@ -1,140 +1,141 @@
 {
-  "description": "Modifies query rules using the proxysql admin interface.", 
+  "input_method": "stdin", 
+  "description": "The M(proxysql_query_rules) module modifies query rules using the proxysql admin interface.", 
   "parameters": {
     "comment": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Free form text field, usable for a descriptive comment of the query rule."
     }, 
     "flagOUT": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Used in combination with I(flagIN) and apply to create chains of rules. When set, I(flagOUT) signifies the I(flagIN) to be used in the next chain of rules."
     }, 
     "login_user": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "The username used to authenticate to ProxySQL admin interface."
     }, 
     "login_password": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "The password used to authenticate to ProxySQL admin interface."
     }, 
     "match_pattern": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Regular expression that matches the query text. The dialect of regular expressions used is that of re2 - https://github.com/google/re2"
     }, 
     "mirror_flagOUT": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Enables query mirroring. If set I(mirror_flagOUT) can be used to evaluates the mirrored query against the specified chain of rules."
     }, 
     "apply": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Used in combination with I(flagIN) and I(flagOUT) to create chains of rules. Setting apply to True signifies the last rule to be applied."
     }, 
     "schemaname": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Filtering criteria matching schemaname. If I(schemaname) is non-NULL, a query will match only if the connection uses schemaname as its default schema."
     }, 
     "replace_pattern": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "This is the pattern with which to replace the matched pattern. Note that this is optional, and when omitted, the query processor will only cache, route, or set other parameters without rewriting."
     }, 
     "digest": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Match queries with a specific digest, as returned by stats_mysql_query_digest.digest."
     }, 
     "match_digest": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Regular expression that matches the query digest. The dialect of regular expressions used is that of re2 - https://github.com/google/re2"
     }, 
     "mirror_hostgroup": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Enables query mirroring. If set I(mirror_hostgroup) can be used to mirror queries to the same or different hostgroup."
     }, 
     "log": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Query will be logged."
     }, 
     "delay": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Number of milliseconds to delay the execution of the query. This is essentially a throttling mechanism and QoS, and allows a way to give priority to queries over others. This value is added to the mysql-default_query_delay global variable that applies to all queries."
     }, 
     "state": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"present\", \"absent\"]]", 
       "description": "When C(present) - adds the rule, when C(absent) - removes the rule."
     }, 
     "proxy_addr": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Match incoming traffic on a specific local IP."
     }, 
     "username": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Filtering criteria matching username.  If I(username) is non-NULL, a query will match only if the connection is made with the correct username."
     }, 
     "config_file": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Specify a config file from which login_user and login_password are to be read."
     }, 
     "login_port": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "The port used to connect to ProxySQL admin interface."
     }, 
     "login_host": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "The host used to connect to ProxySQL admin interface."
     }, 
     "destination_hostgroup": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Route matched queries to this hostgroup. This happens unless there is a started transaction and the logged in user has I(transaction_persistent) set to C(True) (see M(proxysql_mysql_users))."
     }, 
     "proxy_port": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Match incoming traffic on a specific local port."
     }, 
     "load_to_runtime": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Dynamically load mysql host config to runtime memory."
     }, 
     "save_to_disk": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Save mysql host config to sqlite db on disk to persist the configuration."
     }, 
     "active": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "A rule with I(active) set to C(False) will be tracked in the database, but will be never loaded in the in-memory data structures."
     }, 
     "cache_ttl": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "The number of milliseconds for which to cache the result of the query. Note in ProxySQL 1.1 I(cache_ttl) was in seconds."
     }, 
     "error_msg": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Query will be blocked, and the specified error_msg will be returned to the client."
     }, 
     "retries": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "The maximum number of times a query needs to be re-executed in case of detected failure during the execution of the query. If retries is not specified, the global variable mysql-query_retries_on_failure applies."
     }, 
     "negate_match_pattern": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "If I(negate_match_pattern) is set to C(True), only queries not matching the query text will be considered as a match. This acts as a NOT operator in front of the regular expression matching against match_pattern."
     }, 
     "flagIN": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Used in combination with I(flagOUT) and I(apply) to create chains of rules."
     }, 
     "client_addr": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Match traffic from a specific source."
     }, 
     "timeout": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "The maximum timeout in milliseconds with which the matched or rewritten query should be executed. If a query run for longer than the specific threshold, the query is automatically killed. If timeout is not specified, the global variable mysql-default_query_timeout applies."
     }, 
     "force_delete": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "By default we avoid deleting more than one schedule in a single batch, however if you need this behaviour and you're not concerned about the schedules deleted, you can set I(force_delete) to C(True)."
     }, 
     "rule_id": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "The unique id of the rule. Rules are processed in rule_id order."
     }
   }

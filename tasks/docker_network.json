@@ -1,80 +1,81 @@
 {
-  "description": "Manage Docker networks", 
+  "input_method": "stdin", 
+  "description": "Create/remove Docker networks and connect containers to them.", 
   "parameters": {
     "tls": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Secure the connection to the API by using TLS without verifying the authenticity of the Docker host server."
     }, 
     "cacert_path": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Use a CA certificate when performing server verification by providing the path to a CA certificate file."
     }, 
     "force": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "With state I(absent) forces disconnecting all containers from the network prior to deleting the network. With state I(present) will disconnect all containers, delete the network and re-create the network.  This option is required if you have changed the IPAM or driver options and want an existing network to be updated to use the new options."
     }, 
     "name": {
-      "type": "String", 
+      "type": "String[0]", 
       "description": "Name of the network to operate on."
     }, 
     "ssl_version": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Provide a valid SSL version number. Default value determined by docker-py, currently 1.0."
     }, 
     "driver": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Specify the type of network. Docker provides bridge and overlay drivers, but 3rd party drivers can also be used."
     }, 
     "docker_host": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "The URL or Unix socket path used to connect to the Docker API. To connect to a remote host, provide the TCP connection string. For example, 'tcp://192.0.2.23:2376'. If TLS is used to encrypt the connection, the module will automatically replace 'tcp' in the connection URL with 'https'."
     }, 
     "ipam_options": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Dictionary of IPAM options."
     }, 
     "tls_hostname": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "When verifying the authenticity of the Docker Host server, provide the expected name of the server."
     }, 
     "state": {
-      "type": "Optional[String]", 
-      "description": "I(absent) deletes the network. If a network has connected containers, it cannot be deleted. Use the C(force) option to disconnect all containers and delete the network. I(present) creates the network, if it does not already exist with the specified parameters, and connects the list of containers provided via the connected parameter. Containers not on the list will be disconnected. An empty list will leave no containers connected to the network. Use the C(appends) option to leave existing containers connected. Use the C(force) options to force re-creation of the network."
+      "type": "Optional[Enum[\"absent\", \"present\"]]", 
+      "description": "I(absent) deletes the network. If a network has connected containers, it cannot be deleted. Use the C(force) option to disconnect all containers and delete the network."
     }, 
     "driver_options": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Dictionary of network settings. Consult docker docs for valid options and values."
     }, 
     "tls_verify": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Secure the connection to the API by using TLS and verifying the authenticity of the Docker host server."
     }, 
     "key_path": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Path to the client's TLS key file."
     }, 
     "timeout": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "The maximum amount of time in seconds to wait on a response from the API."
     }, 
     "ipam_driver": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Specify an IPAM driver."
     }, 
     "connected": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "List of container names or container IDs to connect to a network."
     }, 
     "appends": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "By default the connected list is canonical, meaning containers not on the list are removed from the network. Use C(appends) to leave existing containers connected."
     }, 
     "cert_path": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Path to the client's TLS certificate file."
     }, 
     "api_version": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "The version of the Docker API running on the Docker Host. Defaults to the latest version of the API supported by docker-py."
     }
   }

@@ -1,80 +1,81 @@
 {
-  "description": "Adds or removes mysql hosts from proxysql admin interface.", 
+  "input_method": "stdin", 
+  "description": "The M(proxysql_backend_servers) module adds or removes mysql hosts using the proxysql admin interface.", 
   "parameters": {
     "status": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"ONLINE\", \"OFFLINE_SOFT\", \"OFFLINE_HARD\"]]", 
       "description": "ONLINE - Backend server is fully operational. OFFLINE_SOFT - When a server is put into C(OFFLINE_SOFT) mode, connections are kept in use until the current transaction is completed. This allows to gracefully detach a backend. OFFLINE_HARD - When a server is put into C(OFFLINE_HARD) mode, the existing connections are dropped, while new incoming connections aren't accepted either.\nIf omitted the proxysql database default for I(status) is C(ONLINE)."
     }, 
     "comment": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Text field that can be used for any purposed defined by the user. Could be a description of what the host stores, a reminder of when the host was added or disabled, or a JSON processed by some checker script."
     }, 
     "hostname": {
-      "type": "String", 
+      "type": "String[0]", 
       "description": "The ip address at which the mysqld instance can be contacted."
     }, 
     "config_file": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Specify a config file from which login_user and login_password are to be read."
     }, 
     "compression": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "If the value of I(compression) is greater than 0, new connections to that server will use compression. If omitted the proxysql database default for I(compression) is 0."
     }, 
     "weight": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "The bigger the weight of a server relative to other weights, the higher the probability of the server being chosen from the hostgroup. If omitted the proxysql database default for I(weight) is 1."
     }, 
     "login_port": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "The port used to connect to ProxySQL admin interface."
     }, 
     "login_user": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "The username used to authenticate to ProxySQL admin interface."
     }, 
     "login_host": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "The host used to connect to ProxySQL admin interface."
     }, 
     "login_password": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "The password used to authenticate to ProxySQL admin interface."
     }, 
     "hostgroup_id": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "The hostgroup in which this mysqld instance is included. An instance can be part of one or more hostgroups."
     }, 
     "state": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"present\", \"absent\"]]", 
       "description": "When C(present) - adds the host, when C(absent) - removes the host."
     }, 
     "load_to_runtime": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Dynamically load mysql host config to runtime memory."
     }, 
     "save_to_disk": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Save mysql host config to sqlite db on disk to persist the configuration."
     }, 
     "use_ssl": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "If I(use_ssl) is set to C(True), connections to this server will be made using SSL connections. If omitted the proxysql database default for I(use_ssl) is C(False)."
     }, 
     "max_replication_lag": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "If greater than 0, ProxySQL will reguarly monitor replication lag. If replication lag goes above I(max_replication_lag), proxysql will temporarily shun the server until replication catches up. If omitted the proxysql database default for I(max_replication_lag) is 0."
     }, 
     "port": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "The port at which the mysqld instance can be contacted."
     }, 
     "max_latency_ms": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Ping time is monitored regularly. If a host has a ping time greater than I(max_latency_ms) it is excluded from the connection pool (although the server stays ONLINE). If omitted the proxysql database default for I(max_latency_ms) is 0."
     }, 
     "max_connections": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "The maximum number of connections ProxySQL will open to this backend server. If omitted the proxysql database default for I(max_connections) is 1000."
     }
   }

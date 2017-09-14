@@ -1,8 +1,9 @@
 {
-  "description": "Slurps a file from remote nodes", 
+  "input_method": "stdin", 
+  "description": "This module works like M(fetch). It is used for fetching a base64- encoded blob containing the data in a remote file.", 
   "parameters": {
     "src": {
-      "type": "String", 
+      "type": "String[0]", 
       "description": "The file on the remote system to fetch. This I(must) be a file, not a directory."
     }
   }

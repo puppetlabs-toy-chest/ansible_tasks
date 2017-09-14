@@ -1,4 +1,5 @@
 {
-  "description": "get details reported by lldp", 
+  "input_method": "stdin", 
+  "description": "Reads data out of lldpctl", 
   "parameters": {}
 }

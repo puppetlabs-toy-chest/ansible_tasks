@@ -1,12 +1,13 @@
 {
-  "description": "Creates or removes locales.", 
+  "input_method": "stdin", 
+  "description": "Manages locales by editing /etc/locale.gen and invoking locale-gen.", 
   "parameters": {
     "state": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"present\", \"absent\"]]", 
       "description": "Whether the locale shall be present."
     }, 
     "name": {
-      "type": "String", 
+      "type": "String[0]", 
       "description": "Name and encoding of the locale, such as \"en_GB.UTF-8\"."
     }
   }

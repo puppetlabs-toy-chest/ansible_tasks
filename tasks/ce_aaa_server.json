@@ -1,48 +1,49 @@
 {
+  "input_method": "stdin", 
   "description": "Manages AAA server global configuration on HUAWEI CloudEngine switches.", 
   "parameters": {
     "acct_scheme_name": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Accounting scheme name. The value is a string of 1 to 32 characters."
     }, 
     "first_author_mode": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"invalid\", \"local\", \"hwtacacs\", \"if-authenticated\", \"none\"]]", 
       "description": "Preferred authorization mode."
     }, 
     "authen_scheme_name": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Name of an authentication scheme. The value is a string of 1 to 32 characters."
     }, 
     "radius_server_group": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "RADIUS server group's name. The value is a string of 1 to 32 case-insensitive characters."
     }, 
     "author_scheme_name": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Name of an authorization scheme. The value is a string of 1 to 32 characters."
     }, 
     "domain_name": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Name of a domain. The value is a string of 1 to 64 characters."
     }, 
     "first_authen_mode": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"invalid\", \"local\", \"hwtacacs\", \"radius\", \"none\"]]", 
       "description": "Preferred authentication mode."
     }, 
     "state": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"present\", \"absent\"]]", 
       "description": "Specify desired state of the resource."
     }, 
     "local_user_group": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Name of the user group where the user belongs. The user inherits all the rights of the user group. The value is a string of 1 to 32 characters."
     }, 
     "hwtacas_template": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Name of a HWTACACS template. The value is a string of 1 to 32 case-insensitive characters."
     }, 
     "accounting_mode": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"invalid\", \"hwtacacs\", \"radius\", \"none\"]]", 
       "description": "Accounting Mode."
     }
   }

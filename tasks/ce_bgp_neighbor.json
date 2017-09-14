@@ -1,132 +1,133 @@
 {
-  "description": "Manages BGP peer configuration on HUAWEI CloudEngine switches.", 
+  "input_method": "stdin", 
+  "description": "Manages BGP peer configurations on HUAWEI CloudEngine switches.", 
   "parameters": {
     "prepend_global_as": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"no_use\", \"true\", \"false\"]]", 
       "description": "Add the global AS number to the Update packets to be advertised."
     }, 
     "ebgp_max_hop": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Maximum number of hops in an indirect EBGP connection. The value is an ranging from 1 to 255."
     }, 
     "is_ignore": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"no_use\", \"true\", \"false\"]]", 
       "description": "If the value is true, the session with a specified peer is torn down and all related routing entries are cleared. If the value is false, the session with a specified peer is retained."
     }, 
     "prepend_fake_as": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"no_use\", \"true\", \"false\"]]", 
       "description": "Add the Fake AS number to received Update packets."
     }, 
     "fake_as": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Fake AS number that is specified for a local peer. The value is a string of 1 to 11 characters."
     }, 
     "is_single_hop": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"no_use\", \"true\", \"false\"]]", 
       "description": "If the value is true, the system is enabled to preferentially use the single-hop mode for BFD session setup between IBGP peers. If the value is false, the system is disabled from preferentially using the single-hop mode for BFD session setup between IBGP peers."
     }, 
     "conventional": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"no_use\", \"true\", \"false\"]]", 
       "description": "If the value is true, the router has all extended capabilities. If the value is false, the router does not have all extended capabilities."
     }, 
     "remote_as": {
-      "type": "String", 
+      "type": "String[0]", 
       "description": "AS number of a peer. The value is a string of 1 to 11 characters."
     }, 
     "valid_ttl_hops": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Enable GTSM on a peer or peer group. The valid-TTL-Value parameter is used to specify the number of TTL hops to be detected. The value is an integer ranging from 1 to 255."
     }, 
     "tx_interval": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Specify the minimum interval at which BFD packets are sent. The value is an integer ranging from 50 to 1000, in milliseconds."
     }, 
     "pswd_cipher_text": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "The character string in a password identifies the contents of the password, spaces not supported. The value is a string of 1 to 255 characters."
     }, 
     "local_if_name": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Name of a source interface that sends BGP packets. The value is a string of 1 to 63 characters."
     }, 
     "rx_interval": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Specify the minimum interval at which BFD packets are received. The value is an integer ranging from 50 to 1000, in milliseconds."
     }, 
     "state": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"present\", \"absent\"]]", 
       "description": "Specify desired state of the resource."
     }, 
     "pswd_type": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"null\", \"cipher\", \"simple\"]]", 
       "description": "Enable BGP peers to establish a TCP connection and perform the Message Digest 5 (MD5) authentication for BGP messages."
     }, 
     "dual_as": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"no_use\", \"true\", \"false\"]]", 
       "description": "If the value is true, the EBGP peer can use either a fake AS number or the actual AS number. If the value is false, the EBGP peer can only use a fake AS number."
     }, 
     "connect_mode": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "The value can be Connect-only, Listen-only, or Both."
     }, 
     "description": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Description of a peer, which can be letters or digits. The value is a string of 1 to 80 characters."
     }, 
     "is_log_change": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"no_use\", \"true\", \"false\"]]", 
       "description": "If the value is true, BGP is enabled to record peer session status and event information. If the value is false, BGP is disabled from recording peer session status and event information."
     }, 
     "keep_alive_time": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Specify the Keepalive time of a peer or peer group. The value is an integer ranging from 0 to 21845. The default value is 60."
     }, 
     "key_chain_name": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Specify the Keychain authentication name used when BGP peers establish a TCP connection. The value is a string of 1 to 47 case-insensitive characters."
     }, 
     "conn_retry_time": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "ConnectRetry interval. The value is an integer ranging from 1 to 65535."
     }, 
     "min_hold_time": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Specify the Min hold time of a peer or peer group."
     }, 
     "multiplier": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Specify the detection multiplier. The default value is 3. The value is an integer ranging from 3 to 50."
     }, 
     "hold_time": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Specify the Hold time of a peer or peer group. The value is 0 or an integer ranging from 3 to 65535."
     }, 
     "is_bfd_block": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"no_use\", \"true\", \"false\"]]", 
       "description": "If the value is true, peers are enabled to inherit the BFD function from the peer group. If the value is false, peers are disabled to inherit the BFD function from the peer group."
     }, 
     "tcp_MSS": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Maximum TCP MSS value used for TCP connection establishment for a peer. The value is an integer ranging from 176 to 4096."
     }, 
     "is_bfd_enable": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"no_use\", \"true\", \"false\"]]", 
       "description": "If the value is true, BFD is enabled. If the value is false, BFD is disabled."
     }, 
     "route_refresh": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"no_use\", \"true\", \"false\"]]", 
       "description": "If the value is true, BGP is enabled to advertise REFRESH packets. If the value is false, the route refresh function is enabled."
     }, 
     "peer_addr": {
-      "type": "String", 
+      "type": "String[0]", 
       "description": "Connection address of a peer, which can be an IPv4 or IPv6 address."
     }, 
     "vrf_name": {
-      "type": "String", 
+      "type": "String[0]", 
       "description": "Name of a BGP instance. The name is a case-sensitive string of characters. The BGP instance can be used only after the corresponding VPN instance is created."
     }, 
     "mpls_local_ifnet_disable": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"no_use\", \"true\", \"false\"]]", 
       "description": "If the value is true, peer create MPLS Local IFNET disable. If the value is false, peer create MPLS Local IFNET enable."
     }
   }

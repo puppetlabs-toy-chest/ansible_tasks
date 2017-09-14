@@ -1,112 +1,113 @@
 {
-  "description": "Manage user accounts", 
+  "input_method": "stdin", 
+  "description": "Manage user accounts and user attributes.", 
   "parameters": {
     "comment": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Optionally sets the description (aka I(GECOS)) of user account."
     }, 
     "ssh_key_bits": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Optionally specify number of bits in SSH key to create."
     }, 
     "update_password": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"always\", \"on_create\"]]", 
       "description": "C(always) will update passwords if they differ.  C(on_create) will only set the password for newly created users."
     }, 
     "non_unique": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"yes\", \"no\"]]", 
       "description": "Optionally when used with the -u option, this option allows to change the user ID to a non-unique value."
     }, 
     "force": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"yes\", \"no\"]]", 
       "description": "When used with C(state=absent), behavior is as with C(userdel --force)."
     }, 
     "ssh_key_type": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Optionally specify the type of SSH key to generate. Available SSH key types will depend on implementation present on target host."
     }, 
     "ssh_key_passphrase": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Set a passphrase for the SSH key.  If no passphrase is provided, the SSH key will default to having no passphrase."
     }, 
     "home": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Optionally set the user's home directory."
     }, 
     "skeleton": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Optionally set a home skeleton directory. Requires createhome option!"
     }, 
     "append": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"yes\", \"no\"]]", 
       "description": "If C(yes), will only add groups, not set them to just the list in I(groups)."
     }, 
     "uid": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Optionally sets the I(UID) of the user."
     }, 
     "ssh_key_comment": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Optionally define the comment for the SSH key."
     }, 
     "group": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Optionally sets the user's primary group (takes a group name)."
     }, 
     "system": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"yes\", \"no\"]]", 
       "description": "When creating an account, setting this to C(yes) makes the user a system account.  This setting cannot be changed on existing users."
     }, 
     "state": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"present\", \"absent\"]]", 
       "description": "Whether the account should exist or not, taking action if the state is different from what is stated."
     }, 
     "shell": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Optionally set the user's shell."
     }, 
     "expires": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "An expiry time for the user in epoch, it will be ignored on platforms that do not support this. Currently supported on Linux and FreeBSD."
     }, 
     "ssh_key_file": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Optionally specify the SSH key filename. If this is a relative filename then it will be relative to the user's home directory."
     }, 
     "groups": {
-      "type": "Optional[String]", 
-      "description": "Puts the user in  list of groups. When set to the empty string ('groups='), the user is removed from all groups except the primary group. Before version 2.3, the only input format allowed was a 'comma separated string', now it should be able to accept YAML lists also."
+      "type": "Optional[String[0]]", 
+      "description": "Puts the user in  list of groups. When set to the empty string ('groups='), the user is removed from all groups except the primary group."
     }, 
     "move_home": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"yes\", \"no\"]]", 
       "description": "If set to C(yes) when used with C(home=), attempt to move the user's home directory to the specified directory if it isn't there already."
     }, 
     "password": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Optionally set the user's password to this crypted value.  See the user example in the github examples directory for what this looks like in a playbook. See U(http://docs.ansible.com/ansible/faq.html#how-do-i-generate-crypted-passwords-for-the-user-module) for details on various ways to generate these password values. Note on Darwin system, this value has to be cleartext. Beware of security issues."
     }, 
     "seuser": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Optionally sets the seuser type (user_u) on selinux enabled systems."
     }, 
     "name": {
-      "type": "String", 
+      "type": "String[0]", 
       "description": "Name of the user to create, remove or modify."
     }, 
     "createhome": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"yes\", \"no\"]]", 
       "description": "Unless set to C(no), a home directory will be made for the user when the account is created or if the home directory does not exist."
     }, 
     "remove": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"yes\", \"no\"]]", 
       "description": "When used with C(state=absent), behavior is as with C(userdel --remove)."
     }, 
     "login_class": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Optionally sets the user's login class for FreeBSD, OpenBSD and NetBSD systems."
     }, 
     "generate_ssh_key": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"yes\", \"no\"]]", 
       "description": "Whether to generate a SSH key for the user in question. This will B(not) overwrite an existing SSH key."
     }
   }

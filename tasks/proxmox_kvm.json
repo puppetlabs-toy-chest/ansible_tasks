@@ -1,292 +1,293 @@
 {
-  "description": "Management of Qemu(KVM) Virtual Machines in Proxmox VE cluster.", 
+  "input_method": "stdin", 
+  "description": "Allows you to create/delete/stop Qemu(KVM) Virtual Machines in Proxmox VE cluster.", 
   "parameters": {
     "storage": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Target storage for full clone."
     }, 
     "force": {
-      "type": "Optional[String]", 
-      "description": "Allow to force stop VM. Can be used only with states C(stopped), C(restarted)."
+      "type": "Optional[Enum[\"yes\", \"no\"]]", 
+      "description": "Allow to force stop VM."
     }, 
     "revert": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Revert a pending change."
     }, 
     "numa": {
-      "type": "Optional[String]", 
-      "description": "A hash/dictionaries of NUMA topology. C(numa='{\"key\":\"value\", \"key\":\"value\"}'). Keys allowed are - C(numa[n]) where 0 \u2264 n \u2264 N. Values allowed are - C(\"cpu=\"<id[-id];...>\",hostnodes=\"<id[-id];...>\",memory=\"number\",policy=\"(bind|interleave|preferred)\"\"). C(cpus) CPUs accessing this NUMA node. C(hostnodes) Host NUMA nodes to use. C(memory) Amount of memory this NUMA node provides. C(policy) NUMA allocation policy."
+      "type": "Optional[String[0]]", 
+      "description": "A hash/dictionaries of NUMA topology. C(numa='{\"key\":\"value\", \"key\":\"value\"}')."
     }, 
     "scsihw": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"lsi\", \"lsi53c810\", \"virtio-scsi-pci\", \"virtio-scsi-single\", \"megasas\", \"pvscsi\"]]", 
       "description": "Specifies the SCSI controller model."
     }, 
     "startup": {
-      "type": "Optional[String]", 
-      "description": "Startup and shutdown behavior. C([[order=]\\d+] [,up=\\d+] [,down=\\d+]). Order is a non-negative number defining the general startup order. Shutdown in done with reverse ordering."
+      "type": "Optional[String[0]]", 
+      "description": "Startup and shutdown behavior. C([[order=]\\d+] [,up=\\d+] [,down=\\d+])."
     }, 
     "migrate_speed": {
-      "type": "Optional[String]", 
-      "description": "Sets maximum speed (in MB/s) for migrations. A value of 0 is no limit."
+      "type": "Optional[String[0]]", 
+      "description": "Sets maximum speed (in MB/s) for migrations."
     }, 
     "freeze": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"yes\", \"no\"]]", 
       "description": "Specify if PVE should freeze CPU at startup (use 'c' monitor command to start execution)."
     }, 
     "full": {
-      "type": "Optional[String]", 
-      "description": "Create a full copy of all disk. This is always done when you clone a normal VM. For VM templates, we try to create a linked clone by default. Used only with clone"
+      "type": "Optional[Enum[\"yes\", \"no\"]]", 
+      "description": "Create a full copy of all disk. This is always done when you clone a normal VM."
     }, 
     "keyboard": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Sets the keyboard layout for VNC server."
     }, 
     "watchdog": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Creates a virtual hardware watchdog device."
     }, 
     "serial": {
-      "type": "Optional[String]", 
-      "description": "A hash/dictionary of serial device to create inside the VM. C('{\"key\":\"value\", \"key\":\"value\"}'). Keys allowed are - serial[n](str; required) where 0 \u2264 n \u2264 3. Values allowed are - C((/dev/.+|socket)). /!\\ If you pass through a host serial device, it is no longer possible to migrate such machines - use with special care."
+      "type": "Optional[String[0]]", 
+      "description": "A hash/dictionary of serial device to create inside the VM. C('{\"key\":\"value\", \"key\":\"value\"}')."
     }, 
     "sockets": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Sets the number of CPU sockets. (1 - N)."
     }, 
     "digest": {
-      "type": "Optional[String]", 
-      "description": "Specify if to prevent changes if current configuration file has different SHA1 digest. This can be used to prevent concurrent modifications."
+      "type": "Optional[String[0]]", 
+      "description": "Specify if to prevent changes if current configuration file has different SHA1 digest."
     }, 
     "description": {
-      "type": "Optional[String]", 
-      "description": "Specify the description for the VM. Only used on the configuration web interface. This is saved as comment inside the configuration file."
+      "type": "Optional[String[0]]", 
+      "description": "Specify the description for the VM. Only used on the configuration web interface."
     }, 
     "startdate": {
-      "type": "Optional[String]", 
-      "description": "Sets the initial date of the real time clock. Valid format for date are C('now') or C('2016-09-25T16:01:21') or C('2016-09-25')."
+      "type": "Optional[String[0]]", 
+      "description": "Sets the initial date of the real time clock."
     }, 
     "tablet": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"yes\", \"no\"]]", 
       "description": "Enables/disables the USB tablet device."
     }, 
     "bios": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"seabios\", \"ovmf\"]]", 
       "description": "Specify the BIOS implementation."
     }, 
     "cpu": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Specify emulated CPU type."
     }, 
     "balloon": {
-      "type": "Optional[String]", 
-      "description": "Specify the amount of RAM for the VM in MB. Using zero disables the balloon driver."
+      "type": "Optional[String[0]]", 
+      "description": "Specify the amount of RAM for the VM in MB."
     }, 
     "cpuunits": {
-      "type": "Optional[String]", 
-      "description": "Specify CPU weight for a VM. You can disable fair-scheduler configuration by setting this to 0"
+      "type": "Optional[String[0]]", 
+      "description": "Specify CPU weight for a VM."
     }, 
     "boot": {
-      "type": "Optional[String]", 
-      "description": "Specify the boot order -> boot on floppy C(a), hard disk C(c), CD-ROM C(d), or network C(n). You can combine to set order."
+      "type": "Optional[String[0]]", 
+      "description": "Specify the boot order -> boot on floppy C(a), hard disk C(c), CD-ROM C(d), or network C(n)."
     }, 
     "vga": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"std\", \"cirrus\", \"vmware\", \"qxl\", \"serial0\", \"serial1\", \"serial2\", \"serial3\", \"qxl2\", \"qxl3\", \"qxl4\"]]", 
       "description": "Select VGA type. If you want to use high resolution modes (>= 1280x1024x16) then you should use option 'std' or 'vmware'."
     }, 
     "shares": {
-      "type": "Optional[String]", 
-      "description": "Rets amount of memory shares for auto-ballooning. (0 - 50000). The larger the number is, the more memory this VM gets. The number is relative to weights of all other running VMs. Using 0 disables auto-ballooning, this means no limit."
+      "type": "Optional[String[0]]", 
+      "description": "Rets amount of memory shares for auto-ballooning. (0 - 50000)."
     }, 
     "machine": {
-      "type": "Optional[String]", 
-      "description": "Specifies the Qemu machine type. type => C((pc|pc(-i440fx)?-\\d+\\.\\d+(\\.pxe)?|q35|pc-q35-\\d+\\.\\d+(\\.pxe)?))"
+      "type": "Optional[String[0]]", 
+      "description": "Specifies the Qemu machine type."
     }, 
     "hostpci": {
-      "type": "Optional[String]", 
-      "description": "Specify a hash/dictionary of map host pci devices into guest. C(hostpci='{\"key\":\"value\", \"key\":\"value\"}'). Keys allowed are - C(hostpci[n]) where 0 \u2264 n \u2264 N. Values allowed are -  C(\"host=\"HOSTPCIID[;HOSTPCIID2...]\",pcie=\"1|0\",rombar=\"1|0\",x-vga=\"1|0\"\"). The C(host) parameter is Host PCI device pass through. HOSTPCIID syntax is C(bus:dev.func) (hexadecimal numbers). C(pcie=boolean) I(default=0) Choose the PCI-express bus (needs the q35 machine model). C(rombar=boolean) I(default=1) Specify whether or not the device\u2019s ROM will be visible in the guest\u2019s memory map. C(x-vga=boolean) I(default=0) Enable vfio-vga device support. /!\\ This option allows direct access to host hardware. So it is no longer possible to migrate such machines - use with special care."
+      "type": "Optional[String[0]]", 
+      "description": "Specify a hash/dictionary of map host pci devices into guest. C(hostpci='{\"key\":\"value\", \"key\":\"value\"}')."
     }, 
     "state": {
-      "type": "Optional[String]", 
-      "description": "Indicates desired state of the instance. If C(current), the current state of the VM will be fecthed. You can access it with C(results.status)"
+      "type": "Optional[Enum[\"present\", \"started\", \"absent\", \"stopped\", \"restarted\", \"current\"]]", 
+      "description": "Indicates desired state of the instance."
     }, 
     "autostart": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"yes\", \"no\"]]", 
       "description": "Specify, if the VM should be automatically restarted after crash (currently ignored in PVE API)."
     }, 
     "memory": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Memory size in MB for instance."
     }, 
     "net": {
-      "type": "Optional[String]", 
-      "description": "A hash/dictionary of network interfaces for the VM. C(net='{\"key\":\"value\", \"key\":\"value\"}'). Keys allowed are - C(net[n]) where 0 \u2264 n \u2264 N. Values allowed are - C(\"model=\"XX:XX:XX:XX:XX:XX\",brigde=\"value\",rate=\"value\",tag=\"value\",firewall=\"1|0\",trunks=\"vlanid\"\"). Model is one of C(e1000 e1000-82540em e1000-82544gc e1000-82545em i82551 i82557b i82559er ne2k_isa ne2k_pci pcnet rtl8139 virtio vmxnet3). C(XX:XX:XX:XX:XX:XX) should be an unique MAC address. This is automatically generated if not specified. The C(bridge) parameter can be used to automatically add the interface to a bridge device. The Proxmox VE standard bridge is called 'vmbr0'. Option C(rate) is used to limit traffic bandwidth from and to this interface. It is specified as floating point number, unit is 'Megabytes per second'. If you specify no bridge, we create a kvm 'user' (NATed) network device, which provides DHCP and DNS services."
+      "type": "Optional[String[0]]", 
+      "description": "A hash/dictionary of network interfaces for the VM. C(net='{\"key\":\"value\", \"key\":\"value\"}')."
     }, 
     "api_host": {
-      "type": "String", 
+      "type": "String[0]", 
       "description": "Specify the target host of the Proxmox VE cluster."
     }, 
     "migrate_downtime": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Sets maximum tolerated downtime (in seconds) for migrations."
     }, 
     "localtime": {
-      "type": "Optional[String]", 
-      "description": "Sets the real time clock to local time. This is enabled by default if ostype indicates a Microsoft OS."
+      "type": "Optional[Enum[\"yes\", \"no\"]]", 
+      "description": "Sets the real time clock to local time."
     }, 
     "node": {
-      "type": "Optional[String]", 
-      "description": "Proxmox VE node, where the new VM will be created. Only required for C(state=present). For other states, it will be autodiscovered."
+      "type": "Optional[String[0]]", 
+      "description": "Proxmox VE node, where the new VM will be created."
     }, 
     "agent": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"yes\", \"no\"]]", 
       "description": "Specify if the QEMU GuestAgent should be enabled/disabled."
     }, 
     "virtio": {
-      "type": "Optional[String]", 
-      "description": "A hash/dictionary of volume used as VIRTIO hard disk. C(virtio='{\"key\":\"value\", \"key\":\"value\"}'). Keys allowed are - C(virto[n]) where 0 \u2264 n \u2264 15. Values allowed are -  C(\"storage:size,format=value\"). C(storage) is the storage identifier where to create the disk. C(size) is the size of the disk in GB. C(format) is the drive\u2019s backing file\u2019s data format. C(qcow2|raw|subvol)."
+      "type": "Optional[String[0]]", 
+      "description": "A hash/dictionary of volume used as VIRTIO hard disk. C(virtio='{\"key\":\"value\", \"key\":\"value\"}')."
     }, 
     "template": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"yes\", \"no\"]]", 
       "description": "Enables/disables the template."
     }, 
     "format": {
-      "type": "Optional[String]", 
-      "description": "Target drive\u2019s backing file\u2019s data format. Used only with clone"
+      "type": "Optional[Enum[\"cloop\", \"cow\", \"qcow\", \"qcow2\", \"qed\", \"raw\", \"vmdk\"]]", 
+      "description": "Target drive\u2019s backing file\u2019s data format."
     }, 
     "clone": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Name of VM to be cloned. If C(vmid) is setted, C(clone) can take arbitrary value but required for intiating the clone."
     }, 
     "args": {
-      "type": "Optional[String]", 
-      "description": "Pass arbitrary arguments to kvm. This option is for experts only!"
+      "type": "Optional[String[0]]", 
+      "description": "Pass arbitrary arguments to kvm."
     }, 
     "api_password": {
-      "type": "Optional[String]", 
-      "description": "Specify the password to authenticate with. You can use C(PROXMOX_PASSWORD) environment variable."
+      "type": "Optional[String[0]]", 
+      "description": "Specify the password to authenticate with."
     }, 
     "snapname": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "The name of the snapshot. Used only with clone."
     }, 
     "tdf": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"yes\", \"no\"]]", 
       "description": "Enables/disables time drift fix."
     }, 
     "kvm": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"yes\", \"no\"]]", 
       "description": "Enable/disable KVM hardware virtualization."
     }, 
     "sata": {
-      "type": "Optional[String]", 
-      "description": "A hash/dictionary of volume used as sata hard disk or CD-ROM. C(sata='{\"key\":\"value\", \"key\":\"value\"}'). Keys allowed are - C(sata[n]) where 0 \u2264 n \u2264 5. Values allowed are -  C(\"storage:size,format=value\"). C(storage) is the storage identifier where to create the disk. C(size) is the size of the disk in GB. C(format) is the drive\u2019s backing file\u2019s data format. C(qcow2|raw|subvol)."
+      "type": "Optional[String[0]]", 
+      "description": "A hash/dictionary of volume used as sata hard disk or CD-ROM. C(sata='{\"key\":\"value\", \"key\":\"value\"}')."
     }, 
     "protection": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"yes\", \"no\"]]", 
       "description": "Enable/disable the protection flag of the VM. This will enable/disable the remove VM and remove disk operations."
     }, 
     "reboot": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"yes\", \"no\"]]", 
       "description": "Allow reboot. If set to yes, the VM exit on reboot."
     }, 
     "hotplug": {
-      "type": "Optional[String]", 
-      "description": "Selectively enable hotplug features. This is a comma separated list of hotplug features C('network', 'disk', 'cpu', 'memory' and 'usb'). Value 0 disables hotplug completely and value 1 is an alias for the default C('network,disk,usb')."
+      "type": "Optional[String[0]]", 
+      "description": "Selectively enable hotplug features."
     }, 
     "api_user": {
-      "type": "String", 
+      "type": "String[0]", 
       "description": "Specify the user to authenticate with."
     }, 
     "parallel": {
-      "type": "Optional[String]", 
-      "description": "A hash/dictionary of map host parallel devices. C(parallel='{\"key\":\"value\", \"key\":\"value\"}'). Keys allowed are - (parallel[n]) where 0 \u2264 n \u2264 2. Values allowed are - C(\"/dev/parport\\d+|/dev/usb/lp\\d+\")."
+      "type": "Optional[String[0]]", 
+      "description": "A hash/dictionary of map host parallel devices. C(parallel='{\"key\":\"value\", \"key\":\"value\"}')."
     }, 
     "pool": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Add the new VM to the specified pool."
     }, 
     "target": {
-      "type": "Optional[String]", 
-      "description": "Target node. Only allowed if the original VM is on shared storage. Used only with clone"
+      "type": "Optional[String[0]]", 
+      "description": "Target node. Only allowed if the original VM is on shared storage."
     }, 
     "lock": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"migrate\", \"backup\", \"snapshot\", \"rollback\"]]", 
       "description": "Lock/unlock the VM."
     }, 
     "ide": {
-      "type": "Optional[String]", 
-      "description": "A hash/dictionary of volume used as IDE hard disk or CD-ROM. C(ide='{\"key\":\"value\", \"key\":\"value\"}'). Keys allowed are - C(ide[n]) where 0 \u2264 n \u2264 3. Values allowed are - C(\"storage:size,format=value\"). C(storage) is the storage identifier where to create the disk. C(size) is the size of the disk in GB. C(format) is the drive\u2019s backing file\u2019s data format. C(qcow2|raw|subvol)."
+      "type": "Optional[String[0]]", 
+      "description": "A hash/dictionary of volume used as IDE hard disk or CD-ROM. C(ide='{\"key\":\"value\", \"key\":\"value\"}')."
     }, 
     "name": {
-      "type": "Optional[String]", 
-      "description": "Specifies the VM name. Only used on the configuration web interface. Required only for C(state=present)."
+      "type": "Optional[String[0]]", 
+      "description": "Specifies the VM name. Only used on the configuration web interface."
     }, 
     "update": {
-      "type": "Optional[String]", 
-      "description": "If C(yes), the VM will be update with new value. Cause of the operations of the API and security reasons, I have disabled the update of the following parameters C(net, virtio, ide, sata, scsi). Per example updating C(net) update the MAC address and C(virtio) create always new disk..."
+      "type": "Optional[Enum[\"yes\", \"no\"]]", 
+      "description": "If C(yes), the VM will be update with new value."
     }, 
     "vmid": {
-      "type": "Optional[String]", 
-      "description": "Specifies the VM ID. Instead use I(name) parameter. If vmid is not set, the next available VM ID will be fetched from ProxmoxAPI."
+      "type": "Optional[String[0]]", 
+      "description": "Specifies the VM ID. Instead use I(name) parameter."
     }, 
     "hugepages": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"any\", \"2\", \"1024\"]]", 
       "description": "Enable/disable hugepages memory."
     }, 
     "bootdisk": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Enable booting from specified disk. C((ide|sata|scsi|virtio)\\d+)"
     }, 
     "ostype": {
-      "type": "Optional[String]", 
-      "description": "Specifies guest operating system. This is used to enable special optimization/features for specific operating systems. The l26 is Linux 2.6/3.X Kernel."
+      "type": "Optional[Enum[\"other\", \"wxp\", \"w2k\", \"w2k3\", \"w2k8\", \"wvista\", \"win7\", \"win8\", \"l24\", \"l26\", \"solaris\"]]", 
+      "description": "Specifies guest operating system. This is used to enable special optimization/features for specific operating systems."
     }, 
     "acpi": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"yes\", \"no\"]]", 
       "description": "Specify if ACPI should be enables/disabled."
     }, 
     "vcpus": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Sets number of hotplugged vcpus."
     }, 
     "newid": {
-      "type": "Optional[String]", 
-      "description": "VMID for the clone. Used only with clone. If newid is not set, the next available VM ID will be fetched from ProxmoxAPI."
+      "type": "Optional[String[0]]", 
+      "description": "VMID for the clone. Used only with clone."
     }, 
     "timeout": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Timeout for operations."
     }, 
     "smbios": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Specifies SMBIOS type 1 fields."
     }, 
     "skiplock": {
-      "type": "Optional[String]", 
-      "description": "Ignore locks Only root is allowed to use this option."
+      "type": "Optional[String[0]]", 
+      "description": "Ignore locks"
     }, 
     "cores": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Specify number of cores per socket."
     }, 
     "scsi": {
-      "type": "Optional[String]", 
-      "description": "A hash/dictionary of volume used as SCSI hard disk or CD-ROM. C(scsi='{\"key\":\"value\", \"key\":\"value\"}'). Keys allowed are - C(sata[n]) where 0 \u2264 n \u2264 13. Values allowed are -  C(\"storage:size,format=value\"). C(storage) is the storage identifier where to create the disk. C(size) is the size of the disk in GB. C(format) is the drive\u2019s backing file\u2019s data format. C(qcow2|raw|subvol)."
+      "type": "Optional[String[0]]", 
+      "description": "A hash/dictionary of volume used as SCSI hard disk or CD-ROM. C(scsi='{\"key\":\"value\", \"key\":\"value\"}')."
     }, 
     "cpulimit": {
-      "type": "Optional[String]", 
-      "description": "Specify if CPU usage will be limited. Value 0 indicates no CPU limit. If the computer has 2 CPUs, it has total of '2' CPU time"
+      "type": "Optional[String[0]]", 
+      "description": "Specify if CPU usage will be limited. Value 0 indicates no CPU limit."
     }, 
     "validate_certs": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"yes\", \"no\"]]", 
       "description": "If C(no), SSL certificates will not be validated. This should only be used on personally controlled sites using self-signed certificates."
     }, 
     "onboot": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"yes\", \"no\"]]", 
       "description": "Specifies whether a VM will be started during system bootup."
     }, 
     "delete": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Specify a list of settings you want to delete."
     }
   }

@@ -1,28 +1,29 @@
 {
-  "description": "Encrypted Linux block devices", 
+  "input_method": "stdin", 
+  "description": "Control Linux encrypted block devices that are set up during system boot in C(/etc/crypttab).", 
   "parameters": {
     "name": {
-      "type": "String", 
-      "description": "Name of the encrypted block device as it appears in the C(/etc/crypttab) file, or optionally prefixed with C(/dev/mapper/), as it appears in the filesystem. I(/dev/mapper/) will be stripped from I(name)."
+      "type": "String[0]", 
+      "description": "Name of the encrypted block device as it appears in the C(/etc/crypttab) file, or optionaly prefixed with C(/dev/mapper/), as it appears in the filesystem. I(/dev/mapper/) will be stripped from I(name)."
     }, 
     "backing_device": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Path to the underlying block device or file, or the UUID of a block-device prefixed with I(UUID=)"
     }, 
     "state": {
-      "type": "String", 
+      "type": "Enum[\"present\", \"absent\", \"opts_present\", \"opts_absent\"]", 
       "description": "Use I(present) to add a line to C(/etc/crypttab) or update it's definition if already present. Use I(absent) to remove a line with matching I(name). Use I(opts_present) to add options to those already present; options with different values will be updated. Use I(opts_absent) to remove options from the existing set."
     }, 
     "path": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Path to file to use instead of C(/etc/crypttab). This might be useful in a chroot environment."
     }, 
     "password": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Encryption password, the path to a file containing the password, or 'none' or '-' if the password should be entered at boot."
     }, 
     "opts": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "A comma-delimited list of options. See C(crypttab(5) ) for details."
     }
   }

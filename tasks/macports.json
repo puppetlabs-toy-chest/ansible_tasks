@@ -1,16 +1,17 @@
 {
-  "description": "Package manager for MacPorts", 
+  "input_method": "stdin", 
+  "description": "Manages MacPorts packages", 
   "parameters": {
     "state": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"present\", \"absent\", \"active\", \"inactive\"]]", 
       "description": "state of the package"
     }, 
     "update_cache": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"yes\", \"no\"]]", 
       "description": "update the package db first"
     }, 
     "name": {
-      "type": "String", 
+      "type": "String[0]", 
       "description": "name of package to install/remove"
     }
   }

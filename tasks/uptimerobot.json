@@ -1,16 +1,17 @@
 {
-  "description": "Pause and start Uptime Robot monitoring", 
+  "input_method": "stdin", 
+  "description": "This module will let you start and pause Uptime Robot Monitoring", 
   "parameters": {
     "monitorid": {
-      "type": "String", 
+      "type": "String[0]", 
       "description": "ID of the monitor to check."
     }, 
     "state": {
-      "type": "String", 
+      "type": "Enum[\"started\", \"paused\"]", 
       "description": "Define whether or not the monitor should be running or paused."
     }, 
     "apikey": {
-      "type": "String", 
+      "type": "String[0]", 
       "description": "Uptime Robot API key."
     }
   }

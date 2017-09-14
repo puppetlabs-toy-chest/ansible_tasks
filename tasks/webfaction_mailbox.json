@@ -1,24 +1,25 @@
 {
-  "description": "Add or remove mailboxes on Webfaction", 
+  "input_method": "stdin", 
+  "description": "Add or remove mailboxes on a Webfaction account. Further documentation at http://github.com/quentinsf/ansible-webfaction.", 
   "parameters": {
     "mailbox_password": {
-      "type": "String", 
+      "type": "String[0]", 
       "description": "The password for the mailbox"
     }, 
     "state": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"present\", \"absent\"]]", 
       "description": "Whether the mailbox should exist"
     }, 
     "login_name": {
-      "type": "String", 
+      "type": "String[0]", 
       "description": "The webfaction account to use"
     }, 
     "mailbox_name": {
-      "type": "String", 
+      "type": "String[0]", 
       "description": "The name of the mailbox"
     }, 
     "login_password": {
-      "type": "String", 
+      "type": "String[0]", 
       "description": "The webfaction password to use"
     }
   }

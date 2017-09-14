@@ -1,48 +1,49 @@
 {
-  "description": "Manage VLAN resources and attributes on devices running Lenovo CNOS", 
+  "input_method": "stdin", 
+  "description": "This module allows you to work with VLAN related configurations. The operators used are overloaded to ensure control over switch VLAN configurations. The first level of VLAN configuration allows to set up the VLAN range, the VLAN tag persistence, a VLAN access map and access map filter. After passing this level, there are five VLAN arguments that will perform further configurations. They are vlanArg1, vlanArg2, vlanArg3, vlanArg4, and vlanArg5. The value of vlanArg1 will determine the way following arguments will be evaluated. For more details on how to use these arguments, see [Overloaded Variables]. This module uses SSH to manage network device configuration. The results of the operation will be placed in a directory named 'results' that must be created by the user in their local directory to where the playbook is run. For more information about this module from Lenovo and customizing it usage for your use cases, please visit U(http://systemx.lenovofiles.com/help/index.jsp?topic=%2Fcom.lenovo.switchmgt.ansible.doc%2Fcnos_vlan.html)", 
   "parameters": {
     "username": {
-      "type": "String", 
+      "type": "String[0]", 
       "description": "Configures the username used to authenticate the connection to the remote device. The value of the username parameter is used to authenticate the SSH session. While generally the value should come from the inventory file, you can also specify it as a variable. This parameter is optional. If it is not specified, no default value will be used."
     }, 
     "outputfile": {
-      "type": "String", 
+      "type": "String[0]", 
       "description": "This specifies the file path where the output of each command execution is saved. Each command that is specified in the merged template file and each response from the device are saved here. Usually the location is the results folder, but you can choose another location based on your write permission."
     }, 
     "host": {
-      "type": "String", 
+      "type": "String[0]", 
       "description": "This is the variable used to search the hosts file at /etc/ansible/hosts and identify the IP address of the device on which the template is going to be applied. Usually the Ansible keyword {{ inventory_hostname }} is specified in the playbook as an abstraction of the group of network elements that need to be configured."
     }, 
     "vlanArg5": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"access-list name\", \"Slot/chassis number\", \"Port Aggregation Number\"]]", 
       "description": "This is an overloaded vlan fifth argument. Usage of this argument can be found is the User Guide referenced above."
     }, 
     "vlanArg4": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"drop or forward or redirect\", \"ip or mac\", \"Interval in seconds\", \"ethernet\", \"port-aggregation\", \"Querier IP address\", \"Querier Timeout in seconds\", \"Query Interval in seconds\", \"Query Max Response Time in seconds\", \"Robustness Variable value\", \"Number of queries sent at startup\", \"Query Interval at startup\"]]", 
       "description": "This is an overloaded vlan fourth argument. Usage of this argument can be found is the User Guide referenced above."
     }, 
     "deviceType": {
-      "type": "String", 
+      "type": "Enum[\"g8272_cnos\", \"g8296_cnos\", \"g8332_cnos\"]", 
       "description": "This specifies the type of device where the method is executed."
     }, 
     "vlanArg2": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"VLAN Access Map name\", \"egress-only\", \"name\", \"flood\", \"state\", \"ip\"]]", 
       "description": "This is an overloaded vlan second argument. Usage of this argument can be found is the User Guide referenced above."
     }, 
     "vlanArg1": {
-      "type": "String", 
+      "type": "Enum[\"access-map\", \"dot1q\", \"filter\", \"<1-3999> VLAN ID 1-3999 or range\"]", 
       "description": "This is an overloaded vlan first argument. Usage of this argument can be found is the User Guide referenced above."
     }, 
     "vlanArg3": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"action\", \"match\", \"statistics\", \"enter VLAN id or range of vlan\", \"ascii name for the VLAN\", \"ipv4 or ipv6\", \"active or suspend\", \"fast-leave\", \"last-member-query-interval\", \"mrouter\", \"querier\", \"querier-timeout\", \"query-interval\", \"query-max-response-time\", \"report-suppression\", \"robustness-variable\", \"startup-query-count\", \"startup-query-interval\", \"static-group\"]]", 
       "description": "This is an overloaded vlan third argument. Usage of this argument can be found is the User Guide referenced above."
     }, 
     "password": {
-      "type": "String", 
+      "type": "String[0]", 
       "description": "Configures the password used to authenticate the connection to the remote device. The value of the password parameter is used to authenticate the SSH session. While generally the value should come from the inventory file, you can also specify it as a variable. This parameter is optional. If it is not specified, no default value will be used."
     }, 
     "enablePassword": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Configures the password used to enter Global Configuration command mode on the switch. If the switch does not request this password, the parameter is ignored.While generally the value should come from the inventory file, you can also specify it as a variable. This parameter is optional. If it is not specified, no default value will be used."
     }
   }

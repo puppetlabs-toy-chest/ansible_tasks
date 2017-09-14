@@ -1,57 +1,58 @@
 {
-  "description": "Manage SolidFire volumes", 
+  "input_method": "stdin", 
+  "description": "Create, destroy, or update volumes on SolidFire", 
   "parameters": {
     "username": {
-      "type": "String", 
+      "type": "String[0]", 
       "description": "Please ensure that the user has the adequate permissions. For more information, please read the official documentation U(https://goo.gl/ddJa4Q)."
     }, 
     "qos": {
-      "type": "Optional[String]", 
-      "description": "I n i t i a l   q u a l i t y   o f   s e r v i c e   s e t t i n g s   f o r   t h i s   v o l u m e ."
+      "type": "Optional[String[0]]", 
+      "description": "I"
     }, 
     "name": {
-      "type": "String", 
+      "type": "String[0]", 
       "description": "The name of the volume to manage."
     }, 
     "hostname": {
-      "type": "String", 
+      "type": "String[0]", 
       "description": "The hostname or IP address of the SolidFire cluster."
     }, 
     "size_unit": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"bytes\", \"b\", \"kb\", \"mb\", \"gb\", \"tb\", \"pb\", \"eb\", \"zb\", \"yb\"]]", 
       "description": "The unit used to interpret the size parameter."
     }, 
     "account_id": {
-      "type": "String", 
+      "type": "String[0]", 
       "description": "Account ID for the owner of this volume."
     }, 
     "access": {
-      "type": "Optional[String]", 
-      "description": "Access allowed for the volume. readOnly: Only read operations are allowed. readWrite: Reads and writes are allowed. locked: No reads or writes are allowed. replicationTarget: Identify a volume as the target volume for a paired set of volumes. If the volume is not paired, the access status is locked. If unspecified, the access settings of the clone will be the same as the source."
+      "type": "Optional[Enum[\"readOnly\", \"readWrite\", \"locked\", \"replicationTarget\"]]", 
+      "description": "Access allowed for the volume."
     }, 
     "state": {
-      "type": "String", 
+      "type": "Enum[\"present\", \"absent\"]", 
       "description": "Whether the specified volume should exist or not."
     }, 
     "volume_id": {
-      "type": "Optional[String]", 
-      "description": "The ID of the volume to manage or update. In order to create multiple volumes with the same name, but different volume_ids, please declare the I(volume_id) parameter with an arbitrary value. However, the specified volume_id will not be assigned to the newly created volume (since it's an auto-generated property)."
+      "type": "Optional[String[0]]", 
+      "description": "The ID of the volume to manage or update."
     }, 
     "512emulation": {
-      "type": "Optional[String]", 
-      "description": "Should the volume provide 512-byte sector emulation? Required when C(state=present)"
+      "type": "Optional[String[0]]", 
+      "description": "Should the volume provide 512-byte sector emulation?"
     }, 
     "attributes": {
-      "type": "Optional[String]", 
-      "description": "A   Y A M L   d i c t i o n a r y   o f   a t t r i b u t e s   t h a t   y o u   w o u l d   l i k e   t o   a p p l y   o n   t h i s   v o l u m e ."
+      "type": "Optional[String[0]]", 
+      "description": "A"
     }, 
     "password": {
-      "type": "String", 
+      "type": "String[0]", 
       "description": "Password for the specified user."
     }, 
     "size": {
-      "type": "Optional[String]", 
-      "description": "The size of the volume in (size_unit). Required when C(state = present)."
+      "type": "Optional[String[0]]", 
+      "description": "The size of the volume in (size_unit)."
     }
   }
 }

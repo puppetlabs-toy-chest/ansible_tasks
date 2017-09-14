@@ -1,80 +1,81 @@
 {
-  "description": "configure AWS virtual private clouds", 
+  "input_method": "stdin", 
+  "description": "Create or terminates AWS virtual private clouds.  This module has a dependency on python-boto.", 
   "parameters": {
     "profile": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Uses a boto profile. Only works with boto >= 2.24.0."
     }, 
     "subnets": {
-      "type": "Optional[String]", 
-      "description": "A dictionary array of subnets to add of the form C({ cidr: ..., az: ... , resource_tags: ... }). Where C(az) is the desired availability zone of the subnet, optional. Tags C(resource_tags) use dictionary form C({ \"Environment\":\"Dev\", \"Tier\":\"Web\", ...}), optional. C(resource_tags) see resource_tags for VPC below. The main difference is subnet tags not specified here will be deleted. All VPC subnets not in this list will be removed as well. As of 1.8, if the subnets parameter is not specified, no existing subnets will be modified.'"
+      "type": "Optional[String[0]]", 
+      "description": "A dictionary array of subnets to add of the form C({ cidr: ..., az: ... , resource_tags: ... })."
     }, 
     "aws_access_key": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "AWS access key. If not set then the value of the AWS_ACCESS_KEY_ID, AWS_ACCESS_KEY or EC2_ACCESS_KEY environment variable is used."
     }, 
     "route_tables": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "A dictionary array of route tables to add of the form: C({ subnets: [172.22.2.0/24, 172.22.3.0/24,], routes: [{ dest: 0.0.0.0/0, gw: igw},], resource_tags: ... }). Where the subnets list is those subnets the route table should be associated with, and the routes list is a list of routes to be in the table.  The special keyword for the gw of igw specifies that you should the route should go through the internet gateway attached to the VPC. gw also accepts instance-ids, interface-ids, and vpc-peering-connection-ids in addition igw. resource_tags is optional and uses dictionary form: C({ \"Name\": \"public\", ... }). This module is currently unable to affect the \"main\" route table due to some limitations in boto, so you must explicitly define the associated subnets or they will be attached to the main table implicitly. As of 1.8, if the route_tables parameter is not specified, no existing routes will be modified.\n"
     }, 
     "dns_support": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"yes\", \"no\"]]", 
       "description": "Toggles the \"Enable DNS resolution\" flag."
     }, 
     "internet_gateway": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"yes\", \"no\"]]", 
       "description": "Toggle whether there should be an Internet gateway attached to the VPC."
     }, 
     "region": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "The AWS region to use. If not specified then the value of the AWS_REGION or EC2_REGION environment variable, if any, is used. See U(http://docs.aws.amazon.com/general/latest/gr/rande.html#ec2_region)"
     }, 
     "ec2_url": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Url to use to connect to EC2 or your Eucalyptus cloud (by default the module will use EC2 endpoints). Ignored for modules where region is required. Must be specified for all other modules if region is not used. If not set then the value of the EC2_URL environment variable, if any, is used."
     }, 
     "aws_secret_key": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "AWS secret key. If not set then the value of the AWS_SECRET_ACCESS_KEY, AWS_SECRET_KEY, or EC2_SECRET_KEY environment variable is used."
     }, 
     "vpc_id": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "A VPC id to terminate when I(state=absent)."
     }, 
     "instance_tenancy": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"default\", \"dedicated\"]]", 
       "description": "The supported tenancy options for instances launched into the VPC."
     }, 
     "state": {
-      "type": "String", 
+      "type": "Enum[\"present\", \"absent\"]", 
       "description": "Create or terminate the VPC."
     }, 
     "wait_timeout": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "How long before wait gives up, in seconds."
     }, 
     "security_token": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "AWS STS security token. If not set then the value of the AWS_SECURITY_TOKEN or EC2_SECURITY_TOKEN environment variable is used."
     }, 
     "dns_hostnames": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"yes\", \"no\"]]", 
       "description": "Toggles the \"Enable DNS hostname support for instances\" flag."
     }, 
     "resource_tags": {
-      "type": "String", 
+      "type": "String[0]", 
       "description": "A dictionary array of resource tags of the form C({ tag1: value1, tag2: value2 }). - Tags in this list are used in conjunction with CIDR block to uniquely identify a VPC in lieu of vpc_id. Therefore, if CIDR/Tag combination does not exist, a new VPC will be created.  VPC tags not on this list will be ignored. Prior to 1.7, specifying a resource tag was optional."
     }, 
     "cidr_block": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "The cidr block representing the VPC, e.g. C(10.0.0.0/16), required when I(state=present)."
     }, 
     "validate_certs": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"yes\", \"no\"]]", 
       "description": "When set to \"no\", SSL certificates will not be validated for boto versions >= 2.6.0."
     }, 
     "wait": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"yes\", \"no\"]]", 
       "description": "Wait for the VPC to be in state 'available' before returning."
     }
   }

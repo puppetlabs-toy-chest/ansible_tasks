@@ -1,16 +1,17 @@
 {
-  "description": "Manage etherstubs on Solaris/illumos systems.", 
+  "input_method": "stdin", 
+  "description": "Create or delete etherstubs on Solaris/illumos systems.", 
   "parameters": {
     "state": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"present\", \"absent\"]]", 
       "description": "Create or delete Solaris/illumos etherstub."
     }, 
     "temporary": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"true\", \"false\"]]", 
       "description": "Specifies that the etherstub is temporary. Temporary etherstubs do not persist across reboots."
     }, 
     "name": {
-      "type": "String", 
+      "type": "String[0]", 
       "description": "Etherstub name."
     }
   }

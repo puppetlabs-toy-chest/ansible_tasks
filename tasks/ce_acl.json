@@ -1,64 +1,65 @@
 {
-  "description": "Manages base ACL configuration on HUAWEI CloudEngine switches.", 
+  "input_method": "stdin", 
+  "description": "Manages base ACL configurations on HUAWEI CloudEngine switches.", 
   "parameters": {
     "acl_step": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "ACL step. The value is an integer ranging from 1 to 20. The default value is 5."
     }, 
     "rule_description": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Description about an ACL rule. The value is a string of 1 to 127 characters."
     }, 
     "acl_name": {
-      "type": "String", 
+      "type": "String[0]", 
       "description": "ACL number or name. For a numbered rule group, the value ranging from 2000 to 2999 indicates a basic ACL. For a named rule group, the value is a string of 1 to 32 case-sensitive characters starting with a letter, spaces not supported."
     }, 
     "log_flag": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"true\", \"false\"]]", 
       "description": "Flag of logging matched data packets."
     }, 
     "source_ip": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Source IP address. The value is a string of 0 to 255 characters.The default value is 0.0.0.0. The value is in dotted decimal notation."
     }, 
     "acl_num": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "ACL number. The value is an integer ranging from 2000 to 2999."
     }, 
     "rule_id": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "ID of a basic ACL rule in configuration mode. The value is an integer ranging from 0 to 4294967294."
     }, 
     "rule_action": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"permit\", \"deny\"]]", 
       "description": "Matching mode of basic ACL rules."
     }, 
     "rule_name": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Name of a basic ACL rule. The value is a string of 1 to 32 characters. The value is case-insensitive, and cannot contain spaces or begin with an underscore (_)."
     }, 
     "state": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"present\", \"absent\", \"delete_acl\"]]", 
       "description": "Specify desired state of the resource."
     }, 
     "vrf_name": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "VPN instance name. The value is a string of 1 to 31 characters.The default value is _public_."
     }, 
     "acl_description": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "ACL description. The value is a string of 1 to 127 characters."
     }, 
     "time_range": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Name of a time range in which an ACL rule takes effect. The value is a string of 1 to 32 characters. The value is case-insensitive, and cannot contain spaces. The name must start with an uppercase or lowercase letter. In addition, the word \"all\" cannot be specified as a time range name."
     }, 
     "src_mask": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Mask of a source IP address. The value is an integer ranging from 1 to 32."
     }, 
     "frag_type": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"fragment\", \"clear_fragment\"]]", 
       "description": "Type of packet fragmentation."
     }
   }

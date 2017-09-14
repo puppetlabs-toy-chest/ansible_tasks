@@ -1,12 +1,13 @@
 {
-  "description": "Manages SNMP location configuration on HUAWEI CloudEngine switches.", 
+  "input_method": "stdin", 
+  "description": "Manages SNMP location configurations on HUAWEI CloudEngine switches.", 
   "parameters": {
     "state": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"present\", \"absent\"]]", 
       "description": "Manage the state of the resource."
     }, 
     "location": {
-      "type": "String", 
+      "type": "String[0]", 
       "description": "Location information."
     }
   }

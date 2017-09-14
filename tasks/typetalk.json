@@ -1,20 +1,21 @@
 {
-  "description": "Send a message to typetalk", 
+  "input_method": "stdin", 
+  "description": "Send a message to typetalk using typetalk API ( http://developers.typetalk.in/ )", 
   "parameters": {
     "topic": {
-      "type": "String", 
+      "type": "String[0]", 
       "description": "topic id to post message"
     }, 
     "client_secret": {
-      "type": "String", 
+      "type": "String[0]", 
       "description": "OAuth2 client secret"
     }, 
     "client_id": {
-      "type": "String", 
+      "type": "String[0]", 
       "description": "OAuth2 client ID"
     }, 
     "msg": {
-      "type": "String", 
+      "type": "String[0]", 
       "description": "message body"
     }
   }

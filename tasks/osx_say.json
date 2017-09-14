@@ -1,13 +1,14 @@
 {
-  "description": "Makes an OSX computer to speak.", 
+  "input_method": "stdin", 
+  "description": "makes an OS computer speak!  Amuse your friends, annoy your coworkers!", 
   "parameters": {
     "msg": {
-      "type": "String", 
-      "description": "W h a t   t o   s a y"
+      "type": "String[0]", 
+      "description": "W"
     }, 
     "voice": {
-      "type": "Optional[String]", 
-      "description": "W h a t   v o i c e   t o   u s e"
+      "type": "Optional[String[0]]", 
+      "description": "W"
     }
   }
 }

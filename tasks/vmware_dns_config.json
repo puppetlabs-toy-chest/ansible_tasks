@@ -1,32 +1,33 @@
 {
+  "input_method": "stdin", 
   "description": "Manage VMware ESXi DNS Configuration", 
   "parameters": {
     "username": {
-      "type": "String", 
+      "type": "String[0]", 
       "description": "The username of the vSphere vCenter."
     }, 
     "dns_servers": {
-      "type": "String", 
+      "type": "String[0]", 
       "description": "The DNS servers that the host should be configured to use."
     }, 
     "domainname": {
-      "type": "String", 
+      "type": "String[0]", 
       "description": "The domain the ESXi host should be apart of."
     }, 
     "change_hostname_to": {
-      "type": "String", 
+      "type": "String[0]", 
       "description": "The hostname that an ESXi host should be changed to."
     }, 
     "hostname": {
-      "type": "String", 
+      "type": "String[0]", 
       "description": "The hostname or IP address of the vSphere vCenter."
     }, 
     "password": {
-      "type": "String", 
+      "type": "String[0]", 
       "description": "The password of the vSphere vCenter."
     }, 
     "validate_certs": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"True\", \"False\"]]", 
       "description": "Allows connection when SSL certificates are not valid. Set to false when certificates are not trusted."
     }
   }

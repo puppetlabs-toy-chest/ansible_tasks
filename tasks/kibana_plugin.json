@@ -1,36 +1,37 @@
 {
-  "description": "Manage Kibana plugins", 
+  "input_method": "stdin", 
+  "description": "Manages Kibana plugins.", 
   "parameters": {
     "force": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"yes\", \"no\"]]", 
       "description": "Delete and re-install the plugin. Can be useful for plugins update"
     }, 
     "name": {
-      "type": "String", 
+      "type": "String[0]", 
       "description": "Name of the plugin to install"
     }, 
     "url": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Set exact URL to download the plugin from. For local file, prefix its absolute path with file://"
     }, 
     "state": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"present\", \"absent\"]]", 
       "description": "Desired state of a plugin."
     }, 
     "version": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Version of the plugin to be installed. If plugin exists with previous version, it will NOT be updated if C(force) is not set to yes"
     }, 
     "timeout": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Timeout setting: 30s, 1m, 1h..."
     }, 
     "plugin_dir": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Your configured plugin directory specified in Kibana"
     }, 
     "plugin_bin": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Location of the plugin binary"
     }
   }

@@ -1,112 +1,113 @@
 {
-  "description": "add or delete entries in Amazons Route53 DNS service", 
+  "input_method": "stdin", 
+  "description": "Creates and deletes DNS records in Amazons Route53 service", 
   "parameters": {
     "weight": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Weighted resource record sets only. Among resource record sets that have the same combination of DNS name and type, a value that determines what portion of traffic for the current resource record set is routed to the associated location."
     }, 
     "ttl": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "The TTL to give the new record"
     }, 
     "hosted_zone_id": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "The Hosted Zone ID of the DNS zone to modify"
     }, 
     "alias_evaluate_target_health": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Whether or not to evaluate an alias target health. Useful for aliases to Elastic Load Balancers."
     }, 
     "ec2_url": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Url to use to connect to EC2 or your Eucalyptus cloud (by default the module will use EC2 endpoints). Ignored for modules where region is required. Must be specified for all other modules if region is not used. If not set then the value of the EC2_URL environment variable, if any, is used."
     }, 
     "overwrite": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Whether an existing record should be overwritten on create if values do not match"
     }, 
     "aws_secret_key": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "AWS secret key. If not set then the value of the AWS_SECRET_ACCESS_KEY, AWS_SECRET_KEY, or EC2_SECRET_KEY environment variable is used."
     }, 
     "zone": {
-      "type": "String", 
+      "type": "String[0]", 
       "description": "The DNS zone to modify"
     }, 
     "alias": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"True\", \"False\"]]", 
       "description": "Indicates if this is an alias record."
     }, 
     "retry_interval": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "In the case that route53 is still servicing a prior request, this module will wait and try again after this many seconds. If you have many domain names, the default of 500 seconds may be too long."
     }, 
     "private_zone": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "If set to true, the private zone matching the requested name within the domain will be used if there are both public and private zones. The default is to use the public zone."
     }, 
     "state": {
-      "type": "String", 
-      "description": "Specifies the state of the resource record. As of Ansible 2.4, the I(command) option has been changed to I(state) as default and the choices 'present' and 'absent' have been added, but I(command) still works as well."
+      "type": "Enum[\"present\", \"absent\", \"get\", \"create\", \"delete\"]", 
+      "description": "Specifies the state of the resource record. As of Ansible 2.4, the I(command) option has been changed to I(state) as default, but I(command) still works as well."
     }, 
     "type": {
-      "type": "String", 
+      "type": "Enum[\"A\", \"CNAME\", \"MX\", \"AAAA\", \"TXT\", \"PTR\", \"SRV\", \"SPF\", \"NS\", \"SOA\"]", 
       "description": "The type of DNS record to create"
     }, 
     "profile": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Uses a boto profile. Only works with boto >= 2.24.0."
     }, 
     "health_check": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Health check to associate with this record"
     }, 
     "wait_timeout": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "How long to wait for the changes to be replicated, in seconds."
     }, 
     "wait": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Wait until the changes have been replicated to all Amazon Route 53 DNS servers."
     }, 
     "aws_access_key": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "AWS access key. If not set then the value of the AWS_ACCESS_KEY_ID, AWS_ACCESS_KEY or EC2_ACCESS_KEY environment variable is used."
     }, 
     "alias_hosted_zone_id": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "The hosted zone identifier."
     }, 
     "security_token": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "AWS STS security token. If not set then the value of the AWS_SECURITY_TOKEN or EC2_SECURITY_TOKEN environment variable is used."
     }, 
     "region": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Latency-based resource record sets only Among resource record sets that have the same combination of DNS name and type, a value that determines which region this should be associated with for the latency-based routing"
     }, 
     "value": {
-      "type": "Optional[String]", 
-      "description": "The new value when creating a DNS record.  YAML lists or multiple comma-spaced values are allowed for non-alias records. When deleting a record all values for the record must be specified or Route53 will not delete it."
+      "type": "Optional[String[0]]", 
+      "description": "The new value when creating a DNS record.  YAML lists or multiple comma-spaced values are allowed for non-alias records."
     }, 
     "record": {
-      "type": "String", 
+      "type": "String[0]", 
       "description": "The full DNS record to create or delete"
     }, 
     "vpc_id": {
-      "type": "Optional[String]", 
-      "description": "When used in conjunction with private_zone: true, this will only modify records in the private hosted zone attached to this VPC. This allows you to have multiple private hosted zones, all with the same name, attached to different VPCs."
+      "type": "Optional[String[0]]", 
+      "description": "When used in conjunction with private_zone: true, this will only modify records in the private hosted zone attached to this VPC."
     }, 
     "identifier": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Have to be specified for Weighted, latency-based and failover resource record sets only. An identifier that differentiates among multiple resource record sets that have the same combination of DNS name and type."
     }, 
     "validate_certs": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"yes\", \"no\"]]", 
       "description": "When set to \"no\", SSL certificates will not be validated for boto versions >= 2.6.0."
     }, 
     "failover": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Failover resource record sets only. Whether this is the primary or secondary resource record set. Allowed values are PRIMARY and SECONDARY"
     }
   }

@@ -1,132 +1,133 @@
 {
-  "description": "Manage IPv4 policy objects on Fortinet FortiOS firewall devices", 
+  "input_method": "stdin", 
+  "description": "This module provides management of firewall IPv4 policies on FortiOS devices.", 
   "parameters": {
     "comment": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "free text to describe policy."
     }, 
     "application_list": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Specifies Application Control name."
     }, 
     "service_negate": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"true\", \"false\"]]", 
       "description": "Negate policy service(s) defined in service value."
     }, 
     "av_profile": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Specifies Antivirus profile name."
     }, 
     "backup_filename": {
-      "type": "Optional[String]", 
-      "description": "Specifies the backup filename. If omitted filename will be formatted like HOST_config.YYYY-MM-DD@HH:MM:SS"
+      "type": "Optional[String[0]]", 
+      "description": "Specifies the backup filename. If omitted filename will be formated like HOST_config.YYYY-MM-DD@HH:MM:SS"
     }, 
     "id": {
-      "type": "String", 
+      "type": "String[0]", 
       "description": "Policy ID. Warning: policy ID number is different than Policy sequence number. The policy ID is the number assigned at policy creation. The sequence number represents the order in which the Fortigate will evaluate the rule for policy enforcement, and also the order in which rules are listed in the GUI and CLI. These two numbers do not necessarily correlate: this module is based off policy ID. TIP: policy ID can be viewed in the GUI by adding 'ID' to the display columns"
     }, 
     "fixedport": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"true\", \"false\"]]", 
       "description": "Use fixed port for nat."
     }, 
     "src_addr": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Specifies source address (or group) object name(s). Required when I(state=present)."
     }, 
     "service": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Specifies policy service(s), could be a list (ex: ['MAIL','DNS']). Required when I(state=present)."
     }, 
     "poolname": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Specifies NAT pool name."
     }, 
     "state": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"present\", \"absent\"]]", 
       "description": "Specifies if policy I(id) need to be added or deleted."
     }, 
     "nat": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"true\", \"false\"]]", 
       "description": "Enable or disable Nat."
     }, 
     "src_addr_negate": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"true\", \"false\"]]", 
       "description": "Negate source address param."
     }, 
     "username": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Configures the username used to authenticate to the remote device. Required when I(file_mode) is True."
     }, 
     "config_file": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Path to configuration file. Required when I(file_mode) is True."
     }, 
     "file_mode": {
-      "type": "Optional[Boolean]", 
+      "type": "Optional[String[0]]", 
       "description": "Don't connect to any device, only use I(config_file) as input and Output."
     }, 
     "schedule": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "defines policy schedule."
     }, 
     "src_intf": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Specifies source interface name."
     }, 
     "dst_addr_negate": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"true\", \"false\"]]", 
       "description": "Negate destination address param."
     }, 
     "host": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Specifies the DNS hostname or IP address for connecting to the remote fortios device. Required when I(file_mode) is False."
     }, 
     "password": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Specifies the password used to authenticate to the remote device. Required when I(file_mode) is True."
     }, 
     "vdom": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Specifies on which vdom to apply configuration"
     }, 
     "webfilter_profile": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Specifies Webfilter profile name."
     }, 
     "logtraffic_start": {
-      "type": "Optional[String]", 
-      "description": "Logs beginning of session as well."
+      "type": "Optional[Enum[\"true\", \"false\"]]", 
+      "description": "Logs begining of session as well."
     }, 
     "backup_path": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Specifies where to store backup files. Required if I(backup=yes)."
     }, 
     "policy_action": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"accept\", \"deny\"]]", 
       "description": "Specifies accept or deny action policy. Required when I(state=present)."
     }, 
     "dst_intf": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Specifies destination interface name."
     }, 
     "ips_sensor": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Specifies IPS Sensor profile name."
     }, 
     "timeout": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Timeout in seconds for connecting to the remote device."
     }, 
     "backup": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"yes\", \"no\"]]", 
       "description": "This argument will cause the module to create a backup of the current C(running-config) from the remote device before any changes are made.  The backup file is written to the i(backup) folder."
     }, 
     "dst_addr": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Specifies destination address (or group) object name(s). Required when I(state=present)."
     }, 
     "logtraffic": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"disable\", \"utm\", \"all\"]]", 
       "description": "Logs sessions that matched policy."
     }
   }

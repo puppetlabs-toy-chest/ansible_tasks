@@ -1,48 +1,49 @@
 {
-  "description": "Various redis commands, slave and flush", 
+  "input_method": "stdin", 
+  "description": "Unified utility to interact with redis instances. 'slave' sets a redis instance in slave or master mode. 'flush' flushes all the instance or a specified db. 'config' (new in 1.6), ensures a configuration setting on an instance.", 
   "parameters": {
     "login_port": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "The port to connect to"
     }, 
     "name": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "A redis config key."
     }, 
     "flush_mode": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"all\", \"db\"]]", 
       "description": "Type of flush (all the dbs in a redis instance or a specific one) [flush command]"
     }, 
     "db": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "The database to flush (used in db mode) [flush command]"
     }, 
     "login_host": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "The host running the database"
     }, 
     "login_password": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "The password used to authenticate with (usually not used)"
     }, 
     "master_host": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "The host of the master instance [slave command]"
     }, 
     "value": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "A redis config value."
     }, 
     "command": {
-      "type": "String", 
+      "type": "Enum[\"slave\", \"flush\", \"config\"]", 
       "description": "The selected redis command"
     }, 
     "master_port": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "The port of the master instance [slave command]"
     }, 
     "slave_mode": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"master\", \"slave\"]]", 
       "description": "the mode of the redis instance [slave command]"
     }
   }

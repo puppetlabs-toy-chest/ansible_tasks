@@ -1,40 +1,41 @@
 {
+  "input_method": "stdin", 
   "description": "Create or remove a Distributed vSwitch portgroup", 
   "parameters": {
     "username": {
-      "type": "String", 
+      "type": "String[0]", 
       "description": "The username of the vSphere vCenter."
     }, 
     "portgroup_name": {
-      "type": "String", 
+      "type": "String[0]", 
       "description": "The name of the portgroup that is to be created or deleted"
     }, 
     "portgroup_type": {
-      "type": "String", 
+      "type": "Enum[\"earlyBinding\", \"lateBinding\", \"ephemeral\"]", 
       "description": "See VMware KB 1022312 regarding portgroup types"
     }, 
     "hostname": {
-      "type": "String", 
+      "type": "String[0]", 
       "description": "The hostname or IP address of the vSphere vCenter."
     }, 
     "num_ports": {
-      "type": "String", 
+      "type": "String[0]", 
       "description": "The number of ports the portgroup should contain"
     }, 
     "password": {
-      "type": "String", 
+      "type": "String[0]", 
       "description": "The password of the vSphere vCenter."
     }, 
     "validate_certs": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"True\", \"False\"]]", 
       "description": "Allows connection when SSL certificates are not valid. Set to false when certificates are not trusted."
     }, 
     "switch_name": {
-      "type": "String", 
+      "type": "String[0]", 
       "description": "The name of the distributed vSwitch the port group should be created on."
     }, 
     "vlan_id": {
-      "type": "String", 
+      "type": "String[0]", 
       "description": "The VLAN ID that should be configured with the portgroup"
     }
   }

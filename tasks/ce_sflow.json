@@ -1,88 +1,89 @@
 {
-  "description": "Manages sFlow configuration on HUAWEI CloudEngine switches.", 
+  "input_method": "stdin", 
+  "description": "Configure Sampled Flow (sFlow) to monitor traffic on an interface in real time, detect abnormal traffic, and locate the source of attack traffic, ensuring stable running of the network.", 
   "parameters": {
     "sample_direction": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"inbound\", \"outbound\", \"both\"]]", 
       "description": "Enables flow sampling in the inbound or outbound direction."
     }, 
     "agent_ip": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Specifies the IPv4/IPv6 address of an sFlow agent."
     }, 
     "collector_ip_vpn": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Specifies the name of a VPN instance. The value is a string of 1 to 31 case-sensitive characters, spaces not supported. When double quotation marks are used around the string, spaces are allowed in the string. The value C(_public_) is reserved and cannot be used as the VPN instance name."
     }, 
     "counter_interval": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Indicates the the counter sampling interval. The value is an integer that ranges from 10 to 4294967295, in seconds. The default value is 20."
     }, 
     "export_route": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"enable\", \"disable\"]]", 
       "description": "Configures the sFlow packets sent by the switch not to carry routing information."
     }, 
     "counter_collector": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Indicates the ID list of the counter collector."
     }, 
     "rate_limit_slot": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Specifies the slot where the rate of output sFlow packets is limited. If this parameter is not specified, the rate of sFlow packets sent from all cards to the control plane is limited. The value is an integer or a string of characters."
     }, 
     "collector_ip": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Specifies the IPv4/IPv6 address of the sFlow collector."
     }, 
     "rate_limit": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Specifies the rate of sFlow packets sent from a card to the control plane. The value is an integer that ranges from 100 to 1500, in pps."
     }, 
     "collector_udp_port": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Specifies the UDP destination port number of sFlow packets. The value is an integer that ranges from 1 to 65535. The default value is 6343."
     }, 
     "source_ip": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Specifies the source IPv4/IPv6 address of sFlow packets."
     }, 
     "sample_length": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Specifies the maximum length of sampled packets. The value is an integer and ranges from 18 to 512, in bytes. The default value is 128."
     }, 
     "collector_datagram_size": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Specifies the maximum length of sFlow packets sent from an sFlow agent to an sFlow collector. The value is an integer, in bytes. It ranges from 1024 to 8100. The default value is 1400."
     }, 
     "state": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"present\", \"absent\"]]", 
       "description": "Determines whether the config should be present or not on the device."
     }, 
     "collector_id": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"1\", \"2\"]]", 
       "description": "Specifies the ID of an sFlow collector. This ID is used when you specify the collector in subsequent sFlow configuration."
     }, 
     "sample_rate": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Specifies the flow sampling rate in the format 1/rate. The value is an integer and ranges from 1 to 4294967295. The default value is 8192."
     }, 
     "sample_collector": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Indicates the ID list of the collector."
     }, 
     "sflow_interface": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Full name of interface for Flow Sampling or Counter. It must be a physical interface, Eth-Trunk, or Layer 2 subinterface."
     }, 
     "forward_enp_slot": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Enable the Embedded Network Processor (ENP) chip function. The switch uses the ENP chip to perform sFlow sampling, and the maximum sFlow sampling interval is 65535. If you set the sampling interval to be larger than 65535, the switch automatically restores it to 65535. The value is an integer or 'all'."
     }, 
     "collector_meth": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"meth\", \"enhanced\"]]", 
       "description": "Configures the device to send sFlow packets through service interfaces, enhancing the sFlow packet forwarding capability. The enhanced parameter is optional. No matter whether you configure the enhanced mode, the switch determines to send sFlow packets through service cards or management port based on the routing information on the collector. When the value is meth, the device forwards sFlow packets at the control plane. When the value is enhanced, the device forwards sFlow packets at the forwarding plane to enhance the sFlow packet forwarding capacity."
     }, 
     "collector_description": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Specifies the description of an sFlow collector. The value is a string of 1 to 255 case-sensitive characters without spaces."
     }
   }

@@ -1,40 +1,41 @@
 {
-  "description": "Manage node.js packages with npm", 
+  "input_method": "stdin", 
+  "description": "Manage node.js packages with Node Package Manager (npm)", 
   "parameters": {
     "executable": {
-      "type": "Optional[String]", 
-      "description": "The executable location for npm. This is useful if you are using a version manager, such as nvm"
+      "type": "Optional[String[0]]", 
+      "description": "The executable location for npm."
     }, 
     "name": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "The name of a node.js library to install"
     }, 
     "global": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"yes\", \"no\"]]", 
       "description": "Install the node.js library globally"
     }, 
     "ignore_scripts": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"yes\", \"no\"]]", 
       "description": "Use the --ignore-scripts flag when installing."
     }, 
     "state": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"present\", \"absent\", \"latest\"]]", 
       "description": "The state of the node.js library"
     }, 
     "production": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"yes\", \"no\"]]", 
       "description": "Install dependencies in production mode, excluding devDependencies"
     }, 
     "registry": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "The registry to install modules from."
     }, 
     "version": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "The version to be installed"
     }, 
     "path": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "The base path where to install the node.js libraries"
     }
   }

@@ -1,357 +1,338 @@
 {
-  "description": "Module for setup of ServiceEngineGroup Avi RESTful Object", 
+  "input_method": "stdin", 
+  "description": "This module is used to configure ServiceEngineGroup object", 
   "parameters": {
-    "host_attribute_value": {
-      "type": "Optional[String]", 
-      "description": "Value of a (key, value) pair identifying a set of hosts. Currently used to separate north-south and east-west se sizing requirements. This is useful in container ecosystems where ses on east-west traffic nodes are typically smaller than those on north-south traffic nodes."
-    }, 
-    "async_ssl": {
-      "type": "Optional[String]", 
-      "description": "Ssl handshakes will be handled by dedicated ssl threads. Default value when not specified in API or module is interpreted by Avi Controller as False."
-    }, 
-    "se_name_prefix": {
-      "type": "Optional[String]", 
-      "description": "Prefix to use for virtual machine name of service engines. Default value when not specified in API or module is interpreted by Avi Controller as Avi."
-    }, 
-    "auto_redistribute_active_standby_load": {
-      "type": "Optional[String]", 
-      "description": "Redistribution of virtual services from the takeover se to the replacement se can cause momentary traffic loss. If the auto-redistribute load option is left in its default off state, any desired rebalancing requires calls to rest api. Default value when not specified in API or module is interpreted by Avi Controller as False."
-    }, 
-    "password": {
-      "type": "Optional[String]", 
-      "description": "Password of Avi user in Avi controller. The default value is the environment variable C(AVI_PASSWORD)."
-    }, 
-    "uuid": {
-      "type": "Optional[String]", 
-      "description": "Unique object identifier of the object."
-    }, 
-    "vs_scalein_timeout": {
-      "type": "Optional[String]", 
-      "description": "Time to wait for the scaled in se to drain existing flows before marking the scalein done. Default value when not specified in API or module is interpreted by Avi Controller as 30."
-    }, 
-    "se_udp_encap_ipc": {
-      "type": "Optional[String]", 
-      "description": "Determines if se-se ipc messages are encapsulated in an udp header. 0  automatically determine based on hypervisor type. 1  use udp encap unconditionally. ~[0,1]  don't use udp encap. Field introduced in 17.1.2. Default value when not specified in API or module is interpreted by Avi Controller as 0."
-    }, 
-    "min_cpu_usage": {
-      "type": "Optional[String]", 
-      "description": "When cpu usage on an se falls below the minimum threshold, virtual services hosted on the se may be consolidated onto other underutilized ses. After consolidation, unused service engines may then be eligible for deletion. Allowed values are 20-60. Default value when not specified in API or module is interpreted by Avi Controller as 30."
-    }, 
-    "vcenter_clusters": {
-      "type": "Optional[String]", 
-      "description": "Vcenterclusters settings for serviceenginegroup."
-    }, 
-    "iptables": {
-      "type": "Optional[String]", 
-      "description": "Iptable rules."
-    }, 
-    "connection_memory_percentage": {
-      "type": "Optional[String]", 
-      "description": "Percentage of memory for connection state. This will come at the expense of memory used for http in-memory cache. Allowed values are 10-90. Default value when not specified in API or module is interpreted by Avi Controller as 50."
-    }, 
-    "service_ip_subnets": {
-      "type": "Optional[String]", 
-      "description": "Subnets assigned to the se group. Required for vs group placement. Field introduced in 17.1.1."
-    }, 
-    "placement_mode": {
-      "type": "Optional[String]", 
-      "description": "If placement mode is 'auto', virtual services are automatically placed on service engines. Enum options - PLACEMENT_MODE_AUTO. Default value when not specified in API or module is interpreted by Avi Controller as PLACEMENT_MODE_AUTO."
-    }, 
-    "max_scaleout_per_vs": {
-      "type": "Optional[String]", 
-      "description": "Maximum number of active service engines for the virtual service. Allowed values are 1-64. Default value when not specified in API or module is interpreted by Avi Controller as 4."
-    }, 
-    "enable_routing": {
-      "type": "Optional[String]", 
-      "description": "Enable routing for this serviceenginegroup . Default value when not specified in API or module is interpreted by Avi Controller as False."
-    }, 
-    "per_app": {
-      "type": "Optional[String]", 
-      "description": "Per-app se mode is designed for deploying dedicated load balancers per app (vs). In this mode, each se is limited to a max of 2 vss. Vcpus in per-app ses count towards licensing usage at 25% rate. Default value when not specified in API or module is interpreted by Avi Controller as False."
-    }, 
-    "vcenter_datastores_include": {
-      "type": "Optional[String]", 
-      "description": "Boolean flag to set vcenter_datastores_include. Default value when not specified in API or module is interpreted by Avi Controller as False."
-    }, 
-    "instance_flavor": {
-      "type": "Optional[String]", 
-      "description": "Instance/flavor type for se instance."
-    }, 
-    "name": {
-      "type": "String", 
-      "description": "Name of the object."
-    }, 
-    "tenant_ref": {
-      "type": "Optional[String]", 
-      "description": "It is a reference to an object of type tenant."
-    }, 
-    "max_se": {
-      "type": "Optional[String]", 
-      "description": "Maximum number of services engines in this group. Allowed values are 0-1000. Default value when not specified in API or module is interpreted by Avi Controller as 10."
-    }, 
-    "se_dos_profile": {
-      "type": "Optional[String]", 
-      "description": "Dosthresholdprofile settings for serviceenginegroup."
-    }, 
-    "tenant_uuid": {
-      "type": "Optional[String]", 
-      "description": "UUID of tenant used for all Avi API calls and context of object."
-    }, 
-    "vcenter_hosts": {
-      "type": "Optional[String]", 
-      "description": "Vcenterhosts settings for serviceenginegroup."
-    }, 
-    "vcpus_per_se": {
-      "type": "Optional[String]", 
-      "description": "Number of vcpus for each of the service engine virtual machines. Default value when not specified in API or module is interpreted by Avi Controller as 1."
-    }, 
-    "cpu_socket_affinity": {
-      "type": "Optional[String]", 
-      "description": "Allocate all the cpu cores for the service engine virtual machines  on the same cpu socket. Applicable only for vcenter cloud. Default value when not specified in API or module is interpreted by Avi Controller as False."
-    }, 
-    "realtime_se_metrics": {
-      "type": "Optional[String]", 
-      "description": "Enable or disable real time se metrics."
-    }, 
-    "custom_tag": {
-      "type": "Optional[String]", 
-      "description": "Custom tag will be used to create the tags for se instance in aws. Note this is not the same as the prefix for se name."
-    }, 
-    "extra_shared_config_memory": {
-      "type": "Optional[String]", 
-      "description": "Extra config memory to support large geo db configuration. Field introduced in 17.1.1. Default value when not specified in API or module is interpreted by Avi Controller as 0."
-    }, 
-    "vcenter_datastores": {
-      "type": "Optional[String]", 
-      "description": "List of vcenterdatastore."
-    }, 
-    "state": {
-      "type": "Optional[String]", 
-      "description": "The state that should be applied on the entity."
-    }, 
-    "active_standby": {
-      "type": "Optional[String]", 
-      "description": "Service engines in active/standby mode for ha failover. Default value when not specified in API or module is interpreted by Avi Controller as False."
-    }, 
-    "api_version": {
-      "type": "Optional[String]", 
-      "description": "Avi API version of to use for Avi API and objects."
-    }, 
-    "extra_config_multiplier": {
-      "type": "Optional[String]", 
-      "description": "Multiplier for extra config to support large vs/pool config. Default value when not specified in API or module is interpreted by Avi Controller as 0.0."
-    }, 
-    "async_ssl_threads": {
-      "type": "Optional[String]", 
-      "description": "Number of async ssl threads per se_dp. Allowed values are 1-4. Default value when not specified in API or module is interpreted by Avi Controller as 1."
-    }, 
-    "vcenter_folder": {
-      "type": "Optional[String]", 
-      "description": "Folder to place all the service engine virtual machines in vcenter. Default value when not specified in API or module is interpreted by Avi Controller as AviSeFolder."
-    }, 
-    "floating_intf_ip": {
-      "type": "Optional[String]", 
-      "description": "If serviceenginegroup is configured for legacy 1+1 active standby ha mode, floating ip's will be advertised only by the active se in the pair. Virtual services in this group must be disabled/enabled for any changes to the floating ip's to take effect. Only active se hosting vs tagged with active standby se 1 tag will advertise this floating ip when manual load distribution is enabled."
-    }, 
-    "advertise_backend_networks": {
-      "type": "Optional[String]", 
-      "description": "Advertise reach-ability of backend server networks via adc through bgp for default gateway feature. Default value when not specified in API or module is interpreted by Avi Controller as False."
-    }, 
-    "tenant": {
-      "type": "Optional[String]", 
-      "description": "Name of tenant used for all Avi API calls and context of object."
-    }, 
-    "max_cpu_usage": {
-      "type": "Optional[String]", 
-      "description": "When cpu usage on an se exceeds this threshold, virtual services hosted on this se may be rebalanced to other ses to reduce load. A new se may be created as part of this process. Allowed values are 40-90. Default value when not specified in API or module is interpreted by Avi Controller as 80."
-    }, 
-    "min_scaleout_per_vs": {
-      "type": "Optional[String]", 
-      "description": "Minimum number of active service engines for the virtual service. Allowed values are 1-64. Default value when not specified in API or module is interpreted by Avi Controller as 1."
-    }, 
-    "buffer_se": {
-      "type": "Optional[String]", 
-      "description": "Excess service engine capacity provisioned for ha failover. Default value when not specified in API or module is interpreted by Avi Controller as 1."
-    }, 
-    "hypervisor": {
-      "type": "Optional[String]", 
-      "description": "Override default hypervisor. Enum options - DEFAULT, VMWARE_ESX, KVM, VMWARE_VSAN, XEN."
-    }, 
-    "vcenter_datastore_mode": {
-      "type": "Optional[String]", 
-      "description": "Enum options - vcenter_datastore_any, vcenter_datastore_local, vcenter_datastore_shared. Default value when not specified in API or module is interpreted by Avi Controller as VCENTER_DATASTORE_ANY."
-    }, 
-    "least_load_core_selection": {
-      "type": "Optional[String]", 
-      "description": "Select core with least load for new flow. Default value when not specified in API or module is interpreted by Avi Controller as True."
-    }, 
-    "aggressive_failure_detection": {
-      "type": "Optional[String]", 
-      "description": "Enable aggressive failover configuration for ha. Default value when not specified in API or module is interpreted by Avi Controller as False."
-    }, 
-    "algo": {
-      "type": "Optional[String]", 
-      "description": "In compact placement, virtual services are placed on existing ses until max_vs_per_se limit is reached. Enum options - PLACEMENT_ALGO_PACKED, PLACEMENT_ALGO_DISTRIBUTED. Default value when not specified in API or module is interpreted by Avi Controller as PLACEMENT_ALGO_PACKED."
-    }, 
-    "enable_vip_on_all_interfaces": {
-      "type": "Optional[String]", 
-      "description": "Enable vip on all interfaces of se. Field introduced in 17.1.1. Default value when not specified in API or module is interpreted by Avi Controller as True."
-    }, 
-    "auto_rebalance": {
-      "type": "Optional[String]", 
-      "description": "If set, virtual services will be automatically migrated when load on an se is less than minimum or more than maximum thresholds. Only alerts are generated when the auto_rebalance is not set. Default value when not specified in API or module is interpreted by Avi Controller as False."
-    }, 
-    "se_tunnel_mode": {
-      "type": "Optional[String]", 
-      "description": "Determines if dsr from secondary se is active or not. 0  automatically determine based on hypervisor type. 1  disable dsr unconditionally. ~[0,1]  enable dsr unconditionally. Field introduced in 17.1.1. Default value when not specified in API or module is interpreted by Avi Controller as 0."
-    }, 
-    "memory_per_se": {
-      "type": "Optional[String]", 
-      "description": "Amount of memory for each of the service engine virtual machines. Default value when not specified in API or module is interpreted by Avi Controller as 2048."
-    }, 
-    "vs_scaleout_timeout": {
-      "type": "Optional[String]", 
-      "description": "Time to wait for the scaled out se to become ready before marking the scaleout done. Default value when not specified in API or module is interpreted by Avi Controller as 30."
-    }, 
-    "ha_mode": {
-      "type": "Optional[String]", 
-      "description": "High availability mode for all the virtual services using this service engine group. Enum options - HA_MODE_SHARED_PAIR, HA_MODE_SHARED, HA_MODE_LEGACY_ACTIVE_STANDBY. Default value when not specified in API or module is interpreted by Avi Controller as HA_MODE_SHARED."
-    }, 
-    "cloud_ref": {
-      "type": "Optional[String]", 
-      "description": "It is a reference to an object of type cloud."
-    }, 
-    "se_remote_punt_udp_port": {
-      "type": "Optional[String]", 
-      "description": "Udp port for punted packets in docker bridge mode. Field introduced in 17.1.2. Default value when not specified in API or module is interpreted by Avi Controller as 1501."
-    }, 
     "username": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Username used for accessing Avi controller. The default value is the environment variable C(AVI_USERNAME)."
     }, 
-    "max_vs_per_se": {
-      "type": "Optional[String]", 
-      "description": "Maximum number of virtual services that can be placed on a single service engine. Allowed values are 1-1000. Default value when not specified in API or module is interpreted by Avi Controller as 10."
-    }, 
-    "os_reserved_memory": {
-      "type": "Optional[String]", 
-      "description": "Amount of extra memory to be reserved for use by the operating system on a service engine. Default value when not specified in API or module is interpreted by Avi Controller as 0."
-    }, 
-    "openstack_mgmt_network_uuid": {
-      "type": "Optional[String]", 
-      "description": "Management network uuid."
-    }, 
-    "controller": {
-      "type": "Optional[String]", 
-      "description": "IP address or hostname of the controller. The default value is the environment variable C(AVI_CONTROLLER)."
-    }, 
-    "se_vs_hb_max_pkts_in_batch": {
-      "type": "Optional[String]", 
-      "description": "Maximum number of aggregated vs heartbeat packets to send in a batch. Allowed values are 1-256. Field introduced in 17.1.1. Default value when not specified in API or module is interpreted by Avi Controller as 8."
-    }, 
-    "host_attribute_key": {
-      "type": "Optional[String]", 
-      "description": "Key of a (key, value) pair identifying a set of hosts. Currently used to separate north-south and east-west se sizing requirements. This is useful in container ecosystems where ses on east-west traffic nodes are typically smaller than those on north-south traffic nodes."
-    }, 
-    "se_ipc_udp_port": {
-      "type": "Optional[String]", 
-      "description": "Udp port for se_dp ipc in docker bridge mode. Field introduced in 17.1.2. Default value when not specified in API or module is interpreted by Avi Controller as 1500."
-    }, 
-    "mem_reserve": {
-      "type": "Optional[String]", 
-      "description": "Boolean flag to set mem_reserve. Default value when not specified in API or module is interpreted by Avi Controller as True."
-    }, 
-    "cpu_reserve": {
-      "type": "Optional[String]", 
-      "description": "Boolean flag to set cpu_reserve. Default value when not specified in API or module is interpreted by Avi Controller as False."
-    }, 
-    "enable_vmac": {
-      "type": "Optional[String]", 
-      "description": "Use virtual mac address for interfaces on which floating interface ips are placed. Default value when not specified in API or module is interpreted by Avi Controller as False."
-    }, 
-    "openstack_mgmt_network_name": {
-      "type": "Optional[String]", 
-      "description": "Avi management network name."
-    }, 
-    "hm_on_standby": {
-      "type": "Optional[String]", 
-      "description": "Enable active health monitoring from the standby se for all placed virtual services. Default value when not specified in API or module is interpreted by Avi Controller as True."
-    }, 
-    "disk_per_se": {
-      "type": "Optional[String]", 
-      "description": "Amount of disk space for each of the service engine virtual machines. Default value when not specified in API or module is interpreted by Avi Controller as 10."
-    }, 
-    "hardwaresecuritymodulegroup_ref": {
-      "type": "Optional[String]", 
-      "description": "It is a reference to an object of type hardwaresecuritymodulegroup."
-    }, 
-    "floating_intf_ip_se_2": {
-      "type": "Optional[String]", 
-      "description": "If serviceenginegroup is configured for legacy 1+1 active standby ha mode, floating ip's will be advertised only by the active se in the pair. Virtual services in this group must be disabled/enabled for any changes to the floating ip's to take effect. Only active se hosting vs tagged with active standby se 2 tag will advertise this floating ip when manual load distribution is enabled."
-    }, 
-    "log_disksz": {
-      "type": "Optional[String]", 
-      "description": "Maximum disk capacity (in mb) to be allocated to an se. This is exclusively used for debug and log data. Default value when not specified in API or module is interpreted by Avi Controller as 10000."
-    }, 
     "openstack_availability_zone": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Field deprecated in 17.1.1."
     }, 
-    "auto_rebalance_interval": {
-      "type": "Optional[String]", 
-      "description": "Frequency of rebalance, if 'auto rebalance' is enabled. Default value when not specified in API or module is interpreted by Avi Controller as 300."
+    "vcenter_hosts": {
+      "type": "Optional[String[0]]", 
+      "description": "Vcenterhosts settings for serviceenginegroup."
     }, 
-    "openstack_availability_zones": {
-      "type": "Optional[String]", 
-      "description": "Field introduced in 17.1.1."
+    "per_app": {
+      "type": "Optional[String[0]]", 
+      "description": "Per-app se mode is designed for deploying dedicated load balancers per app (vs)."
     }, 
-    "num_flow_cores_sum_changes_to_ignore": {
-      "type": "Optional[String]", 
-      "description": "Number of changes in num flow cores sum to ignore. Default value when not specified in API or module is interpreted by Avi Controller as 8."
+    "vcpus_per_se": {
+      "type": "Optional[String[0]]", 
+      "description": "Number of vcpus for each of the service engine virtual machines."
     }, 
-    "se_thread_multiplier": {
-      "type": "Optional[String]", 
-      "description": "Multiplier for se threads based on vcpu. Allowed values are 1-10. Default value when not specified in API or module is interpreted by Avi Controller as 1."
+    "hm_on_standby": {
+      "type": "Optional[String[0]]", 
+      "description": "Enable active health monitoring from the standby se for all placed virtual services."
     }, 
-    "description": {
-      "type": "Optional[String]", 
-      "description": "User defined description for the object."
+    "host_attribute_value": {
+      "type": "Optional[String[0]]", 
+      "description": "Value of a (key, value) pair identifying a set of hosts."
+    }, 
+    "enable_vip_on_all_interfaces": {
+      "type": "Optional[String[0]]", 
+      "description": "Enable vip on all interfaces of se."
     }, 
     "vs_scalein_timeout_for_upgrade": {
-      "type": "Optional[String]", 
-      "description": "During se upgrade, time to wait for the scaled-in se to drain existing flows before marking the scalein done. Default value when not specified in API or module is interpreted by Avi Controller as 30."
+      "type": "Optional[String[0]]", 
+      "description": "During se upgrade, time to wait for the scaled-in se to drain existing flows before marking the scalein done."
+    }, 
+    "se_name_prefix": {
+      "type": "Optional[String[0]]", 
+      "description": "Prefix to use for virtual machine name of service engines."
+    }, 
+    "instance_flavor": {
+      "type": "Optional[String[0]]", 
+      "description": "Instance/flavor type for se instance."
+    }, 
+    "auto_redistribute_active_standby_load": {
+      "type": "Optional[String[0]]", 
+      "description": "Redistribution of virtual services from the takeover se to the replacement se can cause momentary traffic loss."
+    }, 
+    "hardwaresecuritymodulegroup_ref": {
+      "type": "Optional[String[0]]", 
+      "description": "It is a reference to an object of type hardwaresecuritymodulegroup."
+    }, 
+    "auto_rebalance": {
+      "type": "Optional[String[0]]", 
+      "description": "If set, virtual services will be automatically migrated when load on an se is less than minimum or more than maximum thresholds."
+    }, 
+    "custom_tag": {
+      "type": "Optional[String[0]]", 
+      "description": "Custom tag will be used to create the tags for se instance in aws."
+    }, 
+    "floating_intf_ip_se_2": {
+      "type": "Optional[String[0]]", 
+      "description": "If serviceenginegroup is configured for legacy 1+1 active standby ha mode, floating ip's will be advertised only by the active se in the pair."
+    }, 
+    "realtime_se_metrics": {
+      "type": "Optional[String[0]]", 
+      "description": "Enable or disable real time se metrics."
+    }, 
+    "openstack_mgmt_network_name": {
+      "type": "Optional[String[0]]", 
+      "description": "Avi management network name."
     }, 
     "se_deprovision_delay": {
-      "type": "Optional[String]", 
-      "description": "Duration to preserve unused service engine virtual machines before deleting them. If traffic to a virtual service were to spike up abruptly, this se would still be available to be utilized again rather than creating a new se. If this value is set to 0, controller will never delete any ses and administrator has to manually cleanup unused ses. Allowed values are 0-525600. Default value when not specified in API or module is interpreted by Avi Controller as 120."
+      "type": "Optional[String[0]]", 
+      "description": "Duration to preserve unused service engine virtual machines before deleting them."
     }, 
-    "se_vs_hb_max_vs_in_pkt": {
-      "type": "Optional[String]", 
-      "description": "Maximum number of virtualservices for which heartbeat messages are aggregated in one packet. Allowed values are 1-1024. Field introduced in 17.1.1. Default value when not specified in API or module is interpreted by Avi Controller as 256."
+    "active_standby": {
+      "type": "Optional[String[0]]", 
+      "description": "Service engines in active/standby mode for ha failover."
     }, 
-    "mgmt_network_ref": {
-      "type": "Optional[String]", 
-      "description": "Management network to use for avi service engines. It is a reference to an object of type network."
+    "se_tunnel_mode": {
+      "type": "Optional[String[0]]", 
+      "description": "Determines if dsr from secondary se is active or not      0        automatically determine based on hypervisor type    1        disable dsr"
     }, 
-    "url": {
-      "type": "Optional[String]", 
-      "description": "Avi controller URL of the object."
+    "memory_per_se": {
+      "type": "Optional[String[0]]", 
+      "description": "Amount of memory for each of the service engine virtual machines."
     }, 
     "distribute_load_active_standby": {
-      "type": "Optional[String]", 
-      "description": "Use both the active and standby service engines for virtual service placement in the legacy active standby ha mode. Default value when not specified in API or module is interpreted by Avi Controller as False."
+      "type": "Optional[String[0]]", 
+      "description": "Use both the active and standby service engines for virtual service placement in the legacy active standby ha mode."
+    }, 
+    "cloud_ref": {
+      "type": "Optional[String[0]]", 
+      "description": "It is a reference to an object of type cloud."
+    }, 
+    "extra_shared_config_memory": {
+      "type": "Optional[String[0]]", 
+      "description": "Extra config memory to support large geo db configuration."
+    }, 
+    "description": {
+      "type": "Optional[String[0]]", 
+      "description": "User defined description for the object."
+    }, 
+    "iptables": {
+      "type": "Optional[String[0]]", 
+      "description": "Iptable rules."
+    }, 
+    "auto_rebalance_interval": {
+      "type": "Optional[String[0]]", 
+      "description": "Frequency of rebalance, if 'auto rebalance' is enabled."
+    }, 
+    "vs_scaleout_timeout": {
+      "type": "Optional[String[0]]", 
+      "description": "Time to wait for the scaled out se to become ready before marking the scaleout done."
+    }, 
+    "vcenter_datastores": {
+      "type": "Optional[String[0]]", 
+      "description": "List of vcenterdatastore."
+    }, 
+    "ha_mode": {
+      "type": "Optional[String[0]]", 
+      "description": "High availability mode for all the virtual services using this service engine group."
+    }, 
+    "aggressive_failure_detection": {
+      "type": "Optional[String[0]]", 
+      "description": "Enable aggressive failover configuration for ha."
+    }, 
+    "vcenter_datastore_mode": {
+      "type": "Optional[String[0]]", 
+      "description": "Enum options - vcenter_datastore_any, vcenter_datastore_local, vcenter_datastore_shared."
+    }, 
+    "tenant": {
+      "type": "Optional[String[0]]", 
+      "description": "Name of tenant used for all Avi API calls and context of object."
+    }, 
+    "min_cpu_usage": {
+      "type": "Optional[String[0]]", 
+      "description": "When cpu usage on an se falls below the minimum threshold, virtual services hosted on the se may be consolidated onto other underutilized ses."
+    }, 
+    "disk_per_se": {
+      "type": "Optional[String[0]]", 
+      "description": "Amount of disk space for each of the service engine virtual machines."
+    }, 
+    "vcenter_clusters": {
+      "type": "Optional[String[0]]", 
+      "description": "Vcenterclusters settings for serviceenginegroup."
+    }, 
+    "log_disksz": {
+      "type": "Optional[String[0]]", 
+      "description": "Maximum disk capacity (in mb) to be allocated to an se."
+    }, 
+    "cpu_socket_affinity": {
+      "type": "Optional[String[0]]", 
+      "description": "Allocate all the cpu cores for the service engine virtual machines  on the same cpu socket."
+    }, 
+    "api_version": {
+      "type": "Optional[String[0]]", 
+      "description": "Avi API version of to use for Avi API and objects."
+    }, 
+    "se_thread_multiplier": {
+      "type": "Optional[String[0]]", 
+      "description": "Multiplier for se threads based on vcpu."
+    }, 
+    "extra_config_multiplier": {
+      "type": "Optional[String[0]]", 
+      "description": "Multiplier for extra config to support large vs/pool config."
+    }, 
+    "max_vs_per_se": {
+      "type": "Optional[String[0]]", 
+      "description": "Maximum number of virtual services that can be placed on a single service engine."
+    }, 
+    "connection_memory_percentage": {
+      "type": "Optional[String[0]]", 
+      "description": "Percentage of memory for connection state."
+    }, 
+    "service_ip_subnets": {
+      "type": "Optional[String[0]]", 
+      "description": "Subnets assigned to the se group."
+    }, 
+    "placement_mode": {
+      "type": "Optional[String[0]]", 
+      "description": "If placement mode is 'auto', virtual services are automatically placed on service engines."
+    }, 
+    "max_scaleout_per_vs": {
+      "type": "Optional[String[0]]", 
+      "description": "Maximum number of active service engines for the virtual service."
+    }, 
+    "enable_routing": {
+      "type": "Optional[String[0]]", 
+      "description": "Enable routing for this serviceenginegroup ."
+    }, 
+    "vcenter_folder": {
+      "type": "Optional[String[0]]", 
+      "description": "Folder to place all the service engine virtual machines in vcenter."
+    }, 
+    "os_reserved_memory": {
+      "type": "Optional[String[0]]", 
+      "description": "Amount of extra memory to be reserved for use by the operating system on a service engine."
+    }, 
+    "openstack_mgmt_network_uuid": {
+      "type": "Optional[String[0]]", 
+      "description": "Management network uuid."
+    }, 
+    "vs_scalein_timeout": {
+      "type": "Optional[String[0]]", 
+      "description": "Time to wait for the scaled in se to drain existing flows before marking the scalein done."
     }, 
     "dedicated_dispatcher_core": {
-      "type": "Optional[String]", 
-      "description": "Dedicate the core that handles packet receive/transmit from the network to just the dispatching function. Don't use it for tcp/ip and ssl functions. Default value when not specified in API or module is interpreted by Avi Controller as False."
+      "type": "Optional[String[0]]", 
+      "description": "Dedicate the core that handles packet receive/transmit from the network to just the dispatching function."
+    }, 
+    "controller": {
+      "type": "Optional[String[0]]", 
+      "description": "IP address or hostname of the controller. The default value is the environment variable C(AVI_CONTROLLER)."
+    }, 
+    "state": {
+      "type": "Optional[Enum[\"absent\", \"present\"]]", 
+      "description": "The state that should be applied on the entity."
+    }, 
+    "floating_intf_ip": {
+      "type": "Optional[String[0]]", 
+      "description": "If serviceenginegroup is configured for legacy 1+1 active standby ha mode, floating ip's will be advertised only by the active se in the pair."
+    }, 
+    "openstack_availability_zones": {
+      "type": "Optional[String[0]]", 
+      "description": "Field introduced in 17.1.1."
+    }, 
+    "se_vs_hb_max_vs_in_pkt": {
+      "type": "Optional[String[0]]", 
+      "description": "Maximum number of virtualservices for which heartbeat messages are aggregated in one packet."
+    }, 
+    "vcenter_datastores_include": {
+      "type": "Optional[String[0]]", 
+      "description": "Boolean flag to set vcenter_datastores_include."
+    }, 
+    "advertise_backend_networks": {
+      "type": "Optional[String[0]]", 
+      "description": "Advertise reach-ability of backend server networks via adc through bgp for default gateway feature."
+    }, 
+    "password": {
+      "type": "Optional[String[0]]", 
+      "description": "Password of Avi user in Avi controller. The default value is the environment variable C(AVI_PASSWORD)."
+    }, 
+    "mgmt_network_ref": {
+      "type": "Optional[String[0]]", 
+      "description": "Management network to use for avi service engines."
+    }, 
+    "uuid": {
+      "type": "Optional[String[0]]", 
+      "description": "Unique object identifier of the object."
+    }, 
+    "max_cpu_usage": {
+      "type": "Optional[String[0]]", 
+      "description": "When cpu usage on an se exceeds this threshold, virtual services hosted on this se may be rebalanced to other ses to reduce load."
+    }, 
+    "min_scaleout_per_vs": {
+      "type": "Optional[String[0]]", 
+      "description": "Minimum number of active service engines for the virtual service."
+    }, 
+    "se_vs_hb_max_pkts_in_batch": {
+      "type": "Optional[String[0]]", 
+      "description": "Maximum number of aggregated vs heartbeat packets to send in a batch."
+    }, 
+    "name": {
+      "type": "String[0]", 
+      "description": "Name of the object."
+    }, 
+    "url": {
+      "type": "Optional[String[0]]", 
+      "description": "Avi controller URL of the object."
+    }, 
+    "hypervisor": {
+      "type": "Optional[String[0]]", 
+      "description": "Override default hypervisor."
+    }, 
+    "tenant_ref": {
+      "type": "Optional[String[0]]", 
+      "description": "It is a reference to an object of type tenant."
+    }, 
+    "host_attribute_key": {
+      "type": "Optional[String[0]]", 
+      "description": "Key of a (key, value) pair identifying a set of hosts."
+    }, 
+    "num_flow_cores_sum_changes_to_ignore": {
+      "type": "Optional[String[0]]", 
+      "description": "Number of changes in num flow cores sum to ignore."
+    }, 
+    "buffer_se": {
+      "type": "Optional[String[0]]", 
+      "description": "Excess service engine capacity provisioned for ha failover."
+    }, 
+    "least_load_core_selection": {
+      "type": "Optional[String[0]]", 
+      "description": "Select core with least load for new flow."
+    }, 
+    "max_se": {
+      "type": "Optional[String[0]]", 
+      "description": "Maximum number of services engines in this group."
+    }, 
+    "algo": {
+      "type": "Optional[String[0]]", 
+      "description": "In compact placement, virtual services are placed on existing ses until max_vs_per_se limit is reached."
+    }, 
+    "mem_reserve": {
+      "type": "Optional[String[0]]", 
+      "description": "Boolean flag to set mem_reserve."
+    }, 
+    "cpu_reserve": {
+      "type": "Optional[String[0]]", 
+      "description": "Boolean flag to set cpu_reserve."
     }, 
     "mgmt_subnet": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Management subnet to use for avi service engines."
     }, 
+    "se_dos_profile": {
+      "type": "Optional[String[0]]", 
+      "description": "Dosthresholdprofile settings for serviceenginegroup."
+    }, 
+    "enable_vmac": {
+      "type": "Optional[String[0]]", 
+      "description": "Use virtual mac address for interfaces on which floating interface ips are placed."
+    }, 
+    "tenant_uuid": {
+      "type": "Optional[String[0]]", 
+      "description": "UUID of tenant used for all Avi API calls and context of object."
+    }, 
     "vs_host_redundancy": {
-      "type": "Optional[String]", 
-      "description": "Ensure primary and secondary service engines are deployed on different physical hosts. Default value when not specified in API or module is interpreted by Avi Controller as True."
+      "type": "Optional[String[0]]", 
+      "description": "Ensure primary and secondary service engines are deployed on different physical hosts."
     }
   }
 }

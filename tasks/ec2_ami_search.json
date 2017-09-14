@@ -1,33 +1,34 @@
 {
-  "description": "Retrieve AWS AMI information for a given operating system.", 
+  "input_method": "stdin", 
+  "description": "Look up the most recent AMI on AWS for a given operating system.", 
   "parameters": {
     "stream": {
-      "type": "Optional[String]", 
-      "description": "T y p e   o f   r e l e a s e ."
+      "type": "Optional[Enum[\"server\", \"desktop\"]]", 
+      "description": "T"
     }, 
     "virt": {
-      "type": "Optional[String]", 
-      "description": "v i r u t a l i z a t i o n   t y p e"
+      "type": "Optional[Enum[\"paravirtual\", \"hvm\"]]", 
+      "description": "v"
     }, 
     "region": {
-      "type": "Optional[String]", 
-      "description": "E C 2   r e g i o n"
+      "type": "Optional[Enum[\"ap-northeast-1\", \"ap-southeast-1\", \"ap-northeast-2\", \"ap-southeast-2\", \"ca-central-1\", \"eu-central-1\", \"eu-west-1\", \"eu-west-2\", \"sa-east-1\", \"us-east-1\", \"us-east-2\", \"us-west-1\", \"us-west-2\", \"us-gov-west-1\"]]", 
+      "description": "E"
     }, 
     "release": {
-      "type": "String", 
-      "description": "s h o r t   n a m e   o f   t h e   r e l e a s e   ( e . g . ,   C ( p r e c i s e ) )"
+      "type": "String[0]", 
+      "description": "s"
     }, 
     "arch": {
-      "type": "Optional[String]", 
-      "description": "C P U   a r c h i t e c t u r e"
+      "type": "Optional[Enum[\"i386\", \"amd64\"]]", 
+      "description": "C"
     }, 
     "store": {
-      "type": "Optional[String]", 
-      "description": "B a c k - e n d   s t o r e   f o r   i n s t a n c e"
+      "type": "Optional[Enum[\"ebs\", \"ebs-io1\", \"ebs-ssd\", \"instance-store\"]]", 
+      "description": "B"
     }, 
     "distro": {
-      "type": "String", 
-      "description": "L i n u x   d i s t r i b u t i o n   ( e . g . ,   C ( u b u n t u ) )"
+      "type": "Enum[\"ubuntu\"]", 
+      "description": "L"
     }
   }
 }

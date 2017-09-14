@@ -1,16 +1,17 @@
 {
-  "description": "Create, Update or Destroy a Target_Proxy.", 
+  "input_method": "stdin", 
+  "description": "Create, Update or Destroy a Target_Proxy. See U(https://cloud.google.com/compute/docs/load-balancing/http/target-proxies) for an overview. More details on the Target_Proxy API can be found at U(https://cloud.google.com/compute/docs/reference/latest/targetHttpProxies#resource-representations).", 
   "parameters": {
     "target_proxy_type": {
-      "type": "String", 
+      "type": "String[0]", 
       "description": "Type of Target_Proxy. HTTP, HTTPS or SSL. Only HTTP is currently supported."
     }, 
     "target_proxy_name": {
-      "type": "String", 
+      "type": "String[0]", 
       "description": "Name of the Target_Proxy."
     }, 
     "url_map_name": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Name of the Url Map.  Required if type is HTTP or HTTPS proxy."
     }
   }

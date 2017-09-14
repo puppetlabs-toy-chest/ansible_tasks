@@ -1,72 +1,73 @@
 {
-  "description": "create, update, or destroy Ansible Tower projects", 
+  "input_method": "stdin", 
+  "description": "Create, update, or destroy Ansible Tower projects. See U(https://www.ansible.com/tower) for an overview.", 
   "parameters": {
     "scm_credential": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Name of the credential to use with this scm resource."
     }, 
     "scm_branch": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "The branch to use for the scm resource."
     }, 
     "description": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Description to use for the project."
     }, 
     "tower_host": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "URL to your Tower instance."
     }, 
     "tower_password": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Password for your Tower instance."
     }, 
     "scm_clean": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Remove local modifications before updating."
     }, 
     "scm_type": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"manual\", \"git\", \"hg\", \"svn\"]]", 
       "description": "Type of scm resource."
     }, 
     "scm_delete_on_update": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Remove the repository completely before updating."
     }, 
     "tower_config_file": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Path to the Tower config file. See notes."
     }, 
     "state": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"present\", \"absent\"]]", 
       "description": "Desired state of the resource."
     }, 
     "local_path": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "The server playbook directory for manual projects."
     }, 
     "scm_url": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "URL of scm resource."
     }, 
     "scm_update_on_launch": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Before an update to the local repository before launching a job with this project."
     }, 
     "tower_username": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Username for your Tower instance."
     }, 
     "organization": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Primary key of organization for project."
     }, 
     "tower_verify_ssl": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Dis/allow insecure connections to Tower. If C(no), SSL certificates will not be validated. This should only be used on personally controlled sites using self-signed certificates."
     }, 
     "name": {
-      "type": "String", 
+      "type": "String[0]", 
       "description": "Name to use for the project."
     }
   }

@@ -1,149 +1,150 @@
 {
-  "description": "Module for setup of Cloud Avi RESTful Object", 
+  "input_method": "stdin", 
+  "description": "This module is used to configure Cloud object", 
   "parameters": {
     "vca_configuration": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Vcloudairconfiguration settings for cloud."
     }, 
     "proxy_configuration": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Proxyconfiguration settings for cloud."
     }, 
     "docker_configuration": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Dockerconfiguration settings for cloud."
     }, 
     "oshiftk8s_configuration": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Oshiftk8sconfiguration settings for cloud."
     }, 
     "dhcp_enabled": {
-      "type": "Optional[String]", 
-      "description": "Select the ip address management scheme. Default value when not specified in API or module is interpreted by Avi Controller as False."
+      "type": "Optional[String[0]]", 
+      "description": "Select the ip address management scheme."
     }, 
     "rancher_configuration": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Rancherconfiguration settings for cloud."
     }, 
     "vtype": {
-      "type": "String", 
-      "description": "Cloud type. Enum options - CLOUD_NONE, CLOUD_VCENTER, CLOUD_OPENSTACK, CLOUD_AWS, CLOUD_VCA, CLOUD_APIC, CLOUD_MESOS, CLOUD_LINUXSERVER, CLOUD_DOCKER_UCP, CLOUD_RANCHER, CLOUD_OSHIFT_K8S. Default value when not specified in API or module is interpreted by Avi Controller as CLOUD_NONE."
+      "type": "String[0]", 
+      "description": "Cloud type."
     }, 
     "uuid": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Unique object identifier of the object."
     }, 
     "obj_name_prefix": {
-      "type": "Optional[String]", 
-      "description": "Default prefix for all automatically created objects in this cloud. This prefix can be overridden by the se-group template."
+      "type": "Optional[String[0]]", 
+      "description": "Default prefix for all automatically created objects in this cloud."
     }, 
     "nsx_configuration": {
-      "type": "Optional[String]", 
-      "description": "Configuration parameters for nsx manager. Field introduced in 17.1.1."
+      "type": "Optional[String[0]]", 
+      "description": "Configuration parameters for nsx manager."
     }, 
     "state": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"absent\", \"present\"]]", 
       "description": "The state that should be applied on the entity."
     }, 
     "apic_mode": {
-      "type": "Optional[String]", 
-      "description": "Boolean flag to set apic_mode. Default value when not specified in API or module is interpreted by Avi Controller as False."
+      "type": "Optional[String[0]]", 
+      "description": "Boolean flag to set apic_mode."
     }, 
     "dns_provider_ref": {
-      "type": "Optional[String]", 
-      "description": "Dns profile for the cloud. It is a reference to an object of type ipamdnsproviderprofile."
+      "type": "Optional[String[0]]", 
+      "description": "Dns profile for the cloud."
     }, 
     "api_version": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Avi API version of to use for Avi API and objects."
     }, 
     "username": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Username used for accessing Avi controller. The default value is the environment variable C(AVI_USERNAME)."
     }, 
     "mesos_configuration": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Mesosconfiguration settings for cloud."
     }, 
     "openstack_configuration": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Openstackconfiguration settings for cloud."
     }, 
     "enable_vip_static_routes": {
-      "type": "Optional[String]", 
-      "description": "Use static routes for vip side network resolution during virtualservice placement. Default value when not specified in API or module is interpreted by Avi Controller as False."
+      "type": "Optional[String[0]]", 
+      "description": "Use static routes for vip side network resolution during virtualservice placement."
     }, 
     "controller": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "IP address or hostname of the controller. The default value is the environment variable C(AVI_CONTROLLER)."
     }, 
     "aws_configuration": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Awsconfiguration settings for cloud."
     }, 
     "cloudstack_configuration": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Cloudstackconfiguration settings for cloud."
     }, 
     "password": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Password of Avi user in Avi controller. The default value is the environment variable C(AVI_PASSWORD)."
     }, 
     "tenant": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Name of tenant used for all Avi API calls and context of object."
     }, 
     "ipam_provider_ref": {
-      "type": "Optional[String]", 
-      "description": "Ipam profile for the cloud. It is a reference to an object of type ipamdnsproviderprofile."
+      "type": "Optional[String[0]]", 
+      "description": "Ipam profile for the cloud."
     }, 
     "name": {
-      "type": "String", 
+      "type": "String[0]", 
       "description": "Name of the object."
     }, 
     "url": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Avi controller URL of the object."
     }, 
     "tenant_ref": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "It is a reference to an object of type tenant."
     }, 
     "mtu": {
-      "type": "Optional[String]", 
-      "description": "Mtu setting for the cloud. Default value when not specified in API or module is interpreted by Avi Controller as 1500."
+      "type": "Optional[String[0]]", 
+      "description": "Mtu setting for the cloud."
     }, 
     "east_west_ipam_provider_ref": {
-      "type": "Optional[String]", 
-      "description": "Ipam profile for east-west services. Warning - please use virtual subnets in this ipam profile that do not conflict with the underlay networks or any overlay networks in the cluster. For example in aws and gcp, 169.254.0.0/16 is used for storing instance metadata. Hence, it should not be used in this profile. It is a reference to an object of type ipamdnsproviderprofile."
+      "type": "Optional[String[0]]", 
+      "description": "Ipam profile for east-west services."
     }, 
     "linuxserver_configuration": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Linuxserverconfiguration settings for cloud."
     }, 
     "apic_configuration": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Apicconfiguration settings for cloud."
     }, 
     "prefer_static_routes": {
-      "type": "Optional[String]", 
-      "description": "Prefer static routes over interface routes during virtualservice placement. Default value when not specified in API or module is interpreted by Avi Controller as False."
+      "type": "Optional[String[0]]", 
+      "description": "Prefer static routes over interface routes during virtualservice placement."
     }, 
     "license_type": {
-      "type": "Optional[String]", 
-      "description": "If no license type is specified then default license enforcement for the cloud type is chosen. The default mappings are container cloud is max ses, openstack and vmware is cores and linux it is sockets. Enum options - LIC_BACKEND_SERVERS, LIC_SOCKETS, LIC_CORES, LIC_HOSTS."
+      "type": "Optional[String[0]]", 
+      "description": "If no license type is specified then default license enforcement for the cloud type is chosen."
     }, 
     "vcenter_configuration": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Vcenterconfiguration settings for cloud."
     }, 
     "tenant_uuid": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "UUID of tenant used for all Avi API calls and context of object."
     }, 
     "east_west_dns_provider_ref": {
-      "type": "Optional[String]", 
-      "description": "Dns profile for east-west services. It is a reference to an object of type ipamdnsproviderprofile."
+      "type": "Optional[String[0]]", 
+      "description": "Dns profile for east-west services."
     }
   }
 }

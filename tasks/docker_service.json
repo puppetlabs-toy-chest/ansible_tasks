@@ -1,116 +1,117 @@
 {
-  "description": "Manage docker services and containers.", 
+  "input_method": "stdin", 
+  "description": "Consumes docker compose to start, shutdown and scale services.", 
   "parameters": {
     "project_src": {
-      "type": "Optional[String]", 
-      "description": "Path to a directory containing a docker-compose.yml or docker-compose.yaml file. Mutually exclusive with C(definition). Required when no C(definition) is provided."
+      "type": "Optional[String[0]]", 
+      "description": "Path to a directory containing a docker-compose.yml or docker-compose.yaml file."
     }, 
     "hostname_check": {
-      "type": "Optional[Boolean]", 
+      "type": "Optional[String[0]]", 
       "description": "Whether or not to check the Docker daemon's hostname against the name provided in the client certificate."
     }, 
     "recreate": {
-      "type": "Optional[String]", 
-      "description": "By default containers will be recreated when their configuration differs from the service definition. Setting to I(never) ignores configuration differences and leaves existing containers unchanged. Setting to I(always) forces recreation of all existing containers."
+      "type": "Optional[Enum[\"always\", \"never\", \"smart\"]]", 
+      "description": "By default containers will be recreated when their configuration differs from the service definition."
     }, 
     "docker_host": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "The URL or Unix socket path used to connect to the Docker API. To connect to a remote host, provide the TCP connection string. For example, 'tcp://192.0.2.23:2376'. If TLS is used to encrypt the connection, the module will automatically replace 'tcp' in the connection URL with 'https'."
     }, 
     "cacert_path": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Use a CA certificate when performing server verification by providing the path to a CA certificate file."
     }, 
     "remove_images": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Use with state I(absent) to remove the all images or only local images."
     }, 
     "scale": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "When C(state) is I(present) scale services. Provide a dictionary of key/value pairs where the key is the name of the service and the value is an integer count for the number of containers."
     }, 
     "nocache": {
-      "type": "Optional[Boolean]", 
+      "type": "Optional[String[0]]", 
       "description": "Use with the build option to ignore the cache during the image build process."
     }, 
     "remove_volumes": {
-      "type": "Optional[Boolean]", 
+      "type": "Optional[String[0]]", 
       "description": "Use with state I(absent) to remove data volumes."
     }, 
     "state": {
-      "type": "Optional[String]", 
-      "description": "Desired state of the project. Specifying I(present) is the same as running I(docker-compose up). Specifying I(absent) is the same as running I(docker-compose down)."
+      "type": "Optional[Enum[\"absent\", \"present\"]]", 
+      "description": "Desired state of the project."
     }, 
     "key_path": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Path to the client's TLS key file."
     }, 
     "api_version": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "The version of the Docker API running on the Docker Host. Defaults to the latest version of the API supported by docker-py."
     }, 
     "build": {
-      "type": "Optional[Boolean]", 
-      "description": "Use with state I(present) to always build images prior to starting the application. Same as running docker-compose build with the pull option. Images will only be rebuilt if Docker detects a change in the Dockerfile or build directory contents. Use the C(nocache) option to ignore the image cache when performing the build. If an existing image is replaced, services using the image will be recreated unless C(recreate) is I(never)."
+      "type": "Optional[String[0]]", 
+      "description": "Use with state I(present) to always build images prior to starting the application."
     }, 
     "files": {
-      "type": "Optional[String]", 
-      "description": "List of file names relative to C(project_src). Overrides docker-compose.yml or docker-compose.yaml. Files are loaded and merged in the order given."
+      "type": "Optional[String[0]]", 
+      "description": "List of file names relative to C(project_src). Overrides docker-compose.yml or docker-compose.yaml."
     }, 
     "project_name": {
-      "type": "Optional[String]", 
-      "description": "Provide a project name. If not provided, the project name is taken from the basename of C(project_src). Required when no C(definition) is provided."
+      "type": "Optional[String[0]]", 
+      "description": "Provide a project name. If not provided, the project name is taken from the basename of C(project_src)."
     }, 
     "definition": {
-      "type": "Optional[String]", 
-      "description": "Provide docker-compose yaml describing one or more services, networks and volumes. Mutually exclusive with C(project_src) and C(files)."
+      "type": "Optional[String[0]]", 
+      "description": "Provide docker-compose yaml describing one or more services, networks and volumes."
     }, 
     "tls_hostname": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "When verifying the authenticity of the Docker Host server, provide the expected name of the server."
     }, 
     "dependencies": {
-      "type": "Optional[Boolean]", 
+      "type": "Optional[String[0]]", 
       "description": "When C(state) is I(present) specify whether or not to include linked services."
     }, 
     "services": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "When C(state) is I(present) run I(docker-compose up) on a subset of services."
     }, 
     "cert_path": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Path to the client's TLS certificate file."
     }, 
     "tls": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Secure the connection to the API by using TLS without verifying the authenticity of the Docker host server."
     }, 
     "pull": {
-      "type": "Optional[Boolean]", 
-      "description": "Use with state I(present) to always pull images prior to starting the application. Same as running docker-compose pull. When a new image is pulled, services using the image will be recreated unless C(recreate) is I(never)."
+      "type": "Optional[String[0]]", 
+      "description": "Use with state I(present) to always pull images prior to starting the application."
     }, 
     "restarted": {
-      "type": "Optional[Boolean]", 
+      "type": "Optional[String[0]]", 
       "description": "Use with state I(present) to restart all containers."
     }, 
     "ssl_version": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Provide a valid SSL version number. Default value determined by docker-py, currently 1.0."
     }, 
     "tls_verify": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Secure the connection to the API by using TLS and verifying the authenticity of the Docker host server."
     }, 
     "stopped": {
-      "type": "Optional[Boolean]", 
+      "type": "Optional[String[0]]", 
       "description": "Use with state I(present) to leave the containers in an exited or non-running state."
     }, 
     "timeout": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "The maximum amount of time in seconds to wait on a response from the API."
     }, 
     "debug": {
-      "type": "Optional[Boolean]", 
+      "type": "Optional[String[0]]", 
       "description": "Include I(actions) in the return values."
     }
   }

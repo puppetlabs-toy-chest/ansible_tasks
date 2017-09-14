@@ -1,32 +1,33 @@
 {
-  "description": "Retrieve file or file system status", 
+  "input_method": "stdin", 
+  "description": "Retrieves facts for a file similar to the linux/unix 'stat' command.", 
   "parameters": {
     "checksum_algorithm": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"sha1\", \"sha224\", \"sha256\", \"sha384\", \"sha512\"]]", 
       "description": "Algorithm to determine checksum of file. Will throw an error if the host is unable to use specified algorithm."
     }, 
     "get_checksum": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"no\", \"yes\"]]", 
       "description": "Whether to return a checksum of the file (default sha1)."
     }, 
     "path": {
-      "type": "String", 
+      "type": "String[0]", 
       "description": "The full path of the file/object to get the facts of."
     }, 
     "follow": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"no\", \"yes\"]]", 
       "description": "Whether to follow symlinks."
     }, 
     "get_md5": {
-      "type": "Optional[String]", 
-      "description": "Whether to return the md5 sum of the file. Will return None if not a regular file or if we're unable to use md5 (Common for FIPS-140 compliant systems)."
+      "type": "Optional[Enum[\"no\", \"yes\"]]", 
+      "description": "Whether to return the md5 sum of the file."
     }, 
     "get_mime": {
-      "type": "Optional[String]", 
-      "description": "Use file magic and return data about the nature of the file. this uses the 'file' utility found on most Linux/Unix systems. This will add both `mime_type` and 'charset' fields to the return, if possible. In 2.3 this option changed from 'mime' to 'get_mime' and the default changed to 'Yes'."
+      "type": "Optional[Enum[\"no\", \"yes\"]]", 
+      "description": "Use file magic and return data about the nature of the file. this uses the 'file' utility found on most Linux/Unix systems."
     }, 
     "get_attributes": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"no\", \"yes\"]]", 
       "description": "Get file attributes using lsattr tool if present."
     }
   }

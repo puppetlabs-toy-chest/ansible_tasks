@@ -1,28 +1,29 @@
 {
-  "description": "Installs packages on remote devices running Junos", 
+  "input_method": "stdin", 
+  "description": "This module can install new and updated packages on remote devices running Junos.  The module will compare the specified package with the one running on the remote device and install the specified version if there is a mismatch", 
   "parameters": {
     "src": {
-      "type": "String", 
+      "type": "String[0]", 
       "description": "The I(src) argument specifies the path to the source package to be installed on the remote device in the advent of a version mismatch. The I(src) argument can be either a localized path or a full path to the package file to install."
     }, 
     "force": {
-      "type": "String", 
+      "type": "Enum[\"true\", \"false\"]", 
       "description": "The I(force) argument instructs the module to bypass the package version check and install the packaged identified in I(src) on the remote device."
     }, 
     "no_copy": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"true\", \"false\"]]", 
       "description": "The I(no_copy) argument is responsible for instructing the remote device on where to install the package from.  When enabled, the package is transferred to the remote device prior to installing."
     }, 
     "reboot": {
-      "type": "String", 
+      "type": "Optional[Enum[\"true\", \"false\"]]", 
       "description": "In order for a package to take effect, the remote device must be restarted.  When enabled, this argument will instruct the module to reboot the device once the updated package has been installed. If disabled or the remote package does not need to be changed, the device will not be started."
     }, 
     "version": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "The I(version) argument can be used to explicitly specify the version of the package that should be installed on the remote device.  If the I(version) argument is not specified, then the version is extracts from the I(src) filename."
     }, 
     "provider": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "A dict object containing connection details."
     }
   }

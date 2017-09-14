@@ -1,88 +1,89 @@
 {
-  "description": "Create or delete routers from OpenStack", 
+  "input_method": "stdin", 
+  "description": "Create or Delete routers from OpenStack. Although Neutron allows routers to share the same name, this module enforces name uniqueness to be more user friendly.", 
   "parameters": {
     "auth_type": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Name of the auth plugin to use. If the cloud uses something other than password authentication, the name of the plugin should be indicated here and the contents of the I(auth) parameter should be updated accordingly."
     }, 
     "key": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "A path to a client key to use as part of the SSL transaction."
     }, 
     "enable_snat": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Enable Source NAT (SNAT) attribute."
     }, 
     "region_name": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Name of the region."
     }, 
     "admin_state_up": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Desired admin state of the created or existing router."
     }, 
     "interfaces": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "List of subnets to attach to the router internal interface."
     }, 
     "api_timeout": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "How long should the socket layer wait before timing out for API calls. If this is omitted, nothing will be passed to the requests library."
     }, 
     "cert": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "A path to a client certificate to use as part of the SSL transaction."
     }, 
     "auth": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Dictionary containing auth information as needed by the cloud's auth plugin strategy. For the default I(password) plugin, this would contain I(auth_url), I(username), I(password), I(project_name) and any information about domains if the cloud supports them. For other plugins, this param will need to contain whatever parameters that auth plugin requires. This parameter is not needed if a named cloud is provided or OpenStack OS_* environment variables are present."
     }, 
     "project": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Unique name or ID of the project."
     }, 
     "network": {
-      "type": "Optional[String]", 
-      "description": "Unique name or ID of the external gateway network. required I(interfaces) or I(enable_snat) are provided."
+      "type": "Optional[String[0]]", 
+      "description": "Unique name or ID of the external gateway network."
     }, 
     "state": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"present\", \"absent\"]]", 
       "description": "Indicate desired state of the resource"
     }, 
     "endpoint_type": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"public\", \"internal\", \"admin\"]]", 
       "description": "Endpoint URL type to fetch from the service catalog."
     }, 
     "timeout": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "How long should ansible wait for the requested resource."
     }, 
     "cacert": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "A path to a CA Cert bundle that can be used as part of verifying SSL API requests."
     }, 
     "wait": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"yes\", \"no\"]]", 
       "description": "Should ansible wait until the requested resource is complete."
     }, 
     "availability_zone": {
-      "type": "Optional[String]", 
-      "description": "Ignored. Present for backwards compatibility"
+      "type": "Optional[String[0]]", 
+      "description": "Ignored. Present for backwards compatability"
     }, 
     "external_fixed_ips": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "The IP address parameters for the external gateway network. Each is a dictionary with the subnet name or ID (subnet) and the IP address to assign on the subnet (ip). If no IP is specified, one is automatically assigned from that subnet."
     }, 
     "validate_certs": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Whether or not SSL API requests should be verified. Before 2.3 this defaulted to True."
     }, 
     "cloud": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Named cloud to operate against. Provides default values for I(auth) and I(auth_type). This parameter is not needed if I(auth) is provided or if OpenStack OS_* environment variables are present."
     }, 
     "name": {
-      "type": "String", 
+      "type": "String[0]", 
       "description": "Name to be give to the router"
     }
   }

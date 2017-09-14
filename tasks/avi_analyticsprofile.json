@@ -1,305 +1,306 @@
 {
-  "description": "Module for setup of AnalyticsProfile Avi RESTful Object", 
+  "input_method": "stdin", 
+  "description": "This module is used to configure AnalyticsProfile object", 
   "parameters": {
     "hs_event_throttle_window": {
-      "type": "Optional[String]", 
-      "description": "Time window (in secs) within which only unique health change events should occur. Default value when not specified in API or module is interpreted by Avi Controller as 1209600."
+      "type": "Optional[String[0]]", 
+      "description": "Time window (in secs) within which only unique health change events should occur."
     }, 
     "apdex_rtt_tolerated_factor": {
-      "type": "Optional[String]", 
-      "description": "Tolerated client to avi round trip time(rtt) factor. It is a multiple of apdex_rtt_tolerated_factor. Allowed values are 1-1000. Default value when not specified in API or module is interpreted by Avi Controller as 4.0."
+      "type": "Optional[String[0]]", 
+      "description": "Tolerated client to avi round trip time(rtt) factor."
     }, 
     "disable_se_analytics": {
-      "type": "Optional[String]", 
-      "description": "Disable node (service engine) level analytics forvs metrics. Default value when not specified in API or module is interpreted by Avi Controller as False."
+      "type": "Optional[String[0]]", 
+      "description": "Disable node (service engine) level analytics forvs metrics."
     }, 
     "conn_server_lossy_timeo_rexmt_threshold": {
-      "type": "Optional[String]", 
-      "description": "A connection between avi and server is considered lossy when more than this percentage of packets are retransmitted due to timeout. Allowed values are 1-100. Default value when not specified in API or module is interpreted by Avi Controller as 20."
+      "type": "Optional[String[0]]", 
+      "description": "A connection between avi and server is considered lossy when more than this percentage of packets are retransmitted due to timeout."
     }, 
     "apdex_server_rtt_tolerated_factor": {
-      "type": "Optional[String]", 
-      "description": "Tolerated client to avi round trip time(rtt) factor. It is a multiple of apdex_rtt_tolerated_factor. Allowed values are 1-1000. Default value when not specified in API or module is interpreted by Avi Controller as 4.0."
+      "type": "Optional[String[0]]", 
+      "description": "Tolerated client to avi round trip time(rtt) factor."
     }, 
     "hs_security_nonpfs_penalty": {
-      "type": "Optional[String]", 
-      "description": "Penalty for allowing non-pfs handshakes. Allowed values are 0-5. Default value when not specified in API or module is interpreted by Avi Controller as 1.0."
+      "type": "Optional[String[0]]", 
+      "description": "Penalty for allowing non-pfs handshakes."
     }, 
     "hs_security_tls12_score": {
-      "type": "Optional[String]", 
-      "description": "Score assigned when supporting tls1.2 encryption protocol. Allowed values are 0-5. Default value when not specified in API or module is interpreted by Avi Controller as 5.0."
+      "type": "Optional[String[0]]", 
+      "description": "Score assigned when supporting tls1.2 encryption protocol."
     }, 
     "exclude_server_tcp_reset_as_error": {
-      "type": "Optional[String]", 
-      "description": "Exclude server tcp reset from errors. It is common for applications like ms exchange. Default value when not specified in API or module is interpreted by Avi Controller as False."
+      "type": "Optional[String[0]]", 
+      "description": "Exclude server tcp reset from errors."
     }, 
     "hs_min_dos_rate": {
-      "type": "Optional[String]", 
-      "description": "Dos connection rate below which the dos security assessment will not kick in. Default value when not specified in API or module is interpreted by Avi Controller as 1000."
+      "type": "Optional[String[0]]", 
+      "description": "Dos connection rate below which the dos security assessment will not kick in."
     }, 
     "exclude_no_dns_record_as_error": {
-      "type": "Optional[String]", 
-      "description": "Exclude queries to domains that did not have configured services/records from the list of errors. Default value when not specified in API or module is interpreted by Avi Controller as False."
+      "type": "Optional[String[0]]", 
+      "description": "Exclude queries to domains that did not have configured services/records from the list of errors."
     }, 
     "conn_server_lossy_zero_win_size_event_threshold": {
-      "type": "Optional[String]", 
-      "description": "A server connection is considered lossy when percentage of times a packet could not be trasmitted due to tcp zero window is above this threshold. Allowed values are 0-100. Default value when not specified in API or module is interpreted by Avi Controller as 2."
+      "type": "Optional[String[0]]", 
+      "description": "A server connection is considered lossy when percentage of times a packet could not be trasmitted due to tcp zero window is above this threshold."
     }, 
     "hs_max_resources_penalty": {
-      "type": "Optional[String]", 
-      "description": "Maximum penalty that may be deducted from health score for high resource utilization. Allowed values are 0-100. Default value when not specified in API or module is interpreted by Avi Controller as 25."
+      "type": "Optional[String[0]]", 
+      "description": "Maximum penalty that may be deducted from health score for high resource utilization."
     }, 
     "conn_lossy_total_rexmt_threshold": {
-      "type": "Optional[String]", 
-      "description": "A connection between client and avi is considered lossy when more than this percentage of packets are retransmitted. Allowed values are 1-100. Default value when not specified in API or module is interpreted by Avi Controller as 50."
+      "type": "Optional[String[0]]", 
+      "description": "A connection between client and avi is considered lossy when more than this percentage of packets are retransmitted."
     }, 
     "client_log_streaming_config": {
-      "type": "Optional[String]", 
-      "description": "Configure to stream logs to an external server. Field introduced in 17.1.1."
+      "type": "Optional[String[0]]", 
+      "description": "Configure to stream logs to an external server."
     }, 
     "hs_pscore_traffic_threshold_l4_client": {
-      "type": "Optional[String]", 
-      "description": "Threshold number of connections in 5min, below which apdexr, apdexc, rum_apdex, and other network quality metrics are not computed. Default value when not specified in API or module is interpreted by Avi Controller as 10.0."
+      "type": "Optional[String[0]]", 
+      "description": "Threshold number of connections in 5min, below which apdexr, apdexc, rum_apdex, and other network quality metrics are not computed."
     }, 
     "hs_security_weak_signature_algo_penalty": {
-      "type": "Optional[String]", 
-      "description": "Penalty for allowing weak signature algorithm(s). Allowed values are 0-5. Default value when not specified in API or module is interpreted by Avi Controller as 1.0."
+      "type": "Optional[String[0]]", 
+      "description": "Penalty for allowing weak signature algorithm(s)."
     }, 
     "exclude_no_valid_gs_member_as_error": {
-      "type": "Optional[String]", 
-      "description": "Exclude queries to gslb services that have no available members from the list of errors. Default value when not specified in API or module is interpreted by Avi Controller as False."
+      "type": "Optional[String[0]]", 
+      "description": "Exclude queries to gslb services that have no available members from the list of errors."
     }, 
     "apdex_server_response_threshold": {
-      "type": "Optional[String]", 
-      "description": "A server http response is considered satisfied if latency is less than the satisfactory latency threshold. The response is considered tolerated when it is greater than satisfied but less than the tolerated latency factor * s_latency. Greater than this number and the server response is considered frustrated. Allowed values are 1-30000. Default value when not specified in API or module is interpreted by Avi Controller as 400."
+      "type": "Optional[String[0]]", 
+      "description": "A server http response is considered satisfied if latency is less than the satisfactory latency threshold."
     }, 
     "hs_security_cipherscore_ge128b": {
-      "type": "Optional[String]", 
-      "description": "Score assigned when the minimum cipher strength is greater than equal to 128 bits. Allowed values are 0-5. Default value when not specified in API or module is interpreted by Avi Controller as 5.0."
+      "type": "Optional[String[0]]", 
+      "description": "Score assigned when the minimum cipher strength is greater than equal to 128 bits."
     }, 
     "resp_code_block": {
-      "type": "Optional[String]", 
-      "description": "Block of http response codes to be excluded from being classified as an error. Enum options - AP_HTTP_RSP_4XX, AP_HTTP_RSP_5XX."
+      "type": "Optional[String[0]]", 
+      "description": "Block of http response codes to be excluded from being classified as an error."
     }, 
     "hs_performance_boost": {
-      "type": "Optional[String]", 
-      "description": "Adds free performance score credits to health score. It can be used for compensating health score for known slow applications. Allowed values are 0-100. Default value when not specified in API or module is interpreted by Avi Controller as 0."
+      "type": "Optional[String[0]]", 
+      "description": "Adds free performance score credits to health score."
     }, 
     "uuid": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Uuid of the analytics profile."
     }, 
     "exclude_invalid_dns_domain_as_error": {
-      "type": "Optional[String]", 
-      "description": "Exclude dns queries to domains outside the domains configured in the dns application profile from the list of errors. Default value when not specified in API or module is interpreted by Avi Controller as False."
+      "type": "Optional[String[0]]", 
+      "description": "Exclude dns queries to domains outside the domains configured in the dns application profile from the list of errors."
     }, 
     "exclude_http_error_codes": {
-      "type": "Optional[String]", 
-      "description": "List of http status codes to be excluded from being classified as an error. Error connections or responses impacts health score, are included as significant logs, and may be classified as part of a dos attack."
+      "type": "Optional[String[0]]", 
+      "description": "List of http status codes to be excluded from being classified as an error."
     }, 
     "hs_max_anomaly_penalty": {
-      "type": "Optional[String]", 
-      "description": "Maximum penalty that may be deducted from health score for anomalies. Allowed values are 0-100. Default value when not specified in API or module is interpreted by Avi Controller as 10."
+      "type": "Optional[String[0]]", 
+      "description": "Maximum penalty that may be deducted from health score for anomalies."
     }, 
     "hs_security_tls11_score": {
-      "type": "Optional[String]", 
-      "description": "Score assigned when supporting tls1.1 encryption protocol. Allowed values are 0-5. Default value when not specified in API or module is interpreted by Avi Controller as 5.0."
+      "type": "Optional[String[0]]", 
+      "description": "Score assigned when supporting tls1.1 encryption protocol."
     }, 
     "apdex_rum_tolerated_factor": {
-      "type": "Optional[String]", 
-      "description": "Virtual service threshold factor for tolerated page load time (plt) as multiple of apdex_rum_threshold. Allowed values are 1-1000. Default value when not specified in API or module is interpreted by Avi Controller as 4.0."
+      "type": "Optional[String[0]]", 
+      "description": "Virtual service threshold factor for tolerated page load time (plt) as multiple of apdex_rum_threshold."
     }, 
     "exclude_gs_down_as_error": {
-      "type": "Optional[String]", 
-      "description": "Exclude queries to gslb services that are operationally down from the list of errors. Default value when not specified in API or module is interpreted by Avi Controller as False."
+      "type": "Optional[String[0]]", 
+      "description": "Exclude queries to gslb services that are operationally down from the list of errors."
     }, 
     "apdex_server_response_tolerated_factor": {
-      "type": "Optional[String]", 
-      "description": "Server tolerated response latency factor. Servermust response within this factor times the satisfactory threshold (apdex_server_response_threshold) to be considered tolerated. Allowed values are 1-1000. Default value when not specified in API or module is interpreted by Avi Controller as 4.0."
+      "type": "Optional[String[0]]", 
+      "description": "Server tolerated response latency factor."
     }, 
     "state": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"absent\", \"present\"]]", 
       "description": "The state that should be applied on the entity."
     }, 
     "disable_server_analytics": {
-      "type": "Optional[String]", 
-      "description": "Disable analytics on backend servers. This may be desired in container environment when there are large number of  ephemeral servers. Default value when not specified in API or module is interpreted by Avi Controller as False."
+      "type": "Optional[String[0]]", 
+      "description": "Disable analytics on backend servers."
     }, 
     "conn_server_lossy_ooo_threshold": {
-      "type": "Optional[String]", 
-      "description": "A connection between avi and server is considered lossy when more than this percentage of out of order packets are received. Allowed values are 1-100. Default value when not specified in API or module is interpreted by Avi Controller as 50."
+      "type": "Optional[String[0]]", 
+      "description": "A connection between avi and server is considered lossy when more than this percentage of out of order packets are received."
     }, 
     "exclude_client_close_before_request_as_error": {
-      "type": "Optional[String]", 
-      "description": "Exclude client closed connection before an http request could be completed from being classified as an error. Default value when not specified in API or module is interpreted by Avi Controller as False."
+      "type": "Optional[String[0]]", 
+      "description": "Exclude client closed connection before an http request could be completed from being classified as an error."
     }, 
     "exclude_persistence_change_as_error": {
-      "type": "Optional[String]", 
-      "description": "Exclude persistence server changed while load balancing' from the list of errors. Default value when not specified in API or module is interpreted by Avi Controller as False."
+      "type": "Optional[String[0]]", 
+      "description": "Exclude persistence server changed while load balancing' from the list of errors."
     }, 
     "hs_security_hsts_penalty": {
-      "type": "Optional[String]", 
-      "description": "Penalty for not enabling hsts. Allowed values are 0-5. Default value when not specified in API or module is interpreted by Avi Controller as 1.0."
+      "type": "Optional[String[0]]", 
+      "description": "Penalty for not enabling hsts."
     }, 
     "hs_security_selfsignedcert_penalty": {
-      "type": "Optional[String]", 
-      "description": "Deprecated. Allowed values are 0-5. Default value when not specified in API or module is interpreted by Avi Controller as 1.0."
+      "type": "Optional[String[0]]", 
+      "description": "Deprecated."
     }, 
     "conn_server_lossy_total_rexmt_threshold": {
-      "type": "Optional[String]", 
-      "description": "A connection between avi and server is considered lossy when more than this percentage of packets are retransmitted. Allowed values are 1-100. Default value when not specified in API or module is interpreted by Avi Controller as 50."
+      "type": "Optional[String[0]]", 
+      "description": "A connection between avi and server is considered lossy when more than this percentage of packets are retransmitted."
     }, 
     "conn_lossy_timeo_rexmt_threshold": {
-      "type": "Optional[String]", 
-      "description": "A connection between client and avi is considered lossy when more than this percentage of packets are retransmitted due to timeout. Allowed values are 1-100. Default value when not specified in API or module is interpreted by Avi Controller as 20."
+      "type": "Optional[String[0]]", 
+      "description": "A connection between client and avi is considered lossy when more than this percentage of packets are retransmitted due to timeout."
     }, 
     "api_version": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Avi API version of to use for Avi API and objects."
     }, 
     "username": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Username used for accessing Avi controller. The default value is the environment variable C(AVI_USERNAME)."
     }, 
     "hs_security_certscore_gt30d": {
-      "type": "Optional[String]", 
-      "description": "Score assigned when the certificate expires in more than 30 days. Allowed values are 0-5. Default value when not specified in API or module is interpreted by Avi Controller as 5.0."
+      "type": "Optional[String[0]]", 
+      "description": "Score assigned when the certificate expires in more than 30 days."
     }, 
     "description": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "User defined description for the object."
     }, 
     "hs_security_ssl30_score": {
-      "type": "Optional[String]", 
-      "description": "Score assigned when supporting ssl3.0 encryption protocol. Allowed values are 0-5. Default value when not specified in API or module is interpreted by Avi Controller as 3.5."
+      "type": "Optional[String[0]]", 
+      "description": "Score assigned when supporting ssl3.0 encryption protocol."
     }, 
     "client_log_config": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Configure which logs are sent to the avi controller from ses and how they are processed."
     }, 
     "hs_security_cipherscore_eq000b": {
-      "type": "Optional[String]", 
-      "description": "Score assigned when the minimum cipher strength is 0 bits. Allowed values are 0-5. Default value when not specified in API or module is interpreted by Avi Controller as 0.0."
+      "type": "Optional[String[0]]", 
+      "description": "Score assigned when the minimum cipher strength is 0 bits."
     }, 
     "hs_security_certscore_le30d": {
-      "type": "Optional[String]", 
-      "description": "Score assigned when the certificate expires in less than or equal to 30 days. Allowed values are 0-5. Default value when not specified in API or module is interpreted by Avi Controller as 4.0."
+      "type": "Optional[String[0]]", 
+      "description": "Score assigned when the certificate expires in less than or equal to 30 days."
     }, 
     "exclude_syn_retransmit_as_error": {
-      "type": "Optional[String]", 
-      "description": "Exclude 'server unanswered syns' from the list of errors. Default value when not specified in API or module is interpreted by Avi Controller as False."
+      "type": "Optional[String[0]]", 
+      "description": "Exclude 'server unanswered syns' from the list of errors."
     }, 
     "ranges": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "List of http status code ranges to be excluded from being classified as an error."
     }, 
     "controller": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "IP address or hostname of the controller. The default value is the environment variable C(AVI_CONTROLLER)."
     }, 
     "apdex_server_rtt_threshold": {
-      "type": "Optional[String]", 
-      "description": "Satisfactory client to avi round trip time(rtt). Allowed values are 1-2000. Default value when not specified in API or module is interpreted by Avi Controller as 125."
+      "type": "Optional[String[0]]", 
+      "description": "Satisfactory client to avi round trip time(rtt)."
     }, 
     "exclude_server_dns_error_as_error": {
-      "type": "Optional[String]", 
-      "description": "Exclude server dns error response from the list of errors. Default value when not specified in API or module is interpreted by Avi Controller as False."
+      "type": "Optional[String[0]]", 
+      "description": "Exclude server dns error response from the list of errors."
     }, 
     "hs_security_encalgo_score_rc4": {
-      "type": "Optional[String]", 
-      "description": "Score assigned when rc4 algorithm is used for encryption. Allowed values are 0-5. Default value when not specified in API or module is interpreted by Avi Controller as 2.5."
+      "type": "Optional[String[0]]", 
+      "description": "Score assigned when rc4 algorithm is used for encryption."
     }, 
     "password": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Password of Avi user in Avi controller. The default value is the environment variable C(AVI_PASSWORD)."
     }, 
     "hs_security_encalgo_score_none": {
-      "type": "Optional[String]", 
-      "description": "Score assigned when no algorithm is used for encryption. Allowed values are 0-5. Default value when not specified in API or module is interpreted by Avi Controller as 0.0."
+      "type": "Optional[String[0]]", 
+      "description": "Score assigned when no algorithm is used for encryption."
     }, 
     "tenant": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Name of tenant used for all Avi API calls and context of object."
     }, 
     "conn_lossy_zero_win_size_event_threshold": {
-      "type": "Optional[String]", 
-      "description": "A client connection is considered lossy when percentage of times a packet could not be trasmitted due to tcp zero window is above this threshold. Allowed values are 0-100. Default value when not specified in API or module is interpreted by Avi Controller as 2."
+      "type": "Optional[String[0]]", 
+      "description": "A client connection is considered lossy when percentage of times a packet could not be trasmitted due to tcp zero window is above this threshold."
     }, 
     "apdex_rum_threshold": {
-      "type": "Optional[String]", 
-      "description": "If a client is able to load a page in less than the satisfactory latency threshold, the pageload is considered satisfied. It is considered tolerated if it is greater than satisfied but less than the tolerated latency multiplied by satisifed latency. Greater than this number and the client's request is considered frustrated. A pageload includes the time for dns lookup, download of all http objects, and page render time. Allowed values are 1-30000. Default value when not specified in API or module is interpreted by Avi Controller as 5000."
+      "type": "Optional[String[0]]", 
+      "description": "If a client is able to load a page in less than the satisfactory latency threshold, the pageload is considered satisfied."
     }, 
     "hs_pscore_traffic_threshold_l4_server": {
-      "type": "Optional[String]", 
-      "description": "Threshold number of connections in 5min, below which apdexr, apdexc, rum_apdex, and other network quality metrics are not computed. Default value when not specified in API or module is interpreted by Avi Controller as 10.0."
+      "type": "Optional[String[0]]", 
+      "description": "Threshold number of connections in 5min, below which apdexr, apdexc, rum_apdex, and other network quality metrics are not computed."
     }, 
     "name": {
-      "type": "String", 
+      "type": "String[0]", 
       "description": "The name of the analytics profile."
     }, 
     "hs_max_security_penalty": {
-      "type": "Optional[String]", 
-      "description": "Maximum penalty that may be deducted from health score based on security assessment. Allowed values are 0-100. Default value when not specified in API or module is interpreted by Avi Controller as 100."
+      "type": "Optional[String[0]]", 
+      "description": "Maximum penalty that may be deducted from health score based on security assessment."
     }, 
     "apdex_rtt_threshold": {
-      "type": "Optional[String]", 
-      "description": "Satisfactory client to avi round trip time(rtt). Allowed values are 1-2000. Default value when not specified in API or module is interpreted by Avi Controller as 250."
+      "type": "Optional[String[0]]", 
+      "description": "Satisfactory client to avi round trip time(rtt)."
     }, 
     "tenant_ref": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "It is a reference to an object of type tenant."
     }, 
     "apdex_response_tolerated_factor": {
-      "type": "Optional[String]", 
-      "description": "Client tolerated response latency factor. Client must receive a response within this factor times the satisfactory threshold (apdex_response_threshold) to be considered tolerated. Allowed values are 1-1000. Default value when not specified in API or module is interpreted by Avi Controller as 4.0."
+      "type": "Optional[String[0]]", 
+      "description": "Client tolerated response latency factor."
     }, 
     "exclude_tcp_reset_as_error": {
-      "type": "Optional[String]", 
-      "description": "Exclude tcp resets by client from the list of potential errors. Default value when not specified in API or module is interpreted by Avi Controller as False."
+      "type": "Optional[String[0]]", 
+      "description": "Exclude tcp resets by client from the list of potential errors."
     }, 
     "hs_security_chain_invalidity_penalty": {
-      "type": "Optional[String]", 
-      "description": "Penalty for allowing certificates with invalid chain. Allowed values are 0-5. Default value when not specified in API or module is interpreted by Avi Controller as 1.0."
+      "type": "Optional[String[0]]", 
+      "description": "Penalty for allowing certificates with invalid chain."
     }, 
     "exclude_invalid_dns_query_as_error": {
-      "type": "Optional[String]", 
-      "description": "Exclude invalid dns queries from the list of errors. Default value when not specified in API or module is interpreted by Avi Controller as False."
+      "type": "Optional[String[0]]", 
+      "description": "Exclude invalid dns queries from the list of errors."
     }, 
     "conn_lossy_ooo_threshold": {
-      "type": "Optional[String]", 
-      "description": "A connection between client and avi is considered lossy when more than this percentage of out of order packets are received. Allowed values are 1-100. Default value when not specified in API or module is interpreted by Avi Controller as 50."
+      "type": "Optional[String[0]]", 
+      "description": "A connection between client and avi is considered lossy when more than this percentage of out of order packets are received."
     }, 
     "hs_security_cipherscore_lt128b": {
-      "type": "Optional[String]", 
-      "description": "Score assigned when the minimum cipher strength is less than 128 bits. Allowed values are 0-5. Default value when not specified in API or module is interpreted by Avi Controller as 3.5."
+      "type": "Optional[String[0]]", 
+      "description": "Score assigned when the minimum cipher strength is less than 128 bits."
     }, 
     "exclude_unsupported_dns_query_as_error": {
-      "type": "Optional[String]", 
-      "description": "Exclude unsupported dns queries from the list of errors. Default value when not specified in API or module is interpreted by Avi Controller as False."
+      "type": "Optional[String[0]]", 
+      "description": "Exclude unsupported dns queries from the list of errors."
     }, 
     "url": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Avi controller URL of the object."
     }, 
     "hs_security_tls10_score": {
-      "type": "Optional[String]", 
-      "description": "Score assigned when supporting tls1.0 encryption protocol. Allowed values are 0-5. Default value when not specified in API or module is interpreted by Avi Controller as 5.0."
+      "type": "Optional[String[0]]", 
+      "description": "Score assigned when supporting tls1.0 encryption protocol."
     }, 
     "hs_security_certscore_expired": {
-      "type": "Optional[String]", 
-      "description": "Score assigned when the certificate has expired. Allowed values are 0-5. Default value when not specified in API or module is interpreted by Avi Controller as 0.0."
+      "type": "Optional[String[0]]", 
+      "description": "Score assigned when the certificate has expired."
     }, 
     "apdex_response_threshold": {
-      "type": "Optional[String]", 
-      "description": "If a client receives an http response in less than the satisfactory latency threshold, the request is considered satisfied. It is considered tolerated if it is not satisfied and less than tolerated latency factor multiplied by the satisfactory latency threshold. Greater than this number and the client's request is considered frustrated. Allowed values are 1-30000. Default value when not specified in API or module is interpreted by Avi Controller as 500."
+      "type": "Optional[String[0]]", 
+      "description": "If a client receives an http response in less than the satisfactory latency threshold, the request is considered satisfied."
     }, 
     "tenant_uuid": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "UUID of tenant used for all Avi API calls and context of object."
     }, 
     "hs_security_certscore_le07d": {
-      "type": "Optional[String]", 
-      "description": "Score assigned when the certificate expires in less than or equal to 7 days. Allowed values are 0-5. Default value when not specified in API or module is interpreted by Avi Controller as 2.0."
+      "type": "Optional[String[0]]", 
+      "description": "Score assigned when the certificate expires in less than or equal to 7 days."
     }
   }
 }

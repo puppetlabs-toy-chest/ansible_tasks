@@ -1,53 +1,54 @@
 {
-  "description": "Waits for a condition before continuing", 
+  "input_method": "stdin", 
+  "description": "You can wait for a set amount of time C(timeout), this is the default if nothing is specified.", 
   "parameters": {
     "active_connection_states": {
-      "type": "Optional[String]", 
-      "description": "The list of TCP connection states which are counted as active connections."
+      "type": "Optional[String[0]]", 
+      "description": "The list of tcp connection states which are counted as active connections"
     }, 
     "state": {
-      "type": "Optional[String]", 
-      "description": "Either C(present), C(started), or C(stopped), C(absent), or C(drained). When checking a port C(started) will ensure the port is open, C(stopped) will check that it is closed, C(drained) will check for active connections. When checking for a file or a search string C(present) or C(started) will ensure that the file or string is present before continuing, C(absent) will check that file is absent or removed."
+      "type": "Optional[Enum[\"present\", \"started\", \"stopped\", \"absent\", \"drained\"]]", 
+      "description": "either C(present), C(started), or C(stopped), C(absent), or C(drained)"
     }, 
     "port": {
-      "type": "Optional[String]", 
-      "description": "Port number to poll."
+      "type": "Optional[String[0]]", 
+      "description": "port number to poll"
     }, 
     "delay": {
-      "type": "Optional[String]", 
-      "description": "Number of seconds to wait before starting to poll."
+      "type": "Optional[String[0]]", 
+      "description": "number of seconds to wait before starting to poll"
     }, 
     "msg": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "This overrides the normal error message from a failure to meet the required conditions."
     }, 
     "host": {
-      "type": "Optional[String]", 
-      "description": "A resolvable hostname or IP address to wait for."
+      "type": "Optional[String[0]]", 
+      "description": "A resolvable hostname or IP address to wait for"
     }, 
     "sleep": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Number of seconds to sleep between checks, before 2.3 this was hardcoded to 1 second."
     }, 
     "timeout": {
-      "type": "Optional[String]", 
-      "description": "Maximum number of seconds to wait for."
+      "type": "Optional[String[0]]", 
+      "description": "maximum number of seconds to wait for"
     }, 
     "exclude_hosts": {
-      "type": "Optional[String]", 
-      "description": "List of hosts or IPs to ignore when looking for active TCP connections for C(drained) state."
+      "type": "Optional[String[0]]", 
+      "description": "list of hosts or IPs to ignore when looking for active TCP connections for C(drained) state"
     }, 
     "search_regex": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Can be used to match a string in either a file or a socket connection. Defaults to a multiline regex."
     }, 
     "path": {
-      "type": "Optional[String]", 
-      "description": "Path to a file on the filesystem that must exist before continuing."
+      "type": "Optional[String[0]]", 
+      "description": "path to a file on the filesytem that must exist before continuing"
     }, 
     "connect_timeout": {
-      "type": "Optional[String]", 
-      "description": "Maximum number of seconds to wait for a connection to happen before closing and retrying."
+      "type": "Optional[String[0]]", 
+      "description": "maximum number of seconds to wait for a connection to happen before closing and retrying"
     }
   }
 }

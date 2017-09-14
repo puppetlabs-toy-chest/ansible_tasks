@@ -1,48 +1,49 @@
 {
-  "description": "Manages static route configuration on HUAWEI CloudEngine switches.", 
+  "input_method": "stdin", 
+  "description": "Manages the static routes on HUAWEI CloudEngine switches.", 
   "parameters": {
     "description": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Name of the route. Used with the name parameter on the CLI."
     }, 
     "state": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"present\", \"absent\"]]", 
       "description": "Specify desired state of the resource."
     }, 
     "pref": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Preference or administrative difference of route (range 1-255)."
     }, 
     "mask": {
-      "type": "String", 
+      "type": "String[0]", 
       "description": "Destination ip mask of static route."
     }, 
     "destvrf": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "VPN instance of next hop ip address."
     }, 
     "nhp_interface": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Next hop interface full name of static route."
     }, 
     "prefix": {
-      "type": "String", 
+      "type": "String[0]", 
       "description": "Destination ip address of static route."
     }, 
     "next_hop": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Next hop address of static route."
     }, 
     "vrf": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "VPN instance of destination ip address."
     }, 
     "tag": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Route tag value (numeric)."
     }, 
     "aftype": {
-      "type": "String", 
+      "type": "Enum[\"v4\", \"v6\"]", 
       "description": "Destination ip address family type of static route."
     }
   }

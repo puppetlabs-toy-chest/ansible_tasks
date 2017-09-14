@@ -1,52 +1,53 @@
 {
-  "description": "create / delete a Rackspace Cloud Database", 
+  "input_method": "stdin", 
+  "description": "create / delete a database in the Cloud Databases.", 
   "parameters": {
     "username": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Rackspace username, overrides I(credentials)."
     }, 
     "env": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Environment as configured in I(~/.pyrax.cfg), see U(https://github.com/rackspace/pyrax/blob/master/docs/getting_started.md#pyrax-configuration)."
     }, 
     "db_password": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Database user password"
     }, 
     "region": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Region to create an instance in."
     }, 
     "verify_ssl": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Whether or not to require SSL validation of API endpoints."
     }, 
     "state": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"present\", \"absent\"]]", 
       "description": "Indicate desired state of the resource"
     }, 
     "cdb_id": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "The databases server UUID"
     }, 
     "db_username": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Name of the database user"
     }, 
     "databases": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Name of the databases that the user can access"
     }, 
     "host": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Specifies the host from which a user is allowed to connect to the database. Possible values are a string containing an IPv4 address or \"%\" to allow connecting from any host"
     }, 
     "credentials": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "File to find the Rackspace credentials in. Ignored if I(api_key) and I(username) are provided."
     }, 
     "api_key": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Rackspace API key, overrides I(credentials)."
     }
   }

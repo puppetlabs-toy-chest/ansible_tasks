@@ -1,104 +1,101 @@
 {
-  "description": "Module to manage Virtual Machine and floating disks in oVirt/RHV", 
+  "input_method": "stdin", 
+  "description": "Module to manage Virtual Machine and floating disks in oVirt/RHV.", 
   "parameters": {
     "profile": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Disk profile name to be attached to disk. By default profile is chosen by oVirt/RHV engine."
     }, 
     "storage_domains": {
-      "type": "Optional[String]", 
-      "description": "Storage domain names where disk should be copied. C(**IMPORTANT**) There is no reliable way to achieve idempotency, so every time you specify this parameter the disks are copied, so please handle your playbook accordingly to not copy the disks all the time. This is valid only for VM and floating disks, template disks works as expected."
+      "type": "Optional[String[0]]", 
+      "description": "Storage domain names where disk should be copied."
     }, 
     "force": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Please take a look at C(image_path) documentation to see the correct usage of this parameter."
     }, 
     "fetch_nested": {
-      "type": "Optional[String]", 
-      "description": "If I(True) the module will fetch additional data from the API. It will fetch IDs of the VMs disks, snapshots, etc. User can configure to fetch other attributes of the nested entities by specifying C(nested_attributes)."
+      "type": "Optional[String[0]]", 
+      "description": "If I(True) the module will fetch additional data from the API."
     }, 
     "id": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "ID of the disk to manage. Either C(id) or C(name) is required."
     }, 
     "size": {
-      "type": "Optional[String]", 
-      "description": "Size of the disk. Size should be specified using IEC standard units. For example 10GiB, 1024MiB, etc. Size can be only increased, not decreased."
+      "type": "Optional[String[0]]", 
+      "description": "Size of the disk. Size should be specified using IEC standard units. For example 10GiB, 1024MiB, etc."
     }, 
     "storage_domain": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Storage domain name where disk should be created. By default storage is chosen by oVirt/RHV engine."
     }, 
-    "openstack_volume_type": {
-      "type": "Optional[String]", 
-      "description": "Name of the openstack volume type. This is valid when working with cinder."
-    }, 
     "sparsify": {
-      "type": "Optional[String]", 
-      "description": "I(True) if the disk should be sparsified. Sparsification frees space in the disk image that is not used by its filesystem. As a result, the image will occupy less space on the storage. Note that this parameter isn't idempotent, as it's not possible to check if the disk should be or should not be sparsified."
+      "type": "Optional[String[0]]", 
+      "description": "I(True) if the disk should be sparsified."
     }, 
     "upload_image_path": {
-      "type": "Optional[String]", 
-      "description": "Path to disk image, which should be uploaded. Note that currently we support only compatibility version 0.10 of the qcow disk. Note that you must have an valid oVirt/RHV engine CA in your system trust store or you must provide it in C(ca_file) parameter. Note that there is no reliable way to achieve idempotency, so if you want to upload the disk even if the disk with C(id) or C(name) exists, then please use C(force) I(true). If you will use C(force) I(false), which is default, then the disk image won't be uploaded."
+      "type": "Optional[String[0]]", 
+      "description": "Path to disk image, which should be uploaded."
     }, 
     "state": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"present\", \"absent\", \"attached\", \"detached\"]]", 
       "description": "Should the Virtual Machine disk be present/absent/attached/detached."
     }, 
     "vm_name": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Name of the Virtual Machine to manage. Either C(vm_id) or C(vm_name) is required if C(state) is I(attached) or I(detached)."
     }, 
     "format": {
-      "type": "Optional[String]", 
-      "description": "Specify format of the disk. If (cow) format is used, disk will by created as sparse, so space will be allocated for the volume as needed, also known as I(thin provision). If (raw) format is used, disk storage will be allocated right away, also known as I(preallocated). Note that this option isn't idempotent as it's not currently possible to change format of the disk via API."
+      "type": "Optional[Enum[\"raw\", \"cow\"]]", 
+      "description": "Specify format of the disk."
     }, 
     "logical_unit": {
-      "type": "Optional[String]", 
-      "description": "Dictionary which describes LUN to be directly attached to VM: C(address) - Address of the storage server. Used by iSCSI. C(port) - Port of the storage server. Used by iSCSI. C(target) - iSCSI target. C(lun_id) - LUN id. C(username) - CHAP Username to be used to access storage server. Used by iSCSI. C(password) - CHAP Password of the user to be used to access storage server. Used by iSCSI. C(storage_type) - Storage type either I(fcp) or I(iscsi)."
+      "type": "Optional[String[0]]", 
+      "description": "Dictionary which describes LUN to be directly attached to VM:"
     }, 
     "nested_attributes": {
-      "type": "Optional[String]", 
-      "description": "Specifies list of the attributes which should be fetched from the API. This parameter apply only when C(fetch_nested) is I(true)."
+      "type": "Optional[String[0]]", 
+      "description": "Specifies list of the attributes which should be fetched from the API."
     }, 
     "download_image_path": {
-      "type": "Optional[String]", 
-      "description": "Path on a file system where disk should be downloaded. Note that you must have an valid oVirt/RHV engine CA in your system trust store or you must provide it in C(ca_file) parameter. Note that the disk is not downloaded when the file already exists, but you can forcibly download the disk when using C(force) I (true)."
+      "type": "Optional[String[0]]", 
+      "description": "Path on a file system where disk should be downloaded."
     }, 
     "auth": {
-      "type": "String", 
-      "description": "Dictionary with values needed to create HTTP/HTTPS connection to oVirt: C(username)[I(required)] - The name of the user, something like I(admin@internal). Default value is set by I(OVIRT_USERNAME) environment variable. C(password)[I(required)] - The password of the user. Default value is set by I(OVIRT_PASSWORD) environment variable. C(url)[I(required)] - A string containing the base URL of the server, usually something like `I(https://server.example.com/ovirt-engine/api)`. Default value is set by I(OVIRT_URL) environment variable. C(token) - Token to be used instead of login with username/password. Default value is set by I(OVIRT_TOKEN) environment variable. C(insecure) - A boolean flag that indicates if the server TLS certificate and host name should be checked. C(ca_file) - A PEM file containing the trusted CA certificates. The certificate presented by the server will be verified using these CA certificates. If `C(ca_file)` parameter is not set, system wide CA certificate store is used. Default value is set by I(OVIRT_CAFILE) environment variable. C(kerberos) - A boolean flag indicating if Kerberos authentication should be used instead of the default basic authentication."
+      "type": "String[0]", 
+      "description": "Dictionary with values needed to create HTTP/HTTPS connection to oVirt:"
     }, 
     "interface": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"virtio\", \"ide\", \"virtio_scsi\"]]", 
       "description": "Driver of the storage interface."
     }, 
     "vm_id": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "ID of the Virtual Machine to manage. Either C(vm_id) or C(vm_name) is required if C(state) is I(attached) or I(detached)."
     }, 
     "wait": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "I(True) if the module should wait for the entity to get into desired state."
     }, 
     "name": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Name of the disk to manage. Either C(id) or C(name)/C(alias) is required."
     }, 
     "bootable": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "I(True) if the disk should be bootable. By default when disk is created it isn't bootable."
     }, 
     "poll_interval": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Number of the seconds the module waits until another poll request on entity status is sent."
     }, 
     "shareable": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "I(True) if the disk should be shareable. By default when disk is created it isn't shareable."
     }, 
     "timeout": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "The amount of time in seconds the module should wait for the instance to get into desired state."
     }
   }

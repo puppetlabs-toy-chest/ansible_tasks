@@ -1,44 +1,45 @@
 {
-  "description": "Create or Remove LUN Mappings", 
+  "input_method": "stdin", 
+  "description": "Allows for the creation and removal of volume to host mappings for NetApp E-series storage arrays.", 
   "parameters": {
     "target": {
-      "type": "Optional[String]", 
-      "description": "The name of host or hostgroup you wish to assign to the mapping If omitted, the default hostgroup is used. If the supplied I(volume_name) is associated with a different target, it will be updated to what is supplied here."
+      "type": "Optional[String[0]]", 
+      "description": "The name of host or hostgroup you wish to assign to the mapping"
     }, 
     "api_username": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "The username used to authenticate against the API. This can optionally be set via an environment variable, API_USERNAME"
     }, 
     "api_password": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "The password used to authenticate against the API. This can optionally be set via an environment variable, API_PASSWORD"
     }, 
     "target_type": {
-      "type": "Optional[String]", 
-      "description": "Whether the target is a host or group. Required if supplying an explicit target."
+      "type": "Optional[Enum[\"host\", \"group\"]]", 
+      "description": "Whether the target is a host or group."
     }, 
     "state": {
-      "type": "String", 
-      "description": "Present will ensure the mapping exists, absent will remove the mapping. All parameters I(lun), I(target), I(target_type) and I(volume_name) must still be supplied."
+      "type": "Enum[\"present\", \"absent\"]", 
+      "description": "Present will ensure the mapping exists, absent will remove the mapping."
     }, 
     "volume_name": {
-      "type": "String", 
+      "type": "String[0]", 
       "description": "The name of the volume you wish to include in the mapping."
     }, 
     "api_url": {
-      "type": "Optional[String]", 
-      "description": "The full API url. Example: http://ENDPOINT:8080/devmgr/v2 This can optionally be set via an environment variable, API_URL"
+      "type": "Optional[String[0]]", 
+      "description": "The full API url. Example: http://ENDPOINT:8080/devmgr/v2"
     }, 
     "validate_certs": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "Should https certificates be validated?"
     }, 
     "lun": {
-      "type": "Optional[String]", 
-      "description": "The LUN number you wish to give the mapping If the supplied I(volume_name) is associated with a different LUN, it will be updated to what is supplied here."
+      "type": "Optional[String[0]]", 
+      "description": "The LUN number you wish to give the mapping"
     }, 
     "ssid": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "The storage system array identifier."
     }
   }

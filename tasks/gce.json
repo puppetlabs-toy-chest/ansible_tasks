@@ -1,96 +1,97 @@
 {
-  "description": "create or terminate GCE instances", 
+  "input_method": "stdin", 
+  "description": "Creates or terminates Google Compute Engine (GCE) instances.  See U(https://cloud.google.com/compute) for an overview. Full install/configuration instructions for the gce* modules can be found in the comments of ansible/test/gce_tests.py.", 
   "parameters": {
     "num_instances": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "can be used with 'name', specifies the number of nodes to provision using 'name' as a base name"
     }, 
     "ip_forward": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "set to true if the instance can forward ip packets (useful for gateways)"
     }, 
     "image": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "image string to use for the instance (default will follow latest stable debian image)"
     }, 
     "service_account_permissions": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"bigquery\", \"cloud-platform\", \"compute-ro\", \"compute-rw\", \"useraccounts-ro\", \"useraccounts-rw\", \"datastore\", \"logging-write\", \"monitoring\", \"sql-admin\", \"storage-full\", \"storage-ro\", \"storage-rw\", \"taskqueue\", \"userinfo-email\"]]", 
       "description": "service account permissions (see U(https://cloud.google.com/sdk/gcloud/reference/compute/instances/create), --scopes section for detailed information)"
     }, 
     "pem_file": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "path to the pem file associated with the service account email This option is deprecated. Use 'credentials_file'."
     }, 
     "network": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "name of the network, 'default' will be used if not specified"
     }, 
     "zone": {
-      "type": "String", 
+      "type": "Optional[String[0]]", 
       "description": "the GCE zone to use. The list of available zones is at U(https://cloud.google.com/compute/docs/regions-zones/regions-zones#available)."
     }, 
     "service_account_email": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "service account email"
     }, 
     "persistent_boot_disk": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "if set, create the instance with a persistent boot disk"
     }, 
     "disk_auto_delete": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "if set boot disk will be removed after instance destruction"
     }, 
     "state": {
-      "type": "Optional[String]", 
+      "type": "Optional[Enum[\"active\", \"present\", \"absent\", \"deleted\", \"started\", \"stopped\", \"terminated\"]]", 
       "description": "desired state of the resource"
     }, 
     "project_id": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "your GCE project ID"
     }, 
     "instance_names": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "a comma-separated list of instance names to create or destroy"
     }, 
     "metadata": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "a hash/dictionary of custom data for the instance; '{\"key\":\"value\", ...}'"
     }, 
     "tags": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "a comma-separated list of tags to associate with the instance"
     }, 
     "preemptible": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "if set to true, instances will be preemptible and time-limited. (requires libcloud >= 0.20.0)"
     }, 
     "machine_type": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "machine type to use for the instance, use 'n1-standard-1' by default"
     }, 
     "disk_size": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "The size of the boot disk created for this instance (in GB)"
     }, 
     "name": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "either a name of a single instance or when used with 'num_instances', the base name of a cluster of nodes"
     }, 
     "external_ip": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "type of external ip, ephemeral by default; alternatively, a fixed gce ip or ip name can be given. Specify 'none' if no external ip is desired."
     }, 
     "disks": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "a list of persistent disks to attach to the instance; a string value gives the name of the disk; alternatively, a dictionary value can define 'name' and 'mode' ('READ_ONLY' or 'READ_WRITE'). The first entry will be the boot disk (which must be READ_WRITE)."
     }, 
     "credentials_file": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "path to the JSON file associated with the service account email"
     }, 
     "subnetwork": {
-      "type": "Optional[String]", 
+      "type": "Optional[String[0]]", 
       "description": "name of the subnetwork in which the instance should be created"
     }
   }
